@@ -8,5 +8,5 @@ export interface IContextMenuPlugin {
 
   activateContextMenuItems(): Map<string, IContextMenuItem | ISeparatorItem>;
 
-  deactivateContextMenuItems(): string[];
+  deactivateContextMenuItems(): string;
 }
