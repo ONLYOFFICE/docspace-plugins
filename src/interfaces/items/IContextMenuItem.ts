@@ -1,4 +1,9 @@
-import { ContextMenuItemType } from "../../enums/ContextMenuItemType";
+export const enum ContextMenuItemType {
+  Files = "Files",
+  Folders = "Folders",
+  Rooms = "Rooms",
+  All = "All",
+}
 
 export interface IContextMenuItem {
   key: string;

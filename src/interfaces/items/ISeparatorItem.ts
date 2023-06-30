@@ -1,4 +1,4 @@
-import { ContextMenuItemType } from "../../enums/ContextMenuItemType";
+import { ContextMenuItemType } from "./IContextMenuItem";
 
 export interface ISeparatorItem {
   key: string;
