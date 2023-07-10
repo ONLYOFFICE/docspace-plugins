@@ -1,37 +1,18 @@
-import { IPlugin } from "docspace-plugin";
-
-import pack from "../package.json";
+import { IPlugin, PluginStatus } from "onlyoffice-docspace-plugin";
 
 // class name can be anything
 // for connect more plugin type - add suitable interface at implements block
 class ChangedName implements IPlugin {
-  // this method return plugin name
-  // by default from package.json file
-  getPluginName(): string {
-    return pack.name;
-  }
+  // current plugin status
+  // active - the user can use the options for this plugin
+  // pending - the user can see the options for this plugin, but it needs to be configured to use
+  // hide - the user can not see the options for this plugin, needs to be configured to use
+  status: PluginStatus = PluginStatus.active;
 
-  // this method return plugin version
-  // by default from package.json file
-  getPluginVersion(): string {
-    return pack.version;
-  }
-
-  // this method will be called when the plugin will be activated
-  // here you can add event listeners and etc.
-  // also here you must call activation methods for items of other plugins
-  activate(): null {
-    window.alert("Plugin was activated");
-
-    return null;
-  }
-
-  // this method will be called when the plugin will be deactivated
-  // here you can remove event listeners and etc.
-  // also here you must call activation methods for items of other plugins
-  deactivate(): null {
-    return null;
-  }
+  // method for update plugin status
+  updateStatus = (status: PluginStatus) => {
+    this.status = status;
+  };
 }
 
 // create instance of the plugin

@@ -1,4 +1,4 @@
-import { IMainButtonItem, ISeparatorItem } from "docspace-plugin";
+import { IMainButtonItem, ISeparatorItem } from "onlyoffice-docspace-plugin";
 
 const onClick = () => {
   alert("User clicked on main button item from plugin");

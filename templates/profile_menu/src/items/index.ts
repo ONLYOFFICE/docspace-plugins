@@ -1,4 +1,4 @@
-import { IProfileMenuItem, ISeparatorItem } from "docspace-plugin";
+import { IProfileMenuItem, ISeparatorItem } from "onlyoffice-docspace-plugin";
 
 const onJSDocClick = () => {
   const result = confirm("Open js documentation?");

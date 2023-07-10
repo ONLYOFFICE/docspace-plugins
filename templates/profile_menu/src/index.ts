@@ -4,7 +4,7 @@ import {
   IProfileMenuItem,
   ISeparatorItem,
   PluginItems,
-} from "docspace-plugin";
+} from "onlyoffice-docspace-plugin";
 
 import pack from "../package.json";
 

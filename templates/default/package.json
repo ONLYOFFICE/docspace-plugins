@@ -12,7 +12,7 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "docspace-plugin": "file:../../docspace-plugin/docspace-plugin-1.0.0.tgz",
+    "onlyoffice-docspace-plugin": "file:../../docspace-plugin/docspace-plugin-1.0.0.tgz",
     "typescript": "^4.7.4"
   }
 }
