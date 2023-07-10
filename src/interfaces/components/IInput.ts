@@ -1,4 +1,4 @@
-import { Actions } from "../../enums/Actions";
+import { IMessage } from "../utils";
 
 export const enum InputSize {
   base = "base",
@@ -34,13 +34,9 @@ export interface IInput {
   isDisabled?: boolean;
   type?: InputType;
   keepCharPositions?: boolean;
-  onChange?: (e: { target: { value: string } }) => {
-    newProps?: IInput;
-    actions?: Actions;
-    toastProps?: [];
-  } | void;
-  onBlur?: () => void;
-  onFocus?: () => void;
+  onChange?: (value: string) => IMessage | void;
+  onBlur?: (value: string) => IMessage | void;
+  onFocus?: (value: string) => IMessage | void;
   value?: string;
   children?: Node[] | Node;
   iconSize?: number;

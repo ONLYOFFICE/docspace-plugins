@@ -1,3 +1,4 @@
+import { IButton } from "../components";
 import { IControlGroup } from "./IControlGroup";
 
 export const enum SettingsType {
@@ -8,5 +9,9 @@ export const enum SettingsType {
 
 export interface ISettings {
   type: SettingsType;
-  groups: IControlGroup;
+  groups: IControlGroup[];
+  withAcceptButton: boolean;
+  acceptButton?: IButton;
+  isLoading?: boolean;
+  onLoad?: () => Promise<boolean>;
 }

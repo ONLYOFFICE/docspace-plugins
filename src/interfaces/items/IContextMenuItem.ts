@@ -1,3 +1,6 @@
+import { FilesExst } from "../../enums";
+import { IMessage } from "../utils";
+
 export const enum ContextMenuItemType {
   Files = "Files",
   Folders = "Folders",
@@ -11,5 +14,9 @@ export interface IContextMenuItem {
   position: number;
   label: string;
   icon: string;
-  onClick: (item: any | null) => void;
+  onClick: (
+    id: number,
+    fileExst: string
+  ) => Promise<IMessage> | Promise<void> | IMessage | void;
+  fileExt?: FilesExst[] | "all";
 }
