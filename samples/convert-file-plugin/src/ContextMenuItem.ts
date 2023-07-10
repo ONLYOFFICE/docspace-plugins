@@ -1,5 +1,6 @@
 import {
   ContextMenuItemType,
+  FilesExst,
   IContextMenuItem,
 } from "onlyoffice-docspace-plugin";
 
@@ -10,5 +11,5 @@ export const convertFileItem: IContextMenuItem = {
   label: "Convert file",
   icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF5z5FvWU-DjRHm8ankd_VwHEgpSSGRhVUiA&usqp=CAU",
   onClick: () => {},
-  fileExt: "all",
+  fileExt: [FilesExst.docx, FilesExst.xlsx],
 };

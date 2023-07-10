@@ -16,10 +16,12 @@ const onLocalStorageChange = () => {
   return {
     newProps: toggleButtonProps,
     actions: [Actions.updateProps, Actions.showToast],
-    toastProps: {
-      type: localStorageProps.isChecked ? ToastType.success : ToastType.info,
-      title: localStorageToastTitle,
-    },
+    toastProps: [
+      {
+        type: localStorageProps.isChecked ? ToastType.success : ToastType.info,
+        title: localStorageToastTitle,
+      },
+    ],
   };
 };
 
@@ -39,10 +41,14 @@ const onMockApiStorageChange = () => {
   return {
     newProps: toggleButtonProps,
     actions: [Actions.updateProps, Actions.showToast],
-    toastProps: {
-      type: mockApiStorageProps.isChecked ? ToastType.success : ToastType.info,
-      title: mockApiStorageToastTitle,
-    },
+    toastProps: [
+      {
+        type: mockApiStorageProps.isChecked
+          ? ToastType.success
+          : ToastType.info,
+        title: mockApiStorageToastTitle,
+      },
+    ],
   };
 };
 

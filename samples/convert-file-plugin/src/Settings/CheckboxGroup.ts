@@ -22,10 +22,12 @@ const onDocxChange = () => {
       Actions.updateAcceptButtonProps,
       Actions.showToast,
     ],
-    toastProps: {
-      type: docxProps.isChecked ? ToastType.success : ToastType.info,
-      title: docxToastTitle,
-    },
+    toastProps: [
+      {
+        type: docxProps.isChecked ? ToastType.success : ToastType.info,
+        title: docxToastTitle,
+      },
+    ],
     acceptButtonProps: {
       ...acceptButton,
       isDisabled: getIsDisabled(
@@ -46,7 +48,7 @@ const onDocxChange = () => {
 export const docxProps: ICheckbox = {
   label: "DOCX",
   title: "DOCX",
-  isChecked: false,
+  isChecked: true,
   onChange: onDocxChange,
 };
 
@@ -64,10 +66,12 @@ const onXlsxChange = () => {
       Actions.updateAcceptButtonProps,
       Actions.showToast,
     ],
-    toastProps: {
-      type: xlsxProps.isChecked ? ToastType.success : ToastType.info,
-      title: xlsxToastTitle,
-    },
+    toastProps: [
+      {
+        type: xlsxProps.isChecked ? ToastType.success : ToastType.info,
+        title: xlsxToastTitle,
+      },
+    ],
     acceptButtonProps: {
       ...acceptButton,
       isDisabled: getIsDisabled(
@@ -88,7 +92,7 @@ const onXlsxChange = () => {
 export const xlsxProps: ICheckbox = {
   label: "XLSX",
   title: "XLSX",
-  isChecked: false,
+  isChecked: true,
   onChange: onXlsxChange,
 };
 

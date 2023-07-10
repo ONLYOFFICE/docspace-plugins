@@ -4,14 +4,18 @@ import inputGroup, { fileNameProps } from "./InputGroup";
 import checkboxGroup, { docxProps, xlsxProps } from "./CheckboxGroup";
 import toggleButtonGroup from "./ToggleButtonGroup";
 import acceptButton from "./AcceptButton";
+import cancelButton from "./CancelButton";
+
 import convertFile, { SettingsValue } from "../ConvertFile";
+
 import plugin from "..";
 
 export const settingsElements: ISettings = {
-  type: SettingsType.settingsPage,
+  type: SettingsType.both,
   groups: [...inputGroup, checkboxGroup, toggleButtonGroup],
   withAcceptButton: true,
-  acceptButton: acceptButton,
+  acceptButtonProps: acceptButton,
+  cancelButtonProps: cancelButton,
   isLoading: true,
   onLoad: async () => {
     const value: SettingsValue | null = await convertFile.fetchSettingsValue();

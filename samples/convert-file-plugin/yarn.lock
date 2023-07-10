@@ -399,12 +399,6 @@ defaults@^1.0.3:
   dependencies:
     clone "^1.0.2"
 
-"docspace-plugin@file:../../onlyoffice-docspace-plugin-1.5.9.tgz":
-  version "1.5.9"
-  resolved "file:../../onlyoffice-docspace-plugin-1.5.9.tgz#f9d0f87d318ef20135fc4cb768873e4cdf158c04"
-  dependencies:
-    inquirer "^9.1.0"
-
 electron-to-chromium@^1.4.431:
   version "1.4.446"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.446.tgz#c23fbc7884bfe43088d5eb908a858dbb35ab190b"
@@ -754,6 +748,12 @@ onetime@^5.1.0:
   integrity sha512-kbpaSSGJTWdAY5KPVeMOKXSrPtr8C8C7wodJbcsd51jRnmD+GZu8Y0VoU6Dm5Z4vWr0Ig/1NKuWRKf7j5aaYSg==
   dependencies:
     mimic-fn "^2.1.0"
+
+"onlyoffice-docspace-plugin@file:../../onlyoffice-docspace-plugin-1.0.0.tgz":
+  version "1.0.0"
+  resolved "file:../../onlyoffice-docspace-plugin-1.0.0.tgz#2a67548c033b022a3c2ef5ed3a54319bd11b8d6c"
+  dependencies:
+    inquirer "^9.1.0"
 
 ora@^5.4.1:
   version "5.4.1"

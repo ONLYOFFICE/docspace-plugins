@@ -24,7 +24,18 @@ class ConvertFile {
     localStorage: false,
   };
 
+  acceptFromModalSettings = false;
+  currentFileId: number | null = null;
+
   apiURL = "";
+
+  setAcceptFromModalSettings = (value: boolean) => {
+    this.acceptFromModalSettings = value;
+  };
+
+  setCurrentFileId = (value: number | null) => {
+    this.currentFileId = value;
+  };
 
   setSettingsValue = (value: SettingsValue) => {
     this.settingsValue = value;
@@ -121,7 +132,10 @@ class ConvertFile {
     return this.apiURL;
   };
 
-  onConvertFileClick = async (id: number, filesExst: string) => {
+  onConvertFileClick = async (id: number) => {
+    this.setCurrentFileId(null);
+    this.setAcceptFromModalSettings(false);
+
     const pluginStatus = plugin.getStatus();
 
     if (
@@ -130,19 +144,41 @@ class ConvertFile {
       !this.settingsValue.fileName
     ) {
       const message: IMessage = {
-        actions: [Actions.showToast],
-        toastProps: {
-          type: ToastType.warning,
-          title: "Need enter settings",
-        },
+        actions: [Actions.showToast, Actions.showSettingsModal],
+        toastProps: [
+          {
+            type: ToastType.warning,
+            title: "Need enter settings",
+          },
+        ],
       };
+
+      this.setAcceptFromModalSettings(true);
+      this.setCurrentFileId(id);
 
       return message;
     }
 
-    const { webUrl, folderId } = (
+    const { webUrl, folderId, fileExst } = (
       await (await fetch(`${this.apiURL}/files/file/${id}`)).json()
     ).response;
+
+    if (!this.settingsValue.formats.includes(fileExst)) {
+      const message: IMessage = {
+        actions: [Actions.showToast, Actions.showSettingsModal],
+        toastProps: [
+          {
+            type: ToastType.error,
+            title: "Enable plugin for this file extension",
+          },
+        ],
+      };
+
+      this.setAcceptFromModalSettings(true);
+      this.setCurrentFileId(id);
+
+      return message;
+    }
 
     const url = new URL(`${this.apiURL}/filehandler.ashx`);
 
@@ -160,10 +196,12 @@ class ConvertFile {
 
     const message: IMessage = {
       actions: [Actions.showToast],
-      toastProps: {
-        type: ToastType.success,
-        title: `File "${this.settingsValue.fileName}${FilesExst.pdf}" was created`,
-      },
+      toastProps: [
+        {
+          type: ToastType.success,
+          title: `File "${this.settingsValue.fileName}${FilesExst.pdf}" was created`,
+        },
+      ],
     };
 
     return message;
@@ -183,6 +221,14 @@ class ConvertFile {
     }
 
     plugin.updateStatus(PluginStatus.active);
+
+    let message = null;
+
+    if (this.acceptFromModalSettings && !!this.currentFileId) {
+      message = await this.onConvertFileClick(this.currentFileId);
+    }
+
+    if (!value.localStorage && !value.mockApi) return message;
 
     const user = await this.getUser();
 
@@ -225,6 +271,8 @@ class ConvertFile {
         );
       }
     }
+
+    return message;
   };
 }
 

@@ -4,6 +4,8 @@ import {
   ButtonSize,
   ToastType,
   FilesExst,
+  IMessage,
+  IToast,
 } from "onlyoffice-docspace-plugin";
 
 import inputGroup from "./InputGroup";
@@ -12,7 +14,7 @@ import toggleButtonGroup from "./ToggleButtonGroup";
 
 import convertFile, { SettingsValue } from "../ConvertFile";
 
-const onAcceptButtonClick = () => {
+const onAcceptButtonClick = async () => {
   const fileName =
     !Array.isArray(inputGroup[0].elementProps) &&
     inputGroup[0].elementProps.value;
@@ -48,16 +50,27 @@ const onAcceptButtonClick = () => {
   };
 
   convertFile.setSettingsValue({ ...settings });
-  convertFile.acceptSettings({ ...settings });
+  const convertMessage: IMessage | null = await convertFile.acceptSettings({
+    ...settings,
+  });
 
-  return {
-    newProps: { ...acceptButton, isDisabled: true },
-    actions: [Actions.showToast, Actions.updateStatus, Actions.updateProps],
-    toastProps: {
+  const toastProps: IToast[] = [];
+
+  if (convertMessage?.toastProps) {
+    toastProps.push({
       type: ToastType.success,
       title: "Data is saved. Now you can use plugin",
-    },
+    });
+    toastProps.push(...convertMessage.toastProps);
+  }
+
+  const message: IMessage = {
+    newProps: { ...acceptButton, isDisabled: true },
+    actions: [Actions.showToast, Actions.updateStatus, Actions.updateProps],
+    toastProps,
   };
+
+  return message;
 };
 
 export const getIsDisabled = (
