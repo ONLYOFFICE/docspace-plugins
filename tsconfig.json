@@ -8,5 +8,5 @@
     "strict": true,
     "esModuleInterop": true
   },
-  "exclude": ["node_modules", "templates", "npx", "dist"]
+  "exclude": ["node_modules", "templates", "npx", "dist", "samples"]
 }
