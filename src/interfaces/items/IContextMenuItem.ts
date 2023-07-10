@@ -14,9 +14,6 @@ export interface IContextMenuItem {
   position: number;
   label: string;
   icon: string;
-  onClick: (
-    id: number,
-    fileExst: string
-  ) => Promise<IMessage> | Promise<void> | IMessage | void;
+  onClick: (id: number) => Promise<IMessage> | Promise<void> | IMessage | void;
   fileExt?: FilesExst[] | "all";
 }

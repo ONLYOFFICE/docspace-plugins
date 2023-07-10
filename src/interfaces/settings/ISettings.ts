@@ -11,7 +11,8 @@ export interface ISettings {
   type: SettingsType;
   groups: IControlGroup[];
   withAcceptButton: boolean;
-  acceptButton?: IButton;
+  acceptButtonProps?: IButton;
+  cancelButtonProps?: IButton;
   isLoading?: boolean;
   onLoad?: () => Promise<boolean>;
 }

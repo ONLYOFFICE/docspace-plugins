@@ -10,6 +10,6 @@ import {
 export interface IMessage {
   newProps?: IInput | ICheckbox[] | IToggleButton[] | IButton;
   actions?: Actions[];
-  toastProps?: IToast;
+  toastProps?: IToast[];
   acceptButtonProps?: IButton;
 }

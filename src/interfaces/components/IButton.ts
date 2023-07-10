@@ -14,5 +14,5 @@ export interface IButton {
   scale?: boolean;
   isLoading?: boolean;
   isDisabled?: boolean;
-  onClick?: () => IMessage | void;
+  onClick?: () => Promise<void> | Promise<IMessage> | IMessage | void;
 }
