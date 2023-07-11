@@ -61,18 +61,6 @@ class ConvertFile {
 
   setAdminSettingsValue = (value: AdminSettingsValue) => {
     this.adminSettingsValue = value;
-
-    if (!value.pdf && !value.txt) {
-      plugin.updateStatus(PluginStatus.hide);
-    }
-
-    if ((value.pdf || value.txt) && !this.userSettingsValue.fileName) {
-      plugin.updateStatus(PluginStatus.pending);
-    }
-
-    if ((value.pdf || value.txt) && this.userSettingsValue.fileName) {
-      plugin.updateStatus(PluginStatus.active);
-    }
   };
 
   getAdminSettingsValue = () => {
@@ -198,6 +186,20 @@ class ConvertFile {
     this.setAcceptFromModalSettings(false);
 
     const pluginStatus = plugin.getStatus();
+
+    if (!this.adminSettingsValue.pdf && !this.adminSettingsValue.txt) {
+      const message: IMessage = {
+        actions: [Actions.showToast],
+        toastProps: [
+          {
+            type: ToastType.warning,
+            title: "DocSpace admin or DocSpace owner need enter settings",
+          },
+        ],
+      };
+
+      return message;
+    }
 
     if (
       pluginStatus === PluginStatus.pending ||
@@ -350,6 +352,33 @@ class ConvertFile {
   acceptAdminSettings = async (value: AdminSettingsValue) => {
     if (!this.apiURL) {
       this.createAPIUrl();
+    }
+
+    const data = await (
+      await fetch(`https://64a67577096b3f0fcc7fd1f7.mockapi.io/users`)
+    ).json();
+
+    if (data.length > 0) {
+      const v: any = data.find((d: any) => d.userId === "general-settings");
+
+      if (v) {
+        await fetch(
+          `https://64a67577096b3f0fcc7fd1f7.mockapi.io/users/${v.id}`,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json;charset=utf-8",
+            },
+            body: JSON.stringify({
+              ...v,
+              pdf: value.pdf,
+              txt: value.txt,
+            }),
+          }
+        );
+
+        return;
+      }
     }
 
     await fetch(`https://64a67577096b3f0fcc7fd1f7.mockapi.io/users`, {
