@@ -12,7 +12,7 @@ import inputGroup from "./InputGroup";
 import checkboxGroup from "./CheckboxGroup";
 import toggleButtonGroup from "./ToggleButtonGroup";
 
-import convertFile, { SettingsValue } from "../ConvertFile";
+import convertFile, { UserSettingsValue } from "../ConvertFile";
 
 const onAcceptButtonClick = async () => {
   const fileName =
@@ -42,15 +42,15 @@ const onAcceptButtonClick = async () => {
     Array.isArray(toggleButtonGroup.elementProps) &&
     toggleButtonGroup.elementProps[1]?.isChecked;
 
-  const settings: SettingsValue = {
+  const settings: UserSettingsValue = {
     fileName: fileName || "",
     formats: formats,
     mockApi: mockApi || false,
     localStorage: localStorage || false,
   };
 
-  convertFile.setSettingsValue({ ...settings });
-  const convertMessage: IMessage | null = await convertFile.acceptSettings({
+  convertFile.setUserSettingsValue({ ...settings });
+  const convertMessage: IMessage | null = await convertFile.acceptUserSettings({
     ...settings,
   });
 

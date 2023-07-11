@@ -6,7 +6,7 @@ import toggleButtonGroup from "./ToggleButtonGroup";
 import acceptButton from "./AcceptButton";
 import cancelButton from "./CancelButton";
 
-import convertFile, { SettingsValue } from "../ConvertFile";
+import convertFile, { UserSettingsValue } from "../ConvertFile";
 
 import plugin from "..";
 
@@ -18,7 +18,8 @@ export const settingsElements: ISettings = {
   cancelButtonProps: cancelButton,
   isLoading: true,
   onLoad: async () => {
-    const value: SettingsValue | null = await convertFile.fetchSettingsValue();
+    const value: UserSettingsValue | null =
+      await convertFile.fetchUserSettingsValue();
 
     if (value) {
       fileNameProps.value = value.fileName;
@@ -38,7 +39,7 @@ export const settingsElements: ISettings = {
 
     settingsElements.isLoading = false;
 
-    plugin.setPluginSettings(settingsElements);
+    plugin.setUserPluginSettings(settingsElements);
 
     return false;
   },

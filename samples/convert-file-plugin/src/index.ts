@@ -9,16 +9,18 @@ import {
   ISeparatorItem,
 } from "onlyoffice-docspace-plugin";
 
-import { settingsElements } from "./Settings";
+import { settingsElements } from "./UserSettings";
 import { convertFileItem } from "./ContextMenuItem";
 import convertFile from "./ConvertFile";
+import { adminSettingsElements } from "./AdminSettings";
 
 class ConvertFilePlugin
   implements IPlugin, ISettingsPlugin, IApiPlugin, IContextMenuPlugin
 {
   status: PluginStatus = PluginStatus.pending;
 
-  pluginSettings: ISettings = {} as ISettings;
+  userPluginSettings: ISettings | null = {} as ISettings;
+  adminPluginSettings: ISettings | null = {} as ISettings;
 
   origin = "";
   proxy = "";
@@ -40,12 +42,20 @@ class ConvertFilePlugin
     this.onLoadCallback = callback;
   };
 
-  getPluginSettings = () => {
-    return this.pluginSettings;
+  getUserPluginSettings = () => {
+    return this.userPluginSettings;
   };
 
-  setPluginSettings = (settings: ISettings): void => {
-    this.pluginSettings = settings;
+  setUserPluginSettings = (settings: ISettings | null): void => {
+    this.userPluginSettings = settings;
+  };
+
+  getAdminPluginSettings = () => {
+    return this.adminPluginSettings;
+  };
+
+  setAdminPluginSettings = (settings: ISettings | null): void => {
+    this.adminPluginSettings = settings;
   };
 
   setOrigin = (origin: string): void => {
@@ -103,7 +113,9 @@ class ConvertFilePlugin
 
 const plugin = new ConvertFilePlugin();
 
-plugin.setPluginSettings(settingsElements);
+plugin.setUserPluginSettings(settingsElements);
+
+plugin.setAdminPluginSettings(adminSettingsElements);
 
 convertFileItem.onClick = convertFile.onConvertFileClick;
 

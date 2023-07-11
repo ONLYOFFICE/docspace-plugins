@@ -9,19 +9,29 @@ import {
 import plugin from ".";
 import { convertFileItem } from "./ContextMenuItem";
 
-export type SettingsValue = {
+export type UserSettingsValue = {
   fileName: string;
   formats: FilesExst[];
   mockApi: boolean;
   localStorage: boolean;
 };
 
+export type AdminSettingsValue = {
+  pdf: boolean;
+  txt: boolean;
+};
+
 class ConvertFile {
-  settingsValue: SettingsValue = {
+  userSettingsValue: UserSettingsValue = {
     fileName: "",
     formats: [],
     mockApi: false,
     localStorage: false,
+  };
+
+  adminSettingsValue: AdminSettingsValue = {
+    pdf: true,
+    txt: true,
   };
 
   acceptFromModalSettings = false;
@@ -37,19 +47,31 @@ class ConvertFile {
     this.currentFileId = value;
   };
 
-  setSettingsValue = (value: SettingsValue) => {
-    this.settingsValue = value;
+  setUserSettingsValue = (value: UserSettingsValue) => {
+    this.userSettingsValue = value;
 
     convertFileItem.fileExt = value.formats;
 
     plugin.updateContextMenuItem(convertFileItem);
   };
 
-  getSettingsValue = () => {
-    return this.settingsValue;
+  getUserSettingsValue = () => {
+    return this.userSettingsValue;
   };
 
-  fetchSettingsValue = async () => {
+  setAdminSettingsValue = (value: AdminSettingsValue) => {
+    this.adminSettingsValue = value;
+
+    if (!value.pdf && !value.txt) {
+      plugin.updateStatus(PluginStatus.hide);
+    }
+  };
+
+  getAdminSettingsValue = () => {
+    return this.adminSettingsValue;
+  };
+
+  fetchUserSettingsValue = async () => {
     if (!this.apiURL) {
       this.createAPIUrl();
     }
@@ -74,7 +96,7 @@ class ConvertFile {
 
         plugin.updateStatus(PluginStatus.active);
 
-        this.setSettingsValue({
+        this.setUserSettingsValue({
           fileName: value.fileName,
           formats,
           mockApi: value.mockApi,
@@ -95,15 +117,46 @@ class ConvertFile {
     if (value) {
       plugin.updateStatus(PluginStatus.active);
 
-      this.setSettingsValue({ ...value });
+      this.setUserSettingsValue({ ...value });
       return value;
     }
 
     return null;
   };
 
+  fetchAdminSettingsValue = async () => {
+    if (!this.apiURL) {
+      this.createAPIUrl();
+    }
+
+    const data = await (
+      await fetch(`https://64a67577096b3f0fcc7fd1f7.mockapi.io/users`)
+    ).json();
+
+    if (data.length > 0) {
+      const value: AdminSettingsValue = data.find(
+        (d: any) => d.userId === "general-settings"
+      );
+
+      if (value) {
+        this.setAdminSettingsValue({ pdf: value.pdf, txt: value.txt });
+
+        return { pdf: value.pdf, txt: value.txt };
+      }
+
+      return null;
+    }
+
+    return null;
+  };
+
   onLoad = async () => {
-    await this.fetchSettingsValue();
+    const actions = [
+      this.fetchUserSettingsValue(),
+      this.fetchAdminSettingsValue(),
+    ];
+
+    await Promise.all(actions);
   };
 
   setAPIUrl = (url: string) => {
@@ -141,7 +194,7 @@ class ConvertFile {
     if (
       pluginStatus === PluginStatus.pending ||
       pluginStatus === PluginStatus.hide ||
-      !this.settingsValue.fileName
+      !this.userSettingsValue.fileName
     ) {
       const message: IMessage = {
         actions: [Actions.showToast, Actions.showSettingsModal],
@@ -163,7 +216,7 @@ class ConvertFile {
       await (await fetch(`${this.apiURL}/files/file/${id}`)).json()
     ).response;
 
-    if (!this.settingsValue.formats.includes(fileExst)) {
+    if (!this.userSettingsValue.formats.includes(fileExst)) {
       const message: IMessage = {
         actions: [Actions.showToast, Actions.showSettingsModal],
         toastProps: [
@@ -186,20 +239,43 @@ class ConvertFile {
     url.searchParams.append("fileuri", webUrl);
     url.searchParams.append("folderid", folderId);
 
-    url.searchParams.append(
-      "title",
-      `${this.settingsValue.fileName}${FilesExst.pdf}`
-    );
     url.searchParams.append("response", "message");
 
-    await fetch(url.toString());
+    const actions = [];
+
+    if (this.adminSettingsValue.pdf) {
+      url.searchParams.append(
+        "title",
+        `${this.userSettingsValue.fileName}${FilesExst.pdf}`
+      );
+
+      actions.push(fetch(url.toString()));
+    }
+
+    if (this.adminSettingsValue.txt) {
+      url.searchParams.set(
+        "title",
+        `${this.userSettingsValue.fileName}${FilesExst.txt}`
+      );
+
+      actions.push(fetch(url.toString()));
+    }
+
+    await Promise.all(actions);
+
+    const toastTitle =
+      this.adminSettingsValue.pdf && this.adminSettingsValue.txt
+        ? `Files were created`
+        : this.adminSettingsValue.pdf
+        ? `File "${this.userSettingsValue.fileName}${FilesExst.pdf}" was created`
+        : `File "${this.userSettingsValue.fileName}${FilesExst.txt}" was created`;
 
     const message: IMessage = {
       actions: [Actions.showToast],
       toastProps: [
         {
           type: ToastType.success,
-          title: `File "${this.settingsValue.fileName}${FilesExst.pdf}" was created`,
+          title: toastTitle,
         },
       ],
     };
@@ -215,7 +291,7 @@ class ConvertFile {
     return user;
   };
 
-  acceptSettings = async (value: SettingsValue) => {
+  acceptUserSettings = async (value: UserSettingsValue) => {
     if (!this.apiURL) {
       this.createAPIUrl();
     }
@@ -273,6 +349,23 @@ class ConvertFile {
     }
 
     return message;
+  };
+
+  acceptAdminSettings = async (value: AdminSettingsValue) => {
+    if (!this.apiURL) {
+      this.createAPIUrl();
+    }
+
+    await fetch(`https://64a67577096b3f0fcc7fd1f7.mockapi.io/users`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify({
+        userId: "general-settings",
+        ...value,
+      }),
+    });
   };
 }
 
