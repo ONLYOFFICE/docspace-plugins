@@ -28,7 +28,7 @@ const onAcceptButtonClick = async () => {
 
   const message: IMessage = {
     newProps: { ...acceptButton, isDisabled: true },
-    actions: [Actions.showToast, Actions.updateProps],
+    actions: [Actions.showToast, Actions.updateProps, Actions.updateStatus],
     toastProps,
   };
 

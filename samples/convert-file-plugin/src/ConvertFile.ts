@@ -65,6 +65,14 @@ class ConvertFile {
     if (!value.pdf && !value.txt) {
       plugin.updateStatus(PluginStatus.hide);
     }
+
+    if ((value.pdf || value.txt) && !this.userSettingsValue.fileName) {
+      plugin.updateStatus(PluginStatus.pending);
+    }
+
+    if ((value.pdf || value.txt) && this.userSettingsValue.fileName) {
+      plugin.updateStatus(PluginStatus.active);
+    }
   };
 
   getAdminSettingsValue = () => {
@@ -197,13 +205,7 @@ class ConvertFile {
       !this.userSettingsValue.fileName
     ) {
       const message: IMessage = {
-        actions: [Actions.showToast, Actions.showSettingsModal],
-        toastProps: [
-          {
-            type: ToastType.warning,
-            title: "Need enter settings",
-          },
-        ],
+        actions: [Actions.showSettingsModal],
       };
 
       this.setAcceptFromModalSettings(true);
@@ -218,13 +220,7 @@ class ConvertFile {
 
     if (!this.userSettingsValue.formats.includes(fileExst)) {
       const message: IMessage = {
-        actions: [Actions.showToast, Actions.showSettingsModal],
-        toastProps: [
-          {
-            type: ToastType.error,
-            title: "Enable plugin for this file extension",
-          },
-        ],
+        actions: [Actions.showSettingsModal],
       };
 
       this.setAcceptFromModalSettings(true);
