@@ -6,7 +6,7 @@ import {
   ToastType,
 } from "onlyoffice-docspace-plugin";
 import acceptButton, { getIsDisabled } from "./AcceptButton";
-import inputGroup, { fileNameGroup } from "./InputGroup";
+import { fileNameProps } from "./InputGroup";
 
 const onDocxChange = () => {
   docxProps.isChecked = !docxProps.isChecked;
@@ -31,15 +31,9 @@ const onDocxChange = () => {
     acceptButtonProps: {
       ...acceptButton,
       isDisabled: getIsDisabled(
-        (fileNameGroup &&
-          !Array.isArray(fileNameGroup.elementProps) &&
-          fileNameGroup.elementProps.value) ||
-          "",
+        fileNameProps.value || "",
         docxProps.isChecked,
-        (checkboxGroup &&
-          Array.isArray(checkboxGroup.elementProps) &&
-          checkboxGroup.elementProps[1]?.isChecked) ||
-          false
+        xlsxProps?.isChecked || false
       ),
     },
   };
@@ -75,14 +69,8 @@ const onXlsxChange = () => {
     acceptButtonProps: {
       ...acceptButton,
       isDisabled: getIsDisabled(
-        (inputGroup &&
-          !Array.isArray(inputGroup[0].elementProps) &&
-          inputGroup[0].elementProps.value) ||
-          "",
-        (checkboxGroup &&
-          Array.isArray(checkboxGroup.elementProps) &&
-          checkboxGroup.elementProps[0]?.isChecked) ||
-          false,
+        fileNameProps.value || "",
+        docxProps?.isChecked || false,
         xlsxProps.isChecked
       ),
     },

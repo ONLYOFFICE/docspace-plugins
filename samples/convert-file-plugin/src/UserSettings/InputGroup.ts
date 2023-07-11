@@ -6,7 +6,7 @@ import {
 } from "onlyoffice-docspace-plugin";
 
 import acceptButton, { getIsDisabled } from "./AcceptButton";
-import checkboxGroup from "./CheckboxGroup";
+import { docxProps, xlsxProps } from "./CheckboxGroup";
 
 const onFileNameChange = (value: string) => {
   fileNameProps.value = value;
@@ -17,14 +17,8 @@ const onFileNameChange = (value: string) => {
       ...acceptButton,
       isDisabled: getIsDisabled(
         value,
-        (checkboxGroup &&
-          Array.isArray(checkboxGroup.elementProps) &&
-          checkboxGroup.elementProps[0]?.isChecked) ||
-          false,
-        (checkboxGroup &&
-          Array.isArray(checkboxGroup.elementProps) &&
-          checkboxGroup.elementProps[1]?.isChecked) ||
-          false
+        docxProps.isChecked || false,
+        xlsxProps?.isChecked || false
       ),
     },
   };

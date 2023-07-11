@@ -6,8 +6,9 @@ import {
   ToastType,
 } from "onlyoffice-docspace-plugin";
 
-import plugin from ".";
 import { convertFileItem } from "./ContextMenuItem";
+
+import plugin from ".";
 
 export type UserSettingsValue = {
   fileName: string;

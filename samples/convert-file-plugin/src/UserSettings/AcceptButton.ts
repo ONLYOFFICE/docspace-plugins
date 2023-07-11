@@ -8,39 +8,27 @@ import {
   IToast,
 } from "onlyoffice-docspace-plugin";
 
-import inputGroup from "./InputGroup";
-import checkboxGroup from "./CheckboxGroup";
-import toggleButtonGroup from "./ToggleButtonGroup";
+import { fileNameProps } from "./InputGroup";
+import { docxProps, xlsxProps } from "./CheckboxGroup";
+import { localStorageProps, mockApiStorageProps } from "./ToggleButtonGroup";
 
 import convertFile, { UserSettingsValue } from "../ConvertFile";
 
 const onAcceptButtonClick = async () => {
-  const fileName =
-    !Array.isArray(inputGroup[0].elementProps) &&
-    inputGroup[0].elementProps.value;
+  const fileName = fileNameProps.value;
 
   const formats: FilesExst[] = [];
 
-  if (
-    Array.isArray(checkboxGroup.elementProps) &&
-    checkboxGroup.elementProps[0]?.isChecked
-  ) {
+  if (docxProps?.isChecked) {
     formats.push(FilesExst.docx);
   }
-  if (
-    Array.isArray(checkboxGroup.elementProps) &&
-    checkboxGroup.elementProps[1]?.isChecked
-  ) {
+  if (xlsxProps?.isChecked) {
     formats.push(FilesExst.xlsx);
   }
 
-  const localStorage =
-    Array.isArray(toggleButtonGroup.elementProps) &&
-    toggleButtonGroup.elementProps[0]?.isChecked;
+  const localStorage = localStorageProps?.isChecked;
 
-  const mockApi =
-    Array.isArray(toggleButtonGroup.elementProps) &&
-    toggleButtonGroup.elementProps[1]?.isChecked;
+  const mockApi = mockApiStorageProps?.isChecked;
 
   const settings: UserSettingsValue = {
     fileName: fileName || "",
@@ -85,18 +73,9 @@ const acceptButton: IButton = {
   label: "Save",
   primary: true,
   isDisabled: getIsDisabled(
-    (inputGroup &&
-      !Array.isArray(inputGroup[0].elementProps) &&
-      inputGroup[0].elementProps.value) ||
-      "",
-    (checkboxGroup &&
-      Array.isArray(checkboxGroup.elementProps) &&
-      checkboxGroup.elementProps[0]?.isChecked) ||
-      false,
-    (checkboxGroup &&
-      Array.isArray(checkboxGroup.elementProps) &&
-      checkboxGroup.elementProps[1]?.isChecked) ||
-      false
+    fileNameProps.value || "",
+    docxProps?.isChecked || false,
+    xlsxProps?.isChecked || false
   ),
   onClick: onAcceptButtonClick,
   size: ButtonSize.small,

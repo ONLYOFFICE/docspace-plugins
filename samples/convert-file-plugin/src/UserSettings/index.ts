@@ -2,7 +2,10 @@ import { FilesExst, ISettings, SettingsType } from "onlyoffice-docspace-plugin";
 
 import inputGroup, { fileNameProps } from "./InputGroup";
 import checkboxGroup, { docxProps, xlsxProps } from "./CheckboxGroup";
-import toggleButtonGroup from "./ToggleButtonGroup";
+import toggleButtonGroup, {
+  localStorageProps,
+  mockApiStorageProps,
+} from "./ToggleButtonGroup";
 import acceptButton from "./AcceptButton";
 import cancelButton from "./CancelButton";
 
@@ -23,12 +26,12 @@ export const settingsElements: ISettings = {
 
     if (value) {
       fileNameProps.value = value.fileName;
+
       docxProps.isChecked = value.formats.includes(FilesExst.docx);
       xlsxProps.isChecked = value.formats.includes(FilesExst.xlsx);
-      if (Array.isArray(toggleButtonGroup.elementProps)) {
-        toggleButtonGroup.elementProps[0].isChecked = value.localStorage;
-        toggleButtonGroup.elementProps[1].isChecked = value.mockApi;
-      }
+
+      localStorageProps.isChecked = value.localStorage;
+      mockApiStorageProps.isChecked = value.mockApi;
 
       settingsElements.groups = [
         ...inputGroup,
