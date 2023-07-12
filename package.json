@@ -2,6 +2,24 @@
   "name": "onlyoffice-docspace-plugin",
   "version": "1.0.0",
   "description": "Simple plugin system for onlyoffice docspace",
+  "license": "MIT",
+  "homepage": "https://www.onlyoffice.com",
+  "author": "Ascensio System SIA <integration@onlyoffice.com> (https://www.onlyoffice.com)",
+  "maintainers": [
+    "Ascensio System SIA <integration@onlyoffice.com> (https://www.onlyoffice.com)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ONLYOFFICE/onlyoffice-docspace-plugins.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ONLYOFFICE/onlyoffice-docspace-plugins"
+  },
+  "keywords": [
+    "onlyoffice",
+    "docspace",
+    "plugin"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
