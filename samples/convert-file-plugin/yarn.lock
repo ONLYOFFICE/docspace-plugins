@@ -749,9 +749,9 @@ onetime@^5.1.0:
   dependencies:
     mimic-fn "^2.1.0"
 
-"onlyoffice-docspace-plugin@file:../../onlyoffice-docspace-plugin-1.0.0.tgz":
+"onlyoffice-docspace-plugin@file:../../onlyoffice-docspace-plugin-v1.0.0.tgz":
   version "1.0.0"
-  resolved "file:../../onlyoffice-docspace-plugin-1.0.0.tgz#2a67548c033b022a3c2ef5ed3a54319bd11b8d6c"
+  resolved "file:../../onlyoffice-docspace-plugin-v1.0.0.tgz#f5e6a66d323fa7eb45134c0cc793808fa3cefd95"
   dependencies:
     inquirer "^9.1.0"
 
