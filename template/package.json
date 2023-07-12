@@ -1,8 +1,10 @@
 {
   "name": "default",
   "version": "1.0.0",
+  "author": "",
   "main": "index.ts",
   "private": true,
+  "scopes": [],
   "scripts": {
     "build": "webpack"
   },

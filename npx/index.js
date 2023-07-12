@@ -7,42 +7,20 @@ import * as cp from "child_process";
 import { fileURLToPath } from "url";
 
 import createTemplate from "./createTemplate.js";
+import QUESTIONS from "./dialog.js";
 
 const __filename = fileURLToPath(import.meta.url);
 
 const __dirname = path.dirname(__filename);
 
 const CURR_DIR = process.cwd();
-const TEMPLATES_PATH = path.join(__dirname, "../templates");
-
-const CHOICES = [
-  "default plugin",
-  "context plugin",
-  "main button plugin",
-  "profile menu plugin",
-];
-
-const QUESTIONS = [
-  {
-    name: "plugin-type",
-    type: "list",
-    message: "What plugin template would you like to generate?",
-    choices: CHOICES,
-  },
-  {
-    name: "plugin-name",
-    type: "input",
-    message: "Plugin name:",
-    validate: function (input) {
-      if (/^([A-Za-z\_\-])+$/.test(input)) return true;
-      else return "Plugin name may only include letters.";
-    },
-  },
-];
+const TEMPLATE_PATH = path.join(__dirname, "../template");
 
 inquirer.prompt(QUESTIONS).then((answers) => {
-  const pluginType = answers["plugin-type"];
   const name = answers["plugin-name"];
+  const version = answers["plugin-version"];
+  const author = answers["plugin-author"];
+  const scopes = answers["plugin-scopes"];
 
   const splitName = name.replaceAll("-", "").replaceAll("_", "").split("");
 
@@ -50,34 +28,17 @@ inquirer.prompt(QUESTIONS).then((answers) => {
 
   const pluginName = splitName.join("");
 
-  let template = null;
-
-  switch (pluginType) {
-    case CHOICES[0]:
-      template = "default";
-      break;
-    case CHOICES[1]:
-      template = "context";
-      break;
-    case CHOICES[2]:
-      template = "main_button";
-      break;
-    case CHOICES[3]:
-      template = "profile_menu";
-      break;
-    default:
-      template = "default";
-  }
-
-  const templatePath = `${TEMPLATES_PATH}/${template}`;
-
   fs.mkdirSync(`${CURR_DIR}/${name}`);
 
-  console.log(`Cloning ${template} plugin template`);
+  console.log(scopes);
 
-  createTemplate(templatePath, name, pluginName).then(() => {
-    console.log("Installing dependencies...");
-    process.chdir(name);
-    cp.exec(`yarn`);
-  });
+  console.log(`Cloning plugin template`);
+
+  createTemplate(TEMPLATE_PATH, name, pluginName, version, author, scopes).then(
+    () => {
+      console.log("Installing dependencies...");
+      process.chdir(name);
+      cp.exec(`yarn`);
+    }
+  );
 });
