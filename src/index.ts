@@ -33,7 +33,14 @@ import {
 
 import { IMessage } from "./interfaces/utils/index";
 
-import { Actions, Events, PluginItems, PluginStatus, FilesExst } from "./enums";
+import {
+  Actions,
+  Events,
+  PluginItems,
+  PluginStatus,
+  FilesExst,
+  UsersType,
+} from "./enums";
 
 export {
   IPlugin,
@@ -63,4 +70,5 @@ export {
   Actions,
   FilesExst,
   IMessage,
+  UsersType,
 };

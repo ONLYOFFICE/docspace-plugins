@@ -1,4 +1,4 @@
-import { FilesExst } from "../../enums";
+import { FilesExst, UsersType } from "../../enums";
 import { IMessage } from "../utils";
 
 export const enum ContextMenuItemType {
@@ -16,4 +16,5 @@ export interface IContextMenuItem {
   icon: string;
   onClick: (id: number) => Promise<IMessage> | Promise<void> | IMessage | void;
   fileExt?: FilesExst[] | "all";
+  usersTypes?: UsersType[];
 }

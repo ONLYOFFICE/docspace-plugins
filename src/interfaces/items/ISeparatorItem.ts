@@ -1,3 +1,4 @@
+import { UsersType } from "../../enums";
 import { ContextMenuItemType } from "./IContextMenuItem";
 
 export interface ISeparatorItem {
@@ -5,4 +6,5 @@ export interface ISeparatorItem {
   position: number;
   isSeparator: boolean;
   type?: ContextMenuItemType;
+  userTypes?: UsersType[];
 }
