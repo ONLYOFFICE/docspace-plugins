@@ -74,6 +74,7 @@ function createTemplate(template, name, pluginName, version, author, scopes) {
         newJson.name = name;
         newJson.version = version;
         newJson.scopes = scopes;
+        newJson.author = author;
 
         fs.writeFileSync(writePath, JSON.stringify(newJson, null, 2), "utf8");
 
@@ -199,6 +200,13 @@ export default plugin;
           .replaceAll("contentIns", contentIns);
 
         fs.writeFileSync(writePath, template, "utf8");
+
+        break;
+
+      case "createZip.js":
+        const newCreateZip = contents.replaceAll("PluginName", `${pluginName}`);
+
+        fs.writeFileSync(writePath, newCreateZip, "utf8");
 
         break;
 
