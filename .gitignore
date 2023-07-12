@@ -1,4 +1,5 @@
-/lib
-/dist
-/node_modules
-/onlyoffice-docspace-plugin-1.0.0.tgz
+lib
+dist
+node_modules
+onlyoffice-docspace-plugin-1.0.0.tgz
+onlyoffice-docspace-plugin-v1.0.0.tgz
