@@ -6,7 +6,7 @@ import {
   FilesExst,
   IMessage,
   IToast,
-} from "onlyoffice-docspace-plugin";
+} from "@onlyoffice/docspace-plugin";
 
 import { fileNameProps } from "./InputGroup";
 import { docxProps, xlsxProps } from "./CheckboxGroup";

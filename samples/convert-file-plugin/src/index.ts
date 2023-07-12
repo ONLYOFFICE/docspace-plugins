@@ -7,7 +7,7 @@ import {
   IContextMenuPlugin,
   IContextMenuItem,
   ISeparatorItem,
-} from "onlyoffice-docspace-plugin";
+} from "@onlyoffice/docspace-plugin";
 
 import { settingsElements } from "./UserSettings";
 import { convertFileItem } from "./ContextMenuItem";

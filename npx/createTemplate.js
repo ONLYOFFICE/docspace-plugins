@@ -86,7 +86,7 @@ function createTemplate(template, name, pluginName, version, author, scopes) {
         break;
       case "index.ts":
         let template = `
-import {pluginsImpIns} from 'onlyoffice-docspace-plugin'
+import {pluginsImpIns} from '@onlyoffice/docspace-plugin'
 
 class NameIns implements PluginsIns {
   contentIns

@@ -1,4 +1,4 @@
-import { IButton, ButtonSize } from "onlyoffice-docspace-plugin";
+import { IButton, ButtonSize } from "@onlyoffice/docspace-plugin";
 
 const onCancelButtonClick = () => {
   return {};

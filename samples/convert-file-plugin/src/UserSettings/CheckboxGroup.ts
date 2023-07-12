@@ -4,7 +4,7 @@ import {
   ICheckbox,
   IControlGroup,
   ToastType,
-} from "onlyoffice-docspace-plugin";
+} from "@onlyoffice/docspace-plugin";
 import acceptButton, { getIsDisabled } from "./AcceptButton";
 import { fileNameProps } from "./InputGroup";
 

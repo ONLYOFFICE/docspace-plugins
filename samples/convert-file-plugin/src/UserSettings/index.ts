@@ -1,4 +1,8 @@
-import { FilesExst, ISettings, SettingsType } from "onlyoffice-docspace-plugin";
+import {
+  FilesExst,
+  ISettings,
+  SettingsType,
+} from "@onlyoffice/docspace-plugin";
 
 import inputGroup, { fileNameProps } from "./InputGroup";
 import checkboxGroup, { docxProps, xlsxProps } from "./CheckboxGroup";
