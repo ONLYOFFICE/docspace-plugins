@@ -1,7 +1,16 @@
 {
   "name": "convert-file-plugin",
   "version": "1.0.0",
+  "author": "Dev",
   "main": "index.ts",
+  "scopes": [
+    "API",
+    "Settings",
+    "ContextMenu"
+  ],
+  "description": "Test desc",
+  "pluginName": "ConvertFilePlugin",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "build": "webpack && node ./scripts/createZip.js"
