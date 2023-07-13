@@ -20,6 +20,8 @@ inquirer.prompt(QUESTIONS).then((answers) => {
   const name = answers["plugin-name"];
   const version = answers["plugin-version"];
   const author = answers["plugin-author"];
+  const description = answers["plugin-description"];
+  const license = answers["plugin-license"];
   const scopes = answers["plugin-scopes"];
 
   const splitName = name.replaceAll("-", "").replaceAll("_", "").split("");
@@ -30,15 +32,20 @@ inquirer.prompt(QUESTIONS).then((answers) => {
 
   fs.mkdirSync(`${CURR_DIR}/${name}`);
 
-  console.log(scopes);
-
   console.log(`Cloning plugin template`);
 
-  createTemplate(TEMPLATE_PATH, name, pluginName, version, author, scopes).then(
-    () => {
-      console.log("Installing dependencies...");
-      process.chdir(name);
-      cp.exec(`yarn`);
-    }
-  );
+  createTemplate(
+    TEMPLATE_PATH,
+    name,
+    pluginName,
+    version,
+    author,
+    description,
+    license,
+    scopes
+  ).then(() => {
+    console.log("Installing dependencies...");
+    process.chdir(name);
+    cp.exec(`yarn`);
+  });
 });

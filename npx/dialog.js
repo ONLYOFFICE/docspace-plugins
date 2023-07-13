@@ -13,7 +13,7 @@ const versionQuestion = {
   type: "input",
   message: "Plugin version:",
   validate: function (input) {
-    if (/^[0-9]*\.?[0-9]*$/.test(input)) return true;
+    if (/[0-9]*\.?[0-9]*/.test(input)) return true;
     else return "Plugin version may include only numbers";
   },
 };
@@ -22,6 +22,18 @@ const authorQuestion = {
   name: "plugin-author",
   type: "input",
   message: "Plugin author:",
+};
+
+const descriptionQuestion = {
+  name: "plugin-description",
+  type: "input",
+  message: "Plugin description:",
+};
+
+const licenseQuestion = {
+  name: "plugin-license",
+  type: "input",
+  message: "Plugin license:",
 };
 
 const scopes = [
@@ -41,6 +53,8 @@ const QUESTIONS = [
   nameQuestion,
   versionQuestion,
   authorQuestion,
+  descriptionQuestion,
+  licenseQuestion,
   scopesQuestion,
 ];
 

@@ -39,7 +39,16 @@ import {
 
 const CURR_DIR = process.cwd();
 
-function createTemplate(template, name, pluginName, version, author, scopes) {
+function createTemplate(
+  template,
+  name,
+  pluginName,
+  version,
+  author,
+  description,
+  license,
+  scopes
+) {
   const copyActions = [];
 
   const copyTemplate = async (templatePath, newProjectPath) => {
@@ -75,6 +84,9 @@ function createTemplate(template, name, pluginName, version, author, scopes) {
         newJson.version = version;
         newJson.scopes = scopes;
         newJson.author = author;
+        newJson.description = description;
+        newJson.pluginName = pluginName;
+        newJson.license = license;
 
         fs.writeFileSync(writePath, JSON.stringify(newJson, null, 2), "utf8");
 
@@ -204,7 +216,10 @@ export default plugin;
         break;
 
       case "createZip.js":
-        const newCreateZip = contents.replaceAll("PluginName", `${pluginName}`);
+        const newCreateZip = contents.replaceAll(
+          "PluginNameReplace",
+          `${pluginName}`
+        );
 
         fs.writeFileSync(writePath, newCreateZip, "utf8");
 
