@@ -3,7 +3,7 @@ import {
   ControlGroupElement,
   IControlGroup,
   IInput,
-} from "@onlyoffice/docspace-plugin";
+} from "@onlyoffice/docspace-plugin-sdk";
 
 import acceptButton, { getIsDisabled } from "./AcceptButton";
 import { docxProps, xlsxProps } from "./CheckboxGroup";

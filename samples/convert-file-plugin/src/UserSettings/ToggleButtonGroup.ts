@@ -4,7 +4,7 @@ import {
   IToggleButton,
   IControlGroup,
   ControlGroupElement,
-} from "@onlyoffice/docspace-plugin";
+} from "@onlyoffice/docspace-plugin-sdk";
 
 const onLocalStorageChange = () => {
   localStorageProps.isChecked = !localStorageProps.isChecked;

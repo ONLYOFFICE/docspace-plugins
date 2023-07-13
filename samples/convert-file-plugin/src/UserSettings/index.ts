@@ -2,7 +2,7 @@ import {
   FilesExst,
   ISettings,
   SettingsType,
-} from "@onlyoffice/docspace-plugin";
+} from "@onlyoffice/docspace-plugin-sdk";
 
 import inputGroup, { fileNameProps } from "./InputGroup";
 import checkboxGroup, { docxProps, xlsxProps } from "./CheckboxGroup";

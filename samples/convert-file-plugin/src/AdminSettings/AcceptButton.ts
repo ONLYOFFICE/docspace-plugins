@@ -5,7 +5,7 @@ import {
   ToastType,
   IMessage,
   IToast,
-} from "@onlyoffice/docspace-plugin";
+} from "@onlyoffice/docspace-plugin-sdk";
 
 import convertFile, { AdminSettingsValue } from "../ConvertFile";
 import { pdfProps, txtProps } from "./CheckboxGroup";

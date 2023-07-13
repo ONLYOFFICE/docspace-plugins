@@ -2,7 +2,7 @@ import {
   ContextMenuItemType,
   FilesExst,
   IContextMenuItem,
-} from "@onlyoffice/docspace-plugin";
+} from "@onlyoffice/docspace-plugin-sdk";
 
 export const convertFileItem: IContextMenuItem = {
   key: "convert-file-item",

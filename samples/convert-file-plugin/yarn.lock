@@ -52,7 +52,7 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@onlyoffice/docspace-plugin@file:../../onlyoffice-docspace-plugin-v1.0.0.tgz":
+"@onlyoffice/docspace-plugin-sdk@file:../../onlyoffice-docspace-plugin-v1.0.0.tgz":
   version "1.0.0"
   resolved "file:../../onlyoffice-docspace-plugin-v1.0.0.tgz#dd74fa328e2d48a04022ea5ceaf8e15e7cbcf380"
   dependencies:

@@ -4,7 +4,7 @@ import {
   IMessage,
   PluginStatus,
   ToastType,
-} from "@onlyoffice/docspace-plugin";
+} from "@onlyoffice/docspace-plugin-sdk";
 
 import { convertFileItem } from "./ContextMenuItem";
 
