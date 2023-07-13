@@ -1,4 +1,6 @@
 node_modules
 src
 npx
-templates
+template
+samples
+onlyoffice-docspace-plugin-sdk-v1.0.0.tgz

@@ -16,6 +16,6 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "file:../../onlyoffice-docspace-plugin-v1.0.0.tgz"
+    "@onlyoffice/docspace-plugin-sdk": "file:../../onlyoffice-docspace-plugin-sdk-v1.0.0.tgz"
   }
 }
