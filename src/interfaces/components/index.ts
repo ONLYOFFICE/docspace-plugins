@@ -1,3 +1,8 @@
+import { ITextArea } from "./ITextArea";
+import { IText } from "./IText";
+import { ILabel } from "./ILabel";
+import { IBox, IBorderProp } from "./IBox";
+import { IComponent } from "./IComponent";
 import { IInput, InputSize, InputType, InputAutocomplete } from "./IInput";
 import { ICheckbox } from "./ICheckbox";
 import { IToggleButton } from "./IToggleButton";
@@ -15,4 +20,10 @@ export {
   ToastType,
   IButton,
   ButtonSize,
+  IComponent,
+  IBox,
+  IBorderProp,
+  ILabel,
+  IText,
+  ITextArea,
 };
