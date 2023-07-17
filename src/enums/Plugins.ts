@@ -3,3 +3,9 @@ export const enum PluginItems {
   ACTION_BUTTON = "action button",
   PROFILE_MENU = "profile menu",
 }
+
+export const enum PluginStatus {
+  active = "active",
+  hide = "hide",
+  pending = "pending",
+}

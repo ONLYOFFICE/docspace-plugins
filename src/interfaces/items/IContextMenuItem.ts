@@ -1,4 +1,12 @@
-import { ContextMenuItemType } from "../../enums/ContextMenuItemType";
+import { FilesExst, UsersType } from "../../enums";
+import { IMessage } from "../utils";
+
+export const enum ContextMenuItemType {
+  Files = "Files",
+  Folders = "Folders",
+  Rooms = "Rooms",
+  All = "All",
+}
 
 export interface IContextMenuItem {
   key: string;
@@ -6,5 +14,7 @@ export interface IContextMenuItem {
   position: number;
   label: string;
   icon: string;
-  onClick: (item: any | null) => void;
+  onClick: (id: number) => Promise<IMessage> | Promise<void> | IMessage | void;
+  fileExt?: FilesExst[] | "all";
+  usersTypes?: UsersType[];
 }

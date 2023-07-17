@@ -1,6 +1,6 @@
 {
-  "name": "onlyoffice-docspace-plugin",
-  "version": "1.0.0",
+  "name": "@onlyoffice/docspace-plugin-sdk",
+  "version": "0.0.1",
   "description": "Simple plugin system for onlyoffice docspace",
   "license": "MIT",
   "homepage": "https://www.onlyoffice.com",

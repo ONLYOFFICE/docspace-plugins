@@ -1,21 +1,13 @@
-import { IContextMenuItem } from "../items/IContextMenuItem";
-import { IMainButtonItem } from "../items/IMainButtonItem";
-import { IProfileMenuItem } from "../items/IProfileMenuItem";
-import { ISeparatorItem } from "../items/ISeparatorItem";
-
-import { PluginItems } from "../../enums/Plugins";
+import { PluginStatus } from "../../enums";
 
 export interface IPlugin {
-  getPluginName(): string;
-  getPluginVersion(): string;
+  status: PluginStatus;
 
-  activate(): Map<
-    PluginItems,
-    Map<
-      string,
-      IMainButtonItem | IContextMenuItem | IProfileMenuItem | ISeparatorItem
-    >
-  > | null;
+  onLoadCallback: () => Promise<void>;
 
-  deactivate(): Map<PluginItems, string[]> | null;
+  updateStatus(status: PluginStatus): void;
+
+  getStatus(): PluginStatus;
+
+  setOnLoadCallback(callback: () => Promise<void>): void;
 }
