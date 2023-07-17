@@ -24,6 +24,12 @@ const authorQuestion = {
   message: "Plugin author:",
 };
 
+const logoQuestion = {
+  name: "plugin-logo",
+  type: "input",
+  message: "Plugin logo:",
+};
+
 const descriptionQuestion = {
   name: "plugin-description",
   type: "input",
@@ -34,6 +40,12 @@ const licenseQuestion = {
   name: "plugin-license",
   type: "input",
   message: "Plugin license:",
+};
+
+const homepageQuestion = {
+  name: "plugin-homepage",
+  type: "input",
+  message: "Plugin homepage:",
 };
 
 const scopes = [
@@ -53,8 +65,10 @@ const QUESTIONS = [
   nameQuestion,
   versionQuestion,
   authorQuestion,
+  logoQuestion,
   descriptionQuestion,
   licenseQuestion,
+  homepageQuestion,
   scopesQuestion,
 ];
 
