@@ -8,6 +8,7 @@ export interface InfoPanelSubMenu {
 }
 
 export interface IInfoPanelItem {
+  key: string;
   filesType?: FilesType[];
   filesExsts?: FilesExst[];
   subMenu: InfoPanelSubMenu;

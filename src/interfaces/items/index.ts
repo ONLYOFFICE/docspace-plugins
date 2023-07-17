@@ -1,4 +1,4 @@
-import { IInfoPanelItem } from "./IInfoPanelItem";
+import { IInfoPanelItem, InfoPanelSubMenu } from "./IInfoPanelItem";
 import { IContextMenuItem, ContextMenuItemType } from "./IContextMenuItem";
 import { ISeparatorItem } from "./ISeparatorItem";
 
@@ -7,4 +7,5 @@ export {
   ContextMenuItemType,
   ISeparatorItem,
   IInfoPanelItem,
+  InfoPanelSubMenu,
 };

@@ -11,7 +11,7 @@ export {
   PluginItems,
   PluginStatus,
   FilesExst,
+  FilesType,
   UsersType,
   Components,
-  FilesType,
 };

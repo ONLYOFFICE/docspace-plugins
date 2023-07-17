@@ -18,6 +18,7 @@ import {
   ContextMenuItemType,
   ISeparatorItem,
   IInfoPanelItem,
+  InfoPanelSubMenu,
 } from "./interfaces/items";
 
 import {
@@ -91,4 +92,5 @@ export {
   FilesType,
   IInfoPanelItem,
   IInfoPanelPlugin,
+  InfoPanelSubMenu,
 };
