@@ -45,8 +45,10 @@ function createTemplate(
   pluginName,
   version,
   author,
+  logo,
   description,
   license,
+  homepage,
   scopes
 ) {
   const copyActions = [];
@@ -81,18 +83,20 @@ function createTemplate(
         const newJson = JSON.parse(contents);
 
         newJson.name = name;
-        newJson.version = version;
-        newJson.scopes = scopes;
-        newJson.author = author;
-        newJson.description = description;
-        newJson.pluginName = pluginName;
-        newJson.license = license;
+        newJson.version = version || "";
+        newJson.scopes = scopes || [];
+        newJson.author = author || "";
+        newJson.description = description || "";
+        newJson.pluginName = pluginName || "";
+        newJson.license = license || "";
+        newJson.logo = logo || "";
+        newJson.homepage = homepage || "";
 
         fs.writeFileSync(writePath, JSON.stringify(newJson, null, 2), "utf8");
 
         break;
       case "webpack.config.js":
-        const newConf = contents.replace("default.js", `${pluginName}.js`);
+        const newConf = contents.replace("default.js", `plugin.js`);
 
         fs.writeFileSync(writePath, newConf, "utf8");
 

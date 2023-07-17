@@ -11,15 +11,17 @@ const jsonDataObj = JSON.parse(jsonData);
 const docspace = {
   name: jsonDataObj.name,
   version: jsonDataObj.version,
-  description: jsonDataObj.description,
-  license: jsonDataObj.license,
-  author: jsonDataObj.author,
-  pluginName: jsonDataObj.pluginName,
-  scopes: jsonDataObj.scopes,
+  description: jsonDataObj.description || "",
+  license: jsonDataObj.license || "",
+  author: jsonDataObj.author || "",
+  pluginName: jsonDataObj.pluginName || "",
+  homePage: jsonDataObj.homepage || "",
+  image: jsonDataObj.logo || "",
+  scopes: jsonDataObj.scopes.join(","),
 };
 
-zip.file("ConvertFilePlugin.js", jsData);
-zip.file("docspace.json", JSON.stringify(docspace, null, 2));
+zip.file("plugin.js", jsData);
+zip.file("config.json", JSON.stringify(docspace, null, 2));
 
 if (fs.existsSync("./assets")) {
   const assetsFiles = fs.readdirSync("./assets");

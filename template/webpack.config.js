@@ -16,7 +16,7 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    filename: "default.js",
+    filename: "plugin.js",
     path: path.resolve(__dirname, "dist"),
   },
 };
