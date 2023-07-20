@@ -1,6 +1,6 @@
 {
   "name": "convert-file-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Dev",
   "main": "index.ts",
   "scopes": [
@@ -12,6 +12,8 @@
   "pluginName": "ConvertFilePlugin",
   "license": "MIT",
   "private": true,
+  "logo": "logo.jpg",
+  "homepage": "https://github.com/ONLYOFFICE/onlyoffice-docspace-plugin-sdk",
   "scripts": {
     "build": "webpack && node ./scripts/createZip.js"
   },

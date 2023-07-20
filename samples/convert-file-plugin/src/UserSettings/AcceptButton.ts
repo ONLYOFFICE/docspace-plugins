@@ -15,7 +15,7 @@ import { localStorageProps, mockApiStorageProps } from "./ToggleButtonGroup";
 import convertFile, { UserSettingsValue } from "../ConvertFile";
 
 const onAcceptButtonClick = async () => {
-  const fileName = fileNameProps.value;
+  const fileName = fileNameProps?.value;
 
   const formats: FilesExst[] = [];
 
@@ -73,7 +73,7 @@ const acceptButton: IButton = {
   label: "Save",
   primary: true,
   isDisabled: getIsDisabled(
-    fileNameProps.value || "",
+    fileNameProps?.value || "",
     docxProps?.isChecked || false,
     xlsxProps?.isChecked || false
   ),

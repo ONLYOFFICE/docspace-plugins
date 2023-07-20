@@ -1,3 +1,9 @@
+export const enum FilesType {
+  Rooms = "room",
+  Files = "files",
+  Folders = "folders",
+}
+
 export const enum FilesExst {
   avi = ".avi",
   csv = ".csv",
