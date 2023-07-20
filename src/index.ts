@@ -3,6 +3,7 @@ import {
   IApiPlugin,
   ISettingsPlugin,
   IContextMenuPlugin,
+  IInfoPanelPlugin,
 } from "./interfaces/plugins";
 
 import {
@@ -31,6 +32,12 @@ import {
   ToastType,
   IButton,
   ButtonSize,
+  IComponent,
+  IBox,
+  IBorderProp,
+  ILabel,
+  IText,
+  ITextArea,
 } from "./interfaces/components";
 
 import { IMessage } from "./interfaces/utils/index";
@@ -42,6 +49,8 @@ import {
   PluginStatus,
   FilesExst,
   UsersType,
+  Components,
+  FilesType,
 } from "./enums";
 
 export {

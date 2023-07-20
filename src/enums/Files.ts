@@ -1,7 +1,7 @@
 export const enum FilesType {
-  Rooms = "room",
-  Files = "files",
-  Folders = "folders",
+  room = "room",
+  file = "file",
+  folder = "folder",
 }
 
 export const enum FilesExst {
