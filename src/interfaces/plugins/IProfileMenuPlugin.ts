@@ -6,7 +6,7 @@ export interface IProfileMenuPlugin {
 
   addProfileMenuItem(item: IProfileMenuItem | ISeparatorItem): void;
 
-  activateProfileMenuItems(): Map<string, IProfileMenuItem | ISeparatorItem>;
+  getProfileMenuItems(): Map<string, IProfileMenuItem | ISeparatorItem>;
 
-  deactivateProfileMenuItems(): string[];
+  updateProfileMenuItem(item: IProfileMenuItem | ISeparatorItem): void;
 }

@@ -1,10 +1,10 @@
-import { UsersType } from "../../enums";
-import { ContextMenuItemType } from "./IContextMenuItem";
+import { FilesExst, FilesType, UsersType } from "../../enums";
 
 export interface ISeparatorItem {
   key: string;
   position: number;
   isSeparator: boolean;
-  type?: ContextMenuItemType;
+  FilesExst?: FilesExst[];
+  FilesType?: FilesType[];
   userTypes?: UsersType[];
 }

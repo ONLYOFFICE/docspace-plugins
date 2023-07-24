@@ -1,11 +1,16 @@
-import { IInfoPanelItem, InfoPanelSubMenu } from "./IInfoPanelItem";
-import { IContextMenuItem, ContextMenuItemType } from "./IContextMenuItem";
+import { IEventListenerItem } from "./IEventListenerItem";
+import { IProfileMenuItem } from "./IProfileMenuItem";
+import { IInfoPanelItem, IInfoPanelSubMenu } from "./IInfoPanelItem";
+import { IContextMenuItem } from "./IContextMenuItem";
+import { IMainButtonItem } from "./IMainButtonItem";
 import { ISeparatorItem } from "./ISeparatorItem";
 
 export {
   IContextMenuItem,
-  ContextMenuItemType,
   ISeparatorItem,
   IInfoPanelItem,
-  InfoPanelSubMenu,
+  IInfoPanelSubMenu,
+  IMainButtonItem,
+  IProfileMenuItem,
+  IEventListenerItem,
 };

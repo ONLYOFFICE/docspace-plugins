@@ -6,7 +6,7 @@ export interface IMainButtonPlugin {
 
   addMainButtonItem(item: IMainButtonItem | ISeparatorItem): void;
 
-  activateMainButtonItems(): Map<string, IMainButtonItem | ISeparatorItem>;
+  getMainButtonItems(): Map<string, IMainButtonItem | ISeparatorItem>;
 
-  deactivateMainButtonItems(): string[];
+  updateMainButtonItem(item: IMainButtonItem | ISeparatorItem): void;
 }

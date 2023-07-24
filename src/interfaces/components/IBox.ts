@@ -10,7 +10,7 @@ export interface IBorderProp {
 export interface IBox {
   widthProp?: string;
   paddingProp?: string;
-  displayProps?: string;
+  displayProp?: string;
   flexDirection?: string;
   alignItems?: string;
   borderProp?: string | IBorderProp;

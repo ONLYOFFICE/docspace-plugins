@@ -1,4 +1,4 @@
-import { ISettings, SettingsType } from "./ISettings";
-import { IControlGroup, ControlGroupElement } from "./IControlGroup";
+import { ISettings } from "./ISettings";
+import { IControlGroup } from "./IControlGroup";
 
-export { ISettings, IControlGroup, ControlGroupElement, SettingsType };
+export { ISettings, IControlGroup };

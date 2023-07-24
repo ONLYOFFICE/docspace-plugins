@@ -7,7 +7,5 @@ export interface IInfoPanelPlugin {
 
   getInfoPanelItems(): Map<string, IInfoPanelItem>;
 
-  getInfoPanelItemsKeys(): string[];
-
   updateInfoPanelItem(item: IInfoPanelItem): void;
 }
