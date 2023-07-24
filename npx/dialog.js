@@ -52,6 +52,10 @@ const scopes = [
   { name: "API", value: "API" },
   { name: "Settings", value: "Settings" },
   { name: "Context menu", value: "ContextMenu" },
+  { name: "Info panel", value: "InfoPanel" },
+  { name: "Main button", value: "MainButton" },
+  { name: "Profile menu", value: "ProfileMenu" },
+  { name: "Event listener", value: "EventListener" },
 ];
 
 const scopesQuestion = {

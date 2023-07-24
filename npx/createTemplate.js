@@ -1,41 +1,21 @@
 import * as fs from "fs";
 import {
-  IApiPlugin,
-  IContextMenuItem,
-  IContextMenuPlugin,
   IPlugin,
   ISeparatorItem,
-  ISettings,
-  ISettingsPlugin,
   PluginStatus,
-  addContextMenuItem,
-  adminPluginSettings,
-  contextMenuItems,
-  getAPI,
-  getAdminPluginSettings,
-  getContextMenuItems,
-  getContextMenuItemsKeys,
-  getOrigin,
-  getPrefix,
-  getProxy,
   getStatus,
-  getUserPluginSettings,
   onLoadCallback,
-  origin,
-  prefix,
-  proxy,
-  setAPI,
-  setAdminPluginSettings,
   setOnLoadCallback,
-  setOrigin,
-  setPrefix,
-  setProxy,
-  setUserPluginSettings,
   status,
-  updateContextMenuItem,
   updateStatus,
-  userPluginSettings,
 } from "./constants.js";
+import { getApiTemp } from "./helpers/api.js";
+import { getSettingsTemp } from "./helpers/settings.js";
+import { getContextMenuTemp } from "./helpers/contextMenu.js";
+import { getInfoPanelTemp } from "./helpers/infoPanel.js";
+import { getMainButtonTemp } from "./helpers/mainButton.js";
+import { getProfileMenuTemp } from "./helpers/profileMenu.js";
+import { getEventListenerTemp } from "./helpers/eventListeners.js";
 
 const CURR_DIR = process.cwd();
 
@@ -95,12 +75,6 @@ function createTemplate(
         fs.writeFileSync(writePath, JSON.stringify(newJson, null, 2), "utf8");
 
         break;
-      case "webpack.config.js":
-        const newConf = contents.replace("default.js", `plugin.js`);
-
-        fs.writeFileSync(writePath, newConf, "utf8");
-
-        break;
       case "index.ts":
         let template = `
 import {pluginsImpIns} from '@onlyoffice/docspace-plugin-sdk'
@@ -120,78 +94,86 @@ declare global {
 window.Plugins.NameIns = plugin || {};
 
 export default plugin;
-
 `;
 
-        let pluginsImpIns = `${IPlugin}, ${PluginStatus}`;
+        let pluginsImpIns = `${IPlugin}, ${PluginStatus}, ${ISeparatorItem}`;
         let pluginsIns = `${IPlugin}`;
 
         const withApi = scopes.includes("API");
         const withSettings = scopes.includes("Settings");
         const withContextMenu = scopes.includes("ContextMenu");
+        const withInfoPanel = scopes.includes("InfoPanel");
+        const withMainButton = scopes.includes("MainButton");
+        const withProfileMenu = scopes.includes("ProfileMenu");
+        const withEventListener = scopes.includes("EventListener");
 
-        let apiVars = "";
-        let apiMeth = "";
+        const { apiVars, apiMeth, IApiPlugin } = getApiTemp(withApi);
+        const { settingsVars, settingsMeth, ISettingsPlugin, ISettings } =
+          getSettingsTemp(withSettings);
+        const {
+          IContextMenuPlugin,
+          IContextMenuItem,
+          contextMenuVars,
+          contextMenuMeth,
+        } = getContextMenuTemp(withContextMenu);
+        const {
+          IInfoPanelPlugin,
+          IInfoPanelItem,
+          infoPanelVars,
+          infoPanelMeth,
+        } = getInfoPanelTemp(withInfoPanel);
+        const {
+          IMainButtonPlugin,
+          IMainButtonItem,
+          mainButtonVars,
+          mainButtonMeth,
+        } = getMainButtonTemp(withMainButton);
+        const {
+          IProfileMenuPlugin,
+          IProfileMenuItem,
+          profileMenuVars,
+          profileMenuMeth,
+        } = getProfileMenuTemp(withProfileMenu);
+        const {
+          IEventListenerPlugin,
+          IEventListenerItem,
+          eventListenerVars,
+          eventListenerMeth,
+        } = getEventListenerTemp(withEventListener);
 
         if (withApi) {
           pluginsImpIns += `, ${IApiPlugin}`;
           pluginsIns += `, ${IApiPlugin}`;
-
-          apiVars = `
-  ${origin}
-  ${proxy}
-  ${prefix}
-          `;
-
-          apiMeth = `
-            ${setOrigin}
-            ${getOrigin}
-            ${setProxy}
-            ${getProxy}
-            ${setPrefix}
-            ${getPrefix}
-            ${setAPI}
-            ${getAPI}
-          `;
         }
-
-        let settingsVars = ``;
-        let settingsMeth = ``;
 
         if (withSettings) {
           pluginsImpIns += `, ${ISettingsPlugin}, ${ISettings} `;
           pluginsIns += `, ${ISettingsPlugin}`;
-
-          settingsVars = `
-  ${userPluginSettings}
-  ${adminPluginSettings}
-          `;
-
-          settingsMeth = `
-          ${getUserPluginSettings}
-          ${setUserPluginSettings}
-          ${getAdminPluginSettings}
-          ${setAdminPluginSettings}
-          `;
         }
 
-        let contextMenuVars = "";
-        let contextMenuMeth = "";
-
         if (withContextMenu) {
-          pluginsImpIns += `, ${IContextMenuPlugin}, ${IContextMenuItem}, ${ISeparatorItem} `;
+          pluginsImpIns += `, ${IContextMenuPlugin}, ${IContextMenuItem} `;
           pluginsIns += `, ${IContextMenuPlugin}`;
+        }
 
-          contextMenuVars = `
-  ${contextMenuItems}  
-        `;
+        if (withInfoPanel) {
+          pluginsImpIns += `, ${IInfoPanelPlugin}, ${IInfoPanelItem} `;
+          pluginsIns += `, ${IInfoPanelPlugin}`;
+        }
 
-          contextMenuMeth = `
-        ${addContextMenuItem}
-        ${getContextMenuItems}
-        ${getContextMenuItemsKeys}
-        ${updateContextMenuItem}
-        `;
+        if (withMainButton) {
+          pluginsImpIns += `, ${IMainButtonPlugin}, ${IMainButtonItem} `;
+          pluginsIns += `, ${IMainButtonPlugin}`;
+        }
+
+        if (withProfileMenu) {
+          pluginsImpIns += `, ${IProfileMenuPlugin}, ${IProfileMenuItem} `;
+          pluginsIns += `, ${IProfileMenuPlugin}`;
+        }
+
+        if (withEventListener) {
+          pluginsImpIns += `, ${IEventListenerPlugin}, ${IEventListenerItem} `;
+          pluginsIns += `, ${IEventListenerPlugin}`;
         }
 
         let nameIns = `${pluginName}`;
@@ -200,6 +182,10 @@ export default plugin;
           ${apiVars}
           ${settingsVars}
           ${contextMenuVars}
+          ${infoPanelVars}
+          ${mainButtonVars}
+          ${profileMenuVars}
+          ${eventListenerVars}
           ${onLoadCallback}
           ${updateStatus}
           ${getStatus}
@@ -207,7 +193,10 @@ export default plugin;
           ${apiMeth}
           ${settingsMeth}
           ${contextMenuMeth}
-        `;
+          ${infoPanelMeth}
+          ${mainButtonMeth}
+          ${profileMenuMeth}
+          ${eventListenerMeth}`;
 
         template = template
           .replaceAll("pluginsImpIns", pluginsImpIns)

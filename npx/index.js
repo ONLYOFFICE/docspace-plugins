@@ -51,5 +51,6 @@ inquirer.prompt(QUESTIONS).then((answers) => {
     console.log("Installing dependencies...");
     process.chdir(name);
     cp.exec(`yarn`);
+    cp.exec(`yarn format`);
   });
 });
