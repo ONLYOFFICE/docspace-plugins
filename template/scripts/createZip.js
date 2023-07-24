@@ -15,8 +15,8 @@ const docspace = {
   license: jsonDataObj.license || "",
   author: jsonDataObj.author || "",
   pluginName: jsonDataObj.pluginName || "",
-  homePage: jsonDataObj.homePage || "",
-  image: jsonDataObj.image || "",
+  homePage: jsonDataObj.homepage || "",
+  image: jsonDataObj.logo || "",
   scopes: jsonDataObj.scopes.join(","),
 };
 
