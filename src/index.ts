@@ -50,6 +50,13 @@ import {
   ILabel,
   IText,
   ITextArea,
+  ModalDisplayType,
+  IModalDialog,
+  IImage,
+  IFrame,
+  IComboBox,
+  IComboBoxItem,
+  ICreateDialog,
 } from "./interfaces/components";
 
 import { IMessage } from "./interfaces/utils/index";
@@ -97,5 +104,12 @@ export {
   ILabel,
   IText,
   ITextArea,
+  IFrame,
+  IImage,
+  IModalDialog,
+  ModalDisplayType,
+  IComboBox,
+  IComboBoxItem,
+  ICreateDialog,
   IMessage,
 };

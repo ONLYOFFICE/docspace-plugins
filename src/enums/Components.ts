@@ -7,4 +7,7 @@ export const enum Components {
   text = "text",
   textArea = "textArea",
   toggleButton = "toggleButton",
+  img = "img",
+  iFrame = "iFrame",
+  comboBox = "comboBox",
 }

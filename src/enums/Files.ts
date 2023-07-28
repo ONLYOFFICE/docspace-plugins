@@ -2,6 +2,8 @@ export const enum FilesType {
   room = "room",
   file = "file",
   folder = "folder",
+  image = "image",
+  video = "video",
 }
 
 export const enum FilesExst {

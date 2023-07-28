@@ -5,7 +5,7 @@ import { IMessage } from "../utils";
 
 export interface IInfoPanelSubMenu {
   name: string;
-  onClick?: () => Promise<IMessage> | IMessage | void;
+  onClick?: () => Promise<IMessage> | Promise<void> | IMessage | void;
 }
 
 export interface IInfoPanelItem {

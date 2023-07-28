@@ -1,3 +1,8 @@
+import { ICreateDialog } from "./ICreateDialog";
+import { IComboBox, IComboBoxItem } from "./IComboBox";
+import { IModalDialog, ModalDisplayType } from "./IModalDialog";
+import { IImage } from "./IImage";
+import { IFrame } from "./IFrame";
 import { ITextArea } from "./ITextArea";
 import { IText } from "./IText";
 import { ILabel } from "./ILabel";
@@ -26,4 +31,11 @@ export {
   ILabel,
   IText,
   ITextArea,
+  IFrame,
+  IImage,
+  IModalDialog,
+  ModalDisplayType,
+  IComboBox,
+  IComboBoxItem,
+  ICreateDialog,
 };
