@@ -5,6 +5,13 @@ export const enum Actions {
   updateLoading = "update-loading",
   updateStatus = "update-status",
 
+  updateContextMenuItems = "update-context-menu-items",
+  updateInfoPanelItems = "update-info-panel-items",
+  updateMainButtonItems = "update-main-button-items",
+  updateProfileMenuItems = "update-profile-menu-items",
+  updateFileItems = "update-file-items",
+  updateEventListenerItems = "update-event-listener-items",
+
   showToast = "show-toast",
 
   showSettingsModal = "show-settings-modal",
