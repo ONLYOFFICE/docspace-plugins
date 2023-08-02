@@ -1,6 +1,8 @@
 import { IMessage } from "../utils";
 
 export interface ITextArea {
+  value: string;
+  onChange: (value: string) => IMessage | void;
   placeholder?: string;
   isDisabled?: boolean;
   isReadOnly?: boolean;
@@ -10,12 +12,10 @@ export interface ITextArea {
   tabIndex?: number;
   fontSize?: number;
   heightTextArea?: number;
-  value: string;
   isJSONField?: boolean;
   enableCopy?: boolean;
   hasNumeration?: boolean;
   isFullHeight?: boolean;
   heightScale?: boolean;
-  onChange: (value: string) => IMessage | void;
   copyInfoText?: boolean;
 }

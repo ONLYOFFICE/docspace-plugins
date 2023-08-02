@@ -4,7 +4,7 @@ import { PluginStatus } from "./Plugins";
 import { FilesExst, FilesType } from "./Files";
 import { UsersType } from "./UsersType";
 import { Components } from "./Components";
-import { SettingsType, ControlGroupElement } from "./Settings";
+import { SettingsType } from "./Settings";
 
 export {
   Actions,
@@ -14,6 +14,5 @@ export {
   FilesType,
   PluginStatus,
   SettingsType,
-  ControlGroupElement,
   UsersType,
 };

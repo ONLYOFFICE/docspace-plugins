@@ -1,3 +1,4 @@
+import { IFileItem, File } from "./IFileItem";
 import { IEventListenerItem } from "./IEventListenerItem";
 import { IProfileMenuItem } from "./IProfileMenuItem";
 import { IInfoPanelItem, IInfoPanelSubMenu } from "./IInfoPanelItem";
@@ -13,4 +14,6 @@ export {
   IMainButtonItem,
   IProfileMenuItem,
   IEventListenerItem,
+  IFileItem,
+  File,
 };

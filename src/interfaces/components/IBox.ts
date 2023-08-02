@@ -1,4 +1,4 @@
-import { IComponent } from "./IComponent";
+import { Component } from "./Component";
 
 export interface IBorderProp {
   color: string;
@@ -28,5 +28,5 @@ export interface IBox {
   marginProp?: string;
   overflowProp?: string;
   textAlign?: string;
-  children?: IComponent[];
+  children?: Component[];
 }

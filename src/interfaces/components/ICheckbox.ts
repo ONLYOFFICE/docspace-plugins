@@ -1,8 +1,9 @@
 import { IMessage } from "../utils";
 
 export interface ICheckbox {
+  isChecked: boolean;
+  onChange: () => IMessage | void;
   label?: string;
-  isChecked?: boolean;
   truncate?: boolean;
   tabIndex?: number;
   hasError?: boolean;
@@ -10,6 +11,5 @@ export interface ICheckbox {
   value?: string;
   isIndeterminate?: boolean;
   isDisabled?: boolean;
-  onChange?: () => IMessage | void;
   title?: string;
 }

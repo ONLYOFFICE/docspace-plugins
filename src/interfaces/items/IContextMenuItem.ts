@@ -6,7 +6,7 @@ export interface IContextMenuItem {
   position: number;
   label: string;
   icon: string;
-  onClick: (id: number) => Promise<IMessage> | Promise<void> | IMessage | void;
+  onClick: (id: number) => Promise<IMessage> | IMessage | void;
   fileExt?: FilesExst[];
   fileType?: FilesType[];
   usersTypes?: UsersType[];

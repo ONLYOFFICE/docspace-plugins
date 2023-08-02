@@ -6,6 +6,6 @@ export interface IProfileMenuItem {
   position: number;
   label: string;
   icon: string;
-  onClick: () => Promise<IMessage> | Promise<void> | IMessage | void;
+  onClick: () => Promise<IMessage> | IMessage | void;
   usersType?: UsersType[];
 }

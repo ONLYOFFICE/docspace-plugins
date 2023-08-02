@@ -1,15 +1,9 @@
 import { SettingsType } from "../../enums/Settings";
-import { IBox, IButton } from "../components";
-import { IControlGroup } from "./IControlGroup";
+import { IBox } from "../components";
 
 export interface ISettings {
   type: SettingsType;
-  withCustomSettings?: boolean;
-  customSettings?: IBox;
-  groups?: IControlGroup[];
-  withAcceptButton?: boolean;
-  acceptButtonProps?: IButton;
-  cancelButtonProps?: IButton;
+  customSettings: IBox;
   isLoading?: boolean;
-  onLoad?: () => Promise<boolean>;
+  onLoad?: () => Promise<{ customSettings: IBox }>;
 }

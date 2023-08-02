@@ -6,8 +6,8 @@ export const enum ToastType {
 }
 
 export interface IToast {
-  type?: ToastType;
-  title?: string;
+  type: ToastType;
+  title: string;
   withCross?: boolean;
   timeout?: number;
 }

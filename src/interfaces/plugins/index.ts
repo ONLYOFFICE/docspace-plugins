@@ -1,3 +1,4 @@
+import { IFilePlugin } from "./IFilePlugin";
 import { IMainButtonPlugin } from "./IMainButtonPlugin";
 import { IProfileMenuPlugin } from "./IProfileMenuPlugin";
 import { IInfoPanelPlugin } from "./IInfoPanelPlugin";
@@ -16,4 +17,5 @@ export {
   IProfileMenuPlugin,
   IMainButtonPlugin,
   IEventListenerPlugin,
+  IFilePlugin,
 };

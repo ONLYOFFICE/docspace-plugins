@@ -5,13 +5,14 @@ import { IMessage } from "../utils";
 
 export interface IInfoPanelSubMenu {
   name: string;
-  onClick?: () => Promise<IMessage> | Promise<void> | IMessage | void;
+  onClick?: (id: number) => Promise<IMessage> | IMessage | void;
 }
 
 export interface IInfoPanelItem {
   key: string;
   subMenu: IInfoPanelSubMenu;
   body: IBox;
+  onLoad: () => Promise<{ body: IBox }>;
   filesType?: FilesType[];
   filesExsts?: FilesExst[];
   usersTypes?: UsersType[];

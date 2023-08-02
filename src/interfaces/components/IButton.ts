@@ -8,11 +8,12 @@ export const enum ButtonSize {
 }
 
 export interface IButton {
-  label?: string;
+  label: string;
+  size: ButtonSize;
+  onClick: () => Promise<IMessage> | IMessage | void;
   primary?: boolean;
-  size?: ButtonSize;
   scale?: boolean;
   isLoading?: boolean;
   isDisabled?: boolean;
-  onClick?: () => Promise<void> | Promise<IMessage> | IMessage | void;
+  withLoadingAfterClick?: boolean;
 }

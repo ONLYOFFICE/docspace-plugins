@@ -1,6 +1,5 @@
 export const enum Actions {
   updateProps = "update-props",
-  updateAcceptButtonProps = "update-accept-button-props",
   updateContext = "update-context",
 
   updateLoading = "update-loading",
@@ -9,6 +8,7 @@ export const enum Actions {
   showToast = "show-toast",
 
   showSettingsModal = "show-settings-modal",
+  closeSettingsModal = "close-settings-modal",
 
   showCreateDialogModal = "show-create-dialog-modal",
 

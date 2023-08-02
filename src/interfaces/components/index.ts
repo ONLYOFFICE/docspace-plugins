@@ -7,12 +7,27 @@ import { ITextArea } from "./ITextArea";
 import { IText } from "./IText";
 import { ILabel } from "./ILabel";
 import { IBox, IBorderProp } from "./IBox";
-import { IComponent } from "./IComponent";
+import {
+  Component,
+  BoxGroup,
+  ButtonGroup,
+  CheckboxGroup,
+  ComboBoxGroup,
+  IFrameGroup,
+  ImageGroup,
+  InputGroup,
+  LabelGroup,
+  SkeletonGroup,
+  TextGroup,
+  TextAreaGroup,
+  ToggleButtonGroup,
+} from "./Component";
 import { IInput, InputSize, InputType, InputAutocomplete } from "./IInput";
 import { ICheckbox } from "./ICheckbox";
 import { IToggleButton } from "./IToggleButton";
 import { IToast, ToastType } from "./IToast";
 import { IButton, ButtonSize } from "./IButton";
+import { ISkeleton } from "./ISkeleton";
 
 export {
   IBox,
@@ -27,7 +42,19 @@ export {
   IToggleButton,
   IToast,
   ToastType,
-  IComponent,
+  Component,
+  BoxGroup,
+  ButtonGroup,
+  CheckboxGroup,
+  ComboBoxGroup,
+  IFrameGroup,
+  ImageGroup,
+  InputGroup,
+  LabelGroup,
+  SkeletonGroup,
+  TextGroup,
+  TextAreaGroup,
+  ToggleButtonGroup,
   ILabel,
   IText,
   ITextArea,
@@ -38,4 +65,5 @@ export {
   IComboBox,
   IComboBoxItem,
   ICreateDialog,
+  ISkeleton,
 };

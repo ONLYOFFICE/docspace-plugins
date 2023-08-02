@@ -19,6 +19,8 @@ export const enum InputType {
 }
 
 export interface IInput {
+  value: string;
+  onChange: (value: string) => IMessage | void;
   name?: string;
   placeholder?: string;
   maxLength?: string;
@@ -34,10 +36,8 @@ export interface IInput {
   isDisabled?: boolean;
   type?: InputType;
   keepCharPositions?: boolean;
-  onChange?: (value: string) => IMessage | void;
   onBlur?: (value: string) => IMessage | void;
   onFocus?: (value: string) => IMessage | void;
-  value?: string;
   children?: Node[] | Node;
   iconSize?: number;
   iconName?: string;

@@ -7,6 +7,7 @@ import {
   IProfileMenuPlugin,
   IMainButtonPlugin,
   IEventListenerPlugin,
+  IFilePlugin,
 } from "./interfaces/plugins";
 
 import {
@@ -17,9 +18,11 @@ import {
   IMainButtonItem,
   IProfileMenuItem,
   IEventListenerItem,
+  IFileItem,
+  File,
 } from "./interfaces/items";
 
-import { ISettings, IControlGroup } from "./interfaces/settings";
+import { ISettings } from "./interfaces/settings";
 
 import {
   Actions,
@@ -29,7 +32,6 @@ import {
   FilesType,
   PluginStatus,
   SettingsType,
-  ControlGroupElement,
   UsersType,
 } from "./enums";
 
@@ -46,7 +48,19 @@ import {
   IToggleButton,
   IToast,
   ToastType,
-  IComponent,
+  Component,
+  BoxGroup,
+  ButtonGroup,
+  CheckboxGroup,
+  ComboBoxGroup,
+  IFrameGroup,
+  ImageGroup,
+  InputGroup,
+  LabelGroup,
+  SkeletonGroup,
+  TextGroup,
+  TextAreaGroup,
+  ToggleButtonGroup,
   ILabel,
   IText,
   ITextArea,
@@ -57,6 +71,7 @@ import {
   IComboBox,
   IComboBoxItem,
   ICreateDialog,
+  ISkeleton,
 } from "./interfaces/components";
 
 import { IMessage } from "./interfaces/utils/index";
@@ -70,6 +85,7 @@ export {
   IProfileMenuPlugin,
   IMainButtonPlugin,
   IEventListenerPlugin,
+  IFilePlugin,
   IContextMenuItem,
   ISeparatorItem,
   IInfoPanelItem,
@@ -77,8 +93,9 @@ export {
   IMainButtonItem,
   IProfileMenuItem,
   IEventListenerItem,
+  IFileItem,
+  File,
   ISettings,
-  IControlGroup,
   Actions,
   Components,
   Events,
@@ -86,7 +103,19 @@ export {
   FilesType,
   PluginStatus,
   SettingsType,
-  ControlGroupElement,
+  Component,
+  BoxGroup,
+  ButtonGroup,
+  CheckboxGroup,
+  ComboBoxGroup,
+  IFrameGroup,
+  ImageGroup,
+  InputGroup,
+  LabelGroup,
+  SkeletonGroup,
+  TextGroup,
+  TextAreaGroup,
+  ToggleButtonGroup,
   UsersType,
   IBox,
   IBorderProp,
@@ -100,7 +129,6 @@ export {
   IToggleButton,
   IToast,
   ToastType,
-  IComponent,
   ILabel,
   IText,
   ITextArea,
@@ -112,4 +140,5 @@ export {
   IComboBoxItem,
   ICreateDialog,
   IMessage,
+  ISkeleton,
 };

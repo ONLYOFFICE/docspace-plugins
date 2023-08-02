@@ -3,12 +3,14 @@ import {
   IBox,
   IButton,
   ICheckbox,
+  IComboBox,
   ICreateDialog,
   IFrame,
   IImage,
   IInput,
   ILabel,
   IModalDialog,
+  ISkeleton,
   IText,
   ITextArea,
   IToast,
@@ -17,23 +19,30 @@ import {
 
 export interface IMessage {
   actions?: Actions[];
-  newProps?: IInput | ICheckbox[] | IToggleButton[] | IButton | ITextArea;
+  newProps?:
+    | IInput
+    | ICheckbox
+    | IToggleButton
+    | IButton
+    | ITextArea
+    | IComboBox;
   toastProps?: IToast[];
-  acceptButtonProps?: IButton;
   contextProps?: {
     name: string;
     props:
-      | IInput
+      | IBox
       | IButton
       | ICheckbox
-      | IToggleButton
-      | IBox
+      | IComboBox
+      | IFrame
+      | IImage
+      | IInput
+      | ILabel
+      | ISkeleton
       | IText
       | ITextArea
-      | ILabel
-      | IFrame
-      | IImage;
-  };
+      | IToggleButton;
+  }[];
   createDialogProps?: ICreateDialog;
   modalDialogProps?: IModalDialog;
 }

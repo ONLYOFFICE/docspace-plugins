@@ -8,6 +8,9 @@ export interface IComboBoxItem {
 }
 
 export interface IComboBox {
+  options: IComboBoxItem[];
+  selectedOption: IComboBoxItem;
+  onSelect?: (item: IComboBoxItem) => IMessage | void;
   scaled?: boolean;
   directionX?: "left" | "right";
   directionY?: "bottom" | "top" | "both";
@@ -17,11 +20,8 @@ export interface IComboBox {
   withBackdrop?: boolean;
   isDisabled?: boolean;
   noBorder?: boolean;
-  onSelect?: (item: IComboBoxItem) => IMessage | void;
   opened?: boolean;
-  options: IComboBoxItem[];
   scaledOptions?: boolean;
-  selectedOption: IComboBoxItem;
   onToggle?: () => IMessage | void;
   modernView?: boolean;
 }

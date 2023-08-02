@@ -1,8 +1,8 @@
 import { IMessage } from "../utils";
 
 export interface IToggleButton {
-  isDisabled?: boolean;
-  label?: string;
+  label: string;
   isChecked: boolean;
-  onChange?: () => IMessage | void;
+  onChange: () => IMessage | void;
+  isDisabled?: boolean;
 }

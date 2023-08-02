@@ -10,4 +10,5 @@ export const enum Components {
   img = "img",
   iFrame = "iFrame",
   comboBox = "comboBox",
+  skeleton = "skeleton",
 }
