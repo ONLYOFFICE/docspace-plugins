@@ -1,11 +1,14 @@
 import {
   Actions,
-  ControlGroupElement,
+  Components,
+  IBox,
   ICheckbox,
-  IControlGroup,
+  IMessage,
   ToastType,
 } from "@onlyoffice/docspace-plugin-sdk";
-import acceptButton, { getIsDisabled } from "./AcceptButton";
+
+import { getIsDisabled, acceptButtonProps } from "./AcceptButton";
+
 import { fileNameProps } from "./InputGroup";
 
 const onDocxChange = () => {
@@ -15,28 +18,31 @@ const onDocxChange = () => {
     ? "Plugin will show up for .docx files"
     : "Plugin will not show up for .docx files";
 
-  return {
-    newProps: checkboxProps,
-    actions: [
-      Actions.updateProps,
-      Actions.updateAcceptButtonProps,
-      Actions.showToast,
-    ],
+  const message: IMessage = {
+    newProps: docxProps,
+    actions: [Actions.updateProps, Actions.updateContext, Actions.showToast],
     toastProps: [
       {
         type: docxProps.isChecked ? ToastType.success : ToastType.info,
         title: docxToastTitle,
       },
     ],
-    acceptButtonProps: {
-      ...acceptButton,
-      isDisabled: getIsDisabled(
-        fileNameProps.value || "",
-        docxProps.isChecked,
-        xlsxProps?.isChecked || false
-      ),
-    },
+    contextProps: [
+      {
+        name: "accept-button",
+        props: {
+          ...acceptButtonProps,
+          isDisabled: getIsDisabled(
+            fileNameProps.value || "",
+            docxProps.isChecked,
+            xlsxProps?.isChecked || false
+          ),
+        },
+      },
+    ],
   };
+
+  return message;
 };
 
 export const docxProps: ICheckbox = {
@@ -54,26 +60,27 @@ const onXlsxChange = () => {
     : "Plugin will not show up for .xlsx files";
 
   return {
-    newProps: checkboxProps,
-    actions: [
-      Actions.updateProps,
-      Actions.updateAcceptButtonProps,
-      Actions.showToast,
-    ],
+    newProps: xlsxProps,
+    actions: [Actions.updateProps, Actions.updateContext, Actions.showToast],
     toastProps: [
       {
         type: xlsxProps.isChecked ? ToastType.success : ToastType.info,
         title: xlsxToastTitle,
       },
     ],
-    acceptButtonProps: {
-      ...acceptButton,
-      isDisabled: getIsDisabled(
-        fileNameProps.value || "",
-        docxProps?.isChecked || false,
-        xlsxProps.isChecked
-      ),
-    },
+    contextProps: [
+      {
+        name: "accept-button",
+        props: {
+          ...acceptButtonProps,
+          isDisabled: getIsDisabled(
+            fileNameProps.value || "",
+            docxProps.isChecked,
+            xlsxProps?.isChecked
+          ),
+        },
+      },
+    ],
   };
 };
 
@@ -84,12 +91,60 @@ export const xlsxProps: ICheckbox = {
   onChange: onXlsxChange,
 };
 
-const checkboxProps: ICheckbox[] = [docxProps, xlsxProps];
-
-const checkboxGroup: IControlGroup = {
-  header: "Select file formats:",
-  element: ControlGroupElement.checkbox,
-  elementProps: checkboxProps,
+const docxBox: IBox = {
+  marginProp: "0 0 16px",
+  children: [{ component: Components.checkbox, props: docxProps }],
 };
 
-export default checkboxGroup;
+const xlsxBox: IBox = {
+  marginProp: "0 0 16px",
+  children: [{ component: Components.checkbox, props: xlsxProps }],
+};
+
+export const checkboxGroupBox: IBox = {
+  marginProp: "0 0 16px",
+  displayProp: "flex",
+  flexDirection: "column",
+  children: [
+    { component: Components.box, props: docxBox },
+    { component: Components.box, props: xlsxBox },
+  ],
+};
+
+const docxBoxSkeleton: IBox = {
+  marginProp: "0 0 12px",
+  children: [
+    {
+      component: Components.skeleton,
+      props: {
+        width: "100px",
+        height: "18px",
+        borderRadius: "6px",
+      },
+    },
+  ],
+};
+
+const xlsxBoxSkeleton: IBox = {
+  marginProp: "0 0 14px",
+  children: [
+    {
+      component: Components.skeleton,
+      props: {
+        width: "100px",
+        height: "18px",
+        borderRadius: "6px",
+      },
+    },
+  ],
+};
+
+export const checkboxGroupBoxSkeleton: IBox = {
+  marginProp: "0 0 12px",
+  displayProp: "flex",
+  flexDirection: "column",
+  children: [
+    { component: Components.box, props: docxBoxSkeleton },
+    { component: Components.box, props: xlsxBoxSkeleton },
+  ],
+};

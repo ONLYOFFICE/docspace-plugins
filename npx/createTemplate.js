@@ -16,6 +16,7 @@ import { getInfoPanelTemp } from "./helpers/infoPanel.js";
 import { getMainButtonTemp } from "./helpers/mainButton.js";
 import { getProfileMenuTemp } from "./helpers/profileMenu.js";
 import { getEventListenerTemp } from "./helpers/eventListeners.js";
+import { getFileTemp } from "./helpers/file.js";
 
 const CURR_DIR = process.cwd();
 
@@ -106,6 +107,7 @@ export default plugin;
         const withMainButton = scopes.includes("MainButton");
         const withProfileMenu = scopes.includes("ProfileMenu");
         const withEventListener = scopes.includes("EventListener");
+        const withFile = scopes.includes("File");
 
         const { apiVars, apiMeth, IApiPlugin } = getApiTemp(withApi);
         const { settingsVars, settingsMeth, ISettingsPlugin, ISettings } =
@@ -140,6 +142,8 @@ export default plugin;
           eventListenerVars,
           eventListenerMeth,
         } = getEventListenerTemp(withEventListener);
+        const { IFilePlugin, IFileItem, fileVars, fileMeth } =
+          getFileTemp(withFile);
 
         if (withApi) {
           pluginsImpIns += `, ${IApiPlugin}`;
@@ -176,6 +180,11 @@ export default plugin;
           pluginsIns += `, ${IEventListenerPlugin}`;
         }
 
+        if (withFile) {
+          pluginsImpIns += `, ${IFilePlugin}, ${IFileItem} `;
+          pluginsIns += `, ${IFilePlugin}`;
+        }
+
         let nameIns = `${pluginName}`;
         let contentIns = `
   ${status}
@@ -186,6 +195,7 @@ export default plugin;
           ${mainButtonVars}
           ${profileMenuVars}
           ${eventListenerVars}
+          ${fileVars}
           ${onLoadCallback}
           ${updateStatus}
           ${getStatus}
@@ -196,7 +206,8 @@ export default plugin;
           ${infoPanelMeth}
           ${mainButtonMeth}
           ${profileMenuMeth}
-          ${eventListenerMeth}`;
+          ${eventListenerMeth}
+          ${fileMeth}`;
 
         template = template
           .replaceAll("pluginsImpIns", pluginsImpIns)

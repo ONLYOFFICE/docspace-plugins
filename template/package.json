@@ -18,6 +18,6 @@
     "prettier": "2.8.6"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "file:../../onlyoffice-docspace-plugin-sdk-v0.0.8.tgz"
+    "@onlyoffice/docspace-plugin-sdk": "^0.0.2"
   }
 }

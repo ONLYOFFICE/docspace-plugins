@@ -56,6 +56,7 @@ const scopes = [
   { name: "Main button", value: "MainButton" },
   { name: "Profile menu", value: "ProfileMenu" },
   { name: "Event listener", value: "EventListener" },
+  { name: "File action", value: "File" },
 ];
 
 const scopesQuestion = {

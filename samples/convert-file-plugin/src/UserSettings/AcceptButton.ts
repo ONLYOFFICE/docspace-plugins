@@ -6,11 +6,15 @@ import {
   FilesExst,
   IMessage,
   IToast,
+  ButtonGroup,
+  Components,
+  IBox,
+  ISkeleton,
+  SkeletonGroup,
 } from "@onlyoffice/docspace-plugin-sdk";
 
 import { fileNameProps } from "./InputGroup";
 import { docxProps, xlsxProps } from "./CheckboxGroup";
-import { localStorageProps, mockApiStorageProps } from "./ToggleButtonGroup";
 
 import convertFile, { UserSettingsValue } from "../ConvertFile";
 
@@ -26,18 +30,13 @@ const onAcceptButtonClick = async () => {
     formats.push(FilesExst.xlsx);
   }
 
-  const localStorage = localStorageProps?.isChecked;
-
-  const mockApi = mockApiStorageProps?.isChecked;
-
   const settings: UserSettingsValue = {
     fileName: fileName || "",
     formats: formats,
-    mockApi: mockApi || false,
-    localStorage: localStorage || false,
   };
 
   convertFile.setUserSettingsValue({ ...settings });
+
   const convertMessage: IMessage | null = await convertFile.acceptUserSettings({
     ...settings,
   });
@@ -53,12 +52,16 @@ const onAcceptButtonClick = async () => {
   }
 
   const message: IMessage = {
-    newProps: { ...acceptButton, isDisabled: true },
+    newProps: { ...acceptButtonProps, isDisabled: true },
     actions: [Actions.showToast, Actions.updateStatus, Actions.updateProps],
     toastProps,
   };
 
-  return message;
+  return new Promise<IMessage>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(message);
+    }, 2000);
+  });
 };
 
 export const getIsDisabled = (
@@ -69,7 +72,7 @@ export const getIsDisabled = (
   return !fileName || (!isDocx && !isXlsx);
 };
 
-const acceptButton: IButton = {
+export const acceptButtonProps: IButton = {
   label: "Save",
   primary: true,
   isDisabled: getIsDisabled(
@@ -78,7 +81,35 @@ const acceptButton: IButton = {
     xlsxProps?.isChecked || false
   ),
   onClick: onAcceptButtonClick,
-  size: ButtonSize.small,
+  size: ButtonSize.normal,
+  withLoadingAfterClick: true,
 };
 
-export default acceptButton;
+const acceptButtonGroup: ButtonGroup = {
+  component: Components.button,
+  props: acceptButtonProps,
+  contextName: "accept-button",
+};
+
+export const acceptButtonBox: IBox = {
+  marginProp: "0 4px 0 0",
+  widthProp: "50%",
+  children: [acceptButtonGroup],
+};
+
+const acceptButtonPropsSkeleton: ISkeleton = {
+  width: "90px",
+  height: "40px",
+  borderRadius: "6px",
+};
+
+const acceptButtonGroupSkeleton: SkeletonGroup = {
+  component: Components.skeleton,
+  props: acceptButtonPropsSkeleton,
+};
+
+export const acceptButtonBoxSkeleton: IBox = {
+  marginProp: "0 4px 0 0",
+  widthProp: "50%",
+  children: [acceptButtonGroupSkeleton],
+};

@@ -114,7 +114,6 @@ class ConvertFilePlugin
 const plugin = new ConvertFilePlugin();
 
 plugin.setUserPluginSettings(settingsElements);
-
 plugin.setAdminPluginSettings(adminSettingsElements);
 
 convertFileItem.onClick = convertFile.onConvertFileClick;

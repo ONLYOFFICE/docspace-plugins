@@ -13,8 +13,6 @@ import plugin from ".";
 export type UserSettingsValue = {
   fileName: string;
   formats: FilesExst[];
-  mockApi: boolean;
-  localStorage: boolean;
 };
 
 export type AdminSettingsValue = {
@@ -26,8 +24,6 @@ class ConvertFile {
   userSettingsValue: UserSettingsValue = {
     fileName: "",
     formats: [],
-    mockApi: false,
-    localStorage: false,
   };
 
   adminSettingsValue: AdminSettingsValue = {
@@ -75,39 +71,7 @@ class ConvertFile {
 
     const user = await this.getUser();
 
-    const localValue = localStorage.getItem(`${user.id}-new-file-name`);
-
-    const users = await (
-      await fetch(`https://64a67577096b3f0fcc7fd1f7.mockapi.io/users`)
-    ).json();
-
-    if (users.length > 0) {
-      const value = users.find((u: any) => u.userId === user.id);
-
-      if (value) {
-        const formats = [];
-
-        if (value.docx) formats.push(FilesExst.docx);
-
-        if (value.xlsx) formats.push(FilesExst.xlsx);
-
-        plugin.updateStatus(PluginStatus.active);
-
-        this.setUserSettingsValue({
-          fileName: value.fileName,
-          formats,
-          mockApi: value.mockApi,
-          localStorage: value.localStorage,
-        });
-
-        return {
-          fileName: value.fileName,
-          formats,
-          mockApi: value.mockApi,
-          localStorage: value.localStorage,
-        };
-      }
-    }
+    const localValue = localStorage.getItem(`${user.id}-convert-file-plugin`);
 
     const value = !!localValue && JSON.parse(localValue);
 
@@ -122,26 +86,15 @@ class ConvertFile {
   };
 
   fetchAdminSettingsValue = async () => {
-    if (!this.apiURL) {
-      this.createAPIUrl();
-    }
+    const localValue = localStorage.getItem(`admin-convert-file-plugin`);
 
-    const data = await (
-      await fetch(`https://64a67577096b3f0fcc7fd1f7.mockapi.io/users`)
-    ).json();
+    const value = !!localValue && JSON.parse(localValue);
 
-    if (data.length > 0) {
-      const value: AdminSettingsValue = data.find(
-        (d: any) => d.userId === "general-settings"
-      );
+    if (value) {
+      plugin.updateStatus(PluginStatus.active);
 
-      if (value) {
-        this.setAdminSettingsValue({ pdf: value.pdf, txt: value.txt });
-
-        return { pdf: value.pdf, txt: value.txt };
-      }
-
-      return null;
+      this.setAdminSettingsValue({ ...value });
+      return value;
     }
 
     return null;
@@ -152,6 +105,8 @@ class ConvertFile {
       this.fetchUserSettingsValue(),
       this.fetchAdminSettingsValue(),
     ];
+
+    this.fetchUserSettingsValue();
 
     await Promise.all(actions);
   };
@@ -237,7 +192,6 @@ class ConvertFile {
     url.searchParams.append("action", "create");
     url.searchParams.append("fileuri", webUrl);
     url.searchParams.append("folderid", folderId);
-
     url.searchParams.append("response", "message");
 
     const actions = [];
@@ -283,6 +237,10 @@ class ConvertFile {
   };
 
   getUser = async () => {
+    if (!this.apiURL) {
+      this.createAPIUrl();
+    }
+
     const userRes = await fetch(`${this.apiURL}/people/@self`);
 
     const user = (await userRes.json()).response;
@@ -303,49 +261,11 @@ class ConvertFile {
       message = await this.onConvertFileClick(this.currentFileId);
     }
 
-    if (!value.localStorage && !value.mockApi) return message;
-
     const user = await this.getUser();
 
-    if (value.localStorage) {
-      const localStorageValue = JSON.stringify(value);
+    const localStorageValue = JSON.stringify(value);
 
-      localStorage.setItem(`${user.id}-new-file-name`, localStorageValue);
-    } else {
-      localStorage.removeItem(`${user.id}-new-file-name`);
-    }
-
-    if (value.mockApi) {
-      await fetch(`https://64a67577096b3f0fcc7fd1f7.mockapi.io/users`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json;charset=utf-8",
-        },
-        body: JSON.stringify({
-          userId: user.id,
-          fileName: value.fileName,
-          docx: value.formats.includes(FilesExst.docx),
-          xlsx: value.formats.includes(FilesExst.xlsx),
-          localStorage: value.localStorage,
-          mockApi: value.mockApi,
-        }),
-      });
-    } else {
-      const users = await (
-        await fetch(`https://64a67577096b3f0fcc7fd1f7.mockapi.io/users`)
-      ).json();
-
-      if (users.length > 0) {
-        const userId = users.find((u: any) => u.userId === user.id).id;
-
-        await fetch(
-          `https://64a67577096b3f0fcc7fd1f7.mockapi.io/users/${userId}`,
-          {
-            method: "DELETE",
-          }
-        );
-      }
-    }
+    localStorage.setItem(`${user.id}-convert-file-plugin`, localStorageValue);
 
     return message;
   };
@@ -355,43 +275,9 @@ class ConvertFile {
       this.createAPIUrl();
     }
 
-    const data = await (
-      await fetch(`https://64a67577096b3f0fcc7fd1f7.mockapi.io/users`)
-    ).json();
+    const localStorageValue = JSON.stringify(value);
 
-    if (data.length > 0) {
-      const v: any = data.find((d: any) => d.userId === "general-settings");
-
-      if (v) {
-        await fetch(
-          `https://64a67577096b3f0fcc7fd1f7.mockapi.io/users/${v.id}`,
-          {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json;charset=utf-8",
-            },
-            body: JSON.stringify({
-              ...v,
-              pdf: value.pdf,
-              txt: value.txt,
-            }),
-          }
-        );
-
-        return;
-      }
-    }
-
-    await fetch(`https://64a67577096b3f0fcc7fd1f7.mockapi.io/users`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify({
-        userId: "general-settings",
-        ...value,
-      }),
-    });
+    localStorage.setItem(`admin-convert-file-plugin`, localStorageValue);
   };
 }
 

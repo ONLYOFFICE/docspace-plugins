@@ -5,9 +5,15 @@ import {
   ToastType,
   IMessage,
   IToast,
+  ButtonGroup,
+  Components,
+  IBox,
+  ISkeleton,
+  SkeletonGroup,
 } from "@onlyoffice/docspace-plugin-sdk";
 
 import convertFile, { AdminSettingsValue } from "../ConvertFile";
+
 import { pdfProps, txtProps } from "./CheckboxGroup";
 
 const onAcceptButtonClick = async () => {
@@ -27,20 +33,58 @@ const onAcceptButtonClick = async () => {
   });
 
   const message: IMessage = {
-    newProps: { ...acceptButton, isDisabled: true },
-    actions: [Actions.showToast, Actions.updateProps, Actions.updateStatus],
+    newProps: { ...acceptButtonProps, isDisabled: true },
+    actions: [
+      Actions.showToast,
+      Actions.updateProps,
+      Actions.updateStatus,
+      Actions.closeSettingsModal,
+    ],
     toastProps,
   };
 
-  return message;
+  return new Promise<IMessage>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(message);
+    }, 2000);
+  });
 };
 
-const acceptButton: IButton = {
+export const acceptButtonProps: IButton = {
   label: "Save",
   primary: true,
   isDisabled: false,
+  scale: true,
+  withLoadingAfterClick: true,
   onClick: onAcceptButtonClick,
-  size: ButtonSize.small,
+  size: ButtonSize.normal,
 };
 
-export default acceptButton;
+const acceptButtonGroup: ButtonGroup = {
+  component: Components.button,
+  props: acceptButtonProps,
+  contextName: "accept-button",
+};
+
+export const acceptButtonBox: IBox = {
+  marginProp: "0 4px 0 0",
+  widthProp: "50%",
+  children: [acceptButtonGroup],
+};
+
+const acceptButtonPropsSkeleton: ISkeleton = {
+  width: "100%",
+  height: "40px",
+  borderRadius: "6px",
+};
+
+const acceptButtonGroupSkeleton: SkeletonGroup = {
+  component: Components.skeleton,
+  props: acceptButtonPropsSkeleton,
+};
+
+export const acceptButtonBoxSkeleton: IBox = {
+  marginProp: "0 4px 0 0",
+  widthProp: "50%",
+  children: [acceptButtonGroupSkeleton],
+};
