@@ -5,6 +5,7 @@ import { FilesExst, FilesType } from "./Files";
 import { UsersType } from "./UsersType";
 import { Components } from "./Components";
 import { SettingsType } from "./Settings";
+import { Devices } from "./Devices";
 
 export {
   Actions,
@@ -15,4 +16,5 @@ export {
   PluginStatus,
   SettingsType,
   UsersType,
+  Devices,
 };

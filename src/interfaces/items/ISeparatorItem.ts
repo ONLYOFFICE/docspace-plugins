@@ -1,4 +1,4 @@
-import { FilesExst, FilesType, UsersType } from "../../enums";
+import { Devices, FilesExst, FilesType, UsersType } from "../../enums";
 
 export interface ISeparatorItem {
   key: string;
@@ -7,4 +7,5 @@ export interface ISeparatorItem {
   FilesExst?: FilesExst[];
   FilesType?: FilesType[];
   userTypes?: UsersType[];
+  devices?: Devices[];
 }

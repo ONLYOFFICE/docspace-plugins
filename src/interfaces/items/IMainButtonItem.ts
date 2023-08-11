@@ -1,4 +1,4 @@
-import { UsersType } from "../../enums";
+import { Devices, UsersType } from "../../enums";
 import { IMessage } from "../utils";
 
 export interface IMainButtonItem {
@@ -9,4 +9,5 @@ export interface IMainButtonItem {
   onClick?: (id: number) => Promise<IMessage> | IMessage | void;
   usersType?: UsersType[];
   items?: IMainButtonItem[];
+  devices?: Devices[];
 }

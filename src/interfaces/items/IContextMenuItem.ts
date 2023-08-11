@@ -1,4 +1,4 @@
-import { FilesExst, FilesType, UsersType } from "../../enums";
+import { Devices, FilesExst, FilesType, UsersType } from "../../enums";
 import { IMessage } from "../utils";
 
 export interface IContextMenuItem {
@@ -10,4 +10,5 @@ export interface IContextMenuItem {
   fileExt?: FilesExst[];
   fileType?: FilesType[];
   usersTypes?: UsersType[];
+  devices?: Devices[];
 }

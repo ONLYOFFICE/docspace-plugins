@@ -16,4 +16,5 @@ export interface IButton {
   isLoading?: boolean;
   isDisabled?: boolean;
   withLoadingAfterClick?: boolean;
+  disableWhileRequestRunning?: boolean;
 }

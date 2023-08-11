@@ -21,4 +21,6 @@ export const enum Actions {
 
   showModal = "show-modal",
   closeModal = "close-modal",
+
+  sendPostMessage = "send-post-message",
 }

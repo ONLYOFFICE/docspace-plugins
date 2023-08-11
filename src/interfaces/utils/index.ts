@@ -17,6 +17,11 @@ import {
   IToggleButton,
 } from "../components";
 
+export interface IPostMessage {
+  frameId: string;
+  message: { [key: string]: any };
+}
+
 export interface IMessage {
   actions?: Actions[];
   newProps?:
@@ -45,4 +50,5 @@ export interface IMessage {
   }[];
   createDialogProps?: ICreateDialog;
   modalDialogProps?: IModalDialog;
+  postMessage?: IPostMessage;
 }

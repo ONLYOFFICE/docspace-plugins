@@ -33,6 +33,7 @@ import {
   PluginStatus,
   SettingsType,
   UsersType,
+  Devices,
 } from "./enums";
 
 import {
@@ -74,7 +75,7 @@ import {
   ISkeleton,
 } from "./interfaces/components";
 
-import { IMessage } from "./interfaces/utils/index";
+import { IPostMessage, IMessage } from "./interfaces/utils/index";
 
 export {
   IPlugin,
@@ -141,4 +142,6 @@ export {
   ICreateDialog,
   IMessage,
   ISkeleton,
+  IPostMessage,
+  Devices,
 };

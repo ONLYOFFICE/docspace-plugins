@@ -1,4 +1,4 @@
-import { Events, UsersType } from "../../enums";
+import { Devices, Events, UsersType } from "../../enums";
 import { IMessage } from "../utils";
 
 export interface IEventListenerItem {
@@ -6,4 +6,5 @@ export interface IEventListenerItem {
   eventType: Events;
   eventHandler: () => Promise<IMessage> | IMessage | void;
   usersTypes?: UsersType[];
+  devices?: Devices[];
 }

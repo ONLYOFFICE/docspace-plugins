@@ -1,4 +1,4 @@
-import { UsersType } from "../../enums";
+import { Devices, UsersType } from "../../enums";
 import { IMessage } from "../utils";
 
 export interface IProfileMenuItem {
@@ -8,4 +8,5 @@ export interface IProfileMenuItem {
   icon: string;
   onClick: () => Promise<IMessage> | IMessage | void;
   usersType?: UsersType[];
+  devices?: Devices[];
 }

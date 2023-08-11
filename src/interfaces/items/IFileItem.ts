@@ -1,4 +1,4 @@
-import { UsersType } from "../../enums";
+import { Devices, UsersType } from "../../enums";
 import { IMessage } from "../utils";
 
 export interface File {
@@ -16,4 +16,5 @@ export interface IFileItem {
   extension: string;
   onClick: (item: File) => Promise<IMessage> | IMessage | void;
   usersType?: UsersType[];
+  devices?: Devices[];
 }

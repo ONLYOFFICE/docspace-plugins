@@ -1,4 +1,4 @@
-import { UsersType } from "../../enums";
+import { Devices, UsersType } from "../../enums";
 import { FilesExst, FilesType } from "../../enums/Files";
 import { IBox } from "../components";
 import { IMessage } from "../utils";
@@ -16,4 +16,5 @@ export interface IInfoPanelItem {
   filesType?: FilesType[];
   filesExsts?: FilesExst[];
   usersTypes?: UsersType[];
+  devices?: Devices[];
 }
