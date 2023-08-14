@@ -8,8 +8,7 @@ import {
   IText,
 } from "@onlyoffice/docspace-plugin-sdk";
 
-import { getIsDisabled, acceptButtonProps } from "./AcceptButton";
-import { docxProps, xlsxProps } from "./CheckboxGroup";
+import { acceptButtonProps } from "./AcceptButton";
 
 const onFileNameChange = (value: string) => {
   fileNameProps.value = value;
@@ -22,11 +21,7 @@ const onFileNameChange = (value: string) => {
         name: "accept-button",
         props: {
           ...acceptButtonProps,
-          isDisabled: getIsDisabled(
-            value,
-            docxProps.isChecked || false,
-            xlsxProps?.isChecked || false
-          ),
+          isDisabled: !value,
         },
       },
     ],
@@ -75,7 +70,7 @@ const fileNamePropsSkeleton: ISkeleton = {
 };
 
 const fileNameInputBoxSkeleton: IBox = {
-  marginProp: "0 0 14px",
+  marginProp: "0 0 10px",
   widthProp: "100%",
   children: [{ component: Components.skeleton, props: fileNamePropsSkeleton }],
 };
@@ -87,7 +82,7 @@ const textPropsSkeleton: ISkeleton = {
 };
 
 const fileNameTextBoxSkeleton: IBox = {
-  marginProp: "0 0 8px",
+  marginProp: "0 0 6px",
   widthProp: "100%",
   children: [{ component: Components.skeleton, props: textPropsSkeleton }],
 };

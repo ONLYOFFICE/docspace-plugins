@@ -3,7 +3,6 @@ import {
   IButton,
   ButtonSize,
   ToastType,
-  FilesExst,
   IMessage,
   IToast,
   ButtonGroup,
@@ -14,25 +13,14 @@ import {
 } from "@onlyoffice/docspace-plugin-sdk";
 
 import { fileNameProps } from "./InputGroup";
-import { docxProps, xlsxProps } from "./CheckboxGroup";
 
 import convertFile, { UserSettingsValue } from "../ConvertFile";
 
 const onAcceptButtonClick = async () => {
   const fileName = fileNameProps?.value;
 
-  const formats: FilesExst[] = [];
-
-  if (docxProps?.isChecked) {
-    formats.push(FilesExst.docx);
-  }
-  if (xlsxProps?.isChecked) {
-    formats.push(FilesExst.xlsx);
-  }
-
   const settings: UserSettingsValue = {
     fileName: fileName || "",
-    formats: formats,
   };
 
   convertFile.setUserSettingsValue({ ...settings });
@@ -57,29 +45,13 @@ const onAcceptButtonClick = async () => {
     toastProps,
   };
 
-  return new Promise<IMessage>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(message);
-    }, 2000);
-  });
-};
-
-export const getIsDisabled = (
-  fileName: string,
-  isDocx: boolean,
-  isXlsx: boolean
-) => {
-  return !fileName || (!isDocx && !isXlsx);
+  return message;
 };
 
 export const acceptButtonProps: IButton = {
   label: "Save",
   primary: true,
-  isDisabled: getIsDisabled(
-    fileNameProps?.value || "",
-    docxProps?.isChecked || false,
-    xlsxProps?.isChecked || false
-  ),
+  isDisabled: !fileNameProps?.value,
   onClick: onAcceptButtonClick,
   size: ButtonSize.normal,
   withLoadingAfterClick: true,

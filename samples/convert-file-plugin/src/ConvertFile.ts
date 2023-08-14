@@ -6,29 +6,15 @@ import {
   ToastType,
 } from "@onlyoffice/docspace-plugin-sdk";
 
-import { convertFileItem } from "./ContextMenuItem";
-
 import plugin from ".";
 
 export type UserSettingsValue = {
   fileName: string;
-  formats: FilesExst[];
-};
-
-export type AdminSettingsValue = {
-  pdf: boolean;
-  txt: boolean;
 };
 
 class ConvertFile {
   userSettingsValue: UserSettingsValue = {
     fileName: "",
-    formats: [],
-  };
-
-  adminSettingsValue: AdminSettingsValue = {
-    pdf: true,
-    txt: true,
   };
 
   acceptFromModalSettings = false;
@@ -46,22 +32,10 @@ class ConvertFile {
 
   setUserSettingsValue = (value: UserSettingsValue) => {
     this.userSettingsValue = value;
-
-    convertFileItem.fileExt = value.formats;
-
-    plugin.updateContextMenuItem(convertFileItem);
   };
 
   getUserSettingsValue = () => {
     return this.userSettingsValue;
-  };
-
-  setAdminSettingsValue = (value: AdminSettingsValue) => {
-    this.adminSettingsValue = value;
-  };
-
-  getAdminSettingsValue = () => {
-    return this.adminSettingsValue;
   };
 
   fetchUserSettingsValue = async () => {
@@ -85,28 +59,8 @@ class ConvertFile {
     return null;
   };
 
-  fetchAdminSettingsValue = async () => {
-    const localValue = localStorage.getItem(`admin-convert-file-plugin`);
-
-    const value = !!localValue && JSON.parse(localValue);
-
-    if (value) {
-      plugin.updateStatus(PluginStatus.active);
-
-      this.setAdminSettingsValue({ ...value });
-      return value;
-    }
-
-    return null;
-  };
-
   onLoad = async () => {
-    const actions = [
-      this.fetchUserSettingsValue(),
-      this.fetchAdminSettingsValue(),
-    ];
-
-    this.fetchUserSettingsValue();
+    const actions = [this.fetchUserSettingsValue()];
 
     await Promise.all(actions);
   };
@@ -143,20 +97,6 @@ class ConvertFile {
 
     const pluginStatus = plugin.getStatus();
 
-    if (!this.adminSettingsValue.pdf && !this.adminSettingsValue.txt) {
-      const message: IMessage = {
-        actions: [Actions.showToast],
-        toastProps: [
-          {
-            type: ToastType.warning,
-            title: "DocSpace admin or DocSpace owner need enter settings",
-          },
-        ],
-      };
-
-      return message;
-    }
-
     if (
       pluginStatus === PluginStatus.pending ||
       pluginStatus === PluginStatus.hide ||
@@ -176,17 +116,6 @@ class ConvertFile {
       await (await fetch(`${this.apiURL}/files/file/${id}`)).json()
     ).response;
 
-    if (!this.userSettingsValue.formats.includes(fileExst)) {
-      const message: IMessage = {
-        actions: [Actions.showSettingsModal],
-      };
-
-      this.setAcceptFromModalSettings(true);
-      this.setCurrentFileId(id);
-
-      return message;
-    }
-
     const url = new URL(`${this.apiURL}/filehandler.ashx`);
 
     url.searchParams.append("action", "create");
@@ -196,32 +125,16 @@ class ConvertFile {
 
     const actions = [];
 
-    if (this.adminSettingsValue.pdf) {
-      url.searchParams.append(
-        "title",
-        `${this.userSettingsValue.fileName}${FilesExst.pdf}`
-      );
+    url.searchParams.append(
+      "title",
+      `${this.userSettingsValue.fileName}${FilesExst.pdf}`
+    );
 
-      actions.push(fetch(url.toString()));
-    }
-
-    if (this.adminSettingsValue.txt) {
-      url.searchParams.set(
-        "title",
-        `${this.userSettingsValue.fileName}${FilesExst.txt}`
-      );
-
-      actions.push(fetch(url.toString()));
-    }
+    actions.push(fetch(url.toString()));
 
     await Promise.all(actions);
 
-    const toastTitle =
-      this.adminSettingsValue.pdf && this.adminSettingsValue.txt
-        ? `Files were created`
-        : this.adminSettingsValue.pdf
-        ? `File "${this.userSettingsValue.fileName}${FilesExst.pdf}" was created`
-        : `File "${this.userSettingsValue.fileName}${FilesExst.txt}" was created`;
+    const toastTitle = `File "${this.userSettingsValue.fileName}${FilesExst.pdf}" was created`;
 
     const message: IMessage = {
       actions: [Actions.showToast],
@@ -268,16 +181,6 @@ class ConvertFile {
     localStorage.setItem(`${user.id}-convert-file-plugin`, localStorageValue);
 
     return message;
-  };
-
-  acceptAdminSettings = async (value: AdminSettingsValue) => {
-    if (!this.apiURL) {
-      this.createAPIUrl();
-    }
-
-    const localStorageValue = JSON.stringify(value);
-
-    localStorage.setItem(`admin-convert-file-plugin`, localStorageValue);
   };
 }
 

@@ -12,7 +12,6 @@ import {
 import { settingsElements } from "./UserSettings";
 import { convertFileItem } from "./ContextMenuItem";
 import convertFile from "./ConvertFile";
-import { adminSettingsElements } from "./AdminSettings";
 
 class ConvertFilePlugin
   implements IPlugin, ISettingsPlugin, IApiPlugin, IContextMenuPlugin
@@ -114,7 +113,6 @@ class ConvertFilePlugin
 const plugin = new ConvertFilePlugin();
 
 plugin.setUserPluginSettings(settingsElements);
-plugin.setAdminPluginSettings(adminSettingsElements);
 
 convertFileItem.onClick = convertFile.onConvertFileClick;
 

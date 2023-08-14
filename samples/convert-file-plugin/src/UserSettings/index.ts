@@ -1,18 +1,12 @@
 import {
   Components,
-  FilesExst,
   IBox,
   ISettings,
   SettingsType,
 } from "@onlyoffice/docspace-plugin-sdk";
 
 import { inputGroup, inputGroupSkeleton, fileNameProps } from "./InputGroup";
-import {
-  checkboxGroupBox,
-  checkboxGroupBoxSkeleton,
-  docxProps,
-  xlsxProps,
-} from "./CheckboxGroup";
+
 import { acceptButtonBox, acceptButtonBoxSkeleton } from "./AcceptButton";
 
 import convertFile, { UserSettingsValue } from "../ConvertFile";
@@ -24,7 +18,6 @@ const parentBox: IBox = {
   flexDirection: "column",
   children: [
     { component: Components.box, props: inputGroup },
-    { component: Components.box, props: checkboxGroupBox },
     { component: Components.box, props: acceptButtonBox },
   ],
 };
@@ -34,7 +27,6 @@ const loaderBox: IBox = {
   flexDirection: "column",
   children: [
     { component: Components.box, props: inputGroupSkeleton },
-    { component: Components.box, props: checkboxGroupBoxSkeleton },
     { component: Components.box, props: acceptButtonBoxSkeleton },
   ],
 };
@@ -48,19 +40,12 @@ export const settingsElements: ISettings = {
 
     if (value) {
       fileNameProps.value = value.fileName;
-
-      docxProps.isChecked = value.formats.includes(FilesExst.docx);
-      xlsxProps.isChecked = value.formats.includes(FilesExst.xlsx);
     }
 
     settingsElements.isLoading = false;
 
     plugin.setUserPluginSettings(settingsElements);
 
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve({ customSettings: parentBox });
-      }, 500);
-    });
+    return { customSettings: parentBox };
   },
 };

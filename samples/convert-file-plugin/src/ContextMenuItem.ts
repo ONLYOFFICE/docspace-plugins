@@ -1,8 +1,4 @@
-import {
-  FilesExst,
-  FilesType,
-  IContextMenuItem,
-} from "@onlyoffice/docspace-plugin-sdk";
+import { FilesType, IContextMenuItem } from "@onlyoffice/docspace-plugin-sdk";
 
 export const convertFileItem: IContextMenuItem = {
   key: "convert-file-item",
@@ -11,5 +7,4 @@ export const convertFileItem: IContextMenuItem = {
   icon: "logo.jpg",
   onClick: (id: number) => {},
   fileType: [FilesType.file],
-  fileExt: [FilesExst.docx, FilesExst.xlsx],
 };
