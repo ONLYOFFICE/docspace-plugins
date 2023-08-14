@@ -137,7 +137,7 @@ class ConvertFile {
     const toastTitle = `File "${this.userSettingsValue.fileName}${FilesExst.pdf}" was created`;
 
     const message: IMessage = {
-      actions: [Actions.showToast],
+      actions: [Actions.showToast, Actions.closeModal],
       toastProps: [
         {
           type: ToastType.success,
