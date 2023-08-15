@@ -1,14 +1,14 @@
 {
   "name": "convert-file-plugin",
   "version": "1.0.0",
-  "author": "Dev",
+  "author": "ONLYOFFICE",
   "main": "index.ts",
   "scopes": [
     "API",
     "Settings",
     "ContextMenu"
   ],
-  "description": "Test desc",
+  "description": "Plugin for convert file to pdf",
   "pluginName": "ConvertFilePlugin",
   "license": "MIT",
   "private": true,
