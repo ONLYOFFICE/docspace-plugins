@@ -7,8 +7,6 @@ import {
   ToastType,
 } from "@onlyoffice/docspace-plugin-sdk";
 
-const API_TOKEN = "a8f99f2bb23b45e8b7bd1d06a30c9a59";
-
 class AssemblyAI {
   apiURL = "";
   currentFileId: null | number = null;
