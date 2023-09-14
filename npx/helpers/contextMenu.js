@@ -2,15 +2,15 @@ const IContextMenuPlugin = "IContextMenuPlugin";
 const IContextMenuItem = "IContextMenuItem";
 
 const contextMenuItems = `
-  contextMenuItems: Map<string, IContextMenuItem | ISeparatorItem> = new Map();`;
+  contextMenuItems: Map<string, IContextMenuItem> = new Map();`;
 
 const addContextMenuItem = `
-  addContextMenuItem = (item: IContextMenuItem | ISeparatorItem): void => {
+  addContextMenuItem = (item: IContextMenuItem): void => {
     this.contextMenuItems.set(item.key, item);
   };`;
 
 const getContextMenuItems = `
-  getContextMenuItems = (): Map<string, IContextMenuItem | ISeparatorItem> => {
+  getContextMenuItems = (): Map<string, IContextMenuItem> => {
     return this.contextMenuItems;
   };`;
 
@@ -22,7 +22,7 @@ const getContextMenuItemsKeys = `
   };`;
 
 const updateContextMenuItem = `
-  updateContextMenuItem = (item: IContextMenuItem | ISeparatorItem): void => {
+  updateContextMenuItem = (item: IContextMenuItem): void => {
     this.contextMenuItems.set(item.key, item);
   };`;
 

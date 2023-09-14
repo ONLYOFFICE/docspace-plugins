@@ -2,20 +2,20 @@ const IMainButtonPlugin = "IMainButtonPlugin";
 const IMainButtonItem = "IMainButtonItem";
 
 const mainButtonItems = `
-  mainButtonItems: Map<string, IMainButtonItem | ISeparatorItem> = new Map();`;
+  mainButtonItems: Map<string, IMainButtonItem> = new Map();`;
 
 const addMainButtonItem = `
-  addMainButtonItem = (item: IMainButtonItem | ISeparatorItem ): void => {
+  addMainButtonItem = (item: IMainButtonItem ): void => {
     this.mainButtonItems.set(item.key, item);
   };`;
 
 const getMainButtonItems = `
-  getMainButtonItems = (): Map<string, IMainButtonItem | ISeparatorItem > => {
+  getMainButtonItems = (): Map<string, IMainButtonItem > => {
     return this.mainButtonItems;
   };`;
 
 const updateMainButtonItem = `
-  updateMainButtonItem = (item: IMainButtonItem | ISeparatorItem): void => {
+  updateMainButtonItem = (item: IMainButtonItem): void => {
     this.mainButtonItems.set(item.key, item);
   };`;
 

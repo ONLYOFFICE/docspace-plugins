@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import {
   IPlugin,
-  ISeparatorItem,
+  // ISeparatorItem,
   PluginStatus,
   getStatus,
   onLoadCallback,
@@ -97,7 +97,7 @@ window.Plugins.NameIns = plugin || {};
 export default plugin;
 `;
 
-        let pluginsImpIns = `${IPlugin}, ${PluginStatus}, ${ISeparatorItem}`;
+        let pluginsImpIns = `${IPlugin}, ${PluginStatus}`;
         let pluginsIns = `${IPlugin}`;
 
         const withApi = scopes.includes("API");

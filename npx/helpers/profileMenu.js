@@ -2,20 +2,20 @@ const IProfileMenuPlugin = "IProfileMenuPlugin";
 const IProfileMenuItem = "IProfileMenuItem";
 
 const profileMenuItems = `
-  profileMenuItems: Map<string, IProfileMenuItem | ISeparatorItem> = new Map();`;
+  profileMenuItems: Map<string, IProfileMenuItem> = new Map();`;
 
 const addProfileMenuItem = `
-  addProfileMenuItem = (item: IProfileMenuItem | ISeparatorItem ): void => {
+  addProfileMenuItem = (item: IProfileMenuItem ): void => {
     this.profileMenuItems.set(item.key, item);
   };`;
 
 const getProfileMenuItems = `
-  getProfileMenuItems = (): Map<string, IProfileMenuItem | ISeparatorItem > => {
+  getProfileMenuItems = (): Map<string, IProfileMenuItem > => {
     return this.profileMenuItems;
   };`;
 
 const updateProfileMenuItem = `
-  updateProfileMenuItem = (item: IProfileMenuItem | ISeparatorItem): void => {
+  updateProfileMenuItem = (item: IProfileMenuItem): void => {
     this.profileMenuItems.set(item.key, item);
   };`;
 

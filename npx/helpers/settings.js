@@ -1,18 +1,18 @@
 const ISettingsPlugin = "ISettingsPlugin";
 const ISettings = "ISettings";
 
-const userPluginSettings = `userPluginSettings: ISettings | null = {} as ISettings;`;
+// const userPluginSettings = `userPluginSettings: ISettings | null = {} as ISettings;`;
 const adminPluginSettings = `adminPluginSettings: ISettings | null = {} as ISettings;`;
 
-const getUserPluginSettings = `
-  getUserPluginSettings = () => {
-    return this.userPluginSettings;
-  };`;
+// const getUserPluginSettings = `
+//   getUserPluginSettings = () => {
+//     return this.userPluginSettings;
+//   };`;
 
-const setUserPluginSettings = `
-  setUserPluginSettings = (settings: ISettings | null): void => {
-    this.userPluginSettings = settings;
-  };`;
+// const setUserPluginSettings = `
+//   setUserPluginSettings = (settings: ISettings | null): void => {
+//     this.userPluginSettings = settings;
+//   };`;
 
 const getAdminPluginSettings = `  
   getAdminPluginSettings = () => {
@@ -31,12 +31,9 @@ export const getSettingsTemp = (withSettings) => {
   let settingsMeth = ``;
 
   settingsVars = `
-  ${userPluginSettings}
   ${adminPluginSettings}`;
 
   settingsMeth = `
-          ${getUserPluginSettings}
-          ${setUserPluginSettings}
           ${getAdminPluginSettings}
           ${setAdminPluginSettings}`;
 

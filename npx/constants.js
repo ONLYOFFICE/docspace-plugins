@@ -1,6 +1,6 @@
 const IPlugin = "IPlugin";
 
-const ISeparatorItem = "ISeparatorItem";
+// const ISeparatorItem = "ISeparatorItem";
 
 const PluginStatus = `PluginStatus`;
 const status = `status: PluginStatus = PluginStatus.active;`;
@@ -26,7 +26,7 @@ const setOnLoadCallback = `
 export {
   IPlugin,
   PluginStatus,
-  ISeparatorItem,
+  // ISeparatorItem,
   status,
   onLoadCallback,
   updateStatus,
