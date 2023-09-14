@@ -1,13 +1,13 @@
 import { ISettings } from "../settings/ISettings";
 
 export interface ISettingsPlugin {
-  userPluginSettings: ISettings | null;
+  // userPluginSettings: ISettings | null;
 
   adminPluginSettings: ISettings | null;
 
-  setUserPluginSettings(settings: ISettings | null): void;
+  // setUserPluginSettings(settings: ISettings | null): void;
 
-  getUserPluginSettings(): ISettings | null;
+  // getUserPluginSettings(): ISettings | null;
 
   setAdminPluginSettings(settings: ISettings | null): void;
 

@@ -31,7 +31,6 @@ import {
   FilesExst,
   FilesType,
   PluginStatus,
-  SettingsType,
   UsersType,
   Devices,
 } from "./enums";
@@ -103,7 +102,6 @@ export {
   FilesExst,
   FilesType,
   PluginStatus,
-  SettingsType,
   Component,
   BoxGroup,
   ButtonGroup,

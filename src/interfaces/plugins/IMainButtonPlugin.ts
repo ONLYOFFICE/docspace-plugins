@@ -1,12 +1,11 @@
-import { IMainButtonItem } from "../items/IMainButtonItem";
-import { ISeparatorItem } from "../items/ISeparatorItem";
+import { IMainButtonItem } from "../items";
 
 export interface IMainButtonPlugin {
-  mainButtonItems: Map<string, IMainButtonItem | ISeparatorItem>;
+  mainButtonItems: Map<string, IMainButtonItem>;
 
-  addMainButtonItem(item: IMainButtonItem | ISeparatorItem): void;
+  addMainButtonItem(item: IMainButtonItem): void;
 
-  getMainButtonItems(): Map<string, IMainButtonItem | ISeparatorItem>;
+  getMainButtonItems(): Map<string, IMainButtonItem>;
 
-  updateMainButtonItem(item: IMainButtonItem | ISeparatorItem): void;
+  updateMainButtonItem(item: IMainButtonItem): void;
 }

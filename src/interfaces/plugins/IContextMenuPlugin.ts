@@ -1,13 +1,13 @@
-import { IContextMenuItem, ISeparatorItem } from "../items";
+import { IContextMenuItem } from "../items";
 
 export interface IContextMenuPlugin {
-  contextMenuItems: Map<string, IContextMenuItem | ISeparatorItem>;
+  contextMenuItems: Map<string, IContextMenuItem>;
 
-  addContextMenuItem(item: IContextMenuItem | ISeparatorItem): void;
+  addContextMenuItem(item: IContextMenuItem): void;
 
-  getContextMenuItems(): Map<string, IContextMenuItem | ISeparatorItem>;
+  getContextMenuItems(): Map<string, IContextMenuItem>;
 
   getContextMenuItemsKeys(): string[];
 
-  updateContextMenuItem(item: IContextMenuItem | ISeparatorItem): void;
+  updateContextMenuItem(item: IContextMenuItem): void;
 }

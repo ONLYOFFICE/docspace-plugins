@@ -14,8 +14,8 @@ export const enum Actions {
 
   showToast = "show-toast",
 
-  showSettingsModal = "show-settings-modal",
-  closeSettingsModal = "close-settings-modal",
+  // showSettingsModal = "show-settings-modal",
+  // closeSettingsModal = "close-settings-modal",
 
   showCreateDialogModal = "show-create-dialog-modal",
 

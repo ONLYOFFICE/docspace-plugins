@@ -1,12 +1,11 @@
-import { IProfileMenuItem } from "../items/IProfileMenuItem";
-import { ISeparatorItem } from "../items/ISeparatorItem";
+import { IProfileMenuItem } from "../items";
 
 export interface IProfileMenuPlugin {
-  profileMenuItems: Map<string, IProfileMenuItem | ISeparatorItem>;
+  profileMenuItems: Map<string, IProfileMenuItem>;
 
-  addProfileMenuItem(item: IProfileMenuItem | ISeparatorItem): void;
+  addProfileMenuItem(item: IProfileMenuItem): void;
 
-  getProfileMenuItems(): Map<string, IProfileMenuItem | ISeparatorItem>;
+  getProfileMenuItems(): Map<string, IProfileMenuItem>;
 
-  updateProfileMenuItem(item: IProfileMenuItem | ISeparatorItem): void;
+  updateProfileMenuItem(item: IProfileMenuItem): void;
 }

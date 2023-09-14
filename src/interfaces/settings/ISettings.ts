@@ -1,9 +1,9 @@
-import { SettingsType } from "../../enums/Settings";
-import { IBox } from "../components";
+import { ButtonGroup, IBox } from "../components";
 
 export interface ISettings {
-  type: SettingsType;
-  customSettings: IBox;
+  settings: IBox;
+  saveButton: ButtonGroup;
+
   isLoading?: boolean;
-  onLoad?: () => Promise<{ customSettings: IBox }>;
+  onLoad?: () => Promise<{ settings: IBox }>;
 }
