@@ -6,6 +6,8 @@ import {
   Actions,
   ToggleButtonGroup,
   BoxGroup,
+  IText,
+  TextGroup,
 } from "@onlyoffice/docspace-plugin-sdk";
 
 import drawIo from "../../Drawio";
@@ -43,7 +45,7 @@ const onChange = () => {
 export const libToggleButtonProps: IToggleButton = {
   isChecked: drawIo.adminSettings.lib,
   onChange,
-  label: "Libraries",
+  style: { position: "relative", gap: "0px" },
 };
 
 const toggleComponent: ToggleButtonGroup = {
@@ -52,15 +54,39 @@ const toggleComponent: ToggleButtonGroup = {
 };
 
 const toggleBox: IBox = {
-  marginProp: "0 0 32px",
+  displayProp: "flex",
+  alignItems: "center",
   children: [toggleComponent],
+};
+
+const libText: IText = {
+  text: "Libraries",
+  fontWeight: 600,
+  fontSize: "16px",
+  lineHeight: "22px",
+  noSelect: true,
+};
+
+const libTextComponent: TextGroup = {
+  component: Components.text,
+  props: libText,
+};
+
+const libTextBox: IBox = {
+  marginProp: "0 0 0",
+  children: [libTextComponent],
 };
 
 export const libGroup: BoxGroup = {
   component: Components.box,
   props: {
     displayProp: "flex",
-    flexDirection: "column",
-    children: [{ component: Components.box, props: toggleBox }],
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    children: [
+      { component: Components.box, props: libTextBox },
+      { component: Components.box, props: toggleBox },
+    ],
   },
 };

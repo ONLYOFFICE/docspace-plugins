@@ -1,24 +1,30 @@
-import { IBox, ISettings, SettingsType } from "@onlyoffice/docspace-plugin-sdk";
+import { Components, IBox, ISettings } from "@onlyoffice/docspace-plugin-sdk";
 
 import drawIo from "../../Drawio";
 import plugin from "../..";
 
 import { urlGroup, urlInput } from "./Url";
 import { langComboBox, langGroup, options } from "./Lang";
-import { offGroup, offToggleButtonProps } from "./Off";
+import { offGroup, offToggleButtonProps, offDescriptionBox } from "./Off";
 import { libGroup, libToggleButtonProps } from "./Lib";
-import { adminAcceptGroup } from "./Button";
+import { adminButtonComponent } from "./Button";
 
 const parentBox: IBox = {
   displayProp: "flex",
   flexDirection: "column",
   marginProp: "16 0 0 0",
-  children: [urlGroup, langGroup, offGroup, libGroup, adminAcceptGroup],
+  children: [
+    urlGroup,
+    langGroup,
+    offGroup,
+    { component: Components.box, props: { ...offDescriptionBox } },
+    libGroup,
+  ],
 };
 
 const adminSettings: ISettings = {
-  type: SettingsType.settingsPage,
-  customSettings: parentBox,
+  settings: parentBox,
+  saveButton: adminButtonComponent,
   onLoad: async () => {
     const adminSettingsVal = drawIo.fetchAdminSettings();
 
@@ -32,7 +38,7 @@ const adminSettings: ISettings = {
     offToggleButtonProps.isChecked = drawIo.adminSettings.off;
     libToggleButtonProps.isChecked = drawIo.adminSettings.lib;
 
-    if (!adminSettingsVal) return { customSettings: parentBox };
+    if (!adminSettingsVal) return { settings: parentBox };
 
     urlInput.value = adminSettingsVal.url;
     langComboBox.selectedOption = options.find(
@@ -46,7 +52,7 @@ const adminSettings: ISettings = {
 
     plugin.setAdminPluginSettings(adminSettings);
 
-    return { customSettings: parentBox };
+    return { settings: parentBox };
   },
 };
 

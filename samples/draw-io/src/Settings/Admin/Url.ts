@@ -58,13 +58,17 @@ const urlInputComponent: InputGroup = {
 };
 
 const inputBox: IBox = {
-  marginProp: "0 0 16px",
-  widthProp: "300px",
+  marginProp: "0 0 24px",
+  widthProp: "100%",
   children: [urlInputComponent],
 };
 
 const urlText: IText = {
-  text: "Draw.io URL",
+  text: "Draw.io",
+  fontWeight: 600,
+  fontSize: "13px",
+  lineHeight: "20px",
+  noSelect: true,
 };
 
 const urlTextComponent: TextGroup = {
@@ -73,7 +77,7 @@ const urlTextComponent: TextGroup = {
 };
 
 const urlTextBox: IBox = {
-  marginProp: "0 0 8px",
+  marginProp: "0 0 4px",
   children: [urlTextComponent],
 };
 

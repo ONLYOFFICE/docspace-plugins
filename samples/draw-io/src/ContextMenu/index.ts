@@ -14,10 +14,9 @@ const onClick = async (id: number) => {
 
 export const contextMenuItem: IContextMenuItem = {
   key: "drawio-context-menu-item",
-  position: 0,
   label: "Edit diagram",
   onClick,
   icon: "drawio.png",
-  devices: [Devices.desktop],
-  fileType: [FilesType.image],
+  fileType: [FilesType.image, FilesType.file],
+  fileExt: [".drawio", ".png"],
 };

@@ -8,5 +8,7 @@ const onClick = async (item: File) => {
 
 export const drawIoItem: IFileItem = {
   extension: ".drawio",
+  fileTypeName: "Diagram",
+  fileIcon: "drawio-32.svg",
   onClick,
 };

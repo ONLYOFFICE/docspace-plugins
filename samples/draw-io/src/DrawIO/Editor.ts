@@ -6,6 +6,8 @@ import {
 } from "@onlyoffice/docspace-plugin-sdk";
 import drawIo from "../Drawio";
 
+let autoSaveTimer = null;
+
 function DiagramEditor(
   ui: string,
   dark: string,
@@ -92,7 +94,7 @@ DiagramEditor.prototype.getFrameId = function () {
 DiagramEditor.prototype.getFrameUrl = function () {
   var url = this.url;
 
-  url += "?proto=json&spin=1&stealth=1&embed=1";
+  url += "?proto=json&spin=1&embed=1";
 
   if (this.ui != null) {
     url += "&ui=" + this.ui;
@@ -183,39 +185,45 @@ DiagramEditor.prototype.handleMessage = async function (msg) {
       return message;
 
     case "autosave":
-      this.xml = msg.xml;
-      if (this.format === "xml") {
-        this.save(msg.xml, true);
-      } else {
-        const message: IMessage = {
-          actions: [Actions.sendPostMessage],
-          postMessage: {
-            frameId: this.frameId,
-            message: {
-              action: "export",
-              format: this.format,
-              xml: msg.xml,
-              spinKey: "export",
+      if (autoSaveTimer) return;
+
+      autoSaveTimer = setTimeout(() => {
+        this.xml = msg.xml;
+        if (this.format === "xml") {
+          this.save(msg.xml, true);
+        } else {
+          const message: IMessage = {
+            actions: [Actions.sendPostMessage],
+            postMessage: {
+              frameId: this.frameId,
+              message: {
+                action: "export",
+                format: this.format,
+                xml: msg.xml,
+                spinKey: "export",
+              },
             },
+          };
+
+          return message;
+        }
+
+        const message = {};
+
+        message.actions = [Actions.sendPostMessage];
+        message.postMessage = {
+          frameId: this.frameId,
+          message: {
+            action: "status",
+            messageKey: "allChangesSaved",
+            modified: false,
           },
         };
 
+        autoSaveTimer = null;
+
         return message;
-      }
-
-      const message = {};
-
-      message.actions = [Actions.sendPostMessage];
-      message.postMessage = {
-        frameId: this.frameId,
-        message: {
-          action: "status",
-          messageKey: "allChangesSaved",
-          modified: false,
-        },
-      };
-
-      return message;
+      }, 30000);
 
     case "export":
       this.xml = null;
@@ -284,7 +292,7 @@ DiagramEditor.prototype.initializeEditor = function () {
       autosave: this.showSaveButton ? 1 : 0,
       saveAndExit: this.showSaveButton ? "1" : "0",
       modified: "unsavedChanges",
-      title: "",
+      title: this.title,
     },
   };
 

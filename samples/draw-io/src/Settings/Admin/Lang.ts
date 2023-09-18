@@ -97,7 +97,8 @@ export const langComboBox: IComboBox = {
   onSelect,
   scaled: true,
   dropDownMaxHeight: 400,
-  directionY: "top",
+  directionY: "both",
+  scaledOptions: true,
 };
 
 const langComponent: ComboBoxGroup = {
@@ -106,13 +107,17 @@ const langComponent: ComboBoxGroup = {
 };
 
 const langBox: IBox = {
-  marginProp: "0 0 8px",
-  widthProp: "200px",
+  marginProp: "0 0 20px",
+  widthProp: "100%",
   children: [langComponent],
 };
 
 const langText: IText = {
   text: "Language",
+  fontWeight: 600,
+  fontSize: "13px",
+  lineHeight: "20px",
+  noSelect: true,
 };
 
 const langTextComponent: TextGroup = {
@@ -121,7 +126,7 @@ const langTextComponent: TextGroup = {
 };
 
 const langTextBox: IBox = {
-  marginProp: "0 0 8px",
+  marginProp: "0 0 0",
   children: [langTextComponent],
 };
 

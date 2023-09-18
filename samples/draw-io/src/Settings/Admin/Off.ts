@@ -45,7 +45,7 @@ const onChange = () => {
 export const offToggleButtonProps: IToggleButton = {
   isChecked: drawIo.adminSettings.off,
   onChange,
-  label: "Offline mode",
+  style: { position: "relative", gap: "0px" },
 };
 
 const toggleComponent: ToggleButtonGroup = {
@@ -54,12 +54,18 @@ const toggleComponent: ToggleButtonGroup = {
 };
 
 const toggleBox: IBox = {
-  marginProp: "0 0 16px",
+  displayProp: "flex",
+  alignItems: "center",
   children: [toggleComponent],
 };
 
 const textProps: IText = {
   text: `When the "offline mode" is active, this disabled all remote operations and features to protect`,
+  color: "#A3A9AE",
+  fontSize: "12px",
+  fontWeight: 400,
+  lineHeight: "16px",
+  noSelect: true,
 };
 
 const textComponent: TextGroup = {
@@ -67,19 +73,40 @@ const textComponent: TextGroup = {
   props: textProps,
 };
 
-const textBox: IBox = {
-  marginProp: "0 0 8px",
+export const offDescriptionBox: IBox = {
+  marginProp: "0 0 24px",
   children: [textComponent],
+};
+
+const offText: IText = {
+  text: "Offline mode",
+  fontWeight: 600,
+  fontSize: "16px",
+  lineHeight: "22px",
+  noSelect: true,
+};
+
+const offTextComponent: TextGroup = {
+  component: Components.text,
+  props: offText,
+};
+
+const offTextBox: IBox = {
+  marginProp: "0 0 0",
+  children: [offTextComponent],
 };
 
 export const offGroup: BoxGroup = {
   component: Components.box,
   props: {
     displayProp: "flex",
-    flexDirection: "column",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginProp: "0 0 8px",
     children: [
+      { component: Components.box, props: offTextBox },
       { component: Components.box, props: toggleBox },
-      { component: Components.box, props: textBox },
     ],
   },
 };

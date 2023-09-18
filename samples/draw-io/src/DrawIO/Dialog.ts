@@ -10,8 +10,8 @@ import {
 } from "@onlyoffice/docspace-plugin-sdk";
 
 export const frameProps: IFrame = {
-  width: "100%;",
-  height: "100%;",
+  width: "100%",
+  height: "100%",
   name: "test-drawio",
   src: "",
 };
@@ -22,8 +22,9 @@ const skeletonProps: ISkeleton = {
 };
 
 const body: IBox = {
-  widthProp: "80vw",
-  heightProp: "70vh",
+  widthProp: "100vw",
+  heightProp: "calc(var(--vh, 1vh) * 100)",
+
   children: [
     {
       component: Components.iFrame,
@@ -33,8 +34,8 @@ const body: IBox = {
 };
 
 const bodySkeleton: IBox = {
-  widthProp: "80vw",
-  heightProp: "70vh",
+  widthProp: "100vw",
+  heightProp: "calc(var(--vh, 1vh) * 100)",
   children: [
     {
       component: Components.skeleton,
@@ -45,7 +46,7 @@ const bodySkeleton: IBox = {
 
 export const drawIoModalDialogProps: IModalDialog = {
   dialogHeader: "",
-  dialogBody: bodySkeleton,
+  dialogBody: body,
   displayType: ModalDisplayType.modal,
   onClose: () => {
     const message: IMessage = {
@@ -57,7 +58,7 @@ export const drawIoModalDialogProps: IModalDialog = {
   onLoad: async () => {
     return {
       newDialogHeader: drawIoModalDialogProps.dialogHeader,
-      newDialogBody: body,
+      newDialogBody: drawIoModalDialogProps.dialogBody,
     };
   },
   autoMaxHeight: true,

@@ -1,7 +1,6 @@
 import {
   IPlugin,
   PluginStatus,
-  ISeparatorItem,
   IApiPlugin,
   ISettingsPlugin,
   ISettings,
@@ -14,7 +13,6 @@ import {
 } from "@onlyoffice/docspace-plugin-sdk";
 
 import { adminSettings } from "./Settings/Admin";
-import { userSettings } from "./Settings/User";
 
 import { contextMenuItem } from "./ContextMenu";
 import { mainButtonItem } from "./MainButton";
@@ -40,9 +38,9 @@ class Drawio
   userPluginSettings: ISettings | null = {} as ISettings;
   adminPluginSettings: ISettings | null = {} as ISettings;
 
-  contextMenuItems: Map<string, IContextMenuItem | ISeparatorItem> = new Map();
+  contextMenuItems: Map<string, IContextMenuItem> = new Map();
 
-  mainButtonItems: Map<string, IMainButtonItem | ISeparatorItem> = new Map();
+  mainButtonItems: Map<string, IMainButtonItem> = new Map();
 
   fileItems: Map<string, IFileItem> = new Map();
 
@@ -94,14 +92,6 @@ class Drawio
     return { origin: this.origin, proxy: this.proxy, prefix: this.prefix };
   };
 
-  getUserPluginSettings = () => {
-    return this.userPluginSettings;
-  };
-
-  setUserPluginSettings = (settings: ISettings | null): void => {
-    this.userPluginSettings = settings;
-  };
-
   getAdminPluginSettings = () => {
     return this.adminPluginSettings;
   };
@@ -110,11 +100,11 @@ class Drawio
     this.adminPluginSettings = settings;
   };
 
-  addContextMenuItem = (item: IContextMenuItem | ISeparatorItem): void => {
+  addContextMenuItem = (item: IContextMenuItem): void => {
     this.contextMenuItems.set(item.key, item);
   };
 
-  getContextMenuItems = (): Map<string, IContextMenuItem | ISeparatorItem> => {
+  getContextMenuItems = (): Map<string, IContextMenuItem> => {
     return this.contextMenuItems;
   };
 
@@ -124,19 +114,19 @@ class Drawio
     return keys;
   };
 
-  updateContextMenuItem = (item: IContextMenuItem | ISeparatorItem): void => {
+  updateContextMenuItem = (item: IContextMenuItem): void => {
     this.contextMenuItems.set(item.key, item);
   };
 
-  addMainButtonItem = (item: IMainButtonItem | ISeparatorItem): void => {
+  addMainButtonItem = (item: IMainButtonItem): void => {
     this.mainButtonItems.set(item.key, item);
   };
 
-  getMainButtonItems = (): Map<string, IMainButtonItem | ISeparatorItem> => {
+  getMainButtonItems = (): Map<string, IMainButtonItem> => {
     return this.mainButtonItems;
   };
 
-  updateMainButtonItem = (item: IMainButtonItem | ISeparatorItem): void => {
+  updateMainButtonItem = (item: IMainButtonItem): void => {
     this.mainButtonItems.set(item.key, item);
   };
 
@@ -168,7 +158,6 @@ plugin.addFileItem(drawIoItem);
 plugin.addContextMenuItem(contextMenuItem);
 
 plugin.setAdminPluginSettings(adminSettings);
-plugin.setUserPluginSettings(userSettings);
 
 window.Plugins.Drawio = plugin || {};
 

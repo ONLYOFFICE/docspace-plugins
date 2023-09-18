@@ -39,15 +39,16 @@ export const adminButtonProps: IButton = {
   label: "Save",
   scale: false,
   primary: true,
-  isDisabled: !drawIo.validateAdminSettings(
-    urlInput?.value || "",
-    langComboBox?.selectedOption,
-    offToggleButtonProps?.isChecked,
-    libToggleButtonProps?.isChecked
-  ),
+  isDisabled: true,
+  // isDisabled: !drawIo.validateAdminSettings(
+  //   urlInput?.value || "",
+  //   langComboBox?.selectedOption,
+  //   offToggleButtonProps?.isChecked,
+  //   libToggleButtonProps?.isChecked
+  // ),
 };
 
-const adminButtonComponent: ButtonGroup = {
+export const adminButtonComponent: ButtonGroup = {
   component: Components.button,
   props: adminButtonProps,
   contextName: "acceptButton",
