@@ -6,11 +6,13 @@ import {
   Components,
   IButton,
   IMessage,
+  PluginStatus,
   ToastType,
 } from "@onlyoffice/docspace-plugin-sdk";
 
 import assemblyAI from "../AssemblyAI";
 import { tokenInput } from "./Token";
+import plugin from "..";
 
 const onClick = async () => {
   assemblyAI.setAPIToken(tokenInput.value);
@@ -20,12 +22,10 @@ const onClick = async () => {
     await assemblyAI.speechToText(assemblyAI.currentFileId);
   }
 
+  plugin.updateStatus(PluginStatus.active);
+
   const message: IMessage = {
-    actions: [
-      Actions.showToast,
-      Actions.updateProps,
-      Actions.closeSettingsModal,
-    ],
+    actions: [Actions.showToast, Actions.updateProps, Actions.updateStatus],
     toastProps: [{ title: "Token is saved", type: ToastType.success }],
     newProps: { ...userButtonProps, isDisabled: true },
   };
@@ -43,7 +43,7 @@ export const userButtonProps: IButton = {
   withLoadingAfterClick: true,
 };
 
-const userButtonComponent: ButtonGroup = {
+export const userButtonComponent: ButtonGroup = {
   component: Components.button,
   props: userButtonProps,
   contextName: "acceptButton",

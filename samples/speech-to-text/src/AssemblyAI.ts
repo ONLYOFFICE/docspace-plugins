@@ -61,9 +61,8 @@ class AssemblyAI {
 
   saveAPIToken = (apiToken: string) => {
     localStorage.setItem("speech-to-text-api-token", apiToken);
-    plugin.updateStatus(
-      !!apiToken ? PluginStatus.active : PluginStatus.pending
-    );
+
+    plugin.updateStatus(!!apiToken ? PluginStatus.active : PluginStatus.hide);
   };
 
   setCurrentFileId = (id: number | null) => {
@@ -145,15 +144,7 @@ class AssemblyAI {
   };
 
   speechToText = async (id: number) => {
-    if (!this.apiToken) {
-      const message: IMessage = {
-        actions: [Actions.showSettingsModal],
-      };
-
-      this.setCurrentFileId(id);
-
-      return message;
-    }
+    if (!this.apiToken) return;
 
     this.setCurrentFileId(null);
 

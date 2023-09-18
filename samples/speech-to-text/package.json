@@ -24,9 +24,9 @@
   "dependencies": {
     "@onlyoffice/docspace-plugin-sdk": "^0.0.2"
   },
-  "description": "Transform audio or video to text document",
+  "description": "Speech to Text Conversion is a speech recognition software that allows you to recognize and translate spoken speech into text.",
   "pluginName": "SpeechToText",
   "license": "MIT",
   "logo": "logo.png",
-  "homepage": "https://github.com/ONLYOFFICE/onlyoffice-docspace-plugin-sdk"
+  "homepage": "https://github.com/ONLYOFFICE/onlyoffice-docspace-plugin-sdk/tree/develop/samples/speech-to-text"
 }

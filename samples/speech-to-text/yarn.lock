@@ -52,9 +52,9 @@
   resolved "https://registry.yarnpkg.com/@ljharb/through/-/through-2.3.9.tgz#85f221eb82f9d555e180e87d6e50fb154af85408"
   integrity sha512-yN599ZBuMPPK4tdoToLlvgJB4CLK8fGl7ntfy0Wn7U6ttNvHYurd81bfUiK/6sMkiIwm65R6ck4L6+Y3DfVbNQ==
 
-"@onlyoffice/docspace-plugin-sdk@file:../../onlyoffice-docspace-plugin-sdk-v0.0.2222.tgz":
-  version "0.0.2222"
-  resolved "file:../../onlyoffice-docspace-plugin-sdk-v0.0.2222.tgz#3e04a29360eb2642819e180eadda7462790e4215"
+"@onlyoffice/docspace-plugin-sdk@file:../../onlyoffice-docspace-plugin-sdk-v10.0.1962.tgz":
+  version "10.0.1962"
+  resolved "file:../../onlyoffice-docspace-plugin-sdk-v10.0.1962.tgz#8c1e86660bf505c025e66b7537d236fb27539016"
   dependencies:
     inquirer "^9.1.0"
 

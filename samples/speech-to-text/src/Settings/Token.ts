@@ -49,13 +49,16 @@ const tokenInputComponent: InputGroup = {
 };
 
 const inputBox: IBox = {
-  marginProp: "0 0 8px",
-  widthProp: "300px",
+  widthProp: "100%",
   children: [tokenInputComponent],
 };
 
 const tokenText: IText = {
   text: "API token",
+  fontWeight: 600,
+  fontSize: "13px",
+  lineHeight: "20px",
+  noSelect: true,
 };
 
 const tokenTextComponent: TextGroup = {
@@ -64,7 +67,7 @@ const tokenTextComponent: TextGroup = {
 };
 
 const tokenTextBox: IBox = {
-  marginProp: "0 0 8px",
+  marginProp: "0 0 4px",
   children: [tokenTextComponent],
 };
 
@@ -73,6 +76,7 @@ export const tokenGroup: BoxGroup = {
   props: {
     displayProp: "flex",
     flexDirection: "column",
+    marginProp: "0 0 8px",
     children: [
       { component: Components.box, props: tokenTextBox },
       { component: Components.box, props: inputBox },

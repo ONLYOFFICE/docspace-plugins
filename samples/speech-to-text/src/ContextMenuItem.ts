@@ -5,8 +5,7 @@ import assemblyAI from "./AssemblyAI";
 export const contextMenuItem: IContextMenuItem = {
   key: "speech-to-text-context-menu-item",
   label: "Convert to text",
-  icon: "logo.png",
-  position: 0,
+  icon: "speech-to-text-16.png",
   onClick: assemblyAI.speechToText,
   fileType: [FilesType.video],
   withActiveItem: true,

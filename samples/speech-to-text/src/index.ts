@@ -10,12 +10,12 @@ import {
 } from "@onlyoffice/docspace-plugin-sdk";
 import { contextMenuItem } from "./ContextMenuItem";
 import assemblyAI from "./AssemblyAI";
-import { userSettings } from "./Settings";
+import { adminSettings } from "./Settings";
 
 class SpeechToText
   implements IPlugin, IApiPlugin, ISettingsPlugin, IContextMenuPlugin
 {
-  status: PluginStatus = PluginStatus.pending;
+  status: PluginStatus = PluginStatus.hide;
 
   origin = "";
   proxy = "";
@@ -24,7 +24,7 @@ class SpeechToText
   userPluginSettings: ISettings | null = {} as ISettings;
   adminPluginSettings: ISettings | null = {} as ISettings;
 
-  contextMenuItems: Map<string, IContextMenuItem | ISeparatorItem> = new Map();
+  contextMenuItems: Map<string, IContextMenuItem> = new Map();
 
   onLoadCallback = async () => {};
 
@@ -90,11 +90,11 @@ class SpeechToText
     this.adminPluginSettings = settings;
   };
 
-  addContextMenuItem = (item: IContextMenuItem | ISeparatorItem): void => {
+  addContextMenuItem = (item: IContextMenuItem): void => {
     this.contextMenuItems.set(item.key, item);
   };
 
-  getContextMenuItems = (): Map<string, IContextMenuItem | ISeparatorItem> => {
+  getContextMenuItems = (): Map<string, IContextMenuItem> => {
     return this.contextMenuItems;
   };
 
@@ -104,7 +104,7 @@ class SpeechToText
     return keys;
   };
 
-  updateContextMenuItem = (item: IContextMenuItem | ISeparatorItem): void => {
+  updateContextMenuItem = (item: IContextMenuItem): void => {
     this.contextMenuItems.set(item.key, item);
   };
 }
@@ -112,7 +112,7 @@ class SpeechToText
 const plugin = new SpeechToText();
 
 plugin.addContextMenuItem(contextMenuItem);
-plugin.setUserPluginSettings(userSettings);
+plugin.setAdminPluginSettings(adminSettings);
 plugin.setOnLoadCallback(assemblyAI.fetchAPIToken);
 
 declare global {
