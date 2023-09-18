@@ -5,5 +5,5 @@ export interface ISettings {
   saveButton: ButtonGroup;
 
   isLoading?: boolean;
-  onLoad?: () => Promise<{ settings: IBox }>;
+  onLoad?: () => Promise<{ settings: IBox; saveButton?: ButtonGroup }>;
 }

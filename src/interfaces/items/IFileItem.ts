@@ -17,4 +17,6 @@ export interface IFileItem {
   onClick: (item: File) => Promise<IMessage> | IMessage | void;
   usersType?: UsersType[];
   devices?: Devices[];
+  fileTypeName?: string;
+  fileIcon?: string;
 }

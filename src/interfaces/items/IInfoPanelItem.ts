@@ -14,7 +14,7 @@ export interface IInfoPanelItem {
   body: IBox;
   onLoad: () => Promise<{ body: IBox }>;
   filesType?: FilesType[];
-  filesExsts?: FilesExst[];
+  filesExsts?: (FilesExst | string)[];
   usersTypes?: UsersType[];
   devices?: Devices[];
 }

@@ -11,4 +11,5 @@ export interface IText {
   noSelect?: boolean;
   display?: string;
   lineHeight?: string;
+  color?: string;
 }
