@@ -5,68 +5,40 @@ import {
   PluginStatus,
   ToastType,
 } from "@onlyoffice/docspace-plugin-sdk";
+import ConvertApi from "convertapi-js";
 
 import plugin from ".";
+import { nameInputProps } from "./Dialog/Name";
+import { convertFileDialog } from "./Dialog";
 
-export type UserSettingsValue = {
-  fileName: string;
-};
+interface IFileInfo {
+  viewUrl: string;
+  folderId: number;
+  fileExst: string;
+}
 
 class ConvertFile {
-  userSettingsValue: UserSettingsValue = {
-    fileName: "",
-  };
-
-  acceptFromModalSettings = false;
   currentFileId: number | null = null;
+  fileInfo: IFileInfo | null = null;
+
+  apiToken: string | null = null;
 
   apiURL = "";
-
-  setAcceptFromModalSettings = (value: boolean) => {
-    this.acceptFromModalSettings = value;
-  };
 
   setCurrentFileId = (value: number | null) => {
     this.currentFileId = value;
   };
 
-  setUserSettingsValue = (value: UserSettingsValue) => {
-    this.userSettingsValue = value;
-  };
-
-  getUserSettingsValue = () => {
-    return this.userSettingsValue;
-  };
-
-  fetchUserSettingsValue = async () => {
-    if (!this.apiURL) {
-      this.createAPIUrl();
-    }
-
-    const user = await this.getUser();
-
-    const localValue = localStorage.getItem(`${user.id}-convert-file-plugin`);
-
-    const value = !!localValue && JSON.parse(localValue);
-
-    if (value) {
-      plugin.updateStatus(PluginStatus.active);
-
-      this.setUserSettingsValue({ ...value });
-      return value;
-    }
-
-    return null;
-  };
-
-  onLoad = async () => {
-    const actions = [this.fetchUserSettingsValue()];
-
-    await Promise.all(actions);
+  setFileInfo = (value: IFileInfo | null) => {
+    this.fileInfo = value;
   };
 
   setAPIUrl = (url: string) => {
     this.apiURL = url;
+  };
+
+  setAPIToken = (token: null | string) => {
+    this.apiToken = token;
   };
 
   createAPIUrl = () => {
@@ -91,50 +63,95 @@ class ConvertFile {
     return this.apiURL;
   };
 
-  onConvertFileClick = async (id: number) => {
-    this.setCurrentFileId(null);
-    this.setAcceptFromModalSettings(false);
+  onOpenModalDialog = async (id: number) => {
+    if (!this.apiToken) return {};
 
-    const pluginStatus = plugin.getStatus();
+    if (!this.apiURL) this.createAPIUrl();
 
-    if (
-      pluginStatus === PluginStatus.pending ||
-      pluginStatus === PluginStatus.hide ||
-      !this.userSettingsValue.fileName
-    ) {
-      const message: IMessage = {
-        actions: [Actions.showSettingsModal],
-      };
+    this.setCurrentFileId(id);
 
-      this.setAcceptFromModalSettings(true);
-      this.setCurrentFileId(id);
-
-      return message;
-    }
-
-    const { webUrl, folderId, fileExst } = (
+    const { viewUrl, folderId, fileExst, title } = await (
       await (await fetch(`${this.apiURL}/files/file/${id}`)).json()
     ).response;
 
-    const url = new URL(`${this.apiURL}/filehandler.ashx`);
+    this.setFileInfo({ viewUrl, fileExst, folderId });
 
-    url.searchParams.append("action", "create");
-    url.searchParams.append("fileuri", webUrl);
-    url.searchParams.append("folderid", folderId);
-    url.searchParams.append("response", "message");
+    nameInputProps.value = title?.split(".")[0];
 
-    const actions = [];
+    const message: IMessage = {
+      actions: [Actions.showModal],
+      modalDialogProps: convertFileDialog,
+    };
 
-    url.searchParams.append(
-      "title",
-      `${this.userSettingsValue.fileName}${FilesExst.pdf}`
+    return message;
+  };
+
+  onConvertFileClick = async (fileName: string) => {
+    if (!this.apiToken) return {};
+
+    if (!this.fileInfo || !fileName) return {};
+
+    const { viewUrl, folderId, fileExst } = this.fileInfo;
+
+    const data = await fetch(viewUrl);
+
+    const dataBlob = await data.blob();
+
+    const file = new File([dataBlob], `test${fileExst}`);
+
+    const convertApi = ConvertApi.auth(this.apiToken);
+
+    const params = convertApi.createParams();
+    params.add("file", file);
+
+    const result = await convertApi.convert(
+      fileExst.split(".")[1],
+      "pdf",
+      params
     );
 
-    actions.push(fetch(url.toString()));
+    const url = result.files[0].Url;
 
-    await Promise.all(actions);
+    const newFile = await fetch(url);
 
-    const toastTitle = `File "${this.userSettingsValue.fileName}${FilesExst.pdf}" was created`;
+    const newBlob = await newFile.blob();
+
+    const pdfFile = new File([newBlob], `blob`, {
+      type: "",
+      lastModified: new Date().getTime(),
+    });
+
+    const formData = new FormData();
+    formData.append("file", pdfFile);
+
+    try {
+      const sessionRes = await fetch(
+        `${this.apiURL}/files/${folderId}/upload/create_session`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+          },
+          body: JSON.stringify({
+            createOn: new Date(),
+            fileName: `${fileName}.pdf`,
+            fileSize: pdfFile.size,
+            relativePath: "",
+          }),
+        }
+      );
+
+      const sessionData = (await sessionRes.json()).response.data;
+
+      await fetch(`${sessionData.location}`, {
+        method: "POST",
+        body: formData,
+      });
+    } catch (e) {
+      console.log(e);
+    }
+
+    const toastTitle = `File "${fileName}${FilesExst.pdf}" was created`;
 
     const message: IMessage = {
       actions: [Actions.showToast, Actions.closeModal],
@@ -149,38 +166,19 @@ class ConvertFile {
     return message;
   };
 
-  getUser = async () => {
-    if (!this.apiURL) {
-      this.createAPIUrl();
-    }
+  fetchAPIToken = async () => {
+    const apiToken = localStorage.getItem("pdf-converter-api-token");
 
-    const userRes = await fetch(`${this.apiURL}/people/@self`);
+    if (!apiToken) return;
 
-    const user = (await userRes.json()).response;
-
-    return user;
+    this.setAPIToken(apiToken);
+    plugin.updateStatus(PluginStatus.active);
   };
 
-  acceptUserSettings = async (value: UserSettingsValue) => {
-    if (!this.apiURL) {
-      this.createAPIUrl();
-    }
+  saveAPIToken = (apiToken: string) => {
+    localStorage.setItem("pdf-converter-api-token", apiToken);
 
-    plugin.updateStatus(PluginStatus.active);
-
-    let message = null;
-
-    if (this.acceptFromModalSettings && !!this.currentFileId) {
-      message = await this.onConvertFileClick(this.currentFileId);
-    }
-
-    const user = await this.getUser();
-
-    const localStorageValue = JSON.stringify(value);
-
-    localStorage.setItem(`${user.id}-convert-file-plugin`, localStorageValue);
-
-    return message;
+    plugin.updateStatus(!!apiToken ? PluginStatus.active : PluginStatus.hide);
   };
 }
 

@@ -1,10 +1,15 @@
-import { FilesType, IContextMenuItem } from "@onlyoffice/docspace-plugin-sdk";
+import {
+  FilesType,
+  IContextMenuItem,
+  UsersType,
+} from "@onlyoffice/docspace-plugin-sdk";
+import convertFile from "./ConvertFile";
 
 export const convertFileItem: IContextMenuItem = {
   key: "convert-file-item",
-  position: 0,
-  label: "Convert file",
-  icon: "logo.jpg",
-  onClick: (id: number) => {},
+  label: "Convert to PDF",
+  icon: "convert-16.png",
+  onClick: convertFile.onOpenModalDialog,
   fileType: [FilesType.file],
+  usersTypes: [UsersType.owner, UsersType.docSpaceAdmin, UsersType.roomAdmin],
 };

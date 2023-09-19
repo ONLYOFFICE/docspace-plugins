@@ -1,5 +1,5 @@
 {
-  "name": "convert-file-plugin",
+  "name": "PDF-converter",
   "version": "1.0.0",
   "author": "ONLYOFFICE",
   "main": "index.ts",
@@ -8,23 +8,24 @@
     "Settings",
     "ContextMenu"
   ],
-  "description": "Plugin for convert file to pdf",
-  "pluginName": "ConvertFilePlugin",
+  "description": "",
+  "pluginName": "PDFConverter",
   "license": "MIT",
   "private": true,
-  "logo": "logo.jpg",
+  "logo": "",
   "homepage": "https://github.com/ONLYOFFICE/onlyoffice-docspace-plugin-sdk",
   "scripts": {
     "build": "webpack && node ./scripts/createZip.js"
   },
   "devDependencies": {
-    "ts-loader": "^9.3.1",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0",
     "jszip": "^3.10.1",
-    "typescript": "^4.7.4"
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "^0.0.2"
+    "@onlyoffice/docspace-plugin-sdk": "^0.0.2",
+    "convertapi-js": "~1.1"
   }
 }

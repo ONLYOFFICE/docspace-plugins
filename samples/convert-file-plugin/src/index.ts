@@ -1,31 +1,28 @@
 import {
   IPlugin,
   PluginStatus,
-  ISettingsPlugin,
-  ISettings,
   IApiPlugin,
   IContextMenuPlugin,
   IContextMenuItem,
-  ISeparatorItem,
+  ISettingsPlugin,
+  ISettings,
 } from "@onlyoffice/docspace-plugin-sdk";
 
-import { settingsElements } from "./UserSettings";
 import { convertFileItem } from "./ContextMenuItem";
-import convertFile from "./ConvertFile";
+import { adminSettings } from "./Settings";
 
 class ConvertFilePlugin
   implements IPlugin, ISettingsPlugin, IApiPlugin, IContextMenuPlugin
 {
-  status: PluginStatus = PluginStatus.pending;
+  adminPluginSettings: ISettings | null = null;
 
-  userPluginSettings: ISettings | null = {} as ISettings;
-  adminPluginSettings: ISettings | null = {} as ISettings;
+  status: PluginStatus = PluginStatus.active;
 
   origin = "";
   proxy = "";
   prefix = "";
 
-  contextMenuItems: Map<string, IContextMenuItem | ISeparatorItem> = new Map();
+  contextMenuItems: Map<string, IContextMenuItem> = new Map();
 
   onLoadCallback = async () => {};
 
@@ -39,22 +36,6 @@ class ConvertFilePlugin
 
   setOnLoadCallback = (callback: () => Promise<void>) => {
     this.onLoadCallback = callback;
-  };
-
-  getUserPluginSettings = () => {
-    return this.userPluginSettings;
-  };
-
-  setUserPluginSettings = (settings: ISettings | null): void => {
-    this.userPluginSettings = settings;
-  };
-
-  getAdminPluginSettings = () => {
-    return this.adminPluginSettings;
-  };
-
-  setAdminPluginSettings = (settings: ISettings | null): void => {
-    this.adminPluginSettings = settings;
   };
 
   setOrigin = (origin: string): void => {
@@ -91,7 +72,14 @@ class ConvertFilePlugin
     return { origin: this.origin, proxy: this.proxy, prefix: this.prefix };
   };
 
-  addContextMenuItem = (item: IContextMenuItem | ISeparatorItem): void => {
+  setAdminPluginSettings = (settings: ISettings | null): void => {
+    this.adminPluginSettings = settings;
+  };
+  getAdminPluginSettings = (): ISettings | null => {
+    return this.adminPluginSettings;
+  };
+
+  addContextMenuItem = (item: IContextMenuItem): void => {
     this.contextMenuItems.set(item.key, item);
   };
 
@@ -101,24 +89,19 @@ class ConvertFilePlugin
     return keys;
   };
 
-  getContextMenuItems = (): Map<string, IContextMenuItem | ISeparatorItem> => {
+  getContextMenuItems = (): Map<string, IContextMenuItem> => {
     return this.contextMenuItems;
   };
 
-  updateContextMenuItem = (item: IContextMenuItem | ISeparatorItem): void => {
+  updateContextMenuItem = (item: IContextMenuItem): void => {
     this.contextMenuItems.set(item.key, item);
   };
 }
 
 const plugin = new ConvertFilePlugin();
 
-plugin.setUserPluginSettings(settingsElements);
-
-convertFileItem.onClick = convertFile.onConvertFileClick;
-
 plugin.addContextMenuItem(convertFileItem);
-
-plugin.setOnLoadCallback(convertFile.onLoad);
+plugin.setAdminPluginSettings(adminSettings);
 
 declare global {
   interface Window {
@@ -126,6 +109,6 @@ declare global {
   }
 }
 
-window.Plugins.ConvertFilePlugin = plugin || {};
+window.Plugins.PDFConverter = plugin || {};
 
 export default plugin;

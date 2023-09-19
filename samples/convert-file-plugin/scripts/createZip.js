@@ -3,7 +3,7 @@ const fs = require("fs");
 
 const zip = new JSZip();
 
-const jsData = fs.readFileSync(`./dist/ConvertFilePlugin.js`, "utf-8");
+const jsData = fs.readFileSync(`./dist/PDFConverter.js`, "utf-8");
 const jsonData = fs.readFileSync(`package.json`, "utf-8");
 
 const jsonDataObj = JSON.parse(jsonData);

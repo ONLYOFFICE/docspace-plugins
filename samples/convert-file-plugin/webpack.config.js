@@ -16,7 +16,7 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    filename: "ConvertFilePlugin.js",
+    filename: "PDFConverter.js",
     path: path.resolve(__dirname, "dist"),
   },
 };
