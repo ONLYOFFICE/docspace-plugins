@@ -13,7 +13,7 @@
   "license": "MIT",
   "private": true,
   "logo": "",
-  "homepage": "https://github.com/ONLYOFFICE/onlyoffice-docspace-plugin-sdk",
+  "homepage": "https://github.com/ONLYOFFICE/onlyoffice-docspace-plugin-sdk/tree/develop/samples/PDF-Converter",
   "scripts": {
     "build": "webpack && node ./scripts/createZip.js"
   },
