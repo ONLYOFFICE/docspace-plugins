@@ -2,7 +2,6 @@ export const enum Actions {
   updateProps = "update-props",
   updateContext = "update-context",
 
-  updateLoading = "update-loading",
   updateStatus = "update-status",
 
   updateContextMenuItems = "update-context-menu-items",
