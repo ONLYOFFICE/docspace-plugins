@@ -3,7 +3,7 @@ const nameQuestion = {
   type: "input",
   message: "Plugin name:",
   validate: function (input) {
-    if (/^([A-Za-z\_\-])+$/.test(input)) return true;
+    if (/^([a-z\_\-])+$/.test(input)) return true;
     else return "Plugin name may include only letters";
   },
 };
