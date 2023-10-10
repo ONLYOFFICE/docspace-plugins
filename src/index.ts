@@ -12,7 +12,6 @@ import {
 
 import {
   IContextMenuItem,
-  ISeparatorItem,
   IInfoPanelItem,
   IInfoPanelSubMenu,
   IMainButtonItem,
@@ -87,7 +86,6 @@ export {
   IEventListenerPlugin,
   IFilePlugin,
   IContextMenuItem,
-  ISeparatorItem,
   IInfoPanelItem,
   IInfoPanelSubMenu,
   IMainButtonItem,

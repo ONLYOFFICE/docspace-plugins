@@ -18,5 +18,6 @@ export interface IFileItem {
   usersType?: UsersType[];
   devices?: Devices[];
   fileTypeName?: string;
-  fileIcon?: string;
+  fileRowIcon?: string;
+  fileTileIcon?: string;
 }
