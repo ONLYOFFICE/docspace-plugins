@@ -8,19 +8,20 @@ export const enum ModalDisplayType {
 
 export interface IModalDialog {
   displayType: ModalDisplayType;
-  dialogHeader: string;
+  dialogHeader?: string;
   dialogBody: IBox;
   dialogFooter?: IBox;
   autoMaxWidth?: boolean;
   autoMaxHeight?: boolean;
   withFooterBorder?: boolean;
+  fullScreen?: boolean;
   eventListeners?: {
     name: string;
     onAction: () => Promise<IMessage> | IMessage | Promise<void> | void;
   }[];
   onClose: () => Promise<IMessage> | IMessage | Promise<void> | void;
   onLoad: () => Promise<{
-    newDialogHeader: string;
+    newDialogHeader?: string;
     newDialogBody: IBox;
     newDialogFooter?: IBox;
   }>;
