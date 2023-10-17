@@ -5,7 +5,6 @@ import {
   IFrame,
   IMessage,
   IModalDialog,
-  ISkeleton,
   ModalDisplayType,
 } from "@onlyoffice/docspace-plugin-sdk";
 
@@ -16,14 +15,9 @@ export const frameProps: IFrame = {
   src: "",
 };
 
-const skeletonProps: ISkeleton = {
-  width: "100%",
-  height: "100%",
-};
-
 const body: IBox = {
-  widthProp: "100vw",
-  heightProp: "calc(var(--vh, 1vh) * 100)",
+  widthProp: "100%",
+  heightProp: "100%",
 
   children: [
     {
@@ -33,21 +27,11 @@ const body: IBox = {
   ],
 };
 
-const bodySkeleton: IBox = {
-  widthProp: "100vw",
-  heightProp: "calc(var(--vh, 1vh) * 100)",
-  children: [
-    {
-      component: Components.skeleton,
-      props: skeletonProps,
-    },
-  ],
-};
-
 export const drawIoModalDialogProps: IModalDialog = {
   dialogHeader: "",
   dialogBody: body,
   displayType: ModalDisplayType.modal,
+  fullScreen: true,
   onClose: () => {
     const message: IMessage = {
       actions: [Actions.closeModal],
@@ -57,7 +41,7 @@ export const drawIoModalDialogProps: IModalDialog = {
   },
   onLoad: async () => {
     return {
-      newDialogHeader: drawIoModalDialogProps.dialogHeader,
+      newDialogHeader: drawIoModalDialogProps.dialogHeader || "",
       newDialogBody: drawIoModalDialogProps.dialogBody,
     };
   },

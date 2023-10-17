@@ -35,6 +35,8 @@ class DrawIo {
     dark: "auto",
   };
 
+  saveRequestRunning = false;
+
   currentFolderId: number | null = null;
 
   currentFileId: number | null = null;
@@ -327,7 +329,7 @@ class DrawIo {
       const message = this.openEditor(
         dataText,
         "xml",
-        title,
+        title.replace(".drawio", ""),
         theme,
         showSaveButton
       );
@@ -342,7 +344,7 @@ class DrawIo {
             const message: IMessage = this.openEditor(
               reader.result,
               "xmlpng",
-              title,
+              title.replace(".png", ""),
               theme,
               showSaveButton
             );
@@ -409,6 +411,9 @@ class DrawIo {
   };
 
   saveDiagram = async (content: string, draft: boolean, isExport: boolean) => {
+    if (this.saveRequestRunning) return;
+
+    this.saveRequestRunning = true;
     let blob = new Blob([content]);
 
     if (isExport) {
@@ -429,7 +434,10 @@ class DrawIo {
 
         body: formData,
       });
+
+      this.saveRequestRunning = false;
     } catch (e) {
+      this.saveRequestRunning = false;
       console.log(e);
     }
   };

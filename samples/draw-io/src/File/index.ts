@@ -1,4 +1,4 @@
-import { IFileItem, File } from "@onlyoffice/docspace-plugin-sdk";
+import { IFileItem, File, Devices } from "@onlyoffice/docspace-plugin-sdk";
 
 import drawIo from "../Drawio";
 
@@ -9,6 +9,8 @@ const onClick = async (item: File) => {
 export const drawIoItem: IFileItem = {
   extension: ".drawio",
   fileTypeName: "Diagram",
-  fileIcon: "drawio-32.svg",
+  fileRowIcon: "drawio-32.svg",
+  fileTileIcon: "drawio-32.svg",
+  devices: [Devices.desktop],
   onClick,
 };

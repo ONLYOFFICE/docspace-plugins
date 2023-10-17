@@ -18,5 +18,6 @@ export const contextMenuItem: IContextMenuItem = {
   onClick,
   icon: "drawio.png",
   fileType: [FilesType.image, FilesType.file],
+  devices: [Devices.desktop],
   fileExt: [".drawio", ".png"],
 };
