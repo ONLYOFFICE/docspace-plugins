@@ -10,10 +10,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ONLYOFFICE/onlyoffice-docspace-plugin-sdk.git"
+    "url": "git+https://github.com/ONLYOFFICE/docspace-plugin-sdk.git"
   },
   "bugs": {
-    "url": "https://github.com/ONLYOFFICE/onlyoffice-docspace-plugin-sdk"
+    "url": "https://github.com/ONLYOFFICE/docspace-plugin-sdk"
   },
   "keywords": [
     "onlyoffice",
