@@ -28,5 +28,5 @@
   "pluginName": "SpeechToText",
   "license": "MIT",
   "logo": "logo.png",
-  "homepage": "https://github.com/ONLYOFFICE/onlyoffice-docspace-plugin-sdk/tree/develop/samples/speech-to-text"
+  "homepage": "https://github.com/ONLYOFFICE/docspace-plugin"
 }
