@@ -26,7 +26,7 @@
   },
   "description": "Speech to Text Conversion is a speech recognition software that allows you to recognize and translate spoken speech into text.",
   "pluginName": "SpeechToText",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "logo": "logo.png",
   "homepage": "https://github.com/ONLYOFFICE/docspace-plugin"
 }

@@ -28,7 +28,7 @@
   },
   "description": "A tool for creating diagrams, flowcharts, intelligence maps, business layouts, entity relationships, program blocks, and more",
   "pluginName": "Drawio",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "logo": "logo.png",
   "homepage": "https://github.com/ONLYOFFICE/docspace-plugin"
 }
