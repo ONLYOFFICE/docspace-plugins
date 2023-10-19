@@ -9,7 +9,7 @@ const jsonData = fs.readFileSync(`package.json`, "utf-8");
 const jsonDataObj = JSON.parse(jsonData);
 
 const docspace = {
-  name: jsonDataObj.name,
+  name: jsonDataObj.name.toLowerCase(),
   version: jsonDataObj.version || "",
   description: jsonDataObj.description || "",
   license: jsonDataObj.license || "",
