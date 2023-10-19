@@ -1,41 +1,38 @@
+/*
+* (c) Copyright Ascensio System SIA 2023
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
 import * as fs from "fs";
 import {
-  IApiPlugin,
-  IContextMenuItem,
-  IContextMenuPlugin,
   IPlugin,
-  ISeparatorItem,
-  ISettings,
-  ISettingsPlugin,
+  // ISeparatorItem,
   PluginStatus,
-  addContextMenuItem,
-  adminPluginSettings,
-  contextMenuItems,
-  getAPI,
-  getAdminPluginSettings,
-  getContextMenuItems,
-  getContextMenuItemsKeys,
-  getOrigin,
-  getPrefix,
-  getProxy,
   getStatus,
-  getUserPluginSettings,
   onLoadCallback,
-  origin,
-  prefix,
-  proxy,
-  setAPI,
-  setAdminPluginSettings,
   setOnLoadCallback,
-  setOrigin,
-  setPrefix,
-  setProxy,
-  setUserPluginSettings,
   status,
-  updateContextMenuItem,
   updateStatus,
-  userPluginSettings,
 } from "./constants.js";
+import { getApiTemp } from "./helpers/api.js";
+import { getSettingsTemp } from "./helpers/settings.js";
+import { getContextMenuTemp } from "./helpers/contextMenu.js";
+import { getInfoPanelTemp } from "./helpers/infoPanel.js";
+import { getMainButtonTemp } from "./helpers/mainButton.js";
+import { getProfileMenuTemp } from "./helpers/profileMenu.js";
+import { getEventListenerTemp } from "./helpers/eventListeners.js";
+import { getFileTemp } from "./helpers/file.js";
 
 const CURR_DIR = process.cwd();
 
@@ -95,12 +92,6 @@ function createTemplate(
         fs.writeFileSync(writePath, JSON.stringify(newJson, null, 2), "utf8");
 
         break;
-      case "webpack.config.js":
-        const newConf = contents.replace("default.js", `plugin.js`);
-
-        fs.writeFileSync(writePath, newConf, "utf8");
-
-        break;
       case "index.ts":
         let template = `
 import {pluginsImpIns} from '@onlyoffice/docspace-plugin-sdk'
@@ -120,7 +111,6 @@ declare global {
 window.Plugins.NameIns = plugin || {};
 
 export default plugin;
-
 `;
 
         let pluginsImpIns = `${IPlugin}, ${PluginStatus}`;
@@ -129,69 +119,86 @@ export default plugin;
         const withApi = scopes.includes("API");
         const withSettings = scopes.includes("Settings");
         const withContextMenu = scopes.includes("ContextMenu");
+        const withInfoPanel = scopes.includes("InfoPanel");
+        const withMainButton = scopes.includes("MainButton");
+        const withProfileMenu = scopes.includes("ProfileMenu");
+        const withEventListener = scopes.includes("EventListener");
+        const withFile = scopes.includes("File");
 
-        let apiVars = "";
-        let apiMeth = "";
+        const { apiVars, apiMeth, IApiPlugin } = getApiTemp(withApi);
+        const { settingsVars, settingsMeth, ISettingsPlugin, ISettings } =
+          getSettingsTemp(withSettings);
+        const {
+          IContextMenuPlugin,
+          IContextMenuItem,
+          contextMenuVars,
+          contextMenuMeth,
+        } = getContextMenuTemp(withContextMenu);
+        const {
+          IInfoPanelPlugin,
+          IInfoPanelItem,
+          infoPanelVars,
+          infoPanelMeth,
+        } = getInfoPanelTemp(withInfoPanel);
+        const {
+          IMainButtonPlugin,
+          IMainButtonItem,
+          mainButtonVars,
+          mainButtonMeth,
+        } = getMainButtonTemp(withMainButton);
+        const {
+          IProfileMenuPlugin,
+          IProfileMenuItem,
+          profileMenuVars,
+          profileMenuMeth,
+        } = getProfileMenuTemp(withProfileMenu);
+        const {
+          IEventListenerPlugin,
+          IEventListenerItem,
+          eventListenerVars,
+          eventListenerMeth,
+        } = getEventListenerTemp(withEventListener);
+        const { IFilePlugin, IFileItem, fileVars, fileMeth } =
+          getFileTemp(withFile);
 
         if (withApi) {
           pluginsImpIns += `, ${IApiPlugin}`;
           pluginsIns += `, ${IApiPlugin}`;
-
-          apiVars = `
-  ${origin}
-  ${proxy}
-  ${prefix}
-          `;
-
-          apiMeth = `
-            ${setOrigin}
-            ${getOrigin}
-            ${setProxy}
-            ${getProxy}
-            ${setPrefix}
-            ${getPrefix}
-            ${setAPI}
-            ${getAPI}
-          `;
         }
-
-        let settingsVars = ``;
-        let settingsMeth = ``;
 
         if (withSettings) {
           pluginsImpIns += `, ${ISettingsPlugin}, ${ISettings} `;
           pluginsIns += `, ${ISettingsPlugin}`;
-
-          settingsVars = `
-  ${userPluginSettings}
-  ${adminPluginSettings}
-          `;
-
-          settingsMeth = `
-          ${getUserPluginSettings}
-          ${setUserPluginSettings}
-          ${getAdminPluginSettings}
-          ${setAdminPluginSettings}
-          `;
         }
 
-        let contextMenuVars = "";
-        let contextMenuMeth = "";
-
         if (withContextMenu) {
-          pluginsImpIns += `, ${IContextMenuPlugin}, ${IContextMenuItem}, ${ISeparatorItem} `;
+          pluginsImpIns += `, ${IContextMenuPlugin}, ${IContextMenuItem} `;
           pluginsIns += `, ${IContextMenuPlugin}`;
+        }
 
-          contextMenuVars = `
-  ${contextMenuItems}  
-        `;
+        if (withInfoPanel) {
+          pluginsImpIns += `, ${IInfoPanelPlugin}, ${IInfoPanelItem} `;
+          pluginsIns += `, ${IInfoPanelPlugin}`;
+        }
 
-          contextMenuMeth = `
-        ${addContextMenuItem}
-        ${getContextMenuItems}
-        ${getContextMenuItemsKeys}
-        ${updateContextMenuItem}
-        `;
+        if (withMainButton) {
+          pluginsImpIns += `, ${IMainButtonPlugin}, ${IMainButtonItem} `;
+          pluginsIns += `, ${IMainButtonPlugin}`;
+        }
+
+        if (withProfileMenu) {
+          pluginsImpIns += `, ${IProfileMenuPlugin}, ${IProfileMenuItem} `;
+          pluginsIns += `, ${IProfileMenuPlugin}`;
+        }
+
+        if (withEventListener) {
+          pluginsImpIns += `, ${IEventListenerPlugin}, ${IEventListenerItem} `;
+          pluginsIns += `, ${IEventListenerPlugin}`;
+        }
+
+        if (withFile) {
+          pluginsImpIns += `, ${IFilePlugin}, ${IFileItem} `;
+          pluginsIns += `, ${IFilePlugin}`;
         }
 
         let nameIns = `${pluginName}`;
@@ -200,6 +207,11 @@ export default plugin;
           ${apiVars}
           ${settingsVars}
           ${contextMenuVars}
+          ${infoPanelVars}
+          ${mainButtonVars}
+          ${profileMenuVars}
+          ${eventListenerVars}
+          ${fileVars}
           ${onLoadCallback}
           ${updateStatus}
           ${getStatus}
@@ -207,7 +219,11 @@ export default plugin;
           ${apiMeth}
           ${settingsMeth}
           ${contextMenuMeth}
-        `;
+          ${infoPanelMeth}
+          ${mainButtonMeth}
+          ${profileMenuMeth}
+          ${eventListenerMeth}
+          ${fileMeth}`;
 
         template = template
           .replaceAll("pluginsImpIns", pluginsImpIns)
@@ -215,7 +231,11 @@ export default plugin;
           .replaceAll("NameIns", nameIns)
           .replaceAll("contentIns", contentIns);
 
-        fs.writeFileSync(writePath, template, "utf8");
+        const srcDir = writePath.replace("index.ts", "src");
+
+        fs.mkdirSync(srcDir);
+
+        fs.writeFileSync(`${srcDir}/index.ts`, template, "utf8");
 
         break;
 

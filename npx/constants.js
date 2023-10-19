@@ -1,47 +1,25 @@
+/*
+* (c) Copyright Ascensio System SIA 2023
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
 const IPlugin = "IPlugin";
-const IApiPlugin = "IApiPlugin";
-const ISettingsPlugin = "ISettingsPlugin";
-const IContextMenuPlugin = "IContextMenuPlugin";
 
-const ISettings = "ISettings";
-const IControlGroup = "IControlGroup";
-const SettingsType = "SettingsType";
-const ControlGroupElement = "ControlGroupElement";
+// const ISeparatorItem = "ISeparatorItem";
 
-const IContextMenuItem = "IContextMenuItem";
-const ContextMenuItemType = "ContextMenuItemType";
-const ISeparatorItem = "ISeparatorItem";
-
-const IInput = "IInput";
-const InputSize = "InputSize";
-const InputType = "InputType";
-const InputAutocomplete = "InputAutocomplete";
-const ICheckbox = "ICheckbox";
-const IToggleButton = "IToggleButton";
-const IToast = "IToast";
-const ToastType = "ToastType";
-const IButton = "IButton";
-const ButtonSize = "ButtonSize";
-
-const IMessage = "IMessage";
-
-const Actions = "Actions";
-const Events = "Events";
-const PluginItems = "PluginItems";
-const PluginStatus = "PluginStatus";
-const FilesExst = "FilesExst";
-
+const PluginStatus = `PluginStatus`;
 const status = `status: PluginStatus = PluginStatus.active;`;
-
-const userPluginSettings = `userPluginSettings: ISettings | null = {} as ISettings;`;
-const adminPluginSettings = `adminPluginSettings: ISettings | null = {} as ISettings;`;
-
-const origin = `origin = "";`;
-const proxy = `proxy = "";`;
-const prefix = `prefix = "";`;
-
-const contextMenuItems = `
-  contextMenuItems: Map<string, IContextMenuItem | ISeparatorItem> = new Map();`;
 
 const onLoadCallback = `
   onLoadCallback = async () => {};`;
@@ -61,143 +39,13 @@ const setOnLoadCallback = `
     this.onLoadCallback = callback;
   };`;
 
-const getUserPluginSettings = `
-  getUserPluginSettings = () => {
-    return this.userPluginSettings;
-  };`;
-
-const setUserPluginSettings = `
-  setUserPluginSettings = (settings: ISettings | null): void => {
-    this.userPluginSettings = settings;
-  };`;
-
-const getAdminPluginSettings = `  
-  getAdminPluginSettings = () => {
-    return this.adminPluginSettings;
-  };`;
-
-const setAdminPluginSettings = `
-  setAdminPluginSettings = (settings: ISettings | null): void => {
-    this.adminPluginSettings = settings;
-  };`;
-
-const setOrigin = `
-  setOrigin = (origin: string): void => {
-    this.origin = origin;
-  };`;
-
-const getOrigin = `
-  getOrigin = (): string => {
-    return this.origin;
-  };`;
-
-const setProxy = `
-  setProxy = (proxy: string): void => {
-    this.proxy = proxy;
-  };`;
-
-const getProxy = `
-  getProxy = (): string => {
-    return this.proxy;
-  };`;
-
-const setPrefix = `
-  setPrefix = (prefix: string): void => {
-    this.prefix = prefix;
-  };`;
-
-const getPrefix = `
-  getPrefix = (): string => {
-    return this.prefix;
-  };`;
-
-const setAPI = `
-  setAPI = (origin: string, proxy: string, prefix: string): void => {
-    this.origin = origin;
-    this.proxy = proxy;
-    this.prefix = prefix;
-  };`;
-
-const getAPI = `
-  getAPI = (): { origin: string; proxy: string; prefix: string } => {
-    return { origin: this.origin, proxy: this.proxy, prefix: this.prefix };
-  };`;
-
-const addContextMenuItem = `
-  addContextMenuItem = (item: IContextMenuItem | ISeparatorItem): void => {
-    this.contextMenuItems.set(item.key, item);
-  };`;
-
-const getContextMenuItemsKeys = `
-  getContextMenuItemsKeys = (): string[] => {
-    const keys = Array.from(this.contextMenuItems).map(([key, item]) => key);
-
-    return keys;
-  };`;
-
-const getContextMenuItems = `
-  getContextMenuItems = (): Map<string, IContextMenuItem | ISeparatorItem> => {
-    return this.contextMenuItems;
-  };`;
-
-const updateContextMenuItem = `
-  updateContextMenuItem = (item: IContextMenuItem | ISeparatorItem): void => {
-    this.contextMenuItems.set(item.key, item);
-  };`;
-
 export {
   IPlugin,
-  IApiPlugin,
-  ISettingsPlugin,
-  IContextMenuPlugin,
-  IContextMenuItem,
-  ContextMenuItemType,
-  ISeparatorItem,
-  ISettings,
-  SettingsType,
-  IControlGroup,
-  ControlGroupElement,
-  IInput,
-  InputSize,
-  InputType,
-  InputAutocomplete,
-  ICheckbox,
-  IToggleButton,
-  IToast,
-  ToastType,
-  IButton,
-  ButtonSize,
-  Events,
-  PluginItems,
   PluginStatus,
-  Actions,
-  FilesExst,
-  IMessage,
+  // ISeparatorItem,
   status,
-  userPluginSettings,
-  adminPluginSettings,
-  origin,
-  proxy,
-  prefix,
-  contextMenuItems,
   onLoadCallback,
   updateStatus,
   getStatus,
   setOnLoadCallback,
-  getUserPluginSettings,
-  setUserPluginSettings,
-  getAdminPluginSettings,
-  setAdminPluginSettings,
-  setOrigin,
-  getOrigin,
-  setProxy,
-  getProxy,
-  setPrefix,
-  getPrefix,
-  setAPI,
-  getAPI,
-  addContextMenuItem,
-  getContextMenuItemsKeys,
-  getContextMenuItems,
-  updateContextMenuItem,
 };

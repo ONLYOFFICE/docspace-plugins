@@ -1,8 +1,8 @@
 {
   "name": "@onlyoffice/docspace-plugin-sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple plugin system for onlyoffice docspace",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "homepage": "https://www.onlyoffice.com",
   "author": "Ascensio System SIA <integration@onlyoffice.com> (https://www.onlyoffice.com)",
   "maintainers": [
@@ -10,10 +10,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ONLYOFFICE/onlyoffice-docspace-plugins.git"
+    "url": "git+https://github.com/ONLYOFFICE/docspace-plugin-sdk.git"
   },
   "bugs": {
-    "url": "https://github.com/ONLYOFFICE/onlyoffice-docspace-plugins"
+    "url": "https://github.com/ONLYOFFICE/docspace-plugin-sdk"
   },
   "keywords": [
     "onlyoffice",

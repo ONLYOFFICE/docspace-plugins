@@ -1,7 +1,34 @@
+/*
+* (c) Copyright Ascensio System SIA 2023
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
 import { Actions } from "./Actions";
 import { Events } from "./Events";
-import { PluginItems, PluginStatus } from "./Plugins";
-import { FilesExst } from "./Files";
+import { PluginStatus } from "./Plugins";
+import { FilesExst, FilesType } from "./Files";
 import { UsersType } from "./UsersType";
+import { Components } from "./Components";
+import { Devices } from "./Devices";
 
-export { Actions, Events, PluginItems, PluginStatus, FilesExst, UsersType };
+export {
+  Actions,
+  Components,
+  Events,
+  FilesExst,
+  FilesType,
+  PluginStatus,
+  UsersType,
+  Devices,
+};
