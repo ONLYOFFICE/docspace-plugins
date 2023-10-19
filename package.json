@@ -2,7 +2,7 @@
   "name": "@onlyoffice/docspace-plugin-sdk",
   "version": "0.0.2",
   "description": "Simple plugin system for onlyoffice docspace",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "homepage": "https://www.onlyoffice.com",
   "author": "Ascensio System SIA <integration@onlyoffice.com> (https://www.onlyoffice.com)",
   "maintainers": [
