@@ -1,8 +1,8 @@
-# ONLYOFFICE docspace plugin sdk
+# ONLYOFFICE DocSpace plugin sdk
 
 ## Overview
 
-ONLYOFFICE docspace plugin sdk is a npm package based on typescript engines which provides interfaces to create your own docspace embed plugin
+ONLYOFFICE DocSpace plugin sdk is a npm package based on typescript engines which provides interfaces to create your own DocSpace embed plugin
 
 ## Functionality
 
