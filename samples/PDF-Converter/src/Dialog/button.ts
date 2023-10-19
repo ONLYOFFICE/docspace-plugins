@@ -20,7 +20,7 @@ export const acceptButtonProps: IButton = {
   primary: true,
   size: ButtonSize.normal,
   scale: true,
-  isDisabled: !nameInputProps?.value,
+  isDisabled: false,
   withLoadingAfterClick: true,
   onClick: onAcceptClick,
 };

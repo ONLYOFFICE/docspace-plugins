@@ -12,7 +12,7 @@
   "pluginName": "PDFConverter",
   "license": "MIT",
   "private": true,
-  "logo": "",
+  "logo": "logo.svg",
   "homepage": "https://github.com/ONLYOFFICE/onlyoffice-docspace-plugin-sdk/tree/develop/samples/PDF-Converter",
   "scripts": {
     "build": "webpack && node ./scripts/createZip.js"

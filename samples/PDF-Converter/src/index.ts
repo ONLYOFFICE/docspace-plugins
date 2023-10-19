@@ -10,13 +10,14 @@ import {
 
 import { convertFileItem } from "./ContextMenuItem";
 import { adminSettings } from "./Settings";
+import convertFile from "./ConvertFile";
 
 class ConvertFilePlugin
   implements IPlugin, ISettingsPlugin, IApiPlugin, IContextMenuPlugin
 {
   adminPluginSettings: ISettings | null = null;
 
-  status: PluginStatus = PluginStatus.active;
+  status: PluginStatus = PluginStatus.hide;
 
   origin = "";
   proxy = "";
@@ -102,6 +103,7 @@ const plugin = new ConvertFilePlugin();
 
 plugin.addContextMenuItem(convertFileItem);
 plugin.setAdminPluginSettings(adminSettings);
+plugin.setOnLoadCallback(convertFile.fetchAPIToken);
 
 declare global {
   interface Window {
