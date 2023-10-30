@@ -28,5 +28,5 @@
   "pluginName": "SpeechToText",
   "license": "Apache-2.0",
   "logo": "logo.png",
-  "homepage": "https://github.com/ONLYOFFICE/docspace-plugin"
+  "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/speech-to-text"
 }

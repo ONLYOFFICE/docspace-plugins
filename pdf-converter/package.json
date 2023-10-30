@@ -13,7 +13,7 @@
   "license": "Apache-2.0",
   "private": true,
   "logo": "logo.svg",
-  "homepage": "https://github.com/ONLYOFFICE/docspace-plugin",
+  "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/pdf-converter",
   "scripts": {
     "build": "webpack && node ./scripts/createZip.js"
   },
