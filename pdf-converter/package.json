@@ -8,7 +8,7 @@
     "Settings",
     "ContextMenu"
   ],
-  "description": "",
+  "description": "A plugin for converting docs, sheets, slides, and forms to PDF. The plugin is available via the Actions section in the file context menu. The converted file is saved in the same folder as the original one.",
   "pluginName": "PDFConverter",
   "license": "Apache-2.0",
   "private": true,
