@@ -30,5 +30,8 @@
   "pluginName": "Drawio",
   "license": "Apache-2.0",
   "logo": "logo.png",
-  "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/draw-io"
+  "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/draw-io",
+  "cspDomains": [
+    "https://embed.diagrams.net"
+  ]
 }
