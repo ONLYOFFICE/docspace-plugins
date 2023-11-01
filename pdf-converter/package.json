@@ -27,5 +27,8 @@
   "dependencies": {
     "@onlyoffice/docspace-plugin-sdk": "^0.0.2",
     "convertapi-js": "~1.1"
-  }
+  },
+  "cspDomains": [
+    "https://v2.convertapi.com"
+  ]
 }
