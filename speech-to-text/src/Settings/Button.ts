@@ -33,10 +33,6 @@ import plugin from "..";
 const onClick = async () => {
   assemblyAI.setAPIToken(tokenInput.value);
 
-  if (assemblyAI.currentFileId) {
-    await assemblyAI.speechToText(assemblyAI.currentFileId);
-  }
-
   plugin.updateStatus(PluginStatus.active);
 
   const message: IMessage = {

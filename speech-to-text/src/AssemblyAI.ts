@@ -75,27 +75,22 @@ class AssemblyAI {
   uploadFile = async (api_token: string, path: string, data: Blob) => {
     const url = "https://api.assemblyai.com/v2/upload";
 
-    try {
-      // Send a POST request to the API to upload the file, passing in the headers and the file data
-      const response = await fetch(url, {
-        method: "POST",
-        body: data,
-        headers: {
-          "Content-Type": "application/octet-stream",
-          Authorization: api_token,
-        },
-      });
+    // Send a POST request to the API to upload the file, passing in the headers and the file data
+    const response = await fetch(url, {
+      method: "POST",
+      body: data,
+      headers: {
+        "Content-Type": "application/octet-stream",
+        Authorization: api_token,
+      },
+    });
 
-      // If the response is successful, return the upload URL
-      if (response.status === 200) {
-        const responseData = await response.json();
-        return responseData["upload_url"];
-      } else {
-        console.error(`Error: ${response.status} - ${response.statusText}`);
-        return null;
-      }
-    } catch (error) {
-      console.error(`Error: ${error}`);
+    // If the response is successful, return the upload URL
+    if (response.status === 200) {
+      const responseData = await response.json();
+      return responseData["upload_url"];
+    } else {
+      console.error(`Error: ${response.status} - ${response.statusText}`);
       return null;
     }
   };
@@ -145,39 +140,52 @@ class AssemblyAI {
   };
 
   speechToText = async (id: number) => {
-    if (!this.apiToken) return;
+    if (!this.apiToken)
+      return {
+        actions: [Actions.showToast],
+        toastProps: [{ type: ToastType.error, title: "Wrong API token" }],
+      } as IMessage;
 
     this.setCurrentFileId(null);
 
     if (!this.apiURL) this.createAPIUrl();
-
-    const { viewUrl, title, folderId, fileExst } = (
-      await (await fetch(`${this.apiURL}/files/file/${id}`)).json()
-    ).response;
-
-    const file = await fetch(viewUrl);
-
-    const fileBlob = await file.blob();
-
-    const upload_url = await this.uploadFile(this.apiToken, viewUrl, fileBlob);
-
-    const transcript = await this.transcribeAudio(this.apiToken, upload_url);
-
-    const blob = new Blob([transcript.text], {
-      type: "text/plain;charset=UTF-8",
-    });
-
-    const newFile = new File([blob], `blob`, {
-      type: "",
-      lastModified: new Date().getTime(),
-    });
-
-    const formData = new FormData();
-    formData.append("file", newFile);
-
-    const newTitle = `${title.replaceAll(fileExst, "")} text`;
-
     try {
+      const { viewUrl, title, folderId, fileExst } = (
+        await (await fetch(`${this.apiURL}/files/file/${id}`)).json()
+      ).response;
+
+      const file = await fetch(viewUrl);
+
+      const fileBlob = await file.blob();
+
+      const upload_url = await this.uploadFile(
+        this.apiToken,
+        viewUrl,
+        fileBlob
+      );
+
+      if (!upload_url)
+        return {
+          actions: [Actions.showToast],
+          toastProps: [{ type: ToastType.error, title: "Wrong API token" }],
+        } as IMessage;
+
+      const transcript = await this.transcribeAudio(this.apiToken, upload_url);
+
+      const blob = new Blob([transcript.text], {
+        type: "text/plain;charset=UTF-8",
+      });
+
+      const newFile = new File([blob], `blob`, {
+        type: "",
+        lastModified: new Date().getTime(),
+      });
+
+      const formData = new FormData();
+      formData.append("file", newFile);
+
+      const newTitle = `${title.replaceAll(fileExst, "")} text`;
+
       const sessionRes = await fetch(
         `${this.apiURL}/files/${folderId}/upload/create_session`,
         {
@@ -201,17 +209,24 @@ class AssemblyAI {
         body: formData,
       });
 
-      const { id: fileId } = (await data.json()).data;
+      const { id: fileId, ...rest } = (await data.json()).data;
 
-      return fileId;
+      return {
+        actions: [Actions.showToast],
+        toastProps: [
+          {
+            type: ToastType.success,
+            title: "The file was successfully converted to text",
+          },
+        ],
+      } as IMessage;
     } catch (e) {
       console.log(e);
+      return {
+        actions: [Actions.showToast],
+        toastProps: [{ type: ToastType.error, title: "Wrong API token" }],
+      } as IMessage;
     }
-
-    return {
-      actions: [Actions.showToast],
-      toastProps: [{ type: ToastType.success, title: "" }],
-    } as IMessage;
   };
 }
 
