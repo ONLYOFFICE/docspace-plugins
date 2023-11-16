@@ -1,18 +1,18 @@
 /*
-* (c) Copyright Ascensio System SIA 2023
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*     http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * (c) Copyright Ascensio System SIA 2023
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 import {
   Actions,
@@ -103,43 +103,19 @@ class DrawIo {
   };
 
   setAdminSettings = (
-    url: string,
-    lang: { key: string },
-    off: boolean,
-    lib: boolean
+    url: string | null,
+    lang: { key: string } | null,
+    off: boolean | null,
+    lib: boolean | null
   ) => {
-    this.setUrl(url);
-    this.setLang(lang?.key);
-    this.setOff(off);
-    this.setLib(lib);
-
-    this.saveAdminSettings();
+    url && this.setUrl(url);
+    lang?.key && this.setLang(lang?.key);
+    off && this.setOff(off);
+    lib && this.setLib(lib);
   };
 
   getAdminSettings = () => {
-    return this.adminSettings;
-  };
-
-  fetchAdminSettings = () => {
-    const adminSettingsString = localStorage.getItem("draw-io-admin-settings");
-
-    if (!adminSettingsString) return;
-
-    const adminSettings = JSON.parse(adminSettingsString);
-
-    this.setUrl(adminSettings.url);
-    this.setLang(adminSettings.lang);
-    this.setOff(adminSettings.off);
-    this.setLib(adminSettings.lib);
-
-    return adminSettings;
-  };
-
-  saveAdminSettings = () => {
-    localStorage.setItem(
-      "draw-io-admin-settings",
-      JSON.stringify(this.adminSettings)
-    );
+    return JSON.stringify(this.adminSettings);
   };
 
   setTheme = (theme: string) => {
@@ -162,39 +138,14 @@ class DrawIo {
   setUserSettings = (theme: string, dark: string) => {
     this.setTheme(theme);
     this.setDark(dark);
-
-    this.saveUserSettings();
   };
 
   getUserSettings = () => {
     return this.userSettings;
   };
 
-  fetchUserSettings = () => {
-    const userSettingsString = localStorage.getItem("draw-io-user-settings");
-
-    if (!userSettingsString) return;
-
-    const userSettings = JSON.parse(userSettingsString);
-
-    this.setTheme(userSettings.theme);
-    this.setDark(userSettings.dark);
-
-    return userSettings;
-  };
-
-  saveUserSettings = () => {
-    localStorage.setItem(
-      "draw-io-user-settings",
-      JSON.stringify(this.userSettings)
-    );
-  };
-
   onLoad = async () => {
     if (!this.apiURL) this.createAPIUrl();
-
-    this.fetchAdminSettings();
-    this.fetchUserSettings();
   };
 
   createAPIUrl = () => {

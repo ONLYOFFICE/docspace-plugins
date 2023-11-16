@@ -41,9 +41,10 @@ const onClick = () => {
   );
 
   const message: IMessage = {
-    actions: [Actions.showToast, Actions.updateProps],
+    actions: [Actions.showToast, Actions.updateProps, Actions.saveSettings],
     toastProps: [{ title: "Data is saved", type: ToastType.success }],
     newProps: { ...adminButtonProps, isDisabled: true },
+    settings: drawIo.getAdminSettings(),
   };
 
   return message;
