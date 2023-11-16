@@ -113,40 +113,40 @@ class ConvertFile {
 
     if (!this.fileInfo || !fileName) return {};
 
-    const { viewUrl, folderId, fileExst } = this.fileInfo;
-
-    const data = await fetch(viewUrl);
-
-    const dataBlob = await data.blob();
-
-    const file = new File([dataBlob], `test${fileExst}`);
-
-    const convertApi = ConvertApi.auth(this.apiToken);
-
-    const params = convertApi.createParams();
-    params.add("file", file);
-
-    const result = await convertApi.convert(
-      fileExst.split(".")[1],
-      "pdf",
-      params
-    );
-
-    const url = result.files[0].Url;
-
-    const newFile = await fetch(url);
-
-    const newBlob = await newFile.blob();
-
-    const pdfFile = new File([newBlob], `blob`, {
-      type: "",
-      lastModified: new Date().getTime(),
-    });
-
-    const formData = new FormData();
-    formData.append("file", pdfFile);
-
     try {
+      const { viewUrl, folderId, fileExst } = this.fileInfo;
+
+      const data = await fetch(viewUrl);
+
+      const dataBlob = await data.blob();
+
+      const file = new File([dataBlob], `test${fileExst}`);
+
+      const convertApi = ConvertApi.auth(this.apiToken);
+
+      const params = convertApi.createParams();
+      params.add("file", file);
+
+      const result = await convertApi.convert(
+        fileExst.split(".")[1],
+        "pdf",
+        params
+      );
+
+      const url = result.files[0].Url;
+
+      const newFile = await fetch(url);
+
+      const newBlob = await newFile.blob();
+
+      const pdfFile = new File([newBlob], `blob`, {
+        type: "",
+        lastModified: new Date().getTime(),
+      });
+
+      const formData = new FormData();
+      formData.append("file", pdfFile);
+
       const sessionRes = await fetch(
         `${this.apiURL}/files/${folderId}/upload/create_session`,
         {
@@ -169,23 +169,35 @@ class ConvertFile {
         method: "POST",
         body: formData,
       });
-    } catch (e) {
-      console.log(e);
+
+      const toastTitle = `File "${fileName}${FilesExst.pdf}" was created`;
+
+      const message: IMessage = {
+        actions: [Actions.showToast, Actions.closeModal],
+        toastProps: [
+          {
+            type: ToastType.success,
+            title: toastTitle,
+          },
+        ],
+      };
+
+      return message;
+    } catch (e: any) {
+      const toastTitle = e?.message || "Wrong API token";
+
+      const message: IMessage = {
+        actions: [Actions.showToast, Actions.closeModal],
+        toastProps: [
+          {
+            type: ToastType.error,
+            title: toastTitle,
+          },
+        ],
+      };
+
+      return message;
     }
-
-    const toastTitle = `File "${fileName}${FilesExst.pdf}" was created`;
-
-    const message: IMessage = {
-      actions: [Actions.showToast, Actions.closeModal],
-      toastProps: [
-        {
-          type: ToastType.success,
-          title: toastTitle,
-        },
-      ],
-    };
-
-    return message;
   };
 }
 
