@@ -55,11 +55,9 @@ const adminSettings: ISettings = {
   settings: parentBox,
   saveButton: userButtonComponent,
   onLoad: async () => {
-    convertFile.fetchAPIToken();
+    const token = convertFile.getAPIToken();
 
-    tokenInput.value = convertFile.apiToken || "";
-
-    if (!convertFile.apiToken) return { settings: parentBox };
+    tokenInput.value = token || "";
 
     plugin.setAdminPluginSettings(adminSettings);
 
