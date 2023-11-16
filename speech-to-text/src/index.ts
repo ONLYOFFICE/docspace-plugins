@@ -105,6 +105,10 @@ class SpeechToText
     this.adminPluginSettings = settings;
   };
 
+  setAdminPluginSettingsValue = (settings: string | null): void => {
+    if (settings) assemblyAI.setAPIToken(settings);
+  };
+
   addContextMenuItem = (item: IContextMenuItem): void => {
     this.contextMenuItems.set(item.key, item);
   };
@@ -128,7 +132,6 @@ const plugin = new SpeechToText();
 
 plugin.addContextMenuItem(contextMenuItem);
 plugin.setAdminPluginSettings(adminSettings);
-plugin.setOnLoadCallback(assemblyAI.fetchAPIToken);
 
 declare global {
   interface Window {

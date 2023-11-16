@@ -1,18 +1,18 @@
 /*
-* (c) Copyright Ascensio System SIA 2023
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*     http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * (c) Copyright Ascensio System SIA 2023
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 import plugin from ".";
 
@@ -60,25 +60,12 @@ class AssemblyAI {
 
   setAPIToken = (apiToken: string) => {
     this.apiToken = apiToken;
+
+    plugin.updateStatus(!!apiToken ? PluginStatus.active : PluginStatus.hide);
   };
 
   getAPIToken = () => {
     return this.apiToken;
-  };
-
-  fetchAPIToken = async () => {
-    const apiToken = localStorage.getItem("speech-to-text-api-token");
-
-    if (!apiToken) return;
-
-    this.setAPIToken(apiToken);
-    plugin.updateStatus(PluginStatus.active);
-  };
-
-  saveAPIToken = (apiToken: string) => {
-    localStorage.setItem("speech-to-text-api-token", apiToken);
-
-    plugin.updateStatus(!!apiToken ? PluginStatus.active : PluginStatus.hide);
   };
 
   setCurrentFileId = (id: number | null) => {
@@ -86,8 +73,6 @@ class AssemblyAI {
   };
 
   uploadFile = async (api_token: string, path: string, data: Blob) => {
-    console.log(`Uploading file: ${path}`);
-
     const url = "https://api.assemblyai.com/v2/upload";
 
     try {

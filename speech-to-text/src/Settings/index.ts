@@ -55,11 +55,7 @@ const adminSettings: ISettings = {
   settings: parentBox,
   saveButton: userButtonComponent,
   onLoad: async () => {
-    assemblyAI.fetchAPIToken();
-
-    tokenInput.value = assemblyAI.apiToken;
-
-    if (!assemblyAI.apiToken) return { settings: parentBox };
+    tokenInput.value = assemblyAI.getAPIToken();
 
     plugin.setAdminPluginSettings(adminSettings);
 

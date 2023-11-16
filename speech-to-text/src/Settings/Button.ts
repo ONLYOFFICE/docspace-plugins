@@ -1,18 +1,18 @@
 /*
-* (c) Copyright Ascensio System SIA 2023
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*     http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * (c) Copyright Ascensio System SIA 2023
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 import {
   Actions,
@@ -32,7 +32,6 @@ import plugin from "..";
 
 const onClick = async () => {
   assemblyAI.setAPIToken(tokenInput.value);
-  assemblyAI.saveAPIToken(tokenInput.value);
 
   if (assemblyAI.currentFileId) {
     await assemblyAI.speechToText(assemblyAI.currentFileId);
@@ -41,9 +40,15 @@ const onClick = async () => {
   plugin.updateStatus(PluginStatus.active);
 
   const message: IMessage = {
-    actions: [Actions.showToast, Actions.updateProps, Actions.updateStatus],
+    actions: [
+      Actions.showToast,
+      Actions.updateProps,
+      Actions.updateStatus,
+      Actions.saveSettings,
+    ],
     toastProps: [{ title: "Token is saved", type: ToastType.success }],
     newProps: { ...userButtonProps, isDisabled: true },
+    settings: tokenInput.value,
   };
 
   return message;
