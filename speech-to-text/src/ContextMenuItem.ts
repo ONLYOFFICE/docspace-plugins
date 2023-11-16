@@ -14,7 +14,11 @@
  * limitations under the License.
  */
 
-import { FilesType, IContextMenuItem } from "@onlyoffice/docspace-plugin-sdk";
+import {
+  FilesType,
+  IContextMenuItem,
+  Security,
+} from "@onlyoffice/docspace-plugin-sdk";
 
 import assemblyAI from "./AssemblyAI";
 
@@ -24,5 +28,6 @@ export const contextMenuItem: IContextMenuItem = {
   icon: "speech-to-text.svg",
   onClick: assemblyAI.speechToText,
   fileType: [FilesType.video],
+  security: [Security.Create],
   withActiveItem: true,
 };
