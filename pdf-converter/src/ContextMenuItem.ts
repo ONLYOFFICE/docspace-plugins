@@ -15,6 +15,7 @@
  */
 
 import {
+  FilesExst,
   FilesType,
   IContextMenuItem,
   Security,
@@ -28,6 +29,7 @@ export const convertFileItem: IContextMenuItem = {
   icon: "convert-16.png",
   onClick: convertFile.onOpenModalDialog,
   fileType: [FilesType.file],
+  fileExt: [FilesExst.docx, FilesExst.xlsx, FilesExst.pptx],
   security: [Security.Create],
   usersTypes: [UsersType.owner, UsersType.docSpaceAdmin, UsersType.roomAdmin],
 };
