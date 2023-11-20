@@ -85,7 +85,9 @@ const mainButtonItem: IMainButtonItem = {
         isCreateDialog: true,
         extension: ".drawio",
         onSave: async (e: any, value: string) => {
-          await drawIo.createNewFile(value);
+          const id = await drawIo.createNewFile(value);
+
+          return await drawIo.editDiagram(id);
         },
         onCancel: (e: any) => {
           drawIo.setCurrentFolderId(null);
