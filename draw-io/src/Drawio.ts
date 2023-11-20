@@ -16,6 +16,7 @@
 
 import {
   Actions,
+  File,
   IMessage,
   IToast,
   ToastType,
@@ -258,70 +259,85 @@ class DrawIo {
     return message;
   };
 
-  editDiagram = async (id: number) => {
+  editDiagram = async (propFile: File) => {
     if (!this.apiURL) this.createAPIUrl();
 
-    const file = (await (await fetch(`${this.apiURL}/files/file/${id}`)).json())
-      .response;
+    try {
+      const file = !!propFile.fileExst
+        ? propFile
+        : (
+            await (
+              await fetch(`${this.apiURL}/files/file/${propFile.id}`)
+            ).json()
+          ).response;
 
-    if (file.fileExst !== ".drawio" && file.fileExst !== ".png") {
-      return {
-        actions: [Actions.showToast],
-        toastProps: [
-          { type: ToastType.error, title: "Wrong file format" } as IToast,
-        ],
-      };
-    }
-
-    const userRes = (await (await fetch(`${this.apiURL}/people/@self`)).json())
-      .response;
-
-    const { isVisitor, theme } = userRes;
-
-    const { access, title } = file;
-
-    const showSaveButton =
-      !isVisitor &&
-      (access === 0 || access === 1 || access === 10 || access === 11);
-
-    this.currentFileId = file.id;
-
-    const data = await fetch(file.viewUrl);
-
-    const dataBlob = await data.blob();
-
-    if (file.fileExst === ".drawio") {
-      const dataText = await dataBlob.text();
-
-      const message = this.openEditor(
-        dataText,
-        "xml",
-        title.replace(".drawio", ""),
-        theme,
-        showSaveButton
-      );
-
-      return message;
-    } else {
-      return new Promise<IMessage>((resolve, reject) => {
-        const reader = new FileReader();
-
-        reader.onloadend = () => {
-          if (typeof reader.result === "string") {
-            const message: IMessage = this.openEditor(
-              reader.result,
-              "xmlpng",
-              title.replace(".png", ""),
-              theme,
-              showSaveButton
-            );
-            return resolve(message);
-          }
-
-          return {} as IMessage;
+      if (file.fileExst !== ".drawio" && file.fileExst !== ".png") {
+        return {
+          actions: [Actions.showToast],
+          toastProps: [
+            { type: ToastType.error, title: "Wrong file format" } as IToast,
+          ],
         };
-        reader.readAsDataURL(dataBlob);
-      });
+      }
+
+      const userRes = (
+        await (await fetch(`${this.apiURL}/people/@self`)).json()
+      ).response;
+
+      const { theme } = userRes;
+
+      //@ts-ignore
+      const { title, security } = file;
+
+      const showSaveButton =
+        security?.edit ||
+        file.access === 0 ||
+        file.access === 1 ||
+        file.access === 10 ||
+        file.access === 11;
+
+      this.currentFileId = file.id;
+
+      const data = await fetch(file.viewUrl);
+
+      const dataBlob = await data.blob();
+
+      if (file.fileExst === ".drawio") {
+        const dataText = await dataBlob.text();
+
+        const message = this.openEditor(
+          dataText,
+          "xml",
+          title.replace(".drawio", ""),
+          theme,
+          showSaveButton
+        );
+
+        return message;
+      } else {
+        return new Promise<IMessage>((resolve) => {
+          const reader = new FileReader();
+
+          reader.onloadend = () => {
+            if (typeof reader.result === "string") {
+              const message: IMessage = this.openEditor(
+                reader.result,
+                "xmlpng",
+                title.replace(".png", ""),
+                theme,
+                showSaveButton
+              );
+              return resolve(message);
+            }
+
+            return {} as IMessage;
+          };
+          reader.readAsDataURL(dataBlob);
+        });
+      }
+    } catch (e) {
+      console.log(e);
+      return {};
     }
   };
 

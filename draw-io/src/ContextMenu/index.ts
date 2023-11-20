@@ -16,6 +16,7 @@
 
 import {
   Devices,
+  File,
   FilesExst,
   FilesType,
   IContextMenuItem,
@@ -23,7 +24,7 @@ import {
 import drawIo from "../Drawio";
 
 const onClick = async (id: number) => {
-  const message = await drawIo.editDiagram(id);
+  const message = await drawIo.editDiagram({ id } as File);
 
   return message;
 };
