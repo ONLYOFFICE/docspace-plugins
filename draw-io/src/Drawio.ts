@@ -378,7 +378,7 @@ class DrawIo {
   };
 
   saveDiagram = async (content: string, draft: boolean, isExport: boolean) => {
-    if (this.saveRequestRunning) return;
+    if (this.saveRequestRunning || !this.currentFileId) return;
 
     this.saveRequestRunning = true;
     let blob = new Blob([content]);
