@@ -263,13 +263,15 @@ class DrawIo {
     if (!this.apiURL) this.createAPIUrl();
 
     try {
-      const file = !!propFile.fileExst
-        ? propFile
-        : (
-            await (
-              await fetch(`${this.apiURL}/files/file/${propFile.id}`)
-            ).json()
-          ).response;
+      let file = propFile;
+
+      if (!propFile.fileExst) {
+        file = (
+          await (
+            await fetch(`${this.apiURL}/files/file/${propFile.id || propFile}`)
+          ).json()
+        ).response;
+      }
 
       if (file.fileExst !== ".drawio" && file.fileExst !== ".png") {
         return {
@@ -290,10 +292,10 @@ class DrawIo {
       const { title, security } = file;
 
       const showSaveButton =
-        security?.edit ||
-        file.access === 0 ||
-        file.access === 1 ||
-        file.access === 10 ||
+        security?.edit || //@ts-ignore
+        file.access === 0 || //@ts-ignore
+        file.access === 1 || //@ts-ignore
+        file.access === 10 || //@ts-ignore
         file.access === 11;
 
       this.currentFileId = file.id;
@@ -421,7 +423,6 @@ class DrawIo {
       this.saveRequestRunning = false;
     } catch (e) {
       this.saveRequestRunning = false;
-      console.log(e);
     }
   };
 
