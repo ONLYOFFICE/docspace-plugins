@@ -96,8 +96,6 @@ class AssemblyAI {
   };
 
   transcribeAudio = async (api_token: string, audio_url: string) => {
-    console.log("Transcribing audio... This might take a moment.");
-
     // Set the headers for the request, including the API token and content type
     const headers = {
       authorization: api_token,
@@ -143,7 +141,7 @@ class AssemblyAI {
     if (!this.apiToken)
       return {
         actions: [Actions.showToast],
-        toastProps: [{ type: ToastType.error, title: "Wrong API token" }],
+        toastProps: [{ type: ToastType.error, title: "API token is missing" }],
       } as IMessage;
 
     this.setCurrentFileId(null);
@@ -171,6 +169,18 @@ class AssemblyAI {
         } as IMessage;
 
       const transcript = await this.transcribeAudio(this.apiToken, upload_url);
+
+      if (!transcript.text) {
+        return {
+          actions: [Actions.showToast],
+          toastProps: [
+            {
+              type: ToastType.success,
+              title: "Speech is not recognized or is missing",
+            },
+          ],
+        } as IMessage;
+      }
 
       const blob = new Blob([transcript.text], {
         type: "text/plain;charset=UTF-8",
@@ -204,12 +214,10 @@ class AssemblyAI {
 
       const sessionData = (await sessionRes.json()).response.data;
 
-      const data = await fetch(`${sessionData.location}`, {
+      await fetch(`${sessionData.location}`, {
         method: "POST",
         body: formData,
       });
-
-      const { id: fileId, ...rest } = (await data.json()).data;
 
       return {
         actions: [Actions.showToast],
