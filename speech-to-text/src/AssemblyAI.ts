@@ -175,7 +175,7 @@ class AssemblyAI {
           actions: [Actions.showToast],
           toastProps: [
             {
-              type: ToastType.success,
+              type: ToastType.info,
               title: "Speech is not recognized or is missing",
             },
           ],
