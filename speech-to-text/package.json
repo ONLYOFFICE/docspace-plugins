@@ -22,7 +22,7 @@
     "prettier": "2.8.6"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "^0.0.3"
+    "@onlyoffice/docspace-plugin-sdk": "^1.0.0"
   },
   "description": "Speech to Text Conversion is a speech recognition software that allows you to recognize and translate spoken speech into text.",
   "pluginName": "SpeechToText",
