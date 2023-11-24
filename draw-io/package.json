@@ -24,7 +24,7 @@
     "prettier": "2.8.6"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "^0.0.3"
+    "@onlyoffice/docspace-plugin-sdk": "^1.0.0"
   },
   "description": "A tool for creating diagrams, flowcharts, intelligence maps, business layouts, entity relationships, program blocks, and more",
   "pluginName": "Drawio",
