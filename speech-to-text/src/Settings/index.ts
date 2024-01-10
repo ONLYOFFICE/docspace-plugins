@@ -31,7 +31,7 @@ import { userButtonComponent } from "./Button";
 const descriptionText: TextGroup = {
   component: Components.text,
   props: {
-    text: "To generate API token, visit https://www.assemblyai.com",
+    text: "To generate API token, visit https://www.assemblyai.com \n\n Once the API token is enabled, the plugin becomes available to all users of the current DocSpace.",
     color: "#A3A9AE",
     fontSize: "12px",
     fontWeight: 400,
