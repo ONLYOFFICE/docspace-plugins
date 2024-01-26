@@ -3,7 +3,7 @@ import { IFileItem, File, Devices } from "@onlyoffice/docspace-plugin-sdk";
 import markdownIt from "../Markdownit";
 
 const onClick = async (item: File) => {
-  return await markdownIt.editMarkdown(item.id);
+  return await markdownIt.editMarkdown(item.id, false);
 };
 
 export const markdownitItem: IFileItem = {

@@ -1,7 +1,7 @@
 {
   "name": "markdown-it",
-  "version": "0.1.0",
-  "author": "sshakndr",
+  "version": "0.2.0",
+  "author": "ONLYOFFICE",
   "main": "index.ts",
   "private": true,
   "scopes": [

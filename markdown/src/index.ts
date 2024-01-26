@@ -18,7 +18,7 @@ import {
   IFileItem,
 } from "@onlyoffice/docspace-plugin-sdk";
 import { markdownitItem } from "./File";
-import { contextMenuItem } from "./ContextMenu";
+import { contextMenuItem, contextMenuViewerItem } from "./ContextMenu";
 import { mainButtonItem } from "./MainButton";
 
 class Markdown
@@ -196,6 +196,7 @@ declare global {
 
 plugin.addFileItem(markdownitItem);
 plugin.addContextMenuItem(contextMenuItem);
+plugin.addContextMenuItem(contextMenuViewerItem);
 plugin.addMainButtonItem(mainButtonItem);
 
 window.Plugins.Markdown = plugin || {};

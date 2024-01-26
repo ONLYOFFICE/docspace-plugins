@@ -1,0 +1,8 @@
+{
+    "textarea_height": 0.7,
+    "modal_height": 0.8,
+    "modal_width": 0.9,
+    "styles_url": "https://cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.css",
+    "hlstyles_url": "https://cdn.jsdelivr.net/highlight.js/9.1.0/styles/github.min.css",
+    "bodystyle": "img { max-width: 100%; height: auto; } body { padding: 10px; overflow: hidden; }"
+}

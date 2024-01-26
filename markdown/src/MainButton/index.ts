@@ -3,7 +3,7 @@ import markdownIt from "../Markdownit";
 
 const mainButtonItem: IMainButtonItem = {
     key: "markdown-it-main-button-item",
-    label: "Markdown",
+    label: "Create markdown",
     icon: "markdown.svg",
     onClick: (id: number) => {
       markdownIt.setCurrentFolderId(id);
@@ -12,12 +12,15 @@ const mainButtonItem: IMainButtonItem = {
         actions: [Actions.showCreateDialogModal],
         createDialogProps: {
           title: "Create markdown",
-          startValue: "New markdown",
+          startValue: "",
           visible: true,
           isCreateDialog: true,
           extension: ".md",
           onSave: async (e: any, value: string) => {
-            await markdownIt.createNewFile(value);
+            const fileID = await markdownIt.createNewFile(value);
+            const message = await markdownIt.editMarkdown(fileID, false);
+
+            return message;
           },
           onCancel: (e: any) => {
             markdownIt.setCurrentFolderId(null);
