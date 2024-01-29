@@ -2,6 +2,11 @@
   "name": "markdown-it",
   "version": "0.2.0",
   "author": "ONLYOFFICE",
+  "description": "DocSpace plugin for viewing .md files",
+  "pluginName": "Markdown",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/markdown",
+  "logo": "logo.png",
   "main": "index.ts",
   "private": true,
   "scopes": [
@@ -31,10 +36,5 @@
     "@types/markdown-it": "^13.0.7",
     "highlight.js": "^11.9.0",
     "markdown-it": "^14.0.0"
-  },
-  "description": "DocSpace plugin for viewing .md files",
-  "pluginName": "Markdown",
-  "license": "",
-  "logo": "logo.png",
-  "homepage": ""
+  }
 }
