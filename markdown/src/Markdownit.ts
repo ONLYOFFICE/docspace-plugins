@@ -41,7 +41,7 @@ import {
   IToast,
   ToastType,
 } from "@onlyoffice/docspace-plugin-sdk";
-import { saveUnsavedButton, unsavedModalDialog } from "./MarkdownIT/Unsaved";
+import { closeButton, saveUnsavedButton, unsavedModalDialog } from "./MarkdownIT/Unsaved";
 
 const md = markdownit({
   highlight: function (str, lang) {
@@ -421,6 +421,13 @@ class Markdownit {
         incorrectSolution(currentData);
         return message;
       }
+    }
+    closeButton.onClick = unsavedModalDialog.onClose = () => {
+      const message: IMessage = {
+          actions: [Actions.closeModal],
+      };
+      this.fileChanged = false;
+      return message;
     }
     saveUnsavedButton.onClick = async () => {
       let success = await this.saveMarkdown(mdArea.value);

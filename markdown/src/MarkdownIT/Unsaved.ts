@@ -66,18 +66,13 @@ export const saveUnsavedButton: IButton = {
     onClick: () => {}
 }
 
-const closeButton: IButton = {
+export const closeButton: IButton = {
     label: "Close without saving",
     size: ButtonSize.normal,
     withLoadingAfterClick: true,
     disableWhileRequestRunning: true,
     scale: true,
-    onClick: () => {
-        const message: IMessage = {
-            actions: [Actions.closeModal],
-        };
-        return message;
-    }
+    onClick: () => {}
 }
 
 const unsavedFooter: IBox = {
@@ -111,10 +106,5 @@ export const unsavedModalDialog: IModalDialog = {
             newDialogFooter: unsavedModalDialog.dialogFooter
         };
     },
-    onClose: () => {
-        const message: IMessage = {
-            actions: [Actions.closeModal],
-        };
-        return message;
-    }
+    onClose: () => {}
 }
