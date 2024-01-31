@@ -95,7 +95,7 @@ export const editorFooter: IBox = {
     },
     {
       component: Components.box,
-      props: intendBox
+      props: {...intendBox, widthProp: "24px"}
     },
     {
       component: Components.button,
@@ -139,8 +139,8 @@ const markdownText: IText = {
 }
 
 export const markdownResize: IButton = {
-  label: "↔",
-  size: ButtonSize.small,
+  label: "Resize",
+  size: ButtonSize.extraSmall,
   onClick: () => {}
 }
 
@@ -170,6 +170,10 @@ export const markdownSide: IBox = {
     {
       component: Components.box,
       props: markdownHeader
+    },
+    {
+      component: Components.box,
+      props: intendBox
     },
     {
       component: Components.box,
@@ -213,8 +217,8 @@ const previewText: IText = {
 }
 
 export const previewResize: IButton = {
-  label: "↔",
-  size: ButtonSize.small,
+  label: "Resize",
+  size: ButtonSize.extraSmall,
   onClick: () => {}
 }
 
@@ -244,6 +248,10 @@ export const previewSide: IBox = {
     {
       component: Components.box,
       props: previewHeader
+    },
+    {
+      component: Components.box,
+      props: intendBox
     },
     {
       component: Components.box,

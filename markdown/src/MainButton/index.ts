@@ -28,7 +28,7 @@ const mainButtonItem: IMainButtonItem = {
         actions: [Actions.showCreateDialogModal],
         createDialogProps: {
           title: "Create markdown",
-          startValue: "",
+          startValue: "Markdown file",
           visible: true,
           isCreateDialog: true,
           extension: ".md",
