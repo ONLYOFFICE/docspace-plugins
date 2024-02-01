@@ -184,10 +184,12 @@ export const markdownSide: IBox = {
 
 const frameProps: IFrame = {
   width: "100%",
-  height: "auto",
   name: "md-viewer",
   id: "md-iframe",
   src: "",
+  style: {
+    minHeight: "0"
+  }
 }
 
 const borderProp: IBorderProp = {

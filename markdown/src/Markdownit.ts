@@ -303,6 +303,7 @@ class Markdownit {
       return message;
     };
     markdownResize.onClick = () => {
+      resizeTextArea();
       if (this.fulscreen) {
         markdownSide.widthProp = "50%";
         editorBox.children = [
@@ -536,7 +537,7 @@ class Markdownit {
 
 async function insertMD (data: string) {
     const iframe = window.parent.document.getElementById("md-iframe") as HTMLIFrameElement;
-
+    changeIFrameMinHeight();
     if (iframe){
     const result = md.render(data);
     let iframeWindow = iframe.contentWindow as Window;
@@ -559,7 +560,10 @@ async function insertMD (data: string) {
     mdBody.id = "markdown-body";
     mdBody.innerHTML = result;
     iframeWindow.document.body.appendChild(mdBody);
-    iframe.style.height = iframe.contentWindow?.document.documentElement.scrollHeight + 'px'; // TODO: sometimes preview page is cropped
+    iframe.style.height = iframe.contentWindow?.document.documentElement.scrollHeight + 'px';
+    setTimeout(function() {
+      iframe.style.height = iframe.contentWindow?.document.documentElement.scrollHeight + 'px';
+    }, 200);
   } 
   else {
     setTimeout(function() {
@@ -626,6 +630,17 @@ function adaptive(editor:boolean){
     viewerBody.widthProp = window.parent.innerWidth * properties.modal_width + "px";
     viewerBody.heightProp = window.parent.innerHeight * properties.modal_height + "px";
   }
+}
+
+function resizeTextArea(){ // TODO: ask docspace developers for remove textarea maxwidth
+  const area = window.parent.document.getElementsByName("md-plugin-textarea")[0] as HTMLIFrameElement;
+  //@ts-ignore
+  area.parentElement?.parentElement?.parentElement?.parentElement?.parentElement?.style.maxWidth = "100%";
+}
+
+function changeIFrameMinHeight(){ // TODO: remove after docspace 2.0.2 release
+  const iframe = window.parent.document.getElementById("md-iframe") as HTMLIFrameElement;
+  iframe.style.minHeight = "0";
 }
 
 function incorrectSolution(data:string){
