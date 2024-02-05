@@ -29,7 +29,8 @@ import {
   intendBox, 
   previewSide, 
   previewResize, 
-  viewerBody 
+  viewerBody, 
+  editorFooter
 } from "./MarkdownIT/Dialog";
 import markdownit from 'markdown-it';
 import hljs from 'highlight.js';
@@ -225,6 +226,7 @@ class Markdownit {
     saveExitButton.onClick = async () => {
       let success = await this.saveMarkdown(mdArea.value);
       if (success) {
+        saveExitButton.isDisabled = saveButton.isDisabled = true;
         this.stopEdit();
         var message: IMessage = {
           actions: [Actions.closeModal, Actions.showToast],
@@ -242,19 +244,15 @@ class Markdownit {
     saveButton.onClick =async () => {
       let success = await this.saveMarkdown(mdArea.value);
       if (success) {
-        saveButton.isDisabled = true;
+        saveExitButton.isDisabled = saveButton.isDisabled = true;
         var message: IMessage = {
-          actions: [Actions.updateProps, Actions.updateContext, Actions.showToast],
-          newProps: saveButton,
+          actions: [Actions.updateContext, Actions.showToast],
           toastProps: [toastProps],
           contextProps: [
             {
-              "name": "saveExitButton",
-              "props":{
-                ...saveExitButton,
-                "isDisabled": true
-              }
-            },
+              name: "editorFooter",
+              props: editorFooter
+            }
           ]
         }
         this.fileChanged = false;
@@ -272,30 +270,21 @@ class Markdownit {
       this.fileChanged = true;
       mdArea.value = value;
       if (saveButton.isDisabled){
+        saveExitButton.isDisabled = saveButton.isDisabled = false;
         var message: IMessage = {
-          "actions": [Actions.updateProps, Actions.updateContext],
-          "newProps": mdArea,
-          "contextProps": [
+          actions: [Actions.updateProps, Actions.updateContext],
+          newProps: mdArea,
+          contextProps: [
             {
-              "name": "saveExitButton",
-              "props":{
-                ...saveExitButton,
-                "isDisabled": false
-              }
-            },
-            {
-              "name": "saveButton",
-              "props": {
-                ...saveButton,
-                "isDisabled": false
-              }
+              name: "editorFooter",
+              props: editorFooter
             },
           ]
         };
       } else {
         message = {
-          "actions": [Actions.updateProps],
-          "newProps": mdArea,
+          actions: [Actions.updateProps],
+          newProps: mdArea,
         }
       }
       
@@ -475,6 +464,7 @@ class Markdownit {
     markdownitModalDialogProps.dialogHeader = title;
     markdownitModalDialogProps.dialogBody = editorBody;
     markdownitModalDialogProps.onClose = () => {
+      saveExitButton.isDisabled = saveButton.isDisabled = true;
       const message: IMessage = {
         actions: [Actions.closeModal],
       };

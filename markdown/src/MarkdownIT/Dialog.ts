@@ -300,7 +300,8 @@ export const editorBody: IBox = {
     },
     {
       component: Components.box,
-      props: editorFooter
+      props: editorFooter,
+      contextName: "editorFooter"
     }
   ]
 }
