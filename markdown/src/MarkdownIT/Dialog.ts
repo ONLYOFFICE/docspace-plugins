@@ -192,14 +192,14 @@ const frameProps: IFrame = {
   }
 }
 
-const borderProp: IBorderProp = {
+export const borderProp: IBorderProp = {
   color: "rgb(208, 213, 218)",
   radius: "3px",
   width: "1px",
   style: "solid"
 }
 
-const iframeBox: IBox = {
+export const iframeBox: IBox = {
   widthProp: "100%",
   heightProp: "100%",
   overflowProp: "auto",

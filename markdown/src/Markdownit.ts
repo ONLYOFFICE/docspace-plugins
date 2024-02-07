@@ -30,7 +30,9 @@ import {
   previewSide, 
   previewResize, 
   viewerBody, 
-  editorFooter
+  editorFooter,
+  iframeBox,
+  borderProp
 } from "./MarkdownIT/Dialog";
 import markdownit from 'markdown-it';
 import hljs from 'highlight.js';
@@ -63,6 +65,7 @@ class Markdownit {
   currentFolderId: number | null = null;
   fulscreen: boolean = false;
   fileChanged: boolean = false;
+  dark: boolean = false;
   
   setCurrentFolderId = (id: number | null) => {
     this.currentFolderId = id;
@@ -160,6 +163,16 @@ class Markdownit {
     .response;
 
     const { isVisitor, theme } = userRes;
+
+    if (theme === "Dark") {
+      this.dark = true;
+      iframeBox.backgroundProp = "rgb(41, 41, 41)";
+      borderProp.color = "rgb(71, 71, 71)";
+    } else {
+      this.dark = false;
+      iframeBox.backgroundProp = "rgb(255, 255, 255)";
+      borderProp.color = "rgb(208, 213, 218)";
+    }
 
     const { access, title } = file;
 
@@ -534,12 +547,12 @@ async function insertMD (data: string) {
 
     let hlStyles = iframeWindow.document.createElement("link");
     hlStyles.rel = "stylesheet";
-    hlStyles.href = properties.hlstyles_url;
+    hlStyles.href = markdownIt.dark ? properties.dark_hlstyles_url : properties.hlstyles_url;
     let styles = iframeWindow.document.createElement("link");
     styles.rel = "stylesheet";
     styles.href = properties.styles_url;
     let bodyStyle = iframeWindow.document.createElement("style");
-    bodyStyle.innerHTML = properties.bodystyle;
+    bodyStyle.innerHTML = markdownIt.dark ? properties.dark_bodystyle : properties.bodystyle;
     iframeWindow.document.head.appendChild(hlStyles);
     iframeWindow.document.head.appendChild(styles);
     iframeWindow.document.head.appendChild(bodyStyle);

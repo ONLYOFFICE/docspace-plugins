@@ -6,7 +6,7 @@
   "pluginName": "Markdown",
   "license": "Apache-2.0",
   "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/markdown",
-  "logo": "logo.png",
+  "logo": "logo.svg",
   "main": "index.ts",
   "private": true,
   "scopes": [
