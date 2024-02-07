@@ -88,15 +88,15 @@ export const editorFooter: IBox = {
   displayProp: "flex",
   flexDirection: "row",
   children: [
-    {
-      component: Components.button,
-      props: saveButton,
-      contextName: "saveButton"
-    },
-    {
-      component: Components.box,
-      props: {...intendBox, widthProp: "24px"}
-    },
+    // { // TODO: return after docspace bugfix
+    //   component: Components.button,
+    //   props: saveButton,
+    //   contextName: "saveButton"
+    // },
+    // {
+    //   component: Components.box,
+    //   props: {...intendBox, widthProp: "24px"}
+    // },
     {
       component: Components.button,
       props: saveExitButton,
