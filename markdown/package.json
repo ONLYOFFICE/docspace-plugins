@@ -2,7 +2,7 @@
   "name": "markdown",
   "version": "0.2.0",
   "author": "ONLYOFFICE",
-  "description": "DocSpace plugin for viewing .md files",
+  "description": "DocSpace plugin for viewing, editing and creating .md files",
   "pluginName": "Markdown",
   "license": "Apache-2.0",
   "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/markdown",
