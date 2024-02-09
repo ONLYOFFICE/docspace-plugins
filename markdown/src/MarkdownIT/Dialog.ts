@@ -58,7 +58,7 @@ export const saveExitButton: IButton = {
   label: "Save and close",
   size: ButtonSize.normal,
   isDisabled:  true,
-  primary: false,
+  primary: true,
   withLoadingAfterClick: true,
   disableWhileRequestRunning: true,
   scale: true,
