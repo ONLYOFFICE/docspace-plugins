@@ -1,0 +1,65 @@
+---
+name: Build&Release DocSpace plugins
+
+on: 
+  push:
+    branches: 
+      - 'master'
+      
+  workflow_dispatch:
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.plugins }}
+    steps:
+    - uses: actions/checkout@v4
+    - name: make matrix
+      id: matrix
+      run: |
+        PLUGINS=()
+        for d in $(ls -d */); do
+          if [[ -f ${d}/yarn.lock || -f ${d}/package.json ]]; then
+            PLUGINS+=($(basename ${d}))
+          fi
+        done
+        echo "plugins for build is: "
+        echo "${PLUGINS[@]}"
+
+        # Set new matrix for build job
+        echo "plugins=$(jq -c -n '$ARGS.positional' --args "${PLUGINS[@]}")" >> "$GITHUB_OUTPUT"
+          
+  build:
+    name: "Build plugin: ${{ matrix.plugin }}"
+    runs-on: ubuntu-latest
+    env:
+      PLUGIN_NAME: ${{ matrix.plugin }}
+    needs: [prepare]
+    strategy:
+      fail-fast: false
+      matrix: 
+        plugin: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: eu-central-1
+        
+    - name: Build plugin
+      run: |
+        cd ./${PLUGIN_NAME}
+        yarn
+        yarn run build
+        
+    - name: extract plugins.zip
+      run: |
+       mkdir ./sync
+       unzip ${PLUGIN_NAME}/dist/plugin.zip -d ./sync
+
+    - name: Upload plugin
+      run: aws s3 sync ./sync s3://docspace-static.onlyoffice.io/webplugins/${PLUGIN_NAME}
