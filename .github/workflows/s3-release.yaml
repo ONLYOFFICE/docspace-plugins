@@ -34,7 +34,7 @@ jobs:
     name: "Build plugin: ${{ matrix.plugin }}"
     runs-on: ubuntu-latest
     env:
-      PLUGIN_NAME: ${{ matrix.plugin }}
+      PLUGIN_FOLDER: ${{ matrix.plugin }}
     needs: [prepare]
     strategy:
       fail-fast: false
@@ -49,17 +49,23 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: eu-central-1
+
+    - name: Get s3 plugin name
+      run: |
+        echo "PLUGIN_NAME=$(cat ./${PLUGIN_FOLDER}/package.json | jq -r '.name' | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_ENV"
         
     - name: Build plugin
       run: |
-        cd ./${PLUGIN_NAME}
+        cd ./${PLUGIN_FOLDER}
         yarn
         yarn run build
         
     - name: extract plugins.zip
       run: |
-       mkdir ./sync
-       unzip ${PLUGIN_NAME}/dist/plugin.zip -d ./sync
+        mkdir -p ../${PLUGIN_NAME}
+        unzip ./${PLUGIN_FOLDER}/dist/plugin.zip -d ../${PLUGIN_NAME}
 
     - name: Upload plugin
-      run: aws s3 sync ./sync s3://docspace-static.onlyoffice.io/webplugins/${PLUGIN_NAME}
+      run: |
+        cd ../
+        aws s3 sync ./${PLUGIN_NAME} s3://docspace-static.onlyoffice.io/webplugins/${PLUGIN_NAME}
