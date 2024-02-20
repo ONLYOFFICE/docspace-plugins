@@ -43,17 +43,15 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    # Get s3 plugins name and mask aws access key id
+    # Get s3 plugins name
     - name: Get s3 plugin name
       run: |
         echo "PLUGIN_NAME=$(cat ./${PLUGIN_FOLDER}/package.json | jq -r '.name' | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_ENV"
-        echo "::add-mask::${{ vars.ACCESS_KEY_ID }}"
-        echo "ACCESS_KEY_ID=${{ vars.ACCESS_KEY_ID }}" >> "$GITHUB_ENV"
         
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
-        aws-access-key-id: ${{ env.ACCESS_KEY_ID }}
+        aws-access-key-id: ${{ vars.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: eu-central-1
         
