@@ -3,6 +3,8 @@ name: Build&Release DocSpace plugins
 
 on: 
   push:
+    paths-ignore:
+      - '.github/**'
       
   workflow_dispatch:
 
