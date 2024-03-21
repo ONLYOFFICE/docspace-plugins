@@ -2,11 +2,9 @@
 name: Build&Release DocSpace plugins
 
 on: 
-  push:
-    paths-ignore:
-      - '.github/**'
-      
   workflow_dispatch:
+  push:
+    branches: [master]
 
 jobs:
   prepare:
@@ -55,7 +53,7 @@ jobs:
         yarn run build
 
     - name: Configure AWS Credentials
-      if: github.ref_name == 'master'
+      if: github.ref_name == ''
       uses: aws-actions/configure-aws-credentials@v4
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
