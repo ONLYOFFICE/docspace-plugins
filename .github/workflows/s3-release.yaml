@@ -1,5 +1,5 @@
 ---
-name: Build&Release DocSpace plugins
+name: Build&Release DocSpace plugins io
 
 on: 
   workflow_dispatch:
