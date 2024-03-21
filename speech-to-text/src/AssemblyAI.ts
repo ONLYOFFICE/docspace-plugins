@@ -1,18 +1,18 @@
 /*
-* (c) Copyright Ascensio System SIA 2023
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*     http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * (c) Copyright Ascensio System SIA 2023
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 import plugin from ".";
 
@@ -60,25 +60,12 @@ class AssemblyAI {
 
   setAPIToken = (apiToken: string) => {
     this.apiToken = apiToken;
+
+    plugin.updateStatus(!!apiToken ? PluginStatus.active : PluginStatus.hide);
   };
 
   getAPIToken = () => {
     return this.apiToken;
-  };
-
-  fetchAPIToken = async () => {
-    const apiToken = localStorage.getItem("speech-to-text-api-token");
-
-    if (!apiToken) return;
-
-    this.setAPIToken(apiToken);
-    plugin.updateStatus(PluginStatus.active);
-  };
-
-  saveAPIToken = (apiToken: string) => {
-    localStorage.setItem("speech-to-text-api-token", apiToken);
-
-    plugin.updateStatus(!!apiToken ? PluginStatus.active : PluginStatus.hide);
   };
 
   setCurrentFileId = (id: number | null) => {
@@ -86,38 +73,29 @@ class AssemblyAI {
   };
 
   uploadFile = async (api_token: string, path: string, data: Blob) => {
-    console.log(`Uploading file: ${path}`);
-
     const url = "https://api.assemblyai.com/v2/upload";
 
-    try {
-      // Send a POST request to the API to upload the file, passing in the headers and the file data
-      const response = await fetch(url, {
-        method: "POST",
-        body: data,
-        headers: {
-          "Content-Type": "application/octet-stream",
-          Authorization: api_token,
-        },
-      });
+    // Send a POST request to the API to upload the file, passing in the headers and the file data
+    const response = await fetch(url, {
+      method: "POST",
+      body: data,
+      headers: {
+        "Content-Type": "application/octet-stream",
+        Authorization: api_token,
+      },
+    });
 
-      // If the response is successful, return the upload URL
-      if (response.status === 200) {
-        const responseData = await response.json();
-        return responseData["upload_url"];
-      } else {
-        console.error(`Error: ${response.status} - ${response.statusText}`);
-        return null;
-      }
-    } catch (error) {
-      console.error(`Error: ${error}`);
+    // If the response is successful, return the upload URL
+    if (response.status === 200) {
+      const responseData = await response.json();
+      return responseData["upload_url"];
+    } else {
+      console.error(`Error: ${response.status} - ${response.statusText}`);
       return null;
     }
   };
 
   transcribeAudio = async (api_token: string, audio_url: string) => {
-    console.log("Transcribing audio... This might take a moment.");
-
     // Set the headers for the request, including the API token and content type
     const headers = {
       authorization: api_token,
@@ -160,39 +138,64 @@ class AssemblyAI {
   };
 
   speechToText = async (id: number) => {
-    if (!this.apiToken) return;
+    if (!this.apiToken)
+      return {
+        actions: [Actions.showToast],
+        toastProps: [{ type: ToastType.error, title: "API token is missing" }],
+      } as IMessage;
 
     this.setCurrentFileId(null);
 
     if (!this.apiURL) this.createAPIUrl();
-
-    const { viewUrl, title, folderId, fileExst } = (
-      await (await fetch(`${this.apiURL}/files/file/${id}`)).json()
-    ).response;
-
-    const file = await fetch(viewUrl);
-
-    const fileBlob = await file.blob();
-
-    const upload_url = await this.uploadFile(this.apiToken, viewUrl, fileBlob);
-
-    const transcript = await this.transcribeAudio(this.apiToken, upload_url);
-
-    const blob = new Blob([transcript.text], {
-      type: "text/plain;charset=UTF-8",
-    });
-
-    const newFile = new File([blob], `blob`, {
-      type: "",
-      lastModified: new Date().getTime(),
-    });
-
-    const formData = new FormData();
-    formData.append("file", newFile);
-
-    const newTitle = `${title.replaceAll(fileExst, "")} text`;
-
     try {
+      const { viewUrl, title, folderId, fileExst } = (
+        await (await fetch(`${this.apiURL}/files/file/${id}`)).json()
+      ).response;
+
+      const file = await fetch(viewUrl);
+
+      const fileBlob = await file.blob();
+
+      const upload_url = await this.uploadFile(
+        this.apiToken,
+        viewUrl,
+        fileBlob
+      );
+
+      if (!upload_url)
+        return {
+          actions: [Actions.showToast],
+          toastProps: [{ type: ToastType.error, title: "Wrong API token" }],
+        } as IMessage;
+
+      const transcript = await this.transcribeAudio(this.apiToken, upload_url);
+
+      if (!transcript.text) {
+        return {
+          actions: [Actions.showToast],
+          toastProps: [
+            {
+              type: ToastType.info,
+              title: "Speech is not recognized or is missing",
+            },
+          ],
+        } as IMessage;
+      }
+
+      const blob = new Blob([transcript.text], {
+        type: "text/plain;charset=UTF-8",
+      });
+
+      const newFile = new File([blob], `blob`, {
+        type: "",
+        lastModified: new Date().getTime(),
+      });
+
+      const formData = new FormData();
+      formData.append("file", newFile);
+
+      const newTitle = `${title.replaceAll(fileExst, "")} text`;
+
       const sessionRes = await fetch(
         `${this.apiURL}/files/${folderId}/upload/create_session`,
         {
@@ -211,22 +214,27 @@ class AssemblyAI {
 
       const sessionData = (await sessionRes.json()).response.data;
 
-      const data = await fetch(`${sessionData.location}`, {
+      await fetch(`${sessionData.location}`, {
         method: "POST",
         body: formData,
       });
 
-      const { id: fileId } = (await data.json()).data;
-
-      return fileId;
+      return {
+        actions: [Actions.showToast],
+        toastProps: [
+          {
+            type: ToastType.success,
+            title: "The file was successfully converted to text",
+          },
+        ],
+      } as IMessage;
     } catch (e) {
       console.log(e);
+      return {
+        actions: [Actions.showToast],
+        toastProps: [{ type: ToastType.error, title: "Wrong API token" }],
+      } as IMessage;
     }
-
-    return {
-      actions: [Actions.showToast],
-      toastProps: [{ type: ToastType.success, title: "" }],
-    } as IMessage;
   };
 }
 

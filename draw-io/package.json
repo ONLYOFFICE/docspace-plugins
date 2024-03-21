@@ -24,11 +24,14 @@
     "prettier": "2.8.6"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "^0.0.2"
+    "@onlyoffice/docspace-plugin-sdk": "^1.0.0"
   },
   "description": "A tool for creating diagrams, flowcharts, intelligence maps, business layouts, entity relationships, program blocks, and more",
   "pluginName": "Drawio",
   "license": "Apache-2.0",
-  "logo": "logo.png",
-  "homepage": "https://github.com/ONLYOFFICE/docspace-plugin"
+  "logo": "logo.svg",
+  "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/draw-io",
+  "cspDomains": [
+    "https://embed.diagrams.net"
+  ]
 }

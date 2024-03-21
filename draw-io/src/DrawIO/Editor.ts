@@ -1,19 +1,19 @@
 //@ts-nocheck
 /*
-* (c) Copyright Ascensio System SIA 2023
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*     http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * (c) Copyright Ascensio System SIA 2023
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 import {
   Actions,
@@ -201,7 +201,7 @@ DiagramEditor.prototype.handleMessage = async function (msg) {
       return message;
 
     case "autosave":
-      if (autoSaveTimer) return;
+      if (autoSaveTimer) clearTimeout(autoSaveTimer);
 
       autoSaveTimer = setTimeout(() => {
         this.xml = msg.xml;
@@ -239,9 +239,11 @@ DiagramEditor.prototype.handleMessage = async function (msg) {
         autoSaveTimer = null;
 
         return message;
-      }, 30000);
+      }, 2000);
 
     case "export":
+      if (this.format === "xml") return;
+
       this.xml = null;
 
       await drawIo.saveDiagram(msg.data, false, true);
@@ -305,9 +307,9 @@ DiagramEditor.prototype.initializeEditor = function () {
     frameId: this.getFrameId(),
     message: {
       action: "load",
-      autosave: this.showSaveButton ? 1 : 0,
+      autosave: 0,
       saveAndExit: this.showSaveButton ? "1" : "0",
-      modified: "unsavedChanges",
+      // modified: "unsavedChanges",
       title: this.title,
     },
   };

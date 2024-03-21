@@ -1,5 +1,5 @@
 {
-  "name": "PDF-converter",
+  "name": "pdf-converter",
   "version": "1.0.0",
   "author": "ONLYOFFICE",
   "main": "index.ts",
@@ -8,12 +8,12 @@
     "Settings",
     "ContextMenu"
   ],
-  "description": "",
+  "description": "A plugin for converting docs, sheets, slides, and forms to PDF. The plugin is available via the Actions section in the file context menu. The converted file is saved in the same folder as the original one.",
   "pluginName": "PDFConverter",
   "license": "Apache-2.0",
   "private": true,
   "logo": "logo.svg",
-  "homepage": "https://github.com/ONLYOFFICE/docspace-plugin",
+  "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/pdf-converter",
   "scripts": {
     "build": "webpack && node ./scripts/createZip.js"
   },
@@ -25,7 +25,10 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "^0.0.2",
+    "@onlyoffice/docspace-plugin-sdk": "^1.0.0",
     "convertapi-js": "~1.1"
-  }
+  },
+  "cspDomains": [
+    "https://v2.convertapi.com"
+  ]
 }

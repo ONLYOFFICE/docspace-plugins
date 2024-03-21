@@ -1,21 +1,22 @@
 /*
-* (c) Copyright Ascensio System SIA 2023
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*     http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * (c) Copyright Ascensio System SIA 2023
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 import {
   Actions,
+  File,
   IMessage,
   IToast,
   ToastType,
@@ -103,43 +104,19 @@ class DrawIo {
   };
 
   setAdminSettings = (
-    url: string,
-    lang: { key: string },
-    off: boolean,
-    lib: boolean
+    url: string | null,
+    lang: { key: string } | null,
+    off: boolean | null,
+    lib: boolean | null
   ) => {
-    this.setUrl(url);
-    this.setLang(lang?.key);
-    this.setOff(off);
-    this.setLib(lib);
-
-    this.saveAdminSettings();
+    url && this.setUrl(url);
+    lang?.key && this.setLang(lang?.key);
+    off && this.setOff(off);
+    lib && this.setLib(lib);
   };
 
   getAdminSettings = () => {
-    return this.adminSettings;
-  };
-
-  fetchAdminSettings = () => {
-    const adminSettingsString = localStorage.getItem("draw-io-admin-settings");
-
-    if (!adminSettingsString) return;
-
-    const adminSettings = JSON.parse(adminSettingsString);
-
-    this.setUrl(adminSettings.url);
-    this.setLang(adminSettings.lang);
-    this.setOff(adminSettings.off);
-    this.setLib(adminSettings.lib);
-
-    return adminSettings;
-  };
-
-  saveAdminSettings = () => {
-    localStorage.setItem(
-      "draw-io-admin-settings",
-      JSON.stringify(this.adminSettings)
-    );
+    return JSON.stringify(this.adminSettings);
   };
 
   setTheme = (theme: string) => {
@@ -162,39 +139,14 @@ class DrawIo {
   setUserSettings = (theme: string, dark: string) => {
     this.setTheme(theme);
     this.setDark(dark);
-
-    this.saveUserSettings();
   };
 
   getUserSettings = () => {
     return this.userSettings;
   };
 
-  fetchUserSettings = () => {
-    const userSettingsString = localStorage.getItem("draw-io-user-settings");
-
-    if (!userSettingsString) return;
-
-    const userSettings = JSON.parse(userSettingsString);
-
-    this.setTheme(userSettings.theme);
-    this.setDark(userSettings.dark);
-
-    return userSettings;
-  };
-
-  saveUserSettings = () => {
-    localStorage.setItem(
-      "draw-io-user-settings",
-      JSON.stringify(this.userSettings)
-    );
-  };
-
   onLoad = async () => {
     if (!this.apiURL) this.createAPIUrl();
-
-    this.fetchAdminSettings();
-    this.fetchUserSettings();
   };
 
   createAPIUrl = () => {
@@ -307,70 +259,87 @@ class DrawIo {
     return message;
   };
 
-  editDiagram = async (id: number) => {
+  editDiagram = async (propFile: File) => {
     if (!this.apiURL) this.createAPIUrl();
 
-    const file = (await (await fetch(`${this.apiURL}/files/file/${id}`)).json())
-      .response;
+    try {
+      let file = propFile;
 
-    if (file.fileExst !== ".drawio" && file.fileExst !== ".png") {
-      return {
-        actions: [Actions.showToast],
-        toastProps: [
-          { type: ToastType.error, title: "Wrong file format" } as IToast,
-        ],
-      };
-    }
+      if (!propFile.fileExst) {
+        file = (
+          await (
+            await fetch(`${this.apiURL}/files/file/${propFile.id || propFile}`)
+          ).json()
+        ).response;
+      }
 
-    const userRes = (await (await fetch(`${this.apiURL}/people/@self`)).json())
-      .response;
-
-    const { isVisitor, theme } = userRes;
-
-    const { access, title } = file;
-
-    const showSaveButton =
-      !isVisitor &&
-      (access === 0 || access === 1 || access === 10 || access === 11);
-
-    this.currentFileId = file.id;
-
-    const data = await fetch(file.viewUrl);
-
-    const dataBlob = await data.blob();
-
-    if (file.fileExst === ".drawio") {
-      const dataText = await dataBlob.text();
-
-      const message = this.openEditor(
-        dataText,
-        "xml",
-        title.replace(".drawio", ""),
-        theme,
-        showSaveButton
-      );
-
-      return message;
-    } else {
-      return new Promise<IMessage>((resolve, reject) => {
-        const reader = new FileReader();
-
-        reader.onloadend = () => {
-          if (typeof reader.result === "string") {
-            const message: IMessage = this.openEditor(
-              reader.result,
-              "xmlpng",
-              title.replace(".png", ""),
-              theme,
-              showSaveButton
-            );
-            return resolve(message);
-          }
-
-          return {} as IMessage;
+      if (file.fileExst !== ".drawio" && file.fileExst !== ".png") {
+        return {
+          actions: [Actions.showToast],
+          toastProps: [
+            { type: ToastType.error, title: "Wrong file format" } as IToast,
+          ],
         };
-        reader.readAsDataURL(dataBlob);
-      });
+      }
+
+      const userRes = (
+        await (await fetch(`${this.apiURL}/people/@self`)).json()
+      ).response;
+
+      const { theme } = userRes;
+
+      //@ts-ignore
+      const { title, security } = file;
+
+      const showSaveButton =
+        security?.edit || //@ts-ignore
+        file.access === 0 || //@ts-ignore
+        file.access === 1 || //@ts-ignore
+        file.access === 10 || //@ts-ignore
+        file.access === 11;
+
+      this.currentFileId = file.id;
+
+      const data = await fetch(file.viewUrl);
+
+      const dataBlob = await data.blob();
+
+      if (file.fileExst === ".drawio") {
+        const dataText = await dataBlob.text();
+
+        const message = this.openEditor(
+          dataText,
+          "xml",
+          title.replace(".drawio", ""),
+          theme,
+          showSaveButton
+        );
+
+        return message;
+      } else {
+        return new Promise<IMessage>((resolve) => {
+          const reader = new FileReader();
+
+          reader.onloadend = () => {
+            if (typeof reader.result === "string") {
+              const message: IMessage = this.openEditor(
+                reader.result,
+                "xmlpng",
+                title.replace(".png", ""),
+                theme,
+                showSaveButton
+              );
+              return resolve(message);
+            }
+
+            return {} as IMessage;
+          };
+          reader.readAsDataURL(dataBlob);
+        });
+      }
+    } catch (e) {
+      console.log(e);
+      return {};
     }
   };
 
@@ -427,7 +396,7 @@ class DrawIo {
   };
 
   saveDiagram = async (content: string, draft: boolean, isExport: boolean) => {
-    if (this.saveRequestRunning) return;
+    if (this.saveRequestRunning || !this.currentFileId) return;
 
     this.saveRequestRunning = true;
     let blob = new Blob([content]);
@@ -454,7 +423,6 @@ class DrawIo {
       this.saveRequestRunning = false;
     } catch (e) {
       this.saveRequestRunning = false;
-      console.log(e);
     }
   };
 
