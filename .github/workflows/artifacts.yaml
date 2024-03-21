@@ -1,0 +1,79 @@
+name: Upload artifacts
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.plugins }}
+    steps:
+    - uses: actions/checkout@v4
+    - name: make matrix
+      id: matrix
+      run: |
+        PLUGINS=()
+        for d in $(ls -d */); do
+          if [[ -f ${d}/yarn.lock || -f ${d}/package.json ]]; then
+            PLUGINS+=($(basename ${d}))
+          fi
+        done
+        echo "plugins for build is: "
+        echo "${PLUGINS[@]}"
+
+        # Set new matrix for build job
+        echo "plugins=$(jq -c -n '$ARGS.positional' --args "${PLUGINS[@]}")" >> "$GITHUB_OUTPUT"
+          
+  build:
+    name: "Build plugin: ${{ matrix.plugin }}"
+    runs-on: ubuntu-latest
+    env:
+      PLUGIN_FOLDER: ${{ matrix.plugin }}
+    needs: [prepare]
+    strategy:
+      fail-fast: false
+      matrix: 
+        plugin: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Build plugin
+        run: |
+          cd ./${PLUGIN_FOLDER}
+          yarn
+          yarn run build
+
+      - name: extract plugins.zip
+        run: |
+          mkdir -p ./artifacts/${PLUGIN_FOLDER}
+          unzip ./${PLUGIN_FOLDER}/dist/plugin.zip -d ./artifacts/${PLUGIN_FOLDER}
+      
+      - name: Archive plugins artifacts separate
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.PLUGIN_FOLDER }}
+          path: |
+            ./artifacts/${{ env.PLUGIN_FOLDER }}
+  
+  artifacts:
+    name: "Make all in one archive"
+    runs-on: ubuntu-latest
+    if: success() || failure()
+    needs: [build]
+    steps:
+      - run: mkdir -p ./plugins
+      
+      - name: Download all workflow run artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: ./plugins
+          
+      - name: Make all-in-one archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: All-in-one
+          path: |
+            ./plugins
