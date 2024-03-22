@@ -1,5 +1,5 @@
 ---
-name: Build&Release DocSpace plugins com
+name: Release
 
 on: 
   push:
