@@ -3,12 +3,6 @@ name: Stage
 
 on: 
   workflow_dispatch:
-  push:
-    branches: [master]
-    paths-ignore:
-      - '**/README.md'
-      - '**/LICENSE'
-      - '.github/**'
 
 jobs:
   prepare:
