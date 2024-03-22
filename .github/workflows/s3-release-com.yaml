@@ -4,6 +4,10 @@ name: Build&Release DocSpace plugins com
 on: 
   push:
     branches: [master]
+    paths-ignore:
+      - '**/README.md'
+      - '**/LICENSE'
+      - '.github/**'
 
 jobs:
   prepare:
