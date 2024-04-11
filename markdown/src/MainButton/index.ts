@@ -19,7 +19,7 @@ import markdownIt from "../Markdownit";
 
 const mainButtonItem: IMainButtonItem = {
     key: "markdown-it-main-button-item",
-    label: "Create markdown",
+    label: "Markdown",
     icon: "markdown.svg",
     onClick: (id: number) => {
       markdownIt.setCurrentFolderId(id);
