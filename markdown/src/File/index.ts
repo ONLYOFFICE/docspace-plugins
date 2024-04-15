@@ -27,6 +27,6 @@ export const markdownitItem: IFileItem = {
   fileTypeName: "Markdown",
   fileRowIcon: "markdown.svg",
   fileTileIcon: "markdown.svg",
-  devices: [Devices.desktop],
+  devices: [Devices.desktop, Devices.mobile, Devices.tablet],
   onClick,
 };

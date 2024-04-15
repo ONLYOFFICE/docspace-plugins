@@ -226,7 +226,41 @@ class Markdownit {
         newDialogHeader: title
       };
     }
-    adaptive(false, false); // TODO: mobile viewer
+    if (this.mobile) {
+      markdownitModalDialogProps.fullScreen = true;
+      viewerBody.children = [
+        {
+          component: Components.box,
+          props: iframeBox
+        },
+        {
+          component: Components.box,
+          props: intendBox
+        },
+        {
+          component: Components.button,
+          props: {
+            label: "Close",
+            size: saveExitButton.size,
+            scale: true,
+            onClick: () => {
+              return {
+                actions: [Actions.closeModal],
+              }
+            }
+          }
+        }
+      ]
+    } else {
+      markdownitModalDialogProps.fullScreen = false;
+      viewerBody.children = [
+        {
+          component: Components.box,
+          props: iframeBox
+        }
+      ]
+    }
+    adaptive(false, this.mobile);
     const message: IMessage = {
       actions: [Actions.showModal],
       modalDialogProps: markdownitModalDialogProps,
@@ -571,7 +605,7 @@ class Markdownit {
     markdownitModalDialogProps.dialogBody = editorBody;
     markdownitModalDialogProps.onClose = onClose;
     markdownitModalDialogProps.onLoad = async () => {
-        
+      resizeTextArea();
       if (!this.mobile) incorrectSolution(data);
 
       return {
@@ -588,6 +622,7 @@ class Markdownit {
       const iframe = window.parent.document.getElementById("md-iframe") as HTMLIFrameElement;
       if (iframe) incorrectSolution(mdArea.value);
       resize(true);
+      resizeTextArea();
     }, false);
     return message;
   };
@@ -715,9 +750,10 @@ function linkControl(iFrameWindow: Window){
 
 function adaptive(editor:boolean, mobile: boolean){
   if (mobile) {
-    editorBody.widthProp = "100%";
+    editorBody.widthProp = viewerBody.widthProp = "100%";
     editorBody.heightProp = "95%";
-    editorBody.paddingProp = "10px";
+    viewerBody.heightProp = "90%";
+    editorBody.paddingProp = viewerBody.paddingProp = "10px";
     mdArea.heightTextArea = window.parent.innerHeight * properties.textarea_mobile_height;
     return;
   }
@@ -734,7 +770,7 @@ function adaptive(editor:boolean, mobile: boolean){
 function resizeTextArea(){ // TODO: ask docspace developers for remove textarea maxwidth
   const area = window.parent.document.getElementsByName("md-plugin-textarea")[0] as HTMLIFrameElement;
   //@ts-ignore
-  area.parentElement?.parentElement?.parentElement?.parentElement?.parentElement?.style.maxWidth = "100%";
+  if (area) area.parentElement?.parentElement?.parentElement?.parentElement?.parentElement?.style.maxWidth = "100%";
 }
 
 function resize(mobile: boolean){
@@ -765,12 +801,13 @@ function incorrectSolution(data:string){
 
 function isMobile() {
   const userAgent = navigator.userAgent.toLowerCase();
-  const mobile = /mobile|iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
+  var mobile = /mobile|iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
  
   if (mobile) {
     return true;
   } else {
-    return false;
+    mobile = (window.innerWidth <= 600) || (window.innerWidth > 600 &&  window.innerWidth < 1024)
+    return mobile;
   }
 }
 
