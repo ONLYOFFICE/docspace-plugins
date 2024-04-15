@@ -162,7 +162,9 @@ class Markdownit {
     const userRes = (await (await fetch(`${this.apiURL}/people/@self`)).json())
     .response;
 
-    const { isVisitor, theme } = userRes;
+    var { isVisitor, theme } = userRes;
+
+    if (theme === "System") theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "Dark" : "Base";
 
     if (theme === "Dark") {
       this.dark = true;
