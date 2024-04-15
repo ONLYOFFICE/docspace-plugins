@@ -9,6 +9,9 @@
   "logo": "logo.svg",
   "main": "index.ts",
   "private": true,
+  "cspDomains": [
+    "https://cdn.jsdelivr.net/"
+  ],
   "scopes": [
     "API",
     "Settings",
