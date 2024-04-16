@@ -801,14 +801,7 @@ function incorrectSolution(data:string){
 
 function isMobile() {
   const userAgent = navigator.userAgent.toLowerCase();
-  var mobile = /mobile|iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
- 
-  if (mobile) {
-    return true;
-  } else {
-    mobile = (window.innerWidth <= 600) || (window.innerWidth > 600 &&  window.innerWidth < 1024)
-    return mobile;
-  }
+  return /mobile|iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
 }
 
 const markdownIt = new Markdownit();
