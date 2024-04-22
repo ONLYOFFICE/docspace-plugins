@@ -39,7 +39,7 @@ export const contextMenuItem: IContextMenuItem = {
   onClick,
   icon: "markdown.svg",
   fileType: [FilesType.file],
-  devices: [Devices.desktop],
+  devices: [Devices.desktop, Devices.mobile, Devices.tablet],
   fileExt: [".md"],
 };
 
@@ -49,6 +49,6 @@ export const contextMenuViewerItem: IContextMenuItem = {
   onClick: onViewClick,
   icon: "view.svg",
   fileType: [FilesType.file],
-  devices: [Devices.desktop],
+  devices: [Devices.desktop, Devices.mobile, Devices.tablet],
   fileExt: [".md"],
 };

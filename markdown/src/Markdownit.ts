@@ -66,6 +66,7 @@ class Markdownit {
   fulscreen: boolean = false;
   fileChanged: boolean = false;
   dark: boolean = false;
+  mobile: boolean = false;
   
   setCurrentFolderId = (id: number | null) => {
     this.currentFolderId = id;
@@ -190,6 +191,8 @@ class Markdownit {
     
     this.fulscreen = false;
 
+    this.mobile = isMobile();
+
     if(!showSaveButton || view){
       const message = this.openViewer(
         dataText,
@@ -223,7 +226,41 @@ class Markdownit {
         newDialogHeader: title
       };
     }
-    adaptive(false);
+    if (this.mobile) {
+      markdownitModalDialogProps.fullScreen = true;
+      viewerBody.children = [
+        {
+          component: Components.box,
+          props: iframeBox
+        },
+        {
+          component: Components.box,
+          props: intendBox
+        },
+        {
+          component: Components.button,
+          props: {
+            label: "Close",
+            size: saveExitButton.size,
+            scale: true,
+            onClick: () => {
+              return {
+                actions: [Actions.closeModal],
+              }
+            }
+          }
+        }
+      ]
+    } else {
+      markdownitModalDialogProps.fullScreen = false;
+      viewerBody.children = [
+        {
+          component: Components.box,
+          props: iframeBox
+        }
+      ]
+    }
+    adaptive(false, this.mobile);
     const message: IMessage = {
       actions: [Actions.showModal],
       modalDialogProps: markdownitModalDialogProps,
@@ -304,19 +341,11 @@ class Markdownit {
       updateMD(value);
       return message;
     };
-    markdownResize.onClick = () => {
-      resizeTextArea();
-      if (this.fulscreen) {
-        markdownSide.widthProp = "50%";
+    if (this.mobile) {
+      markdownResize.label = "Preview";
+      previewResize.label = "Write";
+      markdownResize.onClick = () => {
         editorBox.children = [
-          {
-            component: Components.box,
-            props: markdownSide
-          },
-          {
-            component: Components.box,
-            props: intendBox
-          },
           {
             component: Components.box,
             props: previewSide
@@ -328,57 +357,18 @@ class Markdownit {
             {
               name: "editorBox",
               props: editorBox
-            },
-            {
-              name: "markdownSide",
-              props: markdownSide
             }
           ]
         }
-        this.fulscreen = false;
         let currentData = mdArea.value;
         incorrectSolution(currentData);
-        return message;
-      } else {
-        markdownSide.widthProp = "100%";
-        editorBox.children = [
-          {
-            component: Components.box,
-            props: markdownSide
-          }
-        ]
-        var message: IMessage = {
-          actions: [Actions.updateContext],
-          contextProps: [
-            {
-              name: "editorBox",
-              props: editorBox
-            },
-            {
-              name: "markdownSide",
-              props: markdownSide
-            }
-          ]
-        }
-        this.fulscreen = true;
         return message;
       }
-    }
-    previewResize.onClick = () => {
-      if (this.fulscreen) {
-        previewSide.widthProp = "50%";
+      previewResize.onClick = () => {
         editorBox.children = [
           {
             component: Components.box,
             props: markdownSide
-          },
-          {
-            component: Components.box,
-            props: intendBox
-          },
-          {
-            component: Components.box,
-            props: previewSide
           }
         ]
         var message: IMessage = {
@@ -387,42 +377,133 @@ class Markdownit {
             {
               name: "editorBox",
               props: editorBox
-            },
-            {
-              name: "previewSide",
-              props: previewSide
             }
           ]
         }
-        this.fulscreen = false;
-        let currentData = mdArea.value;
-        incorrectSolution(currentData);
         return message;
-      } else {
-        previewSide.widthProp = "100%";
-        editorBox.children = [
-          {
-            component: Components.box,
-            props: previewSide
+      }
+    } else {
+      markdownResize.label = previewResize.label = "Resize";
+      markdownResize.onClick = () => {
+        resizeTextArea();
+        if (this.fulscreen) {
+          markdownSide.widthProp = "50%";
+          editorBox.children = [
+            {
+              component: Components.box,
+              props: markdownSide
+            },
+            {
+              component: Components.box,
+              props: intendBox
+            },
+            {
+              component: Components.box,
+              props: previewSide
+            }
+          ]
+          var message: IMessage = {
+            actions: [Actions.updateContext],
+            contextProps: [
+              {
+                name: "editorBox",
+                props: editorBox
+              },
+              {
+                name: "markdownSide",
+                props: markdownSide
+              }
+            ]
           }
-        ]
-        var message: IMessage = {
-          actions: [Actions.updateContext],
-          contextProps: [
+          this.fulscreen = false;
+          let currentData = mdArea.value;
+          incorrectSolution(currentData);
+          return message;
+        } else {
+          markdownSide.widthProp = "100%";
+          editorBox.children = [
             {
-              name: "editorBox",
-              props: editorBox
+              component: Components.box,
+              props: markdownSide
+            }
+          ]
+          var message: IMessage = {
+            actions: [Actions.updateContext],
+            contextProps: [
+              {
+                name: "editorBox",
+                props: editorBox
+              },
+              {
+                name: "markdownSide",
+                props: markdownSide
+              }
+            ]
+          }
+          this.fulscreen = true;
+          return message;
+        }
+      }
+      previewResize.onClick = () => {
+        if (this.fulscreen) {
+          previewSide.widthProp = "50%";
+          editorBox.children = [
+            {
+              component: Components.box,
+              props: markdownSide
             },
             {
-              name: "previewSide",
+              component: Components.box,
+              props: intendBox
+            },
+            {
+              component: Components.box,
               props: previewSide
             }
           ]
+          var message: IMessage = {
+            actions: [Actions.updateContext],
+            contextProps: [
+              {
+                name: "editorBox",
+                props: editorBox
+              },
+              {
+                name: "previewSide",
+                props: previewSide
+              }
+            ]
+          }
+          this.fulscreen = false;
+          let currentData = mdArea.value;
+          incorrectSolution(currentData);
+          return message;
+        } else {
+          previewSide.widthProp = "100%";
+          editorBox.children = [
+            {
+              component: Components.box,
+              props: previewSide
+            }
+          ]
+          var message: IMessage = {
+            actions: [Actions.updateContext],
+            contextProps: [
+              {
+                name: "editorBox",
+                props: editorBox
+              },
+              {
+                name: "previewSide",
+                props: previewSide
+              }
+            ]
+          }
+          this.fulscreen = true;
+          let currentData = mdArea.value;
+          incorrectSolution(currentData);
+          return message;
         }
-        this.fulscreen = true;
-        let currentData = mdArea.value;
-        incorrectSolution(currentData);
-        return message;
       }
     }
     closeButton.onClick = unsavedModalDialog.onClose = () => {
@@ -449,22 +530,68 @@ class Markdownit {
       }
       return message;
     }
-    previewSide.widthProp = "50%";
-    markdownSide.widthProp = "50%";
-    editorBox.children = [
-      {
-        component: Components.box,
-        props: markdownSide
-      },
-      {
-        component: Components.box,
-        props: intendBox
-      },
-      {
-        component: Components.box,
-        props: previewSide
+    let onClose = () => {
+      saveExitButton.isDisabled = saveButton.isDisabled = true;
+      const message: IMessage = {
+        actions: [Actions.closeModal],
+      };
+      if (this.fileChanged) {
+        message.actions?.push(Actions.showModal);
+        message.modalDialogProps = unsavedModalDialog
       }
-    ]
+      return message;
+    }
+    if (this.mobile) {
+      previewSide.widthProp = "100%";
+      markdownSide.widthProp = "100%";
+      markdownitModalDialogProps.fullScreen = true;
+      editorBox.children = [
+        {
+          component: Components.box,
+          props: markdownSide
+        }
+      ]
+      editorFooter.widthProp = "100%";
+      editorFooter.children = [
+        {
+          component: Components.button,
+          props: saveExitButton,
+          contextName: "saveExitButton"
+        },
+        {
+          component: Components.box,
+          props: intendBox
+        },
+        {
+          component: Components.button,
+          props: {
+            label: "Exit",
+            size: saveExitButton.size,
+            scale: true,
+            onClick: onClose
+          }
+        }
+      ]
+    } else {
+      previewSide.widthProp = "50%";
+      markdownSide.widthProp = "50%";
+      markdownitModalDialogProps.fullScreen = false;
+      editorFooter.widthProp = "30%";
+      editorBox.children = [
+        {
+          component: Components.box,
+          props: markdownSide
+        },
+        {
+          component: Components.box,
+          props: intendBox
+        },
+        {
+          component: Components.box,
+          props: previewSide
+        }
+      ]
+    }
     // syncScroll.onChange = () => {
     //   if (syncScroll.isChecked) scrollSync(false);
     //   else scrollSync(true);
@@ -476,32 +603,27 @@ class Markdownit {
     // }
     markdownitModalDialogProps.dialogHeader = title;
     markdownitModalDialogProps.dialogBody = editorBody;
-    markdownitModalDialogProps.onClose = () => {
-      saveExitButton.isDisabled = saveButton.isDisabled = true;
-      const message: IMessage = {
-        actions: [Actions.closeModal],
-      };
-      if (this.fileChanged) {
-        message.actions?.push(Actions.showModal);
-        message.modalDialogProps = unsavedModalDialog
-      }
-      return message;
-    }
+    markdownitModalDialogProps.onClose = onClose;
     markdownitModalDialogProps.onLoad = async () => {
-        
-      incorrectSolution(data);
+      resizeTextArea();
+      if (!this.mobile) incorrectSolution(data);
 
       return {
         newDialogBody: markdownitModalDialogProps.dialogBody,
         newDialogHeader: title,
       };
     }
-    adaptive(true);
+    adaptive(true, this.mobile);
     const message: IMessage = {
       actions: [Actions.showModal],
       modalDialogProps: markdownitModalDialogProps,
     };
-  
+    if (this.mobile) window.addEventListener("orientationchange", async function() {
+      const iframe = window.parent.document.getElementById("md-iframe") as HTMLIFrameElement;
+      if (iframe) incorrectSolution(mdArea.value);
+      resize(true);
+      resizeTextArea();
+    }, false);
     return message;
   };
 
@@ -553,6 +675,7 @@ async function insertMD (data: string) {
     styles.href = properties.styles_url;
     let bodyStyle = iframeWindow.document.createElement("style");
     bodyStyle.innerHTML = markdownIt.dark ? properties.dark_bodystyle : properties.bodystyle;
+    iframeWindow.document.head.innerHTML = "";
     iframeWindow.document.head.appendChild(hlStyles);
     iframeWindow.document.head.appendChild(styles);
     iframeWindow.document.head.appendChild(bodyStyle);
@@ -562,6 +685,7 @@ async function insertMD (data: string) {
     let mdBody = iframeWindow.document.createElement("div");
     mdBody.id = "markdown-body";
     mdBody.innerHTML = result;
+    iframeWindow.document.body.innerHTML = "";
     iframeWindow.document.body.appendChild(mdBody);
     iframe.style.height = iframe.contentWindow?.document.documentElement.scrollHeight + 'px';
     setTimeout(function() {
@@ -624,7 +748,15 @@ function linkControl(iFrameWindow: Window){
   });
 }
 
-function adaptive(editor:boolean){
+function adaptive(editor:boolean, mobile: boolean){
+  if (mobile) {
+    editorBody.widthProp = viewerBody.widthProp = "100%";
+    editorBody.heightProp = "95%";
+    viewerBody.heightProp = "90%";
+    editorBody.paddingProp = viewerBody.paddingProp = "10px";
+    mdArea.heightTextArea = window.parent.innerHeight * properties.textarea_mobile_height;
+    return;
+  }
   mdArea.heightTextArea = window.parent.innerHeight * properties.textarea_height; // TODO: wait for string in sdk
   if(editor){
     editorBody.widthProp = window.parent.innerWidth * properties.modal_width + "px";
@@ -638,18 +770,38 @@ function adaptive(editor:boolean){
 function resizeTextArea(){ // TODO: ask docspace developers for remove textarea maxwidth
   const area = window.parent.document.getElementsByName("md-plugin-textarea")[0] as HTMLIFrameElement;
   //@ts-ignore
-  area.parentElement?.parentElement?.parentElement?.parentElement?.parentElement?.style.maxWidth = "100%";
+  if (area) area.parentElement?.parentElement?.parentElement?.parentElement?.parentElement?.style.maxWidth = "100%";
+}
+
+function resize(mobile: boolean){
+  setTimeout(function(){
+    if (mobile) {
+      const area = window.parent.document.getElementsByName("md-plugin-textarea")[0] as HTMLIFrameElement;
+      if (area) {
+        area.parentElement?.parentElement?.parentElement?.parentElement?.style.setProperty(
+          "height",
+          window.parent.innerHeight * properties.textarea_mobile_height + "px",
+          "important"
+        );
+      }
+    }
+  },200);
 }
 
 function changeIFrameMinHeight(){ // TODO: remove after docspace 2.0.2 release
   const iframe = window.parent.document.getElementById("md-iframe") as HTMLIFrameElement;
-  iframe.style.minHeight = "0";
+  if (iframe) iframe.style.minHeight = "0";
 }
 
 function incorrectSolution(data:string){
   setTimeout(function(){
     insertMD(data)
   },200)
+}
+
+function isMobile() {
+  const userAgent = navigator.userAgent.toLowerCase();
+  return /mobile|iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
 }
 
 const markdownIt = new Markdownit();
