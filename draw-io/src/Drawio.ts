@@ -203,6 +203,7 @@ class DrawIo {
             fileName: `${value}.drawio`,
             fileSize: file.size,
             relativePath: "",
+            CreateNewIfExist: true,
           }),
         }
       );
