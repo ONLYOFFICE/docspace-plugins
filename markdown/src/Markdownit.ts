@@ -126,6 +126,7 @@ class Markdownit {
             fileName: `${value}.md`,
             fileSize: file.size,
             relativePath: "",
+            CreateNewIfExist: true,
           }),
         }
       );
