@@ -165,18 +165,19 @@ class ConvertFile {
 
       const sessionData = (await sessionRes.json()).response.data;
 
-      await fetch(`${sessionData.location}`, {
+      const res = await (await fetch(`${sessionData.location}`, {
         method: "POST",
         body: formData,
-      });
+      })).json();
+      const success = res.success;
 
-      const toastTitle = `File "${fileName}${FilesExst.pdf}" was created`;
+      const toastTitle = `File "${fileName}${FilesExst.pdf}" was ${success?"created":`not created: ${res.message}`}`;
 
       const message: IMessage = {
         actions: [Actions.showToast, Actions.closeModal],
         toastProps: [
           {
-            type: ToastType.success,
+            type: success ? ToastType.success : ToastType.error,
             title: toastTitle,
           },
         ],
