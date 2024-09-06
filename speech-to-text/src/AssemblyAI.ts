@@ -214,17 +214,20 @@ class AssemblyAI {
 
       const sessionData = (await sessionRes.json()).response.data;
 
-      await fetch(`${sessionData.location}`, {
+      const res = await (await fetch(`${sessionData.location}`, {
         method: "POST",
         body: formData,
-      });
+      })).json();
+      const success = res.success;
 
       return {
         actions: [Actions.showToast],
         toastProps: [
           {
-            type: ToastType.success,
-            title: "The file was successfully converted to text",
+            type: success ? ToastType.success : ToastType.error,
+            title: success 
+              ? "The file was successfully converted to text"
+              : `Conversion to text is not successful: ${res.message}`,
           },
         ],
       } as IMessage;
