@@ -133,12 +133,13 @@ class Markdownit {
 
       const sessionData = (await sessionRes.json()).response.data;
 
-      const data = await fetch(`${sessionData.location}`, {
+      const data = await (await fetch(`${sessionData.location}`, {
         method: "POST",
         body: formData,
-      });
+      })).json();
+      if (!data.success) return data;
 
-      const { id: fileId } = (await data.json()).data;
+      const { id: fileId } = data.data;
 
       return fileId;
     } catch (e) {

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { Actions, IMainButtonItem, IMessage } from "@onlyoffice/docspace-plugin-sdk";
+import { Actions, IMainButtonItem, IMessage, ToastType } from "@onlyoffice/docspace-plugin-sdk";
 import markdownIt from "../Markdownit";
 
 const mainButtonItem: IMainButtonItem = {
@@ -34,6 +34,20 @@ const mainButtonItem: IMainButtonItem = {
           extension: ".md",
           onSave: async (e: any, value: string) => {
             const fileID = await markdownIt.createNewFile(value);
+            if (typeof fileID === 'object') {
+              const m: IMessage = {
+                actions: [Actions.closeModal, Actions.showToast],
+                toastProps: [
+                  {
+                    type: ToastType.error,
+                    title: `File "${value}.md" was not created: ${fileID.message}`,
+                  },
+                ]
+              }
+
+              return m;
+            }
+
             const message = await markdownIt.editMarkdown(fileID, false);
 
             return message;
