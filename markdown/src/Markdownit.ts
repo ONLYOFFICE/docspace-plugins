@@ -43,6 +43,7 @@ import {
   IMessage,
   IToast,
   ToastType,
+  File
 } from "@onlyoffice/docspace-plugin-sdk";
 import { closeButton, saveUnsavedButton, unsavedModalDialog } from "./MarkdownIT/Unsaved";
 
@@ -147,11 +148,15 @@ class Markdownit {
     }
   };
 
-  editMarkdown = async (id: number, view: boolean) => {
+  editMarkdown = async (id: File | any, view: boolean) => {
     if (!this.apiURL) this.createAPIUrl();
 
-    const file = (await (await fetch(`${this.apiURL}/files/file/${id}`)).json())
-    .response;
+    let file = id;
+
+    if (!id.fileExst) {
+      file = (await (await fetch(`${this.apiURL}/files/file/${id}`)).json())
+      .response;
+    }
 
     if (file.fileExst !== ".md") {
     return {
