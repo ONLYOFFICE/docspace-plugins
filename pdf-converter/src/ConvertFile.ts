@@ -41,6 +41,8 @@ class ConvertFile {
 
   apiURL = "";
 
+  createLock = false;
+
   setCurrentFileId = (value: number | null) => {
     this.currentFileId = value;
   };
@@ -113,6 +115,9 @@ class ConvertFile {
 
     if (!this.fileInfo || !fileName) return {};
 
+    if (this.createLock) return {};
+    else this.createLock = true;
+
     try {
       const { viewUrl, folderId, fileExst } = this.fileInfo;
 
@@ -183,6 +188,7 @@ class ConvertFile {
         ],
       };
 
+      this.createLock = false;
       return message;
     } catch (e: any) {
       const toastTitle = e?.message || "Wrong API token";
@@ -197,6 +203,7 @@ class ConvertFile {
         ],
       };
 
+      this.createLock = false;
       return message;
     }
   };
