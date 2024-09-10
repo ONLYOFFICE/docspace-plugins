@@ -17,6 +17,8 @@
 import { Actions, IMainButtonItem, IMessage, ToastType } from "@onlyoffice/docspace-plugin-sdk";
 import markdownIt from "../Markdownit";
 
+let createLock = false;
+
 const mainButtonItem: IMainButtonItem = {
     key: "markdown-it-main-button-item",
     label: "Markdown",
@@ -33,6 +35,8 @@ const mainButtonItem: IMainButtonItem = {
           isCreateDialog: true,
           extension: ".md",
           onSave: async (e: any, value: string) => {
+            if (createLock) return {};
+            else createLock = true;
             const fileID = await markdownIt.createNewFile(value);
             if (typeof fileID === 'object') {
               const m: IMessage = {
@@ -45,11 +49,13 @@ const mainButtonItem: IMainButtonItem = {
                 ]
               }
 
+              createLock = false;
               return m;
             }
 
             const message = await markdownIt.editMarkdown(fileID, false);
 
+            createLock = false;
             return message;
           },
           onCancel: (e: any) => {
