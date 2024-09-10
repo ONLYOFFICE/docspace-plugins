@@ -70,6 +70,8 @@ import drawIo from "../Drawio";
 //   },
 // };
 
+let createLock = false;
+
 const mainButtonItem: IMainButtonItem = {
   key: "draw-io-main-button-item",
   label: "Draw.io",
@@ -86,6 +88,8 @@ const mainButtonItem: IMainButtonItem = {
         isCreateDialog: true,
         extension: ".drawio",
         onSave: async (e: any, value: string) => {
+          if (createLock) return {};
+          else createLock = true;
           const id = await drawIo.createNewFile(value);
           if (typeof id === 'object') {
             const m: IMessage = {
@@ -98,9 +102,11 @@ const mainButtonItem: IMainButtonItem = {
               ]
             }
 
+            createLock = false;
             return m;
           }
 
+          createLock = false;
           return await drawIo.editDiagram(id);
         },
         onCancel: (e: any) => {
