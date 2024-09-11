@@ -41,6 +41,8 @@ class ConvertFile {
 
   apiURL = "";
 
+  createLock = false;
+
   setCurrentFileId = (value: number | null) => {
     this.currentFileId = value;
   };
@@ -113,6 +115,9 @@ class ConvertFile {
 
     if (!this.fileInfo || !fileName) return {};
 
+    if (this.createLock) return {};
+    else this.createLock = true;
+
     try {
       const { viewUrl, folderId, fileExst } = this.fileInfo;
 
@@ -165,23 +170,25 @@ class ConvertFile {
 
       const sessionData = (await sessionRes.json()).response.data;
 
-      await fetch(`${sessionData.location}`, {
+      const res = await (await fetch(`${sessionData.location}`, {
         method: "POST",
         body: formData,
-      });
+      })).json();
+      const success = res.success;
 
-      const toastTitle = `File "${fileName}${FilesExst.pdf}" was created`;
+      const toastTitle = `File "${fileName}${FilesExst.pdf}" was ${success?"created":`not created: ${res.message}`}`;
 
       const message: IMessage = {
         actions: [Actions.showToast, Actions.closeModal],
         toastProps: [
           {
-            type: ToastType.success,
+            type: success ? ToastType.success : ToastType.error,
             title: toastTitle,
           },
         ],
       };
 
+      this.createLock = false;
       return message;
     } catch (e: any) {
       const toastTitle = e?.message || "Wrong API token";
@@ -196,6 +203,7 @@ class ConvertFile {
         ],
       };
 
+      this.createLock = false;
       return message;
     }
   };

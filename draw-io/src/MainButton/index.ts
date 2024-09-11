@@ -18,6 +18,7 @@ import {
   Actions,
   IMainButtonItem,
   IMessage,
+  ToastType,
 } from "@onlyoffice/docspace-plugin-sdk";
 import drawIo from "../Drawio";
 // import { openFromUrlProps } from "../OpenFromUrlDialog";
@@ -69,6 +70,8 @@ import drawIo from "../Drawio";
 //   },
 // };
 
+let createLock = false;
+
 const mainButtonItem: IMainButtonItem = {
   key: "draw-io-main-button-item",
   label: "Draw.io",
@@ -85,8 +88,25 @@ const mainButtonItem: IMainButtonItem = {
         isCreateDialog: true,
         extension: ".drawio",
         onSave: async (e: any, value: string) => {
+          if (createLock) return {};
+          else createLock = true;
           const id = await drawIo.createNewFile(value);
+          if (typeof id === 'object') {
+            const m: IMessage = {
+              actions: [Actions.closeModal, Actions.showToast],
+              toastProps: [
+                {
+                  type: ToastType.error,
+                  title: `File "${value}.drawio" was not created: ${id.message}`,
+                },
+              ]
+            }
 
+            createLock = false;
+            return m;
+          }
+
+          createLock = false;
           return await drawIo.editDiagram(id);
         },
         onCancel: (e: any) => {
