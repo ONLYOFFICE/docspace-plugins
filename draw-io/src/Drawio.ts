@@ -203,18 +203,20 @@ class DrawIo {
             fileName: `${value}.drawio`,
             fileSize: file.size,
             relativePath: "",
+            CreateNewIfExist: true,
           }),
         }
       );
 
       const sessionData = (await sessionRes.json()).response.data;
 
-      const data = await fetch(`${sessionData.location}`, {
+      const data = await (await fetch(`${sessionData.location}`, {
         method: "POST",
         body: formData,
-      });
+      })).json();
+      if (!data.success) return data;
 
-      const { id: fileId } = (await data.json()).data;
+      const { id: fileId } = data.data;
 
       return fileId;
     } catch (e) {
@@ -224,6 +226,19 @@ class DrawIo {
 
   openFileFromUrl = async (title: string, src: string) => {
     const fileId = await this.createNewFile(title);
+    if (typeof fileId === 'object') {
+      const m: IMessage = {
+        actions: [Actions.closeModal, Actions.showToast],
+        toastProps: [
+          {
+            type: ToastType.error,
+            title: `File "${title}.md" was not created: ${fileId.message}`,
+          },
+        ]
+      }
+
+      return m;
+    }
 
     this.currentFileId = fileId;
 
