@@ -1,6 +1,6 @@
 # Change Log
 
-##
+## 1.0.2
 ## Changed
 - rename plugin's folder
 
