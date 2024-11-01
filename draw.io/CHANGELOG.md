@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.2
+## Changed
+- rename plugin's folder
+
 ## 1.0.1
 ## Changed
 - minor bug fixes

@@ -1,6 +1,6 @@
 {
   "name": "draw.io",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "ONLYOFFICE",
   "main": "index.ts",
   "private": true,
@@ -30,7 +30,7 @@
   "pluginName": "Drawio",
   "license": "Apache-2.0",
   "logo": "logo.svg",
-  "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/draw-io",
+  "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/draw.io",
   "cspDomains": [
     "https://embed.diagrams.net"
   ]
