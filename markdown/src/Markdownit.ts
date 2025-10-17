@@ -216,6 +216,13 @@ class Markdownit {
       };
     }
 
+    fetch(`${this.apiURL}/files/file/${file.id}/recent`, {
+      method: "POST",
+      body: JSON.stringify({
+        fileIds: [file.id],
+      })
+    })
+
     const dataBlob = await data.blob();
 
     const dataText = await dataBlob.text();
