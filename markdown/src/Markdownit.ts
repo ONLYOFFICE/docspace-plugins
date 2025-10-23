@@ -250,7 +250,7 @@ class Markdownit {
     markdownitModalDialogProps.dialogBody = viewerBody;
     markdownitModalDialogProps.onLoad = async () => {
       
-      incorrectSolution(data);
+      insertMD(data);
 
       return {
         newDialogBody: markdownitModalDialogProps.dialogBody,
@@ -392,7 +392,7 @@ class Markdownit {
           ]
         }
         let currentData = mdArea.value;
-        incorrectSolution(currentData);
+        insertMD(currentData);
         return message;
       }
       previewResize.onClick = () => {
@@ -447,7 +447,7 @@ class Markdownit {
           }
           this.fulscreen = false;
           let currentData = mdArea.value;
-          incorrectSolution(currentData);
+          insertMD(currentData);
           return message;
         } else {
           markdownSide.widthProp = "100%";
@@ -506,7 +506,7 @@ class Markdownit {
           }
           this.fulscreen = false;
           let currentData = mdArea.value;
-          incorrectSolution(currentData);
+          insertMD(currentData);
           return message;
         } else {
           previewSide.widthProp = "100%";
@@ -531,7 +531,7 @@ class Markdownit {
           }
           this.fulscreen = true;
           let currentData = mdArea.value;
-          incorrectSolution(currentData);
+          insertMD(currentData);
           return message;
         }
       }
@@ -634,7 +634,7 @@ class Markdownit {
     markdownitModalDialogProps.dialogBody = editorBody;
     markdownitModalDialogProps.onClose = onClose;
     markdownitModalDialogProps.onLoad = async () => {
-      if (!this.mobile) incorrectSolution(data);
+      if (!this.mobile) insertMD(data);
 
       return {
         newDialogBody: markdownitModalDialogProps.dialogBody,
@@ -648,7 +648,7 @@ class Markdownit {
     };
     if (this.mobile) window.addEventListener("orientationchange", async function() {
       const iframe = window.parent.document.getElementById("md-iframe") as HTMLIFrameElement;
-      if (iframe) incorrectSolution(mdArea.value);
+      if (iframe) insertMD(mdArea.value);
     }, false);
     return message;
   };
@@ -752,12 +752,6 @@ function setSizes(editor: boolean, mobile: boolean){
   editorBody.heightProp = viewerBody.heightProp = mobile ? "calc(100% - 25px)" : "78vh";
   editorBody.paddingProp = viewerBody.paddingProp = mobile ? "10px" : "0";
   iframeBox.heightProp = editor ? "calc(100% - 32px)" : mobile ? "calc(100% - 42px)" : "100%";
-}
-
-function incorrectSolution(data:string){
-  setTimeout(function(){
-    insertMD(data)
-  },200)
 }
 
 function isMobile() {
