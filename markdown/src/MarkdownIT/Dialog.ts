@@ -28,7 +28,6 @@ import {
   IText,
   ITextArea,
   IToast,
-  IToggleButton,
   ModalDisplayType,
   ToastType,
 } from "@onlyoffice/docspace-plugin-sdk";
@@ -76,12 +75,6 @@ export const saveButton: IButton = {
   onClick: () => {}
 }
 
-export const syncScroll: IToggleButton = {
-  label: "ScrollSync",
-  isChecked: false,
-  onChange: () => {}
-}
-
 export const editorFooter: IBox = {
   widthProp: "30%",
   marginProp: "-5px 0 0 0",
@@ -102,14 +95,6 @@ export const editorFooter: IBox = {
       props: saveExitButton,
       contextName: "saveExitButton"
     },
-    // {
-    //   component: Components.box,
-    //   props: intendBox
-    // },
-    // {
-    //   component: Components.toggleButton,
-    //   props: syncScroll
-    // }
   ]
 }
 

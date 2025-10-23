@@ -623,15 +623,7 @@ class Markdownit {
         }
       ]
     }
-    // syncScroll.onChange = () => {
-    //   if (syncScroll.isChecked) scrollSync(false);
-    //   else scrollSync(true);
-    //   var message: IMessage = {
-    //     actions: [Actions.updateProps],
-    //     newProps: {...syncScroll, isChecked: !syncScroll.isChecked}
-    //   }
-    //   return message;
-    // }
+
     markdownitModalDialogProps.dialogHeader = title;
     markdownitModalDialogProps.dialogBody = editorBody;
     markdownitModalDialogProps.onClose = onClose;
@@ -738,32 +730,6 @@ function updateMD (data: string){
       let result = md.render(data);
       body.innerHTML = result;
       iframe.style.height = iframe.contentWindow?.document.documentElement.scrollHeight + 'px';
-    }
-  }
-}
-
-function scrollSync (enable: boolean){
-  let scrolls = window.parent.document.querySelectorAll(".scroller");
-  const area = scrolls[scrolls.length-1] as HTMLDivElement;
-  let iframe = window.parent.document.getElementById("md-iframe") as HTMLIFrameElement;
-  const body = iframe.contentWindow?.document.body as HTMLBodyElement;
-  
-  if (area && body){
-    let areaScroll = function () {
-      const scrollPercentage = area.scrollTop / (area.scrollHeight - area.clientHeight);
-      body.scrollTop = scrollPercentage * (body.scrollHeight - body.clientHeight);
-    }
-    let iframeScroll = function () {
-      const scrollPercentage = body.scrollTop / (body.scrollHeight - body.clientHeight);
-      area.scrollTop = scrollPercentage * (area.scrollHeight - area.clientHeight);
-      console.log(scrollPercentage)
-    }
-    if(enable){
-      area.addEventListener('scroll', areaScroll);
-      body.addEventListener('scroll', iframeScroll);
-    } else {
-      area.removeEventListener("scroll", areaScroll);
-      body.removeEventListener("scroll", iframeScroll);
     }
   }
 }
