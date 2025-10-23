@@ -621,6 +621,13 @@ class Markdownit {
           props: previewSide
         }
       ]
+      editorFooter.children = [
+        {
+          component: Components.button,
+          props: saveExitButton,
+          contextName: "saveExitButton"
+        },
+      ]
     }
 
     markdownitModalDialogProps.dialogHeader = title;
