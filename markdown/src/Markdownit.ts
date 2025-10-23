@@ -291,7 +291,7 @@ class Markdownit {
         }
       ]
     }
-    adaptive(false, this.mobile);
+    setSizes(false, this.mobile);
     const message: IMessage = {
       actions: [Actions.showModal],
       modalDialogProps: markdownitModalDialogProps,
@@ -416,7 +416,6 @@ class Markdownit {
     } else {
       markdownResize.label = previewResize.label = "Resize";
       markdownResize.onClick = () => {
-        resizeTextArea();
         if (this.fulscreen) {
           markdownSide.widthProp = "50%";
           editorBox.children = [
@@ -628,7 +627,6 @@ class Markdownit {
     markdownitModalDialogProps.dialogBody = editorBody;
     markdownitModalDialogProps.onClose = onClose;
     markdownitModalDialogProps.onLoad = async () => {
-      resizeTextArea();
       if (!this.mobile) incorrectSolution(data);
 
       return {
@@ -636,7 +634,7 @@ class Markdownit {
         newDialogHeader: title,
       };
     }
-    adaptive(true, this.mobile);
+    setSizes(true, this.mobile);
     const message: IMessage = {
       actions: [Actions.showModal],
       modalDialogProps: markdownitModalDialogProps,
@@ -644,8 +642,6 @@ class Markdownit {
     if (this.mobile) window.addEventListener("orientationchange", async function() {
       const iframe = window.parent.document.getElementById("md-iframe") as HTMLIFrameElement;
       if (iframe) incorrectSolution(mdArea.value);
-      resize(true);
-      resizeTextArea();
     }, false);
     return message;
   };
@@ -685,7 +681,6 @@ class Markdownit {
 
 async function insertMD (data: string) {
     const iframe = window.parent.document.getElementById("md-iframe") as HTMLIFrameElement;
-    changeIFrameMinHeight();
     if (iframe){
     const result = md.render(data);
     let iframeWindow = iframe.contentWindow as Window;
@@ -745,49 +740,11 @@ function linkControl(iFrameWindow: Window){
   });
 }
 
-function adaptive(editor:boolean, mobile: boolean){
-  if (mobile) {
-    editorBody.widthProp = viewerBody.widthProp = "100%";
-    editorBody.heightProp = "95%";
-    viewerBody.heightProp = "90%";
-    editorBody.paddingProp = viewerBody.paddingProp = "10px";
-    mdArea.heightTextArea = window.parent.innerHeight * properties.textarea_mobile_height;
-    return;
-  }
-  mdArea.heightTextArea = window.parent.innerHeight * properties.textarea_height; // TODO: wait for string in sdk
-  if(editor){
-    editorBody.widthProp = window.parent.innerWidth * properties.modal_width + "px";
-    editorBody.heightProp = window.parent.innerHeight * properties.modal_height + "px";
-  } else {
-    viewerBody.widthProp = window.parent.innerWidth * properties.modal_width + "px";
-    viewerBody.heightProp = window.parent.innerHeight * properties.modal_height + "px";
-  }
-}
-
-function resizeTextArea(){ // TODO: ask docspace developers for remove textarea maxwidth
-  const area = window.parent.document.getElementsByName("md-plugin-textarea")[0] as HTMLIFrameElement;
-  //@ts-ignore
-  if (area) area.parentElement?.parentElement?.parentElement?.parentElement?.parentElement?.style.maxWidth = "100%";
-}
-
-function resize(mobile: boolean){
-  setTimeout(function(){
-    if (mobile) {
-      const area = window.parent.document.getElementsByName("md-plugin-textarea")[0] as HTMLIFrameElement;
-      if (area) {
-        area.parentElement?.parentElement?.parentElement?.parentElement?.style.setProperty(
-          "height",
-          window.parent.innerHeight * properties.textarea_mobile_height + "px",
-          "important"
-        );
-      }
-    }
-  },200);
-}
-
-function changeIFrameMinHeight(){ // TODO: remove after docspace 2.0.2 release
-  const iframe = window.parent.document.getElementById("md-iframe") as HTMLIFrameElement;
-  if (iframe) iframe.style.minHeight = "0";
+function setSizes(editor: boolean, mobile: boolean){
+  editorBody.widthProp = viewerBody.widthProp = mobile ? "calc(100% - 20px)" : "95vw";
+  editorBody.heightProp = viewerBody.heightProp = mobile ? "calc(100% - 25px)" : "78vh";
+  editorBody.paddingProp = viewerBody.paddingProp = mobile ? "10px" : "0";
+  iframeBox.heightProp = editor ? "calc(100% - 32px)" : mobile ? "calc(100% - 42px)" : "100%";
 }
 
 function incorrectSolution(data:string){

@@ -100,7 +100,7 @@ export const editorFooter: IBox = {
 
 export const mdArea: ITextArea = {
   name: "md-plugin-textarea",
-  heightTextArea: window.parent.innerHeight * properties.textarea_height,
+  heightTextArea: "100%",
   value: "",
   hasNumeration: false,
   onChange: ()=>{}
@@ -150,7 +150,7 @@ const markdownHeader: IBox = {
 
 export const markdownSide: IBox = {
   widthProp: "50%",
-  heightProp: "100%",
+  heightProp: "calc(100% - 32px)",
   children: [
     {
       component: Components.box,
@@ -186,7 +186,7 @@ export const borderProp: IBorderProp = {
 
 export const iframeBox: IBox = {
   widthProp: "100%",
-  heightProp: "100%",
+  heightProp: "calc(100% - 32px)",
   overflowProp: "auto",
   borderProp: borderProp,
   children: [
@@ -230,7 +230,7 @@ const previewHeader: IBox = {
 
 export const previewSide: IBox = {
   widthProp: "50%",
-  heightProp: "94%",
+  heightProp: "100%",
   children: [
     {
       component: Components.box,
@@ -249,7 +249,7 @@ export const previewSide: IBox = {
 
 export const editorBox: IBox = {
   widthProp: "100%",
-  heightProp: "94%",
+  heightProp: "calc(100% - 40px)",
   displayProp: "flex",
   flexDirection: "row",
   children: [
