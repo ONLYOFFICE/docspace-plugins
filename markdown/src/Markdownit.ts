@@ -250,7 +250,7 @@ class Markdownit {
     markdownitModalDialogProps.dialogBody = viewerBody;
     markdownitModalDialogProps.onLoad = async () => {
       
-      incorrectSolution(data);
+      insertMD(data);
 
       return {
         newDialogBody: markdownitModalDialogProps.dialogBody,
@@ -291,7 +291,7 @@ class Markdownit {
         }
       ]
     }
-    adaptive(false, this.mobile);
+    setSizes(false, this.mobile);
     const message: IMessage = {
       actions: [Actions.showModal],
       modalDialogProps: markdownitModalDialogProps,
@@ -392,7 +392,7 @@ class Markdownit {
           ]
         }
         let currentData = mdArea.value;
-        incorrectSolution(currentData);
+        insertMD(currentData);
         return message;
       }
       previewResize.onClick = () => {
@@ -416,7 +416,6 @@ class Markdownit {
     } else {
       markdownResize.label = previewResize.label = "Resize";
       markdownResize.onClick = () => {
-        resizeTextArea();
         if (this.fulscreen) {
           markdownSide.widthProp = "50%";
           editorBox.children = [
@@ -448,7 +447,7 @@ class Markdownit {
           }
           this.fulscreen = false;
           let currentData = mdArea.value;
-          incorrectSolution(currentData);
+          insertMD(currentData);
           return message;
         } else {
           markdownSide.widthProp = "100%";
@@ -507,7 +506,7 @@ class Markdownit {
           }
           this.fulscreen = false;
           let currentData = mdArea.value;
-          incorrectSolution(currentData);
+          insertMD(currentData);
           return message;
         } else {
           previewSide.widthProp = "100%";
@@ -532,7 +531,7 @@ class Markdownit {
           }
           this.fulscreen = true;
           let currentData = mdArea.value;
-          incorrectSolution(currentData);
+          insertMD(currentData);
           return message;
         }
       }
@@ -622,38 +621,34 @@ class Markdownit {
           props: previewSide
         }
       ]
+      editorFooter.children = [
+        {
+          component: Components.button,
+          props: saveExitButton,
+          contextName: "saveExitButton"
+        },
+      ]
     }
-    // syncScroll.onChange = () => {
-    //   if (syncScroll.isChecked) scrollSync(false);
-    //   else scrollSync(true);
-    //   var message: IMessage = {
-    //     actions: [Actions.updateProps],
-    //     newProps: {...syncScroll, isChecked: !syncScroll.isChecked}
-    //   }
-    //   return message;
-    // }
+
     markdownitModalDialogProps.dialogHeader = title;
     markdownitModalDialogProps.dialogBody = editorBody;
     markdownitModalDialogProps.onClose = onClose;
     markdownitModalDialogProps.onLoad = async () => {
-      resizeTextArea();
-      if (!this.mobile) incorrectSolution(data);
+      if (!this.mobile) insertMD(data);
 
       return {
         newDialogBody: markdownitModalDialogProps.dialogBody,
         newDialogHeader: title,
       };
     }
-    adaptive(true, this.mobile);
+    setSizes(true, this.mobile);
     const message: IMessage = {
       actions: [Actions.showModal],
       modalDialogProps: markdownitModalDialogProps,
     };
     if (this.mobile) window.addEventListener("orientationchange", async function() {
       const iframe = window.parent.document.getElementById("md-iframe") as HTMLIFrameElement;
-      if (iframe) incorrectSolution(mdArea.value);
-      resize(true);
-      resizeTextArea();
+      if (iframe) insertMD(mdArea.value);
     }, false);
     return message;
   };
@@ -693,7 +688,6 @@ class Markdownit {
 
 async function insertMD (data: string) {
     const iframe = window.parent.document.getElementById("md-iframe") as HTMLIFrameElement;
-    changeIFrameMinHeight();
     if (iframe){
     const result = md.render(data);
     let iframeWindow = iframe.contentWindow as Window;
@@ -742,32 +736,6 @@ function updateMD (data: string){
   }
 }
 
-function scrollSync (enable: boolean){
-  let scrolls = window.parent.document.querySelectorAll(".scroller");
-  const area = scrolls[scrolls.length-1] as HTMLDivElement;
-  let iframe = window.parent.document.getElementById("md-iframe") as HTMLIFrameElement;
-  const body = iframe.contentWindow?.document.body as HTMLBodyElement;
-  
-  if (area && body){
-    let areaScroll = function () {
-      const scrollPercentage = area.scrollTop / (area.scrollHeight - area.clientHeight);
-      body.scrollTop = scrollPercentage * (body.scrollHeight - body.clientHeight);
-    }
-    let iframeScroll = function () {
-      const scrollPercentage = body.scrollTop / (body.scrollHeight - body.clientHeight);
-      area.scrollTop = scrollPercentage * (area.scrollHeight - area.clientHeight);
-      console.log(scrollPercentage)
-    }
-    if(enable){
-      area.addEventListener('scroll', areaScroll);
-      body.addEventListener('scroll', iframeScroll);
-    } else {
-      area.removeEventListener("scroll", areaScroll);
-      body.removeEventListener("scroll", iframeScroll);
-    }
-  }
-}
-
 function linkControl(iFrameWindow: Window){
   const iframeDocument = iFrameWindow.document;
   iframeDocument.addEventListener('click', function(event) {
@@ -779,55 +747,11 @@ function linkControl(iFrameWindow: Window){
   });
 }
 
-function adaptive(editor:boolean, mobile: boolean){
-  if (mobile) {
-    editorBody.widthProp = viewerBody.widthProp = "100%";
-    editorBody.heightProp = "95%";
-    viewerBody.heightProp = "90%";
-    editorBody.paddingProp = viewerBody.paddingProp = "10px";
-    mdArea.heightTextArea = window.parent.innerHeight * properties.textarea_mobile_height;
-    return;
-  }
-  mdArea.heightTextArea = window.parent.innerHeight * properties.textarea_height; // TODO: wait for string in sdk
-  if(editor){
-    editorBody.widthProp = window.parent.innerWidth * properties.modal_width + "px";
-    editorBody.heightProp = window.parent.innerHeight * properties.modal_height + "px";
-  } else {
-    viewerBody.widthProp = window.parent.innerWidth * properties.modal_width + "px";
-    viewerBody.heightProp = window.parent.innerHeight * properties.modal_height + "px";
-  }
-}
-
-function resizeTextArea(){ // TODO: ask docspace developers for remove textarea maxwidth
-  const area = window.parent.document.getElementsByName("md-plugin-textarea")[0] as HTMLIFrameElement;
-  //@ts-ignore
-  if (area) area.parentElement?.parentElement?.parentElement?.parentElement?.parentElement?.style.maxWidth = "100%";
-}
-
-function resize(mobile: boolean){
-  setTimeout(function(){
-    if (mobile) {
-      const area = window.parent.document.getElementsByName("md-plugin-textarea")[0] as HTMLIFrameElement;
-      if (area) {
-        area.parentElement?.parentElement?.parentElement?.parentElement?.style.setProperty(
-          "height",
-          window.parent.innerHeight * properties.textarea_mobile_height + "px",
-          "important"
-        );
-      }
-    }
-  },200);
-}
-
-function changeIFrameMinHeight(){ // TODO: remove after docspace 2.0.2 release
-  const iframe = window.parent.document.getElementById("md-iframe") as HTMLIFrameElement;
-  if (iframe) iframe.style.minHeight = "0";
-}
-
-function incorrectSolution(data:string){
-  setTimeout(function(){
-    insertMD(data)
-  },200)
+function setSizes(editor: boolean, mobile: boolean){
+  editorBody.widthProp = viewerBody.widthProp = mobile ? "calc(100% - 20px)" : "95vw";
+  editorBody.heightProp = viewerBody.heightProp = mobile ? "calc(100% - 25px)" : "78vh";
+  editorBody.paddingProp = viewerBody.paddingProp = mobile ? "10px" : "0";
+  iframeBox.heightProp = editor ? "calc(100% - 32px)" : mobile ? "calc(100% - 42px)" : "100%";
 }
 
 function isMobile() {
