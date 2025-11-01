@@ -282,6 +282,13 @@ class DrawIo {
         };
       }
 
+      fetch(`${this.apiURL}/files/file/${file.id}/recent`, {
+        method: "POST",
+        body: JSON.stringify({
+          fileIds: [file.id],
+        }),
+      });
+
       const showSaveButton =
         security?.Edit || //@ts-ignore
         file.access === 0 || //@ts-ignore

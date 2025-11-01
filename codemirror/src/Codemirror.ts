@@ -186,6 +186,13 @@ class Codemirror {
       };
     }
 
+    fetch(`${this.apiURL}/files/file/${file.id}/recent`, {
+      method: "POST",
+      body: JSON.stringify({
+        fileIds: [file.id],
+      }),
+    });
+
     const dataBlob = await data.blob();
     this.currentFileData = await dataBlob.text();
 

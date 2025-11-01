@@ -58,6 +58,13 @@ class Archives {
       };
     }
 
+    fetch(`${this.apiURL}/files/file/${file.id}/recent`, {
+      method: "POST",
+      body: JSON.stringify({
+        fileIds: [file.id],
+      }),
+    });
+
     this.getContent(file.viewUrl, () => {
       drawInIframe(frameProps.id!, viewer, this.root, file.title, user.theme === "Dark");
     });
