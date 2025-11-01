@@ -1,5 +1,7 @@
 # Change Log
 
+- add opened file to recent files
+
 ## 1.2.0
 ## Changed
 - using sdk v2.0.0
