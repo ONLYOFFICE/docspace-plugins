@@ -107,6 +107,13 @@ class ImageEditorPlugin {
       };
     }
 
+    fetch(`${this.apiURL}/files/file/${file.id}/recent`, {
+      method: "POST",
+      body: JSON.stringify({
+        fileIds: [file.id],
+      }),
+    });
+
     this.currentFileId = file.id;
 
     imageEditorModalDialogProps.dialogHeader = title;
