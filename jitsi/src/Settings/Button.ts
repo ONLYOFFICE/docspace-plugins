@@ -1,0 +1,70 @@
+/*
+ * (c) Copyright Ascensio System SIA 2025
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import {
+  Actions,
+  BoxGroup,
+  ButtonGroup,
+  ButtonSize,
+  Components,
+  IButton,
+  IMessage,
+  ToastType,
+} from "@onlyoffice/docspace-plugin-sdk";
+
+import { jitsi } from "../Jitsi";
+import { tokenInput } from "./Token";
+
+const onClick = async () => {
+  jitsi.setAppID(tokenInput.value);
+
+  const message: IMessage = {
+    actions: [
+      Actions.showToast,
+      Actions.updateProps,
+      Actions.saveSettings,
+    ],
+    toastProps: [{ title: "AppID is saved", type: ToastType.success }],
+    newProps: { ...userButtonProps, isDisabled: true },
+    settings: tokenInput.value,
+  };
+
+  return message;
+};
+
+export const userButtonProps: IButton = {
+  onClick,
+  size: ButtonSize.normal,
+  label: "Save",
+  scale: false,
+  primary: true,
+  isDisabled: true,
+  withLoadingAfterClick: true,
+};
+
+export const userButtonComponent: ButtonGroup = {
+  component: Components.button,
+  props: userButtonProps,
+  contextName: "acceptButton",
+};
+
+export const userAcceptGroup: BoxGroup = {
+  component: Components.box,
+  props: {
+    widthProp: "150px",
+    children: [userButtonComponent],
+  },
+};
