@@ -1,0 +1,58 @@
+name: Licenses
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master, develop]
+  pull_request:
+    branches: [master, develop]
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.plugins }}
+    steps:
+    - uses: actions/checkout@v4
+    - name: make matrix
+      id: matrix
+      run: |
+        PLUGINS=()
+        for d in $(ls -d */); do
+          if [[ -f ${d}/yarn.lock || -f ${d}/package.json ]]; then
+            PLUGINS+=($(basename ${d}))
+          fi
+        done
+        echo "plugins for build is: "
+        echo "${PLUGINS[@]}"
+
+        # Set new matrix for build job
+        echo "plugins=$(jq -c -n '$ARGS.positional' --args "${PLUGINS[@]}")" >> "$GITHUB_OUTPUT"
+
+  licences:
+    name: "Licenses plugin: ${{ matrix.plugin }}"
+    runs-on: ubuntu-latest
+    env:
+      PLUGIN_FOLDER: ${{ matrix.plugin }}
+    needs: [prepare]
+    strategy:
+      fail-fast: false
+      matrix: 
+        plugin: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: yarn install
+        working-directory: ./${{ env.PLUGIN_FOLDER }}
+      - name: Get Repository License
+        id: license
+        run: |
+          license="${{ (github.event.repository.license.spdx_id) || (github.event.repository.licenses[0]) }}"
+          echo "License detected: $license"
+          echo "license=$license" >> $GITHUB_OUTPUT
+      - name: Check Licenses
+        uses: ONLYOFFICE/check-licenses@v1
+        with:
+          project_license: ${{ steps.license.outputs.license }}
+          working_directory: ./${{ env.PLUGIN_FOLDER }}
