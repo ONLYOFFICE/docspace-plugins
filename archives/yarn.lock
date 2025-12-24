@@ -71,16 +71,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@onlyoffice/docspace-plugin-sdk@npm:^2.0.0":
+"@onlyoffice/docspace-plugin-sdk@file:../docspace-plugin-sdk.tgz::locator=zip-archives%40workspace%3A.":
   version: 2.0.0
-  resolution: "@onlyoffice/docspace-plugin-sdk@npm:2.0.0"
+  resolution: "@onlyoffice/docspace-plugin-sdk@file:../docspace-plugin-sdk.tgz#../docspace-plugin-sdk.tgz::hash=2e836d&locator=zip-archives%40workspace%3A."
   dependencies:
     inquirer: "npm:^9.1.0"
     jszip: "npm:^3.10.1"
   bin:
-    build-docspace-plugin: npx/buildPlugin.js
-    create-docspace-plugin: npx/index.js
-  checksum: 10c0/fb9100165e747035bdcc5f0423ac9673a9b76c0be6cb74062426fd3cd70d93d261f9f0967195ccae1b0dff761a39a27f7f2fbd99ef395f982619e4657d8908b0
+    build-docspace-plugin: ./npx/buildPlugin.js
+    create-docspace-plugin: ./npx/index.js
+  checksum: 10c0/e60b31612c82eb6ba43255c0debcfd2b37968cdda6cf17d7c24d72e93952e01e732644149c534dca87571c8dc506c4ca82f7c21ae31210518e6b61a665aff283
   languageName: node
   linkType: hard
 
@@ -1797,7 +1797,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "zip-archives@workspace:."
   dependencies:
-    "@onlyoffice/docspace-plugin-sdk": "npm:^2.0.0"
+    "@onlyoffice/docspace-plugin-sdk": "file:../docspace-plugin-sdk.tgz"
     fflate: "npm:^0.8.2"
     prettier: "npm:2.8.6"
     ts-loader: "npm:^9.3.1"

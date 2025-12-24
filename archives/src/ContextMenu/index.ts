@@ -27,31 +27,47 @@ export const openZipContextMenuItem: IContextMenuItem = {
   itemSecurity: [FilesSecurity.Edit],
 };
 
-export const unzipContextMenuItem: IContextMenuItem = {
+const unzipContextMenuItem: IContextMenuItem = {
   key: "archives-unzip-context-menu-item",
-  label: "Choose location to unzip",
+  label: "Choose a location",
   onClick: (id: File | any) => archives.openSelector(id),
   icon: "zip.svg",
-  devices: [Devices.desktop, Devices.mobile, Devices.tablet],
-  fileExt: [".zip"],
-  itemSecurity: [FilesSecurity.Edit],
 };
 
-export const unzipHereContextMenuItem: IContextMenuItem = {
+const unzipHereContextMenuItem: IContextMenuItem = {
   key: "archives-unzip-here-context-menu-item",
   label: "Unzip here",
   onClick: (id: number) => archives.unzip(id),
   icon: "zip.svg",
+};
+
+export const unzipGroupContextMenuItem: IContextMenuItem = {
+  key: "archives-unzip-group-context-menu-item",
+  label: "Unzip it",
+  icon: "zip.svg",
   devices: [Devices.desktop, Devices.mobile, Devices.tablet],
   fileExt: [".zip"],
   itemSecurity: [FilesSecurity.Edit],
+  items: [
+    unzipContextMenuItem,
+    unzipHereContextMenuItem,
+  ],
+}
+
+const zipFolderContextMenuItem: IContextMenuItem = {
+  key: "archives-zip-folder-context-menu-item",
+  label: "Archive here",
+  onClick: (id: number) => archives.zipFolder(id),
+  icon: "zip.svg",
 };
 
-export const zipFolderContextMenuItem: IContextMenuItem = {
-  key: "archives-zip-folder-context-menu-item",
-  label: "Zip folder",
-  onClick: (id: number) => archives.zipFolder(id),
+export const zipGroupContextMenuItem: IContextMenuItem = {
+  key: "archives-zip-group-context-menu-item",
+  label: "Archive it",
   icon: "zip.svg",
   fileType: [FilesType.folder],
   security: [Security.Create],
-};
+  items: [
+    zipFolderContextMenuItem,
+  ],
+}

@@ -37,9 +37,8 @@ import {
 import { zipFileItem } from "./File";
 import {
   openZipContextMenuItem,
-  unzipContextMenuItem,
-  unzipHereContextMenuItem,
-  zipFolderContextMenuItem,
+  unzipGroupContextMenuItem,
+  zipGroupContextMenuItem,
 } from "./ContextMenu";
 
 class Archives
@@ -217,9 +216,8 @@ declare global {
 
 plugin.addFileItem(zipFileItem);
 plugin.addContextMenuItem(openZipContextMenuItem);
-plugin.addContextMenuItem(unzipContextMenuItem);
-plugin.addContextMenuItem(unzipHereContextMenuItem);
-plugin.addContextMenuItem(zipFolderContextMenuItem);
+plugin.addContextMenuItem(unzipGroupContextMenuItem);
+plugin.addContextMenuItem(zipGroupContextMenuItem);
 
 window.Plugins.ZipArchives = plugin || {};
 

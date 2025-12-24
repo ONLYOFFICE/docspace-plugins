@@ -40,7 +40,7 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "^2.0.0",
+    "@onlyoffice/docspace-plugin-sdk": "file:../docspace-plugin-sdk.tgz",
     "fflate": "^0.8.2"
   }
 }
