@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2026
+ * (c) Copyright Ascensio System SIA 2025
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,23 +14,24 @@
  * limitations under the License.
  */
 
-import {
-  FilesType,
-  IContextMenuItem,
-  Security,
-} from "@onlyoffice/docspace-plugin-sdk";
+import { I18n } from "i18n-js";
+import { PluginLocale } from "@onlyoffice/docspace-plugin-sdk";
+import enUS from "../locales/en-US.json";
 
-import assemblyAI from "./AssemblyAI";
-import { i18n } from "./locales";
+export const i18n = new I18n({
+  [PluginLocale.EN_US]: enUS,
+});
 
-export const contextMenuItem: () => IContextMenuItem = () => {
-  return {
-    key: "speech-to-text-context-menu-item",
-    label: i18n.t("context_menu_convert_to_text"),
-    icon: "speech-to-text.svg",
-    onClick: assemblyAI.speechToText,
-    fileType: [FilesType.video],
-    security: [Security.Create],
-    withActiveItem: true,
-  };
+i18n.defaultLocale = PluginLocale.EN_US;
+i18n.locale = PluginLocale.EN_US;
+i18n.enableFallback = true;
+
+export const setLocale = (locale: PluginLocale): void => {
+  if (i18n.translations[locale]) {
+    i18n.locale = locale;
+  } else {
+    i18n.locale = i18n.defaultLocale;
+  }
 };
+
+export { I18n };

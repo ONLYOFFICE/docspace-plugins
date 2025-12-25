@@ -22,6 +22,7 @@ import {
   PluginStatus,
   ToastType,
 } from "@onlyoffice/docspace-plugin-sdk";
+import { i18n } from "./locales";
 
 class AssemblyAI {
   apiURL = "";
@@ -141,7 +142,7 @@ class AssemblyAI {
     if (!this.apiToken)
       return {
         actions: [Actions.showToast],
-        toastProps: [{ type: ToastType.error, title: "API token is missing" }],
+        toastProps: [{ type: ToastType.error, title: i18n.t("toast_api_token_is_missing") }],
       } as IMessage;
 
     this.setCurrentFileId(null);
@@ -165,7 +166,7 @@ class AssemblyAI {
       if (!upload_url)
         return {
           actions: [Actions.showToast],
-          toastProps: [{ type: ToastType.error, title: "Wrong API token" }],
+          toastProps: [{ type: ToastType.error, title: i18n.t("toast_wrong_api_token") }],
         } as IMessage;
 
       const transcript = await this.transcribeAudio(this.apiToken, upload_url);
@@ -176,7 +177,7 @@ class AssemblyAI {
           toastProps: [
             {
               type: ToastType.info,
-              title: "Speech is not recognized or is missing",
+              title: i18n.t("toast_speech_not_recognized"),
             },
           ],
         } as IMessage;
@@ -226,8 +227,8 @@ class AssemblyAI {
           {
             type: success ? ToastType.success : ToastType.error,
             title: success 
-              ? "The file was successfully converted to text"
-              : `Conversion to text is not successful: ${res.message}`,
+              ? i18n.t("toast_successfully_converted")
+              : i18n.t("toast_unsuccessfully_converted") + res.message,
           },
         ],
       } as IMessage;
@@ -235,7 +236,7 @@ class AssemblyAI {
       console.log(e);
       return {
         actions: [Actions.showToast],
-        toastProps: [{ type: ToastType.error, title: "Wrong API token" }],
+        toastProps: [{ type: ToastType.error, title: i18n.t("toast_wrong_api_token") }],
       } as IMessage;
     }
   };

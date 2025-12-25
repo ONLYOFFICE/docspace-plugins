@@ -16,6 +16,7 @@
 
 import {
   IPlugin,
+  PluginLocale,
   PluginStatus,
   IApiPlugin,
   ISettingsPlugin,
@@ -26,6 +27,7 @@ import {
 import { contextMenuItem } from "./ContextMenuItem";
 import assemblyAI from "./AssemblyAI";
 import { adminSettings } from "./Settings";
+import { i18n, setLocale } from './locales';
 
 class SpeechToText
   implements IPlugin, IApiPlugin, ISettingsPlugin, IContextMenuPlugin
@@ -40,6 +42,16 @@ class SpeechToText
   adminPluginSettings: ISettings | null = {} as ISettings;
 
   contextMenuItems: Map<string, IContextMenuItem> = new Map();
+
+  setLanguage = (language: PluginLocale) => {
+    setLocale(language);
+    
+    this.updateContextMenuItem(contextMenuItem());
+  };
+
+  getLanguage = () => {
+    return i18n.locale as PluginLocale;
+  };
 
   onLoadCallback = async () => {};
 
@@ -130,7 +142,7 @@ class SpeechToText
 
 const plugin = new SpeechToText();
 
-plugin.addContextMenuItem(contextMenuItem);
+plugin.addContextMenuItem(contextMenuItem());
 plugin.setAdminPluginSettings(adminSettings);
 
 declare global {
