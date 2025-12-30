@@ -24,6 +24,7 @@ import {
 } from "@onlyoffice/docspace-plugin-sdk";
 import convertFile from "../ConvertFile";
 import { nameInputProps } from "./Name";
+import { i18n } from "../locales";
 
 export const onAcceptClick = async () => {
   const message = await convertFile.onConvertFileClick(nameInputProps.value);
@@ -32,7 +33,7 @@ export const onAcceptClick = async () => {
 };
 
 export const acceptButtonProps: IButton = {
-  label: "Convert file",
+  label: i18n.t("dialog.button_convert_file"),
   primary: true,
   size: ButtonSize.normal,
   scale: true,
@@ -62,7 +63,7 @@ export const onCancelClick = () => {
 };
 
 export const cancelButtonProps: IButton = {
-  label: "Cancel",
+  label: i18n.t("dialog.button_cancel"),
   size: ButtonSize.normal,
   scale: true,
   onClick: onCancelClick,

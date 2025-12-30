@@ -95,16 +95,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@onlyoffice/docspace-plugin-sdk@npm:^2.0.0":
+"@onlyoffice/docspace-plugin-sdk@file:../docspace-plugin-sdk.tgz::locator=pdf-converter%40workspace%3A.":
   version: 2.0.0
-  resolution: "@onlyoffice/docspace-plugin-sdk@npm:2.0.0"
+  resolution: "@onlyoffice/docspace-plugin-sdk@file:../docspace-plugin-sdk.tgz#../docspace-plugin-sdk.tgz::hash=beb6ca&locator=pdf-converter%40workspace%3A."
   dependencies:
     inquirer: "npm:^9.1.0"
     jszip: "npm:^3.10.1"
   bin:
-    build-docspace-plugin: npx/buildPlugin.js
-    create-docspace-plugin: npx/index.js
-  checksum: 10c0/fb9100165e747035bdcc5f0423ac9673a9b76c0be6cb74062426fd3cd70d93d261f9f0967195ccae1b0dff761a39a27f7f2fbd99ef395f982619e4657d8908b0
+    build-docspace-plugin: ./npx/buildPlugin.js
+    create-docspace-plugin: ./npx/index.js
+  checksum: 10c0/4fed7162ed1c9b09aa30f777231e2042042c14eab6d526474ded45a0c33c016794c078fd514de74c3efcd2e27cabb155dd2d2e1acbff181eaf9f5c30f67a9ccc
   languageName: node
   linkType: hard
 
@@ -440,6 +440,13 @@ __metadata:
   bin:
     baseline-browser-mapping: dist/cli.js
   checksum: 10c0/569928db78bcd081953d7db79e4243a59a579a34b4ae1806b9b42d3b7f84e5bc40e6e82ae4fa06e7bef8291bf747b33b3f9ef5d3c6e1e420cb129d9295536129
+  languageName: node
+  linkType: hard
+
+"bignumber.js@npm:*":
+  version: 9.3.1
+  resolution: "bignumber.js@npm:9.3.1"
+  checksum: 10c0/61342ba5fe1c10887f0ecf5be02ff6709271481aff48631f86b4d37d55a99b87ce441cfd54df3d16d10ee07ceab7e272fc0be430c657ffafbbbf7b7d631efb75
   languageName: node
   linkType: hard
 
@@ -847,6 +854,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"i18n-js@npm:^4.5.1":
+  version: 4.5.1
+  resolution: "i18n-js@npm:4.5.1"
+  dependencies:
+    bignumber.js: "npm:*"
+    lodash: "npm:*"
+    make-plural: "npm:*"
+  checksum: 10c0/242d618679e5dd06bd3a5d66c17e07c9fd41141a78885e0a883ee633131da60deb3b3fa760f9071d873aeef2fbfb3186faeccae347eb1e81fba1f12b258ae038
+  languageName: node
+  linkType: hard
+
 "iconv-lite@npm:^0.4.24":
   version: 0.4.24
   resolution: "iconv-lite@npm:0.4.24"
@@ -1062,7 +1080,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.23":
+"lodash@npm:*, lodash@npm:^4.17.23":
   version: 4.17.23
   resolution: "lodash@npm:4.17.23"
   checksum: 10c0/1264a90469f5bb95d4739c43eb6277d15b6d9e186df4ac68c3620443160fc669e2f14c11e7d8b2ccf078b81d06147c01a8ccced9aab9f9f63d50dcf8cace6bf6
@@ -1085,6 +1103,13 @@ __metadata:
   dependencies:
     yallist: "npm:^4.0.0"
   checksum: 10c0/cb53e582785c48187d7a188d3379c181b5ca2a9c78d2bce3e7dee36f32761d1c42983da3fe12b55cb74e1779fa94cdc2e5367c028a9b35317184ede0c07a30a9
+  languageName: node
+  linkType: hard
+
+"make-plural@npm:*":
+  version: 7.4.0
+  resolution: "make-plural@npm:7.4.0"
+  checksum: 10c0/10f24e932865c88d4cdb14d4bb809ce8e615cae7d083c63ad008b3bcaf0d22941ca0bd76acd9cdd7ae4047563501104fff3c37ce8ad2bc5671facde1818fa57f
   languageName: node
   linkType: hard
 
@@ -1239,8 +1264,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "pdf-converter@workspace:."
   dependencies:
-    "@onlyoffice/docspace-plugin-sdk": "npm:^2.0.0"
+    "@onlyoffice/docspace-plugin-sdk": "file:../docspace-plugin-sdk.tgz"
     convertapi-js: "npm:~1.1"
+    i18n-js: "npm:^4.5.1"
     ts-loader: "npm:^9.3.1"
     typescript: "npm:^4.7.4"
     webpack: "npm:^5.104.1"

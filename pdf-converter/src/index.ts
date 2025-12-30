@@ -17,6 +17,7 @@
 import {
   IPlugin,
   PluginStatus,
+  PluginLocale,
   IApiPlugin,
   IContextMenuPlugin,
   IContextMenuItem,
@@ -27,6 +28,7 @@ import {
 import { convertFileItem } from "./ContextMenuItem";
 import { adminSettings } from "./Settings";
 import convertFile from "./ConvertFile";
+import { setLocale, i18n } from "./locales";
 
 class ConvertFilePlugin
   implements IPlugin, ISettingsPlugin, IApiPlugin, IContextMenuPlugin
@@ -40,6 +42,16 @@ class ConvertFilePlugin
   prefix = "";
 
   contextMenuItems: Map<string, IContextMenuItem> = new Map();
+
+  setLanguage = (language: PluginLocale) => {
+    setLocale(language);
+    
+    this.updateContextMenuItem(convertFileItem());
+  };
+
+  getLanguage = () => {
+    return i18n.locale as PluginLocale;
+  };
 
   onLoadCallback = async () => {};
 
@@ -122,7 +134,7 @@ class ConvertFilePlugin
 
 const plugin = new ConvertFilePlugin();
 
-plugin.addContextMenuItem(convertFileItem);
+plugin.addContextMenuItem(convertFileItem());
 plugin.setAdminPluginSettings(adminSettings);
 
 declare global {
