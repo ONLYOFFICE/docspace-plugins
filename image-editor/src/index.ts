@@ -17,6 +17,7 @@
 import {
   IPlugin,
   PluginStatus,
+  PluginLocale,
   IApiPlugin,
   ISettingsPlugin,
   ISettings,
@@ -34,6 +35,7 @@ import {
   IFileItem,
 } from "@onlyoffice/docspace-plugin-sdk";
 import { contextMenuItem } from "./ContextMenu";
+import { i18n, setLocale } from "./locales";
 
 class Imageeditor
   implements
@@ -66,6 +68,16 @@ class Imageeditor
   eventListenerItems: Map<string, IEventListenerItem> = new Map();
 
   fileItems: Map<string, IFileItem> = new Map();
+
+  setLanguage = (language: PluginLocale) => {
+    setLocale(language);
+    
+    this.updateContextMenuItem(contextMenuItem());
+  };
+
+  getLanguage = () => {
+    return i18n.locale as PluginLocale;
+  };
 
   onLoadCallback = async () => {};
 
@@ -208,7 +220,7 @@ declare global {
   }
 }
 
-plugin.addContextMenuItem(contextMenuItem);
+plugin.addContextMenuItem(contextMenuItem());
 
 window.Plugins.ImageEditor = plugin || {};
 

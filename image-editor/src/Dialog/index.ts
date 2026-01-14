@@ -25,6 +25,7 @@ import {
   ButtonSize,
   IButton,
 } from "@onlyoffice/docspace-plugin-sdk";
+import { i18n } from "../locales";
 
 const closeDialog = () => {
   const message: IMessage = {
@@ -35,7 +36,7 @@ const closeDialog = () => {
 };
 
 export const saveExitButton: IButton = {
-  label: "Save and Exit",
+  label: i18n.t("dialog_button_save_and_exit"),
   size: ButtonSize.small,
   primary: true,
   withLoadingAfterClick: true,

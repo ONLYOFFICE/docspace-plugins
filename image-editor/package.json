@@ -1,7 +1,13 @@
 {
   "name": "image-editor",
+  "nameLocale": {
+    "en-US": "ImageEditor"
+  },
   "version": "1.0.0",
   "description": "DocSpace plugin for viewing and editing images",
+  "descriptionLocale": {
+    "en-US": "DocSpace plugin for viewing and editing images"
+  },
   "license": "Apache-2.0",
   "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/image-editor",
   "author": "ONLYOFFICE",
@@ -44,6 +50,7 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "^2.0.0"
+    "@onlyoffice/docspace-plugin-sdk": "file:../docspace-plugin-sdk.tgz",
+    "i18n-js": "^4.5.1"
   }
 }
