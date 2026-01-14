@@ -20,9 +20,8 @@ import {
   saveButton, 
   editorBody, 
   mdArea, 
-  saveExitButton, 
-  toastProps, 
-  errorToast,
+  saveExitButton,
+  fileSavedToast,
   markdownResize, 
   editorBox, 
   markdownSide, 
@@ -46,6 +45,7 @@ import {
   File
 } from "@onlyoffice/docspace-plugin-sdk";
 import { closeButton, saveUnsavedButton, unsavedModalDialog } from "./MarkdownIT/Unsaved";
+import { i18n } from "./locales";
 
 const md = markdownit({
   highlight: function (str, lang) {
@@ -162,7 +162,7 @@ class Markdownit {
     return {
       actions: [Actions.showToast],
       toastProps: [
-      { type: ToastType.error, title: "Wrong file format" } as IToast,
+      { type: ToastType.error, title: i18n.t("toast_wrong_file_format") } as IToast,
       ],
     };
     }
@@ -190,7 +190,7 @@ class Markdownit {
       return {
         actions: [Actions.showToast],
         toastProps: [
-          { type: ToastType.error, title: "You don't have permission to view this file" } as IToast,
+          { type: ToastType.error, title: i18n.t("toast_no_permissions") } as IToast,
         ],
       };
     }
@@ -211,7 +211,7 @@ class Markdownit {
       return {
         actions: [Actions.showToast],
         toastProps: [
-          { type: ToastType.error, title: "Can't read this file" } as IToast,
+          { type: ToastType.error, title: i18n.t("toast_cant_read_file") } as IToast,
         ],
       };
     }
@@ -278,7 +278,7 @@ class Markdownit {
         {
           component: Components.button,
           props: {
-            label: "Close",
+            label: i18n.t("button_close"),
             size: saveExitButton.size,
             scale: true,
             onClick: () => {
@@ -318,13 +318,13 @@ class Markdownit {
         this.stopEdit();
         var message: IMessage = {
           actions: [Actions.closeModal, Actions.showToast],
-          toastProps: [toastProps],
+          toastProps: [fileSavedToast(true)],
         }
         this.fileChanged = false;
       } else {
         message = {
           actions: [Actions.showToast],
-          toastProps: [errorToast]
+          toastProps: [fileSavedToast(false)]
         }
       }
       return message;
@@ -335,7 +335,7 @@ class Markdownit {
         saveExitButton.isDisabled = saveButton.isDisabled = true;
         var message: IMessage = {
           actions: [Actions.updateContext, Actions.showToast],
-          toastProps: [toastProps],
+          toastProps: [fileSavedToast(true)],
           contextProps: [
             {
               name: "editorFooter",
@@ -347,7 +347,7 @@ class Markdownit {
       } else {
         message = {
           actions: [Actions.showToast],
-          toastProps: [errorToast],
+          toastProps: [fileSavedToast(false)],
         }
       }
       
@@ -380,8 +380,8 @@ class Markdownit {
       return message;
     };
     if (this.mobile) {
-      markdownResize.label = "Preview";
-      previewResize.label = "Write";
+      markdownResize.label = i18n.t("button_preview");
+      previewResize.label = i18n.t("button_write");
       markdownResize.onClick = () => {
         editorBox.children = [
           {
@@ -421,7 +421,8 @@ class Markdownit {
         return message;
       }
     } else {
-      markdownResize.label = previewResize.label = "Resize";
+      markdownResize.label = i18n.t("dialog.button_markdown_resize");
+      previewResize.label = i18n.t("dialog.button_preview_resize");
       markdownResize.onClick = () => {
         if (this.fulscreen) {
           markdownSide.widthProp = "50%";
@@ -556,13 +557,13 @@ class Markdownit {
         this.stopEdit();
         var message: IMessage = {
           actions: [Actions.closeModal, Actions.showToast],
-          toastProps: [toastProps],
+          toastProps: [fileSavedToast(true)],
         }
         this.fileChanged = false;
       } else {
         message = {
           actions: [Actions.showToast],
-          toastProps: [errorToast]
+          toastProps: [fileSavedToast(false)]
         }
       }
       return message;

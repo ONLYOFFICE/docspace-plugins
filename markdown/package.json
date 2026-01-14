@@ -1,7 +1,13 @@
 {
   "name": "markdown",
+  "nameLocale": {
+    "en-US": "markdown"
+  },
   "version": "1.2.0",
   "description": "DocSpace plugin for viewing, editing and creating .md files",
+  "descriptionLocale": {
+    "en-US": "DocSpace plugin for viewing, editing and creating .md files"
+  },
   "license": "Apache-2.0",
   "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/markdown",
   "author": "ONLYOFFICE",
@@ -41,8 +47,9 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "^2.0.0",
+    "@onlyoffice/docspace-plugin-sdk": "file:../docspace-plugin-sdk.tgz",
     "highlight.js": "^11.9.0",
+    "i18n-js": "^4.5.1",
     "markdown-it": "^14.0.0"
   }
 }
