@@ -32,6 +32,7 @@ import { urlInput } from "./Url";
 import { offToggleButtonProps } from "./Off";
 import { langComboBox } from "./Lang";
 import { adminButtonProps } from "./Button";
+import { i18n } from "../../locales";
 
 const onChange = () => {
   libToggleButtonProps.isChecked = !libToggleButtonProps.isChecked;
@@ -75,8 +76,8 @@ const toggleBox: IBox = {
   children: [toggleComponent],
 };
 
-const libText: IText = {
-  text: "Libraries",
+export const libText: IText = {
+  text: i18n.t("settings.text_libraries"),
   fontWeight: 600,
   fontSize: "16px",
   lineHeight: "22px",

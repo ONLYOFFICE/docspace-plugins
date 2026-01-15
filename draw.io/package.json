@@ -1,7 +1,13 @@
 {
   "name": "draw.io",
+  "nameLocale": {
+    "en-US": "draw.io"
+  },
   "version": "1.2.0",
   "description": "A tool for creating diagrams, flowcharts, intelligence maps, business layouts, entity relationships, program blocks, and more",
+  "descriptionLocale": {
+    "en-US": "A tool for creating diagrams, flowcharts, intelligence maps, business layouts, entity relationships, program blocks, and more"
+  },
   "license": "Apache-2.0",
   "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/draw.io",
   "author": "ONLYOFFICE",
@@ -40,6 +46,7 @@
     "braces": "3.0.3"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "^2.0.0"
+    "@onlyoffice/docspace-plugin-sdk": "file:../docspace-plugin-sdk.tgz",
+    "i18n-js": "^4.5.1"
   }
 }

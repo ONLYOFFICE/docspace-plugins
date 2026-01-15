@@ -33,6 +33,7 @@ import { urlInput } from "./Url";
 import { offToggleButtonProps } from "./Off";
 import { libToggleButtonProps } from "./Lib";
 import { adminButtonProps } from "./Button";
+import { i18n } from "../../locales";
 
 export const options: IComboBoxItem[] = [
   { key: "auto", label: "Auto" },
@@ -128,8 +129,8 @@ const langBox: IBox = {
   children: [langComponent],
 };
 
-const langText: IText = {
-  text: "Language",
+export const langText: IText = {
+  text: i18n.t("settings.text_language"),
   fontWeight: 600,
   fontSize: "13px",
   lineHeight: "20px",

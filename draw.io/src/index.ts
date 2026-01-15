@@ -17,6 +17,7 @@
 import {
   IPlugin,
   PluginStatus,
+  PluginLocale,
   IApiPlugin,
   ISettingsPlugin,
   ISettings,
@@ -33,6 +34,7 @@ import { adminSettings } from "./Settings/Admin";
 import { contextMenuItem } from "./ContextMenu";
 import { mainButtonItem } from "./MainButton";
 import { drawIoItem } from "./File";
+import { i18n, setLocale } from "./locales";
 
 import drawIo from "./Drawio";
 
@@ -59,6 +61,18 @@ class Drawio
   mainButtonItems: Map<string, IMainButtonItem> = new Map();
 
   fileItems: Map<string, IFileItem> = new Map();
+
+  setLanguage = (language: PluginLocale) => {
+    setLocale(language);
+    
+    this.updateContextMenuItem(contextMenuItem());
+    this.updateMainButtonItem(mainButtonItem());
+    this.updateFileItem(drawIoItem());
+  };
+
+  getLanguage = () => {
+    return i18n.locale as PluginLocale;
+  };
 
   onLoadCallback = async () => {};
 
@@ -177,9 +191,9 @@ declare global {
 
 plugin.setOnLoadCallback(drawIo.onLoad);
 
-plugin.addMainButtonItem(mainButtonItem);
-plugin.addFileItem(drawIoItem);
-plugin.addContextMenuItem(contextMenuItem);
+plugin.addMainButtonItem(mainButtonItem());
+plugin.addFileItem(drawIoItem());
+plugin.addContextMenuItem(contextMenuItem());
 
 plugin.setAdminPluginSettings(adminSettings);
 

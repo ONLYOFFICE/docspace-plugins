@@ -32,6 +32,7 @@ import { urlInput } from "./Url";
 import { langComboBox } from "./Lang";
 import { libToggleButtonProps } from "./Lib";
 import { adminButtonProps } from "./Button";
+import { i18n } from "../../locales";
 
 const onChange = () => {
   offToggleButtonProps.isChecked = !offToggleButtonProps.isChecked;
@@ -75,8 +76,8 @@ const toggleBox: IBox = {
   children: [toggleComponent],
 };
 
-const textProps: IText = {
-  text: `When the "offline mode" is active, this disabled all remote operations and features to protect`,
+export const textProps: IText = {
+  text: i18n.t("settings.text_offline_description"),
   color: "#A3A9AE",
   fontSize: "12px",
   fontWeight: 400,
@@ -94,8 +95,8 @@ export const offDescriptionBox: IBox = {
   children: [textComponent],
 };
 
-const offText: IText = {
-  text: "Offline mode",
+export const offText: IText = {
+  text: i18n.t("settings.text_offline"),
   fontWeight: 600,
   fontSize: "16px",
   lineHeight: "22px",

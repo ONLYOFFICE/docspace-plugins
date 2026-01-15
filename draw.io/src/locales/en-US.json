@@ -1,0 +1,30 @@
+{
+    "main_button": {
+        "create_dialog_title": "Create diagram",
+        "create_dialog_start_value": "New diagram"
+    },
+    "open_from_url": {
+        "button_accept": "Create",
+        "button_cancel": "Cancel",
+        "description_text": "Make sure that public link access is open",
+        "dialog_header": "Import diagram",
+        "input_placeholder_name": "New diagram",
+        "input_text_name": "Name",
+        "input_placeholder_url": "Url for diagram",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "Data is saved",
+        "button_save": "Save",
+        "text_language": "Language",
+        "text_libraries": "Libraries",
+        "text_offline_description": "When the \"offline mode\" is active, this disabled all remote operations and features to protect",
+        "text_offline": "Offline mode"
+    },
+    "context_menu_open_diagram": "Open diagram",
+    "file_type_name": "Diagram",
+    "toast_file_not_created": "File \"${title}.drawio\" was not created: ${message}",
+    "toast_wrong_file_format": "Wrong file format",
+    "toast_no_permission": "You don't have permission to view this file",
+    "toast_cant_read_file": "Can't read this file"
+}
