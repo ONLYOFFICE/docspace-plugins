@@ -25,6 +25,7 @@ import {
 } from "@onlyoffice/docspace-plugin-sdk";
 import codemirror from "../Codemirror";
 import { autoCloseTagsToggle, highlightTrailingWhitespaceToggle, highlightWhitespaceToggle } from "./Core";
+import { i18n } from "../locales";
 
 const onClick = () => {
   codemirror.setSettings(
@@ -35,7 +36,7 @@ const onClick = () => {
 
   const message: IMessage = {
     actions: [Actions.showToast, Actions.updateProps, Actions.saveSettings],
-    toastProps: [{ title: "Data is saved", type: ToastType.success }],
+    toastProps: [{ title: i18n.t("settings.toast_data_is_saved"), type: ToastType.success }],
     newProps: { ...settingsButtonProps, isDisabled: true },
     settings: codemirror.getSettings(),
   };
@@ -46,7 +47,7 @@ const onClick = () => {
 export const settingsButtonProps: IButton = {
   onClick,
   size: ButtonSize.normal,
-  label: "Save",
+  label: i18n.t("settings.button_save"),
   scale: false,
   primary: true,
   isDisabled: true,

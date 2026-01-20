@@ -17,20 +17,25 @@
 import { IFileItem, File } from "@onlyoffice/docspace-plugin-sdk";
 import codemirror from "../Codemirror";
 import { supportedFileExts } from "../properties.json";
+import { i18n } from "../locales";
 
 const onClick = async (item: File) => {
   return await codemirror.openFile(item);
 };
 
-const codemirrorItems: IFileItem[] = [];
-for (const ext of supportedFileExts) {
-  codemirrorItems.push({
-    extension: "." + ext,
-    fileTypeName: "Code",
-    fileRowIcon: `codemirror-file.svg`,
-    fileTileIcon: `codemirror-file.svg`,
-    onClick,
-  });
-}
+const codemirrorItems: () => IFileItem[] = () => {
+  const items = [];
+  for (const ext of supportedFileExts) {
+    items.push({
+      extension: "." + ext,
+      fileTypeName: i18n.t("file_type_name"),
+      fileRowIcon: `codemirror-file.svg`,
+      fileTileIcon: `codemirror-file.svg`,
+      onClick,
+    });
+  }
+
+  return items;
+};
 
 export { codemirrorItems };

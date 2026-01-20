@@ -24,9 +24,10 @@ import {
   IText,
   ModalDisplayType,
 } from "@onlyoffice/docspace-plugin-sdk";
+import { i18n } from "../locales";
 
-const unsavedText: IText = {
-  text: "Continue without saving?\nYou have made changes in the configuration. If you proceed without saving, those changes will not be applied.",
+export const unsavedText: IText = {
+  text: i18n.t("dialog.text_unsaved"),
 };
 
 const intendBox: IBox = {
@@ -43,8 +44,8 @@ const unsavedBody: IBox = {
   ],
 };
 
-const continueButton: IButton = {
-  label: "Continue",
+export const continueButton: IButton = {
+  label: i18n.t("dialog.button_continue"),
   size: ButtonSize.normal,
   primary: true,
   withLoadingAfterClick: true,
@@ -58,7 +59,7 @@ const continueButton: IButton = {
 };
 
 export const reopenButton: IButton = {
-  label: "Cancel",
+  label: i18n.t("dialog.button_reopen"),
   size: ButtonSize.normal,
   withLoadingAfterClick: true,
   disableWhileRequestRunning: true,
@@ -88,12 +89,12 @@ const unsavedFooter: IBox = {
 
 export const unsavedModalDialog: IModalDialog = {
   displayType: ModalDisplayType.modal,
-  dialogHeader: "Warning",
+  dialogHeader: i18n.t("dialog.warning_header"),
   dialogBody: unsavedBody,
   dialogFooter: unsavedFooter,
   onLoad: async () => {
     return {
-      newDialogHeader: unsavedModalDialog.dialogHeader,
+      newDialogHeader: i18n.t("dialog.warning_header"),
       newDialogBody: unsavedModalDialog.dialogBody,
       newDialogFooter: unsavedModalDialog.dialogFooter,
     };

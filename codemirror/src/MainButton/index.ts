@@ -17,12 +17,13 @@
 import { Actions, ICreateDialog, IMainButtonItem, IMessage } from "@onlyoffice/docspace-plugin-sdk";
 import { supportedFileExts } from "../properties.json";
 import codemirror from "../Codemirror";
+import { i18n } from "../locales";
 
 let createLock = false;
 
-const createDialog: ICreateDialog = {
-  title: "Create text file",
-  startValue: "Text file",
+export const createDialog: ICreateDialog = {
+  title: i18n.t("main_button.create_dialog_title"),
+  startValue: i18n.t("main_button.create_dialog_start_value"),
   visible: true,
   isCreateDialog: true,
   extension: "",
@@ -34,17 +35,17 @@ const createDialog: ICreateDialog = {
     else createLock = true;
 
     if (!value.includes(".")) {
-      throw new Error("File extension must be provided");
+      throw new Error(i18n.t("main_button.error_no_file_ext"));
     }
 
     if (!supportedFileExts.includes(value.split(".").pop()!)) {
-      throw new Error("File extension not supported by Codemirror plugin");
+      throw new Error(i18n.t("main_button.error_not_supported"));
     }
 
     const fileID = await codemirror.createNewFile(value);
     if (typeof fileID === "object") {
       createDialog.isCreateDisabled = true;
-      throw new Error(`File "${value}.md" was not created: ${fileID.message}`);
+      throw new Error(i18n.t("main_button.error_not_created", { title: value, message: fileID.message }));
     }
 
     const message = await codemirror.openFile(fileID);
@@ -68,22 +69,24 @@ const createDialog: ICreateDialog = {
   },
 };
 
-const codemirrorMainButtonItem: IMainButtonItem = {
-  key: "codemirror-main-button-item",
-  label: "Text file",
-  icon: "codemirror.svg",
-  onClick: (id: number) => {
-    codemirror.setCurrentFolderId(id);
-    createDialog.isCreateDisabled = false;
-    createDialog.errorText = "";
+const codemirrorMainButtonItem: () => IMainButtonItem = () => {
+  return {
+    key: "codemirror-main-button-item",
+    label: i18n.t("main_button.label"),
+    icon: "codemirror.svg",
+    onClick: (id: number) => {
+      codemirror.setCurrentFolderId(id);
+      createDialog.isCreateDisabled = false;
+      createDialog.errorText = "";
 
-    const message: IMessage = {
-      actions: [Actions.showCreateDialogModal],
-      createDialogProps: createDialog,
-    };
+      const message: IMessage = {
+        actions: [Actions.showCreateDialogModal],
+        createDialogProps: createDialog,
+      };
 
-    return message;
-  },
+      return message;
+    },
+  };
 };
 
 export { codemirrorMainButtonItem };
