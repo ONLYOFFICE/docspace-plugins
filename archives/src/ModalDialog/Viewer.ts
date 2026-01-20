@@ -18,6 +18,7 @@ import { FileTreeItem } from "../Archives";
 import { addStyles } from "./Styles";
 import { fileTypes } from "../properties.json";
 import archives from "../Archives";
+import { i18n } from "../locales";
 
 const current = {
   file: undefined as string | undefined,
@@ -41,12 +42,12 @@ export function drawInIframe(id: string, callback: Function, ...args: any) {
 
 export function loader(iframe: HTMLIFrameElement) {
   // TODO: do
-  iframe.contentWindow!.document.body.innerHTML = "Loading...";
+  iframe.contentWindow!.document.body.innerHTML = i18n.t("dialog.viewer_loading");
 }
 
 export function error(iframe: HTMLIFrameElement, error: string) {
   // TODO: do and use
-  iframe.contentWindow!.document.body.innerHTML = `Error:\n${error}`;
+  iframe.contentWindow!.document.body.innerHTML = i18n.t("dialog.viewer_error", { error });
 }
 
 export function viewer(

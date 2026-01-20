@@ -1,7 +1,13 @@
 {
   "name": "zip-archives",
+  "nameLocale": {
+    "en-US": "zip-archives"
+  },
   "version": "1.0.0",
   "description": "DocSpace plugin for opening and extracting ZIP archives",
+  "descriptionLocale": {
+    "en-US": "DocSpace plugin for opening and extracting ZIP archives"
+  },
   "license": "Apache-2.0",
   "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/archives",
   "author": "ONLYOFFICE",
@@ -42,6 +48,7 @@
   },
   "dependencies": {
     "@onlyoffice/docspace-plugin-sdk": "file:../docspace-plugin-sdk.tgz",
-    "fflate": "^0.8.2"
+    "fflate": "^0.8.2",
+    "i18n-js": "^4.5.1"
   }
 }

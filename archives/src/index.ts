@@ -17,6 +17,7 @@
 import {
   IPlugin,
   PluginStatus,
+  PluginLocale,
   IApiPlugin,
   ISettingsPlugin,
   ISettings,
@@ -37,10 +38,15 @@ import {
 } from "@onlyoffice/docspace-plugin-sdk";
 
 import archives from "./Archives";
+import { i18n, setLocale } from "./locales";
 import { zipFileItem } from "./File";
 import {
   openZipContextMenuItem,
+  unzipContextMenuItem,
+  unzipHereContextMenuItem,
   unzipGroupContextMenuItem,
+  zipFolderContextMenuItem,
+  zipHereFolderContextMenuItem,
   zipGroupContextMenuItem,
   zipSelectedItems,
 } from "./ContextMenu";
@@ -77,6 +83,24 @@ class Archives
   eventListenerItems: Map<string, IEventListenerItem> = new Map();
 
   fileItems: Map<string, IFileItem> = new Map();
+
+  setLanguage = (language: PluginLocale) => {
+    setLocale(language);
+    
+    this.updateFileItem(zipFileItem());
+    this.updateContextMenuItem(openZipContextMenuItem());
+    this.updateContextMenuItem(unzipContextMenuItem());
+    this.updateContextMenuItem(unzipHereContextMenuItem());
+    this.updateContextMenuItem(unzipGroupContextMenuItem());
+    this.updateContextMenuItem(zipFolderContextMenuItem());
+    this.updateContextMenuItem(zipHereFolderContextMenuItem());
+    this.updateContextMenuItem(zipGroupContextMenuItem());
+    this.updateContextMenuItem(zipSelectedItems());
+  };
+
+  getLanguage = () => {
+    return i18n.locale as PluginLocale;
+  };
 
   onLoadCallback = async () => {};
 
@@ -253,11 +277,11 @@ declare global {
   }
 }
 
-plugin.addFileItem(zipFileItem);
-plugin.addContextMenuItem(openZipContextMenuItem);
-plugin.addContextMenuItem(unzipGroupContextMenuItem);
-plugin.addContextMenuItem(zipGroupContextMenuItem);
-plugin.addContextMenuItem(zipSelectedItems);
+plugin.addFileItem(zipFileItem());
+plugin.addContextMenuItem(openZipContextMenuItem());
+plugin.addContextMenuItem(unzipGroupContextMenuItem());
+plugin.addContextMenuItem(zipGroupContextMenuItem());
+plugin.addContextMenuItem(zipSelectedItems());
 
 window.Plugins.ZipArchives = plugin || {};
 

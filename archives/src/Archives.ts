@@ -27,6 +27,7 @@ import * as fflate from "fflate";
 import { modalDialogProps, frameProps, extractButton } from "./ModalDialog";
 import { drawInIframe, loader, viewer } from "./ModalDialog/Viewer";
 import { selectorProps } from "./ModalDialog/Selector";
+import { i18n } from "./locales";
 
 class Archives {
   apiURL: string = "";
@@ -71,7 +72,7 @@ class Archives {
     if (!file.security?.Download) {
       return {
         actions: [Actions.showToast],
-        toastProps: [{ type: ToastType.error, title: "You don't have permission to view this file" } as IToast],
+        toastProps: [{ type: ToastType.error, title: i18n.t("toast_no_view_permission") } as IToast],
       };
     }
 
@@ -143,7 +144,7 @@ class Archives {
       if (!file.security?.Download) {
         return {
           actions: [Actions.showToast],
-          toastProps: [{ type: ToastType.error, title: "You don't have permission to unzip this file" } as IToast],
+          toastProps: [{ type: ToastType.error, title: i18n.t("toast_no_unzip_permission") } as IToast],
         } as IPostMessageCallbackMessage;
       }
 
@@ -219,7 +220,7 @@ class Archives {
       if (!file.security?.Download) {
         return {
           actions: [Actions.showToast],
-          toastProps: [{ type: ToastType.error, title: "You don't have permission to unzip this file" } as IToast],
+          toastProps: [{ type: ToastType.error, title: i18n.t("toast_no_unzip_permission") } as IToast],
         } as IMessage;
       }
 
@@ -282,7 +283,7 @@ class Archives {
 
     return {
       actions: [Actions.showToast],
-      toastProps: [{ type: ToastType.success, title: "File unziped successfully" } as IToast],
+      toastProps: [{ type: ToastType.success, title: i18n.t("toast_unzip_success") } as IToast],
     } as IMessage;
   };
 
@@ -303,7 +304,7 @@ class Archives {
       return {
         actions: [Actions.showToast],
         toastProps: [
-          { type: ToastType.error, title: "Zip is not created. You can't create files in this folder" } as IToast,
+          { type: ToastType.error, title: i18n.t("toast_cant_create") } as IToast,
         ],
       };
     }
@@ -330,7 +331,7 @@ class Archives {
       },
       body: JSON.stringify({
         createOn: new Date(),
-        fileName: `${folder.current?.title || "New archive"}.zip`,
+        fileName: `${folder.current?.title || i18n.t("default_zip_title")}.zip`,
         fileSize: file.size,
         relativePath: "",
         CreateNewIfExist: true,
@@ -340,7 +341,7 @@ class Archives {
     if (!sessionRes.ok) {
       return {
         actions: [Actions.showToast],
-        toastProps: [{ type: ToastType.error, title: "Failed to create zip" } as IToast],
+        toastProps: [{ type: ToastType.error, title: i18n.t("toast_failed_to_create") } as IToast],
       };
     }
 
@@ -355,11 +356,11 @@ class Archives {
 
     const message: IMessage = {
       actions: [Actions.showToast],
-      toastProps: [{ type: ToastType.success, title: "Zip is saved" } as IToast],
+      toastProps: [{ type: ToastType.success, title: i18n.t("toast_zip_saved") } as IToast],
     };
 
     if (!data.success) {
-      message.toastProps = [{ type: ToastType.error, title: "Failed to save zip" } as IToast];
+      message.toastProps = [{ type: ToastType.error, title: i18n.t("toast_zip_not_saved") } as IToast];
       return message;
     }
 
