@@ -71,3 +71,13 @@ export const zipGroupContextMenuItem: IContextMenuItem = {
     zipFolderContextMenuItem,
   ],
 }
+
+export const zipSelectedItems: IContextMenuItem = {
+  key: "archives-zip-selected-items",
+  label: "Archive selected items",
+  icon: "zip.svg",
+  isGroupAction: true,
+  fileType: [FilesType.folder, FilesType.file],
+  security: [Security.Create],
+  onGroupClick: async (ids: number[]) => archives.zipFolder(ids),
+}

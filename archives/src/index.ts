@@ -39,6 +39,7 @@ import {
   openZipContextMenuItem,
   unzipGroupContextMenuItem,
   zipGroupContextMenuItem,
+  zipSelectedItems,
 } from "./ContextMenu";
 
 class Archives
@@ -218,6 +219,7 @@ plugin.addFileItem(zipFileItem);
 plugin.addContextMenuItem(openZipContextMenuItem);
 plugin.addContextMenuItem(unzipGroupContextMenuItem);
 plugin.addContextMenuItem(zipGroupContextMenuItem);
+plugin.addContextMenuItem(zipSelectedItems)
 
 window.Plugins.ZipArchives = plugin || {};
 

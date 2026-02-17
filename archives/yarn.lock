@@ -73,14 +73,14 @@ __metadata:
 
 "@onlyoffice/docspace-plugin-sdk@file:../docspace-plugin-sdk.tgz::locator=zip-archives%40workspace%3A.":
   version: 2.0.0
-  resolution: "@onlyoffice/docspace-plugin-sdk@file:../docspace-plugin-sdk.tgz#../docspace-plugin-sdk.tgz::hash=2e836d&locator=zip-archives%40workspace%3A."
+  resolution: "@onlyoffice/docspace-plugin-sdk@file:../docspace-plugin-sdk.tgz#../docspace-plugin-sdk.tgz::hash=beb6ca&locator=zip-archives%40workspace%3A."
   dependencies:
     inquirer: "npm:^9.1.0"
     jszip: "npm:^3.10.1"
   bin:
     build-docspace-plugin: ./npx/buildPlugin.js
     create-docspace-plugin: ./npx/index.js
-  checksum: 10c0/e60b31612c82eb6ba43255c0debcfd2b37968cdda6cf17d7c24d72e93952e01e732644149c534dca87571c8dc506c4ca82f7c21ae31210518e6b61a665aff283
+  checksum: 10c0/4fed7162ed1c9b09aa30f777231e2042042c14eab6d526474ded45a0c33c016794c078fd514de74c3efcd2e27cabb155dd2d2e1acbff181eaf9f5c30f67a9ccc
   languageName: node
   linkType: hard
 

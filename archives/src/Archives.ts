@@ -166,7 +166,7 @@ class Archives {
 
     for (const f of content!) {
       if (f.type === "file") {
-        const blob = new Blob([f.content as Uint8Array]);
+        const blob = new Blob([f.content as BlobPart]);
         const file = new File([blob], `blob`, {
           type: "",
           lastModified: new Date().getTime(),
@@ -208,10 +208,16 @@ class Archives {
     } as IMessage;
   };
 
-  zipFolder = async (id: number) => {
+  zipFolder = async (id: number | number[]) => {
     if (!this.apiURL) this.createAPIUrl();
 
-    const parent = await this.getFolder((await this.getFolder(id)).current.parentId);
+    var parent, fakeFolder;
+    if (typeof id === "number") {
+      parent = await this.getFolder((await this.getFolder(id)).current.parentId);
+    } else {
+      fakeFolder = await this.collectContent(id);
+      parent = fakeFolder.parent;
+    }
 
     if (!parent.current.security.Create) {
       return {
@@ -223,11 +229,11 @@ class Archives {
     }
 
     this.archiveBuffer = {};
-    const folder = await this.fetchContent(id);
+    const folder = await this.fetchContent(fakeFolder ? fakeFolder : id);
 
     const zip = fflate.zipSync(this.archiveBuffer);
 
-    const blob = new Blob([zip]);
+    const blob = new Blob([zip as BlobPart]);
 
     const file = new File([blob], `blob`, {
       type: "",
@@ -244,7 +250,7 @@ class Archives {
       },
       body: JSON.stringify({
         createOn: new Date(),
-        fileName: `${folder.current.title}.zip`,
+        fileName: `${folder.current?.title || "New archive"}.zip`,
         fileSize: file.size,
         relativePath: "",
         CreateNewIfExist: true,
@@ -299,8 +305,8 @@ class Archives {
       });
   };
 
-  fetchContent = async (id: number, path: string = "") => {
-    const folder = await this.getFolder(id);
+  fetchContent = async (id: any, path: string = "") => {
+    const folder = typeof id === "number" ? await this.getFolder(id) : id;
     if (path !== "") {
       this.archiveBuffer[path] = new Uint8Array();
     }
@@ -328,6 +334,26 @@ class Archives {
 
     await Promise.all([...filePromises, ...recursivePromises]);
     return folder;
+  };
+
+  collectContent = async (ids: number[]) => {
+    var parentId;
+    try {
+      const file = await this.getFile(ids[0]);
+      if (!file) throw new Error();
+      parentId = file.folderId;
+    } catch {
+      const folder = await this.getFolder(ids[0]);
+      parentId = folder.current.parentId;
+    }
+
+    const parent = await this.getFolder(parentId);
+
+    return {
+      parent,
+      folders: parent.folders.filter((f: any) => ids.includes(f.id)),
+      files: parent.files.filter((f: any) => ids.includes(f.id)),
+    };
   };
 
   getFile = async (id: File | any) => {
