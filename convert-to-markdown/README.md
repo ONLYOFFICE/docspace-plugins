@@ -27,6 +27,7 @@ Convert DOCX and TXT files to Markdown format directly in DocSpace with a single
 
 - **DOCX Files**: Parsed using [mammoth.js](https://github.com/mwilliamson/mammoth.js) to extract content as HTML, then converted to Markdown
 - **TXT Files**: Converted directly to Markdown format
+- **HTML Files**: Converted directly to Markdown format
 
 ### Technologies Used
 
@@ -42,7 +43,7 @@ Convert DOCX and TXT files to Markdown format directly in DocSpace with a single
 ## Troubleshooting
 
 ### Conversion Failed
-- Check that the file is a valid DOCX or TXT file
+- Check that the file is a valid DOCX, TXT or HTML file
 - Ensure you have permission to create files in the folder
 - Try refreshing the page and attempting again
 
