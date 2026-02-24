@@ -29,7 +29,7 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "file:../docspace-plugin-sdk.tgz",
+    "@onlyoffice/docspace-plugin-sdk": "^2.0.0",
     "i18n-js": "^4.5.1"
   },
   "description": "",
