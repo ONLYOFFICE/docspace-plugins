@@ -9,6 +9,7 @@ This repository comprises plugins which allow extending the functionality of [ON
 * [ImageEditor](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/image-editor)
 * [PDFConverter](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/pdf-converter)
 * [SpeechToText](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/speech-to-text)
+* [BookReader](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/book-reader)
 
 ## User feedback and support
 
