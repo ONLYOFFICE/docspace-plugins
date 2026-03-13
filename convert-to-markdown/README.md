@@ -1,13 +1,13 @@
 # Markdown Converter - ONLYOFFICE DocSpace Plugin
 
-Convert DOCX and TXT files to Markdown format directly in DocSpace with a single click.
+Convert DOCX, HTML and TXT files to Markdown format directly in DocSpace with a single click.
 
 ## Features
 
-- **Easy Conversion**: Right-click any DOCX or TXT file and select "Convert to Markdown"
+- **Easy Conversion**: Right-click any DOCX, HTML or TXT file and select "Convert to Markdown"
 - **Client-Side Processing**: All conversions happen in your browser - no external services required
 - **Supported Formats**:
-  - `.docx` - Microsoft Word documents
+  - `.docx` - Word documents
   - `.txt` - Plain text files
   - `.html` - HTML files
 - **Fast & Reliable**: Uses industry-standard libraries (mammoth.js for DOCX parsing, Turndown for HTML-to-Markdown conversion)
@@ -16,7 +16,7 @@ Convert DOCX and TXT files to Markdown format directly in DocSpace with a single
 ## How to Use
 
 1. Navigate to a folder in DocSpace
-2. Right-click on a DOCX, TXT, or HTML file
+2. Right-click on a DOCX, HTML or TXT file
 3. Select **"Convert to Markdown"** from the context menu
 4. The converted `.md` file will be created in the same folder
 
@@ -27,6 +27,7 @@ Convert DOCX and TXT files to Markdown format directly in DocSpace with a single
 
 - **DOCX Files**: Parsed using [mammoth.js](https://github.com/mwilliamson/mammoth.js) to extract content as HTML, then converted to Markdown
 - **TXT Files**: Converted directly to Markdown format
+- **HTML Files**: Converted directly to Markdown format using [Turndown](https://github.com/mixmark-io/turndown)
 
 ### Technologies Used
 
@@ -42,7 +43,7 @@ Convert DOCX and TXT files to Markdown format directly in DocSpace with a single
 ## Troubleshooting
 
 ### Conversion Failed
-- Check that the file is a valid DOCX or TXT file
+- Check that the file is a valid DOCX, HTML or TXT file
 - Ensure you have permission to create files in the folder
 - Try refreshing the page and attempting again
 
