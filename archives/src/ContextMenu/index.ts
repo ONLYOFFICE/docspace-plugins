@@ -79,5 +79,5 @@ export const zipSelectedItems: IContextMenuItem = {
   isGroupAction: true,
   fileType: [FilesType.folder, FilesType.file],
   security: [Security.Create],
-  onGroupClick: async (ids: number[]) => archives.zipFolder(ids),
+  onGroupClick: async (ids) => archives.zipFolder(ids),
 }

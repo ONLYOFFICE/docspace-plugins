@@ -208,7 +208,7 @@ class Archives {
     } as IMessage;
   };
 
-  zipFolder = async (id: number | number[]) => {
+  zipFolder = async (id: number | any[]) => {
     if (!this.apiURL) this.createAPIUrl();
 
     var parent, fakeFolder;
@@ -336,23 +336,35 @@ class Archives {
     return folder;
   };
 
-  collectContent = async (ids: number[]) => {
+  collectContent = async (elements: any[]) => {
     var parentId;
-    try {
-      const file = await this.getFile(ids[0]);
-      if (!file) throw new Error();
+    if (elements[0].itemType == "file") {
+      const file = await this.getFile(elements[0].id);
       parentId = file.folderId;
-    } catch {
-      const folder = await this.getFolder(ids[0]);
+    } else {
+      const folder = await this.getFolder(elements[0].id);
       parentId = folder.current.parentId;
     }
 
     const parent = await this.getFolder(parentId);
 
+    const ids = {
+      folders: [] as (number | string)[],
+      files: [] as (number | string)[],
+    };
+
+    for (const e of elements) {
+      if (e.itemType == "file") {
+        ids.files.push(e.id);
+      } else {
+        ids.folders.push(e.id);
+      }
+    }
+
     return {
       parent,
-      folders: parent.folders.filter((f: any) => ids.includes(f.id)),
-      files: parent.files.filter((f: any) => ids.includes(f.id)),
+      folders: parent.folders.filter((f: any) => ids.folders.includes(f.id)),
+      files: parent.files.filter((f: any) => ids.files.includes(f.id)),
     };
   };
 
