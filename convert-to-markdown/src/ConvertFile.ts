@@ -20,9 +20,37 @@ import {
   ToastType,
 } from "@onlyoffice/docspace-plugin-sdk";
 import TurndownService from "turndown";
+import { tables } from "turndown-plugin-gfm";
 import mammoth from "mammoth";
 
 import plugin from ".";
+
+// Patch mammoths internal Element.prototype.text which throws "Not implemented"
+// when an element has multiple or non text children 
+// Both convertToHtml and extractRawText hit the same reader path, so patching
+// at the source is the only reliable fix for the issue
+const patchMammothNodes = (): void => {
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const nodes = require("mammoth/lib/xml/nodes");
+    const collectText = (children: any[]): string =>
+      children
+        .map((child: any) => {
+          if (child.type === "text") return child.value;
+          if (Array.isArray(child.children)) return collectText(child.children);
+          return "";
+        })
+        .join("");
+
+    nodes.Element.prototype.text = function (): string {
+      if (this.children.length === 0) return "";
+      return collectText(this.children);
+    };
+  } catch (_) {
+    // If patching fails mammoth will still work for docs that dont hit the bug
+  }
+};
+patchMammothNodes();
 
 // Supported file extensions
 const SUPPORTED_EXTENSIONS = {
@@ -37,12 +65,52 @@ class ConvertFile {
   private apiURL = "";
   private createLock = false;
 
-  private turndownService = new TurndownService({
-    headingStyle: "atx",
-    codeBlockStyle: "fenced",
-    emDelimiter: "*",
-    bulletListMarker: "-",
-  });
+  private turndownService = (() => {
+    const service = new TurndownService({
+      headingStyle: "atx",
+      codeBlockStyle: "fenced",
+      emDelimiter: "*",
+      bulletListMarker: "-",
+    });
+    service.use(tables);
+
+    // Handle tables that have no <thead> (all rows in <tbody>)
+    // The GFM tables plugin only produces pipe-tables when it finds <th> / <thead>
+    // so we need a separate rule that treats the first <tr> as the header
+    service.addRule("tableWithoutHeader", {
+      filter: (node: HTMLElement): boolean => {
+        return node.nodeName === "TABLE" && !node.querySelector("thead");
+      },
+      replacement: (_content: string, node: Node): string => {
+        const el = node as HTMLElement;
+        const rows = Array.from(el.querySelectorAll("tr"));
+        if (rows.length === 0) return _content;
+
+        const getCells = (row: Element): string[] =>
+          Array.from(row.querySelectorAll("td, th")).map((cell) =>
+            (cell.textContent || "")
+              .trim()
+              .replace(/\s+/g, " ")
+              .replace(/\|/g, "\\|")
+          );
+
+        const allRows = rows.map(getCells);
+        const header = allRows[0];
+        const separator = header.map(() => "---");
+        const body = allRows.slice(1);
+
+        const fmt = (cells: string[]): string => `| ${cells.join(" | ")} |`;
+
+        return (
+          "\n\n" +
+          [fmt(header), fmt(separator), ...body.map(fmt)].join("\n") +
+          "\n\n"
+        );
+      },
+    });
+
+    return service;
+  })();
 
   private createAPIUrl = (): void => {
     const api = plugin.getAPI();
@@ -122,6 +190,13 @@ class ConvertFile {
     
     if (!response.ok) {
       throw new Error(`Failed to download file: ${response.statusText}`);
+    }
+
+    const contentType = response.headers.get("Content-Type") || "";
+    if (contentType.includes("application/pdf")) {
+      throw new Error(
+        "This file is watermark-protected. Disable the \"Add watermarks to documents\" room setting and try again."
+      );
     }
     
     const buffer = await response.arrayBuffer();

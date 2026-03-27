@@ -33,7 +33,9 @@
   },
   "dependencies": {
     "@onlyoffice/docspace-plugin-sdk": "^2.0.0",
+    "@truto/turndown-plugin-gfm": "^1.0.2",
     "mammoth": "^1.11.0",
-    "turndown": "^7.2.2"
+    "turndown": "^7.2.2",
+    "turndown-plugin-gfm": "^1.0.2"
   }
 }
