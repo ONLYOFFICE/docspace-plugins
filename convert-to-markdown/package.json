@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Convert DOCX, TXT and HTML files to Markdown format directly in DocSpace",
   "license": "Apache-2.0",
+  "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/convert-to-markdown",
   "author": "ONLYOFFICE",
   "maintainers": [
     "Ascensio System SIA <integration@onlyoffice.com> (https://www.onlyoffice.com)"
@@ -12,7 +13,6 @@
   },
   "pluginName": "MarkdownConverter",
   "logo": "icon-md.svg",
-  "homepage": "",
   "main": "index.ts",
   "private": true,
   "scopes": [
@@ -37,5 +37,5 @@
     "mammoth": "^1.11.0",
     "turndown": "^7.2.2",
     "turndown-plugin-gfm": "^1.0.2"
-  },
+  }
 }
