@@ -259,6 +259,6 @@ plugin.addContextMenuItem(unzipGroupContextMenuItem);
 plugin.addContextMenuItem(zipGroupContextMenuItem);
 plugin.addContextMenuItem(zipSelectedItems);
 
-window.Plugins.ZipArchives1 = plugin || {};
+window.Plugins.ZipArchives = plugin || {};
 
 export default plugin;
