@@ -171,7 +171,9 @@ class Archives {
       (message.selectorProps!.props as TFilesSelector).currentFolderId = this.currentArchiveFolderId;
 
       (message.selectorProps!.props as TFilesSelector).onCancel = backToViewer;
-      message.selectorProps!.props.headerProps!.onCloseClick = backToViewer;
+      message.selectorProps!.props.headerProps!.isCloseable = false;
+      message.selectorProps!.props.headerProps!.withBackButton = true;
+      message.selectorProps!.props.headerProps!.onBackClick = backToViewer;
 
       (message.selectorProps!.props as TFilesSelector).withFooterCheckbox = true;
       (message.selectorProps!.props as TFilesSelector).footerCheckboxLabel = "Put in a new folder";

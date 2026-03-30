@@ -15,6 +15,7 @@
  */
 
 import { Actions, SelectorType, TSelector } from "@onlyoffice/docspace-plugin-sdk";
+import { FilterType } from "@onlyoffice/docspace-plugin-sdk/dist/enums/Utility";
 
 export const selectorProps: () => TSelector = () => {
   return {
@@ -23,6 +24,7 @@ export const selectorProps: () => TSelector = () => {
       currentFolderId: undefined,
       isMultiSelect: false,
       withBreadCrumbs: true,
+      filterParam: FilterType.FoldersOnly,
       getIsDisabled: () => false,
       onLoad: () => {},
 
@@ -35,6 +37,8 @@ export const selectorProps: () => TSelector = () => {
             actions: [Actions.closeSelector],
           };
         },
+        withBackButton: false,
+        onBackClick: () => {},
       },
 
       withCancelButton: true,
