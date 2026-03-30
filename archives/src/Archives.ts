@@ -103,13 +103,39 @@ class Archives {
     return message;
   };
 
-  openSelector = async (id: File | any, content?: FileTreeItem[]) => {
+  openSelector = async (id: File | any, content?: FileTreeItem[], zipAction = false) => {
     const message: IPostMessageCallbackMessage = {
       actions: [Actions.showSelector],
-      selectorProps: selectorProps,
+      selectorProps: selectorProps(),
     };
 
-    (message.selectorProps!.props as TFilesSelector).cancelButtonLabel = "Cancel";
+    if (zipAction) {
+      const folder = await this.getFolder(id);
+
+      if (!folder.current.security.Download) {
+        return {
+          actions: [Actions.showToast],
+          toastProps: [
+            { type: ToastType.error, title: "You don't have permission to download files from this folder" } as IToast,
+          ],
+        } as IPostMessageCallbackMessage;
+      }
+
+      (message.selectorProps!.props as TFilesSelector).submitButtonLabel = "Archive";
+      (message.selectorProps!.props as TFilesSelector).currentFolderId = folder.current.parentId;
+      (message.selectorProps!.props as TFilesSelector).submitButtonLabel = "Archive";
+      message.selectorProps!.props.onSubmit = async (params: any) => {
+        const msg = await this.zipFolder(id, params.selectedItemId);
+
+        if (msg.toastProps && msg.toastProps[0].type === ToastType.success) {
+          msg.actions?.push(Actions.closeSelector);
+        }
+
+        return msg;
+      };
+
+      return message;
+    }
 
     if (!content) {
       const file = await this.getFile(id);
@@ -121,19 +147,9 @@ class Archives {
         } as IPostMessageCallbackMessage;
       }
 
-      const closeSelector = () => {
-        return {
-          actions: [Actions.closeSelector],
-        };
-      };
-
       message.selectorProps!.props.headerProps!.label = "Unzip";
       (message.selectorProps!.props as TFilesSelector).currentFolderId = file.folderId;
 
-      (message.selectorProps!.props as TFilesSelector).onCancel = closeSelector;
-      message.selectorProps!.props.headerProps!.onCloseClick = closeSelector;
-
-      (message.selectorProps!.props as TFilesSelector).withFooterCheckbox = false;
       (message.selectorProps!.props as TFilesSelector).submitButtonLabel = "Unzip";
       message.selectorProps!.props.onSubmit = async (params: any) => {
         await this.getContent(file.viewUrl);
@@ -268,22 +284,24 @@ class Archives {
     } as IMessage;
   };
 
-  zipFolder = async (id: number | any[]) => {
+  zipFolder = async (id: number | any[], folderId = undefined) => {
     if (!this.apiURL) this.createAPIUrl();
 
-    let parent, fakeFolder;
+    let destination, fakeFolder;
     if (typeof id === "number") {
-      parent = await this.getFolder((await this.getFolder(id)).current.parentId);
+      destination = folderId
+        ? await this.getFolder(folderId)
+        : await this.getFolder((await this.getFolder(id)).current.parentId);
     } else {
       fakeFolder = await this.collectContent(id);
-      parent = fakeFolder.parent;
+      destination = fakeFolder.parent;
     }
 
-    if (!parent.current.security.Create) {
+    if (!destination.current.security.Create) {
       return {
         actions: [Actions.showToast],
         toastProps: [
-          { type: ToastType.error, title: "Zip is not created. You can't create files in parent folder" } as IToast,
+          { type: ToastType.error, title: "Zip is not created. You can't create files in this folder" } as IToast,
         ],
       };
     }
@@ -303,7 +321,7 @@ class Archives {
     const formData = new FormData();
     formData.append("file", file);
 
-    const sessionRes = await fetch(`${this.apiURL}/files/${parent.current.id}/upload/create_session`, {
+    const sessionRes = await fetch(`${this.apiURL}/files/${destination.current.id}/upload/create_session`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",

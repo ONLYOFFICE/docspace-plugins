@@ -54,10 +54,17 @@ export const unzipGroupContextMenuItem: IContextMenuItem = {
   ],
 }
 
-const zipFolderContextMenuItem: IContextMenuItem = {
+const zipHereFolderContextMenuItem: IContextMenuItem = {
   key: "archives-zip-folder-context-menu-item",
   label: "Archive here",
   onClick: (id: number) => archives.zipFolder(id),
+  icon: "zip.svg",
+};
+
+const zipFolderContextMenuItem: IContextMenuItem = {
+  key: "archives-zip-folder-context-menu-item",
+  label: "Choose a location",
+  onClick: (id: number) => archives.openSelector(id, undefined, true),
   icon: "zip.svg",
 };
 
@@ -68,6 +75,7 @@ export const zipGroupContextMenuItem: IContextMenuItem = {
   fileType: [FilesType.folder],
   security: [Security.Create],
   items: [
+    zipHereFolderContextMenuItem,
     zipFolderContextMenuItem,
   ],
 }

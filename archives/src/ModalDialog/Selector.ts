@@ -14,32 +14,42 @@
  * limitations under the License.
  */
 
-import { SelectorType, TSelector } from "@onlyoffice/docspace-plugin-sdk";
+import { Actions, SelectorType, TSelector } from "@onlyoffice/docspace-plugin-sdk";
 
-export const selectorProps: TSelector = {
-  type: SelectorType.Files,
-  props: {
-    currentFolderId: undefined,
-    isMultiSelect: false,
-    withBreadCrumbs: true,
-    getIsDisabled: () => false,
-    onLoad: () => {},
+export const selectorProps: () => TSelector = () => {
+  return {
+    type: SelectorType.Files,
+    props: {
+      currentFolderId: undefined,
+      isMultiSelect: false,
+      withBreadCrumbs: true,
+      getIsDisabled: () => false,
+      onLoad: () => {},
 
-    withHeader: true,
-    headerProps: {
-      label: "",
-      isCloseable: true,
-      onCloseClick: () => {},
+      withHeader: true,
+      headerProps: {
+        label: "",
+        isCloseable: true,
+        onCloseClick: () => {
+          return {
+            actions: [Actions.closeSelector],
+          };
+        },
+      },
+
+      withCancelButton: true,
+      cancelButtonLabel: "Cancel",
+      onCancel: () => {
+        return {
+          actions: [Actions.closeSelector],
+        };
+      },
+
+      withFooterCheckbox: false,
+      footerCheckboxLabel: "",
+
+      submitButtonLabel: "",
+      onSubmit: () => {},
     },
-
-    withCancelButton: true,
-    cancelButtonLabel: "",
-    onCancel: () => {},
-
-    withFooterCheckbox: false,
-    footerCheckboxLabel: "",
-
-    submitButtonLabel: "",
-    onSubmit: () => {},
-  },
+  };
 };
