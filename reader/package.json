@@ -1,0 +1,37 @@
+{
+  "name": "book-reader",
+  "version": "1.0.0",
+  "author": "ONLYOFFICE",
+  "maintainers": [
+    "Ascensio System SIA <integration@onlyoffice.com> (https://www.onlyoffice.com)"
+  ],
+  "main": "index.ts",
+  "private": true,
+  "scopes": [
+    "ContextMenu",
+    "File"
+  ],
+  "scripts": {
+    "build": "webpack && npx build-docspace-plugin",
+    "format": "npx prettier --write ."
+  },
+  "devDependencies": {
+    "@types/jszip": "^3.4.1",
+    "prettier": "2.8.6",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "@lingo-reader/fb2-parser": "^0.4.5",
+    "@onlyoffice/docspace-plugin-sdk": "^2.0.0",
+    "djvujs-dist": "^0.5.4",
+    "jszip": "^3.10.1"
+  },
+  "description": "This plugin enables you to open files in a dedicated reading viewer. You can access it via the 'Actions' section in the file's context menu",
+  "pluginName": "BookReader",
+  "license": "Apache-2.0",
+  "logo": "48x48.png",
+  "homepage": "https://github.com/hhk-png/lingo-reader"
+}
