@@ -14,18 +14,28 @@
  * limitations under the License.
  */
 
-import { Actions, IMessage, IToast, ToastType } from "@onlyoffice/docspace-plugin-sdk";
+import {
+  Actions,
+  IMessage,
+  IToast,
+  ToastType,
+  IPostMessageCallbackMessage,
+  TFilesSelector,
+} from "@onlyoffice/docspace-plugin-sdk";
 import plugin from ".";
 import * as fflate from "fflate";
 import { modalDialogProps, frameProps, extractButton } from "./ModalDialog";
-import { drawInIframe, loader, viewer, selector } from "./ModalDialog/Viewer";
-import { selectorFrame, selectorProps, unzipButton } from "./ModalDialog/Selector";
+import { drawInIframe, loader, viewer } from "./ModalDialog/Viewer";
+import { selectorProps } from "./ModalDialog/Selector";
 
 class Archives {
   apiURL: string = "";
+  user: any = null;
   root: FileTreeItem[] = [];
   archiveBuffer: fflate.Zippable = {};
+  currentFileId: number | undefined = undefined;
   destinationFolderId: number | undefined = undefined;
+  currentArchiveFolderId: number | undefined = undefined;
 
   createAPIUrl = () => {
     const api = plugin.getAPI();
@@ -47,9 +57,16 @@ class Archives {
     }
   };
 
-  openZip = async (id: File | any) => {
+  openZip = async (id: File | any, path: string = "") => {
+    if (!this.apiURL) this.createAPIUrl();
+    this.currentFileId = id;
+
     const file = await this.getFile(id);
-    const user = await this.getUser();
+    if (!this.user) {
+      this.user = await this.getUser();
+    }
+
+    this.currentArchiveFolderId = file.folderId;
 
     if (!file.security?.Download) {
       return {
@@ -66,7 +83,7 @@ class Archives {
     });
 
     this.getContent(file.viewUrl, () => {
-      drawInIframe(frameProps.id!, viewer, this.root, file.title, user.theme === "Dark");
+      drawInIframe(frameProps.id!, viewer, this.root, file.title, this.user.theme === "Dark", path);
     });
 
     extractButton.onClick = async () => {
@@ -86,43 +103,76 @@ class Archives {
     return message;
   };
 
-  openSelector = async (id: File | any, content?: FileTreeItem[], dark?: boolean) => {
-    const message: IMessage = {
-      actions: [Actions.showModal],
-      modalDialogProps: selectorProps,
+  openSelector = async (id: File | any, content?: FileTreeItem[]) => {
+    const message: IPostMessageCallbackMessage = {
+      actions: [Actions.showSelector],
+      selectorProps: selectorProps,
     };
+
+    (message.selectorProps!.props as TFilesSelector).cancelButtonLabel = "Cancel";
 
     if (!content) {
       const file = await this.getFile(id);
-      const user = await this.getUser();
 
       if (!file.security?.Download) {
         return {
           actions: [Actions.showToast],
           toastProps: [{ type: ToastType.error, title: "You don't have permission to unzip this file" } as IToast],
-        };
+        } as IPostMessageCallbackMessage;
       }
 
-      this.getContent(file.viewUrl, () => {
-        drawInIframe(selectorFrame.id!, selector, null, [], this.root, false, user.theme === "Dark");
-      });
+      const closeSelector = () => {
+        return {
+          actions: [Actions.closeSelector],
+        };
+      };
 
-      unzipButton.onClick = async () => {
-        if (!this.destinationFolderId) return {};
+      message.selectorProps!.props.headerProps!.label = "Unzip";
+      (message.selectorProps!.props as TFilesSelector).currentFolderId = file.folderId;
 
-        const msg = await this.unzip(
-          this.destinationFolderId!,
-          this.root,
-          file.title.split(".").slice(0, -1).join(".")
-        );
-        msg.actions!.push(Actions.closeModal);
+      (message.selectorProps!.props as TFilesSelector).onCancel = closeSelector;
+      message.selectorProps!.props.headerProps!.onCloseClick = closeSelector;
+
+      (message.selectorProps!.props as TFilesSelector).withFooterCheckbox = false;
+      (message.selectorProps!.props as TFilesSelector).submitButtonLabel = "Unzip";
+      message.selectorProps!.props.onSubmit = async (params: any) => {
+        await this.getContent(file.viewUrl);
+        const msg = await this.unzip(params.selectedItemId, this.root, file.title.split(".").slice(0, -1).join("."));
+        msg.actions!.push(Actions.closeSelector);
 
         return msg;
       };
-
-      drawInIframe(selectorFrame.id!, loader);
     } else {
-      // TODO: open with content and dark
+      message.actions?.unshift(Actions.closeModal);
+
+      const backToViewer = async () => {
+        const msg = await this.openZip(this.currentFileId!, id);
+        msg.actions?.unshift(Actions.closeSelector);
+        return msg;
+      };
+
+      message.selectorProps!.props.headerProps!.label = "Extract";
+      (message.selectorProps!.props as TFilesSelector).currentFolderId = this.currentArchiveFolderId;
+
+      (message.selectorProps!.props as TFilesSelector).onCancel = backToViewer;
+      message.selectorProps!.props.headerProps!.onCloseClick = backToViewer;
+
+      (message.selectorProps!.props as TFilesSelector).withFooterCheckbox = true;
+      (message.selectorProps!.props as TFilesSelector).footerCheckboxLabel = "Put in a new folder";
+      (message.selectorProps!.props as TFilesSelector).submitButtonLabel = "Extract";
+      message.selectorProps!.props.onSubmit = async (params: any) => {
+        let msg = await this.unzip(params.selectedItemId, content, params.isChecked ? "New folder" : undefined);
+
+        if (msg.actions?.includes(Actions.showToast) && msg.toastProps![0].type != ToastType.success) {
+          return msg;
+        }
+
+        msg = await backToViewer();
+        msg.actions?.push(Actions.showToast);
+        msg.toastProps = [{ type: ToastType.success, title: "Element(s) extracted successfully" } as IToast];
+
+        return msg;
+      };
     }
 
     return message;
@@ -158,6 +208,16 @@ class Archives {
       folderId = file.folderId;
       wrapperFolder = file.title.split(".").slice(0, -1).join(".");
       content = await this.getContent(file.viewUrl);
+    }
+
+    const folder = await this.getFolder(folderId);
+    if (!folder.current.security.Create) {
+      return {
+        actions: [Actions.showToast],
+        toastProps: [
+          { type: ToastType.error, title: "Failed to unzip. You can't create files in this folder" } as IToast,
+        ],
+      };
     }
 
     if (wrapperFolder) {
@@ -211,7 +271,7 @@ class Archives {
   zipFolder = async (id: number | any[]) => {
     if (!this.apiURL) this.createAPIUrl();
 
-    var parent, fakeFolder;
+    let parent, fakeFolder;
     if (typeof id === "number") {
       parent = await this.getFolder((await this.getFolder(id)).current.parentId);
     } else {
@@ -317,7 +377,7 @@ class Archives {
         fetch(file.viewUrl)
           .then((data) => {
             if (data.status !== 200) {
-              // TODO: error
+              throw new Error(`Failed to fetch '${file.title}'. Response status: ${data.status}`);
             }
             return data.arrayBuffer();
           })
@@ -337,7 +397,7 @@ class Archives {
   };
 
   collectContent = async (elements: any[]) => {
-    var parentId;
+    let parentId;
     if (elements[0].itemType == "file") {
       const file = await this.getFile(elements[0].id);
       parentId = file.folderId;
@@ -394,6 +454,11 @@ class Archives {
       userRes.theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "Dark" : "Base";
     }
     return userRes;
+  };
+
+  postMessage = (data: any) => {
+    data.source = "archivesplugin";
+    window.parent.postMessage(data, "*");
   };
 }
 

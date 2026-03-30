@@ -26,14 +26,17 @@ import {
   IInfoPanelItem,
   IMainButtonPlugin,
   IMainButtonItem,
+  IPostMessageCallbackMessage,
   IProfileMenuPlugin,
   IProfileMenuItem,
   IEventListenerPlugin,
   IEventListenerItem,
   IFilePlugin,
   IFileItem,
+  IPostMessagePlugin,
 } from "@onlyoffice/docspace-plugin-sdk";
 
+import archives from "./Archives";
 import { zipFileItem } from "./File";
 import {
   openZipContextMenuItem,
@@ -50,6 +53,7 @@ class Archives
     IContextMenuPlugin,
     IInfoPanelPlugin,
     IMainButtonPlugin,
+    IPostMessagePlugin,
     IProfileMenuPlugin,
     IEventListenerPlugin,
     IFilePlugin
@@ -205,6 +209,40 @@ class Archives
   updateFileItem = (item: IFileItem): void => {
     this.fileItems.set(item.extension, item);
   };
+
+  private _pmListenerAdded = false;
+
+  postMessageCallback: (message: IPostMessageCallbackMessage) => void = () => {};
+
+  setPostMessageCallback = (callback: (message: IPostMessageCallbackMessage) => void): void => {
+    this.postMessageCallback = callback;
+
+    if (this._pmListenerAdded) return;
+    this._pmListenerAdded = true;
+
+    window.parent.addEventListener("message", async (event) => {
+      try {
+        const data = typeof event.data === "string" ? JSON.parse(event.data) : event.data;
+
+        if (data?.source !== "archivesplugin") return;
+
+        switch (data.action) {
+          case "open-selector":
+            const msg = await archives.openSelector(data.path, data.content);
+            this.postMessageCallback(msg);
+            break;
+          default:
+            break;
+        }
+      } catch {
+        // ignore non-JSON messages
+      }
+    });
+  };
+
+  getPostMessageCallback = (): ((message: IPostMessageCallbackMessage) => void) => {
+    return this.postMessageCallback;
+  };
 }
 
 const plugin = new Archives();
@@ -219,8 +257,8 @@ plugin.addFileItem(zipFileItem);
 plugin.addContextMenuItem(openZipContextMenuItem);
 plugin.addContextMenuItem(unzipGroupContextMenuItem);
 plugin.addContextMenuItem(zipGroupContextMenuItem);
-plugin.addContextMenuItem(zipSelectedItems)
+plugin.addContextMenuItem(zipSelectedItems);
 
-window.Plugins.ZipArchives = plugin || {};
+window.Plugins.ZipArchives1 = plugin || {};
 
 export default plugin;

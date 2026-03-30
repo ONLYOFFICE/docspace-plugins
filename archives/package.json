@@ -26,7 +26,8 @@
     "MainButton",
     "ProfileMenu",
     "EventListener",
-    "File"
+    "File",
+    "PostMessage"
   ],
   "scripts": {
     "build": "webpack && npx build-docspace-plugin",
