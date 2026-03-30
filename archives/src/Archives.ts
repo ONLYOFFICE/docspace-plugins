@@ -117,14 +117,14 @@ class Archives {
         return {
           actions: [Actions.showToast],
           toastProps: [
-            { type: ToastType.error, title: "You don't have permission to download files from this folder" } as IToast,
+            { type: ToastType.error, title: i18n.t("toast_no_folder_download_permission") } as IToast,
           ],
         } as IPostMessageCallbackMessage;
       }
 
-      (message.selectorProps!.props as TFilesSelector).submitButtonLabel = "Archive";
+      message.selectorProps!.props.headerProps!.label = i18n.t("dialog.selector_header_zip");
       (message.selectorProps!.props as TFilesSelector).currentFolderId = folder.current.parentId;
-      (message.selectorProps!.props as TFilesSelector).submitButtonLabel = "Archive";
+      (message.selectorProps!.props as TFilesSelector).submitButtonLabel = i18n.t("dialog.selector_button_archive");
       message.selectorProps!.props.onSubmit = async (params: any) => {
         const msg = await this.zipFolder(id, params.selectedItemId);
 
@@ -148,10 +148,10 @@ class Archives {
         } as IPostMessageCallbackMessage;
       }
 
-      message.selectorProps!.props.headerProps!.label = "Unzip";
+      message.selectorProps!.props.headerProps!.label = i18n.t("dialog.selector_header_unzip");
       (message.selectorProps!.props as TFilesSelector).currentFolderId = file.folderId;
 
-      (message.selectorProps!.props as TFilesSelector).submitButtonLabel = "Unzip";
+      (message.selectorProps!.props as TFilesSelector).submitButtonLabel = i18n.t("dialog.selector_button_unzip");
       message.selectorProps!.props.onSubmit = async (params: any) => {
         await this.getContent(file.viewUrl);
         const msg = await this.unzip(params.selectedItemId, this.root, file.title.split(".").slice(0, -1).join("."));
@@ -168,7 +168,7 @@ class Archives {
         return msg;
       };
 
-      message.selectorProps!.props.headerProps!.label = "Extract";
+      message.selectorProps!.props.headerProps!.label = i18n.t("dialog.selector_header_extract");
       (message.selectorProps!.props as TFilesSelector).currentFolderId = this.currentArchiveFolderId;
 
       (message.selectorProps!.props as TFilesSelector).onCancel = backToViewer;
@@ -177,10 +177,10 @@ class Archives {
       message.selectorProps!.props.headerProps!.onBackClick = backToViewer;
 
       (message.selectorProps!.props as TFilesSelector).withFooterCheckbox = true;
-      (message.selectorProps!.props as TFilesSelector).footerCheckboxLabel = "Put in a new folder";
-      (message.selectorProps!.props as TFilesSelector).submitButtonLabel = "Extract";
+      (message.selectorProps!.props as TFilesSelector).footerCheckboxLabel = i18n.t("dialog.selector_checkbox_wrap");
+      (message.selectorProps!.props as TFilesSelector).submitButtonLabel = i18n.t("dialog.selector_button_extract");
       message.selectorProps!.props.onSubmit = async (params: any) => {
-        let msg = await this.unzip(params.selectedItemId, content, params.isChecked ? "New folder" : undefined);
+        let msg = await this.unzip(params.selectedItemId, content, params.isChecked ? i18n.t("default_folder_title") : undefined);
 
         if (msg.actions?.includes(Actions.showToast) && msg.toastProps![0].type != ToastType.success) {
           return msg;
@@ -188,7 +188,7 @@ class Archives {
 
         msg = await backToViewer();
         msg.actions?.push(Actions.showToast);
-        msg.toastProps = [{ type: ToastType.success, title: "Element(s) extracted successfully" } as IToast];
+        msg.toastProps = [{ type: ToastType.success, title: i18n.t("toast_extract_success") } as IToast];
 
         return msg;
       };
@@ -234,7 +234,7 @@ class Archives {
       return {
         actions: [Actions.showToast],
         toastProps: [
-          { type: ToastType.error, title: "Failed to unzip. You can't create files in this folder" } as IToast,
+          { type: ToastType.error, title: i18n.t("toast_cant_create") } as IToast,
         ],
       };
     }

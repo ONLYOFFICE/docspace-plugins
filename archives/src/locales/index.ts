@@ -17,7 +17,6 @@
 import { I18n } from "i18n-js";
 import { PluginLocale } from "@onlyoffice/docspace-plugin-sdk";
 import { extractButton, cancelButton } from "../ModalDialog";
-import { unzipButton, cancelButton as cancelButtonSelector } from "../ModalDialog/Selector";
 import enUS from "../locales/en-US.json";
 
 export const i18n = new I18n({
@@ -37,8 +36,6 @@ export const setLocale = (locale: PluginLocale): void => {
 
   extractButton.label = i18n.t("dialog.button_extract");
   cancelButton.label = i18n.t("dialog.button_cancel");
-  unzipButton.label = i18n.t("dialog.button_selector_unzip");
-  cancelButtonSelector.label = i18n.t("dialog.button_cancel");
 };
 
 export { I18n };

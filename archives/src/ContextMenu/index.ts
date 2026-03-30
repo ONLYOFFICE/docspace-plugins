@@ -33,7 +33,7 @@ export const openZipContextMenuItem: () => IContextMenuItem = () => {
 export const unzipContextMenuItem: () => IContextMenuItem = () => {
   return {
     key: "archives-unzip-context-menu-item",
-    label: i18n.t("context_menu.unzip"),
+    label: i18n.t("context_menu.choose_location"),
     onClick: (id: File | any) => archives.openSelector(id),
     icon: "zip.svg",
   };
@@ -62,7 +62,7 @@ export const unzipGroupContextMenuItem: () => IContextMenuItem = () => {
 
 export const zipHereFolderContextMenuItem: () => IContextMenuItem = () => {
   return {
-    key: "archives-zip-folder-context-menu-item",
+    key: "archives-zip-here-folder-context-menu-item",
     label: i18n.t("context_menu.zip_folder"),
     onClick: (id: number) => archives.zipFolder(id),
     icon: "zip.svg",
@@ -72,7 +72,7 @@ export const zipHereFolderContextMenuItem: () => IContextMenuItem = () => {
 export const zipFolderContextMenuItem: () => IContextMenuItem = () => {
   return {
     key: "archives-zip-folder-context-menu-item",
-    label: "Choose a location",
+    label: i18n.t("context_menu.choose_location"),
     onClick: (id: number) => archives.openSelector(id, undefined, true),
     icon: "zip.svg",
   };

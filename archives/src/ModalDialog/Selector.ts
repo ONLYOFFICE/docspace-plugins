@@ -16,6 +16,7 @@
 
 import { Actions, SelectorType, TSelector } from "@onlyoffice/docspace-plugin-sdk";
 import { FilterType } from "@onlyoffice/docspace-plugin-sdk/dist/enums/Utility";
+import { i18n } from "../locales";
 
 export const selectorProps: () => TSelector = () => {
   return {
@@ -42,7 +43,7 @@ export const selectorProps: () => TSelector = () => {
       },
 
       withCancelButton: true,
-      cancelButtonLabel: "Cancel",
+      cancelButtonLabel: i18n.t("dialog.button_cancel"),
       onCancel: () => {
         return {
           actions: [Actions.closeSelector],
