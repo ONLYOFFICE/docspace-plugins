@@ -1,7 +1,13 @@
 {
   "name": "convert-to-markdown",
+  "nameLocale": {
+    "en-US": "convert-to-markdown"
+  },
   "version": "1.0.0",
   "description": "Convert DOCX, TXT and HTML files to Markdown format directly in DocSpace",
+  "descriptionLocale": {
+    "en-US": "Convert DOCX, TXT and HTML files to Markdown format directly in DocSpace"
+  },
   "license": "Apache-2.0",
   "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/convert-to-markdown",
   "author": "ONLYOFFICE",
@@ -32,8 +38,9 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "^2.0.0",
+    "@onlyoffice/docspace-plugin-sdk": "file:../docspace-plugin-sdk.tgz",
     "@truto/turndown-plugin-gfm": "^1.0.2",
+    "i18n-js": "^4.5.1",
     "mammoth": "^1.11.0",
     "turndown": "^7.2.2",
     "turndown-plugin-gfm": "^1.0.2"
