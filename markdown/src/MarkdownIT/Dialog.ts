@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import "./Dialog.css";
+
 import properties from "../properties.json";
 import {
   Actions,
@@ -100,6 +102,7 @@ export const mdArea: ITextArea = {
 const areaBox: IBox = {
   widthProp: "100%",
   heightProp: "100%",
+  className: "markdown-area",
   children: [
     {
       component: Components.textArea,
