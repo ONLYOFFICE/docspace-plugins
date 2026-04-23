@@ -15,27 +15,27 @@
  */
 
 import plugin from ".";
-import { 
-  markdownitModalDialogProps, 
-  saveButton, 
-  editorBody, 
-  mdArea, 
-  saveExitButton, 
-  toastProps, 
+import {
+  markdownitModalDialogProps,
+  saveButton,
+  editorBody,
+  mdArea,
+  saveExitButton,
+  toastProps,
   errorToast,
-  markdownResize, 
-  editorBox, 
-  markdownSide, 
-  intendBox, 
-  previewSide, 
-  previewResize, 
-  viewerBody, 
+  markdownResize,
+  editorBox,
+  markdownSide,
+  intendBox,
+  previewSide,
+  previewResize,
+  viewerBody,
   editorFooter,
   iframeBox,
-  borderProp
+  borderProp,
 } from "./MarkdownIT/Dialog";
-import markdownit from 'markdown-it';
-import hljs from 'highlight.js';
+import markdownit from "markdown-it";
+import hljs from "highlight.js";
 import properties from "./properties.json";
 import {
   Actions,
@@ -43,9 +43,13 @@ import {
   IMessage,
   IToast,
   ToastType,
-  File
+  File,
 } from "@onlyoffice/docspace-plugin-sdk";
-import { closeButton, saveUnsavedButton, unsavedModalDialog } from "./MarkdownIT/Unsaved";
+import {
+  closeButton,
+  saveUnsavedButton,
+  unsavedModalDialog,
+} from "./MarkdownIT/Unsaved";
 
 const md = markdownit({
   highlight: function (str, lang) {
@@ -55,20 +59,20 @@ const md = markdownit({
       } catch (__) {}
     }
 
-    return '';
-  }
+    return "";
+  },
 });
 
 class Markdownit {
   apiURL: string = "";
   currentFileId: number | null = null;
-  saveRequestRunning:boolean = false;
+  saveRequestRunning: boolean = false;
   currentFolderId: number | null = null;
   fulscreen: boolean = false;
   fileChanged: boolean = false;
   dark: boolean = false;
   mobile: boolean = false;
-  
+
   setCurrentFolderId = (id: number | null) => {
     this.currentFolderId = id;
   };
@@ -93,11 +97,11 @@ class Markdownit {
       });
     }
   };
-  
+
   setAPIUrl = (url: string) => {
     this.apiURL = url;
   };
-  
+
   getAPIUrl = () => {
     return this.apiURL;
   };
@@ -134,10 +138,12 @@ class Markdownit {
 
       const sessionData = (await sessionRes.json()).response.data;
 
-      const data = await (await fetch(`${sessionData.location}`, {
-        method: "POST",
-        body: formData,
-      })).json();
+      const data = await (
+        await fetch(`${sessionData.location}`, {
+          method: "POST",
+          body: formData,
+        })
+      ).json();
       if (!data.success) return data;
 
       const { id: fileId } = data.data;
@@ -155,24 +161,27 @@ class Markdownit {
 
     if (!id.fileExst) {
       file = (await (await fetch(`${this.apiURL}/files/file/${id}`)).json())
-      .response;
+        .response;
     }
 
     if (file.fileExst !== ".md") {
-    return {
-      actions: [Actions.showToast],
-      toastProps: [
-      { type: ToastType.error, title: "Wrong file format" } as IToast,
-      ],
-    };
+      return {
+        actions: [Actions.showToast],
+        toastProps: [
+          { type: ToastType.error, title: "Wrong file format" } as IToast,
+        ],
+      };
     }
 
     const userRes = (await (await fetch(`${this.apiURL}/people/@self`)).json())
-    .response;
+      .response;
 
     var { isVisitor, theme } = userRes;
 
-    if (theme === "System") theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "Dark" : "Base";
+    if (theme === "System")
+      theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "Dark"
+        : "Base";
 
     if (theme === "Dark") {
       this.dark = true;
@@ -190,7 +199,10 @@ class Markdownit {
       return {
         actions: [Actions.showToast],
         toastProps: [
-          { type: ToastType.error, title: "You don't have permission to view this file" } as IToast,
+          {
+            type: ToastType.error,
+            title: "You don't have permission to view this file",
+          } as IToast,
         ],
       };
     }
@@ -220,60 +232,49 @@ class Markdownit {
       method: "POST",
       body: JSON.stringify({
         fileIds: [file.id],
-      })
-    })
+      }),
+    });
 
     const dataBlob = await data.blob();
 
     const dataText = await dataBlob.text();
-    
+
     this.fulscreen = false;
 
     this.mobile = isMobile();
 
-    if(!showSaveButton || view){
-      const message = this.openViewer(
-        dataText,
-        title,
-      );
-  
+    if (!showSaveButton || view) {
+      const message = this.openViewer(dataText, title);
+
       return message;
     } else {
-      const message = this.openEditor(
-        dataText,
-        title,
-      );
-  
+      const message = this.openEditor(dataText, title);
+
       return message;
     }
-  }
+  };
 
-  openViewer = (
-    data: string,
-    title: string,
-  ): IMessage => {
-    
+  openViewer = (data: string, title: string): IMessage => {
     markdownitModalDialogProps.dialogHeader = title;
     markdownitModalDialogProps.dialogBody = viewerBody;
     markdownitModalDialogProps.onLoad = async () => {
-      
       insertMD(data);
 
       return {
         newDialogBody: markdownitModalDialogProps.dialogBody,
-        newDialogHeader: title
+        newDialogHeader: title,
       };
-    }
+    };
     if (this.mobile) {
       markdownitModalDialogProps.fullScreen = true;
       viewerBody.children = [
         {
           component: Components.box,
-          props: iframeBox
+          props: iframeBox,
         },
         {
           component: Components.box,
-          props: intendBox
+          props: intendBox,
         },
         {
           component: Components.button,
@@ -284,19 +285,19 @@ class Markdownit {
             onClick: () => {
               return {
                 actions: [Actions.closeModal],
-              }
-            }
-          }
-        }
-      ]
+              };
+            },
+          },
+        },
+      ];
     } else {
       markdownitModalDialogProps.fullScreen = false;
       viewerBody.children = [
         {
           component: Components.box,
-          props: iframeBox
-        }
-      ]
+          props: iframeBox,
+        },
+      ];
     }
     setSizes(false, this.mobile);
     const message: IMessage = {
@@ -307,10 +308,7 @@ class Markdownit {
     return message;
   };
 
-  openEditor = (
-    data: string,
-    title: string,
-  ): IMessage => {
+  openEditor = (data: string, title: string): IMessage => {
     saveExitButton.onClick = async () => {
       let success = await this.saveMarkdown(mdArea.value);
       if (success) {
@@ -319,17 +317,17 @@ class Markdownit {
         var message: IMessage = {
           actions: [Actions.closeModal, Actions.showToast],
           toastProps: [toastProps],
-        }
+        };
         this.fileChanged = false;
       } else {
         message = {
           actions: [Actions.showToast],
-          toastProps: [errorToast]
-        }
+          toastProps: [errorToast],
+        };
       }
       return message;
-    }
-    saveButton.onClick =async () => {
+    };
+    saveButton.onClick = async () => {
       let success = await this.saveMarkdown(mdArea.value);
       if (success) {
         saveExitButton.isDisabled = saveButton.isDisabled = true;
@@ -339,25 +337,25 @@ class Markdownit {
           contextProps: [
             {
               name: "editorFooter",
-              props: editorFooter
-            }
-          ]
-        }
+              props: editorFooter,
+            },
+          ],
+        };
         this.fileChanged = false;
       } else {
         message = {
           actions: [Actions.showToast],
           toastProps: [errorToast],
-        }
+        };
       }
-      
+
       return message;
-    }
+    };
     mdArea.value = data;
     mdArea.onChange = (value: string) => {
       this.fileChanged = true;
       mdArea.value = value;
-      if (saveButton.isDisabled){
+      if (saveButton.isDisabled) {
         saveExitButton.isDisabled = saveButton.isDisabled = false;
         var message: IMessage = {
           actions: [Actions.updateProps, Actions.updateContext],
@@ -365,17 +363,17 @@ class Markdownit {
           contextProps: [
             {
               name: "editorFooter",
-              props: editorFooter
+              props: editorFooter,
             },
-          ]
+          ],
         };
       } else {
         message = {
           actions: [Actions.updateProps],
           newProps: mdArea,
-        }
+        };
       }
-      
+
       updateMD(value);
       return message;
     };
@@ -386,40 +384,40 @@ class Markdownit {
         editorBox.children = [
           {
             component: Components.box,
-            props: previewSide
-          }
-        ]
+            props: previewSide,
+          },
+        ];
         var message: IMessage = {
           actions: [Actions.updateContext],
           contextProps: [
             {
               name: "editorBox",
-              props: editorBox
-            }
-          ]
-        }
+              props: editorBox,
+            },
+          ],
+        };
         let currentData = mdArea.value;
         insertMD(currentData);
         return message;
-      }
+      };
       previewResize.onClick = () => {
         editorBox.children = [
           {
             component: Components.box,
-            props: markdownSide
-          }
-        ]
+            props: markdownSide,
+          },
+        ];
         var message: IMessage = {
           actions: [Actions.updateContext],
           contextProps: [
             {
               name: "editorBox",
-              props: editorBox
-            }
-          ]
-        }
+              props: editorBox,
+            },
+          ],
+        };
         return message;
-      }
+      };
     } else {
       markdownResize.label = previewResize.label = "Resize";
       markdownResize.onClick = () => {
@@ -428,30 +426,30 @@ class Markdownit {
           editorBox.children = [
             {
               component: Components.box,
-              props: markdownSide
+              props: markdownSide,
             },
             {
               component: Components.box,
-              props: intendBox
+              props: intendBox,
             },
             {
               component: Components.box,
-              props: previewSide
-            }
-          ]
+              props: previewSide,
+            },
+          ];
           var message: IMessage = {
             actions: [Actions.updateContext],
             contextProps: [
               {
                 name: "editorBox",
-                props: editorBox
+                props: editorBox,
               },
               {
                 name: "markdownSide",
-                props: markdownSide
-              }
-            ]
-          }
+                props: markdownSide,
+              },
+            ],
+          };
           this.fulscreen = false;
           let currentData = mdArea.value;
           insertMD(currentData);
@@ -461,56 +459,56 @@ class Markdownit {
           editorBox.children = [
             {
               component: Components.box,
-              props: markdownSide
-            }
-          ]
+              props: markdownSide,
+            },
+          ];
           var message: IMessage = {
             actions: [Actions.updateContext],
             contextProps: [
               {
                 name: "editorBox",
-                props: editorBox
+                props: editorBox,
               },
               {
                 name: "markdownSide",
-                props: markdownSide
-              }
-            ]
-          }
+                props: markdownSide,
+              },
+            ],
+          };
           this.fulscreen = true;
           return message;
         }
-      }
+      };
       previewResize.onClick = () => {
         if (this.fulscreen) {
           previewSide.widthProp = "50%";
           editorBox.children = [
             {
               component: Components.box,
-              props: markdownSide
+              props: markdownSide,
             },
             {
               component: Components.box,
-              props: intendBox
+              props: intendBox,
             },
             {
               component: Components.box,
-              props: previewSide
-            }
-          ]
+              props: previewSide,
+            },
+          ];
           var message: IMessage = {
             actions: [Actions.updateContext],
             contextProps: [
               {
                 name: "editorBox",
-                props: editorBox
+                props: editorBox,
               },
               {
                 name: "previewSide",
-                props: previewSide
-              }
-            ]
-          }
+                props: previewSide,
+              },
+            ],
+          };
           this.fulscreen = false;
           let currentData = mdArea.value;
           insertMD(currentData);
@@ -520,36 +518,36 @@ class Markdownit {
           editorBox.children = [
             {
               component: Components.box,
-              props: previewSide
-            }
-          ]
+              props: previewSide,
+            },
+          ];
           var message: IMessage = {
             actions: [Actions.updateContext],
             contextProps: [
               {
                 name: "editorBox",
-                props: editorBox
+                props: editorBox,
               },
               {
                 name: "previewSide",
-                props: previewSide
-              }
-            ]
-          }
+                props: previewSide,
+              },
+            ],
+          };
           this.fulscreen = true;
           let currentData = mdArea.value;
           insertMD(currentData);
           return message;
         }
-      }
+      };
     }
     closeButton.onClick = unsavedModalDialog.onClose = () => {
       const message: IMessage = {
-          actions: [Actions.closeModal],
+        actions: [Actions.closeModal],
       };
       this.fileChanged = false;
       return message;
-    }
+    };
     saveUnsavedButton.onClick = async () => {
       let success = await this.saveMarkdown(mdArea.value);
       if (success) {
@@ -557,16 +555,16 @@ class Markdownit {
         var message: IMessage = {
           actions: [Actions.closeModal, Actions.showToast],
           toastProps: [toastProps],
-        }
+        };
         this.fileChanged = false;
       } else {
         message = {
           actions: [Actions.showToast],
-          toastProps: [errorToast]
-        }
+          toastProps: [errorToast],
+        };
       }
       return message;
-    }
+    };
     let onClose = () => {
       saveExitButton.isDisabled = saveButton.isDisabled = true;
       const message: IMessage = {
@@ -574,10 +572,10 @@ class Markdownit {
       };
       if (this.fileChanged) {
         message.actions?.push(Actions.showModal);
-        message.modalDialogProps = unsavedModalDialog
+        message.modalDialogProps = unsavedModalDialog;
       }
       return message;
-    }
+    };
     if (this.mobile) {
       previewSide.widthProp = "100%";
       markdownSide.widthProp = "100%";
@@ -585,19 +583,19 @@ class Markdownit {
       editorBox.children = [
         {
           component: Components.box,
-          props: markdownSide
-        }
-      ]
+          props: markdownSide,
+        },
+      ];
       editorFooter.widthProp = "100%";
       editorFooter.children = [
         {
           component: Components.button,
           props: saveExitButton,
-          contextName: "saveExitButton"
+          contextName: "saveExitButton",
         },
         {
           component: Components.box,
-          props: intendBox
+          props: intendBox,
         },
         {
           component: Components.button,
@@ -605,10 +603,10 @@ class Markdownit {
             label: "Exit",
             size: saveExitButton.size,
             scale: true,
-            onClick: onClose
-          }
-        }
-      ]
+            onClick: onClose,
+          },
+        },
+      ];
     } else {
       previewSide.widthProp = "50%";
       markdownSide.widthProp = "50%";
@@ -617,24 +615,24 @@ class Markdownit {
       editorBox.children = [
         {
           component: Components.box,
-          props: markdownSide
+          props: markdownSide,
         },
         {
           component: Components.box,
-          props: intendBox
+          props: intendBox,
         },
         {
           component: Components.box,
-          props: previewSide
-        }
-      ]
+          props: previewSide,
+        },
+      ];
       editorFooter.children = [
         {
           component: Components.button,
           props: saveExitButton,
-          contextName: "saveExitButton"
+          contextName: "saveExitButton",
         },
-      ]
+      ];
     }
 
     markdownitModalDialogProps.dialogHeader = title;
@@ -647,16 +645,23 @@ class Markdownit {
         newDialogBody: markdownitModalDialogProps.dialogBody,
         newDialogHeader: title,
       };
-    }
+    };
     setSizes(true, this.mobile);
     const message: IMessage = {
       actions: [Actions.showModal],
       modalDialogProps: markdownitModalDialogProps,
     };
-    if (this.mobile) window.addEventListener("orientationchange", async function() {
-      const iframe = window.parent.document.getElementById("md-iframe") as HTMLIFrameElement;
-      if (iframe) insertMD(mdArea.value);
-    }, false);
+    if (this.mobile)
+      window.addEventListener(
+        "orientationchange",
+        async function () {
+          const iframe = window.parent.document.getElementById(
+            "md-iframe"
+          ) as HTMLIFrameElement;
+          if (iframe) insertMD(mdArea.value);
+        },
+        false
+      );
     return message;
   };
 
@@ -686,27 +691,33 @@ class Markdownit {
       console.log(e);
       return false;
     }
-  }
+  };
 
   stopEdit = () => {
     this.currentFileId = null;
   };
-};
+}
 
-async function insertMD (data: string) {
-    const iframe = window.parent.document.getElementById("md-iframe") as HTMLIFrameElement;
-    if (iframe){
+async function insertMD(data: string) {
+  const iframe = window.parent.document.getElementById(
+    "md-iframe"
+  ) as HTMLIFrameElement;
+  if (iframe) {
     const result = md.render(data);
     let iframeWindow = iframe.contentWindow as Window;
 
     let hlStyles = iframeWindow.document.createElement("link");
     hlStyles.rel = "stylesheet";
-    hlStyles.href = markdownIt.dark ? properties.dark_hlstyles_url : properties.hlstyles_url;
+    hlStyles.href = markdownIt.dark
+      ? properties.dark_hlstyles_url
+      : properties.hlstyles_url;
     let styles = iframeWindow.document.createElement("link");
     styles.rel = "stylesheet";
     styles.href = properties.styles_url;
     let bodyStyle = iframeWindow.document.createElement("style");
-    bodyStyle.innerHTML = markdownIt.dark ? properties.dark_bodystyle : properties.bodystyle;
+    bodyStyle.innerHTML = markdownIt.dark
+      ? properties.dark_bodystyle
+      : properties.bodystyle;
     iframeWindow.document.head.innerHTML = "";
     iframeWindow.document.head.appendChild(hlStyles);
     iframeWindow.document.head.appendChild(styles);
@@ -719,51 +730,65 @@ async function insertMD (data: string) {
     mdBody.innerHTML = result;
     iframeWindow.document.body.innerHTML = "";
     iframeWindow.document.body.appendChild(mdBody);
-    iframe.style.height = iframe.contentWindow?.document.documentElement.scrollHeight + 'px';
-    setTimeout(function() {
-      iframe.style.height = iframe.contentWindow?.document.documentElement.scrollHeight + 'px';
+    iframe.style.height =
+      iframe.contentWindow?.document.documentElement.scrollHeight + "px";
+    setTimeout(function () {
+      iframe.style.height =
+        iframe.contentWindow?.document.documentElement.scrollHeight + "px";
     }, 200);
-  } 
-  else {
-    setTimeout(function() {
+  } else {
+    setTimeout(function () {
       insertMD(data);
     }, 50);
   }
 }
 
-function updateMD (data: string){
-  const iframe = window.parent.document.getElementById("md-iframe") as HTMLIFrameElement;
-  if (iframe){
+function updateMD(data: string) {
+  const iframe = window.parent.document.getElementById(
+    "md-iframe"
+  ) as HTMLIFrameElement;
+  if (iframe) {
     let body = iframe.contentWindow?.document.getElementById("markdown-body");
-    if (body){
+    if (body) {
       let result = md.render(data);
       body.innerHTML = result;
-      iframe.style.height = iframe.contentWindow?.document.documentElement.scrollHeight + 'px';
+      iframe.style.height =
+        iframe.contentWindow?.document.documentElement.scrollHeight + "px";
     }
   }
 }
 
-function linkControl(iFrameWindow: Window){
+function linkControl(iFrameWindow: Window) {
   const iframeDocument = iFrameWindow.document;
-  iframeDocument.addEventListener('click', function(event) {
+  iframeDocument.addEventListener("click", function (event) {
     let element = event.target as HTMLAnchorElement;
-    if (element.tagName === 'A'){
-      iFrameWindow.open(element.href, '_blank');
+    if (element.tagName === "A") {
+      iFrameWindow.open(element.href, "_blank");
       event.preventDefault();
     }
   });
 }
 
-function setSizes(editor: boolean, mobile: boolean){
-  editorBody.widthProp = viewerBody.widthProp = mobile ? "calc(100% - 20px)" : "95vw";
-  editorBody.heightProp = viewerBody.heightProp = mobile ? "calc(100% - 25px)" : "78vh";
+function setSizes(editor: boolean, mobile: boolean) {
+  editorBody.widthProp = viewerBody.widthProp = mobile
+    ? "calc(100% - 20px)"
+    : "95vw";
+  editorBody.heightProp = viewerBody.heightProp = mobile
+    ? "calc(100% - 25px)"
+    : "78vh";
   editorBody.paddingProp = viewerBody.paddingProp = mobile ? "10px" : "0";
-  iframeBox.heightProp = editor ? "calc(100% - 32px)" : mobile ? "calc(100% - 42px)" : "100%";
+  iframeBox.heightProp = editor
+    ? "calc(100% - 32px)"
+    : mobile
+    ? "calc(100% - 42px)"
+    : "100%";
 }
 
 function isMobile() {
   const userAgent = navigator.userAgent.toLowerCase();
-  return /mobile|iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
+  return /mobile|iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(
+    userAgent
+  );
 }
 
 const markdownIt = new Markdownit();
