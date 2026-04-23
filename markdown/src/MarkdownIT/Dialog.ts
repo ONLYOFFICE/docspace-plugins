@@ -255,6 +255,7 @@ export const editorBox: IBox = {
     {
       component: Components.box,
       props: intendBox,
+      contextName: "editorIntend",
     },
     {
       component: Components.box,

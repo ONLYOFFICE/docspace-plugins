@@ -423,31 +423,13 @@ class Markdownit {
       markdownResize.onClick = () => {
         if (this.fulscreen) {
           markdownSide.widthProp = "50%";
-          editorBox.children = [
-            {
-              component: Components.box,
-              props: markdownSide,
-            },
-            {
-              component: Components.box,
-              props: intendBox,
-            },
-            {
-              component: Components.box,
-              props: previewSide,
-            },
-          ];
+          delete previewSide.displayProp;
           var message: IMessage = {
             actions: [Actions.updateContext],
             contextProps: [
-              {
-                name: "editorBox",
-                props: editorBox,
-              },
-              {
-                name: "markdownSide",
-                props: markdownSide,
-              },
+              { name: "markdownSide", props: markdownSide },
+              { name: "previewSide", props: previewSide },
+              { name: "editorIntend", props: intendBox },
             ],
           };
           this.fulscreen = false;
@@ -456,23 +438,13 @@ class Markdownit {
           return message;
         } else {
           markdownSide.widthProp = "100%";
-          editorBox.children = [
-            {
-              component: Components.box,
-              props: markdownSide,
-            },
-          ];
+          previewSide.displayProp = "none";
           var message: IMessage = {
             actions: [Actions.updateContext],
             contextProps: [
-              {
-                name: "editorBox",
-                props: editorBox,
-              },
-              {
-                name: "markdownSide",
-                props: markdownSide,
-              },
+              { name: "markdownSide", props: markdownSide },
+              { name: "previewSide", props: previewSide },
+              { name: "editorIntend", props: { ...intendBox, displayProp: "none" } },
             ],
           };
           this.fulscreen = true;
@@ -482,31 +454,13 @@ class Markdownit {
       previewResize.onClick = () => {
         if (this.fulscreen) {
           previewSide.widthProp = "50%";
-          editorBox.children = [
-            {
-              component: Components.box,
-              props: markdownSide,
-            },
-            {
-              component: Components.box,
-              props: intendBox,
-            },
-            {
-              component: Components.box,
-              props: previewSide,
-            },
-          ];
+          delete markdownSide.displayProp;
           var message: IMessage = {
             actions: [Actions.updateContext],
             contextProps: [
-              {
-                name: "editorBox",
-                props: editorBox,
-              },
-              {
-                name: "previewSide",
-                props: previewSide,
-              },
+              { name: "markdownSide", props: markdownSide },
+              { name: "previewSide", props: previewSide },
+              { name: "editorIntend", props: intendBox },
             ],
           };
           this.fulscreen = false;
@@ -515,23 +469,13 @@ class Markdownit {
           return message;
         } else {
           previewSide.widthProp = "100%";
-          editorBox.children = [
-            {
-              component: Components.box,
-              props: previewSide,
-            },
-          ];
+          markdownSide.displayProp = "none";
           var message: IMessage = {
             actions: [Actions.updateContext],
             contextProps: [
-              {
-                name: "editorBox",
-                props: editorBox,
-              },
-              {
-                name: "previewSide",
-                props: previewSide,
-              },
+              { name: "markdownSide", props: markdownSide },
+              { name: "previewSide", props: previewSide },
+              { name: "editorIntend", props: { ...intendBox, displayProp: "none" } },
             ],
           };
           this.fulscreen = true;
@@ -610,6 +554,8 @@ class Markdownit {
     } else {
       previewSide.widthProp = "50%";
       markdownSide.widthProp = "50%";
+      delete markdownSide.displayProp;
+      delete previewSide.displayProp;
       markdownitModalDialogProps.fullScreen = false;
       editorFooter.widthProp = "30%";
       editorBox.children = [
