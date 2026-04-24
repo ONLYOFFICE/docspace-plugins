@@ -562,14 +562,17 @@ class Markdownit {
         {
           component: Components.box,
           props: markdownSide,
+          contextName: "markdownSide",
         },
         {
           component: Components.box,
           props: intendBox,
+          contextName: "editorIntend",
         },
         {
           component: Components.box,
           props: previewSide,
+          contextName: "previewSide",
         },
       ];
       editorFooter.children = [
