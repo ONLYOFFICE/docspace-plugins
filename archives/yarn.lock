@@ -738,13 +738,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fflate@npm:^0.8.2":
-  version: 0.8.2
-  resolution: "fflate@npm:0.8.2"
-  checksum: 10c0/03448d630c0a583abea594835a9fdb2aaf7d67787055a761515bf4ed862913cfd693b4c4ffd5c3f3b355a70cf1e19033e9ae5aedcca103188aaff91b8bd6e293
-  languageName: node
-  linkType: hard
-
 "fill-range@npm:^7.1.1":
   version: 7.1.1
   resolution: "fill-range@npm:7.1.1"
@@ -1798,7 +1791,7 @@ __metadata:
   resolution: "zip-archives@workspace:."
   dependencies:
     "@onlyoffice/docspace-plugin-sdk": "file:./onlyoffice-docspace-plugin-sdk-2.1.0.tgz"
-    fflate: "npm:^0.8.2"
+    jszip: "npm:^3.10.1"
     prettier: "npm:2.8.6"
     ts-loader: "npm:^9.3.1"
     typescript: "npm:^4.7.4"
