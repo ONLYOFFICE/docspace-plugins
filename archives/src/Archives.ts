@@ -82,10 +82,6 @@ class Archives {
       }),
     });
 
-    this.getContent(file.viewUrl, () => {
-      drawInIframe(frameProps.id!, viewer, this.root, file.title, this.user.theme === "Dark", path);
-    });
-
     extractButton.onClick = async () => {
       await this.unzip(file.folderId, this.root, file.title.split(".").slice(0, -1).join("."));
 
@@ -99,7 +95,12 @@ class Archives {
       modalDialogProps: modalDialogProps,
     };
 
-    drawInIframe(frameProps.id!, loader);
+    drawInIframe(frameProps.id!, (iframe: HTMLIFrameElement) => {
+      loader(iframe);
+      this.getContent(file.viewUrl, () => {
+        drawInIframe(frameProps.id!, viewer, this.root, file.title, this.user.theme === "Dark", path);
+      });
+    });
     return message;
   };
 
