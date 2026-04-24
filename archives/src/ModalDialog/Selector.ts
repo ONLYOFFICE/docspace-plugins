@@ -14,10 +14,13 @@
  * limitations under the License.
  */
 
-import { Actions, SelectorType, TSelector } from "@onlyoffice/docspace-plugin-sdk";
+import { Actions, SelectorType, TFilesSelector } from "@onlyoffice/docspace-plugin-sdk";
 import { FilterType } from "@onlyoffice/docspace-plugin-sdk/dist/enums/Utility";
 
-export const selectorProps: () => TSelector = () => {
+export const selectorProps: () => {
+  type: SelectorType.Files;
+  props: TFilesSelector;
+} = () => {
   return {
     type: SelectorType.Files,
     props: {
