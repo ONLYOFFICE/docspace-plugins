@@ -489,10 +489,21 @@ export interface FileTreeItem {
   content: Uint8Array | FileTreeItem[];
 }
 
+function fixZipFilename(name: string): string {
+  if (!Array.from(name).some((ch) => ch.charCodeAt(0) > 0x7f)) return name;
+  const bytes = Uint8Array.from(name, (c) => c.charCodeAt(0));
+  try {
+    return new TextDecoder("ibm866").decode(bytes);
+  } catch {
+    return name;
+  }
+}
+
 function buildFileTree(flatStructure: fflate.Unzipped): FileTreeItem[] {
   const root: { [key: string]: any } = {};
 
-  for (const [path, data] of Object.entries(flatStructure)) {
+  for (const [rawPath, data] of Object.entries(flatStructure)) {
+    const path = fixZipFilename(rawPath);
     const isDirectory = path.endsWith("/");
     const normalizedPath = path.replace(/^\/+|\/+$/g, "");
     const parts = normalizedPath ? normalizedPath.split("/") : [];
