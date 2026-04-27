@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "Impossible d'obtenir les informations du fichier",
+        "failed_to_get_file_details": "Échec de l'obtention des détails du fichier",
+        "failed_to_download_file": "Échec du téléchargement du fichier : ",
+        "watermark_protected": "Ce fichier est protégé par un filigrane. Désactivez le paramètre \"Ajouter des filigranes aux documents\" de la salle et réessayez.",
+        "empty_file": "Le fichier téléchargé est vide",
+        "failed_to_initiate_upload": "Échec de l'initiation du téléversement : ",
+        "upload_failed": "Échec du téléversement",
+        "invalid_upload_session": "Réponse de session de téléversement invalide",
+        "file_not_created": "Le fichier n'a pas été créé sur le serveur",
+        "unsupported_format": "Format non pris en charge : ",
+        "conversion_failed": "Échec de la conversion",
+        "created": "Créé "
+    },
+    "context_menu_convert": "Convertir en Markdown"
+}
