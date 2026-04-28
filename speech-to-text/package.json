@@ -6,7 +6,15 @@
   "version": "1.1.0",
   "description": "Speech to Text Conversion is a speech recognition software that allows you to recognize and translate spoken speech into text.",
   "descriptionLocale": {
-    "en-US": "Speech to Text Conversion is a speech recognition software that allows you to recognize and translate spoken speech into text."
+    "en-US": "Speech to Text Conversion is a speech recognition software that allows you to recognize and translate spoken speech into text.",
+    "de": "Speech-to-Text-Konvertierung ist eine Spracherkennungssoftware, mit der Sie gesprochene Sprache erkennen und in Text umwandeln können.",
+    "es": "La conversión de voz a texto es un software de reconocimiento de voz que le permite reconocer y traducir el habla hablada en texto.",
+    "fr": "La conversion parole-texte est un logiciel de reconnaissance vocale qui vous permet de reconnaître et de traduire la parole en texte.",
+    "it": "La conversione da voce a testo è un software di riconoscimento vocale che consente di riconoscere e tradurre il parlato in testo.",
+    "ja-JP": "音声テキスト変換は、話し言葉を認識してテキストに変換できる音声認識ソフトウェアです。",
+    "pt-BR": "A conversão de fala em texto é um software de reconhecimento de voz que permite reconhecer e traduzir a fala em texto.",
+    "ru": "Конвертация речи в текст — программное обеспечение для распознавания речи, которое позволяет распознавать устную речь и переводить её в текст.",
+    "zh-CN": "语音转文字转换是一款语音识别软件，可让您识别口语并将其转换为文本。"
   },
   "license": "Apache-2.0",
   "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/speech-to-text",

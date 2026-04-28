@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "Токен сохранён",
+        "button_save": "Сохранить",
+        "text_description": "Для генерации API-токена посетите https://www.assemblyai.com \n\n После активации API-токена плагин станет доступен всем пользователям текущего DocSpace.",
+        "text_api_token": "API-токен"
+    },
+    "toast_api_token_is_missing": "API-токен отсутствует",
+    "toast_wrong_api_token": "Неверный API-токен",
+    "toast_speech_not_recognized": "Речь не распознана или отсутствует",
+    "toast_successfully_converted": "Файл успешно конвертирован в текст",
+    "toast_unsuccessfully_converted": "Конвертация в текст не удалась: ",
+    "context_menu_convert_to_text": "Конвертировать в текст"
+}
