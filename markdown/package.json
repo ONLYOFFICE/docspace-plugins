@@ -6,7 +6,15 @@
   "version": "1.2.0",
   "description": "DocSpace plugin for viewing, editing and creating .md files",
   "descriptionLocale": {
-    "en-US": "DocSpace plugin for viewing, editing and creating .md files"
+    "en-US": "DocSpace plugin for viewing, editing and creating .md files",
+    "de": "DocSpace-Plugin zum Anzeigen, Bearbeiten und Erstellen von .md-Dateien",
+    "es": "Plugin de DocSpace para ver, editar y crear archivos .md",
+    "fr": "Plugin DocSpace pour visualiser, modifier et créer des fichiers .md",
+    "it": "Plugin DocSpace per visualizzare, modificare e creare file .md",
+    "ja-JP": ".mdファイルの表示、編集、作成のためのDocSpaceプラグイン",
+    "pt-BR": "Plugin do DocSpace para visualizar, editar e criar arquivos .md",
+    "ru": "Плагин DocSpace для просмотра, редактирования и создания файлов .md",
+    "zh-CN": "用于查看、编辑和创建 .md 文件的 DocSpace 插件"
   },
   "license": "Apache-2.0",
   "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/markdown",

@@ -31,7 +31,7 @@ import {
   ModalDisplayType,
   ToastType,
 } from "@onlyoffice/docspace-plugin-sdk";
-import { i18n } from "../locales";
+import { i18n } from "../locales/i18n";
 
 export const fileSavedToast: (success: boolean) => IToast = (success) => {
   return {

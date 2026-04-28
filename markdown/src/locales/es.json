@@ -1,0 +1,34 @@
+{
+    "context_menu_item": {
+        "edit_markdown": "Editar Markdown",
+        "preview_markdown": "Vista previa de Markdown"
+    },
+    "main_button": {
+        "markdown": "Markdown",
+        "dialog_create_markdown": "Crear Markdown",
+        "toast_file_not_created": "El archivo \"${title}.md\" no fue creado: ${message}"
+    },
+    "dialog": {
+        "toast_file_saved": "Archivo guardado",
+        "toast_file_not_saved": "Archivo no guardado",
+        "button_save_and_close": "Guardar y cerrar",
+        "button_save": "Guardar",
+        "text_markdown": "Markdown",
+        "button_markdown_resize": "Cambiar tamaño",
+        "text_preview": "Vista previa",
+        "button_preview_resize": "Cambiar tamaño"
+    },
+    "unsaved": {
+        "text": "¿Está seguro de que desea cerrar este archivo sin guardar?",
+        "checkbox": "No mostrar este mensaje de nuevo",
+        "button_save_and_close": "Guardar y cerrar",
+        "button_close_without_saving": "Cerrar sin guardar",
+        "header": "El archivo tiene cambios sin guardar"
+    },
+    "toast_wrong_file_format": "Formato de archivo incorrecto",
+    "toast_no_permissions": "No tiene permiso para ver este archivo",
+    "toast_cant_read_file": "No se puede leer este archivo",
+    "button_close": "Cerrar",
+    "button_preview": "Vista previa",
+    "button_write": "Escribir"
+}

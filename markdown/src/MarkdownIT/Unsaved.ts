@@ -25,7 +25,7 @@ import {
     ModalDisplayType
 } from "@onlyoffice/docspace-plugin-sdk";
 import { intendBox } from "./Dialog";
-import { i18n } from "../locales";
+import { i18n } from "../locales/i18n";
 
 export const unsavedText: IText = {
     text: i18n.t("unsaved.text")

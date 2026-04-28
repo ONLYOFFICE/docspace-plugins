@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-import { I18n } from "i18n-js";
 import { PluginLocale } from "@onlyoffice/docspace-plugin-sdk";
-import enUS from "../locales/en-US.json";
 import {
   saveExitButton,
   saveButton,
@@ -32,13 +30,8 @@ import {
   closeButton,
 } from "../MarkdownIT/Unsaved";
 
-export const i18n = new I18n({
-  [PluginLocale.EN_US]: enUS,
-});
-
-i18n.defaultLocale = PluginLocale.EN_US;
-i18n.locale = PluginLocale.EN_US;
-i18n.enableFallback = true;
+import { i18n, I18n } from "./i18n";
+export { i18n, I18n };
 
 export const setLocale = (locale: PluginLocale): void => {
   if (i18n.translations[locale]) {
@@ -57,5 +50,3 @@ export const setLocale = (locale: PluginLocale): void => {
   saveUnsavedButton.label = i18n.t("unsaved.button_save_and_close");
   closeButton.label = i18n.t("unsaved.button_close_without_saving");
 };
-
-export { I18n };
