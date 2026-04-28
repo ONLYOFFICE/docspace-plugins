@@ -17,10 +17,10 @@
 import { I18n } from "i18n-js";
 import { PluginLocale } from "@onlyoffice/docspace-plugin-sdk";
 import { extractButton, cancelButton } from "../ModalDialog";
-import enUS from "../locales/en-US.json";
+import en from "../locales/en.json";
 
 export const i18n = new I18n({
-  [PluginLocale.EN_US]: enUS,
+  [PluginLocale.EN_US]: en,
 });
 
 i18n.defaultLocale = PluginLocale.EN_US;
