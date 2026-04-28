@@ -1,12 +1,8 @@
 {
   "name": "convert-to-markdown",
-  "nameLocale": {
-    "en-US": "convert-to-markdown"
-  },
   "version": "1.0.0",
   "description": "Convert DOCX, TXT and HTML files to Markdown format directly in DocSpace",
   "descriptionLocale": {
-    "en-US": "Convert DOCX, TXT and HTML files to Markdown format directly in DocSpace",
     "de": "Konvertieren Sie DOCX-, TXT- und HTML-Dateien direkt in DocSpace in das Markdown-Format",
     "es": "Convierta archivos DOCX, TXT y HTML al formato Markdown directamente en DocSpace",
     "fr": "Convertissez des fichiers DOCX, TXT et HTML au format Markdown directement dans DocSpace",
