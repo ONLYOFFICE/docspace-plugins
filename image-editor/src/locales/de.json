@@ -1,0 +1,7 @@
+{
+    "dialog_button_save_and_exit": "Speichern und beenden",
+    "context_menu_edit_image": "Bild bearbeiten",
+    "toast_no_permissions": "Sie haben keine Berechtigung, diese Datei anzuzeigen",
+    "toast_file_saved": "Datei erfolgreich gespeichert",
+    "toast_file_not_saved": "Datei konnte nicht gespeichert werden"
+}

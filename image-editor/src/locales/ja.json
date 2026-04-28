@@ -1,0 +1,7 @@
+{
+    "dialog_button_save_and_exit": "保存して終了",
+    "context_menu_edit_image": "画像を編集",
+    "toast_no_permissions": "このファイルを表示する権限がありません",
+    "toast_file_saved": "ファイルが正常に保存されました",
+    "toast_file_not_saved": "ファイルの保存に失敗しました"
+}

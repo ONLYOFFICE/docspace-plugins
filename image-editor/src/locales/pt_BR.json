@@ -1,0 +1,7 @@
+{
+    "dialog_button_save_and_exit": "Salvar e sair",
+    "context_menu_edit_image": "Editar imagem",
+    "toast_no_permissions": "Você não tem permissão para visualizar este arquivo",
+    "toast_file_saved": "Arquivo salvo com sucesso",
+    "toast_file_not_saved": "Falha ao salvar o arquivo"
+}
