@@ -14,19 +14,12 @@
  * limitations under the License.
  */
 
-import { I18n } from "i18n-js";
 import { PluginLocale } from "@onlyoffice/docspace-plugin-sdk";
 import { acceptButtonProps, cancelButtonProps } from "../Dialog/button";
 import { inputTextProps } from "../Dialog/Name";
-import enUS from "../locales/en-US.json";
 
-export const i18n = new I18n({
-  [PluginLocale.EN_US]: enUS,
-});
-
-i18n.defaultLocale = PluginLocale.EN_US;
-i18n.locale = PluginLocale.EN_US;
-i18n.enableFallback = true;
+import { i18n, I18n } from "./i18n";
+export { i18n, I18n };
 
 export const setLocale = (locale: PluginLocale): void => {
   if (i18n.translations[locale]) {
@@ -39,5 +32,3 @@ export const setLocale = (locale: PluginLocale): void => {
   cancelButtonProps.label = i18n.t("dialog.button_cancel");
   inputTextProps.text = i18n.t("dialog.text_converted_file_name");
 };
-
-export { I18n };

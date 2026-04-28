@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "Конвертировать файл в PDF",
+        "button_convert_file": "Конвертировать файл",
+        "button_cancel": "Отмена",
+        "toast_wrong_api_token": "Неверный API-токен",
+        "text_converted_file_name": "Название конвертированного файла"
+    },
+    "settings": {
+        "description": "Для генерации API-секрета посетите https://www.convertapi.com/ \n\n После активации API-токена плагин станет доступен всем пользователям текущего DocSpace.",
+        "toast_token_is_saved": "Токен сохранён",
+        "button_save": "Сохранить",
+        "text_api_token": "API-токен"
+    },
+    "context_menu_convert_to_pdf": "Конвертировать в PDF",
+    "toast_file_created": "Файл %{name} создан",
+    "toast_file_not_created": "Файл %{name} не был создан: %{message}",
+    "toast_wrong_api_token": "Неверный API-токен"
+}

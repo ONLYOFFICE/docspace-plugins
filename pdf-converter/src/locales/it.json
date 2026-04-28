@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "Converti file in PDF",
+        "button_convert_file": "Converti file",
+        "button_cancel": "Annulla",
+        "toast_wrong_api_token": "Token API errato",
+        "text_converted_file_name": "Nome del file convertito"
+    },
+    "settings": {
+        "description": "Per generare il segreto API, visita https://www.convertapi.com/ \n\n Una volta abilitato il token API, il plugin diventa disponibile per tutti gli utenti del DocSpace corrente.",
+        "toast_token_is_saved": "Token salvato",
+        "button_save": "Salva",
+        "text_api_token": "Token API"
+    },
+    "context_menu_convert_to_pdf": "Converti in PDF",
+    "toast_file_created": "Il file %{name} è stato creato",
+    "toast_file_not_created": "Il file %{name} non è stato creato: %{message}",
+    "toast_wrong_api_token": "Token API errato"
+}

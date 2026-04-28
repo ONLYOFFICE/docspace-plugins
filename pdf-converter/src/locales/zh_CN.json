@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "将文件转换为 PDF",
+        "button_convert_file": "转换文件",
+        "button_cancel": "取消",
+        "toast_wrong_api_token": "API 令牌错误",
+        "text_converted_file_name": "转换后的文件名"
+    },
+    "settings": {
+        "description": "要生成 API 密钥，请访问 https://www.convertapi.com/ \n\n 启用 API 令牌后，该插件将对当前 DocSpace 的所有用户可用。",
+        "toast_token_is_saved": "令牌已保存",
+        "button_save": "保存",
+        "text_api_token": "API 令牌"
+    },
+    "context_menu_convert_to_pdf": "转换为 PDF",
+    "toast_file_created": "文件 %{name} 已创建",
+    "toast_file_not_created": "文件 %{name} 未被创建：%{message}",
+    "toast_wrong_api_token": "API 令牌错误"
+}

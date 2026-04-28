@@ -24,7 +24,7 @@ import {
 } from "@onlyoffice/docspace-plugin-sdk";
 import convertFile from "../ConvertFile";
 import { nameInputProps } from "./Name";
-import { i18n } from "../locales";
+import { i18n } from "../locales/i18n";
 
 export const onAcceptClick = async () => {
   const message = await convertFile.onConvertFileClick(nameInputProps.value);
