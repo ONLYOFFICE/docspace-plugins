@@ -1,12 +1,8 @@
 {
 	"name": "draw.io",
-	"nameLocale": {
-		"en-US": "draw.io"
-	},
 	"version": "1.2.0",
 	"description": "A tool for creating diagrams, flowcharts, intelligence maps, business layouts, entity relationships, program blocks, and more",
 	"descriptionLocale": {
-		"en-US": "A tool for creating diagrams, flowcharts, intelligence maps, business layouts, entity relationships, program blocks, and more",
 		"de": "Ein Werkzeug zum Erstellen von Diagrammen, Flussdiagrammen, Mindmaps, Geschäftslayouts, Entity-Beziehungen, Programmblöcken und mehr",
 		"es": "Una herramienta para crear diagramas, diagramas de flujo, mapas mentales, diseños empresariales, relaciones entre entidades, bloques de programas y más",
 		"fr": "Un outil pour créer des diagrammes, des organigrammes, des cartes mentales, des mises en page professionnelles, des relations entre entités, des blocs de programme et plus encore",
