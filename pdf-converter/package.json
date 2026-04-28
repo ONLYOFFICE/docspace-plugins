@@ -1,12 +1,8 @@
 {
   "name": "pdf-converter",
-  "nameLocale": {
-    "en-US": "pdf-converter"
-  },
   "version": "1.1.0",
   "description": "A plugin for converting docs, sheets, slides, and forms to PDF. The plugin is available via the Actions section in the file context menu. The converted file is saved in the same folder as the original one.",
   "descriptionLocale": {
-    "en-US": "A plugin for converting docs, sheets, slides, and forms to PDF. The plugin is available via the Actions section in the file context menu. The converted file is saved in the same folder as the original one.",
     "de": "Ein Plugin zum Konvertieren von Dokumenten, Tabellen, Präsentationen und Formularen in PDF. Das Plugin ist über den Bereich „Aktionen“ im Kontextmenü der Datei verfügbar. Die konvertierte Datei wird im selben Ordner wie das Original gespeichert.",
     "es": "Un plugin para convertir documentos, hojas de cálculo, presentaciones y formularios a PDF. El plugin está disponible a través de la sección Acciones en el menú contextual del archivo. El archivo convertido se guarda en la misma carpeta que el original.",
     "fr": "Un plugin pour convertir des documents, des feuilles de calcul, des présentations et des formulaires en PDF. Le plugin est disponible via la section Actions dans le menu contextuel du fichier. Le fichier converti est enregistré dans le même dossier que l'original.",
