@@ -1,12 +1,8 @@
 {
   "name": "speech-to-text",
-  "nameLocale": {
-    "en-US": "speech-to-text"
-  },
   "version": "1.1.0",
   "description": "Speech to Text Conversion is a speech recognition software that allows you to recognize and translate spoken speech into text.",
   "descriptionLocale": {
-    "en-US": "Speech to Text Conversion is a speech recognition software that allows you to recognize and translate spoken speech into text.",
     "de": "Speech-to-Text-Konvertierung ist eine Spracherkennungssoftware, mit der Sie gesprochene Sprache erkennen und in Text umwandeln können.",
     "es": "La conversión de voz a texto es un software de reconocimiento de voz que le permite reconocer y traducir el habla hablada en texto.",
     "fr": "La conversion parole-texte est un logiciel de reconnaissance vocale qui vous permet de reconnaître et de traduire la parole en texte.",
