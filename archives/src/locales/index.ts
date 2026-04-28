@@ -28,14 +28,10 @@ i18n.locale = PluginLocale.EN_US;
 i18n.enableFallback = true;
 
 export const setLocale = (locale: PluginLocale): void => {
-  if (i18n.translations[locale]) {
-    i18n.locale = locale;
-  } else {
-    i18n.locale = i18n.defaultLocale;
-  }
+  const next = i18n.translations[locale] ? locale : i18n.defaultLocale;
+  if (i18n.locale === next) return;
+  i18n.locale = next;
 
   extractButton.label = i18n.t("dialog.button_extract");
   cancelButton.label = i18n.t("dialog.button_cancel");
 };
-
-export { I18n };
