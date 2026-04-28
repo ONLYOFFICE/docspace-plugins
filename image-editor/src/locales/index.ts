@@ -17,15 +17,13 @@
 import { PluginLocale } from "@onlyoffice/docspace-plugin-sdk";
 import { saveExitButton } from "../Dialog";
 
-import { i18n, I18n } from "./i18n";
-export { i18n, I18n };
+import { i18n } from "./i18n";
+export { i18n };
 
 export const setLocale = (locale: PluginLocale): void => {
-  if (i18n.translations[locale]) {
-    i18n.locale = locale;
-  } else {
-    i18n.locale = i18n.defaultLocale;
-  }
+  const next = i18n.translations[locale] ? locale : i18n.defaultLocale;
+  if (i18n.locale === next) return;
+  i18n.locale = next;
 
   saveExitButton.label = i18n.t("dialog_button_save_and_exit");
 };

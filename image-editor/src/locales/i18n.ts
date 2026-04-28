@@ -41,5 +41,3 @@ export const i18n = new I18n({
 i18n.defaultLocale = PluginLocale.EN_US;
 i18n.locale = PluginLocale.EN_US;
 i18n.enableFallback = true;
-
-export { I18n };
