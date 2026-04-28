@@ -1,12 +1,8 @@
 {
   "name": "image-editor",
-  "nameLocale": {
-    "en-US": "ImageEditor"
-  },
   "version": "1.0.0",
   "description": "DocSpace plugin for viewing and editing images",
   "descriptionLocale": {
-    "en-US": "DocSpace plugin for viewing and editing images",
     "de": "DocSpace-Plugin zum Anzeigen und Bearbeiten von Bildern",
     "es": "Plugin de DocSpace para ver y editar imágenes",
     "fr": "Plugin DocSpace pour visualiser et modifier des images",
