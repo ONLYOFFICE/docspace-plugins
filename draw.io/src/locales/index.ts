@@ -20,15 +20,13 @@ import { descTextProps } from "../OpenFromUrlDialog/index";
 import { nameInputProps, inputTextProps } from "../OpenFromUrlDialog/Name";
 import { urlInputProps } from "../OpenFromUrlDialog/Url";
 
-import { i18n, I18n } from "./i18n";
-export { i18n, I18n };
+import { i18n } from "./i18n";
+export { i18n };
 
 export const setLocale = (locale: PluginLocale): void => {
-  if (i18n.translations[locale]) {
-    i18n.locale = locale;
-  } else {
-    i18n.locale = i18n.defaultLocale;
-  }
+  const next = i18n.translations[locale] ? locale : i18n.defaultLocale;
+  if (i18n.locale === next) return;
+  i18n.locale = next;
 
   acceptButtonProps.label = i18n.t("open_from_url.button_accept");
   cancelButtonProps.label = i18n.t("open_from_url.button_cancel");
