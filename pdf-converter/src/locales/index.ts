@@ -18,15 +18,13 @@ import { PluginLocale } from "@onlyoffice/docspace-plugin-sdk";
 import { acceptButtonProps, cancelButtonProps } from "../Dialog/button";
 import { inputTextProps } from "../Dialog/Name";
 
-import { i18n, I18n } from "./i18n";
-export { i18n, I18n };
+import { i18n } from "./i18n";
+export { i18n };
 
 export const setLocale = (locale: PluginLocale): void => {
-  if (i18n.translations[locale]) {
-    i18n.locale = locale;
-  } else {
-    i18n.locale = i18n.defaultLocale;
-  }
+  const next = i18n.translations[locale] ? locale : i18n.defaultLocale;
+  if (i18n.locale === next) return;
+  i18n.locale = next;
 
   acceptButtonProps.label = i18n.t("dialog.button_convert_file");
   cancelButtonProps.label = i18n.t("dialog.button_cancel");
