@@ -1,0 +1,37 @@
+{
+    "context_menu": {
+        "open_archive": "Открыть архив",
+        "group_unzip": "Разархивировать",
+        "choose_location": "Выбрать расположение",
+        "unzip_here": "Разархивировать здесь",
+        "group_zip": "Архивировать",
+        "zip_folder": "Архивировать здесь",
+        "zip_selected": "Архивировать выбранные элементы"
+    },
+    "dialog": {
+        "header": "Просмотр архива",
+        "button_extract": "Извлечь архив",
+        "selector_header_unzip": "Разархивировать в",
+        "selector_header_zip": "Архивировать в",
+        "selector_header_extract": "Извлечь в",
+        "selector_button_archive": "Архивировать",
+        "selector_button_unzip": "Разархивировать",
+        "selector_button_extract": "Извлечь",
+        "selector_checkbox_wrap": "Поместить в новую папку",
+        "button_cancel": "Отмена",
+        "viewer_loading": "Загрузка...",
+        "viewer_error": "Ошибка: ${error}"
+    },
+    "default_zip_title": "Новый архив",
+    "default_folder_title": "Новая папка",
+    "file_type_name": "Архив",
+    "toast_no_folder_download_permission": "У вас нет прав для скачивания файлов из этой папки",
+    "toast_no_view_permission": "У вас нет прав для просмотра этого файла",
+    "toast_no_unzip_permission": "У вас нет прав для разархивирования этого файла",
+    "toast_extract_success": "Элемент(ы) успешно извлечён(ы)",
+    "toast_unzip_success": "Файл успешно разархивирован",
+    "toast_cant_create": "Операция не выполнена. Вы не можете создавать файлы в этой папке",
+    "toast_failed_to_create": "Не удалось создать ZIP",
+    "toast_zip_saved": "ZIP сохранён",
+    "toast_zip_not_saved": "Не удалось сохранить ZIP"
+}
