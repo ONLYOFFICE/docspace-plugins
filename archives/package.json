@@ -2,6 +2,16 @@
   "name": "zip-archives",
   "version": "1.0.0",
   "description": "DocSpace plugin for opening and extracting ZIP archives",
+  "descriptionLocale": {
+    "de": "DocSpace-Plugin zum Öffnen und Entpacken von ZIP-Archiven",
+    "es": "Plugin de DocSpace para abrir y extraer archivos ZIP",
+    "fr": "Plugin DocSpace pour ouvrir et extraire des archives ZIP",
+    "it": "Plugin DocSpace per aprire ed estrarre archivi ZIP",
+    "ja-JP": "ZIPアーカイブを開いて展開するためのDocSpaceプラグイン",
+    "pt-BR": "Plugin do DocSpace para abrir e extrair arquivos ZIP",
+    "ru": "Плагин DocSpace для открытия и извлечения ZIP-архивов",
+    "zh-CN": "用于打开和提取 ZIP 档案的 DocSpace 插件"
+  },
   "license": "Apache-2.0",
   "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/archives",
   "author": "ONLYOFFICE",
