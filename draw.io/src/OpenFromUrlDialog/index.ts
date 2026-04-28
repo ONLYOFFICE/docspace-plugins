@@ -24,7 +24,7 @@ import {
 import { urlGroup } from "./Url";
 import { nameGroup } from "./Name";
 import { buttonGroup, onCancelClick } from "./button";
-import { i18n } from "../locales";
+import { i18n } from "../locales/i18n";
 
 export const descTextProps: IText = {
   text: i18n.t("open_from_url.description_text"),

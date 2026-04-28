@@ -27,7 +27,7 @@ import {
 } from "@onlyoffice/docspace-plugin-sdk";
 import { acceptButtonProps } from "./button";
 import { urlInputProps } from "./Url";
-import { i18n } from "../locales";
+import { i18n } from "../locales/i18n";
 
 const onChange = (value: string) => {
   nameInputProps.value = value;

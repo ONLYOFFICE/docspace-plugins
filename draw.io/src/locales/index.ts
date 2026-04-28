@@ -14,21 +14,14 @@
  * limitations under the License.
  */
 
-import { I18n } from "i18n-js";
 import { PluginLocale } from "@onlyoffice/docspace-plugin-sdk";
-import enUS from "../locales/en-US.json";
 import { acceptButtonProps, cancelButtonProps } from "../OpenFromUrlDialog/button";
 import { descTextProps } from "../OpenFromUrlDialog/index";
 import { nameInputProps, inputTextProps } from "../OpenFromUrlDialog/Name";
 import { urlInputProps } from "../OpenFromUrlDialog/Url";
 
-export const i18n = new I18n({
-  [PluginLocale.EN_US]: enUS,
-});
-
-i18n.defaultLocale = PluginLocale.EN_US;
-i18n.locale = PluginLocale.EN_US;
-i18n.enableFallback = true;
+import { i18n, I18n } from "./i18n";
+export { i18n, I18n };
 
 export const setLocale = (locale: PluginLocale): void => {
   if (i18n.translations[locale]) {
@@ -44,5 +37,3 @@ export const setLocale = (locale: PluginLocale): void => {
   inputTextProps.text = i18n.t("open_from_url.input_text_name");
   urlInputProps.placeholder = i18n.t("open_from_url.input_placeholder_url");
 };
-
-export { I18n };

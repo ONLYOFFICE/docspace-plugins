@@ -1,0 +1,30 @@
+{
+    "main_button": {
+        "create_dialog_title": "Créer un diagramme",
+        "create_dialog_start_value": "Nouveau diagramme"
+    },
+    "open_from_url": {
+        "button_accept": "Créer",
+        "button_cancel": "Annuler",
+        "description_text": "Assurez-vous que l'accès par lien public est ouvert",
+        "dialog_header": "Importer un diagramme",
+        "input_placeholder_name": "Nouveau diagramme",
+        "input_text_name": "Nom",
+        "input_placeholder_url": "URL du diagramme",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "Les données ont été enregistrées",
+        "button_save": "Enregistrer",
+        "text_language": "Langue",
+        "text_libraries": "Bibliothèques",
+        "text_offline_description": "Lorsque le \"mode hors ligne\" est actif, il désactive toutes les opérations et fonctionnalités distantes pour protéger",
+        "text_offline": "Mode hors ligne"
+    },
+    "context_menu_open_diagram": "Ouvrir le diagramme",
+    "file_type_name": "Diagramme",
+    "toast_file_not_created": "Le fichier \"${title}.drawio\" n'a pas été créé : ${message}",
+    "toast_wrong_file_format": "Format de fichier incorrect",
+    "toast_no_permission": "Vous n'avez pas la permission d'afficher ce fichier",
+    "toast_cant_read_file": "Impossible de lire ce fichier"
+}

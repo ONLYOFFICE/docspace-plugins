@@ -25,7 +25,7 @@ import {
 import drawIo from "../Drawio";
 import { nameInputProps } from "./Name";
 import { urlInputProps } from "./Url";
-import { i18n } from "../locales";
+import { i18n } from "../locales/i18n";
 
 const onAcceptClick = async () => {
   const message = await drawIo.openFileFromUrl(

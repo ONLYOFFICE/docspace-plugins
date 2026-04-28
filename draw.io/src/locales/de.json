@@ -1,0 +1,30 @@
+{
+    "main_button": {
+        "create_dialog_title": "Diagramm erstellen",
+        "create_dialog_start_value": "Neues Diagramm"
+    },
+    "open_from_url": {
+        "button_accept": "Erstellen",
+        "button_cancel": "Abbrechen",
+        "description_text": "Stellen Sie sicher, dass der öffentliche Linkzugang offen ist",
+        "dialog_header": "Diagramm importieren",
+        "input_placeholder_name": "Neues Diagramm",
+        "input_text_name": "Name",
+        "input_placeholder_url": "URL für das Diagramm",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "Daten wurden gespeichert",
+        "button_save": "Speichern",
+        "text_language": "Sprache",
+        "text_libraries": "Bibliotheken",
+        "text_offline_description": "Wenn der \"Offline-Modus\" aktiviert ist, werden alle Remote-Vorgänge und -Funktionen zum Schutz deaktiviert",
+        "text_offline": "Offline-Modus"
+    },
+    "context_menu_open_diagram": "Diagramm öffnen",
+    "file_type_name": "Diagramm",
+    "toast_file_not_created": "Datei \"${title}.drawio\" wurde nicht erstellt: ${message}",
+    "toast_wrong_file_format": "Falsches Dateiformat",
+    "toast_no_permission": "Sie haben keine Berechtigung, diese Datei anzuzeigen",
+    "toast_cant_read_file": "Diese Datei kann nicht gelesen werden"
+}
