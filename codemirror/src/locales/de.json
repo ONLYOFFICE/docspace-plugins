@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Speichern",
+        "button_cancel": "Abbrechen",
+        "text_unsaved": "Ohne Speichern fortfahren?\nSie haben Änderungen an der Konfiguration vorgenommen. Wenn Sie ohne Speichern fortfahren, werden diese Änderungen nicht übernommen.",
+        "warning_header": "Warnung",
+        "button_continue": "Fortfahren",
+        "button_reopen": "Erneut öffnen"
+    },
+    "main_button": {
+        "label": "Textdatei",
+        "create_dialog_title": "Textdatei erstellen",
+        "create_dialog_start_value": "Textdatei",
+        "error_no_file_ext": "Dateierweiterung muss angegeben werden",
+        "error_not_supported": "Dateierweiterung wird vom Codemirror-Plugin nicht unterstützt",
+        "error_not_created": "Datei \"${title}.md\" wurde nicht erstellt: ${message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Daten wurden gespeichert",
+        "button_save": "Speichern",
+        "header_general": "Allgemein",
+        "header_html": "HTML",
+        "highlight_whitespace": "Leerzeichen hervorheben",
+        "highlight_whitespace_description": "Leerzeichen als Punkte und Tabs als Pfeile anzeigen.",
+        "highlight_trailing_whitespace": "Abschließende Leerzeichen hervorheben",
+        "highlight_trailing_whitespace_description": "Leerzeichen am Zeilenende hervorheben.",
+        "auto_close_tags": "Tags automatisch schließen",
+        "auto_close_tags_description": "Automatisch schließende Tags einfügen, wenn > oder / in HTML-ähnlichen Dateien eingegeben wird."
+    },
+    "context_menu_edit": "Datei mit Codemirror bearbeiten",
+    "file_type_name": "Code",
+    "toast_no_permission": "Sie haben keine Berechtigung, diese Datei anzuzeigen",
+    "toast_cant_read_file": "Diese Datei kann nicht gelesen werden",
+    "toast_file_saved": "Datei gespeichert",
+    "toast_file_not_saved": "Datei konnte nicht gespeichert werden"
+}

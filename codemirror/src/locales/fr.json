@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Enregistrer",
+        "button_cancel": "Annuler",
+        "text_unsaved": "Continuer sans enregistrer ?\nVous avez apporté des modifications à la configuration. Si vous continuez sans enregistrer, ces modifications ne seront pas appliquées.",
+        "warning_header": "Avertissement",
+        "button_continue": "Continuer",
+        "button_reopen": "Rouvrir"
+    },
+    "main_button": {
+        "label": "Fichier texte",
+        "create_dialog_title": "Créer un fichier texte",
+        "create_dialog_start_value": "Fichier texte",
+        "error_no_file_ext": "L'extension du fichier doit être fournie",
+        "error_not_supported": "Extension de fichier non prise en charge par le plugin Codemirror",
+        "error_not_created": "Le fichier \"${title}.md\" n'a pas été créé : ${message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Les données ont été enregistrées",
+        "button_save": "Enregistrer",
+        "header_general": "Général",
+        "header_html": "HTML",
+        "highlight_whitespace": "Mettre en évidence les espaces",
+        "highlight_whitespace_description": "Afficher les espaces sous forme de points et les tabulations sous forme de flèches.",
+        "highlight_trailing_whitespace": "Mettre en évidence les espaces en fin de ligne",
+        "highlight_trailing_whitespace_description": "Mettre en évidence les espaces en fin de ligne.",
+        "auto_close_tags": "Fermer automatiquement les balises",
+        "auto_close_tags_description": "Insérer automatiquement des balises fermantes lorsque > ou / est tapé dans des fichiers de type HTML."
+    },
+    "context_menu_edit": "Modifier le fichier avec Codemirror",
+    "file_type_name": "Code",
+    "toast_no_permission": "Vous n'avez pas la permission d'afficher ce fichier",
+    "toast_cant_read_file": "Impossible de lire ce fichier",
+    "toast_file_saved": "Fichier enregistré",
+    "toast_file_not_saved": "Échec de l'enregistrement du fichier"
+}

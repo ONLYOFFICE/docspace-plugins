@@ -24,7 +24,7 @@ import {
   IText,
   ModalDisplayType,
 } from "@onlyoffice/docspace-plugin-sdk";
-import { i18n } from "../locales";
+import { i18n } from "../locales/i18n";
 
 export const unsavedText: IText = {
   text: i18n.t("dialog.text_unsaved"),

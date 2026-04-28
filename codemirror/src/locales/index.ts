@@ -14,20 +14,13 @@
  * limitations under the License.
  */
 
-import { I18n } from "i18n-js";
 import { PluginLocale } from "@onlyoffice/docspace-plugin-sdk";
 import { saveButton, cancelButton } from "../Dialog/index";
 import { continueButton, reopenButton, unsavedText } from "../Dialog/Unsaved";
 import { createDialog } from "../MainButton/index";
-import enUS from "../locales/en-US.json";
 
-export const i18n = new I18n({
-  [PluginLocale.EN_US]: enUS,
-});
-
-i18n.defaultLocale = PluginLocale.EN_US;
-i18n.locale = PluginLocale.EN_US;
-i18n.enableFallback = true;
+import { i18n, I18n } from "./i18n";
+export { i18n, I18n };
 
 export const setLocale = (locale: PluginLocale): void => {
   if (i18n.translations[locale]) {
@@ -44,5 +37,3 @@ export const setLocale = (locale: PluginLocale): void => {
   createDialog.title = i18n.t("main_button.create_dialog_title");
   createDialog.startValue = i18n.t("main_button.create_dialog_start_value");
 };
-
-export { I18n };

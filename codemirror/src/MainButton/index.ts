@@ -17,7 +17,7 @@
 import { Actions, ICreateDialog, IMainButtonItem, IMessage } from "@onlyoffice/docspace-plugin-sdk";
 import { supportedFileExts } from "../properties.json";
 import codemirror from "../Codemirror";
-import { i18n } from "../locales";
+import { i18n } from "../locales/i18n";
 
 let createLock = false;
 

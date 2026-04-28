@@ -26,7 +26,7 @@ import {
   ButtonSize,
   Component,
 } from "@onlyoffice/docspace-plugin-sdk";
-import { i18n } from "../locales";
+import { i18n } from "../locales/i18n";
 
 const closeDialog = () => {
   const message: IMessage = {
