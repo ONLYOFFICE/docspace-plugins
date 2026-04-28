@@ -79,15 +79,15 @@ __metadata:
   linkType: hard
 
 "@onlyoffice/docspace-plugin-sdk@file:../docspace-plugin-sdk.tgz::locator=speech-to-text%40workspace%3A.":
-  version: 2.0.0
-  resolution: "@onlyoffice/docspace-plugin-sdk@file:../docspace-plugin-sdk.tgz#../docspace-plugin-sdk.tgz::hash=beb6ca&locator=speech-to-text%40workspace%3A."
+  version: 2.1.0
+  resolution: "@onlyoffice/docspace-plugin-sdk@file:../docspace-plugin-sdk.tgz#../docspace-plugin-sdk.tgz::hash=b75a53&locator=speech-to-text%40workspace%3A."
   dependencies:
     inquirer: "npm:^9.1.0"
     jszip: "npm:^3.10.1"
   bin:
     build-docspace-plugin: ./npx/buildPlugin.js
     create-docspace-plugin: ./npx/index.js
-  checksum: 10c0/4fed7162ed1c9b09aa30f777231e2042042c14eab6d526474ded45a0c33c016794c078fd514de74c3efcd2e27cabb155dd2d2e1acbff181eaf9f5c30f67a9ccc
+  checksum: 10c0/f7a55f3a7f78a75dd2242e77562dcc9c050c3ef64b8b7b36d3ffb2aa6ef28818c4bdad1e4c1b214d4ed24b4c660cd3e062fdad36fb2a37c2acf55908a4099b61
   languageName: node
   linkType: hard
 
