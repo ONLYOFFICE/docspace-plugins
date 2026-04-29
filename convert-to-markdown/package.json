@@ -1,9 +1,9 @@
 {
-  "name": "markdown",
-  "version": "1.2.0",
-  "description": "DocSpace plugin for viewing, editing and creating .md files",
+  "name": "convert-to-markdown",
+  "version": "1.0.0",
+  "description": "Convert DOCX, TXT and HTML files to Markdown format directly in DocSpace",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/markdown",
+  "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/convert-to-markdown",
   "author": "ONLYOFFICE",
   "maintainers": [
     "Ascensio System SIA <integration@onlyoffice.com> (https://www.onlyoffice.com)"
@@ -11,38 +11,31 @@
   "bugs": {
     "email": "support@onlyoffice.com"
   },
-  "pluginName": "Markdown",
-  "logo": "logo.svg",
-  "cspDomains": [
-    "https://cdn.jsdelivr.net/"
-  ],
+  "pluginName": "MarkdownConverter",
+  "logo": "icon-md.svg",
   "main": "index.ts",
   "private": true,
   "scopes": [
     "API",
-    "Settings",
-    "ContextMenu",
-    "InfoPanel",
-    "MainButton",
-    "ProfileMenu",
-    "EventListener",
-    "File"
+    "ContextMenu"
   ],
   "scripts": {
     "build": "webpack && npx build-docspace-plugin",
     "format": "npx prettier --write ."
   },
   "devDependencies": {
-    "@types/markdown-it": "^13.0.7",
+    "@types/turndown": "^5.0.6",
     "prettier": "2.8.6",
     "ts-loader": "^9.3.1",
     "typescript": "^4.7.4",
-    "webpack": "^5.104.1",
+    "webpack": "^5.105.0",
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
     "@onlyoffice/docspace-plugin-sdk": "^2.0.0",
-    "highlight.js": "^11.9.0",
-    "markdown-it": "^14.1.1"
+    "@truto/turndown-plugin-gfm": "^1.0.2",
+    "mammoth": "^1.11.0",
+    "turndown": "^7.2.2",
+    "turndown-plugin-gfm": "^1.0.2"
   }
 }
