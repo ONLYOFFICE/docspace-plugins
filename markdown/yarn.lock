@@ -124,16 +124,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@onlyoffice/docspace-plugin-sdk@file:./onlyoffice-docspace-plugin-sdk-2.1.0.tgz::locator=markdown%40workspace%3A.":
-  version: 2.1.0
-  resolution: "@onlyoffice/docspace-plugin-sdk@file:./onlyoffice-docspace-plugin-sdk-2.1.0.tgz#./onlyoffice-docspace-plugin-sdk-2.1.0.tgz::hash=83bc6a&locator=markdown%40workspace%3A."
+"@onlyoffice/docspace-plugin-sdk@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@onlyoffice/docspace-plugin-sdk@npm:2.0.0"
   dependencies:
     inquirer: "npm:^9.1.0"
     jszip: "npm:^3.10.1"
   bin:
-    build-docspace-plugin: ./npx/buildPlugin.js
-    create-docspace-plugin: ./npx/index.js
-  checksum: 10c0/204e7ae20498b902da2fd854283d72491de3f2ea6cd5f73c0f06bd6a312580ff70b0fe23cc8935aef9f7f3f56330cf43fb3f80f43bed62f2a22bdc182e6cd3d8
+    build-docspace-plugin: npx/buildPlugin.js
+    create-docspace-plugin: npx/index.js
+  checksum: 10c0/fb9100165e747035bdcc5f0423ac9673a9b76c0be6cb74062426fd3cd70d93d261f9f0967195ccae1b0dff761a39a27f7f2fbd99ef395f982619e4657d8908b0
   languageName: node
   linkType: hard
 
@@ -1677,7 +1677,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "markdown@workspace:."
   dependencies:
-    "@onlyoffice/docspace-plugin-sdk": "file:./onlyoffice-docspace-plugin-sdk-2.1.0.tgz"
+    "@onlyoffice/docspace-plugin-sdk": "npm:^2.0.0"
     "@types/markdown-it": "npm:^13.0.7"
     css-loader: "npm:^6.8.1"
     css-minimizer-webpack-plugin: "npm:^7.0.2"

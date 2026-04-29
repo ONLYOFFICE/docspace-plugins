@@ -47,5 +47,6 @@
     "@onlyoffice/docspace-plugin-sdk": "^2.0.0",
     "highlight.js": "^11.9.0",
     "markdown-it": "^14.1.1"
-  }
+  },
+  "packageManager": "yarn@4.6.0+sha224.acd0786f07ffc6c933940eb65fc1d627131ddf5455bddcc295dc90fd"
 }
