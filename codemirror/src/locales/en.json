@@ -20,9 +20,9 @@
         "button_save": "Save",
         "header_general": "General",
         "header_html": "HTML",
-        "highlight_whitespace": "Highlight whitespace",
+        "highlight_whitespace": "Highlight whitespaces",
         "highlight_whitespace_description": "Display whitespaces as dots and tabs as arrows.",
-        "highlight_trailing_whitespace": "Highlight trailing whitespace",
+        "highlight_trailing_whitespace": "Highlight trailing whitespaces",
         "highlight_trailing_whitespace_description": "Highlight whitespaces at the end of a line.",
         "auto_close_tags": "Auto close tags",
         "auto_close_tags_description": "Automatically insert close tags when a > or / is typed in HTML-like files."

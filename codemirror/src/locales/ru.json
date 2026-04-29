@@ -30,7 +30,7 @@
     "context_menu_edit": "Редактировать файл в Codemirror",
     "file_type_name": "Код",
     "toast_no_permission": "У вас нет прав для просмотра этого файла",
-    "toast_cant_read_file": "Не удаётся прочитать файл",
-    "toast_file_saved": "Файл сохранён",
+    "toast_cant_read_file": "Не удается прочитать файл",
+    "toast_file_saved": "Файл сохранен",
     "toast_file_not_saved": "Не удалось сохранить файл"
 }

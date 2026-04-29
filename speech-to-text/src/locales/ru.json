@@ -1,8 +1,8 @@
 {
     "settings": {
-        "toast_token_is_saved": "Токен сохранён",
+        "toast_token_is_saved": "Токен сохранен",
         "button_save": "Сохранить",
-        "text_description": "Для генерации API-токена посетите https://www.assemblyai.com \n\n После активации API-токена плагин станет доступен всем пользователям текущего DocSpace.",
+        "text_description": "Для генерации API-токена перейдите на страницу https://www.assemblyai.com \n\n После активации API-токена плагин будет доступен всем пользователям текущего DocSpace.",
         "text_api_token": "API-токен"
     },
     "toast_api_token_is_missing": "API-токен отсутствует",
