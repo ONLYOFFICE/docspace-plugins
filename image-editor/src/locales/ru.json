@@ -2,6 +2,6 @@
     "dialog_button_save_and_exit": "Сохранить и выйти",
     "context_menu_edit_image": "Редактировать изображение",
     "toast_no_permissions": "У вас нет прав для просмотра этого файла",
-    "toast_file_saved": "Файл успешно сохранён",
+    "toast_file_saved": "Файл успешно сохранен",
     "toast_file_not_saved": "Не удалось сохранить файл"
 }

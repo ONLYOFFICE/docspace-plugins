@@ -7,8 +7,8 @@
         "text_converted_file_name": "Название конвертированного файла"
     },
     "settings": {
-        "description": "Для генерации API-секрета посетите https://www.convertapi.com/ \n\n После активации API-токена плагин станет доступен всем пользователям текущего DocSpace.",
-        "toast_token_is_saved": "Токен сохранён",
+        "description": "Для генерации API-секрета перейдите на страницу https://www.convertapi.com/ \n\n После активации API-токена плагин будет доступен всем пользователям текущего DocSpace.",
+        "toast_token_is_saved": "Токен сохранен",
         "button_save": "Сохранить",
         "text_api_token": "API-токен"
     },

@@ -10,15 +10,15 @@
         "dialog_header": "Импортировать диаграмму",
         "input_placeholder_name": "Новая диаграмма",
         "input_text_name": "Название",
-        "input_placeholder_url": "URL диаграммы",
-        "input_text_url": "URL"
+        "input_placeholder_url": "URL-адрес диаграммы",
+        "input_text_url": "URL-адрес"
     },
     "settings": {
         "toast_data_saved": "Данные сохранены",
         "button_save": "Сохранить",
         "text_language": "Язык",
         "text_libraries": "Библиотеки",
-        "text_offline_description": "Когда активирован \"офлайн-режим\", все удалённые операции и функции отключаются для защиты",
+        "text_offline_description": "В \"офлайн-режиме\" все удаленные операции и функции отключаются для обеспечения безопасности",
         "text_offline": "Офлайн-режим"
     },
     "context_menu_open_diagram": "Открыть диаграмму",
@@ -26,5 +26,5 @@
     "toast_file_not_created": "Файл \"${title}.drawio\" не был создан: ${message}",
     "toast_wrong_file_format": "Неверный формат файла",
     "toast_no_permission": "У вас нет прав для просмотра этого файла",
-    "toast_cant_read_file": "Не удаётся прочитать файл"
+    "toast_cant_read_file": "Не удается прочитать файл"
 }

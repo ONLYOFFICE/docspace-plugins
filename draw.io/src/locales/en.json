@@ -10,7 +10,7 @@
         "dialog_header": "Import diagram",
         "input_placeholder_name": "New diagram",
         "input_text_name": "Name",
-        "input_placeholder_url": "Url for diagram",
+        "input_placeholder_url": "URL for diagram",
         "input_text_url": "URL"
     },
     "settings": {
