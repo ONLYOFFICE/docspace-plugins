@@ -54,6 +54,6 @@
     "@onlyoffice/docspace-plugin-sdk": "file:../docspace-plugin-sdk.tgz",
     "highlight.js": "^11.9.0",
     "i18n-js": "^4.5.1",
-    "markdown-it": "^14.0.0"
+    "markdown-it": "^14.1.1"
   }
 }

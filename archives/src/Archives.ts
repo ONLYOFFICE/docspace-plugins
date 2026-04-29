@@ -116,9 +116,7 @@ class Archives {
       if (!folder.current.security.Download) {
         return {
           actions: [Actions.showToast],
-          toastProps: [
-            { type: ToastType.error, title: i18n.t("toast_no_folder_download_permission") } as IToast,
-          ],
+          toastProps: [{ type: ToastType.error, title: i18n.t("toast_no_folder_download_permission") } as IToast],
         } as IPostMessageCallbackMessage;
       }
 
@@ -180,7 +178,11 @@ class Archives {
       (message.selectorProps!.props as TFilesSelector).footerCheckboxLabel = i18n.t("dialog.selector_checkbox_wrap");
       (message.selectorProps!.props as TFilesSelector).submitButtonLabel = i18n.t("dialog.selector_button_extract");
       message.selectorProps!.props.onSubmit = async (params: any) => {
-        let msg = await this.unzip(params.selectedItemId, content, params.isChecked ? i18n.t("default_folder_title") : undefined);
+        let msg = await this.unzip(
+          params.selectedItemId,
+          content,
+          params.isChecked ? i18n.t("default_folder_title") : undefined
+        );
 
         if (msg.actions?.includes(Actions.showToast) && msg.toastProps![0].type != ToastType.success) {
           return msg;
@@ -197,93 +199,126 @@ class Archives {
     return message;
   };
 
-  unzip = async (folderId: File | number | any, content?: FileTreeItem[], wrapperFolder?: string) => {
-    const createFolder = async (f: FileTreeItem): Promise<IMessage> => {
-      const folderRes = await fetch(`${this.apiURL}/files/folder/${folderId}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json;charset=utf-8",
-        },
-        body: JSON.stringify({
-          title: f.title,
-        }),
-      });
-
-      const fId = (await folderRes.json()).response.id;
-
-      return await this.unzip(fId, f.content as FileTreeItem[]);
-    };
-
-    if (!content) {
-      const file = await this.getFile(folderId);
+  unzip = async (targetFolder: File | number | any, fileContent?: FileTreeItem[], wrapperTitle?: string) => {
+    if (!fileContent) {
+      const file = await this.getFile(targetFolder);
 
       if (!file.security?.Download) {
         return {
           actions: [Actions.showToast],
-          toastProps: [{ type: ToastType.error, title: i18n.t("toast_no_unzip_permission") } as IToast],
+          toastProps: [{ type: ToastType.error, title: "You don't have permission to unzip this file" } as IToast],
         } as IMessage;
       }
 
-      folderId = file.folderId;
-      wrapperFolder = file.title.split(".").slice(0, -1).join(".");
-      content = await this.getContent(file.viewUrl);
+      targetFolder = file.folderId;
+      wrapperTitle = file.title.split(".").slice(0, -1).join(".");
+      fileContent = await this.getContent(file.viewUrl);
     }
 
-    const folder = await this.getFolder(folderId);
-    if (!folder.current.security.Create) {
-      return {
-        actions: [Actions.showToast],
-        toastProps: [
-          { type: ToastType.error, title: i18n.t("toast_cant_create") } as IToast,
-        ],
-      };
-    }
+    const problemFiles: string[] = [];
 
-    if (wrapperFolder) {
-      return await createFolder({ type: "folder", title: wrapperFolder, content: content! });
-    }
+    const unzipRecursive = async (
+      folderId: File | number | any,
+      content?: FileTreeItem[],
+      wrapperFolder?: string
+    ): Promise<null> => {
+      const promises: Promise<any>[] = [];
 
-    for (const f of content!) {
-      if (f.type === "file") {
-        const blob = new Blob([f.content as BlobPart]);
-        const file = new File([blob], `blob`, {
-          type: "",
-          lastModified: new Date().getTime(),
-        });
-
-        const formData = new FormData();
-        formData.append("file", file);
-
-        const sessionRes = await fetch(`${this.apiURL}/files/${folderId}/upload/create_session`, {
+      const createFolder = async (f: FileTreeItem) => {
+        const folderRes = await fetch(`${this.apiURL}/files/folder/${folderId}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json;charset=utf-8",
           },
           body: JSON.stringify({
-            createOn: new Date(),
-            fileName: f.title,
-            fileSize: file.size,
-            relativePath: "",
-            CreateNewIfExist: true,
+            title: f.title,
           }),
         });
 
-        const sessionData = (await sessionRes.json()).response.data;
+        const fId = (await folderRes.json()).response.id;
 
-        await (
-          await fetch(`${sessionData.location}`, {
-            method: "POST",
-            body: formData,
-          })
-        ).json();
-      } else {
-        await createFolder(f);
+        return unzipRecursive(fId, f.content as FileTreeItem[]);
+      };
+
+      if (wrapperFolder) {
+        return await createFolder({ type: "folder", title: wrapperFolder, content: content! });
       }
-    }
+
+      for (const f of content!) {
+        if (f.type === "file") {
+          const blob = new Blob([f.content as BlobPart]);
+          const file = new File([blob], `blob`, {
+            type: "",
+            lastModified: new Date().getTime(),
+          });
+
+          const formData = new FormData();
+          formData.append("file", file);
+
+          const session = fetch(`${this.apiURL}/files/${folderId}/upload/create_session`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json;charset=utf-8",
+            },
+            body: JSON.stringify({
+              createOn: new Date(),
+              fileName: f.title,
+              fileSize: file.size,
+              relativePath: "",
+              CreateNewIfExist: true,
+            }),
+          })
+            .then((res) => {
+              return res.json();
+            })
+            .then((json) => {
+              if (!json.response.data.location) {
+                Promise.reject(`No location for file: ${f.title}`);
+              }
+
+              return fetch(`${json.response.data.location}`, {
+                method: "POST",
+                body: formData,
+              });
+            })
+            .then((res) => {
+              return res.json();
+            })
+            .then((json) => {
+              if (!json.success) {
+                console.error(`File upload error\nFilename: ${f.title}\nError message: ${json.message}`);
+                problemFiles.push(f.title);
+              }
+            })
+            .catch((err) => {
+              console.error(err);
+            });
+
+          promises.push(session);
+        } else {
+          promises.push(createFolder(f));
+        }
+      }
+
+      await Promise.all(promises);
+      return null;
+    };
+
+    await unzipRecursive(targetFolder, fileContent, wrapperTitle);
 
     return {
       actions: [Actions.showToast],
-      toastProps: [{ type: ToastType.success, title: i18n.t("toast_unzip_success") } as IToast],
+      toastProps: [
+        problemFiles.length > 0
+          ? ({
+              type: ToastType.error,
+              title: `Some files were not unzipped: ${problemFiles.join(", ")}`,
+            } as IToast)
+          : ({
+              type: ToastType.success,
+              title: i18n.t("toast_unzip_success"),
+            } as IToast),
+      ],
     } as IMessage;
   };
 
@@ -303,9 +338,7 @@ class Archives {
     if (!destination.current.security.Create) {
       return {
         actions: [Actions.showToast],
-        toastProps: [
-          { type: ToastType.error, title: i18n.t("toast_cant_create") } as IToast,
-        ],
+        toastProps: [{ type: ToastType.error, title: i18n.t("toast_cant_create") } as IToast],
       };
     }
 
