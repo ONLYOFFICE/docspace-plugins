@@ -16,7 +16,8 @@
   "main": "index.ts",
   "private": true,
   "scopes": [
-    "ContextMenu"
+    "ContextMenu",
+    "File"
   ],
   "scripts": {
     "build": "webpack && npx build-docspace-plugin",

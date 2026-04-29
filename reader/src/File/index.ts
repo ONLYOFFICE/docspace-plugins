@@ -7,7 +7,9 @@ import {
 } from "@onlyoffice/docspace-plugin-sdk";
 import { createReaderModal } from "../Modal";
 
-const supportedExtensions = ["epub", "fb2", "zip"];
+// ZIP files are intentionally excluded here - they open via context menu only.
+// Clicking a ZIP directly would be ambiguous because not all ZIPs are books.
+const supportedExtensions = ["epub", "fb2"];
 
 const onClick = (item: File): IMessage => {
   const modal = createReaderModal(item.id);

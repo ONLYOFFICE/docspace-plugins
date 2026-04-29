@@ -41,9 +41,26 @@ async function loadFb2(blob: Blob): Promise<Fb2Book> {
   };
 
   const file = new File([blob], "book.fb2", { type: "text/xml" });
-  const fb2Book = await initFb2File(file);
+  let fb2Book: any;
+  let rawChapters: Array<{ title: string; html: string }> = [];
 
-  const spine = fb2Book.getSpine();
+  try {
+    fb2Book = await initFb2File(file);
+    const spine = fb2Book.getSpine();
+
+    // loadChapter is where blob URLs are created - keep patch active until all chapters are loaded
+    rawChapters = spine.map((item: any) => {
+      const chapter = fb2Book.loadChapter(item.id);
+      return {
+        title: item.title || "Chapter",
+        html: chapter?.html || "",
+      };
+    });
+  } finally {
+    // Always restore, even if initFb2File or loadChapter throws
+    (window as any).URL.createObjectURL = original;
+  }
+
   const metadata = fb2Book.getMetadata();
   const title = metadata?.title || "Untitled";
 
@@ -65,18 +82,6 @@ async function loadFb2(blob: Blob): Promise<Fb2Book> {
       };
     }
   }
-
-  // loadChapter is where blob URLs are created - keep patch active until all chapters are loaded
-  const rawChapters = spine.map((item: any) => {
-    const chapter = fb2Book.loadChapter(item.id);
-    return {
-      title: item.title || "Chapter",
-      html: chapter?.html || "",
-    };
-  });
-
-  // Restore original now that all chapters are loaded
-  (window as any).URL.createObjectURL = original;
 
   // Convert all captured blobs to data URIs
   const dataUris: Record<string, string> = {};
