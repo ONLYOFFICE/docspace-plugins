@@ -128,25 +128,9 @@ class Archives {
     return message;
   };
 
-  unzip = async (folderId: File | number | any, content?: FileTreeItem[], wrapperFolder?: string) => {
-    const createFolder = async (f: FileTreeItem): Promise<IMessage> => {
-      const folderRes = await fetch(`${this.apiURL}/files/folder/${folderId}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json;charset=utf-8",
-        },
-        body: JSON.stringify({
-          title: f.title,
-        }),
-      });
-
-      const fId = (await folderRes.json()).response.id;
-
-      return await this.unzip(fId, f.content as FileTreeItem[]);
-    };
-
-    if (!content) {
-      const file = await this.getFile(folderId);
+  unzip = async (targetFolder: File | number | any, fileContent?: FileTreeItem[], wrapperTitle?: string) => {
+    if (!fileContent) {
+      const file = await this.getFile(targetFolder);
 
       if (!file.security?.Download) {
         return {
@@ -155,56 +139,115 @@ class Archives {
         } as IMessage;
       }
 
-      folderId = file.folderId;
-      wrapperFolder = file.title.split(".").slice(0, -1).join(".");
-      content = await this.getContent(file.viewUrl);
+      targetFolder = file.folderId;
+      wrapperTitle = file.title.split(".").slice(0, -1).join(".");
+      fileContent = await this.getContent(file.viewUrl);
     }
 
-    if (wrapperFolder) {
-      return await createFolder({ type: "folder", title: wrapperFolder, content: content! });
-    }
+    const problemFiles: string[] = [];
 
-    for (const f of content!) {
-      if (f.type === "file") {
-        const blob = new Blob([f.content as Uint8Array]);
-        const file = new File([blob], `blob`, {
-          type: "",
-          lastModified: new Date().getTime(),
-        });
+    const unzipRecursive = async (
+      folderId: File | number | any,
+      content?: FileTreeItem[],
+      wrapperFolder?: string
+    ): Promise<null> => {
+      const promises: Promise<any>[] = [];
 
-        const formData = new FormData();
-        formData.append("file", file);
-
-        const sessionRes = await fetch(`${this.apiURL}/files/${folderId}/upload/create_session`, {
+      const createFolder = async (f: FileTreeItem) => {
+        const folderRes = await fetch(`${this.apiURL}/files/folder/${folderId}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json;charset=utf-8",
           },
           body: JSON.stringify({
-            createOn: new Date(),
-            fileName: f.title,
-            fileSize: file.size,
-            relativePath: "",
-            CreateNewIfExist: true,
+            title: f.title,
           }),
         });
 
-        const sessionData = (await sessionRes.json()).response.data;
+        const fId = (await folderRes.json()).response.id;
 
-        await (
-          await fetch(`${sessionData.location}`, {
-            method: "POST",
-            body: formData,
-          })
-        ).json();
-      } else {
-        await createFolder(f);
+        return unzipRecursive(fId, f.content as FileTreeItem[]);
+      };
+
+      if (wrapperFolder) {
+        return await createFolder({ type: "folder", title: wrapperFolder, content: content! });
       }
-    }
+
+      for (const f of content!) {
+        if (f.type === "file") {
+          const blob = new Blob([f.content as Uint8Array]);
+          const file = new File([blob], `blob`, {
+            type: "",
+            lastModified: new Date().getTime(),
+          });
+
+          const formData = new FormData();
+          formData.append("file", file);
+
+          const session = fetch(`${this.apiURL}/files/${folderId}/upload/create_session`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json;charset=utf-8",
+            },
+            body: JSON.stringify({
+              createOn: new Date(),
+              fileName: f.title,
+              fileSize: file.size,
+              relativePath: "",
+              CreateNewIfExist: true,
+            }),
+          })
+            .then((res) => {
+              return res.json();
+            })
+            .then((json) => {
+              if (!json.response.data.location) {
+                Promise.reject(`No location for file: ${f.title}`);
+              }
+
+              return fetch(`${json.response.data.location}`, {
+                method: "POST",
+                body: formData,
+              });
+            })
+            .then((res) => {
+              return res.json();
+            })
+            .then((json) => {
+              if (!json.success) {
+                console.error(`File upload error\nFilename: ${f.title}\nError message: ${json.message}`);
+                problemFiles.push(f.title);
+              }
+            })
+            .catch((err) => {
+              console.error(err);
+            });
+
+          promises.push(session);
+        } else {
+          promises.push(createFolder(f));
+        }
+      }
+
+      await Promise.all(promises);
+      return null;
+    };
+
+    await unzipRecursive(targetFolder, fileContent, wrapperTitle);
 
     return {
       actions: [Actions.showToast],
-      toastProps: [{ type: ToastType.success, title: "File unziped successfully" } as IToast],
+      toastProps: [
+        problemFiles.length > 0
+          ? ({
+              type: ToastType.error,
+              title: `Some files were not unzipped: ${problemFiles.join(", ")}`,
+            } as IToast)
+          : ({
+              type: ToastType.success,
+              title: "File unziped successfully",
+            } as IToast),
+      ],
     } as IMessage;
   };
 
