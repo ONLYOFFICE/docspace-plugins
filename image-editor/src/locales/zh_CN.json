@@ -1,7 +1,7 @@
 {
     "dialog_button_save_and_exit": "保存并退出",
     "context_menu_edit_image": "编辑图片",
-    "toast_no_permissions": "您没有查看此文件的权限",
+    "toast_no_permissions": "您没有权限查看此文件",
     "toast_file_saved": "文件保存成功",
     "toast_file_not_saved": "保存文件失败"
 }

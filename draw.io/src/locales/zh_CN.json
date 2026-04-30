@@ -17,14 +17,14 @@
         "toast_data_saved": "数据已保存",
         "button_save": "保存",
         "text_language": "语言",
-        "text_libraries": "库",
-        "text_offline_description": "当\"离线模式\"激活时，将禁用所有远程操作和功能以进行保护",
+        "text_libraries": "资源库",
+        "text_offline_description": "启用“离线模式”后，将禁用所有远程操作和功能以确保安全",
         "text_offline": "离线模式"
     },
     "context_menu_open_diagram": "打开图表",
     "file_type_name": "图表",
     "toast_file_not_created": "文件 \"${title}.drawio\" 未被创建：${message}",
     "toast_wrong_file_format": "文件格式错误",
-    "toast_no_permission": "您没有查看此文件的权限",
+    "toast_no_permission": "您没有权限查看此文件",
     "toast_cant_read_file": "无法读取此文件"
 }

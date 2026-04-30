@@ -29,7 +29,7 @@
     },
     "context_menu_edit": "使用 Codemirror 编辑文件",
     "file_type_name": "代码",
-    "toast_no_permission": "您没有查看此文件的权限",
+    "toast_no_permission": "您没有权限查看此文件",
     "toast_cant_read_file": "无法读取此文件",
     "toast_file_saved": "文件已保存",
     "toast_file_not_saved": "保存文件失败"
