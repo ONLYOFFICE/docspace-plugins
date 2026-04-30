@@ -8,6 +8,7 @@ This repository comprises plugins which allow extending the functionality of [ON
 * [Markdown](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/markdown)
 * [ImageEditor](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/image-editor)
 * [PDFConverter](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/pdf-converter)
+* [Reader](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/reader)
 * [SpeechToText](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/speech-to-text)
 * [ZIP Archives](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/archives)
 
