@@ -4,17 +4,17 @@
         "group_unzip": "解凍する",
         "choose_location": "場所を選択",
         "unzip_here": "ここに解凍",
-        "group_zip": "アーカイブする",
-        "zip_folder": "ここにアーカイブ",
-        "zip_selected": "選択したアイテムをアーカイブ"
+        "group_zip": "圧縮する",
+        "zip_folder": "ここに圧縮",
+        "zip_selected": "選択したアイテムを圧縮"
     },
     "dialog": {
         "header": "アーカイブビューア",
         "button_extract": "アーカイブを展開",
         "selector_header_unzip": "解凍先",
-        "selector_header_zip": "アーカイブ先",
+        "selector_header_zip": "圧縮先",
         "selector_header_extract": "展開先",
-        "selector_button_archive": "アーカイブ",
+        "selector_button_archive": "圧縮",
         "selector_button_unzip": "解凍",
         "selector_button_extract": "展開",
         "selector_checkbox_wrap": "新しいフォルダーに入れる",
