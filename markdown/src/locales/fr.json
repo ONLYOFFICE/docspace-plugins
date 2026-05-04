@@ -19,7 +19,7 @@
         "button_preview_resize": "Redimensionner"
     },
     "unsaved": {
-        "text": "Êtes-vous sûr de vouloir fermer ce fichier sans enregistrer ?",
+        "text": "Voulez-vous fermer ce fichier sans enregistrer ?",
         "checkbox": "Ne plus afficher ce message",
         "button_save_and_close": "Enregistrer et fermer",
         "button_close_without_saving": "Fermer sans enregistrer",
