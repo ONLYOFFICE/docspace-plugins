@@ -101,7 +101,6 @@ export const mdArea: ITextArea = {
 const areaBox: IBox = {
   widthProp: "100%",
   heightProp: "100%",
-  className: "markdown-area",
   children: [
     {
       component: Components.textArea,
