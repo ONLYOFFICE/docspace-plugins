@@ -421,6 +421,7 @@ class Markdownit {
     } else {
       markdownResize.label = previewResize.label = "Resize";
       markdownResize.onClick = () => {
+        resizeTextArea();
         if (this.fulscreen) {
           markdownSide.widthProp = "50%";
           delete previewSide.displayProp;
@@ -444,7 +445,10 @@ class Markdownit {
             contextProps: [
               { name: "markdownSide", props: markdownSide },
               { name: "previewSide", props: previewSide },
-              { name: "editorIntend", props: { ...intendBox, displayProp: "none" } },
+              {
+                name: "editorIntend",
+                props: { ...intendBox, displayProp: "none" },
+              },
             ],
           };
           this.fulscreen = true;
@@ -475,7 +479,10 @@ class Markdownit {
             contextProps: [
               { name: "markdownSide", props: markdownSide },
               { name: "previewSide", props: previewSide },
-              { name: "editorIntend", props: { ...intendBox, displayProp: "none" } },
+              {
+                name: "editorIntend",
+                props: { ...intendBox, displayProp: "none" },
+              },
             ],
           };
           this.fulscreen = true;
@@ -588,6 +595,7 @@ class Markdownit {
     markdownitModalDialogProps.dialogBody = editorBody;
     markdownitModalDialogProps.onClose = onClose;
     markdownitModalDialogProps.onLoad = async () => {
+      resizeTextArea();
       if (!this.mobile) insertMD(data);
 
       return {
@@ -604,6 +612,7 @@ class Markdownit {
       window.addEventListener(
         "orientationchange",
         async function () {
+          resizeTextArea();
           const iframe = window.parent.document.getElementById(
             "md-iframe"
           ) as HTMLIFrameElement;
@@ -731,6 +740,16 @@ function setSizes(editor: boolean, mobile: boolean) {
     : mobile
     ? "calc(100% - 42px)"
     : "100%";
+}
+// for backward compatibility with old versions docspace
+function resizeTextArea() {
+  const area = window.parent.document.getElementsByName(
+    "md-plugin-textarea"
+  )[0] as HTMLIFrameElement;
+  if (area)
+    // @ts-ignore
+    area.parentElement?.parentElement?.parentElement?.parentElement?.parentElement?.style.maxWidth =
+      "100%";
 }
 
 function isMobile() {
