@@ -1,6 +1,6 @@
 {
 	"name": "book-reader",
-	"version": "1.0.11",
+	"version": "1.0.0",
 	"description": "This plugin enables you to open files in a dedicated reading viewer. Supports .epub, .fb2, .fb2.zip, and .zip formats.",
 	"descriptionLocale": {
 		"de": "Dieses Plugin ermöglicht das Öffnen von Dateien in einem dedizierten Lesebetrachter. Unterstützt .epub, .fb2, .fb2.zip und .zip-Formate.",
