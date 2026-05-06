@@ -1,9 +1,9 @@
 {
-  "name": "convert-to-markdown",
+  "name": "book-reader",
   "version": "1.0.0",
-  "description": "Convert DOCX, TXT and HTML files to Markdown format directly in DocSpace",
+  "description": "This plugin enables you to open files in a dedicated reading viewer.",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/convert-to-markdown",
+  "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/reader",
   "author": "ONLYOFFICE",
   "maintainers": [
     "Ascensio System SIA <integration@onlyoffice.com> (https://www.onlyoffice.com)"
@@ -11,20 +11,21 @@
   "bugs": {
     "email": "support@onlyoffice.com"
   },
-  "pluginName": "MarkdownConverter",
-  "logo": "icon-md.svg",
+  "pluginName": "BookReader",
+  "logo": "48x48.png",
   "main": "index.ts",
   "private": true,
   "scopes": [
-    "API",
-    "ContextMenu"
+    "ContextMenu",
+    "File"
   ],
   "scripts": {
     "build": "webpack && npx build-docspace-plugin",
     "format": "npx prettier --write ."
   },
   "devDependencies": {
-    "@types/turndown": "^5.0.6",
+    "@types/jszip": "^3.4.1",
+    "copy-webpack-plugin": "^14.0.0",
     "prettier": "2.8.6",
     "ts-loader": "^9.3.1",
     "typescript": "^4.7.4",
@@ -32,10 +33,8 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
+    "@lingo-reader/fb2-parser": "^0.4.5",
     "@onlyoffice/docspace-plugin-sdk": "file:../onlyoffice-docspace-plugin-sdk-2.1.0.tgz",
-    "@truto/turndown-plugin-gfm": "^1.0.2",
-    "mammoth": "^1.11.0",
-    "turndown": "^7.2.2",
-    "turndown-plugin-gfm": "^1.0.2"
+    "jszip": "^3.10.1"
   }
 }
