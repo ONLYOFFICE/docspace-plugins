@@ -13,7 +13,7 @@
         "text_api_token": "Token de API"
     },
     "context_menu_convert_to_pdf": "Convertir a PDF",
-    "toast_file_created": "El archivo %{name} fue creado",
-    "toast_file_not_created": "El archivo %{name} no fue creado: %{message}",
+    "toast_file_created": "El archivo %{name} se ha creado",
+    "toast_file_not_created": "El archivo %{name} no se ha creado: %{message}",
     "toast_wrong_api_token": "Token de API incorrecto"
 }

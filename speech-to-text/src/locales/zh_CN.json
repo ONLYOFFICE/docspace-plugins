@@ -2,7 +2,7 @@
     "settings": {
         "toast_token_is_saved": "令牌已保存",
         "button_save": "保存",
-        "text_description": "要生成 API 令牌，请访问 https://www.assemblyai.com \n\n 启用 API 令牌后，该插件将对当前 DocSpace 的所有用户可用。",
+        "text_description": "要生成 API 令牌，请访问 https://www.assemblyai.com \n\n 启用 API 令牌后，该插件将对当前协作空间的所有用户可用。",
         "text_api_token": "API 令牌"
     },
     "toast_api_token_is_missing": "API 令牌缺失",

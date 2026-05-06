@@ -6,7 +6,7 @@
     "open_from_url": {
         "button_accept": "作成",
         "button_cancel": "キャンセル",
-        "description_text": "公開リンクアクセスが開いていることを確認してください",
+        "description_text": "公開リンクのアクセスが可能になっていることを確認してください",
         "dialog_header": "ダイアグラムをインポート",
         "input_placeholder_name": "新しいダイアグラム",
         "input_text_name": "名前",

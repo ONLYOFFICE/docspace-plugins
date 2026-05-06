@@ -6,7 +6,7 @@
     "open_from_url": {
         "button_accept": "Erstellen",
         "button_cancel": "Abbrechen",
-        "description_text": "Stellen Sie sicher, dass der öffentliche Linkzugang offen ist",
+        "description_text": "Stellen Sie sicher, dass der öffentliche Linkzugriff geöffnet ist",
         "dialog_header": "Diagramm importieren",
         "input_placeholder_name": "Neues Diagramm",
         "input_text_name": "Name",

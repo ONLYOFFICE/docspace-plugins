@@ -11,9 +11,9 @@
     "dialog": {
         "header": "Archiv-Viewer",
         "button_extract": "Archiv extrahieren",
-        "selector_header_unzip": "Entpacken nach",
-        "selector_header_zip": "Archivieren nach",
-        "selector_header_extract": "Extrahieren nach",
+        "selector_header_unzip": "Entpacken zu",
+        "selector_header_zip": "Archivieren zu",
+        "selector_header_extract": "Extrahieren zu",
         "selector_button_archive": "Archivieren",
         "selector_button_unzip": "Entpacken",
         "selector_button_extract": "Extrahieren",
