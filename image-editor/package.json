@@ -44,6 +44,6 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "file:../onlyoffice-docspace-plugin-sdk-2.1.0.tgz"
+    "@onlyoffice/docspace-plugin-sdk": "^2.0.0"
   }
 }
