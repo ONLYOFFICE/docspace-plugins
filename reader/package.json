@@ -1,40 +1,50 @@
 {
-  "name": "book-reader",
-  "version": "1.0.0",
-  "description": "This plugin enables you to open files in a dedicated reading viewer.",
-  "license": "Apache-2.0",
-  "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/reader",
-  "author": "ONLYOFFICE",
-  "maintainers": [
-    "Ascensio System SIA <integration@onlyoffice.com> (https://www.onlyoffice.com)"
-  ],
-  "bugs": {
-    "email": "support@onlyoffice.com"
-  },
-  "pluginName": "BookReader",
-  "logo": "48x48.png",
-  "main": "index.ts",
-  "private": true,
-  "scopes": [
-    "ContextMenu",
-    "File"
-  ],
-  "scripts": {
-    "build": "webpack && npx build-docspace-plugin",
-    "format": "npx prettier --write ."
-  },
-  "devDependencies": {
-    "@types/jszip": "^3.4.1",
-    "copy-webpack-plugin": "^14.0.0",
-    "prettier": "2.8.6",
-    "ts-loader": "^9.3.1",
-    "typescript": "^4.7.4",
-    "webpack": "^5.105.0",
-    "webpack-cli": "^4.10.0"
-  },
-  "dependencies": {
-    "@lingo-reader/fb2-parser": "^0.4.5",
-    "@onlyoffice/docspace-plugin-sdk": "file:../onlyoffice-docspace-plugin-sdk-2.1.0.tgz",
-    "jszip": "^3.10.1"
-  }
+	"name": "book-reader",
+	"version": "1.0.11",
+	"description": "This plugin enables you to open files in a dedicated reading viewer. Supports .epub, .fb2, .fb2.zip, and .zip formats.",
+	"descriptionLocale": {
+		"de": "Dieses Plugin ermöglicht das Öffnen von Dateien in einem dedizierten Lesebetrachter. Unterstützt .epub, .fb2, .fb2.zip und .zip-Formate.",
+		"es": "Este plugin permite abrir archivos en un visor de lectura dedicado. Compatible con los formatos .epub, .fb2, .fb2.zip y .zip.",
+		"fr": "Ce plugin permet d'ouvrir des fichiers dans une visionneuse de lecture dédiée. Prend en charge les formats .epub, .fb2, .fb2.zip et .zip.",
+		"it": "Questo plugin consente di aprire file in un visualizzatore di lettura dedicato. Supporta i formati .epub, .fb2, .fb2.zip e .zip.",
+		"ja-JP": "専用の閲覧ビューアでファイルを開くことができるプラグインです。.epub、.fb2、.fb2.zip、.zip 形式に対応しています。",
+		"pt-BR": "Este plugin permite abrir arquivos em um visualizador de leitura dedicado. Suporta os formatos .epub, .fb2, .fb2.zip e .zip.",
+		"ru": "Плагин позволяет открывать файлы в специальном средстве просмотра. Поддерживает форматы .epub, .fb2, .fb2.zip и .zip.",
+		"zh-CN": "此插件可在专用阅读查看器中打开文件，支持 .epub、.fb2、.fb2.zip 和 .zip 格式。"
+	},
+	"license": "Apache-2.0",
+	"homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/reader",
+	"author": "ONLYOFFICE",
+	"maintainers": [
+		"Ascensio System SIA <integration@onlyoffice.com> (https://www.onlyoffice.com)"
+	],
+	"bugs": {
+		"email": "support@onlyoffice.com"
+	},
+	"pluginName": "BookReader",
+	"logo": "48x48.png",
+	"main": "index.ts",
+	"private": true,
+	"scopes": [
+		"ContextMenu",
+		"File"
+	],
+	"scripts": {
+		"build": "webpack && npx build-docspace-plugin",
+		"format": "npx prettier --write ."
+	},
+	"devDependencies": {
+		"@types/jszip": "^3.4.1",
+		"copy-webpack-plugin": "^14.0.0",
+		"prettier": "2.8.6",
+		"ts-loader": "^9.3.1",
+		"typescript": "^4.7.4",
+		"webpack": "^5.105.0",
+		"webpack-cli": "^4.10.0"
+	},
+	"dependencies": {
+		"@lingo-reader/fb2-parser": "^0.4.5",
+		"@onlyoffice/docspace-plugin-sdk": "file:../onlyoffice-docspace-plugin-sdk-2.1.0.tgz",
+		"jszip": "^3.10.1"
+	}
 }

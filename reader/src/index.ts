@@ -1,76 +1,86 @@
 import {
-  IPlugin,
-  PluginStatus,
-  IContextMenuPlugin,
-  IContextMenuItem,
-  IFilePlugin,
-  IFileItem,
+	IPlugin,
+	PluginStatus,
+	PluginLocale,
+	IContextMenuPlugin,
+	IContextMenuItem,
+	IFilePlugin,
+	IFileItem
 } from "@onlyoffice/docspace-plugin-sdk";
 
 import { contextMenuItem } from "./ContextMenu";
 import { readerFileItems } from "./File";
+import { i18n, setLocale } from "./locales";
 
 class BookReader implements IPlugin, IContextMenuPlugin, IFilePlugin {
-  status: PluginStatus = PluginStatus.active;
-  contextMenuItems: Map<string, IContextMenuItem> = new Map();
-  fileItems: Map<string, IFileItem> = new Map();
+	status: PluginStatus = PluginStatus.active;
+	contextMenuItems: Map<string, IContextMenuItem> = new Map();
+	fileItems: Map<string, IFileItem> = new Map();
 
-  onLoadCallback = async () => {};
+	setLanguage = (language: PluginLocale) => {
+		setLocale(language);
+	};
 
-  updateStatus = (status: PluginStatus) => {
-    this.status = status;
-  };
+	getLanguage = () => {
+		return i18n.locale as PluginLocale;
+	};
 
-  getStatus = () => {
-    return this.status;
-  };
+	onLoadCallback = async () => {};
 
-  setOnLoadCallback = (callback: () => Promise<void>) => {
-    this.onLoadCallback = callback;
-  };
+	updateStatus = (status: PluginStatus) => {
+		this.status = status;
+	};
 
-  addContextMenuItem = (item: IContextMenuItem): void => {
-    this.contextMenuItems.set(item.key, item);
-  };
+	getStatus = () => {
+		return this.status;
+	};
 
-  getContextMenuItems = (): Map<string, IContextMenuItem> => {
-    return this.contextMenuItems;
-  };
+	setOnLoadCallback = (callback: () => Promise<void>) => {
+		this.onLoadCallback = callback;
+	};
 
-  getContextMenuItemsKeys = (): string[] => {
-    const keys = Array.from(this.contextMenuItems).map(([key, item]) => key);
-    return keys;
-  };
+	addContextMenuItem = (item: IContextMenuItem): void => {
+		this.contextMenuItems.set(item.key, item);
+	};
 
-  updateContextMenuItem = (item: IContextMenuItem): void => {
-    this.contextMenuItems.set(item.key, item);
-  };
+	getContextMenuItems = (): Map<string, IContextMenuItem> => {
+		return this.contextMenuItems;
+	};
 
-  getFileItems = (): Map<string, IFileItem> => {
-    return this.fileItems;
-  };
+	getContextMenuItemsKeys = (): string[] => {
+		const keys = Array.from(this.contextMenuItems).map(([key]) => key);
+		return keys;
+	};
 
-  addFileItem = (item: IFileItem): void => {
-    this.fileItems.set(item.extension, item);
-  };
+	updateContextMenuItem = (item: IContextMenuItem): void => {
+		this.contextMenuItems.set(item.key, item);
+	};
 
-  updateFileItem = (item: IFileItem): void => {
-    this.fileItems.set(item.extension, item);
-  };
+	getFileItems = (): Map<string, IFileItem> => {
+		return this.fileItems;
+	};
+
+	addFileItem = (item: IFileItem): void => {
+		this.fileItems.set(item.extension, item);
+	};
+
+	updateFileItem = (item: IFileItem): void => {
+		this.fileItems.set(item.extension, item);
+	};
 }
 
 const plugin = new BookReader();
 
 declare global {
-  interface Window {
-    Plugins: any;
-  }
+	interface Window {
+		Plugins: any;
+	}
 }
 
 plugin.addContextMenuItem(contextMenuItem);
 
 for (const item of readerFileItems) {
-  plugin.addFileItem(item);
+	plugin.addFileItem(item);
 }
 
 window.Plugins.BookReader = plugin || {};
