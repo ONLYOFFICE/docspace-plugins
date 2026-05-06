@@ -34,6 +34,9 @@
   },
   "devDependencies": {
     "@types/markdown-it": "^13.0.7",
+    "css-loader": "^6.8.1",
+    "css-minimizer-webpack-plugin": "^7.0.2",
+    "mini-css-extract-plugin": "^2.7.6",
     "prettier": "2.8.6",
     "ts-loader": "^9.3.1",
     "typescript": "^4.7.4",
@@ -44,5 +47,6 @@
     "@onlyoffice/docspace-plugin-sdk": "^2.0.0",
     "highlight.js": "^11.9.0",
     "markdown-it": "^14.1.1"
-  }
+  },
+  "packageManager": "yarn@4.6.0+sha224.acd0786f07ffc6c933940eb65fc1d627131ddf5455bddcc295dc90fd"
 }
