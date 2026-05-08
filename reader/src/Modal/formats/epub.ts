@@ -39,22 +39,31 @@ export async function loadEpub(arrayBuffer: ArrayBuffer): Promise<EpubBook> {
   const opfText = await zip.file(opfPath)?.async("text");
   if (!opfText) throw new Error("Could not read OPF: " + opfPath);
 
-  const titleMatch = opfText.match(/<dc:title[^>]*>([^<]+)<\/dc:title>/i);
-  const title = titleMatch ? titleMatch[1] : "Untitled";
+  const parser = new DOMParser();
+  const opfDoc = parser.parseFromString(opfText, "application/xml");
+
+  const titleEl = opfDoc.getElementsByTagNameNS("*", "title")[0];
+  const title = titleEl?.textContent?.trim() || "Untitled";
 
   const manifest: Record<string, string> = {};
-  const itemRegex = /<item\s+id="([^"]+)"\s+href="([^"]+)"/g;
-  let m;
-  while ((m = itemRegex.exec(opfText)) !== null) {
-    manifest[m[1]] = m[2];
+  const itemEls = opfDoc.getElementsByTagNameNS("*", "item");
+  for (let i = 0; i < itemEls.length; i++) {
+    const id = itemEls[i].getAttribute("id");
+    const href = itemEls[i].getAttribute("href");
+    if (id && href) manifest[id] = href;
   }
 
   const spine: Array<{ id: string; href: string }> = [];
-  const spineRegex = /<itemref\s+idref="([^"]+)"/g;
-  while ((m = spineRegex.exec(opfText)) !== null) {
-    const relHref = manifest[m[1]];
+  const itemrefEls = opfDoc.getElementsByTagNameNS("*", "itemref");
+  for (let i = 0; i < itemrefEls.length; i++) {
+    const idref = itemrefEls[i].getAttribute("idref");
+    if (!idref) continue;
+    const relHref = manifest[idref];
     if (relHref)
-      spine.push({ id: m[1], href: opfDir ? `${opfDir}/${relHref}` : relHref });
+      spine.push({
+        id: idref,
+        href: opfDir ? `${opfDir}/${relHref}` : relHref,
+      });
   }
 
   const assets: Record<string, string> = {};
@@ -146,33 +155,34 @@ export function extractPage(epub: EpubBook, index: number): string {
   let sm: RegExpExecArray | null;
   while ((sm = styleRegex.exec(inlined)) !== null) existingStyles.push(sm[1]);
 
-  return `<style>${collectedCss.join("\n")}\n${existingStyles.join(
-    "\n",
-  )}</style>${bodyContent}`;
+  const rawCss = collectedCss.join("\n") + "\n" + existingStyles.join("\n");
+  const scopedCss = rawCss
+    .replace(/\bhtml\b/g, "#spread-container")
+    .replace(/\bbody\b/g, "#spread-container")
+    .replace(/@page[^{]*\{[^}]*\}/g, "")
+    .replace(/@font-face/g, "@font-face");
+
+  return `<style>${scopedCss}</style>${bodyContent}`;
 }
 
 export function renderEpubChapter(
   epub: EpubBook,
   index: number,
   scrollTop: number = 0,
-  onScroll: string = "",
 ): string {
   const total = epub.spine.length;
   const content = extractPage(epub, index);
-
-  const prevIndex = index - 1;
-  const nextIndex = index + 1;
 
   return generateSpreadHTML({
     content,
     currentPage: index + 1,
     totalPages: total,
-    onPrevious: index > 0 ? `__epubGoTo(${prevIndex})` : "",
-    onNext: index < total - 1 ? `__epubGoTo(${nextIndex})` : "",
     hasNext: index < total - 1,
     hasPrevious: index > 0,
     scrollTop,
-    onScroll,
+    onScroll: "__epubOnScroll",
+    onPrevious: index > 0 ? `__epubGoTo(${index - 1})` : "",
+    onNext: index < total - 1 ? `__epubGoTo(${index + 1})` : "",
   });
 }
 
@@ -207,12 +217,7 @@ export async function handleEpub(fileInfo: any): Promise<any> {
       currentScrollTop,
     );
 
-    const html = renderEpubChapter(
-      epub,
-      currentIndex,
-      scrollTop,
-      "__epubOnScroll",
-    );
+    const html = renderEpubChapter(epub, currentIndex, scrollTop);
     writeToIframe("epub-reader-frame", html, (iframeWin) => {
       (iframeWin as any).__epubGoTo = (idx: number) => goTo(idx, 0);
       (iframeWin as any).__epubOnScroll = (st: number) => {
@@ -229,7 +234,8 @@ export async function handleEpub(fileInfo: any): Promise<any> {
   };
 
   const body = makeIframeBody("epub-reader-frame");
-  setTimeout(() => goTo(currentIndex, currentScrollTop), 200);
+
+  setTimeout(() => goTo(currentIndex, currentScrollTop), 50);
 
   return { newDialogHeader: epub.title || fileInfo.title, newDialogBody: body };
 }
