@@ -3,7 +3,7 @@
   "nameLocale": {
     "en-US": "url"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "ONLYOFFICE",
   "main": "index.ts",
   "private": true,
@@ -38,6 +38,6 @@
   },
   "pluginName": "Url",
   "license": "",
-  "logo": "logo.png",
+  "logo": "logo_48x48.svg",
   "homepage": ""
 }

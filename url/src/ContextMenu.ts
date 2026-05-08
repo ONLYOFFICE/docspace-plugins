@@ -29,7 +29,7 @@ import urlPlugin from "./Url";
 export const urlContextMenuItem: IContextMenuItem = {
   key: "url",
   label: "Edit Url",
-  icon: "url.svg",
+  icon: "logo_16x16.svg",
   fileExt: [".url"],
   fileType: [FilesType.file],
   itemSecurity: [FilesSecurity.Edit, FilesSecurity.Download],
