@@ -21,7 +21,7 @@ import { urlDialog } from "./Dialog";
 export const urlMainButtonItem: IMainButtonItem = {
   key: "url-main-button-item",
   label: "New URL",
-  icon: "url.svg",
+  icon: "logo_16x16.svg",
   onClick: (id: number) => {
     urlPlugin.setCurrentFolderId(id);
 
