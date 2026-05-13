@@ -219,7 +219,7 @@ export const urlDialog: (edit?: boolean, url?: string, title?: string) => IModal
   };
 
   const dialog: IModalDialog = {
-    dialogHeader: "Create new URL",
+    dialogHeader: edit ? "Edit URL" : "Create new URL",
     displayType: ModalDisplayType.modal,
     dialogBody: {
       children: [

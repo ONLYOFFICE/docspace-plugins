@@ -32,7 +32,7 @@
     "@onlyoffice/docspace-plugin-sdk": "^2.0.0",
     "i18n-js": "^4.5.1"
   },
-  "description": "",
+  "description": "The plugin allows creating, editing, and opening URL files with external links directly from the file list",
   "descriptionLocale": {
     "en-US": ""
   },

@@ -20,8 +20,8 @@ import urlPlugin from "./Url";
 export const urlFileItem: IFileItem = {
   extension: ".url",
   fileTypeName: "Link",
-  fileRowIcon: "url.svg",
-  fileTileIcon: "url.svg",
+  fileRowIcon: "logo_32x32.svg",
+  fileTileIcon: "logo_32x32.svg",
   devices: [Devices.desktop, Devices.mobile, Devices.tablet],
   onClick: (id: File) => urlPlugin.openUrl(id),
 };

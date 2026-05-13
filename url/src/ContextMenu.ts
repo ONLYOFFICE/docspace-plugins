@@ -52,7 +52,9 @@ export const urlContextMenuItem: IContextMenuItem = {
     const url = file.data
       .split("\n")
       .filter((line) => line.startsWith("URL="))[0]
-      .split("=")[1];
+      .split("=")
+      .slice(1)
+      .join("=");
 
     return {
       actions: [Actions.showModal],
