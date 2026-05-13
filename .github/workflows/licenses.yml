@@ -13,21 +13,21 @@ jobs:
     outputs:
       matrix: ${{ steps.matrix.outputs.plugins }}
     steps:
-    - uses: actions/checkout@v4
-    - name: make matrix
-      id: matrix
-      run: |
-        PLUGINS=()
-        for d in $(ls -d */); do
-          if [[ -f ${d}/yarn.lock || -f ${d}/package.json ]]; then
-            PLUGINS+=($(basename ${d}))
-          fi
-        done
-        echo "plugins for build is: "
-        echo "${PLUGINS[@]}"
+      - uses: actions/checkout@v4
+      - name: make matrix
+        id: matrix
+        run: |
+          PLUGINS=()
+          for d in $(ls -d */); do
+            if [[ -f ${d}/yarn.lock || -f ${d}/package.json ]]; then
+              PLUGINS+=($(basename ${d}))
+            fi
+          done
+          echo "plugins for build is: "
+          echo "${PLUGINS[@]}"
 
-        # Set new matrix for build job
-        echo "plugins=$(jq -c -n '$ARGS.positional' --args "${PLUGINS[@]}")" >> "$GITHUB_OUTPUT"
+          # Set new matrix for build job
+          echo "plugins=$(jq -c -n '$ARGS.positional' --args "${PLUGINS[@]}")" >> "$GITHUB_OUTPUT"
 
   licences:
     name: "Licenses plugin: ${{ matrix.plugin }}"
@@ -37,13 +37,11 @@ jobs:
     needs: [prepare]
     strategy:
       fail-fast: false
-      matrix: 
+      matrix:
         plugin: ${{ fromJSON(needs.prepare.outputs.matrix) }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-      - name: Enable Corepack
-        run: corepack enable
       - name: Install Dependencies
         run: yarn install
         working-directory: ./${{ env.PLUGIN_FOLDER }}
