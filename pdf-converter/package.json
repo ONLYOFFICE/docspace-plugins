@@ -27,10 +27,10 @@
     "build": "webpack && npx build-docspace-plugin"
   },
   "devDependencies": {
-    "ts-loader": "^9.3.1",
-    "typescript": "^4.7.4",
-    "webpack": "^5.104.1",
-    "webpack-cli": "^4.10.0"
+    "ts-loader": "^9.6.2",
+    "typescript": "^6.0.3",
+    "webpack": "^5.108.3",
+    "webpack-cli": "^7.1.0"
   },
   "dependencies": {
     "@onlyoffice/docspace-plugin-sdk": "^2.0.0",
