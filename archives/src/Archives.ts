@@ -159,7 +159,7 @@ class Archives {
 
     for (const f of content!) {
       if (f.type === "file") {
-        const blob = new Blob([f.content as Uint8Array]);
+        const blob = new Blob([f.content as Uint8Array<ArrayBuffer>]);
         const file = new File([blob], `blob`, {
           type: "",
           lastModified: new Date().getTime(),
