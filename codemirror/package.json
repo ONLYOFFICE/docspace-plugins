@@ -2,6 +2,16 @@
   "name": "codemirror",
   "version": "1.0.0",
   "description": "DocSpace plugin for viewing and editing files with various programming code formats",
+  "descriptionLocale": {
+    "de": "DocSpace-Plugin zum Anzeigen und Bearbeiten von Dateien mit verschiedenen Programmiercode-Formaten",
+    "es": "Plugin de DocSpace para ver y editar archivos con varios formatos de código de programación",
+    "fr": "Plugin DocSpace pour visualiser et modifier des fichiers avec divers formats de code de programmation",
+    "it": "Plugin DocSpace per visualizzare e modificare file con vari formati di codice di programmazione",
+    "ja-JP": "さまざまなプログラミングコード形式のファイルを表示・編集するためのDocSpaceプラグイン",
+    "pt-BR": "Plugin do DocSpace para visualizar e editar arquivos com vários formatos de código de programação",
+    "ru": "Плагин DocSpace для просмотра и редактирования файлов с различными форматами программного кода",
+    "zh-CN": "用于查看和编辑各种编程代码格式文件的 DocSpace 插件"
+  },
   "license": "Apache-2.0",
   "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/codemirror",
   "author": "ONLYOFFICE",

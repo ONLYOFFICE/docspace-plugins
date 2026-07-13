@@ -17,6 +17,7 @@
 import plugin from ".";
 import { Actions, IMessage, IToast, ToastType, File } from "@onlyoffice/docspace-plugin-sdk";
 import { imageEditorModalDialogProps, saveExitButton, dialogBody } from "./Dialog";
+import { i18n } from "./locales";
 
 class ImageEditorPlugin {
   imageEditor: any;
@@ -101,7 +102,7 @@ class ImageEditorPlugin {
         toastProps: [
           {
             type: ToastType.error,
-            title: "You don't have permission to view this file",
+            title: i18n.t("toast_no_permissions"),
           } as IToast,
         ],
       };
@@ -126,7 +127,7 @@ class ImageEditorPlugin {
 
       const toastProps: IToast = {
         type: success ? ToastType.success : ToastType.error,
-        title: success ? "File saved successfully" : "File saving failed",
+        title: success ? i18n.t("toast_file_saved") : i18n.t("toast_file_not_saved"),
       };
 
       message.toastProps = [toastProps];

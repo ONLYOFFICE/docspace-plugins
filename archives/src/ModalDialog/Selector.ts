@@ -16,6 +16,7 @@
 
 import { Actions, SelectorType, TFilesSelector } from "@onlyoffice/docspace-plugin-sdk";
 import { FilterType } from "@onlyoffice/docspace-plugin-sdk/dist/enums/Utility";
+import { i18n } from "../locales";
 
 export const selectorProps: () => {
   type: SelectorType.Files;
@@ -45,7 +46,7 @@ export const selectorProps: () => {
       },
 
       withCancelButton: true,
-      cancelButtonLabel: "Cancel",
+      cancelButtonLabel: i18n.t("dialog.button_cancel"),
       onCancel: () => {
         return {
           actions: [Actions.closeSelector],

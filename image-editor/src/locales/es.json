@@ -1,0 +1,7 @@
+{
+    "dialog_button_save_and_exit": "Guardar y salir",
+    "context_menu_edit_image": "Editar imagen",
+    "toast_no_permissions": "No tiene permiso para ver este archivo",
+    "toast_file_saved": "Archivo guardado correctamente",
+    "toast_file_not_saved": "Error al guardar el archivo"
+}

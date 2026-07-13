@@ -95,16 +95,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@onlyoffice/docspace-plugin-sdk@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@onlyoffice/docspace-plugin-sdk@npm:2.0.0"
+"@onlyoffice/docspace-plugin-sdk@file:../docspace-plugin-sdk.tgz::locator=draw.io%40workspace%3A.":
+  version: 2.1.0
+  resolution: "@onlyoffice/docspace-plugin-sdk@file:../docspace-plugin-sdk.tgz#../docspace-plugin-sdk.tgz::hash=b75a53&locator=draw.io%40workspace%3A."
   dependencies:
     inquirer: "npm:^9.1.0"
     jszip: "npm:^3.10.1"
   bin:
-    build-docspace-plugin: npx/buildPlugin.js
-    create-docspace-plugin: npx/index.js
-  checksum: 10c0/fb9100165e747035bdcc5f0423ac9673a9b76c0be6cb74062426fd3cd70d93d261f9f0967195ccae1b0dff761a39a27f7f2fbd99ef395f982619e4657d8908b0
+    build-docspace-plugin: ./npx/buildPlugin.js
+    create-docspace-plugin: ./npx/index.js
+  checksum: 10c0/f7a55f3a7f78a75dd2242e77562dcc9c050c3ef64b8b7b36d3ffb2aa6ef28818c4bdad1e4c1b214d4ed24b4c660cd3e062fdad36fb2a37c2acf55908a4099b61
   languageName: node
   linkType: hard
 
@@ -457,6 +457,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bignumber.js@npm:*":
+  version: 9.3.1
+  resolution: "bignumber.js@npm:9.3.1"
+  checksum: 10c0/61342ba5fe1c10887f0ecf5be02ff6709271481aff48631f86b4d37d55a99b87ce441cfd54df3d16d10ee07ceab7e272fc0be430c657ffafbbbf7b7d631efb75
+  languageName: node
+  linkType: hard
+
 "bl@npm:^4.1.0":
   version: 4.1.0
   resolution: "bl@npm:4.1.0"
@@ -656,7 +663,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "draw.io@workspace:."
   dependencies:
-    "@onlyoffice/docspace-plugin-sdk": "npm:^2.0.0"
+    "@onlyoffice/docspace-plugin-sdk": "file:../docspace-plugin-sdk.tgz"
+    i18n-js: "npm:^4.5.1"
     prettier: "npm:2.8.6"
     ts-loader: "npm:^9.3.1"
     typescript: "npm:^4.7.4"
@@ -864,6 +872,17 @@ __metadata:
   dependencies:
     function-bind: "npm:^1.1.1"
   checksum: 10c0/e1da0d2bd109f116b632f27782cf23182b42f14972ca9540e4c5aa7e52647407a0a4a76937334fddcb56befe94a3494825ec22b19b51f5e5507c3153fd1a5e1b
+  languageName: node
+  linkType: hard
+
+"i18n-js@npm:^4.5.1":
+  version: 4.5.1
+  resolution: "i18n-js@npm:4.5.1"
+  dependencies:
+    bignumber.js: "npm:*"
+    lodash: "npm:*"
+    make-plural: "npm:*"
+  checksum: 10c0/242d618679e5dd06bd3a5d66c17e07c9fd41141a78885e0a883ee633131da60deb3b3fa760f9071d873aeef2fbfb3186faeccae347eb1e81fba1f12b258ae038
   languageName: node
   linkType: hard
 
@@ -1082,7 +1101,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.23":
+"lodash@npm:*, lodash@npm:^4.17.23":
   version: 4.17.23
   resolution: "lodash@npm:4.17.23"
   checksum: 10c0/1264a90469f5bb95d4739c43eb6277d15b6d9e186df4ac68c3620443160fc669e2f14c11e7d8b2ccf078b81d06147c01a8ccced9aab9f9f63d50dcf8cace6bf6
@@ -1105,6 +1124,13 @@ __metadata:
   dependencies:
     yallist: "npm:^4.0.0"
   checksum: 10c0/cb53e582785c48187d7a188d3379c181b5ca2a9c78d2bce3e7dee36f32761d1c42983da3fe12b55cb74e1779fa94cdc2e5367c028a9b35317184ede0c07a30a9
+  languageName: node
+  linkType: hard
+
+"make-plural@npm:*":
+  version: 8.1.0
+  resolution: "make-plural@npm:8.1.0"
+  checksum: 10c0/e3c346cc7a217072f2c5058f6b1cdf98ec71c68511ebce2d7480380c9abcc13ad37661152b54a4925996d9e590bd215fa26552497bcc6d3e435897eeacc59aeb
   languageName: node
   linkType: hard
 

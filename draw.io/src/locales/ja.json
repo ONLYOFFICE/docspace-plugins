@@ -1,0 +1,30 @@
+{
+    "main_button": {
+        "create_dialog_title": "ダイアグラムを作成",
+        "create_dialog_start_value": "新しいダイアグラム"
+    },
+    "open_from_url": {
+        "button_accept": "作成",
+        "button_cancel": "キャンセル",
+        "description_text": "公開リンクのアクセスが可能になっていることを確認してください",
+        "dialog_header": "ダイアグラムをインポート",
+        "input_placeholder_name": "新しいダイアグラム",
+        "input_text_name": "名前",
+        "input_placeholder_url": "ダイアグラムのURL",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "データが保存されました",
+        "button_save": "保存",
+        "text_language": "言語",
+        "text_libraries": "ライブラリ",
+        "text_offline_description": "「オフラインモード」が有効な場合、保護のためにすべてのリモート操作と機能が無効になります",
+        "text_offline": "オフラインモード"
+    },
+    "context_menu_open_diagram": "ダイアグラムを開く",
+    "file_type_name": "ダイアグラム",
+    "toast_file_not_created": "ファイル「${title}.drawio」を作成できませんでした: ${message}",
+    "toast_wrong_file_format": "ファイル形式が正しくありません",
+    "toast_no_permission": "このファイルを表示する権限がありません",
+    "toast_cant_read_file": "このファイルを読み取れません"
+}

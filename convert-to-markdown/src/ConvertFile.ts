@@ -22,6 +22,7 @@ import {
 import TurndownService from "turndown";
 import { tables } from "turndown-plugin-gfm";
 import mammoth from "mammoth";
+import { i18n } from "./locales";
 
 import plugin from ".";
 
@@ -170,12 +171,12 @@ class ConvertFile {
     const response = await fetch(`${this.apiURL}/files/file/${fileId}`);
     
     if (!response.ok) {
-      throw new Error("Unable to get file information");
+      throw new Error(i18n.t('toast.unable_to_get_file_info'));
     }
     
     const data = await response.json();
     if (data.error) {
-      throw new Error(data.error.message || "Failed to get file details");
+      throw new Error(data.error.message || i18n.t('toast.failed_to_get_file_details'));
     }
     
     return data.response;
@@ -189,19 +190,17 @@ class ConvertFile {
     const response = await fetch(url);
     
     if (!response.ok) {
-      throw new Error(`Failed to download file: ${response.statusText}`);
+      throw new Error(i18n.t('toast.failed_to_download_file') + response.statusText);
     }
 
     const contentType = response.headers.get("Content-Type") || "";
     if (contentType.includes("application/pdf")) {
-      throw new Error(
-        "This file is watermark-protected. Disable the \"Add watermarks to documents\" room setting and try again."
-      );
+      throw new Error(i18n.t('toast.watermark_protected'));
     }
     
     const buffer = await response.arrayBuffer();
     if (!buffer || buffer.byteLength === 0) {
-      throw new Error("Downloaded file is empty");
+      throw new Error(i18n.t('toast.empty_file'));
     }
     
     return buffer;
@@ -228,16 +227,16 @@ class ConvertFile {
     });
 
     if (!sessionResponse.ok) {
-      throw new Error(`Failed to initiate upload: ${sessionResponse.status}`);
+      throw new Error(i18n.t('toast.failed_to_initiate_upload') + sessionResponse.status);
     }
 
     const session = await sessionResponse.json();
     if (session.error) {
-      throw new Error(session.error.message || "Upload session failed");
+      throw new Error(session.error.message || i18n.t('toast.upload_failed'));
     }
 
     if (!session.response?.data?.location) {
-      throw new Error("Invalid upload session response");
+      throw new Error(i18n.t('toast.invalid_upload_session'));
     }
 
     // Upload the file
@@ -250,7 +249,7 @@ class ConvertFile {
     });
 
     if (!uploadResponse.ok) {
-      throw new Error(`Upload failed: ${uploadResponse.status} ${uploadResponse.statusText}`);
+      throw new Error(i18n.t('toast.upload_failed') + uploadResponse.status + " " + uploadResponse.statusText);
     }
 
     // Verify the upload result
@@ -258,16 +257,16 @@ class ConvertFile {
     
     // Check for various error conditions in the response
     if (uploadResult.error) {
-      throw new Error(uploadResult.error.message || "Upload failed");
+      throw new Error(uploadResult.error.message || i18n.t('toast.upload_failed'));
     }
     
     if (uploadResult.success === false) {
-      throw new Error(uploadResult.message || "Upload was not successful");
+      throw new Error(uploadResult.message || i18n.t('toast.upload_failed'));
     }
 
     // For chunked uploads, check if file was actually created
     if (uploadResult.data && uploadResult.data.id === undefined && uploadResult.data.uploaded !== true) {
-      throw new Error("File was not created on server");
+      throw new Error(i18n.t('toast.file_not_created'));
     }
   };
 
@@ -287,7 +286,7 @@ class ConvertFile {
       // 2. Check if we support this file type
       const converter = this.getConverter(fileExst);
       if (!converter) {
-        throw new Error(`Unsupported format: ${fileExst}`);
+        throw new Error(i18n.t('toast.unsupported_format') + fileExst);
       }
 
       // 3. Download the source file
@@ -301,10 +300,10 @@ class ConvertFile {
       await this.uploadMarkdownFile(folderId, newFileName, markdown);
 
       this.createLock = false;
-      return this.showSuccess(`Created "${newFileName}"`);
+      return this.showSuccess(i18n.t('toast.created') + newFileName);
     } catch (error: any) {
       this.createLock = false;
-      return this.showError(error?.message || "Conversion failed");
+      return this.showError(error?.message || i18n.t('toast.conversion_failed'));
     }
   };
 }

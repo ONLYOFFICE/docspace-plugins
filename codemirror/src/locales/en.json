@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Save",
+        "button_cancel": "Cancel",
+        "text_unsaved": "Continue without saving?\nYou have made changes in the configuration. If you proceed without saving, those changes will not be applied.",
+        "warning_header": "Warning",
+        "button_continue": "Continue",
+        "button_reopen": "Reopen"
+    },
+    "main_button": {
+        "label": "Text file",
+        "create_dialog_title": "Create text file",
+        "create_dialog_start_value": "Text file",
+        "error_no_file_ext": "File extension must be provided",
+        "error_not_supported": "File extension not supported by Codemirror plugin",
+        "error_not_created": "File \"${title}.md\" was not created: ${message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Data is saved",
+        "button_save": "Save",
+        "header_general": "General",
+        "header_html": "HTML",
+        "highlight_whitespace": "Highlight whitespaces",
+        "highlight_whitespace_description": "Display whitespaces as dots and tabs as arrows.",
+        "highlight_trailing_whitespace": "Highlight trailing whitespaces",
+        "highlight_trailing_whitespace_description": "Highlight whitespaces at the end of a line.",
+        "auto_close_tags": "Auto close tags",
+        "auto_close_tags_description": "Automatically insert close tags when a > or / is typed in HTML-like files."
+    },
+    "context_menu_edit": "Edit file with Codemirror",
+    "file_type_name": "Code",
+    "toast_no_permission": "You don't have permission to view this file",
+    "toast_cant_read_file": "Can't read this file",
+    "toast_file_saved": "File saved",
+    "toast_file_not_saved": "Failed to save file"
+}

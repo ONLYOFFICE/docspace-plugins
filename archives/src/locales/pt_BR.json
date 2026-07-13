@@ -1,0 +1,37 @@
+{
+    "context_menu": {
+        "open_archive": "Abrir arquivo",
+        "group_unzip": "Descompactar",
+        "choose_location": "Escolher localização",
+        "unzip_here": "Descompactar aqui",
+        "group_zip": "Arquivar",
+        "zip_folder": "Arquivar aqui",
+        "zip_selected": "Arquivar itens selecionados"
+    },
+    "dialog": {
+        "header": "Visualizador de arquivo",
+        "button_extract": "Extrair o arquivo",
+        "selector_header_unzip": "Descompactar em",
+        "selector_header_zip": "Arquivar em",
+        "selector_header_extract": "Extrair para",
+        "selector_button_archive": "Arquivar",
+        "selector_button_unzip": "Descompactar",
+        "selector_button_extract": "Extrair",
+        "selector_checkbox_wrap": "Colocar em uma nova pasta",
+        "button_cancel": "Cancelar",
+        "viewer_loading": "Carregando...",
+        "viewer_error": "Erro: ${error}"
+    },
+    "default_zip_title": "Novo arquivo",
+    "default_folder_title": "Nova pasta",
+    "file_type_name": "Arquivo",
+    "toast_no_folder_download_permission": "Você não tem permissão para baixar arquivos desta pasta",
+    "toast_no_view_permission": "Você não tem permissão para visualizar este arquivo",
+    "toast_no_unzip_permission": "Você não tem permissão para descompactar este arquivo",
+    "toast_extract_success": "Elemento(s) extraído(s) com sucesso",
+    "toast_unzip_success": "Arquivo descompactado com sucesso",
+    "toast_cant_create": "Operação falhou. Você não pode criar arquivos nesta pasta",
+    "toast_failed_to_create": "Falha ao criar o ZIP",
+    "toast_zip_saved": "ZIP salvo",
+    "toast_zip_not_saved": "Falha ao salvar o ZIP"
+}

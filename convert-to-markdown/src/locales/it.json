@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "Impossibile ottenere le informazioni sul file",
+        "failed_to_get_file_details": "Impossibile ottenere i dettagli del file",
+        "failed_to_download_file": "Impossibile scaricare il file: ",
+        "watermark_protected": "Questo file è protetto da filigrana. Disabilita l'impostazione \"Aggiungi filigrane ai documenti\" della stanza e riprova.",
+        "empty_file": "Il file scaricato è vuoto",
+        "failed_to_initiate_upload": "Impossibile avviare il caricamento: ",
+        "upload_failed": "Caricamento fallito",
+        "invalid_upload_session": "Risposta di sessione di caricamento non valida",
+        "file_not_created": "Il file non è stato creato sul server",
+        "unsupported_format": "Formato non supportato: ",
+        "conversion_failed": "Conversione fallita",
+        "created": "Creato "
+    },
+    "context_menu_convert": "Converti in Markdown"
+}

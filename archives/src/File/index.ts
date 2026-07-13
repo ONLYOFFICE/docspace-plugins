@@ -15,18 +15,20 @@
  */
 
 import { IFileItem, File, Devices } from "@onlyoffice/docspace-plugin-sdk";
-
+import { i18n } from "../locales";
 import archives from "../Archives";
 
 const onClick = async (item: File) => {
   return await archives.openZip(item);
 };
 
-export const zipFileItem: IFileItem = {
-  extension: ".zip",
-  fileTypeName: "Archive",
-  fileRowIcon: "zip.svg",
-  fileTileIcon: "zip.svg",
-  devices: [Devices.desktop, Devices.mobile, Devices.tablet],
-  onClick,
+export const zipFileItem: () => IFileItem = () => {
+  return {
+    extension: ".zip",
+    fileTypeName: i18n.t("file_type_name"),
+    fileRowIcon: "zip.svg",
+    fileTileIcon: "zip.svg",
+    devices: [Devices.desktop, Devices.mobile, Devices.tablet],
+    onClick,
+  };
 };

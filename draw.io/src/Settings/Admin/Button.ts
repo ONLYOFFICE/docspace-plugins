@@ -31,6 +31,7 @@ import { urlInput } from "./Url";
 import { langComboBox } from "./Lang";
 import { offToggleButtonProps } from "./Off";
 import { libToggleButtonProps } from "./Lib";
+import { i18n } from "../../locales";
 
 const onClick = () => {
   drawIo.setAdminSettings(
@@ -42,7 +43,7 @@ const onClick = () => {
 
   const message: IMessage = {
     actions: [Actions.showToast, Actions.updateProps, Actions.saveSettings],
-    toastProps: [{ title: "Data is saved", type: ToastType.success }],
+    toastProps: [{ title: i18n.t("settings.toast_data_saved"), type: ToastType.success }],
     newProps: { ...adminButtonProps, isDisabled: true },
     settings: drawIo.getAdminSettings(),
   };
@@ -53,7 +54,7 @@ const onClick = () => {
 export const adminButtonProps: IButton = {
   onClick,
   size: ButtonSize.normal,
-  label: "Save",
+  label: i18n.t("settings.button_save"),
   scale: false,
   primary: true,
   isDisabled: true,

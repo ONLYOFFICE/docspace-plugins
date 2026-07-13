@@ -31,15 +31,13 @@ import {
   ModalDisplayType,
   ToastType,
 } from "@onlyoffice/docspace-plugin-sdk";
+import { i18n } from "../locales/i18n";
 
-export const toastProps: IToast = {
-  type: ToastType.success,
-  title: "File saved"
-}
-
-export const errorToast: IToast = {
-  type: ToastType.error,
-  title: "File not saved"
+export const fileSavedToast: (success: boolean) => IToast = (success) => {
+  return {
+    type: success ? ToastType.success : ToastType.error,
+    title: success ? i18n.t("dialog.toast_file_saved") : i18n.t("dialog.toast_file_not_saved")
+  }
 }
 
 export const intendBox: IBox = {
@@ -54,7 +52,7 @@ const marginBox: IBox = {
 }
 
 export const saveExitButton: IButton = {
-  label: "Save and close",
+  label: i18n.t("dialog.button_save_and_close"),
   size: ButtonSize.normal,
   isDisabled:  true,
   primary: true,
@@ -65,7 +63,7 @@ export const saveExitButton: IButton = {
 }
 
 export const saveButton: IButton = {
-  label: "Save",
+  label: i18n.t("dialog.button_save"),
   size: ButtonSize.normal,
   isDisabled: true,
   primary: true,
@@ -108,14 +106,14 @@ const areaBox: IBox = {
   ]
 }
 
-const markdownText: IText = {
-  text: "Markdown",
+export const markdownText: IText = {
+  text: i18n.t("dialog.text_markdown"),
   fontSize: "14px",
   fontWeight: 700
 }
 
 export const markdownResize: IButton = {
-  label: "Resize",
+  label: i18n.t("dialog.button_markdown_resize"),
   size: ButtonSize.extraSmall,
   onClick: () => {}
 }
@@ -188,14 +186,14 @@ export const iframeBox: IBox = {
   ]
 }
 
-const previewText: IText = {
-  text: "Preview",
+export const previewText: IText = {
+  text: i18n.t("dialog.text_preview"),
   fontSize: "14px",
   fontWeight: 700
 }
 
 export const previewResize: IButton = {
-  label: "Resize",
+  label: i18n.t("dialog.button_preview_resize"),
   size: ButtonSize.extraSmall,
   onClick: () => {}
 }

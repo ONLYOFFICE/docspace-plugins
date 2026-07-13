@@ -16,76 +16,87 @@
 
 import { Devices, File, FilesType, IContextMenuItem, FilesSecurity, Security } from "@onlyoffice/docspace-plugin-sdk";
 import archives from "../Archives";
+import { i18n } from "../locales";
 
-export const openZipContextMenuItem: IContextMenuItem = {
-  key: "archives-open-zip-context-menu-item",
-  label: "Open archive",
-  onClick: (id: File | any) => archives.openZip(id),
-  icon: "zip.svg",
-  devices: [Devices.desktop, Devices.mobile, Devices.tablet],
-  fileExt: [".zip"],
-  itemSecurity: [FilesSecurity.Edit],
+export const openZipContextMenuItem: () => IContextMenuItem = () => {
+  return {
+    key: "archives-open-zip-context-menu-item",
+    label: i18n.t("context_menu.open_archive"),
+    onClick: (id: File | any) => archives.openZip(id),
+    icon: "zip.svg",
+    devices: [Devices.desktop, Devices.mobile, Devices.tablet],
+    fileExt: [".zip"],
+    itemSecurity: [FilesSecurity.Edit],
+  };
 };
 
-const unzipContextMenuItem: IContextMenuItem = {
-  key: "archives-unzip-context-menu-item",
-  label: "Choose a location",
-  onClick: (id: File | any) => archives.openSelector(id),
-  icon: "zip.svg",
+export const unzipContextMenuItem: () => IContextMenuItem = () => {
+  return {
+    key: "archives-unzip-context-menu-item",
+    label: i18n.t("context_menu.choose_location"),
+    onClick: (id: File | any) => archives.openSelector(id),
+    icon: "zip.svg",
+  };
 };
 
-const unzipHereContextMenuItem: IContextMenuItem = {
-  key: "archives-unzip-here-context-menu-item",
-  label: "Unzip here",
-  onClick: (id: number) => archives.unzip(id),
-  icon: "zip.svg",
+export const unzipHereContextMenuItem: () => IContextMenuItem = () => {
+  return {
+    key: "archives-unzip-here-context-menu-item",
+    label: i18n.t("context_menu.unzip_here"),
+    onClick: (id: number) => archives.unzip(id),
+    icon: "zip.svg",
+  };
 };
 
-export const unzipGroupContextMenuItem: IContextMenuItem = {
-  key: "archives-unzip-group-context-menu-item",
-  label: "Unzip it",
-  icon: "zip.svg",
-  devices: [Devices.desktop, Devices.mobile, Devices.tablet],
-  fileExt: [".zip"],
-  itemSecurity: [FilesSecurity.Edit],
-  items: [
-    unzipContextMenuItem,
-    unzipHereContextMenuItem,
-  ],
-}
-
-const zipHereFolderContextMenuItem: IContextMenuItem = {
-  key: "archives-zip-folder-context-menu-item",
-  label: "Archive here",
-  onClick: (id: number) => archives.zipFolder(id),
-  icon: "zip.svg",
+export const unzipGroupContextMenuItem: () => IContextMenuItem = () => {
+  return {
+    key: "archives-unzip-group-context-menu-item",
+    label: i18n.t("context_menu.group_unzip"),
+    icon: "zip.svg",
+    devices: [Devices.desktop, Devices.mobile, Devices.tablet],
+    fileExt: [".zip"],
+    itemSecurity: [FilesSecurity.Edit],
+    items: [unzipContextMenuItem(), unzipHereContextMenuItem()],
+  };
 };
 
-const zipFolderContextMenuItem: IContextMenuItem = {
-  key: "archives-zip-folder-context-menu-item",
-  label: "Choose a location",
-  onClick: (id: number) => archives.openSelector(id, undefined, true),
-  icon: "zip.svg",
+export const zipHereFolderContextMenuItem: () => IContextMenuItem = () => {
+  return {
+    key: "archives-zip-here-folder-context-menu-item",
+    label: i18n.t("context_menu.zip_folder"),
+    onClick: (id: number) => archives.zipFolder(id),
+    icon: "zip.svg",
+  };
 };
 
-export const zipGroupContextMenuItem: IContextMenuItem = {
-  key: "archives-zip-group-context-menu-item",
-  label: "Archive it",
-  icon: "zip.svg",
-  fileType: [FilesType.folder],
-  security: [Security.Create],
-  items: [
-    zipHereFolderContextMenuItem,
-    zipFolderContextMenuItem,
-  ],
-}
+export const zipFolderContextMenuItem: () => IContextMenuItem = () => {
+  return {
+    key: "archives-zip-folder-context-menu-item",
+    label: i18n.t("context_menu.choose_location"),
+    onClick: (id: number) => archives.openSelector(id, undefined, true),
+    icon: "zip.svg",
+  };
+};
 
-export const zipSelectedItems: IContextMenuItem = {
-  key: "archives-zip-selected-items",
-  label: "Archive selected items",
-  icon: "zip.svg",
-  isGroupAction: true,
-  fileType: [FilesType.folder, FilesType.file],
-  security: [Security.Create],
-  onGroupClick: async (ids) => archives.zipFolder(ids),
-}
+export const zipGroupContextMenuItem: () => IContextMenuItem = () => {
+  return {
+    key: "archives-zip-group-context-menu-item",
+    label: i18n.t("context_menu.group_zip"),
+    icon: "zip.svg",
+    fileType: [FilesType.folder],
+    security: [Security.Create],
+    items: [zipHereFolderContextMenuItem(), zipFolderContextMenuItem()],
+  };
+};
+
+export const zipSelectedItems: () => IContextMenuItem = () => {
+  return {
+    key: "archives-zip-selected-items",
+    label: i18n.t("context_menu.zip_selected"),
+    icon: "zip.svg",
+    isGroupAction: true,
+    fileType: [FilesType.folder, FilesType.file],
+    security: [Security.Create],
+    onGroupClick: async (ids) => archives.zipFolder(ids),
+  };
+};

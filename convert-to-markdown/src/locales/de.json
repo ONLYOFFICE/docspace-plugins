@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "Dateiinformationen konnten nicht abgerufen werden",
+        "failed_to_get_file_details": "Dateidetails konnten nicht abgerufen werden",
+        "failed_to_download_file": "Datei konnte nicht heruntergeladen werden: ",
+        "watermark_protected": "Diese Datei ist durch Wasserzeichen geschützt. Deaktivieren Sie die Einstellung \"Wasserzeichen zu Dokumenten hinzufügen\" im Raum und versuchen Sie es erneut.",
+        "empty_file": "Die heruntergeladene Datei ist leer",
+        "failed_to_initiate_upload": "Upload konnte nicht gestartet werden: ",
+        "upload_failed": "Upload fehlgeschlagen",
+        "invalid_upload_session": "Ungültige Upload-Sitzungsantwort",
+        "file_not_created": "Datei wurde nicht auf dem Server erstellt",
+        "unsupported_format": "Nicht unterstütztes Format: ",
+        "conversion_failed": "Konvertierung fehlgeschlagen",
+        "created": "Erstellt "
+    },
+    "context_menu_convert": "In Markdown konvertieren"
+}

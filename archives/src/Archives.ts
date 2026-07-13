@@ -27,6 +27,7 @@ import JSZip from "jszip";
 import { modalDialogProps, frameProps, extractButton } from "./ModalDialog";
 import { drawInIframe, loader, viewer } from "./ModalDialog/Viewer";
 import { selectorProps } from "./ModalDialog/Selector";
+import { i18n } from "./locales";
 
 class Archives {
   apiURL: string = "";
@@ -71,7 +72,7 @@ class Archives {
     if (!file.security?.Download) {
       return {
         actions: [Actions.showToast],
-        toastProps: [{ type: ToastType.error, title: "You don't have permission to view this file" } as IToast],
+        toastProps: [{ type: ToastType.error, title: i18n.t("toast_no_view_permission") } as IToast],
       };
     }
 
@@ -116,15 +117,13 @@ class Archives {
       if (!folder.current.security.Download) {
         return {
           actions: [Actions.showToast],
-          toastProps: [
-            { type: ToastType.error, title: "You don't have permission to download files from this folder" } as IToast,
-          ],
+          toastProps: [{ type: ToastType.error, title: i18n.t("toast_no_folder_download_permission") } as IToast],
         } as IPostMessageCallbackMessage;
       }
 
-      (message.selectorProps!.props as TFilesSelector).submitButtonLabel = "Archive";
+      message.selectorProps!.props.headerProps!.label = i18n.t("dialog.selector_header_zip");
       (message.selectorProps!.props as TFilesSelector).currentFolderId = folder.current.parentId;
-      (message.selectorProps!.props as TFilesSelector).submitButtonLabel = "Archive";
+      (message.selectorProps!.props as TFilesSelector).submitButtonLabel = i18n.t("dialog.selector_button_archive");
       message.selectorProps!.props.onSubmit = async (params: any) => {
         const msg = await this.zipFolder(id, params.selectedItemId);
 
@@ -144,14 +143,14 @@ class Archives {
       if (!file.security?.Download) {
         return {
           actions: [Actions.showToast],
-          toastProps: [{ type: ToastType.error, title: "You don't have permission to unzip this file" } as IToast],
+          toastProps: [{ type: ToastType.error, title: i18n.t("toast_no_unzip_permission") } as IToast],
         } as IPostMessageCallbackMessage;
       }
 
-      message.selectorProps!.props.headerProps!.label = "Unzip";
+      message.selectorProps!.props.headerProps!.label = i18n.t("dialog.selector_header_unzip");
       (message.selectorProps!.props as TFilesSelector).currentFolderId = file.folderId;
 
-      (message.selectorProps!.props as TFilesSelector).submitButtonLabel = "Unzip";
+      (message.selectorProps!.props as TFilesSelector).submitButtonLabel = i18n.t("dialog.selector_button_unzip");
       message.selectorProps!.props.onSubmit = async (params: any) => {
         await this.getContent(file.viewUrl);
         const msg = await this.unzip(params.selectedItemId, this.root, file.title.split(".").slice(0, -1).join("."));
@@ -168,7 +167,7 @@ class Archives {
         return msg;
       };
 
-      message.selectorProps!.props.headerProps!.label = "Extract";
+      message.selectorProps!.props.headerProps!.label = i18n.t("dialog.selector_header_extract");
       (message.selectorProps!.props as TFilesSelector).currentFolderId = this.currentArchiveFolderId;
 
       (message.selectorProps!.props as TFilesSelector).onCancel = backToViewer;
@@ -177,10 +176,14 @@ class Archives {
       message.selectorProps!.props.headerProps!.onBackClick = backToViewer;
 
       (message.selectorProps!.props as TFilesSelector).withFooterCheckbox = true;
-      (message.selectorProps!.props as TFilesSelector).footerCheckboxLabel = "Put in a new folder";
-      (message.selectorProps!.props as TFilesSelector).submitButtonLabel = "Extract";
+      (message.selectorProps!.props as TFilesSelector).footerCheckboxLabel = i18n.t("dialog.selector_checkbox_wrap");
+      (message.selectorProps!.props as TFilesSelector).submitButtonLabel = i18n.t("dialog.selector_button_extract");
       message.selectorProps!.props.onSubmit = async (params: any) => {
-        let msg = await this.unzip(params.selectedItemId, content, params.isChecked ? "New folder" : undefined);
+        let msg = await this.unzip(
+          params.selectedItemId,
+          content,
+          params.isChecked ? i18n.t("default_folder_title") : undefined
+        );
 
         if (msg.actions?.includes(Actions.showToast) && msg.toastProps![0].type != ToastType.success) {
           return msg;
@@ -188,7 +191,7 @@ class Archives {
 
         msg = await backToViewer();
         msg.actions?.push(Actions.showToast);
-        msg.toastProps = [{ type: ToastType.success, title: "Element(s) extracted successfully" } as IToast];
+        msg.toastProps = [{ type: ToastType.success, title: i18n.t("toast_extract_success") } as IToast];
 
         return msg;
       };
@@ -314,7 +317,7 @@ class Archives {
             } as IToast)
           : ({
               type: ToastType.success,
-              title: "File unziped successfully",
+              title: i18n.t("toast_unzip_success"),
             } as IToast),
       ],
     } as IMessage;
@@ -336,9 +339,7 @@ class Archives {
     if (!destination.current.security.Create) {
       return {
         actions: [Actions.showToast],
-        toastProps: [
-          { type: ToastType.error, title: "Zip is not created. You can't create files in this folder" } as IToast,
-        ],
+        toastProps: [{ type: ToastType.error, title: i18n.t("toast_cant_create") } as IToast],
       };
     }
 
@@ -372,7 +373,7 @@ class Archives {
       },
       body: JSON.stringify({
         createOn: new Date(),
-        fileName: `${folder.current?.title || "New archive"}.zip`,
+        fileName: `${folder.current?.title || i18n.t("default_zip_title")}.zip`,
         fileSize: file.size,
         relativePath: "",
         CreateNewIfExist: true,
@@ -382,7 +383,7 @@ class Archives {
     if (!sessionRes.ok) {
       return {
         actions: [Actions.showToast],
-        toastProps: [{ type: ToastType.error, title: "Failed to create zip" } as IToast],
+        toastProps: [{ type: ToastType.error, title: i18n.t("toast_failed_to_create") } as IToast],
       };
     }
 
@@ -397,11 +398,11 @@ class Archives {
 
     const message: IMessage = {
       actions: [Actions.showToast],
-      toastProps: [{ type: ToastType.success, title: "Zip is saved" } as IToast],
+      toastProps: [{ type: ToastType.success, title: i18n.t("toast_zip_saved") } as IToast],
     };
 
     if (!data.success) {
-      message.toastProps = [{ type: ToastType.error, title: "Failed to save zip" } as IToast];
+      message.toastProps = [{ type: ToastType.error, title: i18n.t("toast_zip_not_saved") } as IToast];
       return message;
     }
 

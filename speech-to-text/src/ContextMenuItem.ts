@@ -21,13 +21,16 @@ import {
 } from "@onlyoffice/docspace-plugin-sdk";
 
 import assemblyAI from "./AssemblyAI";
+import { i18n } from "./locales";
 
-export const contextMenuItem: IContextMenuItem = {
-  key: "speech-to-text-context-menu-item",
-  label: "Convert to text",
-  icon: "speech-to-text.svg",
-  onClick: assemblyAI.speechToText,
-  fileType: [FilesType.video],
-  security: [Security.Create],
-  withActiveItem: true,
+export const contextMenuItem: () => IContextMenuItem = () => {
+  return {
+    key: "speech-to-text-context-menu-item",
+    label: i18n.t("context_menu_convert_to_text"),
+    icon: "speech-to-text.svg",
+    onClick: assemblyAI.speechToText,
+    fileType: [FilesType.video],
+    security: [Security.Create],
+    withActiveItem: true,
+  };
 };

@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Salvar",
+        "button_cancel": "Cancelar",
+        "text_unsaved": "Continuar sem salvar?\nVocê fez alterações na configuração. Se continuar sem salvar, essas alterações não serão aplicadas.",
+        "warning_header": "Aviso",
+        "button_continue": "Continuar",
+        "button_reopen": "Reabrir"
+    },
+    "main_button": {
+        "label": "Arquivo de texto",
+        "create_dialog_title": "Criar arquivo de texto",
+        "create_dialog_start_value": "Arquivo de texto",
+        "error_no_file_ext": "A extensão do arquivo deve ser fornecida",
+        "error_not_supported": "Extensão de arquivo não suportada pelo plugin Codemirror",
+        "error_not_created": "O arquivo \"${title}.md\" não foi criado: ${message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Os dados foram salvos",
+        "button_save": "Salvar",
+        "header_general": "Geral",
+        "header_html": "HTML",
+        "highlight_whitespace": "Destacar espaços em branco",
+        "highlight_whitespace_description": "Exibir espaços como pontos e tabulações como setas.",
+        "highlight_trailing_whitespace": "Destacar espaços em branco no final",
+        "highlight_trailing_whitespace_description": "Destacar espaços em branco no final de uma linha.",
+        "auto_close_tags": "Fechar tags automaticamente",
+        "auto_close_tags_description": "Inserir automaticamente tags de fechamento quando > ou / é digitado em arquivos do tipo HTML."
+    },
+    "context_menu_edit": "Editar arquivo com Codemirror",
+    "file_type_name": "Código",
+    "toast_no_permission": "Você não tem permissão para visualizar este arquivo",
+    "toast_cant_read_file": "Não é possível ler este arquivo",
+    "toast_file_saved": "Arquivo salvo",
+    "toast_file_not_saved": "Falha ao salvar o arquivo"
+}

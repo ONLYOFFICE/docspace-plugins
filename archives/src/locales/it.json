@@ -1,0 +1,37 @@
+{
+    "context_menu": {
+        "open_archive": "Apri archivio",
+        "group_unzip": "Decomprimi",
+        "choose_location": "Scegli una posizione",
+        "unzip_here": "Decomprimi qui",
+        "group_zip": "Archivia",
+        "zip_folder": "Archivia qui",
+        "zip_selected": "Archivia elementi selezionati"
+    },
+    "dialog": {
+        "header": "Visualizzatore archivio",
+        "button_extract": "Estrai l'archivio",
+        "selector_header_unzip": "Decomprimi in",
+        "selector_header_zip": "Archivia in",
+        "selector_header_extract": "Estrai in",
+        "selector_button_archive": "Archivia",
+        "selector_button_unzip": "Decomprimi",
+        "selector_button_extract": "Estrai",
+        "selector_checkbox_wrap": "Inserisci in una nuova cartella",
+        "button_cancel": "Annulla",
+        "viewer_loading": "Caricamento...",
+        "viewer_error": "Errore: ${error}"
+    },
+    "default_zip_title": "Nuovo archivio",
+    "default_folder_title": "Nuova cartella",
+    "file_type_name": "Archivio",
+    "toast_no_folder_download_permission": "Non hai il permesso di scaricare file da questa cartella",
+    "toast_no_view_permission": "Non hai il permesso di visualizzare questo file",
+    "toast_no_unzip_permission": "Non hai il permesso di decomprimere questo file",
+    "toast_extract_success": "Elemento/i estratto/i con successo",
+    "toast_unzip_success": "File decompresso con successo",
+    "toast_cant_create": "Operazione fallita. Non puoi creare file in questa cartella",
+    "toast_failed_to_create": "Impossibile creare il ZIP",
+    "toast_zip_saved": "ZIP salvato",
+    "toast_zip_not_saved": "Impossibile salvare il ZIP"
+}

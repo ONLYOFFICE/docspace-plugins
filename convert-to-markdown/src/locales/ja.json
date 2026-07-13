@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "ファイル情報を取得できません",
+        "failed_to_get_file_details": "ファイルの詳細の取得に失敗しました",
+        "failed_to_download_file": "ファイルのダウンロードに失敗しました: ",
+        "watermark_protected": "このファイルは透かしで保護されています。ルームの「ドキュメントに透かしを追加」設定を無効にして、再度お試しください。",
+        "empty_file": "ダウンロードしたファイルが空です",
+        "failed_to_initiate_upload": "アップロードの開始に失敗しました: ",
+        "upload_failed": "アップロードに失敗しました",
+        "invalid_upload_session": "無効なアップロードセッションレスポンス",
+        "file_not_created": "サーバーでファイルが作成されませんでした",
+        "unsupported_format": "サポートされていない形式: ",
+        "conversion_failed": "変換に失敗しました",
+        "created": "作成済み "
+    },
+    "context_menu_convert": "Markdownに変換"
+}
