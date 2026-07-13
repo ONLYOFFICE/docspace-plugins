@@ -75,7 +75,6 @@ export const saveButton: IButton = {
 
 export const editorFooter: IBox = {
   widthProp: "30%",
-  marginProp: "-5px 0 0 0",
   displayProp: "flex",
   flexDirection: "row",
   children: [
@@ -238,7 +237,7 @@ export const previewSide: IBox = {
 
 export const editorBox: IBox = {
   widthProp: "100%",
-  heightProp: "calc(100% - 40px)",
+  heightProp: "calc(100% - 45px)",
   displayProp: "flex",
   flexDirection: "row",
   children: [
@@ -249,7 +248,8 @@ export const editorBox: IBox = {
     },
     {
       component: Components.box,
-      props: intendBox
+      props: intendBox,
+      contextName: "editorIntend"
     },
     {
       component: Components.box,

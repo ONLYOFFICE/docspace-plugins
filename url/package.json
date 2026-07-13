@@ -1,0 +1,43 @@
+{
+  "name": "url",
+  "nameLocale": {
+    "en-US": "url"
+  },
+  "version": "1.0.0",
+  "author": "ONLYOFFICE",
+  "main": "index.ts",
+  "private": true,
+  "scopes": [
+    "API",
+    "Settings",
+    "ContextMenu",
+    "InfoPanel",
+    "MainButton",
+    "ProfileMenu",
+    "EventListener",
+    "File"
+  ],
+  "scripts": {
+    "build": "webpack && npx build-docspace-plugin",
+    "format": "npx prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "2.8.6",
+    "ts-loader": "^9.6.2",
+    "typescript": "^6.0.3",
+    "webpack": "^5.108.3",
+    "webpack-cli": "^7.1.0"
+  },
+  "dependencies": {
+    "@onlyoffice/docspace-plugin-sdk": "file:../onlyoffice-docspace-plugin-sdk-2.1.0.tgz",
+    "i18n-js": "^4.5.1"
+  },
+  "description": "The plugin allows creating, editing, and opening URL files with external links directly from the file list",
+  "descriptionLocale": {
+    "en-US": ""
+  },
+  "pluginName": "Url",
+  "license": "",
+  "logo": "logo_48x48.svg",
+  "homepage": ""
+}
