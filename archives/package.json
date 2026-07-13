@@ -52,6 +52,6 @@
   },
   "dependencies": {
     "@onlyoffice/docspace-plugin-sdk": "file:../onlyoffice-docspace-plugin-sdk-2.1.0.tgz",
-    "fflate": "^0.8.2"
+    "jszip": "^3.10.1"
   }
 }

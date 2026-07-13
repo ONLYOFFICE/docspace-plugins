@@ -23,7 +23,7 @@ import {
   TFilesSelector,
 } from "@onlyoffice/docspace-plugin-sdk";
 import plugin from ".";
-import * as fflate from "fflate";
+import JSZip from "jszip";
 import { modalDialogProps, frameProps, extractButton } from "./ModalDialog";
 import { drawInIframe, loader, viewer } from "./ModalDialog/Viewer";
 import { selectorProps } from "./ModalDialog/Selector";
@@ -33,7 +33,7 @@ class Archives {
   apiURL: string = "";
   user: any = null;
   root: FileTreeItem[] = [];
-  archiveBuffer: fflate.Zippable = {};
+  archiveBuffer: { [key: string]: Uint8Array } = {};
   currentFileId: number | undefined = undefined;
   destinationFolderId: number | undefined = undefined;
   currentArchiveFolderId: number | undefined = undefined;
@@ -83,10 +83,6 @@ class Archives {
       }),
     });
 
-    this.getContent(file.viewUrl, () => {
-      drawInIframe(frameProps.id!, viewer, this.root, file.title, this.user.theme === "Dark", path);
-    });
-
     extractButton.onClick = async () => {
       await this.unzip(file.folderId, this.root, file.title.split(".").slice(0, -1).join("."));
 
@@ -100,7 +96,12 @@ class Archives {
       modalDialogProps: modalDialogProps,
     };
 
-    drawInIframe(frameProps.id!, loader);
+    drawInIframe(frameProps.id!, (iframe: HTMLIFrameElement) => {
+      loader(iframe);
+      this.getContent(file.viewUrl, () => {
+        drawInIframe(frameProps.id!, viewer, this.root, file.title, this.user.theme === "Dark", path);
+      });
+    });
     return message;
   };
 
@@ -345,7 +346,15 @@ class Archives {
     this.archiveBuffer = {};
     const folder = await this.fetchContent(fakeFolder ? fakeFolder : id);
 
-    const zip = fflate.zipSync(this.archiveBuffer);
+    const zipObj = new JSZip();
+    for (const [path, data] of Object.entries(this.archiveBuffer)) {
+      if (path.endsWith("/")) {
+        zipObj.folder(path.slice(0, -1));
+      } else {
+        zipObj.file(path, data);
+      }
+    }
+    const zip = await zipObj.generateAsync({ type: "uint8array" });
 
     const blob = new Blob([zip as BlobPart]);
 
@@ -408,10 +417,11 @@ class Archives {
         }
         return data.arrayBuffer();
       })
-      .then((dataArrayBuffer) => {
-        const dataUint8Array = new Uint8Array(dataArrayBuffer);
-        const unzipped = fflate.unzipSync(dataUint8Array);
-        this.root = buildFileTree(unzipped);
+      .then(async (dataArrayBuffer) => {
+        const zip = await JSZip.loadAsync(dataArrayBuffer, {
+          decodeFileName: decodeZipEntryName,
+        });
+        this.root = await buildFileTree(zip);
 
         if (callback) callback();
 
@@ -522,11 +532,22 @@ export interface FileTreeItem {
   content: Uint8Array | FileTreeItem[];
 }
 
-function buildFileTree(flatStructure: fflate.Unzipped): FileTreeItem[] {
+function decodeZipEntryName(bytes: string[] | Uint8Array | Buffer): string {
+  const buf = bytes instanceof Uint8Array ? bytes : Uint8Array.from(bytes as any);
+  try {
+    return new TextDecoder("utf-8", { fatal: true }).decode(buf);
+  } catch {}
+  try {
+    return new TextDecoder("ibm866").decode(buf);
+  } catch {}
+  return new TextDecoder("iso-8859-1").decode(buf);
+}
+
+async function buildFileTree(zip: JSZip): Promise<FileTreeItem[]> {
   const root: { [key: string]: any } = {};
 
-  for (const [path, data] of Object.entries(flatStructure)) {
-    const isDirectory = path.endsWith("/");
+  for (const [path, zipEntry] of Object.entries(zip.files)) {
+    const isDirectory = zipEntry.dir;
     const normalizedPath = path.replace(/^\/+|\/+$/g, "");
     const parts = normalizedPath ? normalizedPath.split("/") : [];
 
@@ -538,9 +559,12 @@ function buildFileTree(flatStructure: fflate.Unzipped): FileTreeItem[] {
 
       if (isLast) {
         if (isDirectory) {
-          currentNode[part + "/"] = { type: "folder", content: [] };
+          if (!currentNode[part + "/"]) {
+            currentNode[part + "/"] = { type: "folder", content: {} };
+          }
         } else {
-          currentNode[part] = { type: "file", content: data };
+          const content = await zipEntry.async("uint8array");
+          currentNode[part] = { type: "file", content };
         }
       } else {
         if (!currentNode[part + "/"]) {
