@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "Не удалось получить информацию о файле",
+        "failed_to_get_file_details": "Не удалось получить сведения о файле",
+        "failed_to_download_file": "Не удалось скачать файл: ",
+        "watermark_protected": "Этот файл защищен водяными знаками. Отключите настройку «Добавлять водяные знаки к документам» в комнате и попробуйте снова.",
+        "empty_file": "Загруженный файл пуст",
+        "failed_to_initiate_upload": "Не удалось начать загрузку: ",
+        "upload_failed": "Загрузка не удалась",
+        "invalid_upload_session": "Недействительный ответ сессии загрузки",
+        "file_not_created": "Файл не был создан на сервере",
+        "unsupported_format": "Неподдерживаемый формат: ",
+        "conversion_failed": "Ошибка конвертации",
+        "created": "Создан "
+    },
+    "context_menu_convert": "Конвертировать в Markdown"
+}

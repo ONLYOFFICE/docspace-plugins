@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "无法获取文件信息",
+        "failed_to_get_file_details": "获取文件详情失败",
+        "failed_to_download_file": "下载文件失败：",
+        "watermark_protected": "此文件受水印保护。请关闭房间设置中的“为文档添加水印”选项后重试。",
+        "empty_file": "下载的文件为空",
+        "failed_to_initiate_upload": "无法启动上传：",
+        "upload_failed": "上传失败",
+        "invalid_upload_session": "上传会话响应无效",
+        "file_not_created": "文件未在服务器上创建",
+        "unsupported_format": "不支持的格式：",
+        "conversion_failed": "转换失败",
+        "created": "已创建 "
+    },
+    "context_menu_convert": "转换为 Markdown"
+}
