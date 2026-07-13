@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "Editar URL"
+    },
+    "main_button": {
+        "new_url": "Nueva URL"
+    },
+    "dialog": {
+        "header_create": "Crear nueva URL",
+        "header_edit": "Editar URL",
+        "label_url": "URL:",
+        "label_title": "Título:",
+        "button_create": "Crear",
+        "button_save": "Guardar",
+        "button_cancel": "Cancelar",
+        "error_invalid_url": "Dirección URL no válida",
+        "error_url_required": "La URL es obligatoria",
+        "link_to": "Enlace a",
+        "new_link": "Nuevo enlace",
+        "toast_url_created": "URL creada correctamente",
+        "toast_url_not_created": "No se ha podido crear la URL",
+        "toast_file_saved": "Archivo guardado correctamente",
+        "toast_file_not_saved": "No se ha podido guardar el archivo"
+    },
+    "file_type_name": "Enlace",
+    "toast_no_permissions": "No tiene permiso para ver este archivo",
+    "toast_cant_read_file": "No se puede leer este archivo",
+    "toast_wrong_file": "Archivo URL incorrecto o dañado"
+}

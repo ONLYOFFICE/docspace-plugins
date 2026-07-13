@@ -17,6 +17,7 @@
 import {
   IPlugin,
   PluginStatus,
+  PluginLocale,
   IApiPlugin,
   ISettingsPlugin,
   ISettings,
@@ -36,6 +37,7 @@ import {
 import { urlFileItem } from "./File";
 import { urlContextMenuItem } from "./ContextMenu";
 import { urlMainButtonItem } from "./MainButton";
+import { setLocale, i18n } from "./locales";
 
 class UrlP
   implements
@@ -68,6 +70,18 @@ class UrlP
   eventListenerItems: Map<string, IEventListenerItem> = new Map();
 
   fileItems: Map<string, IFileItem> = new Map();
+
+  setLanguage = (language: PluginLocale) => {
+    setLocale(language);
+
+    this.updateFileItem(urlFileItem());
+    this.updateContextMenuItem(urlContextMenuItem());
+    this.updateMainButtonItem(urlMainButtonItem());
+  };
+
+  getLanguage = () => {
+    return i18n.locale as PluginLocale;
+  };
 
   onLoadCallback = async () => {};
 
@@ -210,9 +224,9 @@ declare global {
   }
 }
 
-plugin.addFileItem(urlFileItem);
-plugin.addContextMenuItem(urlContextMenuItem);
-plugin.addMainButtonItem(urlMainButtonItem);
+plugin.addFileItem(urlFileItem());
+plugin.addContextMenuItem(urlContextMenuItem());
+plugin.addMainButtonItem(urlMainButtonItem());
 
 window.Plugins.Url = plugin || {};
 

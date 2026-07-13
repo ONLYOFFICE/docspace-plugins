@@ -28,6 +28,7 @@ import {
   ToastType,
 } from "@onlyoffice/docspace-plugin-sdk";
 import urlPlugin from "./Url";
+import { i18n } from "./locales";
 
 let primaryLock = false;
 
@@ -54,9 +55,9 @@ function generateLinkTitle(input: string) {
     const urlStr = input.trim().includes("://") ? input.trim() : "https://" + input.trim();
     const url = new URL(urlStr);
     const hostname = url.hostname.replace(/^www\./i, "");
-    return "Link to " + hostname;
+    return `${i18n.t("dialog.link_to")} ${hostname}`;
   } catch {
-    return "New link";
+    return i18n.t("dialog.new_link");
   }
 }
 
@@ -67,7 +68,7 @@ const marginBox: IBox = {
 
 export const urlDialog: (edit?: boolean, url?: string, title?: string) => IModalDialog = (edit = false, url, title) => {
   const primaryButton: IButton = {
-    label: edit ? "Save" : "Create",
+    label: edit ? i18n.t("dialog.button_save") : i18n.t("dialog.button_create"),
     size: ButtonSize.small,
     scale: true,
     primary: true,
@@ -80,7 +81,7 @@ export const urlDialog: (edit?: boolean, url?: string, title?: string) => IModal
       const validUrl = getValidURL(urlInput.value);
       console.log("validUrl", validUrl, "from", urlInput.value);
       if (!validUrl) {
-        const errorMsg = urlInput.value ? "Invalid URL address" : "URL is required";
+        const errorMsg = urlInput.value ? i18n.t("dialog.error_invalid_url") : i18n.t("dialog.error_url_required");
 
         urlInput.hasError = true;
         errorText.display = "block";
@@ -114,12 +115,12 @@ export const urlDialog: (edit?: boolean, url?: string, title?: string) => IModal
         if (saved) {
           message.toastProps?.push({
             type: ToastType.success,
-            title: "File saved successfully",
+            title: i18n.t("dialog.toast_file_saved"),
           });
         } else {
           message.toastProps?.push({
             type: ToastType.error,
-            title: "Failed to save file",
+            title: i18n.t("dialog.toast_file_not_saved"),
           });
         }
       } else {
@@ -131,12 +132,12 @@ export const urlDialog: (edit?: boolean, url?: string, title?: string) => IModal
         if (fileId) {
           message.toastProps?.push({
             type: ToastType.success,
-            title: "URL created successfully",
+            title: i18n.t("dialog.toast_url_created"),
           });
         } else {
           message.toastProps?.push({
             type: ToastType.error,
-            title: "Failed to create URL",
+            title: i18n.t("dialog.toast_url_not_created"),
           });
         }
       }
@@ -147,7 +148,7 @@ export const urlDialog: (edit?: boolean, url?: string, title?: string) => IModal
   };
 
   const cancelButton: IButton = {
-    label: "Cancel",
+    label: i18n.t("dialog.button_cancel"),
     size: ButtonSize.small,
     scale: true,
     onClick: () => {
@@ -219,14 +220,14 @@ export const urlDialog: (edit?: boolean, url?: string, title?: string) => IModal
   };
 
   const dialog: IModalDialog = {
-    dialogHeader: edit ? "Edit URL" : "Create new URL",
+    dialogHeader: edit ? i18n.t("dialog.header_edit") : i18n.t("dialog.header_create"),
     displayType: ModalDisplayType.modal,
     dialogBody: {
       children: [
         {
           component: Components.text,
           props: {
-            text: "URL:",
+            text: i18n.t("dialog.label_url"),
             isBold: true,
           },
         },
@@ -251,7 +252,7 @@ export const urlDialog: (edit?: boolean, url?: string, title?: string) => IModal
         {
           component: Components.text,
           props: {
-            text: "Title:",
+            text: i18n.t("dialog.label_title"),
             isBold: true,
           },
         },

@@ -16,6 +16,7 @@
 
 import plugin from ".";
 import { Actions, IMessage, IToast, ToastType, File } from "@onlyoffice/docspace-plugin-sdk";
+import { i18n } from "./locales";
 
 class UrlPlugin {
   apiURL: string = "";
@@ -157,13 +158,13 @@ class UrlPlugin {
     }
 
     if (!file.security?.Download) {
-      return "You don't have permission to view this file";
+      return i18n.t("toast_no_permissions");
     }
 
     const data = await fetch(file.viewUrl);
 
     if (data.status !== 200) {
-      return "Can't read this file";
+      return i18n.t("toast_cant_read_file");
     }
 
     const dataBlob = await data.blob();
@@ -204,7 +205,7 @@ class UrlPlugin {
         toastProps: [
           {
             type: ToastType.error,
-            title: "Wrong or corrupted URL file",
+            title: i18n.t("toast_wrong_file"),
           },
         ],
       } as IMessage;

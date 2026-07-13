@@ -16,12 +16,13 @@
 
 import { IFileItem, File, Devices } from "@onlyoffice/docspace-plugin-sdk";
 import urlPlugin from "./Url";
+import { i18n } from "./locales";
 
-export const urlFileItem: IFileItem = {
+export const urlFileItem: () => IFileItem = () => ({
   extension: ".url",
-  fileTypeName: "Link",
+  fileTypeName: i18n.t("file_type_name"),
   fileRowIcon: "logo_32x32.svg",
   fileTileIcon: "logo_32x32.svg",
   devices: [Devices.desktop, Devices.mobile, Devices.tablet],
   onClick: (id: File) => urlPlugin.openUrl(id),
-};
+});
