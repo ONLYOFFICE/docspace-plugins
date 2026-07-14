@@ -42,11 +42,7 @@ import { i18n, setLocale } from "./locales";
 import { zipFileItem } from "./File";
 import {
   openZipContextMenuItem,
-  unzipContextMenuItem,
-  unzipHereContextMenuItem,
   unzipGroupContextMenuItem,
-  zipFolderContextMenuItem,
-  zipHereFolderContextMenuItem,
   zipGroupContextMenuItem,
   zipSelectedItems,
 } from "./ContextMenu";
@@ -84,18 +80,18 @@ class Archives
 
   fileItems: Map<string, IFileItem> = new Map();
 
-  setLanguage = (language: PluginLocale) => {
-    setLocale(language);
-    
+  registerItems = () => {
     this.updateFileItem(zipFileItem());
     this.updateContextMenuItem(openZipContextMenuItem());
-    this.updateContextMenuItem(unzipContextMenuItem());
-    this.updateContextMenuItem(unzipHereContextMenuItem());
     this.updateContextMenuItem(unzipGroupContextMenuItem());
-    this.updateContextMenuItem(zipFolderContextMenuItem());
-    this.updateContextMenuItem(zipHereFolderContextMenuItem());
     this.updateContextMenuItem(zipGroupContextMenuItem());
     this.updateContextMenuItem(zipSelectedItems());
+  };
+
+  setLanguage = (language: PluginLocale) => {
+    setLocale(language);
+
+    this.registerItems();
   };
 
   getLanguage = () => {
@@ -277,11 +273,7 @@ declare global {
   }
 }
 
-plugin.addFileItem(zipFileItem());
-plugin.addContextMenuItem(openZipContextMenuItem());
-plugin.addContextMenuItem(unzipGroupContextMenuItem());
-plugin.addContextMenuItem(zipGroupContextMenuItem());
-plugin.addContextMenuItem(zipSelectedItems());
+plugin.registerItems();
 
 window.Plugins.ZipArchives = plugin || {};
 
