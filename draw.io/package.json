@@ -1,56 +1,56 @@
 {
-	"name": "draw.io",
-	"version": "1.2.0",
-	"description": "A tool for creating diagrams, flowcharts, intelligence maps, business layouts, entity relationships, program blocks, and more",
-	"descriptionLocale": {
-		"de": "Ein Tool zum Erstellen von Diagrammen, Flussdiagrammen, Intelligence-Maps, Business-Layouts, Entitätsbeziehungen, Programmblöcken und mehr",
-		"es": "Una herramienta para crear diagramas, diagramas de flujo, mapas de inteligencia, diseños de negocio, relaciones de entidades, bloques de programa y más",
-		"fr": "Un outil pour créer des diagrammes, des organigrammes, des cartes d'intelligence, des mises en page professionnelles, des relations d'entités, des blocs de programme, et plus encore",
-		"it": "Uno strumento per creare diagrammi, diagrammi di flusso, mappe di intelligence, layout aziendali, relazioni tra entità, blocchi di programma e altro ancora",
-		"ja-JP": "図、フローチャート、インテリジェンスマップ、ビジネスレイアウト、エンティティ関係、プログラムブロックなどを作成するためのツール",
-		"pt-BR": "Uma ferramenta para criar diagramas, fluxogramas, mapas de inteligência, layouts de negócios, relacionamentos de entidades, blocos de programa e muito mais",
-		"ru": "Инструмент для создания диаграмм, блок-схем, интеллект-карт, бизнес-макетов, диаграмм сущностей, программных блоков и многого другого",
-		"zh-CN": "用于创建图表、流程图、智能图、业务布局、实体关系、程序块等的工具"
-	},
-	"license": "Apache-2.0",
-	"homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/draw.io",
-	"author": "ONLYOFFICE",
-	"maintainers": [
-		"Ascensio System SIA <integration@onlyoffice.com> (https://www.onlyoffice.com)"
-	],
-	"bugs": {
-		"email": "support@onlyoffice.com"
-	},
-	"pluginName": "Drawio",
-	"logo": "logo.svg",
-	"cspDomains": [
-		"https://embed.diagrams.net"
-	],
-	"main": "index.ts",
-	"private": true,
-	"scopes": [
-		"API",
-		"Settings",
-		"ContextMenu",
-		"MainButton",
-		"File"
-	],
-	"scripts": {
-		"build": "webpack && npx build-docspace-plugin",
-		"format": "npx prettier --write ."
-	},
-	"devDependencies": {
-		"prettier": "2.8.6",
-		"ts-loader": "^9.6.2",
-		"typescript": "^6.0.3",
-		"webpack": "^5.108.3",
-		"webpack-cli": "^7.1.0"
-	},
-	"resolutions": {
-		"braces": "3.0.3"
-	},
-	"dependencies": {
-		"@onlyoffice/docspace-plugin-sdk": "file:../onlyoffice-docspace-plugin-sdk-2.1.0.tgz",
-		"i18n-js": "^4.5.1"
-	}
+  "name": "draw.io",
+  "version": "1.2.0",
+  "description": "A tool for creating diagrams, flowcharts, intelligence maps, business layouts, entity relationships, program blocks, and more",
+  "descriptionLocale": {
+    "de": "Ein Tool zum Erstellen von Diagrammen, Flussdiagrammen, Intelligence-Maps, Business-Layouts, Entitätsbeziehungen, Programmblöcken und mehr",
+    "es": "Una herramienta para crear diagramas, diagramas de flujo, mapas de inteligencia, diseños de negocio, relaciones de entidades, bloques de programa y más",
+    "fr": "Un outil pour créer des diagrammes, des organigrammes, des cartes d'intelligence, des mises en page professionnelles, des relations d'entités, des blocs de programme, et plus encore",
+    "it": "Uno strumento per creare diagrammi, diagrammi di flusso, mappe di intelligence, layout aziendali, relazioni tra entità, blocchi di programma e altro ancora",
+    "ja-JP": "図、フローチャート、インテリジェンスマップ、ビジネスレイアウト、エンティティ関係、プログラムブロックなどを作成するためのツール",
+    "pt-BR": "Uma ferramenta para criar diagramas, fluxogramas, mapas de inteligência, layouts de negócios, relacionamentos de entidades, blocos de programa e muito mais",
+    "ru": "Инструмент для создания диаграмм, блок-схем, интеллект-карт, бизнес-макетов, диаграмм сущностей, программных блоков и многого другого",
+    "zh-CN": "用于创建图表、流程图、智能图、业务布局、实体关系、程序块等的工具"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/draw.io",
+  "author": "ONLYOFFICE",
+  "maintainers": [
+    "Ascensio System SIA <integration@onlyoffice.com> (https://www.onlyoffice.com)"
+  ],
+  "bugs": {
+    "email": "support@onlyoffice.com"
+  },
+  "pluginName": "Drawio",
+  "logo": "logo.svg",
+  "cspDomains": [
+    "https://embed.diagrams.net"
+  ],
+  "main": "index.ts",
+  "private": true,
+  "scopes": [
+    "API",
+    "Settings",
+    "ContextMenu",
+    "MainButton",
+    "File"
+  ],
+  "scripts": {
+    "build": "webpack && npx build-docspace-plugin",
+    "format": "npx prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "2.8.6",
+    "ts-loader": "^9.6.2",
+    "typescript": "^6.0.3",
+    "webpack": "^5.108.3",
+    "webpack-cli": "^7.1.0"
+  },
+  "resolutions": {
+    "braces": "3.0.3"
+  },
+  "dependencies": {
+    "@onlyoffice/docspace-plugin-sdk": "file:../onlyoffice-docspace-plugin-sdk-2.1.0.tgz",
+    "i18n-js": "^4.5.1"
+  }
 }
