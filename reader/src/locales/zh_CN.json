@@ -2,5 +2,8 @@
     "context_menu": {
         "open_in_reader": "在阅读器中打开"
     },
-    "file_type_name": "书籍"
+    "file_type_name": "书籍",
+    "errors": {
+        "unsupported_zip": "此 ZIP 压缩包不包含受支持的图书。ZIP 内受支持的格式：EPUB 或 FB2。"
+    }
 }

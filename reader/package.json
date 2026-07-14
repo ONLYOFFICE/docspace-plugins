@@ -1,16 +1,16 @@
 {
   "name": "book-reader",
   "version": "1.0.0",
-  "description": "This plugin enables you to open files in a dedicated reading viewer. Supports .epub, .fb2, .fb2.zip, and .zip formats.",
+  "description": "This plugin enables you to open files in a dedicated reading viewer. Supports .epub, .fb2, .fb2.zip, and ZIP archives containing EPUB or FB2 books.",
   "descriptionLocale": {
-    "de": "Dieses Plugin ermöglicht das Öffnen von Dateien in einem dedizierten Lesebetrachter. Unterstützt .epub, .fb2, .fb2.zip und .zip-Formate.",
-    "es": "Este plugin permite abrir archivos en un visor de lectura dedicado. Compatible con los formatos .epub, .fb2, .fb2.zip y .zip.",
-    "fr": "Ce plugin permet d'ouvrir des fichiers dans une visionneuse de lecture dédiée. Prend en charge les formats .epub, .fb2, .fb2.zip et .zip.",
-    "it": "Questo plugin consente di aprire file in un visualizzatore di lettura dedicato. Supporta i formati .epub, .fb2, .fb2.zip e .zip.",
-    "ja-JP": "専用の閲覧ビューアでファイルを開くことができるプラグインです。.epub、.fb2、.fb2.zip、.zip 形式に対応しています。",
-    "pt-BR": "Este plugin permite abrir arquivos em um visualizador de leitura dedicado. Suporta os formatos .epub, .fb2, .fb2.zip e .zip.",
-    "ru": "Плагин позволяет открывать файлы в специальном средстве просмотра. Поддерживает форматы .epub, .fb2, .fb2.zip и .zip.",
-    "zh-CN": "此插件可在专用阅读查看器中打开文件，支持 .epub、.fb2、.fb2.zip 和 .zip 格式。"
+    "de": "Dieses Plugin ermöglicht das Öffnen von Dateien in einem dedizierten Lesebetrachter. Unterstützt .epub, .fb2, .fb2.zip und ZIP-Archive, die EPUB- oder FB2-Bücher enthalten.",
+    "es": "Este plugin permite abrir archivos en un visor de lectura dedicado. Compatible con .epub, .fb2, .fb2.zip y archivos ZIP que contienen libros EPUB o FB2.",
+    "fr": "Ce plugin permet d'ouvrir des fichiers dans une visionneuse de lecture dédiée. Prend en charge les formats .epub, .fb2, .fb2.zip et les archives ZIP contenant des livres EPUB ou FB2.",
+    "it": "Questo plugin consente di aprire file in un visualizzatore di lettura dedicato. Supporta i formati .epub, .fb2, .fb2.zip e gli archivi ZIP contenenti libri EPUB o FB2.",
+    "ja-JP": "専用の閲覧ビューアでファイルを開くことができるプラグインです。.epub、.fb2、.fb2.zip、および EPUB または FB2 の書籍を含む ZIP アーカイブに対応しています。",
+    "pt-BR": "Este plugin permite abrir arquivos em um visualizador de leitura dedicado. Suporta os formatos .epub, .fb2, .fb2.zip e arquivos ZIP que contêm livros EPUB ou FB2.",
+    "ru": "Плагин позволяет открывать файлы в специальном средстве просмотра. Поддерживает форматы .epub, .fb2, .fb2.zip и ZIP-архивы, содержащие книги в формате EPUB или FB2.",
+    "zh-CN": "此插件可在专用阅读查看器中打开文件，支持 .epub、.fb2、.fb2.zip 格式，以及包含 EPUB 或 FB2 图书的 ZIP 压缩包。"
   },
   "license": "Apache-2.0",
   "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/reader",

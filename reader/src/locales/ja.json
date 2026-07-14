@@ -2,5 +2,8 @@
     "context_menu": {
         "open_in_reader": "リーダーで開く"
     },
-    "file_type_name": "書籍"
+    "file_type_name": "書籍",
+    "errors": {
+        "unsupported_zip": "この ZIP アーカイブには対応している書籍が含まれていません。ZIP 内で対応している形式: EPUB または FB2。"
+    }
 }

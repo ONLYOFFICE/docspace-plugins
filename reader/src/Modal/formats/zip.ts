@@ -2,6 +2,7 @@ import JSZip from "jszip";
 import { handleEpub } from "./epub";
 import { handleFb2 } from "./fb2";
 import { makeIframeBody } from "../utils/iframe";
+import { i18n } from "../../locales";
 
 export async function handleZip(
   fileInfo: any,
@@ -41,8 +42,5 @@ export async function handleZip(
     } as any);
   }
 
-  throw new Error(
-    "This ZIP does not contain a recognised book format. " +
-      "Supported formats inside a ZIP: EPUB or .fb2.",
-  );
+  throw new Error(i18n.t("errors.unsupported_zip"));
 }
