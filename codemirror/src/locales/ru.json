@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Сохранить",
+        "button_cancel": "Отмена",
+        "text_unsaved": "Продолжить без сохранения?\nВы внесли изменения в конфигурацию. Если продолжить без сохранения, эти изменения не будут применены.",
+        "warning_header": "Предупреждение",
+        "button_continue": "Продолжить",
+        "button_reopen": "Открыть повторно"
+    },
+    "main_button": {
+        "label": "Текстовый файл",
+        "create_dialog_title": "Создать текстовый файл",
+        "create_dialog_start_value": "Текстовый файл",
+        "error_no_file_ext": "Необходимо указать расширение файла",
+        "error_not_supported": "Расширение файла не поддерживается плагином Codemirror",
+        "error_not_created": "Файл \"${title}.md\" не был создан: ${message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Данные сохранены",
+        "button_save": "Сохранить",
+        "header_general": "Общие",
+        "header_html": "HTML",
+        "highlight_whitespace": "Подсвечивать пробелы",
+        "highlight_whitespace_description": "Отображать пробелы как точки, а табуляции как стрелки.",
+        "highlight_trailing_whitespace": "Подсвечивать конечные пробелы",
+        "highlight_trailing_whitespace_description": "Подсвечивать пробелы в конце строки.",
+        "auto_close_tags": "Автоматически закрывать теги",
+        "auto_close_tags_description": "Автоматически вставлять закрывающие теги при вводе > или / в HTML-подобных файлах."
+    },
+    "context_menu_edit": "Редактировать файл в Codemirror",
+    "file_type_name": "Код",
+    "toast_no_permission": "У вас нет прав для просмотра этого файла",
+    "toast_cant_read_file": "Не удается прочитать файл",
+    "toast_file_saved": "Файл сохранен",
+    "toast_file_not_saved": "Не удалось сохранить файл"
+}

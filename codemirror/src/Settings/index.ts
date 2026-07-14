@@ -23,32 +23,37 @@ import {
   highlightWhitespaceSetting,
   highlightWhitespaceToggle,
 } from "./Core";
-import { settingsButtonComponent } from "./Button";
+import { settingsButtonComponent, settingsButtonProps } from "./Button";
 import codemirror from "../Codemirror";
 import { createSettingsHeader } from "./Utils";
+import { i18n } from "../locales";
 
-const settingsBox: IBox = {
-  displayProp: "flex",
-  flexDirection: "column",
-  marginProp: "16 0 0 0",
-  children: [
-    createSettingsHeader("General"),
-    { component: Components.box, props: highlightWhitespaceSetting },
-    { component: Components.box, props: highlightTrailingWhitespaceSetting },
-    createSettingsHeader("HTML"),
-    { component: Components.box, props: autoCloseTagsSetting },
-  ],
+const settingsBox: () => IBox = () => {
+  return {
+    displayProp: "flex",
+    flexDirection: "column",
+    marginProp: "16 0 0 0",
+    children: [
+      createSettingsHeader(i18n.t("settings.header_general")),
+      { component: Components.box, props: highlightWhitespaceSetting() },
+      { component: Components.box, props: highlightTrailingWhitespaceSetting() },
+      createSettingsHeader(i18n.t("settings.header_html")),
+      { component: Components.box, props: autoCloseTagsSetting() },
+    ],
+  };
 };
 
 const codemirrorSettings: ISettings = {
-  settings: settingsBox,
+  settings: settingsBox(),
   saveButton: settingsButtonComponent,
   onLoad: async () => {
     highlightWhitespaceToggle.isChecked = codemirror.settings.highlightWhitespace;
     highlightTrailingWhitespaceToggle.isChecked = codemirror.settings.highlightTrailingWhitespace;
     autoCloseTagsToggle.isChecked = codemirror.settings.autoCloseTags;
 
-    return { settings: settingsBox };
+    settingsButtonProps.label = i18n.t("settings.button_save");
+
+    return { settings: settingsBox() };
   },
 };
 

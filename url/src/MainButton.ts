@@ -17,10 +17,11 @@
 import { Actions, IMainButtonItem } from "@onlyoffice/docspace-plugin-sdk";
 import urlPlugin from "./Url";
 import { urlDialog } from "./Dialog";
+import { i18n } from "./locales";
 
-export const urlMainButtonItem: IMainButtonItem = {
+export const urlMainButtonItem: () => IMainButtonItem = () => ({
   key: "url-main-button-item",
-  label: "New URL",
+  label: i18n.t("main_button.new_url"),
   icon: "logo_16x16.svg",
   onClick: (id: number) => {
     urlPlugin.setCurrentFolderId(id);
@@ -30,4 +31,4 @@ export const urlMainButtonItem: IMainButtonItem = {
       modalDialogProps: urlDialog(),
     };
   },
-};
+});

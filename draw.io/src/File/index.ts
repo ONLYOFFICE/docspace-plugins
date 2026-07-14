@@ -17,16 +17,19 @@
 import { IFileItem, File, Devices } from "@onlyoffice/docspace-plugin-sdk";
 
 import drawIo from "../Drawio";
+import { i18n } from "../locales";
 
 const onClick = async (item: File) => {
   return await drawIo.editDiagram(item);
 };
 
-export const drawIoItem: IFileItem = {
-  extension: ".drawio",
-  fileTypeName: "Diagram",
-  fileRowIcon: "drawio-32.svg",
-  fileTileIcon: "drawio-32.svg",
-  devices: [Devices.desktop],
-  onClick,
+export const drawIoItem: () => IFileItem = () => {
+  return {
+    extension: ".drawio",
+    fileTypeName: i18n.t("file_type_name"),
+    fileRowIcon: "drawio-32.svg",
+    fileTileIcon: "drawio-32.svg",
+    devices: [Devices.desktop],
+    onClick,
+  };
 };

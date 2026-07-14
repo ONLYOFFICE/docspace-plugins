@@ -29,12 +29,19 @@
     "webpack-cli": "^7.1.0"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "^2.0.0",
+    "@onlyoffice/docspace-plugin-sdk": "file:../onlyoffice-docspace-plugin-sdk-2.1.0.tgz",
     "i18n-js": "^4.5.1"
   },
   "description": "The plugin allows creating, editing, and opening URL files with external links directly from the file list",
   "descriptionLocale": {
-    "en-US": ""
+    "de": "Das Plugin ermöglicht das Erstellen, Bearbeiten und Öffnen von URL-Dateien mit externen Links direkt aus der Dateiliste",
+    "es": "El plugin permite crear, editar y abrir archivos URL con enlaces externos directamente desde la lista de archivos",
+    "fr": "Le plugin permet de créer, modifier et ouvrir des fichiers URL avec des liens externes directement depuis la liste des fichiers",
+    "it": "Il plugin consente di creare, modificare e aprire file URL con collegamenti esterni direttamente dall'elenco dei file",
+    "ja-JP": "このプラグインを使用すると、外部リンクを含むURLファイルをファイルリストから直接作成、編集、開くことができます",
+    "pt-BR": "O plugin permite criar, editar e abrir arquivos URL com links externos diretamente da lista de arquivos",
+    "ru": "Плагин позволяет создавать, редактировать и открывать URL-файлы с внешними ссылками прямо из списка файлов",
+    "zh-CN": "该插件允许直接从文件列表创建、编辑和打开带有外部链接的 URL 文件"
   },
   "pluginName": "Url",
   "license": "",

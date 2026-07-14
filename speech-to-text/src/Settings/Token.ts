@@ -29,6 +29,7 @@ import {
 } from "@onlyoffice/docspace-plugin-sdk";
 
 import assemblyAI from "../AssemblyAI";
+import { i18n } from "../locales";
 
 import { userButtonProps } from "./Button";
 
@@ -70,8 +71,8 @@ const inputBox: IBox = {
   children: [tokenInputComponent],
 };
 
-const tokenText: IText = {
-  text: "API token",
+export const tokenText: IText = {
+  text: i18n.t("settings.text_api_token"),
   fontWeight: 600,
   fontSize: "13px",
   lineHeight: "20px",

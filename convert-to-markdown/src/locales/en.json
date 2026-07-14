@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "Unable to get file information",
+        "failed_to_get_file_details": "Failed to get file details",
+        "failed_to_download_file": "Failed to download file: ",
+        "watermark_protected": "This file is watermark-protected. Disable the \"Add watermarks to documents\" room setting and try again.",
+        "empty_file": "Downloaded file is empty",
+        "failed_to_initiate_upload": "Failed to initiate upload: ",
+        "upload_failed": "Upload failed",
+        "invalid_upload_session": "Invalid upload session response",
+        "file_not_created": "File was not created on server",
+        "unsupported_format": "Unsupported format: ",
+        "conversion_failed": "Conversion failed",
+        "created": "Created "
+    },
+    "context_menu_convert": "Convert to Markdown"
+}

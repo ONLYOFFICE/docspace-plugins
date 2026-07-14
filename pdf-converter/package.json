@@ -2,6 +2,16 @@
   "name": "pdf-converter",
   "version": "1.1.0",
   "description": "A plugin for converting docs, sheets, slides, and forms to PDF. The plugin is available via the Actions section in the file context menu. The converted file is saved in the same folder as the original one.",
+  "descriptionLocale": {
+    "de": "Ein Plugin zum Konvertieren von Dokumenten, Tabellen, Präsentationen und Formularen in PDF. Das Plugin ist über den Bereich „Aktionen“ im Kontextmenü der Datei verfügbar. Die konvertierte Datei wird im selben Ordner wie das Original gespeichert.",
+    "es": "Un plugin para convertir documentos, hojas de cálculo, presentaciones y formularios a PDF. El plugin está disponible a través de la sección Acciones en el menú contextual del archivo. El archivo convertido se guarda en la misma carpeta que el original.",
+    "fr": "Un plugin pour convertir des documents, des feuilles de calcul, des présentations et des formulaires en PDF. Le plugin est disponible via la section Actions dans le menu contextuel du fichier. Le fichier converti est enregistré dans le même dossier que l'original.",
+    "it": "Un plugin per convertire documenti, fogli di calcolo, presentazioni e moduli in PDF. Il plugin è disponibile tramite la sezione Azioni nel menu contestuale del file. Il file convertito viene salvato nella stessa cartella dell'originale.",
+    "ja-JP": "ドキュメント、スプレッドシート、スライド、フォームをPDFに変換するプラグインです。プラグインはファイルのコンテキストメニューの「アクション」セクションから利用できます。変換されたファイルは元のファイルと同じフォルダに保存されます。",
+    "pt-BR": "Um plugin para converter documentos, planilhas, apresentações e formulários para PDF. O plugin está disponível na seção Ações no menu de contexto do arquivo. O arquivo convertido é salvo na mesma pasta do original.",
+    "ru": "Плагин для конвертации документов, таблиц, презентаций и форм в PDF. Плагин доступен через раздел «Действия» в контекстном меню файла. Конвертированный файл сохраняется в той же папке, что и оригинал.",
+    "zh-CN": "用于将文档、表格、幻灯片和表单转换为 PDF 的插件。该插件可通过文件上下文菜单中的“操作”部分使用。转换后的文件保存在与原始文件相同的文件夹中。"
+  },
   "license": "Apache-2.0",
   "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/pdf-converter",
   "author": "ONLYOFFICE",
@@ -33,7 +43,8 @@
     "webpack-cli": "^7.1.0"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "^2.0.0",
-    "convertapi-js": "~1.1"
+    "@onlyoffice/docspace-plugin-sdk": "file:../onlyoffice-docspace-plugin-sdk-2.1.0.tgz",
+    "convertapi-js": "~1.1",
+    "i18n-js": "^4.5.1"
   }
 }

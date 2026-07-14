@@ -1,0 +1,37 @@
+{
+    "context_menu": {
+        "open_archive": "Ouvrir l'archive",
+        "group_unzip": "Décompresser",
+        "choose_location": "Choisir un emplacement",
+        "unzip_here": "Décompresser ici",
+        "group_zip": "Archiver",
+        "zip_folder": "Archiver ici",
+        "zip_selected": "Archiver les éléments sélectionnés"
+    },
+    "dialog": {
+        "header": "Visionneuse d'archive",
+        "button_extract": "Extraire l'archive",
+        "selector_header_unzip": "Décompresser vers",
+        "selector_header_zip": "Archiver vers",
+        "selector_header_extract": "Extraire vers",
+        "selector_button_archive": "Archiver",
+        "selector_button_unzip": "Décompresser",
+        "selector_button_extract": "Extraire",
+        "selector_checkbox_wrap": "Placer dans un nouveau dossier",
+        "button_cancel": "Annuler",
+        "viewer_loading": "Chargement...",
+        "viewer_error": "Erreur : ${error}"
+    },
+    "default_zip_title": "Nouvelle archive",
+    "default_folder_title": "Nouveau dossier",
+    "file_type_name": "Archive",
+    "toast_no_folder_download_permission": "Vous n'avez pas la permission de télécharger des fichiers depuis ce dossier",
+    "toast_no_view_permission": "Vous n'avez pas la permission d'afficher ce fichier",
+    "toast_no_unzip_permission": "Vous n'avez pas la permission de décompresser ce fichier",
+    "toast_extract_success": "Élément(s) extrait(s) avec succès",
+    "toast_unzip_success": "Fichier décompressé avec succès",
+    "toast_cant_create": "Opération échouée. Vous ne pouvez pas créer de fichiers dans ce dossier",
+    "toast_failed_to_create": "Échec de la création du ZIP",
+    "toast_zip_saved": "ZIP enregistré",
+    "toast_zip_not_saved": "Échec de l'enregistrement du ZIP"
+}

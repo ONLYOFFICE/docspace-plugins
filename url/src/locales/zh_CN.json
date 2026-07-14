@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "编辑 URL"
+    },
+    "main_button": {
+        "new_url": "新建 URL"
+    },
+    "dialog": {
+        "header_create": "创建新 URL",
+        "header_edit": "编辑 URL",
+        "label_url": "URL：",
+        "label_title": "标题：",
+        "button_create": "创建",
+        "button_save": "保存",
+        "button_cancel": "取消",
+        "error_invalid_url": "URL 地址无效",
+        "error_url_required": "URL 为必填项",
+        "link_to": "链接到",
+        "new_link": "新链接",
+        "toast_url_created": "URL 创建成功",
+        "toast_url_not_created": "创建 URL 失败",
+        "toast_file_saved": "文件保存成功",
+        "toast_file_not_saved": "保存文件失败"
+    },
+    "file_type_name": "链接",
+    "toast_no_permissions": "您没有查看此文件的权限",
+    "toast_cant_read_file": "无法读取此文件",
+    "toast_wrong_file": "URL 文件错误或已损坏"
+}

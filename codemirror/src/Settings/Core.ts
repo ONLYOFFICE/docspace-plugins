@@ -17,6 +17,7 @@
 import { IToggleButton } from "@onlyoffice/docspace-plugin-sdk";
 import codemirror from "../Codemirror";
 import { createToggleSetting, updatePropsWithButton } from "./Utils";
+import { i18n } from "../locales";
 
 export const highlightWhitespaceToggle: IToggleButton = {
   isChecked: codemirror.settings.highlightWhitespace,
@@ -27,9 +28,9 @@ export const highlightWhitespaceToggle: IToggleButton = {
   },
 };
 
-export const highlightWhitespaceSetting = createToggleSetting(
-  "Highlight whitespace",
-  "Display whitespaces as dots and tabs as arrows.",
+export const highlightWhitespaceSetting = () => createToggleSetting(
+  i18n.t("settings.highlight_whitespace"),
+  i18n.t("settings.highlight_whitespace_description"),
   highlightWhitespaceToggle
 );
 
@@ -42,9 +43,9 @@ export const highlightTrailingWhitespaceToggle: IToggleButton = {
   },
 };
 
-export const highlightTrailingWhitespaceSetting = createToggleSetting(
-  "Highlight trailing whitespace",
-  "Highlight whitespaces at the end of a line.",
+export const highlightTrailingWhitespaceSetting = () => createToggleSetting(
+  i18n.t("settings.highlight_trailing_whitespace"),
+  i18n.t("settings.highlight_trailing_whitespace_description"),
   highlightTrailingWhitespaceToggle
 );
 
@@ -57,8 +58,8 @@ export const autoCloseTagsToggle: IToggleButton = {
   },
 };
 
-export const autoCloseTagsSetting = createToggleSetting(
-  "Auto close tags",
-  "Automatically insert close tags when a > or / is typed in HTML-like files.",
+export const autoCloseTagsSetting = () => createToggleSetting(
+  i18n.t("settings.auto_close_tags"),
+  i18n.t("settings.auto_close_tags_description"),
   autoCloseTagsToggle
 );

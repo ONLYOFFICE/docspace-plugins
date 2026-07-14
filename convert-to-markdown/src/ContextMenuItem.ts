@@ -22,18 +22,21 @@ import {
   Security,
 } from "@onlyoffice/docspace-plugin-sdk";
 import convertFile from "./ConvertFile";
+import { i18n } from "./locales";
 
-export const convertFileItem: IContextMenuItem = {
-  key: "convert-to-markdown-item",
-  label: "Convert to Markdown",
-  icon: "icon-md.png",
-  onClick: convertFile.onConvertToMarkdown,
-  fileType: [FilesType.file],
-  fileExt: [
-    FilesExst.docx,
-    FilesExst.txt,
-    ".html",
-  ],
-  security: [Security.Create],
-  itemSecurity: [FilesSecurity.Download],
+export const convertFileItem: () => IContextMenuItem = () => {
+  return {
+    key: "convert-to-markdown-item",
+    label: i18n.t('context_menu_convert'),
+    icon: "icon-md.png",
+    onClick: convertFile.onConvertToMarkdown,
+    fileType: [FilesType.file],
+    fileExt: [
+      FilesExst.docx,
+      FilesExst.txt,
+      ".html",
+    ],
+    security: [Security.Create],
+    itemSecurity: [FilesSecurity.Download],
+  };
 };

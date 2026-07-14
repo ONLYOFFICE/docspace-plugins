@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-import "./Dialog.css";
-
 import properties from "../properties.json";
 import {
   Actions,
@@ -33,49 +31,47 @@ import {
   ModalDisplayType,
   ToastType,
 } from "@onlyoffice/docspace-plugin-sdk";
+import { i18n } from "../locales/i18n";
 
-export const toastProps: IToast = {
-  type: ToastType.success,
-  title: "File saved",
-};
-
-export const errorToast: IToast = {
-  type: ToastType.error,
-  title: "File not saved",
-};
+export const fileSavedToast: (success: boolean) => IToast = (success) => {
+  return {
+    type: success ? ToastType.success : ToastType.error,
+    title: success ? i18n.t("dialog.toast_file_saved") : i18n.t("dialog.toast_file_not_saved")
+  }
+}
 
 export const intendBox: IBox = {
   widthProp: "10px",
-  heightProp: "10px",
-};
+  heightProp: "10px"
+}
 
 const marginBox: IBox = {
   widthProp: "1px",
   heightProp: "1px",
-  marginProp: "0 auto",
-};
+  marginProp: "0 auto"
+}
 
 export const saveExitButton: IButton = {
-  label: "Save and close",
+  label: i18n.t("dialog.button_save_and_close"),
   size: ButtonSize.normal,
-  isDisabled: true,
+  isDisabled:  true,
   primary: true,
   withLoadingAfterClick: true,
   disableWhileRequestRunning: true,
   scale: true,
-  onClick: () => {},
-};
+  onClick: () => {}
+}
 
 export const saveButton: IButton = {
-  label: "Save",
+  label: i18n.t("dialog.button_save"),
   size: ButtonSize.normal,
   isDisabled: true,
   primary: true,
   withLoadingAfterClick: true,
   disableWhileRequestRunning: true,
   scale: true,
-  onClick: () => {},
-};
+  onClick: () => {}
+}
 
 export const editorFooter: IBox = {
   widthProp: "30%",
@@ -85,41 +81,41 @@ export const editorFooter: IBox = {
     {
       component: Components.button,
       props: saveExitButton,
-      contextName: "saveExitButton",
+      contextName: "saveExitButton"
     },
-  ],
-};
+  ]
+}
 
 export const mdArea: ITextArea = {
   name: "md-plugin-textarea",
   heightTextArea: "100%",
   value: "",
   hasNumeration: false,
-  onChange: () => {},
-};
+  onChange: ()=>{}
+}
 
 const areaBox: IBox = {
   widthProp: "100%",
   heightProp: "100%",
-  children: [
+  children:[
     {
       component: Components.textArea,
-      props: mdArea,
-    },
-  ],
-};
+      props: mdArea
+    }
+  ]
+}
 
-const markdownText: IText = {
-  text: "Markdown",
+export const markdownText: IText = {
+  text: i18n.t("dialog.text_markdown"),
   fontSize: "14px",
-  fontWeight: 700,
-};
+  fontWeight: 700
+}
 
 export const markdownResize: IButton = {
-  label: "Resize",
+  label: i18n.t("dialog.button_markdown_resize"),
   size: ButtonSize.extraSmall,
-  onClick: () => {},
-};
+  onClick: () => {}
+}
 
 const markdownHeader: IBox = {
   displayProp: "flex",
@@ -127,18 +123,18 @@ const markdownHeader: IBox = {
   children: [
     {
       component: Components.text,
-      props: markdownText,
+      props: markdownText
     },
     {
       component: Components.box,
-      props: marginBox,
+      props: marginBox
     },
     {
       component: Components.button,
-      props: markdownResize,
-    },
-  ],
-};
+      props: markdownResize
+    }
+  ]
+}
 
 export const markdownSide: IBox = {
   widthProp: "50%",
@@ -146,18 +142,18 @@ export const markdownSide: IBox = {
   children: [
     {
       component: Components.box,
-      props: markdownHeader,
+      props: markdownHeader
     },
     {
       component: Components.box,
-      props: intendBox,
+      props: intendBox
     },
     {
       component: Components.box,
-      props: areaBox,
-    },
-  ],
-};
+      props: areaBox
+    }
+  ]
+}
 
 const frameProps: IFrame = {
   width: "100%",
@@ -165,16 +161,16 @@ const frameProps: IFrame = {
   id: "md-iframe",
   src: "",
   style: {
-    minHeight: "0",
-  },
-};
+    minHeight: "0"
+  }
+}
 
 export const borderProp: IBorderProp = {
   color: "rgb(208, 213, 218)",
   radius: "3px",
   width: "1px",
-  style: "solid",
-};
+  style: "solid"
+}
 
 export const iframeBox: IBox = {
   widthProp: "100%",
@@ -184,22 +180,22 @@ export const iframeBox: IBox = {
   children: [
     {
       component: Components.iFrame,
-      props: frameProps,
-    },
-  ],
-};
+      props: frameProps
+    }
+  ]
+}
 
-const previewText: IText = {
-  text: "Preview",
+export const previewText: IText = {
+  text: i18n.t("dialog.text_preview"),
   fontSize: "14px",
-  fontWeight: 700,
-};
+  fontWeight: 700
+}
 
 export const previewResize: IButton = {
-  label: "Resize",
+  label: i18n.t("dialog.button_preview_resize"),
   size: ButtonSize.extraSmall,
-  onClick: () => {},
-};
+  onClick: () => {}
+}
 
 const previewHeader: IBox = {
   displayProp: "flex",
@@ -207,18 +203,18 @@ const previewHeader: IBox = {
   children: [
     {
       component: Components.text,
-      props: previewText,
+      props: previewText
     },
     {
       component: Components.box,
-      props: marginBox,
+      props: marginBox
     },
     {
       component: Components.button,
-      props: previewResize,
-    },
-  ],
-};
+      props: previewResize
+    }
+  ]
+}
 
 export const previewSide: IBox = {
   widthProp: "50%",
@@ -226,18 +222,18 @@ export const previewSide: IBox = {
   children: [
     {
       component: Components.box,
-      props: previewHeader,
+      props: previewHeader
     },
     {
       component: Components.box,
-      props: intendBox,
+      props: intendBox
     },
     {
       component: Components.box,
-      props: iframeBox,
-    },
-  ],
-};
+      props: iframeBox
+    }
+  ]
+}
 
 export const editorBox: IBox = {
   widthProp: "100%",
@@ -248,20 +244,20 @@ export const editorBox: IBox = {
     {
       component: Components.box,
       props: markdownSide,
-      contextName: "markdownSide",
+      contextName: "markdownSide"
     },
     {
       component: Components.box,
       props: intendBox,
-      contextName: "editorIntend",
+      contextName: "editorIntend"
     },
     {
       component: Components.box,
       props: previewSide,
-      contextName: "previewSide",
-    },
-  ],
-};
+      contextName: "previewSide"
+    }
+  ]
+}
 
 export const editorBody: IBox = {
   widthProp: window.parent.innerWidth * properties.modal_width + "px",
@@ -270,19 +266,19 @@ export const editorBody: IBox = {
     {
       component: Components.box,
       props: editorBox,
-      contextName: "editorBox",
+      contextName: "editorBox"
     },
     {
       component: Components.box,
-      props: intendBox,
+      props: intendBox
     },
     {
       component: Components.box,
       props: editorFooter,
-      contextName: "editorFooter",
-    },
-  ],
-};
+      contextName: "editorFooter"
+    }
+  ]
+}
 
 export const viewerBody: IBox = {
   widthProp: window.parent.innerWidth * properties.modal_width + "px",
@@ -290,7 +286,7 @@ export const viewerBody: IBox = {
   children: [
     {
       component: Components.box,
-      props: iframeBox,
+      props: iframeBox
     },
   ],
 };

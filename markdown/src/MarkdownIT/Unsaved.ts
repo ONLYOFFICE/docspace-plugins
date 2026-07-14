@@ -15,94 +15,95 @@
  */
 
 import {
-  ButtonSize,
-  Components,
-  IBox,
-  IButton,
-  ICheckbox,
-  IModalDialog,
-  IText,
-  ModalDisplayType,
+    ButtonSize,
+    Components,
+    IBox,
+    IButton,
+    ICheckbox,
+    IModalDialog,
+    IText,
+    ModalDisplayType
 } from "@onlyoffice/docspace-plugin-sdk";
 import { intendBox } from "./Dialog";
+import { i18n } from "../locales/i18n";
 
-const unsavedText: IText = {
-  text: "Are you sure that you want to close this file without saving?",
-};
+export const unsavedText: IText = {
+    text: i18n.t("unsaved.text")
+}
 
-const disableWarningCheckbox: ICheckbox = {
-  label: "Do not show this message again",
-  isChecked: false,
-  onChange: () => {},
-};
+export const disableWarningCheckbox: ICheckbox = {
+    label: i18n.t("unsaved.checkbox"),
+    isChecked: false,
+    onChange: () => {}
+}
 
 const unsavedBody: IBox = {
-  widthProp: "90%",
-  children: [
-    {
-      component: Components.text,
-      props: unsavedText,
-    },
-    {
-      component: Components.box,
-      props: intendBox,
-    },
-    {
-      component: Components.checkbox,
-      props: disableWarningCheckbox,
-    },
-  ],
-};
+    widthProp: "90%",
+    children: [
+        {
+            component: Components.text,
+            props: unsavedText
+        },
+        {
+            component: Components.box,
+            props: intendBox
+        },
+        {
+            component: Components.checkbox,
+            props: disableWarningCheckbox
+        }
+    ]
+}
 
 export const saveUnsavedButton: IButton = {
-  label: "Save and close",
-  size: ButtonSize.normal,
-  primary: true,
-  withLoadingAfterClick: true,
-  disableWhileRequestRunning: true,
-  scale: true,
-  onClick: () => {},
-};
+    label: i18n.t("unsaved.button_save_and_close"),
+    size: ButtonSize.normal,
+    primary: true,
+    withLoadingAfterClick: true,
+    disableWhileRequestRunning: true,
+    scale: true,
+    onClick: () => {}
+}
 
 export const closeButton: IButton = {
-  label: "Close without saving",
-  size: ButtonSize.normal,
-  withLoadingAfterClick: true,
-  disableWhileRequestRunning: true,
-  scale: true,
-  onClick: () => {},
-};
+    label: i18n.t("unsaved.button_close_without_saving"),
+    size: ButtonSize.normal,
+    withLoadingAfterClick: true,
+    disableWhileRequestRunning: true,
+    scale: true,
+    onClick: () => {}
+}
 
 const unsavedFooter: IBox = {
-  displayProp: "flex",
-  flexDirection: "row",
-  children: [
-    {
-      component: Components.button,
-      props: saveUnsavedButton,
-    },
-    {
-      component: Components.box,
-      props: intendBox,
-    },
-    {
-      component: Components.button,
-      props: closeButton,
-    },
-  ],
-};
+    displayProp: "flex",
+    flexDirection: "row",
+    children: [
+        {
+            component: Components.button,
+            props: saveUnsavedButton
+        },
+        {
+            component: Components.box,
+            props: intendBox
+        },
+        {
+            component: Components.button,
+            props: closeButton
+        }
+    ]
+}
 
 export const unsavedModalDialog: IModalDialog = {
-  displayType: ModalDisplayType.modal,
-  dialogHeader: "File has some unsaved changes",
-  dialogBody: unsavedBody,
-  dialogFooter: unsavedFooter,
-  onLoad: async () => {
-    return {
-      newDialogHeader: unsavedModalDialog.dialogHeader,
-      newDialogBody: unsavedModalDialog.dialogBody,
-      newDialogFooter: unsavedModalDialog.dialogFooter,
-    };
-  },
-  onClose: () => {},
-};
+    displayType: ModalDisplayType.modal,
+    dialogHeader: i18n.t("unsaved.header"),
+    dialogBody: unsavedBody,
+    dialogFooter: unsavedFooter,
+    onLoad: async () => {
+        return {
+            newDialogHeader: i18n.t("unsaved.header"),
+            newDialogBody: unsavedModalDialog.dialogBody,
+            newDialogFooter: unsavedModalDialog.dialogFooter
+        };
+    },
+    onClose: () => {}
+}

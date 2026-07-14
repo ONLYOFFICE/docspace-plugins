@@ -17,14 +17,17 @@
 import { Devices, FilesType, IContextMenuItem, FilesSecurity } from "@onlyoffice/docspace-plugin-sdk";
 import imageEditorPlugin from "../ImageEditor";
 import { supportedFormats } from "../properties.json";
+import { i18n } from "../locales";
 
-export const contextMenuItem: IContextMenuItem = {
-  key: "image-editor-context-menu-item",
-  label: "Edit image",
-  onClick: (id: number) => imageEditorPlugin.openFile(id),
-  icon: "image-editor.svg",
-  fileType: [FilesType.image],
-  devices: [Devices.desktop, Devices.mobile, Devices.tablet],
-  fileExt: supportedFormats,
-  itemSecurity: [FilesSecurity.Edit],
+export const contextMenuItem: () => IContextMenuItem = () => {
+  return {
+    key: "image-editor-context-menu-item",
+    label: i18n.t("context_menu_edit_image"),
+    onClick: (id: number) => imageEditorPlugin.openFile(id),
+    icon: "image-editor.svg",
+    fileType: [FilesType.image],
+    devices: [Devices.desktop, Devices.mobile, Devices.tablet],
+    fileExt: supportedFormats,
+    itemSecurity: [FilesSecurity.Edit],
+  };
 };

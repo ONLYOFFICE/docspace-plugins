@@ -27,6 +27,7 @@ import {
 } from "@onlyoffice/docspace-plugin-sdk";
 import { acceptButtonProps } from "./button";
 import { nameInputProps } from "./Name";
+import { i18n } from "../locales/i18n";
 
 const onChange = (value: string) => {
   urlInputProps.value = value;
@@ -52,7 +53,7 @@ export const urlInputProps: IInput = {
   value: "",
   onChange,
   scale: true,
-  placeholder: "Url for diagram",
+  placeholder: i18n.t("open_from_url.input_placeholder_url"),
 };
 
 const inputComponent: InputGroup = {
@@ -65,8 +66,8 @@ const inputBox: IBox = {
   children: [inputComponent],
 };
 
-const inputTextProps: IText = {
-  text: "URL",
+export const inputTextProps: IText = {
+  text: i18n.t("open_from_url.input_text_url"),
   isBold: true,
 };
 

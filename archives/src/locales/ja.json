@@ -1,0 +1,37 @@
+{
+    "context_menu": {
+        "open_archive": "アーカイブを開く",
+        "group_unzip": "解凍する",
+        "choose_location": "場所を選択",
+        "unzip_here": "ここに解凍",
+        "group_zip": "圧縮する",
+        "zip_folder": "ここに圧縮",
+        "zip_selected": "選択したアイテムを圧縮"
+    },
+    "dialog": {
+        "header": "アーカイブビューア",
+        "button_extract": "アーカイブを展開",
+        "selector_header_unzip": "解凍先",
+        "selector_header_zip": "圧縮先",
+        "selector_header_extract": "展開先",
+        "selector_button_archive": "圧縮",
+        "selector_button_unzip": "解凍",
+        "selector_button_extract": "展開",
+        "selector_checkbox_wrap": "新しいフォルダーに入れる",
+        "button_cancel": "キャンセル",
+        "viewer_loading": "読み込み中...",
+        "viewer_error": "エラー: ${error}"
+    },
+    "default_zip_title": "新しいアーカイブ",
+    "default_folder_title": "新しいフォルダー",
+    "file_type_name": "アーカイブ",
+    "toast_no_folder_download_permission": "このフォルダーからファイルをダウンロードする権限がありません",
+    "toast_no_view_permission": "このファイルを表示する権限がありません",
+    "toast_no_unzip_permission": "このファイルを解凍する権限がありません",
+    "toast_extract_success": "要素を正常に展開しました",
+    "toast_unzip_success": "ファイルを正常に解凍しました",
+    "toast_cant_create": "操作に失敗しました。このフォルダーにファイルを作成できません",
+    "toast_failed_to_create": "ZIPの作成に失敗しました",
+    "toast_zip_saved": "ZIPが保存されました",
+    "toast_zip_not_saved": "ZIPの保存に失敗しました"
+}

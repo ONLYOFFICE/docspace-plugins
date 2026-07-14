@@ -21,59 +21,62 @@ import {
   ToastType,
 } from "@onlyoffice/docspace-plugin-sdk";
 import markdownIt from "../Markdownit";
+import { i18n } from "../locales";
 
 let createLock = false;
 
-const mainButtonItem: IMainButtonItem = {
-  key: "markdown-it-main-button-item",
-  label: "Markdown",
-  icon: "markdown.svg",
-  onClick: (id: number) => {
-    markdownIt.setCurrentFolderId(id);
+const mainButtonItem: () => IMainButtonItem = () => {
+  return {
+    key: "markdown-it-main-button-item",
+    label: i18n.t("main_button.markdown"),
+    icon: "markdown.svg",
+    onClick: (id: number) => {
+      markdownIt.setCurrentFolderId(id);
 
-    const message: IMessage = {
-      actions: [Actions.showCreateDialogModal],
-      createDialogProps: {
-        title: "Create markdown",
-        startValue: "Markdown file",
-        visible: true,
-        isCreateDialog: true,
-        extension: ".md",
-        onSave: async (e: any, value: string) => {
-          if (createLock) return {};
-          else createLock = true;
-          const fileID = await markdownIt.createNewFile(value);
-          if (typeof fileID === "object") {
-            const m: IMessage = {
-              actions: [Actions.closeModal, Actions.showToast],
-              toastProps: [
-                {
-                  type: ToastType.error,
-                  title: `File "${value}.md" was not created: ${fileID.message}`,
-                },
-              ],
-            };
+      const message: IMessage = {
+        actions: [Actions.showCreateDialogModal],
+        createDialogProps: {
+          title: i18n.t("main_button.dialog_create_markdown"),
+          startValue: "Markdown file",
+          visible: true,
+          isCreateDialog: true,
+          extension: ".md",
+          onSave: async (e: any, value: string) => {
+            if (createLock) return {};
+            else createLock = true;
+            const fileID = await markdownIt.createNewFile(value);
+            if (typeof fileID === "object") {
+              const m: IMessage = {
+                actions: [Actions.closeModal, Actions.showToast],
+                toastProps: [
+                  {
+                    type: ToastType.error,
+                    title: i18n.t("main_button.toast_file_not_created", { title: value, message: fileID.message }),
+                  },
+                ],
+              };
+
+              createLock = false;
+              return m;
+            }
+
+            const message = await markdownIt.editMarkdown(fileID, false);
 
             createLock = false;
-            return m;
-          }
-
-          const message = await markdownIt.editMarkdown(fileID, false);
-
-          createLock = false;
-          return message;
+            return message;
+          },
+          onCancel: (e: any) => {
+            markdownIt.setCurrentFolderId(null);
+          },
+          onClose: (e: any) => {
+            markdownIt.setCurrentFolderId(null);
+          },
         },
-        onCancel: (e: any) => {
-          markdownIt.setCurrentFolderId(null);
-        },
-        onClose: (e: any) => {
-          markdownIt.setCurrentFolderId(null);
-        },
-      },
-    };
+      };
 
-    return message;
-  },
+      return message;
+    },
+  };
 };
 
 export { mainButtonItem };

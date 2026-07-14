@@ -1,0 +1,37 @@
+{
+    "context_menu": {
+        "open_archive": "Archiv öffnen",
+        "group_unzip": "Entpacken",
+        "choose_location": "Speicherort wählen",
+        "unzip_here": "Hier entpacken",
+        "group_zip": "Archivieren",
+        "zip_folder": "Hier archivieren",
+        "zip_selected": "Ausgewählte Elemente archivieren"
+    },
+    "dialog": {
+        "header": "Archiv-Viewer",
+        "button_extract": "Archiv extrahieren",
+        "selector_header_unzip": "Entpacken zu",
+        "selector_header_zip": "Archivieren zu",
+        "selector_header_extract": "Extrahieren zu",
+        "selector_button_archive": "Archivieren",
+        "selector_button_unzip": "Entpacken",
+        "selector_button_extract": "Extrahieren",
+        "selector_checkbox_wrap": "In neuen Ordner legen",
+        "button_cancel": "Abbrechen",
+        "viewer_loading": "Lädt...",
+        "viewer_error": "Fehler: ${error}"
+    },
+    "default_zip_title": "Neues Archiv",
+    "default_folder_title": "Neuer Ordner",
+    "file_type_name": "Archiv",
+    "toast_no_folder_download_permission": "Sie haben keine Berechtigung, Dateien aus diesem Ordner herunterzuladen",
+    "toast_no_view_permission": "Sie haben keine Berechtigung, diese Datei anzuzeigen",
+    "toast_no_unzip_permission": "Sie haben keine Berechtigung, diese Datei zu entpacken",
+    "toast_extract_success": "Element(e) erfolgreich extrahiert",
+    "toast_unzip_success": "Datei erfolgreich entpackt",
+    "toast_cant_create": "Vorgang fehlgeschlagen. Sie können in diesem Ordner keine Dateien erstellen",
+    "toast_failed_to_create": "ZIP-Erstellung fehlgeschlagen",
+    "toast_zip_saved": "ZIP wurde gespeichert",
+    "toast_zip_not_saved": "ZIP konnte nicht gespeichert werden"
+}

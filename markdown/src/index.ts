@@ -17,6 +17,7 @@
 import {
   IPlugin,
   PluginStatus,
+  PluginLocale,
   IApiPlugin,
   ISettingsPlugin,
   ISettings,
@@ -36,6 +37,7 @@ import {
 import { markdownitItem } from "./File";
 import { contextMenuItem, contextMenuViewerItem } from "./ContextMenu";
 import { mainButtonItem } from "./MainButton";
+import { setLocale, i18n } from "./locales";
 
 class Markdown
   implements
@@ -68,6 +70,18 @@ class Markdown
   eventListenerItems: Map<string, IEventListenerItem> = new Map();
 
   fileItems: Map<string, IFileItem> = new Map();
+
+  setLanguage = (language: PluginLocale) => {
+    setLocale(language);
+    
+    this.updateContextMenuItem(contextMenuItem());
+    this.updateContextMenuItem(contextMenuViewerItem());
+    this.updateMainButtonItem(mainButtonItem());
+  };
+
+  getLanguage = () => {
+    return i18n.locale as PluginLocale;
+  };
 
   onLoadCallback = async () => {};
 
@@ -211,9 +225,9 @@ declare global {
 }
 
 plugin.addFileItem(markdownitItem);
-plugin.addContextMenuItem(contextMenuItem);
-plugin.addContextMenuItem(contextMenuViewerItem);
-plugin.addMainButtonItem(mainButtonItem);
+plugin.addContextMenuItem(contextMenuItem());
+plugin.addContextMenuItem(contextMenuViewerItem());
+plugin.addMainButtonItem(mainButtonItem());
 
 window.Plugins.Markdown = plugin || {};
 

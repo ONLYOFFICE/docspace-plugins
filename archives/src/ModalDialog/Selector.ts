@@ -14,101 +14,50 @@
  * limitations under the License.
  */
 
-import {
-  Actions,
-  ButtonSize,
-  Components,
-  IBox,
-  IButton,
-  IFrame,
-  IMessage,
-  IModalDialog,
-  ModalDisplayType,
-} from "@onlyoffice/docspace-plugin-sdk";
+import { Actions, SelectorType, TFilesSelector } from "@onlyoffice/docspace-plugin-sdk";
+import { FilterType } from "@onlyoffice/docspace-plugin-sdk/dist/enums/Utility";
+import { i18n } from "../locales";
 
-export const selectorFrame: IFrame = {
-  width: "100%",
-  height: "100%",
-  name: "archives-iframe",
-  id: "archives-iframe",
-  src: "",
-};
+export const selectorProps: () => {
+  type: SelectorType.Files;
+  props: TFilesSelector;
+} = () => {
+  return {
+    type: SelectorType.Files,
+    props: {
+      currentFolderId: undefined,
+      isMultiSelect: false,
+      withBreadCrumbs: true,
+      filterParam: FilterType.FoldersOnly,
+      getIsDisabled: () => false,
+      onLoad: () => {},
 
-const iframeBox: IBox = {
-  widthProp: "100%",
-  heightProp: "100%",
-  children: [
-    {
-      component: Components.iFrame,
-      props: selectorFrame,
+      withHeader: true,
+      headerProps: {
+        label: "",
+        isCloseable: true,
+        onCloseClick: () => {
+          return {
+            actions: [Actions.closeSelector],
+          };
+        },
+        withBackButton: false,
+        onBackClick: () => {},
+      },
+
+      withCancelButton: true,
+      cancelButtonLabel: i18n.t("dialog.button_cancel"),
+      onCancel: () => {
+        return {
+          actions: [Actions.closeSelector],
+        };
+      },
+
+      withFooterCheckbox: false,
+      footerCheckboxLabel: "",
+
+      submitButtonLabel: "",
+      onSubmit: () => {},
     },
-  ],
-};
-
-export const unzipButton: IButton = {
-  label: "Unzip here",
-  size: ButtonSize.small,
-  primary: true,
-  withLoadingAfterClick: true,
-  disableWhileRequestRunning: true,
-  onClick: () => {},
-};
-
-const intendBox: IBox = {
-  widthProp: "8px",
-};
-
-const cancelButton: IButton = {
-  label: "Cancel",
-  size: ButtonSize.small,
-  onClick: () => {
-    return {
-      actions: [Actions.closeModal],
-    };
-  },
-};
-
-const selectorFooter: IBox = {
-  displayProp: "flex",
-  flexDirection: "row",
-  children: [
-    {
-      component: Components.button,
-      props: unzipButton,
-    },
-    {
-      component: Components.box,
-      props: intendBox,
-    },
-    {
-      component: Components.button,
-      props: cancelButton,
-    },
-  ],
-};
-
-export const selectorProps: IModalDialog = {
-  dialogHeader: "Unzip to",
-  dialogBody: iframeBox,
-  dialogFooter: selectorFooter,
-  displayType: ModalDisplayType.aside,
-  fullScreen: false,
-  onClose: () => {
-    const message: IMessage = {
-      actions: [Actions.closeModal],
-    };
-
-    return message;
-  },
-  onLoad: async () => {
-    return {
-      newDialogHeader: selectorProps.dialogHeader || "",
-      newDialogBody: selectorProps.dialogBody,
-      newDialogFooter: selectorProps.dialogFooter,
-    };
-  },
-  withoutBodyPadding: true,
-  withoutHeaderMargin: true,
-  autoMaxHeight: true,
-  autoMaxWidth: true,
+  };
 };

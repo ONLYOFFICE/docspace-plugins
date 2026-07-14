@@ -25,10 +25,11 @@ import {
 } from "@onlyoffice/docspace-plugin-sdk";
 import { urlDialog } from "./Dialog";
 import urlPlugin from "./Url";
+import { i18n } from "./locales";
 
-export const urlContextMenuItem: IContextMenuItem = {
+export const urlContextMenuItem: () => IContextMenuItem = () => ({
   key: "url",
-  label: "Edit Url",
+  label: i18n.t("context_menu_item.edit_url"),
   icon: "logo_16x16.svg",
   fileExt: [".url"],
   fileType: [FilesType.file],
@@ -61,4 +62,4 @@ export const urlContextMenuItem: IContextMenuItem = {
       modalDialogProps: urlDialog(true, url, file.info.title.replace(/\.url$/i, "")),
     };
   },
-};
+});

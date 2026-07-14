@@ -16,6 +16,7 @@
 
 import {
   IPlugin,
+  PluginLocale,
   PluginStatus,
   IApiPlugin,
   IContextMenuPlugin,
@@ -23,6 +24,7 @@ import {
 } from "@onlyoffice/docspace-plugin-sdk";
 
 import { convertFileItem } from "./ContextMenuItem";
+import { i18n, setLocale } from './locales';
 
 class ConvertFilePlugin implements IPlugin, IApiPlugin, IContextMenuPlugin {
   status: PluginStatus = PluginStatus.active;
@@ -32,6 +34,16 @@ class ConvertFilePlugin implements IPlugin, IApiPlugin, IContextMenuPlugin {
   prefix = "";
 
   contextMenuItems: Map<string, IContextMenuItem> = new Map();
+
+  setLanguage = (language: PluginLocale) => {
+    setLocale(language);
+    
+    this.updateContextMenuItem(convertFileItem());
+  };
+
+  getLanguage = () => {
+    return i18n.locale as PluginLocale;
+  };
 
   onLoadCallback = async () => {};
 
@@ -102,7 +114,7 @@ class ConvertFilePlugin implements IPlugin, IApiPlugin, IContextMenuPlugin {
 
 const plugin = new ConvertFilePlugin();
 
-plugin.addContextMenuItem(convertFileItem);
+plugin.addContextMenuItem(convertFileItem());
 
 declare global {
   interface Window {
