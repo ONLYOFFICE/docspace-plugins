@@ -89,6 +89,17 @@ export const zipGroupContextMenuItem: () => IContextMenuItem = () => {
   };
 };
 
+export const zipSelectedItem: () => IContextMenuItem = () => {
+  return {
+    key: "archives-zip-selected-item",
+    label: i18n.t("context_menu.zip_selected_item"),
+    icon: "zip.svg",
+    fileType: [FilesType.file],
+    security: [Security.Create],
+    onItemClick: (id) => archives.zipFolder([{ id, itemType: "file" }]),
+  };
+};
+
 export const zipSelectedItems: () => IContextMenuItem = () => {
   return {
     key: "archives-zip-selected-items",

@@ -6,7 +6,8 @@
         "unzip_here": "Unzip here",
         "group_zip": "Archive it",
         "zip_folder": "Archive here",
-        "zip_selected": "Archive selected items"
+        "zip_selected": "Archive selected items",
+        "zip_selected_item": "Archive selected item"
     },
     "dialog": {
         "header": "Archive viewer",

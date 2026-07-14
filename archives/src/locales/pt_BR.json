@@ -6,7 +6,8 @@
         "unzip_here": "Descompactar aqui",
         "group_zip": "Arquivar",
         "zip_folder": "Arquivar aqui",
-        "zip_selected": "Arquivar itens selecionados"
+        "zip_selected": "Arquivar itens selecionados",
+        "zip_selected_item": "Arquivar item selecionado"
     },
     "dialog": {
         "header": "Visualizador de arquivo",

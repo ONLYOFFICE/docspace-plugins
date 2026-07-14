@@ -6,7 +6,8 @@
         "unzip_here": "ここに解凍",
         "group_zip": "圧縮する",
         "zip_folder": "ここに圧縮",
-        "zip_selected": "選択したアイテムを圧縮"
+        "zip_selected": "選択したアイテムを圧縮",
+        "zip_selected_item": "選択したアイテムを圧縮"
     },
     "dialog": {
         "header": "アーカイブビューア",

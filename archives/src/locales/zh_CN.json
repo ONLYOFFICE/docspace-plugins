@@ -6,7 +6,8 @@
         "unzip_here": "在此处解压",
         "group_zip": "压缩",
         "zip_folder": "压缩到此处",
-        "zip_selected": "压缩所选项目"
+        "zip_selected": "压缩所选项目",
+        "zip_selected_item": "压缩所选项目"
     },
     "dialog": {
         "header": "压缩包查看器",

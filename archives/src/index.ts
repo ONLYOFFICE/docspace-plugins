@@ -44,6 +44,7 @@ import {
   openZipContextMenuItem,
   unzipGroupContextMenuItem,
   zipGroupContextMenuItem,
+  zipSelectedItem,
   zipSelectedItems,
 } from "./ContextMenu";
 
@@ -86,6 +87,7 @@ class Archives
     this.updateContextMenuItem(unzipGroupContextMenuItem());
     this.updateContextMenuItem(zipGroupContextMenuItem());
     this.updateContextMenuItem(zipSelectedItems());
+    this.updateContextMenuItem(zipSelectedItem());
   };
 
   setLanguage = (language: PluginLocale) => {
