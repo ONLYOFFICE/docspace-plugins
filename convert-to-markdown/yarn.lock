@@ -61,7 +61,7 @@
 
 "@onlyoffice/docspace-plugin-sdk@file:../onlyoffice-docspace-plugin-sdk-2.1.0.tgz":
   version "2.1.0"
-  resolved "file:../onlyoffice-docspace-plugin-sdk-2.1.0.tgz#e8f857ff1370c92b90e4a2a92d10fc638b2971ed"
+  resolved "file:../onlyoffice-docspace-plugin-sdk-2.1.0.tgz#90a18de4c49f97c26808397451957fcc64715c1e"
   dependencies:
     inquirer "^9.1.0"
     jszip "^3.10.1"
