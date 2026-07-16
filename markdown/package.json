@@ -1,6 +1,6 @@
 {
   "name": "markdown",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "DocSpace plugin for viewing, editing and creating .md files",
   "descriptionLocale": {
     "de": "DocSpace-Plugin zum Anzeigen, Bearbeiten und Erstellen von .md-Dateien",
