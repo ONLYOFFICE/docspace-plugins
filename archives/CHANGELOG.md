@@ -2,6 +2,7 @@
 
 ## Added
 - add single-file archive context menu action
+- add archive support for image and video files
 - add action to archive selected items via the selector
 - add opened file to recent files
 - add localization
