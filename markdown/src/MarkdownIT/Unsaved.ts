@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,13 +25,14 @@ import {
     ModalDisplayType
 } from "@onlyoffice/docspace-plugin-sdk";
 import { intendBox } from "./Dialog";
+import { i18n } from "../locales/i18n";
 
-const unsavedText: IText = {
-    text: "Are you sure that you want to close this file without saving?"
+export const unsavedText: IText = {
+    text: i18n.t("unsaved.text")
 }
 
-const disableWarningCheckbox: ICheckbox = {
-    label: "Do not show this message again",
+export const disableWarningCheckbox: ICheckbox = {
+    label: i18n.t("unsaved.checkbox"),
     isChecked: false,
     onChange: () => {}
 }
@@ -55,7 +56,7 @@ const unsavedBody: IBox = {
 }
 
 export const saveUnsavedButton: IButton = {
-    label: "Save and close",
+    label: i18n.t("unsaved.button_save_and_close"),
     size: ButtonSize.normal,
     primary: true,
     withLoadingAfterClick: true,
@@ -65,7 +66,7 @@ export const saveUnsavedButton: IButton = {
 }
 
 export const closeButton: IButton = {
-    label: "Close without saving",
+    label: i18n.t("unsaved.button_close_without_saving"),
     size: ButtonSize.normal,
     withLoadingAfterClick: true,
     disableWhileRequestRunning: true,
@@ -94,12 +95,12 @@ const unsavedFooter: IBox = {
 
 export const unsavedModalDialog: IModalDialog = {
     displayType: ModalDisplayType.modal,
-    dialogHeader: "File has some unsaved changes",
+    dialogHeader: i18n.t("unsaved.header"),
     dialogBody: unsavedBody,
     dialogFooter: unsavedFooter,
     onLoad: async () => {
         return {
-            newDialogHeader: unsavedModalDialog.dialogHeader,
+            newDialogHeader: i18n.t("unsaved.header"),
             newDialogBody: unsavedModalDialog.dialogBody,
             newDialogFooter: unsavedModalDialog.dialogFooter
         };

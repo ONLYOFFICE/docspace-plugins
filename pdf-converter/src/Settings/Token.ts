@@ -1,5 +1,5 @@
 /*
-* (c) Copyright Ascensio System SIA 2025
+* (c) Copyright Ascensio System SIA 2026
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import {
 import convertFile from "../ConvertFile";
 
 import { userButtonProps } from "./Button";
+import { i18n } from "../locales";
 
 const onChange = (value: string) => {
   tokenInput.value = value;
@@ -70,8 +71,8 @@ const inputBox: IBox = {
   children: [tokenInputComponent],
 };
 
-const tokenText: IText = {
-  text: "API token",
+export const tokenText: IText = {
+  text: i18n.t("settings.text_api_token"),
   fontWeight: 600,
   fontSize: "13px",
   lineHeight: "20px",

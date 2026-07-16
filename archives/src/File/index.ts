@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,18 +15,20 @@
  */
 
 import { IFileItem, File, Devices } from "@onlyoffice/docspace-plugin-sdk";
-
+import { i18n } from "../locales";
 import archives from "../Archives";
 
 const onClick = async (item: File) => {
   return await archives.openZip(item);
 };
 
-export const zipFileItem: IFileItem = {
-  extension: ".zip",
-  fileTypeName: "Archive",
-  fileRowIcon: "zip.svg",
-  fileTileIcon: "zip.svg",
-  devices: [Devices.desktop, Devices.mobile, Devices.tablet],
-  onClick,
+export const zipFileItem: () => IFileItem = () => {
+  return {
+    extension: ".zip",
+    fileTypeName: i18n.t("file_type_name"),
+    fileRowIcon: "zip.svg",
+    fileTileIcon: "zip.svg",
+    devices: [Devices.desktop, Devices.mobile, Devices.tablet],
+    onClick,
+  };
 };

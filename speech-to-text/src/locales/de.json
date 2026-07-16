@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "Token gespeichert",
+        "button_save": "Speichern",
+        "text_description": "Um einen API-Token zu generieren, besuchen Sie https://www.assemblyai.com \n\n Sobald der API-Token aktiviert ist, steht das Plugin allen Benutzern des aktuellen DocSpace zur Verfügung.",
+        "text_api_token": "API-Token"
+    },
+    "toast_api_token_is_missing": "API-Token fehlt",
+    "toast_wrong_api_token": "Falscher API-Token",
+    "toast_speech_not_recognized": "Sprache wurde nicht erkannt oder fehlt",
+    "toast_successfully_converted": "Die Datei wurde erfolgreich in Text konvertiert",
+    "toast_unsuccessfully_converted": "Konvertierung in Text war nicht erfolgreich: ",
+    "context_menu_convert_to_text": "In Text konvertieren"
+}

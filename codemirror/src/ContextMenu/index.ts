@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 import { Devices, FilesType, IContextMenuItem, FilesSecurity } from "@onlyoffice/docspace-plugin-sdk";
 import codemirror from "../Codemirror";
 import { supportedFileExts } from "../properties.json";
+import { i18n } from "../locales";
 
 const onClick = async (id: number) => {
   const message = await codemirror.openFile(id);
@@ -24,13 +25,15 @@ const onClick = async (id: number) => {
   return message;
 };
 
-export const contextMenuItem: IContextMenuItem = {
-  key: "codemirror-context-menu-item",
-  label: "Edit file with Codemirror",
-  onClick,
-  icon: "codemirror.svg",
-  fileType: [FilesType.file],
-  devices: [Devices.desktop, Devices.mobile, Devices.tablet],
-  fileExt: supportedFileExts.map((ext) => "." + ext),
-  itemSecurity: [FilesSecurity.Edit],
+export const contextMenuItem: () => IContextMenuItem = () => {
+  return {
+    key: "codemirror-context-menu-item",
+    label: i18n.t("context_menu_edit"),
+    onClick,
+    icon: "codemirror.svg",
+    fileType: [FilesType.file],
+    devices: [Devices.desktop, Devices.mobile, Devices.tablet],
+    fileExt: supportedFileExts.map((ext) => "." + ext),
+    itemSecurity: [FilesSecurity.Edit],
+  };
 };

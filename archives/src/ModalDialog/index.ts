@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import {
   IModalDialog,
   ModalDisplayType,
 } from "@onlyoffice/docspace-plugin-sdk";
+import { i18n } from "../locales";
 
 export const frameProps: IFrame = {
   width: "100%",
@@ -46,7 +47,7 @@ const iframeBox: IBox = {
 };
 
 export const extractButton: IButton = {
-  label: "Extract the archive",
+  label: i18n.t("dialog.button_extract"),
   size: ButtonSize.small,
   primary: true,
   withLoadingAfterClick: true,
@@ -58,8 +59,8 @@ const intendBox: IBox = {
   widthProp: "8px",
 };
 
-const cancelButton: IButton = {
-  label: "Cancel",
+export const cancelButton: IButton = {
+  label: i18n.t("dialog.button_cancel"),
   size: ButtonSize.small,
   onClick: () => {
     return {
@@ -88,7 +89,7 @@ const footerBox: IBox = {
 };
 
 export const modalDialogProps: IModalDialog = {
-  dialogHeader: "Archive viewer",
+  dialogHeader: i18n.t("dialog.header"),
   dialogBody: iframeBox,
   dialogFooter: footerBox,
   displayType: ModalDisplayType.modal,
@@ -102,7 +103,7 @@ export const modalDialogProps: IModalDialog = {
   },
   onLoad: async () => {
     return {
-      newDialogHeader: modalDialogProps.dialogHeader || "",
+      newDialogHeader: i18n.t("dialog.header") || "",
       newDialogBody: modalDialogProps.dialogBody,
       newDialogFooter: modalDialogProps.dialogFooter,
     };

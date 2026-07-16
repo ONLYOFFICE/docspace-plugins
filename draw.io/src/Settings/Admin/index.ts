@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,10 +19,11 @@ import { Components, IBox, ISettings } from "@onlyoffice/docspace-plugin-sdk";
 import drawIo from "../../Drawio";
 
 import { urlInput } from "./Url";
-import { langComboBox, langGroup, options } from "./Lang";
-import { offGroup, offToggleButtonProps, offDescriptionBox } from "./Off";
-import { libGroup, libToggleButtonProps } from "./Lib";
-import { adminButtonComponent } from "./Button";
+import { langComboBox, langGroup, options, langText } from "./Lang";
+import { offGroup, offToggleButtonProps, offDescriptionBox, offText, textProps } from "./Off";
+import { libGroup, libToggleButtonProps, libText } from "./Lib";
+import { adminButtonComponent, adminButtonProps } from "./Button";
+import { i18n } from "../../locales";
 
 const parentBox: IBox = {
   displayProp: "flex",
@@ -49,6 +50,12 @@ const adminSettings: ISettings = {
     };
     offToggleButtonProps.isChecked = drawIo.adminSettings.off;
     libToggleButtonProps.isChecked = drawIo.adminSettings.lib;
+
+    adminButtonProps.label = i18n.t("settings.button_save");
+    langText.text = i18n.t("settings.text_language");
+    libText.text = i18n.t("settings.text_libraries");
+    offText.text = i18n.t("settings.text_offline");
+    textProps.text = i18n.t("settings.text_offline_description");
 
     return { settings: parentBox };
   },

@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import {
   PluginStatus,
   ToastType,
 } from "@onlyoffice/docspace-plugin-sdk";
+import { i18n } from "./locales";
 
 class AssemblyAI {
   apiURL = "";
@@ -70,6 +71,51 @@ class AssemblyAI {
 
   setCurrentFileId = (id: number | null) => {
     this.currentFileId = id;
+  };
+
+  resolveFileNameConflict = async (
+    folderId: number,
+    title: string,
+    ext: string
+  ) => {
+    try {
+      const response = await fetch(
+        `${this.apiURL}/files/${folderId}?filterValue=${encodeURIComponent(
+          title
+        )}`
+      );
+
+      if (!response.ok) throw new Error("Error resolving file name conflict");
+
+      const data = await response.json();
+
+      const files: { title: string }[] = data.response.files ?? [];
+
+      if (files.length === 0) return title;
+
+      const escapedTitle = title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const conflictPattern = new RegExp(
+        `^${escapedTitle} \\((\\d+)\\)${ext}$`
+      );
+
+      const usedNumbers = new Set<number>();
+      let exactMatch = false;
+
+      for (const file of files) {
+        if (file.title === `${title}${ext}`) exactMatch = true;
+        const match = file.title.match(conflictPattern);
+        if (match) usedNumbers.add(Number(match[1]));
+      }
+
+      if (!exactMatch) return title;
+
+      let n = 1;
+      while (usedNumbers.has(n)) n++;
+
+      return `${title} (${n})`;
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   uploadFile = async (api_token: string, path: string, data: Blob) => {
@@ -141,7 +187,12 @@ class AssemblyAI {
     if (!this.apiToken)
       return {
         actions: [Actions.showToast],
-        toastProps: [{ type: ToastType.error, title: "API token is missing" }],
+        toastProps: [
+          {
+            type: ToastType.error,
+            title: i18n.t("toast_api_token_is_missing"),
+          },
+        ],
       } as IMessage;
 
     this.setCurrentFileId(null);
@@ -165,7 +216,9 @@ class AssemblyAI {
       if (!upload_url)
         return {
           actions: [Actions.showToast],
-          toastProps: [{ type: ToastType.error, title: "Wrong API token" }],
+          toastProps: [
+            { type: ToastType.error, title: i18n.t("toast_wrong_api_token") },
+          ],
         } as IMessage;
 
       const transcript = await this.transcribeAudio(this.apiToken, upload_url);
@@ -176,7 +229,7 @@ class AssemblyAI {
           toastProps: [
             {
               type: ToastType.info,
-              title: "Speech is not recognized or is missing",
+              title: i18n.t("toast_speech_not_recognized"),
             },
           ],
         } as IMessage;
@@ -194,7 +247,24 @@ class AssemblyAI {
       const formData = new FormData();
       formData.append("file", newFile);
 
-      const newTitle = `${title.replaceAll(fileExst, "")} text`;
+      const newTitle = title.replaceAll(fileExst, "");
+
+      const resolvedTitle = await this.resolveFileNameConflict(
+        folderId,
+        newTitle,
+        ".txt"
+      );
+
+      if (!resolvedTitle)
+        return {
+          actions: [Actions.showToast],
+          toastProps: [
+            {
+              type: ToastType.error,
+              title: "Error while resolving file name conflict",
+            },
+          ],
+        } as IMessage;
 
       const sessionRes = await fetch(
         `${this.apiURL}/files/${folderId}/upload/create_session`,
@@ -205,7 +275,7 @@ class AssemblyAI {
           },
           body: JSON.stringify({
             createOn: new Date(),
-            fileName: `${newTitle}.txt`,
+            fileName: `${resolvedTitle}.txt`,
             fileSize: newFile.size,
             relativePath: "",
           }),
@@ -214,10 +284,12 @@ class AssemblyAI {
 
       const sessionData = (await sessionRes.json()).response.data;
 
-      const res = await (await fetch(`${sessionData.location}`, {
-        method: "POST",
-        body: formData,
-      })).json();
+      const res = await (
+        await fetch(`${sessionData.location}`, {
+          method: "POST",
+          body: formData,
+        })
+      ).json();
       const success = res.success;
 
       return {
@@ -225,9 +297,9 @@ class AssemblyAI {
         toastProps: [
           {
             type: success ? ToastType.success : ToastType.error,
-            title: success 
-              ? "The file was successfully converted to text"
-              : `Conversion to text is not successful: ${res.message}`,
+            title: success
+              ? i18n.t("toast_successfully_converted")
+              : i18n.t("toast_unsuccessfully_converted") + res.message,
           },
         ],
       } as IMessage;
@@ -235,7 +307,9 @@ class AssemblyAI {
       console.log(e);
       return {
         actions: [Actions.showToast],
-        toastProps: [{ type: ToastType.error, title: "Wrong API token" }],
+        toastProps: [
+          { type: ToastType.error, title: i18n.t("toast_wrong_api_token") },
+        ],
       } as IMessage;
     }
   };

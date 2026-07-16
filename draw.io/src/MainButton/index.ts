@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import {
   ToastType,
 } from "@onlyoffice/docspace-plugin-sdk";
 import drawIo from "../Drawio";
+import { i18n } from "../locales";
 // import { openFromUrlProps } from "../OpenFromUrlDialog";
 
 // const createItem: IMainButtonItem = {
@@ -72,55 +73,57 @@ import drawIo from "../Drawio";
 
 let createLock = false;
 
-const mainButtonItem: IMainButtonItem = {
-  key: "draw-io-main-button-item",
-  label: "draw.io",
-  icon: "drawio.svg",
-  onClick: (id: number) => {
-    drawIo.setCurrentFolderId(id);
+const mainButtonItem: () => IMainButtonItem = () => {
+  return {
+    key: "draw-io-main-button-item",
+    label: "draw.io",
+    icon: "drawio.svg",
+    onClick: (id: number) => {
+      drawIo.setCurrentFolderId(id);
 
-    const message: IMessage = {
-      actions: [Actions.showCreateDialogModal],
-      createDialogProps: {
-        title: "Create diagram",
-        startValue: "New diagram",
-        visible: true,
-        isCreateDialog: true,
-        extension: ".drawio",
-        onSave: async (e: any, value: string) => {
-          if (createLock) return {};
-          else createLock = true;
-          const id = await drawIo.createNewFile(value);
-          if (typeof id === 'object') {
-            const m: IMessage = {
-              actions: [Actions.closeModal, Actions.showToast],
-              toastProps: [
-                {
-                  type: ToastType.error,
-                  title: `File "${value}.drawio" was not created: ${id.message}`,
-                },
-              ]
+      const message: IMessage = {
+        actions: [Actions.showCreateDialogModal],
+        createDialogProps: {
+          title: i18n.t("main_button.create_dialog_title"),
+          startValue: i18n.t("main_button.create_dialog_start_value"),
+          visible: true,
+          isCreateDialog: true,
+          extension: ".drawio",
+          onSave: async (e: any, value: string) => {
+            if (createLock) return {};
+            else createLock = true;
+            const id = await drawIo.createNewFile(value);
+            if (typeof id === "object") {
+              const m: IMessage = {
+                actions: [Actions.closeModal, Actions.showToast],
+                toastProps: [
+                  {
+                    type: ToastType.error,
+                    title: i18n.t("toast_file_not_created", { title: value, message: id.message }),
+                  },
+                ],
+              };
+
+              createLock = false;
+              return m;
             }
 
             createLock = false;
-            return m;
-          }
+            return await drawIo.editDiagram(id);
+          },
+          onCancel: (e: any) => {
+            drawIo.setCurrentFolderId(null);
+          },
+          onClose: (e: any) => {
+            drawIo.setCurrentFolderId(null);
+          },
+        },
+      };
 
-          createLock = false;
-          return await drawIo.editDiagram(id);
-        },
-        onCancel: (e: any) => {
-          drawIo.setCurrentFolderId(null);
-        },
-        onClose: (e: any) => {
-          drawIo.setCurrentFolderId(null);
-        },
-      },
-    };
-
-    return message;
-  },
-  // items: [createItem],
+      return message;
+    },
+    // items: [createItem],
+  };
 };
 
 export { mainButtonItem };

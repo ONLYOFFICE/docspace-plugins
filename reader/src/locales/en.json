@@ -1,0 +1,9 @@
+{
+    "context_menu": {
+        "open_in_reader": "Open in Reader"
+    },
+    "file_type_name": "Book",
+    "errors": {
+        "unsupported_zip": "This ZIP archive does not contain a supported book. Supported formats inside a ZIP: EPUB or FB2."
+    }
+}

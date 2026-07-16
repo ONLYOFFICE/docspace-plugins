@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "保存",
+        "button_cancel": "キャンセル",
+        "text_unsaved": "保存せずに続行しますか？\n設定に変更を加えました。保存せずに続行すると、変更は適用されません。",
+        "warning_header": "警告",
+        "button_continue": "続行",
+        "button_reopen": "再度開く"
+    },
+    "main_button": {
+        "label": "テキストファイル",
+        "create_dialog_title": "テキストファイルを作成",
+        "create_dialog_start_value": "テキストファイル",
+        "error_no_file_ext": "ファイル拡張子を指定する必要があります",
+        "error_not_supported": "このファイル拡張子はCodemirrorプラグインでサポートされていません",
+        "error_not_created": "ファイル「${title}.md」を作成できませんでした: ${message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "データが保存されました",
+        "button_save": "保存",
+        "header_general": "一般",
+        "header_html": "HTML",
+        "highlight_whitespace": "空白を強調表示",
+        "highlight_whitespace_description": "スペースをドット、タブを矢印として表示します。",
+        "highlight_trailing_whitespace": "末尾の空白を強調表示",
+        "highlight_trailing_whitespace_description": "行末の空白を強調表示します。",
+        "auto_close_tags": "タグを自動的に閉じる",
+        "auto_close_tags_description": "HTMLのようなファイルで > または / が入力されたときに、自動的に閉じタグを挿入します。"
+    },
+    "context_menu_edit": "Codemirrorでファイルを編集",
+    "file_type_name": "コード",
+    "toast_no_permission": "このファイルを表示する権限がありません",
+    "toast_cant_read_file": "このファイルを読み取れません",
+    "toast_file_saved": "ファイルが保存されました",
+    "toast_file_not_saved": "ファイルの保存に失敗しました"
+}

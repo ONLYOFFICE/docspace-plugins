@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import {
   FilesSecurity,
 } from "@onlyoffice/docspace-plugin-sdk";
 import drawIo from "../Drawio";
+import { i18n } from "../locales";
 
 const onClick = async (id: number) => {
   const message = await drawIo.editDiagram({ id } as File);
@@ -29,13 +30,15 @@ const onClick = async (id: number) => {
   return message;
 };
 
-export const contextMenuItem: IContextMenuItem = {
-  key: "drawio-context-menu-item",
-  label: "Open diagram",
-  onClick,
-  icon: "drawio.svg",
-  fileType: [FilesType.image, FilesType.file],
-  devices: [Devices.desktop],
-  fileExt: [".drawio", ".png"],
-  itemSecurity: [FilesSecurity.Download],
+export const contextMenuItem: () => IContextMenuItem = () => {
+  return {
+    key: "drawio-context-menu-item",
+    label: i18n.t("context_menu_open_diagram"),
+    onClick,
+    icon: "drawio.svg",
+    fileType: [FilesType.image, FilesType.file],
+    devices: [Devices.desktop],
+    fileExt: [".drawio", ".png"],
+    itemSecurity: [FilesSecurity.Download],
+  };
 };

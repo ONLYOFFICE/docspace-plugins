@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,22 +14,29 @@
  * limitations under the License.
  */
 
-import { Actions, IMainButtonItem, IMessage, ToastType } from "@onlyoffice/docspace-plugin-sdk";
+import {
+  Actions,
+  IMainButtonItem,
+  IMessage,
+  ToastType,
+} from "@onlyoffice/docspace-plugin-sdk";
 import markdownIt from "../Markdownit";
+import { i18n } from "../locales";
 
 let createLock = false;
 
-const mainButtonItem: IMainButtonItem = {
+const mainButtonItem: () => IMainButtonItem = () => {
+  return {
     key: "markdown-it-main-button-item",
-    label: "Markdown",
+    label: i18n.t("main_button.markdown"),
     icon: "markdown.svg",
     onClick: (id: number) => {
       markdownIt.setCurrentFolderId(id);
-  
+
       const message: IMessage = {
         actions: [Actions.showCreateDialogModal],
         createDialogProps: {
-          title: "Create markdown",
+          title: i18n.t("main_button.dialog_create_markdown"),
           startValue: "Markdown file",
           visible: true,
           isCreateDialog: true,
@@ -38,16 +45,16 @@ const mainButtonItem: IMainButtonItem = {
             if (createLock) return {};
             else createLock = true;
             const fileID = await markdownIt.createNewFile(value);
-            if (typeof fileID === 'object') {
+            if (typeof fileID === "object") {
               const m: IMessage = {
                 actions: [Actions.closeModal, Actions.showToast],
                 toastProps: [
                   {
                     type: ToastType.error,
-                    title: `File "${value}.md" was not created: ${fileID.message}`,
+                    title: i18n.t("main_button.toast_file_not_created", { title: value, message: fileID.message }),
                   },
-                ]
-              }
+                ],
+              };
 
               createLock = false;
               return m;
@@ -66,9 +73,10 @@ const mainButtonItem: IMainButtonItem = {
           },
         },
       };
-  
+
       return message;
     },
   };
-  
-  export { mainButtonItem };
+};
+
+export { mainButtonItem };

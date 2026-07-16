@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "令牌已保存",
+        "button_save": "保存",
+        "text_description": "要生成 API 令牌，请访问 https://www.assemblyai.com \n\n 启用 API 令牌后，该插件将对当前协作空间的所有用户可用。",
+        "text_api_token": "API 令牌"
+    },
+    "toast_api_token_is_missing": "API 令牌缺失",
+    "toast_wrong_api_token": "API 令牌错误",
+    "toast_speech_not_recognized": "语音未被识别或不存在",
+    "toast_successfully_converted": "文件已成功转换为文本",
+    "toast_unsuccessfully_converted": "转换为文本失败：",
+    "context_menu_convert_to_text": "转换为文本"
+}

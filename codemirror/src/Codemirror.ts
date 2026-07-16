@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import { EditorState } from "@codemirror/state";
 import { EditorView } from "codemirror";
 import { docSpaceTheme } from "./Extensions";
 import { getCodemirrorBody } from "./Utils";
+import { i18n } from "./locales";
 
 // TODO: [DS] html creates with corrupted data + cant open after close
 // TODO: add XML
@@ -166,7 +167,7 @@ class Codemirror {
         toastProps: [
           {
             type: ToastType.error,
-            title: "You don't have permission to view this file",
+            title: i18n.t("toast_no_permission"),
           } as IToast,
         ],
       };
@@ -182,9 +183,16 @@ class Codemirror {
     if (data.status !== 200) {
       return {
         actions: [Actions.showToast],
-        toastProps: [{ type: ToastType.error, title: "Can't read this file" } as IToast],
+        toastProps: [{ type: ToastType.error, title: i18n.t("toast_cant_read_file") } as IToast],
       };
     }
+
+    fetch(`${this.apiURL}/files/file/${file.id}/recent`, {
+      method: "POST",
+      body: JSON.stringify({
+        fileIds: [file.id],
+      }),
+    });
 
     const dataBlob = await data.blob();
     this.currentFileData = await dataBlob.text();
@@ -197,11 +205,11 @@ class Codemirror {
       const success = await this.savefile();
       switch (success) {
         case true:
-          message.toastProps = [{ type: ToastType.success, title: "File saved" }];
+          message.toastProps = [{ type: ToastType.success, title: i18n.t("toast_file_saved") }];
           this.currentFileData = this.view!.state.doc.toString();
           break;
         case false:
-          message.toastProps = [{ type: ToastType.error, title: "Failed to save file" }];
+          message.toastProps = [{ type: ToastType.error, title: i18n.t("toast_file_not_saved") }];
           break;
         case undefined:
           message.actions = [];

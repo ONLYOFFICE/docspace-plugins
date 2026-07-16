@@ -20,8 +20,8 @@ To open the created .md file, click on the file name or do it via the *file cont
 
 To get back to the file list:
 
-* If the file is opened for editing: click *Save&Close* or сlick on the cross to the right of the editing window. If you try to close a file with unsaved changes, a warning will appear.
-* If the file is opened for viewing: сlick on the cross to the right of the view window.
+* If the file is opened for editing: click *Save&Close* or click on the cross to the right of the editing window. If you try to close a file with unsaved changes, a warning will appear.
+* If the file is opened for viewing: click on the cross to the right of the view window.
 
 **Editing .md files**
 

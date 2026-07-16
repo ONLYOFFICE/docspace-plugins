@@ -1,5 +1,5 @@
 /*
-* (c) Copyright Ascensio System SIA 2025
+* (c) Copyright Ascensio System SIA 2026
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import {
 } from "@onlyoffice/docspace-plugin-sdk";
 import { acceptButtonProps } from "./button";
 import { urlInputProps } from "./Url";
+import { i18n } from "../locales/i18n";
 
 const onChange = (value: string) => {
   nameInputProps.value = value;
@@ -52,7 +53,7 @@ export const nameInputProps: IInput = {
   value: "",
   onChange,
   scale: true,
-  placeholder: "New diagram",
+  placeholder: i18n.t("open_from_url.input_placeholder_name"),
 };
 
 const inputComponent: InputGroup = {
@@ -65,8 +66,8 @@ const inputBox: IBox = {
   children: [inputComponent],
 };
 
-const inputTextProps: IText = {
-  text: "Name",
+export const inputTextProps: IText = {
+  text: i18n.t("open_from_url.input_text_name"),
   isBold: true,
 };
 

@@ -1,5 +1,5 @@
 /*
-* (c) Copyright Ascensio System SIA 2025
+* (c) Copyright Ascensio System SIA 2026
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import {
 import drawIo from "../Drawio";
 import { nameInputProps } from "./Name";
 import { urlInputProps } from "./Url";
+import { i18n } from "../locales/i18n";
 
 const onAcceptClick = async () => {
   const message = await drawIo.openFileFromUrl(
@@ -36,7 +37,7 @@ const onAcceptClick = async () => {
 };
 
 export const acceptButtonProps: IButton = {
-  label: "Create",
+  label: i18n.t("open_from_url.button_accept"),
   primary: true,
   size: ButtonSize.normal,
   scale: true,
@@ -66,7 +67,7 @@ export const onCancelClick = () => {
 };
 
 export const cancelButtonProps: IButton = {
-  label: "Cancel",
+  label: i18n.t("open_from_url.button_cancel"),
   size: ButtonSize.normal,
   scale: true,
   onClick: onCancelClick,

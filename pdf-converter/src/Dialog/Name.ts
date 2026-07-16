@@ -1,5 +1,5 @@
 /*
-* (c) Copyright Ascensio System SIA 2025
+* (c) Copyright Ascensio System SIA 2026
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import {
   BoxGroup,
 } from "@onlyoffice/docspace-plugin-sdk";
 import { acceptButtonProps } from "./button";
+import { i18n } from "../locales/i18n";
 
 const onChange = (value: string) => {
   nameInputProps.value = value;
@@ -64,8 +65,8 @@ const inputBox: IBox = {
   children: [inputComponent],
 };
 
-const inputTextProps: IText = {
-  text: "Name for converted file",
+export const inputTextProps: IText = {
+  text: i18n.t("dialog.text_converted_file_name"),
   isBold: true,
   fontWeight: 600,
   fontSize: "13px",

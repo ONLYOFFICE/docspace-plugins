@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import {
 
 import convertFile from "../ConvertFile";
 import { tokenInput } from "./Token";
+import { i18n } from "../locales";
 
 const onClick = async () => {
   convertFile.setAPIToken(tokenInput.value);
@@ -38,7 +39,7 @@ const onClick = async () => {
       Actions.updateStatus,
       Actions.saveSettings,
     ],
-    toastProps: [{ title: "Token is saved", type: ToastType.success }],
+    toastProps: [{ title: i18n.t("settings.toast_token_is_saved"), type: ToastType.success }],
     newProps: { ...userButtonProps, isDisabled: true },
     settings: tokenInput.value,
   };
@@ -49,7 +50,7 @@ const onClick = async () => {
 export const userButtonProps: IButton = {
   onClick,
   size: ButtonSize.normal,
-  label: "Save",
+  label: i18n.t("settings.button_save"),
   scale: false,
   primary: true,
   isDisabled: true,

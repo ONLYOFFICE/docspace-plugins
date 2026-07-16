@@ -1,0 +1,51 @@
+{
+  "name": "book-reader",
+  "version": "1.0.0",
+  "description": "This plugin enables you to open files in a dedicated reading viewer. Supports .epub, .fb2, .fb2.zip, and ZIP archives containing EPUB or FB2 books.",
+  "descriptionLocale": {
+    "de": "Dieses Plugin ermöglicht das Öffnen von Dateien in einem dedizierten Lesebetrachter. Unterstützt .epub, .fb2, .fb2.zip und ZIP-Archive, die EPUB- oder FB2-Bücher enthalten.",
+    "es": "Este plugin permite abrir archivos en un visor de lectura dedicado. Compatible con .epub, .fb2, .fb2.zip y archivos ZIP que contienen libros EPUB o FB2.",
+    "fr": "Ce plugin permet d'ouvrir des fichiers dans une visionneuse de lecture dédiée. Prend en charge les formats .epub, .fb2, .fb2.zip et les archives ZIP contenant des livres EPUB ou FB2.",
+    "it": "Questo plugin consente di aprire file in un visualizzatore di lettura dedicato. Supporta i formati .epub, .fb2, .fb2.zip e gli archivi ZIP contenenti libri EPUB o FB2.",
+    "ja-JP": "専用の閲覧ビューアでファイルを開くことができるプラグインです。.epub、.fb2、.fb2.zip、および EPUB または FB2 の書籍を含む ZIP アーカイブに対応しています。",
+    "pt-BR": "Este plugin permite abrir arquivos em um visualizador de leitura dedicado. Suporta os formatos .epub, .fb2, .fb2.zip e arquivos ZIP que contêm livros EPUB ou FB2.",
+    "ru": "Плагин позволяет открывать файлы в специальном средстве просмотра. Поддерживает форматы .epub, .fb2, .fb2.zip и ZIP-архивы, содержащие книги в формате EPUB или FB2.",
+    "zh-CN": "此插件可在专用阅读查看器中打开文件，支持 .epub、.fb2、.fb2.zip 格式，以及包含 EPUB 或 FB2 图书的 ZIP 压缩包。"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/reader",
+  "author": "ONLYOFFICE",
+  "maintainers": [
+    "Ascensio System SIA <integration@onlyoffice.com> (https://www.onlyoffice.com)"
+  ],
+  "bugs": {
+    "email": "support@onlyoffice.com"
+  },
+  "pluginName": "BookReader",
+  "logo": "48x48.png",
+  "main": "index.ts",
+  "private": true,
+  "scopes": [
+    "ContextMenu",
+    "File"
+  ],
+  "scripts": {
+    "build": "webpack && npx build-docspace-plugin",
+    "format": "npx prettier --write ."
+  },
+  "devDependencies": {
+    "@types/jszip": "^3.4.1",
+    "copy-webpack-plugin": "^14.0.0",
+    "prettier": "2.8.6",
+    "ts-loader": "^9.6.2",
+    "typescript": "^6.0.3",
+    "webpack": "^5.108.3",
+    "webpack-cli": "^7.1.0"
+  },
+  "dependencies": {
+    "@lingo-reader/fb2-parser": "^0.4.5",
+    "@onlyoffice/docspace-plugin-sdk": "^2.1.0",
+    "i18n-js": "^4.5.1",
+    "jszip": "^3.10.1"
+  }
+}

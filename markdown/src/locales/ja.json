@@ -1,0 +1,34 @@
+{
+    "context_menu_item": {
+        "edit_markdown": "Markdownを編集",
+        "preview_markdown": "Markdownをプレビュー"
+    },
+    "main_button": {
+        "markdown": "Markdown",
+        "dialog_create_markdown": "Markdownを作成",
+        "toast_file_not_created": "ファイル「${title}.md」を作成できませんでした: ${message}"
+    },
+    "dialog": {
+        "toast_file_saved": "ファイルが保存されました",
+        "toast_file_not_saved": "ファイルが保存されませんでした",
+        "button_save_and_close": "保存して閉じる",
+        "button_save": "保存",
+        "text_markdown": "Markdown",
+        "button_markdown_resize": "サイズ変更",
+        "text_preview": "プレビュー",
+        "button_preview_resize": "サイズ変更"
+    },
+    "unsaved": {
+        "text": "保存せずにこのファイルを閉じてもよろしいですか？",
+        "checkbox": "このメッセージを今後表示しない",
+        "button_save_and_close": "保存して閉じる",
+        "button_close_without_saving": "保存せずに閉じる",
+        "header": "ファイルに未保存の変更があります"
+    },
+    "toast_wrong_file_format": "ファイル形式が正しくありません",
+    "toast_no_permissions": "このファイルを表示する権限がありません",
+    "toast_cant_read_file": "このファイルを読み取れません",
+    "button_close": "閉じる",
+    "button_preview": "プレビュー",
+    "button_write": "書き込み"
+}

@@ -1,7 +1,17 @@
 {
   "name": "image-editor",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "DocSpace plugin for viewing and editing images",
+  "descriptionLocale": {
+    "de": "DocSpace-Plugin zum Anzeigen und Bearbeiten von Bildern",
+    "es": "Plugin de DocSpace para ver y editar imágenes",
+    "fr": "Plugin DocSpace pour visualiser et modifier des images",
+    "it": "Plugin DocSpace per visualizzare e modificare immagini",
+    "ja-JP": "画像の表示・編集のためのDocSpaceプラグイン",
+    "pt-BR": "Plugin do DocSpace para visualizar e editar imagens",
+    "ru": "Плагин DocSpace для просмотра и редактирования изображений",
+    "zh-CN": "用于查看和编辑图片的 DocSpace 插件"
+  },
   "license": "Apache-2.0",
   "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/image-editor",
   "author": "ONLYOFFICE",
@@ -38,12 +48,13 @@
   },
   "devDependencies": {
     "prettier": "2.8.6",
-    "ts-loader": "^9.3.1",
-    "typescript": "^4.7.4",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "ts-loader": "^9.6.2",
+    "typescript": "^6.0.3",
+    "webpack": "^5.108.3",
+    "webpack-cli": "^7.1.0"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "^2.0.0"
+    "@onlyoffice/docspace-plugin-sdk": "^2.1.0",
+    "i18n-js": "^4.5.1"
   }
 }

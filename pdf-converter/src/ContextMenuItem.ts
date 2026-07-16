@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,13 +21,16 @@ import {
   Security,
 } from "@onlyoffice/docspace-plugin-sdk";
 import convertFile from "./ConvertFile";
+import { i18n } from "./locales";
 
-export const convertFileItem: IContextMenuItem = {
-  key: "convert-file-item",
-  label: "Convert to PDF",
-  icon: "convert-16.png",
-  onClick: convertFile.onOpenModalDialog,
-  fileType: [FilesType.file],
-  fileExt: [FilesExst.docx, FilesExst.xlsx, FilesExst.pptx],
-  security: [Security.Create],
+export const convertFileItem: () => IContextMenuItem = () => {
+  return {
+    key: "convert-file-item",
+    label: i18n.t("context_menu_convert_to_pdf"),
+    icon: "convert-16.png",
+    onClick: convertFile.onOpenModalDialog,
+    fileType: [FilesType.file],
+    fileExt: [FilesExst.docx, FilesExst.xlsx, FilesExst.pptx],
+    security: [Security.Create],
+  };
 };

@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 import {
   IPlugin,
   PluginStatus,
+  PluginLocale,
   IApiPlugin,
   ISettingsPlugin,
   ISettings,
@@ -38,6 +39,7 @@ import { contextMenuItem } from "./ContextMenu";
 import { codemirrorSettings } from "./Settings";
 import { codemirrorItems } from "./Files";
 import codemirror from "./Codemirror";
+import { i18n, setLocale } from "./locales";
 
 class Codemirror
   implements
@@ -70,6 +72,20 @@ class Codemirror
   eventListenerItems: Map<string, IEventListenerItem> = new Map();
 
   fileItems: Map<string, IFileItem> = new Map();
+
+  setLanguage = (language: PluginLocale) => {
+    setLocale(language);
+    
+    this.updateContextMenuItem(contextMenuItem());
+    this.updateMainButtonItem(codemirrorMainButtonItem());
+    for (const item of codemirrorItems()) {
+      this.updateFileItem(item);
+    }
+  };
+
+  getLanguage = () => {
+    return i18n.locale as PluginLocale;
+  };
 
   onLoadCallback = async () => {};
 
@@ -218,10 +234,10 @@ declare global {
   }
 }
 
-plugin.addMainButtonItem(codemirrorMainButtonItem);
+plugin.addMainButtonItem(codemirrorMainButtonItem());
 plugin.setAdminPluginSettings(codemirrorSettings);
-plugin.addContextMenuItem(contextMenuItem);
-for (const item of codemirrorItems) {
+plugin.addContextMenuItem(contextMenuItem());
+for (const item of codemirrorItems()) {
   plugin.addFileItem(item);
 }
 

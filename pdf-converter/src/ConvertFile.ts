@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import ConvertApi from "convertapi-js";
 import plugin from ".";
 import { nameInputProps } from "./Dialog/Name";
 import { convertFileDialog } from "./Dialog";
+import { i18n } from "./locales";
 
 interface IFileInfo {
   viewUrl: string;
@@ -176,7 +177,10 @@ class ConvertFile {
       })).json();
       const success = res.success;
 
-      const toastTitle = `File "${fileName}${FilesExst.pdf}" was ${success?"created":`not created: ${res.message}`}`;
+      const filename = fileName + FilesExst.pdf;
+      const toastTitle = success
+        ? i18n.t("toast_file_created", { name: filename })
+        : i18n.t("toast_file_not_created", { name: filename, message: res.message });
 
       const message: IMessage = {
         actions: [Actions.showToast, Actions.closeModal],
@@ -191,7 +195,7 @@ class ConvertFile {
       this.createLock = false;
       return message;
     } catch (e: any) {
-      const toastTitle = e?.message || "Wrong API token";
+      const toastTitle = e?.message || i18n.t("toast_wrong_api_token");
 
       const message: IMessage = {
         actions: [Actions.showToast, Actions.closeModal],

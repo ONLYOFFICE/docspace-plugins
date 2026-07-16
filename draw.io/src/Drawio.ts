@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import {
 import plugin from ".";
 import { drawIoModalDialogProps, frameProps } from "./DrawIO/Dialog";
 import DiagramEditor from "./DrawIO/Editor";
+import { i18n } from "./locales";
 
 const frameId = "drawio-frame";
 
@@ -201,7 +202,7 @@ class DrawIo {
         toastProps: [
           {
             type: ToastType.error,
-            title: `File "${title}.md" was not created: ${fileId.message}`,
+            title: i18n.t("toast_file_not_created", { title, message: fileId.message }),
           },
         ]
       }
@@ -259,7 +260,7 @@ class DrawIo {
         return {
           actions: [Actions.showToast],
           toastProps: [
-            { type: ToastType.error, title: "Wrong file format" } as IToast,
+            { type: ToastType.error, title: i18n.t("toast_wrong_file_format") } as IToast,
           ],
         };
       }
@@ -277,10 +278,17 @@ class DrawIo {
         return {
           actions: [Actions.showToast],
           toastProps: [
-            { type: ToastType.error, title: "You don't have permission to view this file" } as IToast,
+            { type: ToastType.error, title: i18n.t("toast_no_permission") } as IToast,
           ],
         };
       }
+
+      fetch(`${this.apiURL}/files/file/${file.id}/recent`, {
+        method: "POST",
+        body: JSON.stringify({
+          fileIds: [file.id],
+        }),
+      });
 
       const showSaveButton =
         security?.Edit || //@ts-ignore
@@ -298,7 +306,7 @@ class DrawIo {
         return {
           actions: [Actions.showToast],
           toastProps: [
-            { type: ToastType.error, title: "Can't read this file" } as IToast,
+            { type: ToastType.error, title: i18n.t("toast_cant_read_file") } as IToast,
           ],
         };
       }

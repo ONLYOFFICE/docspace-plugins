@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 import plugin from ".";
 import { Actions, IMessage, IToast, ToastType, File } from "@onlyoffice/docspace-plugin-sdk";
 import { imageEditorModalDialogProps, saveExitButton, dialogBody } from "./Dialog";
+import { i18n } from "./locales";
 
 class ImageEditorPlugin {
   imageEditor: any;
@@ -101,11 +102,18 @@ class ImageEditorPlugin {
         toastProps: [
           {
             type: ToastType.error,
-            title: "You don't have permission to view this file",
+            title: i18n.t("toast_no_permissions"),
           } as IToast,
         ],
       };
     }
+
+    fetch(`${this.apiURL}/files/file/${file.id}/recent`, {
+      method: "POST",
+      body: JSON.stringify({
+        fileIds: [file.id],
+      }),
+    });
 
     this.currentFileId = file.id;
 
@@ -119,7 +127,7 @@ class ImageEditorPlugin {
 
       const toastProps: IToast = {
         type: success ? ToastType.success : ToastType.error,
-        title: success ? "File saved successfully" : "File saving failed",
+        title: success ? i18n.t("toast_file_saved") : i18n.t("toast_file_not_saved"),
       };
 
       message.toastProps = [toastProps];

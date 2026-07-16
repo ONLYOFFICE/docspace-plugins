@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,12 +26,14 @@ import plugin from "..";
 import convertFile from "../ConvertFile";
 
 import { tokenGroup, tokenInput } from "./Token";
-import { userButtonComponent } from "./Button";
+import { userButtonComponent, userButtonProps } from "./Button";
+import { tokenText } from "./Token";
+import { i18n } from "../locales";
 
 const descriptionText: TextGroup = {
   component: Components.text,
   props: {
-    text: "To generate API secret, visit https://www.convertapi.com/ \n\n Once the API token is enabled, the plugin becomes available to all users of the current DocSpace.",
+    text: i18n.t("settings.description"),
     color: "#A3A9AE",
     fontSize: "12px",
     fontWeight: 400,
@@ -60,6 +62,9 @@ const adminSettings: ISettings = {
     tokenInput.value = token || "";
 
     plugin.setAdminPluginSettings(adminSettings);
+
+    tokenText.text = i18n.t("settings.text_api_token");
+    userButtonProps.label = i18n.t("settings.button_save");
 
     return { settings: parentBox };
   },

@@ -1,0 +1,53 @@
+{
+  "name": "convert-to-markdown",
+  "version": "1.0.0",
+  "description": "Convert DOCX, TXT and HTML files to Markdown format directly in DocSpace",
+  "descriptionLocale": {
+    "de": "Konvertieren Sie DOCX-, TXT- und HTML-Dateien direkt in DocSpace in das Markdown-Format",
+    "es": "Convierta archivos DOCX, TXT y HTML al formato Markdown directamente en DocSpace",
+    "fr": "Convertissez des fichiers DOCX, TXT et HTML au format Markdown directement dans DocSpace",
+    "it": "Converti file DOCX, TXT e HTML in formato Markdown direttamente in DocSpace",
+    "ja-JP": "DocSpace で DOCX、TXT、HTML ファイルを Markdown 形式に直接変換",
+    "pt-BR": "Converta arquivos DOCX, TXT e HTML para o formato Markdown diretamente no DocSpace",
+    "ru": "Конвертируйте файлы DOCX, TXT и HTML в формат Markdown прямо в DocSpace",
+    "zh-CN": "直接在 DocSpace 中将 DOCX、TXT 和 HTML 文件转换为 Markdown 格式"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/convert-to-markdown",
+  "author": "ONLYOFFICE",
+  "maintainers": [
+    "Ascensio System SIA <integration@onlyoffice.com> (https://www.onlyoffice.com)"
+  ],
+  "bugs": {
+    "email": "support@onlyoffice.com"
+  },
+  "pluginName": "MarkdownConverter",
+  "logo": "icon-md.svg",
+  "main": "index.ts",
+  "private": true,
+  "scopes": [
+    "API",
+    "ContextMenu"
+  ],
+  "scripts": {
+    "build": "webpack && npx build-docspace-plugin",
+    "format": "npx prettier --write ."
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "@types/turndown": "^5.0.6",
+    "prettier": "2.8.6",
+    "ts-loader": "^9.6.2",
+    "typescript": "^6.0.3",
+    "webpack": "^5.108.3",
+    "webpack-cli": "^7.1.0"
+  },
+  "dependencies": {
+    "@onlyoffice/docspace-plugin-sdk": "^2.1.0",
+    "@truto/turndown-plugin-gfm": "^1.0.2",
+    "i18n-js": "^4.5.1",
+    "mammoth": "^1.11.0",
+    "turndown": "^7.2.2",
+    "turndown-plugin-gfm": "^1.0.2"
+  }
+}

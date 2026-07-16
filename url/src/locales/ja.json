@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "URLを編集"
+    },
+    "main_button": {
+        "new_url": "新しいURL"
+    },
+    "dialog": {
+        "header_create": "新しいURLを作成",
+        "header_edit": "URLを編集",
+        "label_url": "URL：",
+        "label_title": "タイトル：",
+        "button_create": "作成",
+        "button_save": "保存",
+        "button_cancel": "キャンセル",
+        "error_invalid_url": "無効なURLアドレスです",
+        "error_url_required": "URLは必須です",
+        "link_to": "リンク先",
+        "new_link": "新しいリンク",
+        "toast_url_created": "URLが正常に作成されました",
+        "toast_url_not_created": "URLの作成に失敗しました",
+        "toast_file_saved": "ファイルが正常に保存されました",
+        "toast_file_not_saved": "ファイルの保存に失敗しました"
+    },
+    "file_type_name": "リンク",
+    "toast_no_permissions": "このファイルを表示する権限がありません",
+    "toast_cant_read_file": "このファイルを読み取れません",
+    "toast_wrong_file": "URLファイルが不正または破損しています"
+}

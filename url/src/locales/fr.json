@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "Modifier l'URL"
+    },
+    "main_button": {
+        "new_url": "Nouvelle URL"
+    },
+    "dialog": {
+        "header_create": "Créer une nouvelle URL",
+        "header_edit": "Modifier l'URL",
+        "label_url": "URL :",
+        "label_title": "Titre :",
+        "button_create": "Créer",
+        "button_save": "Enregistrer",
+        "button_cancel": "Annuler",
+        "error_invalid_url": "Adresse URL invalide",
+        "error_url_required": "L'URL est requise",
+        "link_to": "Lien vers",
+        "new_link": "Nouveau lien",
+        "toast_url_created": "URL créée avec succès",
+        "toast_url_not_created": "Échec de la création de l'URL",
+        "toast_file_saved": "Fichier enregistré avec succès",
+        "toast_file_not_saved": "Échec de l'enregistrement du fichier"
+    },
+    "file_type_name": "Lien",
+    "toast_no_permissions": "Vous n'avez pas la permission d'afficher ce fichier",
+    "toast_cant_read_file": "Impossible de lire ce fichier",
+    "toast_wrong_file": "Fichier URL incorrect ou corrompu"
+}

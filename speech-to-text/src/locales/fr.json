@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "Jeton enregistré",
+        "button_save": "Enregistrer",
+        "text_description": "Pour générer un jeton API, visitez https://www.assemblyai.com \n\n Une fois le jeton API activé, le plugin devient disponible pour tous les utilisateurs du DocSpace actuel.",
+        "text_api_token": "Jeton API"
+    },
+    "toast_api_token_is_missing": "Jeton API manquant",
+    "toast_wrong_api_token": "Jeton API incorrect",
+    "toast_speech_not_recognized": "La parole n'a pas été reconnue ou est absente",
+    "toast_successfully_converted": "Le fichier a été converti en texte avec succès",
+    "toast_unsuccessfully_converted": "La conversion en texte a échoué : ",
+    "context_menu_convert_to_text": "Convertir en texte"
+}

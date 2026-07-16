@@ -1,0 +1,50 @@
+{
+  "name": "url",
+  "nameLocale": {
+    "en-US": "url"
+  },
+  "version": "1.0.0",
+  "author": "ONLYOFFICE",
+  "main": "index.ts",
+  "private": true,
+  "scopes": [
+    "API",
+    "Settings",
+    "ContextMenu",
+    "InfoPanel",
+    "MainButton",
+    "ProfileMenu",
+    "EventListener",
+    "File"
+  ],
+  "scripts": {
+    "build": "webpack && npx build-docspace-plugin",
+    "format": "npx prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "2.8.6",
+    "ts-loader": "^9.6.2",
+    "typescript": "^6.0.3",
+    "webpack": "^5.108.3",
+    "webpack-cli": "^7.1.0"
+  },
+  "dependencies": {
+    "@onlyoffice/docspace-plugin-sdk": "^2.1.0",
+    "i18n-js": "^4.5.1"
+  },
+  "description": "The plugin allows creating, editing, and opening URL files with external links directly from the file list",
+  "descriptionLocale": {
+    "de": "Das Plugin ermöglicht das Erstellen, Bearbeiten und Öffnen von URL-Dateien mit externen Links direkt aus der Dateiliste",
+    "es": "El plugin permite crear, editar y abrir archivos URL con enlaces externos directamente desde la lista de archivos",
+    "fr": "Le plugin permet de créer, modifier et ouvrir des fichiers URL avec des liens externes directement depuis la liste des fichiers",
+    "it": "Il plugin consente di creare, modificare e aprire file URL con collegamenti esterni direttamente dall'elenco dei file",
+    "ja-JP": "このプラグインを使用すると、外部リンクを含むURLファイルをファイルリストから直接作成、編集、開くことができます",
+    "pt-BR": "O plugin permite criar, editar e abrir arquivos URL com links externos diretamente da lista de arquivos",
+    "ru": "Плагин позволяет создавать, редактировать и открывать URL-файлы с внешними ссылками прямо из списка файлов",
+    "zh-CN": "该插件允许直接从文件列表创建、编辑和打开带有外部链接的 URL 文件"
+  },
+  "pluginName": "Url",
+  "license": "",
+  "logo": "logo_48x48.svg",
+  "homepage": ""
+}

@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import {
   ButtonSize,
   IButton,
 } from "@onlyoffice/docspace-plugin-sdk";
+import { i18n } from "../locales/i18n";
 
 const closeDialog = () => {
   const message: IMessage = {
@@ -35,7 +36,7 @@ const closeDialog = () => {
 };
 
 export const saveExitButton: IButton = {
-  label: "Save and Exit",
+  label: i18n.t("dialog_button_save_and_exit"),
   size: ButtonSize.small,
   primary: true,
   withLoadingAfterClick: true,

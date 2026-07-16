@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import {
   ButtonSize,
   Component,
 } from "@onlyoffice/docspace-plugin-sdk";
+import { i18n } from "../locales/i18n";
 
 const closeDialog = () => {
   const message: IMessage = {
@@ -36,7 +37,7 @@ const closeDialog = () => {
 };
 
 export const saveButton: IButton = {
-  label: "Save",
+  label: i18n.t("dialog.button_save"),
   size: ButtonSize.small,
   primary: true,
   withLoadingAfterClick: true,
@@ -49,7 +50,7 @@ const intendBox: IBox = {
 };
 
 export const cancelButton: IButton = {
-  label: "Cancel",
+  label: i18n.t("dialog.button_cancel"),
   size: ButtonSize.small,
   onClick: closeDialog,
 };

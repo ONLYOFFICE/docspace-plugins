@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "Abrir archivo",
+        "group_unzip": "Descomprimir",
+        "choose_location": "Elegir ubicación",
+        "unzip_here": "Descomprimir aquí",
+        "group_zip": "Archivar",
+        "zip_folder": "Archivar aquí",
+        "zip_selected": "Archivar elementos seleccionados",
+        "zip_selected_item": "Archivar elemento seleccionado"
+    },
+    "dialog": {
+        "header": "Visor de archivos",
+        "button_extract": "Extraer el archivo",
+        "selector_header_unzip": "Descomprimir en",
+        "selector_header_zip": "Archivar en",
+        "selector_header_extract": "Extraer en",
+        "selector_button_archive": "Archivar",
+        "selector_button_unzip": "Descomprimir",
+        "selector_button_extract": "Extraer",
+        "selector_checkbox_wrap": "Colocar en una nueva carpeta",
+        "button_cancel": "Cancelar",
+        "viewer_loading": "Cargando...",
+        "viewer_error": "Error: ${error}"
+    },
+    "default_zip_title": "Nuevo archivo",
+    "default_folder_title": "Nueva carpeta",
+    "file_type_name": "Archivo",
+    "toast_no_folder_download_permission": "No tiene permiso para descargar archivos de esta carpeta",
+    "toast_no_view_permission": "No tiene permiso para ver este archivo",
+    "toast_no_unzip_permission": "No tiene permiso para descomprimir este archivo",
+    "toast_extract_success": "Elemento(s) extraído(s) correctamente",
+    "toast_unzip_success": "Archivo descomprimido correctamente",
+    "toast_cant_create": "Operación fallida. No puede crear archivos en esta carpeta",
+    "toast_failed_to_create": "Error al crear el ZIP",
+    "toast_zip_saved": "ZIP guardado",
+    "toast_zip_not_saved": "Error al guardar el ZIP"
+}

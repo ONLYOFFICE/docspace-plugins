@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ import { FileTreeItem } from "../Archives";
 import { addStyles } from "./Styles";
 import { fileTypes } from "../properties.json";
 import archives from "../Archives";
+import { i18n } from "../locales";
 
 const current = {
   file: undefined as string | undefined,
@@ -41,18 +42,24 @@ export function drawInIframe(id: string, callback: Function, ...args: any) {
 
 export function loader(iframe: HTMLIFrameElement) {
   // TODO: do
-  iframe.contentWindow!.document.body.innerHTML = "Loading...";
+  iframe.contentWindow!.document.body.innerHTML = i18n.t("dialog.viewer_loading");
 }
 
 export function error(iframe: HTMLIFrameElement, error: string) {
   // TODO: do and use
-  iframe.contentWindow!.document.body.innerHTML = `Error:\n${error}`;
+  iframe.contentWindow!.document.body.innerHTML = i18n.t("dialog.viewer_error", { error });
 }
 
-export function viewer(iframe: HTMLIFrameElement, root: FileTreeItem[], fileName: string, dark: boolean) {
+export function viewer(
+  iframe: HTMLIFrameElement,
+  root: FileTreeItem[],
+  fileName: string,
+  dark: boolean,
+  path: string = ""
+) {
   current.file = fileName;
   current.root = root;
-  current.path = "";
+  current.path = path;
   current.iframe = iframe;
 
   addStyles(iframe, dark);
@@ -87,150 +94,8 @@ export function viewer(iframe: HTMLIFrameElement, root: FileTreeItem[], fileName
 
   viewer.appendChild(explorer);
 
-  const selector = iframe.contentWindow!.document.createElement("div"); // TODO: [temp]
-  selector.id = "selector";
-  selector.style.display = "none";
-
   iframe.contentWindow!.document.body.innerHTML = "";
   iframe.contentWindow!.document.body.appendChild(viewer);
-  iframe.contentWindow!.document.body.appendChild(selector);
-}
-
-export async function selector(
-  iframe: HTMLIFrameElement,
-  body: HTMLElement,
-  path: { title: string; id: number | undefined }[],
-  content: FileTreeItem[],
-  buttons?: boolean, // TODO: [temp]
-  dark?: boolean
-) {
-  if (!body) {
-    body = iframe.contentWindow!.document.body;
-    addStyles(iframe, dark!);
-    selector(iframe, body, path, content, buttons);
-    return;
-  }
-
-  body.innerHTML = ""; // TODO: clean only body in separate selector
-
-  const selectorHeader = body.ownerDocument.createElement("div");
-  selectorHeader.id = "selector-header";
-  const docSpaceFolder = body.ownerDocument.createElement("div");
-  docSpaceFolder.innerHTML = "DocSpace";
-  docSpaceFolder.onclick = () => {
-    selector(iframe, body, [], content, buttons);
-  };
-  selectorHeader.appendChild(docSpaceFolder);
-
-  const selectorBody = body.ownerDocument.createElement("div");
-  selectorBody.id = "selector-body";
-
-  body.appendChild(selectorHeader);
-  body.appendChild(selectorBody);
-
-  const addSelectorFolder = (title: string, image: string, id?: number) => {
-    const icon = body.ownerDocument.createElement("div");
-    icon.className = "selector-folder-icon";
-    icon.innerHTML = getSVGIcon(image);
-
-    const text = body.ownerDocument.createElement("div");
-    text.className = "selector-folder-title";
-    text.innerText = title;
-    text.onclick = () => {
-      selector(iframe, body, [...path, { title: title, id: id }], content, buttons);
-    };
-
-    const folder = body.ownerDocument.createElement("div");
-    folder.className = "selector-folder";
-    folder.appendChild(icon);
-    folder.appendChild(text);
-
-    selectorBody.appendChild(folder);
-  };
-
-  const addHeaderArrow = () => {
-    const arrow = body.ownerDocument.createElement("div");
-    arrow.className = "selector-arrow";
-    arrow.innerHTML = getSVGIcon("selector-arrow");
-    selectorHeader.appendChild(arrow);
-  };
-
-  if (path.length == 0) {
-    docSpaceFolder.classList.add("current-folder");
-
-    if (!current.myDocumentsId) {
-      current.myDocumentsId = (await archives.getFolder("@my")).pathParts[0].id;
-    }
-    addSelectorFolder("My documents", "my-documents", current.myDocumentsId);
-    addSelectorFolder("Rooms", "rooms");
-  } else {
-    archives.destinationFolderId = path[path.length - 1].id;
-    const currentFolder = await archives.getFolder(archives.destinationFolderId);
-    let startIndex = 0;
-
-    if (path.length > 2) {
-      startIndex = path.length - 2;
-      addHeaderArrow();
-      const skip = body.ownerDocument.createElement("div");
-      skip.innerText = "...";
-      skip.style.cursor = "default";
-      selectorHeader.appendChild(skip);
-    }
-
-    for (let i = startIndex; i < path.length; i++) {
-      addHeaderArrow();
-      const folder = body.ownerDocument.createElement("div");
-      folder.innerHTML = path[i].title;
-
-      if (i == path.length - 1) {
-        folder.classList.add("current-folder");
-      } else {
-        folder.onclick = () => {
-          selector(iframe, body, path.slice(0, i + 1), content, buttons);
-        };
-      }
-
-      selectorHeader.appendChild(folder);
-    }
-
-    for (const folder of currentFolder.folders) {
-      addSelectorFolder(folder.title, "selector-folder", folder.id);
-    }
-  }
-
-  // TODO: [temp]
-  if (!buttons) return;
-
-  const footer = body.ownerDocument.createElement("div");
-  footer.id = "temp-footer";
-  const extractButton = body.ownerDocument.createElement("div");
-  extractButton.innerText = "Unzip here";
-  extractButton.id = "temp-extract-button";
-  if (path.length > 0 && path[path.length - 1].id != undefined) {
-    extractButton.onclick = async () => {
-      footer.style.display = "none";
-      await archives.unzip(path[path.length - 1].id!, content);
-      const viewer = current.iframe!.contentDocument!.querySelector("#viewer") as HTMLDivElement; // TODO: [temp]
-      const hiddenSelector = current.iframe!.contentDocument!.querySelector("#selector") as HTMLDivElement;
-      viewer.style.display = "flex";
-      hiddenSelector.style.display = "none";
-    };
-  } else {
-    extractButton.style.opacity = "50%";
-    extractButton.style.cursor = "default";
-  }
-  const cancelButton = body.ownerDocument.createElement("div");
-  cancelButton.innerText = "Cancel";
-  cancelButton.id = "temp-cancel-button";
-  cancelButton.onclick = () => {
-    const viewer = current.iframe!.contentDocument!.querySelector("#viewer") as HTMLDivElement; // TODO: [temp]
-    const hiddenSelector = current.iframe!.contentDocument!.querySelector("#selector") as HTMLDivElement;
-    viewer.style.display = "flex";
-    hiddenSelector.style.display = "none";
-  };
-  footer.appendChild(extractButton);
-  footer.appendChild(cancelButton);
-  body.appendChild(footer);
 }
 
 function addSideElements(sidePanel: HTMLDivElement, folder: FileTreeItem[], path: string) {
@@ -412,13 +277,8 @@ function createExplorerHeader(header: HTMLElement) {
     for (const p of current.selection) {
       content.push(getFileTreeItem(p, current.root));
     }
-    console.log(content);
 
-    const viewer = current.iframe!.contentDocument!.querySelector("#viewer") as HTMLDivElement; // TODO: [temp]
-    const hiddenSelector = current.iframe!.contentDocument!.querySelector("#selector") as HTMLDivElement;
-    viewer.style.display = "none";
-    hiddenSelector.style.display = "flex";
-    selector(current.iframe!, hiddenSelector, [], content, true);
+    archives.postMessage({ action: "open-selector", path: current.path, content });
   };
   extractHeader.appendChild(extractButton);
 
@@ -468,13 +328,7 @@ function addExplorerElements(explorerBody: HTMLElement) {
     extract.className = "file-extract-mini";
     extract.innerHTML = getSVGIcon("extract-mini");
     extract.onclick = () => {
-      // TODO: [temp]
-      const viewer = current.iframe!.contentDocument!.querySelector("#viewer") as HTMLDivElement;
-      const hiddenSelector = current.iframe!.contentDocument!.querySelector("#selector") as HTMLDivElement;
-
-      viewer.style.display = "none";
-      hiddenSelector.style.display = "flex";
-      selector(current.iframe!, hiddenSelector, [], [f], true);
+      archives.postMessage({ action: "open-selector", path: current.path, content: [f] });
     };
 
     element.appendChild(iconBox);

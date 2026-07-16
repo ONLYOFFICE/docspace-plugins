@@ -1,5 +1,5 @@
 /*
- * (c) Copyright Ascensio System SIA 2025
+ * (c) Copyright Ascensio System SIA 2026
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,13 +26,14 @@ import {
 
 import { nameGroup } from "./Name";
 import { buttonGroup, onAcceptClick, onCancelClick } from "./button";
+import { i18n } from "../locales";
 
 // @ts-ignore
 const onKeyUp = (e) => {
   try {
     if (e.keyCode === 13 || e.which === 13) return onAcceptClick();
   } catch (e) {
-    const toastTitle = "Wrong API token";
+    const toastTitle = i18n.t("dialog.toast_wrong_api_token");
 
     const message: IMessage = {
       actions: [Actions.showToast, Actions.closeModal],
@@ -55,13 +56,16 @@ const parentBox: IBox = {
 };
 
 export const convertFileDialog: IModalDialog = {
-  dialogHeader: "Convert file to PDF",
+  dialogHeader: i18n.t("dialog.header_convert_to_pdf"),
   dialogBody: parentBox,
   displayType: ModalDisplayType.modal,
   autoMaxHeight: true,
   onClose: onCancelClick,
   onLoad: async () => {
-    return { newDialogHeader: "Convert file to PDF", newDialogBody: parentBox };
+    return {
+      newDialogHeader: i18n.t("dialog.header_convert_to_pdf"),
+      newDialogBody: parentBox,
+    };
   },
   eventListeners: [
     {

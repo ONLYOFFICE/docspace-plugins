@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "保存",
+        "button_cancel": "取消",
+        "text_unsaved": "不保存继续？\n您已对配置进行了更改。如果不保存继续，这些更改将不会被应用。",
+        "warning_header": "警告",
+        "button_continue": "继续",
+        "button_reopen": "重新打开"
+    },
+    "main_button": {
+        "label": "文本文件",
+        "create_dialog_title": "创建文本文件",
+        "create_dialog_start_value": "文本文件",
+        "error_no_file_ext": "必须提供文件扩展名",
+        "error_not_supported": "Codemirror 插件不支持该文件扩展名",
+        "error_not_created": "文件 \"${title}.md\" 未被创建：${message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "数据已保存",
+        "button_save": "保存",
+        "header_general": "常规",
+        "header_html": "HTML",
+        "highlight_whitespace": "高亮显示空白字符",
+        "highlight_whitespace_description": "将空格显示为点，将制表符显示为箭头。",
+        "highlight_trailing_whitespace": "高亮显示末尾空白字符",
+        "highlight_trailing_whitespace_description": "高亮显示行末的空白字符。",
+        "auto_close_tags": "自动关闭标签",
+        "auto_close_tags_description": "在 HTML 类文件中输入 > 或 / 时自动插入关闭标签。"
+    },
+    "context_menu_edit": "使用 Codemirror 编辑文件",
+    "file_type_name": "代码",
+    "toast_no_permission": "您没有权限查看此文件",
+    "toast_cant_read_file": "无法读取此文件",
+    "toast_file_saved": "文件已保存",
+    "toast_file_not_saved": "保存文件失败"
+}
