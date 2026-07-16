@@ -1,6 +1,17 @@
 # Change Log
 
+## Added
 - add opened file to recent files
+- add localization
+
+## Fixed
+- fix textarea resize
+- fix separator not hiding on fullscreen resize
+- fix footer margins
+
+## Changed
+- using @onlyoffice/docspace-plugin-sdk 2.1.0
+- compatible with DocSpace 3.7
 
 ## 1.2.0
 ## Changed

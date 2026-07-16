@@ -1,5 +1,12 @@
 # Change Log
 
+## Added
+- add localization
+
+## Changed
+- using @onlyoffice/docspace-plugin-sdk 2.1.0
+- compatible with DocSpace 3.7
+
 ## 1.1.0
 ## Changed
 - using sdk v2.0.0
