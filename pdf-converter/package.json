@@ -43,7 +43,7 @@
     "webpack-cli": "^7.1.0"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "file:../onlyoffice-docspace-plugin-sdk-2.1.0.tgz",
+    "@onlyoffice/docspace-plugin-sdk": "^2.1.0",
     "convertapi-js": "~1.1",
     "i18n-js": "^4.5.1"
   }

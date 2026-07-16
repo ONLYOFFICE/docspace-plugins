@@ -54,9 +54,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@onlyoffice/docspace-plugin-sdk@file:../onlyoffice-docspace-plugin-sdk-2.1.0.tgz":
+"@onlyoffice/docspace-plugin-sdk@^2.1.0":
   version "2.1.0"
-  resolved "file:../onlyoffice-docspace-plugin-sdk-2.1.0.tgz#90a18de4c49f97c26808397451957fcc64715c1e"
+  resolved "https://registry.yarnpkg.com/@onlyoffice/docspace-plugin-sdk/-/docspace-plugin-sdk-2.1.0.tgz#db80acbf8bc27423aa4abf12447a9d3168aba346"
+  integrity sha512-JP18E8Un4AtT7AKzu/k23okTjTuxan8VI2XY6CAHgaYGmH+9huPyurosQ65b3hRyfu37trtILr2kKsLvZIyPLQ==
   dependencies:
     inquirer "^9.1.0"
     jszip "^3.10.1"

@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@lingo-reader/fb2-parser": "^0.4.5",
-    "@onlyoffice/docspace-plugin-sdk": "file:../onlyoffice-docspace-plugin-sdk-2.1.0.tgz",
+    "@onlyoffice/docspace-plugin-sdk": "^2.1.0",
     "i18n-js": "^4.5.1",
     "jszip": "^3.10.1"
   }

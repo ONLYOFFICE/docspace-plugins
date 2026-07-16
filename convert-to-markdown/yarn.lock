@@ -59,9 +59,10 @@
   resolved "https://registry.yarnpkg.com/@mixmark-io/domino/-/domino-2.2.0.tgz#4e8ec69bf1afeb7a14f0628b7e2c0f35bdb336c3"
   integrity sha512-Y28PR25bHXUg88kCV7nivXrP2Nj2RueZ3/l/jdx6J9f8J4nsEGcgX0Qe6lt7Pa+J79+kPiJU3LguR6O/6zrLOw==
 
-"@onlyoffice/docspace-plugin-sdk@file:../onlyoffice-docspace-plugin-sdk-2.1.0.tgz":
+"@onlyoffice/docspace-plugin-sdk@^2.1.0":
   version "2.1.0"
-  resolved "file:../onlyoffice-docspace-plugin-sdk-2.1.0.tgz#90a18de4c49f97c26808397451957fcc64715c1e"
+  resolved "https://registry.yarnpkg.com/@onlyoffice/docspace-plugin-sdk/-/docspace-plugin-sdk-2.1.0.tgz#db80acbf8bc27423aa4abf12447a9d3168aba346"
+  integrity sha512-JP18E8Un4AtT7AKzu/k23okTjTuxan8VI2XY6CAHgaYGmH+9huPyurosQ65b3hRyfu37trtILr2kKsLvZIyPLQ==
   dependencies:
     inquirer "^9.1.0"
     jszip "^3.10.1"
