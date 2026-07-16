@@ -1,6 +1,6 @@
 {
   "name": "codemirror",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "DocSpace plugin for viewing and editing files with various programming code formats",
   "descriptionLocale": {
     "de": "DocSpace-Plugin zum Anzeigen und Bearbeiten von Dateien mit verschiedenen Programmiercode-Formaten",

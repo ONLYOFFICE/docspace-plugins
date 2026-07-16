@@ -1,6 +1,6 @@
 {
   "name": "zip-archives",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "DocSpace plugin for opening and extracting ZIP archives",
   "descriptionLocale": {
     "de": "DocSpace-Plugin zum Öffnen und Entpacken von ZIP-Archiven",
