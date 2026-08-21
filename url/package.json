@@ -3,7 +3,7 @@
   "nameLocale": {
     "en-US": "url"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "ONLYOFFICE",
   "main": "index.ts",
   "private": true,
@@ -29,7 +29,7 @@
     "webpack-cli": "^7.1.0"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "^2.1.0",
+    "@onlyoffice/docspace-plugin-sdk": "^2.1.1",
     "i18n-js": "^4.5.1"
   },
   "description": "The plugin allows creating, editing, and opening URL files with external links directly from the file list",

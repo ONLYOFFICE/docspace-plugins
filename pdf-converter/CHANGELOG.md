@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.2.1
+### Changed
+- using @onlyoffice/docspace-plugin-sdk 2.1.1
+
 ## 1.2.0
 ### Added
 - add localization

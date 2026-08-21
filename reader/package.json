@@ -1,6 +1,6 @@
 {
   "name": "book-reader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This plugin enables you to open files in a dedicated reading viewer. Supports .epub, .fb2, .fb2.zip, and ZIP archives containing EPUB or FB2 books.",
   "descriptionLocale": {
     "de": "Dieses Plugin ermöglicht das Öffnen von Dateien in einem dedizierten Lesebetrachter. Unterstützt .epub, .fb2, .fb2.zip und ZIP-Archive, die EPUB- oder FB2-Bücher enthalten.",
@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@lingo-reader/fb2-parser": "^0.4.5",
-    "@onlyoffice/docspace-plugin-sdk": "^2.1.0",
+    "@onlyoffice/docspace-plugin-sdk": "^2.1.1",
     "i18n-js": "^4.5.1",
     "jszip": "^3.10.1"
   }

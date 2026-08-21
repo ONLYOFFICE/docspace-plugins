@@ -427,10 +427,10 @@
   resolved "https://registry.yarnpkg.com/@marijn/find-cluster-break/-/find-cluster-break-1.0.3.tgz#bdbe907e00c17c84e33fc51b1519d9aa211e7e8e"
   integrity sha512-FY+MKLBoTsLNJF/eLWaOsXGdz6uh3Iu1axjPf6TUq92IYumcTcXWHoS747JARLkcdlJ/Waiaxc5wQfFO8jC6NA==
 
-"@onlyoffice/docspace-plugin-sdk@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@onlyoffice/docspace-plugin-sdk/-/docspace-plugin-sdk-2.1.0.tgz#db80acbf8bc27423aa4abf12447a9d3168aba346"
-  integrity sha512-JP18E8Un4AtT7AKzu/k23okTjTuxan8VI2XY6CAHgaYGmH+9huPyurosQ65b3hRyfu37trtILr2kKsLvZIyPLQ==
+"@onlyoffice/docspace-plugin-sdk@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@onlyoffice/docspace-plugin-sdk/-/docspace-plugin-sdk-2.1.1.tgz#bb12e42b426b034f544b82615b6a5c5514cc4b7b"
+  integrity sha512-OvcFHExR5HKeaS52/HvmtT34neOikV9lRh+3o9W8RqaW0hlRtTz3CwFizTt635R1qAnRQXnaYRvOIeIi+bCA2A==
   dependencies:
     inquirer "^9.1.0"
     jszip "^3.10.1"

@@ -1,6 +1,6 @@
 {
   "name": "pdf-converter",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A plugin for converting docs, sheets, slides, and forms to PDF. The plugin is available via the Actions section in the file context menu. The converted file is saved in the same folder as the original one.",
   "descriptionLocale": {
     "de": "Ein Plugin zum Konvertieren von Dokumenten, Tabellen, Präsentationen und Formularen in PDF. Das Plugin ist über den Bereich „Aktionen“ im Kontextmenü der Datei verfügbar. Die konvertierte Datei wird im selben Ordner wie das Original gespeichert.",
@@ -43,7 +43,7 @@
     "webpack-cli": "^7.1.0"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "^2.1.0",
+    "@onlyoffice/docspace-plugin-sdk": "^2.1.1",
     "convertapi-js": "~1.1",
     "i18n-js": "^4.5.1"
   }

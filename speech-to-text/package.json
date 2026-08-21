@@ -1,6 +1,6 @@
 {
   "name": "speech-to-text",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Speech to Text Conversion is a speech recognition software that allows you to recognize and translate spoken speech into text.",
   "descriptionLocale": {
     "de": "Speech-to-Text-Konvertierung ist eine Spracherkennungssoftware, mit der Sie gesprochene Sprache erkennen und in Text umwandeln können.",
@@ -45,7 +45,7 @@
     "webpack-cli": "^7.1.0"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "^2.1.0",
+    "@onlyoffice/docspace-plugin-sdk": "^2.1.1",
     "i18n-js": "^4.5.1"
   }
 }

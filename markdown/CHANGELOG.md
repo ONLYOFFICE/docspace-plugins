@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.3.1
+### Changed
+- using @onlyoffice/docspace-plugin-sdk 2.1.1
+
 ## 1.3.0
 ### Added
 - add opened file to recent files

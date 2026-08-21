@@ -1,6 +1,6 @@
 {
   "name": "convert-to-markdown",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert DOCX, TXT and HTML files to Markdown format directly in DocSpace",
   "descriptionLocale": {
     "de": "Konvertieren Sie DOCX-, TXT- und HTML-Dateien direkt in DocSpace in das Markdown-Format",
@@ -43,7 +43,7 @@
     "webpack-cli": "^7.1.0"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "^2.1.0",
+    "@onlyoffice/docspace-plugin-sdk": "^2.1.1",
     "@truto/turndown-plugin-gfm": "^1.0.2",
     "i18n-js": "^4.5.1",
     "mammoth": "^1.11.0",

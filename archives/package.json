@@ -1,6 +1,6 @@
 {
   "name": "zip-archives",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "DocSpace plugin for opening and extracting ZIP archives",
   "descriptionLocale": {
     "de": "DocSpace-Plugin zum Öffnen und Entpacken von ZIP-Archiven",
@@ -51,7 +51,7 @@
     "webpack-cli": "^7.1.0"
   },
   "dependencies": {
-    "@onlyoffice/docspace-plugin-sdk": "^2.1.0",
+    "@onlyoffice/docspace-plugin-sdk": "^2.1.1",
     "i18n-js": "^4.5.1",
     "jszip": "^3.10.1"
   }
