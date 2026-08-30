@@ -40,9 +40,30 @@ const emptyDiagram = `
   </diagram>
 </mxfile>`;
 
+export const DEFAULT_DRAWIO_URL = "https://embed.diagrams.net";
+
+const parseUrl = (url: string): URL | null => {
+  try {
+    return new URL(url);
+  } catch {
+    return null;
+  }
+};
+
+export const normalizeDrawIoUrl = (url: string): string =>
+  (url || "").trim().replace(/\/+$/, "");
+
+export const isValidDrawIoUrl = (url: string): boolean => {
+  const parsed = parseUrl(normalizeDrawIoUrl(url));
+
+  return (
+    !!parsed && (parsed.protocol === "http:" || parsed.protocol === "https:")
+  );
+};
+
 class DrawIo {
   adminSettings = {
-    url: "https://embed.diagrams.net",
+    url: DEFAULT_DRAWIO_URL,
     lang: "auto",
     off: false,
     lib: false,
@@ -66,7 +87,26 @@ class DrawIo {
   };
 
   setUrl = (url: string) => {
-    this.adminSettings.url = url;
+    const normalized = normalizeDrawIoUrl(url);
+
+    this.adminSettings.url = isValidDrawIoUrl(normalized)
+      ? normalized
+      : DEFAULT_DRAWIO_URL;
+  };
+
+  getUrl = () => {
+    return this.adminSettings.url;
+  };
+
+  /**
+   * Origin of the configured draw.io instance. Used to check that a postMessage
+   * really comes from the editor frame: the configured address may contain a
+   * path or a trailing slash, so it cannot be compared with an origin directly.
+   */
+  getEditorOrigin = () => {
+    const parsed = parseUrl(this.adminSettings.url);
+
+    return parsed ? parsed.origin : "";
   };
 
   setLang = (lang: string) => {
@@ -87,9 +127,11 @@ class DrawIo {
     off: boolean,
     lib: boolean
   ) => {
-    if (!url) return false;
+    const normalizedUrl = normalizeDrawIoUrl(url);
 
-    const isSameUrl = url === this.adminSettings.url;
+    if (!isValidDrawIoUrl(normalizedUrl)) return false;
+
+    const isSameUrl = normalizedUrl === this.adminSettings.url;
     const isSameLang = lang?.key === this.adminSettings.lang;
     const isSameOff = off === this.adminSettings.off;
     const isSameLib = lib === this.adminSettings.lib;

@@ -16,6 +16,8 @@
     "settings": {
         "toast_data_saved": "I dati sono stati salvati",
         "button_save": "Salva",
+        "text_url": "Indirizzo draw.io",
+        "text_url_description": "L'indirizzo del servizio draw.io utilizzato per aprire e modificare i diagrammi. Modificalo se draw.io è ospitato sul tuo server. Lascia https://embed.diagrams.net per usare il servizio pubblico.",
         "text_language": "Lingua",
         "text_libraries": "Librerie",
         "text_offline_description": "Quando la \"modalità offline\" è attiva, disabilita tutte le operazioni e funzionalità remote per proteggere",

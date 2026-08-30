@@ -41,7 +41,7 @@ function DiagramEditor(
   var self = this;
 
   this.handleMessageEvent = function (evt) {
-    if (evt.origin == url && evt.data.length > 0) {
+    if (evt.origin === drawIo.getEditorOrigin() && evt.data.length > 0) {
       try {
         var msg = JSON.parse(evt.data);
 
@@ -106,7 +106,8 @@ DiagramEditor.prototype.getFrameId = function () {
 DiagramEditor.prototype.getFrameUrl = function () {
   var url = this.url;
 
-  url += "?proto=json&spin=1&embed=1";
+  url += url.indexOf("?") === -1 ? "?" : "&";
+  url += "proto=json&spin=1&embed=1";
 
   if (this.off != null) {
     url += "&offline=";
