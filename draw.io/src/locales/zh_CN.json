@@ -16,6 +16,8 @@
     "settings": {
         "toast_data_saved": "数据已保存",
         "button_save": "保存",
+        "text_url": "draw.io 地址",
+        "text_url_description": "用于打开和编辑图表的 draw.io 服务地址。如果 draw.io 部署在您自己的服务器上，请修改此地址。保留 https://embed.diagrams.net 则使用公共服务。",
         "text_language": "语言",
         "text_libraries": "资源库",
         "text_offline_description": "启用“离线模式”后，将禁用所有远程操作和功能以确保安全",

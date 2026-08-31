@@ -1,5 +1,12 @@
 # Change Log
 
+## 1.4.0
+### Added
+- setting for the draw.io address, so a self-hosted draw.io instance can be used
+
+### Fixed
+- editor messages are now checked against the origin of the configured address
+
 ## 1.3.0
 ### Added
 - add opened file to recent files
