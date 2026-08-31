@@ -85,6 +85,7 @@ jobs:
   licences:
     name: "Licenses plugin: ${{ matrix.plugin }}"
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     needs: [changes]
     env:
       PLUGIN_FOLDER: ${{ matrix.plugin }}
