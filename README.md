@@ -10,6 +10,7 @@ This repository comprises plugins which allow extending the functionality of [ON
 * [PDFConverter](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/pdf-converter)
 * [Reader](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/reader)
 * [SpeechToText](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/speech-to-text)
+* [URL](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/url)
 * [ZIP Archives](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/archives)
 
 ## User feedback and support
