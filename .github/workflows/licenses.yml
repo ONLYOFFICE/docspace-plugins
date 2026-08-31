@@ -8,37 +8,52 @@ on:
     branches: [master, develop]
 
 jobs:
-  prepare:
+  check-matrix:
+    name: "Matrix is up to date"
     runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.matrix.outputs.plugins }}
     steps:
       - uses: actions/checkout@v4
-      - name: make matrix
-        id: matrix
+      - name: Compare plugin folders with the matrix
+        shell: bash
         run: |
-          PLUGINS=()
-          for d in $(ls -d */); do
-            if [[ -f ${d}/yarn.lock || -f ${d}/package.json ]]; then
-              PLUGINS+=($(basename ${d}))
-            fi
-          done
-          echo "plugins for build is: "
-          echo "${PLUGINS[@]}"
+          set -eo pipefail
 
-          # Set new matrix for build job
-          echo "plugins=$(jq -c -n '$ARGS.positional' --args "${PLUGINS[@]}")" >> "$GITHUB_OUTPUT"
+          FOUND=$(for d in */; do
+            d="${d%/}"
+            if [ -f "${d}/yarn.lock" ] || [ -f "${d}/package.json" ]; then echo "${d}"; fi
+          done | sort)
+
+          LISTED=$(sed -n '/^ *plugin:$/,/^ *steps:$/p' .github/workflows/licenses.yml \
+            | sed -n 's/^ *- \(.*\)$/\1/p' | sort)
+
+          echo "plugin folders: $(echo "${FOUND}" | tr '\n' ' ')"
+          echo "matrix entries: $(echo "${LISTED}" | tr '\n' ' ')"
+
+          if [ "${FOUND}" != "${LISTED}" ]; then
+            echo "::error::matrix.plugin in .github/workflows/licenses.yml is out of sync with the plugin folders, update it"
+            diff <(echo "${LISTED}") <(echo "${FOUND}") || true
+            exit 1
+          fi
 
   licences:
     name: "Licenses plugin: ${{ matrix.plugin }}"
     runs-on: ubuntu-latest
     env:
       PLUGIN_FOLDER: ${{ matrix.plugin }}
-    needs: [prepare]
     strategy:
       fail-fast: false
       matrix:
-        plugin: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+        plugin:
+          - archives
+          - codemirror
+          - convert-to-markdown
+          - draw.io
+          - image-editor
+          - markdown
+          - pdf-converter
+          - reader
+          - speech-to-text
+          - url
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
