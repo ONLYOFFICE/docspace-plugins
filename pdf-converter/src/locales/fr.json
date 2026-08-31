@@ -7,7 +7,7 @@
         "text_converted_file_name": "Nom du fichier converti"
     },
     "settings": {
-        "description": "Pour générer un secret API, visitez https://www.convertapi.com/ \n\n Une fois le jeton API activé, le plugin devient disponible pour tous les utilisateurs du DocSpace actuel.",
+        "description": "Pour générer un secret API, visitez https://www.convertapi.com/ \n\n Une fois le jeton API activé, le plugin devient disponible pour tous les utilisateurs du Docs actuel.",
         "toast_token_is_saved": "Jeton enregistré",
         "button_save": "Enregistrer",
         "text_api_token": "Jeton API"

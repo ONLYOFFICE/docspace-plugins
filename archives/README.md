@@ -10,7 +10,7 @@ In case you want to adjust the plugin settings, go to *Settings -> Integration -
 
 ## How to use
 
-The plugin enables you to unzip archives directly in DocSpace. To get started, simply open the context menu for the archive file, navigate to the **Actions section**, and choose your preferred option.
+The plugin enables you to unzip archives directly in Docs. To get started, simply open the context menu for the archive file, navigate to the **Actions section**, and choose your preferred option.
 
 - **Open archive**: View the contents of the archive without unzipping it. You can also extract specific files directly from the preview window.
 - **Choose location to unzip**: Select a specific location to extract the entire archive.

@@ -7,7 +7,7 @@
         "text_converted_file_name": "変換後のファイル名"
     },
     "settings": {
-        "description": "APIシークレットを生成するには、https://www.convertapi.com/ にアクセスしてください \n\n APIトークンを有効にすると、現在のDocSpaceのすべてのユーザーがプラグインを使用できるようになります。",
+        "description": "APIシークレットを生成するには、https://www.convertapi.com/ にアクセスしてください \n\n APIトークンを有効にすると、現在のDocsのすべてのユーザーがプラグインを使用できるようになります。",
         "toast_token_is_saved": "トークンが保存されました",
         "button_save": "保存",
         "text_api_token": "APIトークン"

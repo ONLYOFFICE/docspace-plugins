@@ -1,6 +1,6 @@
-# ONLYOFFICE DocSpace plugins
+# ONLYOFFICE Docs plugins
 
-This repository comprises plugins which allow extending the functionality of [ONLYOFFICE DocSpace](https://www.onlyoffice.com/docspace.aspx).
+This repository comprises plugins which allow extending the functionality of [ONLYOFFICE Docs](https://www.onlyoffice.com/docspace.aspx).
 
 * [Codemirror](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/codemirror)
 * [ConvertToMarkdown](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/convert-to-markdown)

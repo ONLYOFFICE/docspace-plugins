@@ -1,16 +1,16 @@
 {
   "name": "image-editor",
   "version": "1.1.0",
-  "description": "DocSpace plugin for viewing and editing images",
+  "description": "Docs plugin for viewing and editing images",
   "descriptionLocale": {
-    "de": "DocSpace-Plugin zum Anzeigen und Bearbeiten von Bildern",
-    "es": "Plugin de DocSpace para ver y editar imágenes",
-    "fr": "Plugin DocSpace pour visualiser et modifier des images",
-    "it": "Plugin DocSpace per visualizzare e modificare immagini",
-    "ja-JP": "画像の表示・編集のためのDocSpaceプラグイン",
-    "pt-BR": "Plugin do DocSpace para visualizar e editar imagens",
-    "ru": "Плагин DocSpace для просмотра и редактирования изображений",
-    "zh-CN": "用于查看和编辑图片的 DocSpace 插件"
+    "de": "Docs-Plugin zum Anzeigen und Bearbeiten von Bildern",
+    "es": "Plugin de Docs para ver y editar imágenes",
+    "fr": "Plugin Docs pour visualiser et modifier des images",
+    "it": "Plugin Docs per visualizzare e modificare immagini",
+    "ja-JP": "画像の表示・編集のためのDocsプラグイン",
+    "pt-BR": "Plugin do Docs para visualizar e editar imagens",
+    "ru": "Плагин Docs для просмотра и редактирования изображений",
+    "zh-CN": "用于查看和编辑图片的 Docs 插件"
   },
   "license": "Apache-2.0",
   "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/image-editor",

@@ -2,7 +2,7 @@
     "settings": {
         "toast_token_is_saved": "Jeton enregistré",
         "button_save": "Enregistrer",
-        "text_description": "Pour générer un jeton API, visitez https://www.assemblyai.com \n\n Une fois le jeton API activé, le plugin devient disponible pour tous les utilisateurs du DocSpace actuel.",
+        "text_description": "Pour générer un jeton API, visitez https://www.assemblyai.com \n\n Une fois le jeton API activé, le plugin devient disponible pour tous les utilisateurs du Docs actuel.",
         "text_api_token": "Jeton API"
     },
     "toast_api_token_is_missing": "Jeton API manquant",

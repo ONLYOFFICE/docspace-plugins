@@ -742,7 +742,7 @@ function setSizes(editor: boolean, mobile: boolean) {
     ? "calc(100% - 42px)"
     : "100%";
 }
-// for backward compatibility with old versions docspace
+// for backward compatibility with old versions Docs
 function resizeTextArea() {
   const area = window.parent.document.getElementsByName(
     "md-plugin-textarea"

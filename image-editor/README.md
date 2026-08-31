@@ -1,6 +1,6 @@
 ## Overview
 
-View and edit images in DocSpace.
+View and edit images in Docs.
 
 ## How to configure
 
@@ -18,7 +18,7 @@ An image editor pop-up will open, featuring a toolbar on the right with various 
 
 After saving, a notification will confirm the successful update, and the file version will be updated accordingly.
 
-When you open the file using a standard image viewer in DocSpace, the latest version of the image will be displayed.
+When you open the file using a standard image viewer in Docs, the latest version of the image will be displayed.
 
 ## User feedback and support
 

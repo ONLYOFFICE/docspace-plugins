@@ -2,7 +2,7 @@
     "settings": {
         "toast_token_is_saved": "Token guardado",
         "button_save": "Guardar",
-        "text_description": "Para generar el token de API, visite https://www.assemblyai.com \n\n Una vez habilitado el token de API, el plugin estará disponible para todos los usuarios del DocSpace actual.",
+        "text_description": "Para generar el token de API, visite https://www.assemblyai.com \n\n Una vez habilitado el token de API, el plugin estará disponible para todos los usuarios del Docs actual.",
         "text_api_token": "Token de API"
     },
     "toast_api_token_is_missing": "Falta el token de API",

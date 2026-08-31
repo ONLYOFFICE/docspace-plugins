@@ -7,7 +7,7 @@
         "text_converted_file_name": "Nome do arquivo convertido"
     },
     "settings": {
-        "description": "Para gerar o segredo da API, visite https://www.convertapi.com/ \n\n Depois que o token da API for habilitado, o plugin ficará disponível para todos os usuários do DocSpace atual.",
+        "description": "Para gerar o segredo da API, visite https://www.convertapi.com/ \n\n Depois que o token da API for habilitado, o plugin ficará disponível para todos os usuários do Docs atual.",
         "toast_token_is_saved": "Token salvo",
         "button_save": "Salvar",
         "text_api_token": "Token de API"

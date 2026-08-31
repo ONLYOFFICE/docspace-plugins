@@ -7,7 +7,7 @@
 
 ### Changed
 - using @onlyoffice/docspace-plugin-sdk 2.1.0
-- compatible with DocSpace 3.7
+- compatible with Docs 3.7
 
 ## 1.0.0
 ### Added
