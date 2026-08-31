@@ -35,9 +35,57 @@ jobs:
             exit 1
           fi
 
+  changes:
+    name: "Changed plugins"
+    runs-on: ubuntu-latest
+    outputs:
+      plugins: ${{ steps.diff.outputs.plugins }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Collect plugins touched by this change
+        id: diff
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          set -eo pipefail
+
+          ALL=$(for d in */; do
+            d="${d%/}"
+            if [ -f "${d}/yarn.lock" ] || [ -f "${d}/package.json" ]; then echo "${d}"; fi
+          done | sort)
+
+          NAMES=""
+          if [ -z "${BASE_SHA}" ] || [ "${BASE_SHA}" = "0000000000000000000000000000000000000000" ] \
+            || ! git cat-file -e "${BASE_SHA}^{commit}" 2>/dev/null; then
+            echo "base commit is unknown, every plugin will be checked"
+            NAMES="${ALL}"
+          else
+            FILES=$(git diff --name-only "${BASE_SHA}" HEAD)
+            echo "changed files:"
+            echo "${FILES}"
+            if echo "${FILES}" | grep -qx '.github/workflows/licenses.yml'; then
+              echo "the workflow itself changed, every plugin will be checked"
+              NAMES="${ALL}"
+            else
+              NAMES=$(echo "${FILES}" | cut -d/ -f1 | sort -u | grep -Fx -f <(echo "${ALL}") || true)
+            fi
+          fi
+
+          echo "plugins to check: $(echo "${NAMES}" | tr '\n' ' ')"
+
+          PLUGINS=""
+          for p in ${NAMES}; do
+            PLUGINS="${PLUGINS}${PLUGINS:+,}\"${p}\""
+          done
+          echo "plugins=[${PLUGINS}]" >> "$GITHUB_OUTPUT"
+
   licences:
     name: "Licenses plugin: ${{ matrix.plugin }}"
     runs-on: ubuntu-latest
+    needs: [changes]
     env:
       PLUGIN_FOLDER: ${{ matrix.plugin }}
     strategy:
@@ -57,16 +105,47 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+
+      - name: Is this plugin affected
+        id: guard
+        shell: bash
+        env:
+          CHANGED: ${{ needs.changes.outputs.plugins }}
+        run: |
+          if [ -z "${CHANGED}" ]; then
+            echo "the list of changed plugins is empty, checking anyway"
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          elif echo "${CHANGED}" | grep -qF "\"${PLUGIN_FOLDER}\""; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "${PLUGIN_FOLDER} is not touched by this change, skipping the license check"
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Cache yarn packages
+        if: steps.guard.outputs.run == 'true'
+        uses: actions/cache@v4
+        continue-on-error: true
+        with:
+          path: ~/.cache/yarn
+          key: yarn-${{ matrix.plugin }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: yarn-${{ matrix.plugin }}-
+
       - name: Install Dependencies
+        if: steps.guard.outputs.run == 'true'
         run: yarn install
         working-directory: ./${{ env.PLUGIN_FOLDER }}
+
       - name: Get Repository License
         id: license
+        if: steps.guard.outputs.run == 'true'
         run: |
           license="${{ (github.event.repository.license.spdx_id) || (github.event.repository.licenses[0]) }}"
           echo "License detected: $license"
           echo "license=$license" >> $GITHUB_OUTPUT
+
       - name: Check Licenses
+        if: steps.guard.outputs.run == 'true'
         uses: ONLYOFFICE/check-licenses@v1
         with:
           project_license: ${{ steps.license.outputs.license }}
