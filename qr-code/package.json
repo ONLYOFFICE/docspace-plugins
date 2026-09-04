@@ -1,0 +1,40 @@
+{
+  "name": "qr-code",
+  "pluginName": "QrCode",
+  "version": "1.0.0+3",
+  "description": "Generate a QR code for a room or file's public sharing link",
+  "author": "ONLYOFFICE",
+  "license": "Apache-2.0",
+  "homepage": "",
+  "private": true,
+  "runtime": "module",
+  "logo": "logo.svg",
+  "nameLocale": {},
+  "descriptionLocale": {
+    "ru": "Плагин создаёт QR-код для публичной ссылки файла, папки или комнаты"
+  },
+  "scopes": [
+    "ContextMenu",
+    "InfoPanel"
+  ],
+  "scripts": {
+    "build": "vite build && npx build-docspace-plugin",
+    "typecheck": "tsc --noEmit",
+    "format": "npx prettier --write ."
+  },
+  "dependencies": {
+    "@docspace/ui-kit": "file:./docspace-ui-kit-0.0.1.tgz",
+    "@onlyoffice/docspace-plugin-sdk": "file:./onlyoffice-docspace-plugin-sdk-3.0.0.tgz",
+    "qrcode.react": "^4.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^6.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.6.0",
+    "vite": "^8.0.0"
+  }
+}
