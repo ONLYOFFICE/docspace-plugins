@@ -1,0 +1,32 @@
+{
+    "main_button": {
+        "create_dialog_title": "Izveidot diagrammu",
+        "create_dialog_start_value": "Jauna diagramma"
+    },
+    "open_from_url": {
+        "button_accept": "Izveidot",
+        "button_cancel": "Atcelt",
+        "description_text": "Pārliecinieties, ka piekļuve ar publisko saiti ir atvērta",
+        "dialog_header": "Importēt diagrammu",
+        "input_placeholder_name": "Jauna diagramma",
+        "input_text_name": "Nosaukums",
+        "input_placeholder_url": "Diagrammas URL",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "Dati saglabāti",
+        "button_save": "Saglabāt",
+        "text_url": "draw.io adrese",
+        "text_url_description": "draw.io pakalpojuma adrese, ko izmanto diagrammu atvēršanai un rediģēšanai. Mainiet to, ja draw.io tiek mitināts jūsu paša serverī. Atstājiet https://embed.diagrams.net, lai izmantotu publisko pakalpojumu.",
+        "text_language": "Valoda",
+        "text_libraries": "Bibliotēkas",
+        "text_offline_description": "Kad ir aktīvs \"bezsaistes režīms\", aizsardzības nolūkos tiek atspējotas visas attālinātās darbības un funkcijas",
+        "text_offline": "Bezsaistes režīms"
+    },
+    "context_menu_open_diagram": "Atvērt diagrammu",
+    "file_type_name": "Diagramma",
+    "toast_file_not_created": "Fails \"%{title}.drawio\" netika izveidots: %{message}",
+    "toast_wrong_file_format": "Nepareizs faila formāts",
+    "toast_no_permission": "Jums nav atļaujas skatīt šo failu",
+    "toast_cant_read_file": "Nevar nolasīt šo failu"
+}

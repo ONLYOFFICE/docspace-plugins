@@ -6,7 +6,7 @@
     "main_button": {
         "markdown": "Markdown",
         "dialog_create_markdown": "Markdown erstellen",
-        "toast_file_not_created": "Datei \"${title}.md\" wurde nicht erstellt: ${message}"
+        "toast_file_not_created": "Datei \"%{title}.md\" wurde nicht erstellt: %{message}"
     },
     "dialog": {
         "toast_file_saved": "Datei gespeichert",

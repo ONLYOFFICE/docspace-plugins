@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "Token guardado",
+        "button_save": "Guardar",
+        "text_description": "Para gerar o token de API, visite https://www.assemblyai.com \n\n Depois de ativado o token de API, o plugin fica disponível para todos os utilizadores do ONLYOFFICE Apps atual.",
+        "text_api_token": "Token de API"
+    },
+    "toast_api_token_is_missing": "Falta o token de API",
+    "toast_wrong_api_token": "Token de API incorreto",
+    "toast_speech_not_recognized": "A fala não foi reconhecida ou está em falta",
+    "toast_successfully_converted": "O ficheiro foi convertido em texto com êxito",
+    "toast_unsuccessfully_converted": "A conversão em texto não foi bem-sucedida: ",
+    "context_menu_convert_to_text": "Converter em texto"
+}

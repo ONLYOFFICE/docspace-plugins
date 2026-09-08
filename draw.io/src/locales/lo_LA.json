@@ -1,0 +1,32 @@
+{
+    "main_button": {
+        "create_dialog_title": "ສ້າງແຜນວາດ",
+        "create_dialog_start_value": "ແຜນວາດໃໝ່"
+    },
+    "open_from_url": {
+        "button_accept": "ສ້າງ",
+        "button_cancel": "ຍົກເລີກ",
+        "description_text": "ກະລຸນາກວດສອບວ່າການເຂົ້າເຖິງດ້ວຍລິ້ງສາທາລະນະເປີດຢູ່",
+        "dialog_header": "ນຳເຂົ້າແຜນວາດ",
+        "input_placeholder_name": "ແຜນວາດໃໝ່",
+        "input_text_name": "ຊື່",
+        "input_placeholder_url": "URL ຂອງແຜນວາດ",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "ບັນທຶກຂໍ້ມູນແລ້ວ",
+        "button_save": "ບັນທຶກ",
+        "text_url": "ທີ່ຢູ່ draw.io",
+        "text_url_description": "ທີ່ຢູ່ຂອງບໍລິການ draw.io ທີ່ໃຊ້ເປີດ ແລະ ແກ້ໄຂແຜນວາດ. ປ່ຽນມັນຫາກ draw.io ຖືກໂຮສຢູ່ເຊີບເວີຂອງທ່ານເອງ. ປະໄວ້ https://embed.diagrams.net ເພື່ອໃຊ້ບໍລິການສາທາລະນະ.",
+        "text_language": "ພາສາ",
+        "text_libraries": "ຄັງ",
+        "text_offline_description": "ເມື່ອ \"ໂໝດອອບໄລນ໌\" ເປີດໃຊ້ຢູ່, ການດຳເນີນການ ແລະ ຄຸນສົມບັດທາງໄກທັງໝົດຈະຖືກປິດເພື່ອປົກປ້ອງ",
+        "text_offline": "ໂໝດອອບໄລນ໌"
+    },
+    "context_menu_open_diagram": "ເປີດແຜນວາດ",
+    "file_type_name": "ແຜນວາດ",
+    "toast_file_not_created": "ບໍ່ໄດ້ສ້າງໄຟລ໌ \"%{title}.drawio\": %{message}",
+    "toast_wrong_file_format": "ຮູບແບບໄຟລ໌ບໍ່ຖືກຕ້ອງ",
+    "toast_no_permission": "ທ່ານບໍ່ມີສິດເບິ່ງໄຟລ໌ນີ້",
+    "toast_cant_read_file": "ບໍ່ສາມາດອ່ານໄຟລ໌ນີ້ໄດ້"
+}

@@ -1,0 +1,32 @@
+{
+    "main_button": {
+        "create_dialog_title": "Krijo diagram",
+        "create_dialog_start_value": "Diagram i ri"
+    },
+    "open_from_url": {
+        "button_accept": "Krijo",
+        "button_cancel": "Anulo",
+        "description_text": "Sigurohuni që qasja me lidhje publike është e hapur",
+        "dialog_header": "Importo diagram",
+        "input_placeholder_name": "Diagram i ri",
+        "input_text_name": "Emri",
+        "input_placeholder_url": "URL për diagramin",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "Të dhënat u ruajtën",
+        "button_save": "Ruaj",
+        "text_url": "Adresa e draw.io",
+        "text_url_description": "Adresa e shërbimit draw.io që përdoret për hapjen dhe redaktimin e diagrameve. Ndryshojeni nëse draw.io është i strehuar në serverin tuaj. Lëreni https://embed.diagrams.net për të përdorur shërbimin publik.",
+        "text_language": "Gjuha",
+        "text_libraries": "Bibliotekat",
+        "text_offline_description": "Kur \"modaliteti jashtë linje\" është aktiv, të gjitha veprimet dhe funksionet në distancë çaktivizohen për mbrojtje",
+        "text_offline": "Modaliteti jashtë linje"
+    },
+    "context_menu_open_diagram": "Hap diagramin",
+    "file_type_name": "Diagram",
+    "toast_file_not_created": "Skedari \"%{title}.drawio\" nuk u krijua: %{message}",
+    "toast_wrong_file_format": "Format i gabuar skedari",
+    "toast_no_permission": "Nuk keni leje për ta parë këtë skedar",
+    "toast_cant_read_file": "Ky skedar nuk mund të lexohet"
+}

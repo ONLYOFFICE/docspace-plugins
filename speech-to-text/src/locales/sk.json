@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "Token bol uložený",
+        "button_save": "Uložiť",
+        "text_description": "Ak chcete vygenerovať token API, navštívte https://www.assemblyai.com \n\n Po aktivácii tokenu API bude doplnok dostupný všetkým používateľom aktuálneho ONLYOFFICE Apps.",
+        "text_api_token": "Token API"
+    },
+    "toast_api_token_is_missing": "Chýba token API",
+    "toast_wrong_api_token": "Nesprávny token API",
+    "toast_speech_not_recognized": "Reč nebola rozpoznaná alebo chýba",
+    "toast_successfully_converted": "Súbor bol úspešne prevedený na text",
+    "toast_unsuccessfully_converted": "Prevod na text sa nepodaril: ",
+    "context_menu_convert_to_text": "Previesť na text"
+}

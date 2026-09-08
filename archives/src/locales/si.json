@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "සංරක්ෂිතය විවෘත කරන්න",
+        "group_unzip": "ලිහන්න",
+        "choose_location": "ස්ථානයක් තෝරන්න",
+        "unzip_here": "මෙහි ලිහන්න",
+        "group_zip": "සංරක්ෂණය කරන්න",
+        "zip_folder": "මෙහි සංරක්ෂණය කරන්න",
+        "zip_selected": "තෝරාගත් අයිතම සංරක්ෂණය කරන්න",
+        "zip_selected_item": "තෝරාගත් අයිතමය සංරක්ෂණය කරන්න"
+    },
+    "dialog": {
+        "header": "සංරක්ෂිත දසුන",
+        "button_extract": "සංරක්ෂිතය උපුටන්න",
+        "selector_header_unzip": "ලිහන ස්ථානය",
+        "selector_header_zip": "සංරක්ෂණය කරන ස්ථානය",
+        "selector_header_extract": "උපුටන ස්ථානය",
+        "selector_button_archive": "සංරක්ෂණය",
+        "selector_button_unzip": "ලිහන්න",
+        "selector_button_extract": "උපුටන්න",
+        "selector_checkbox_wrap": "නව ෆෝල්ඩරයක තබන්න",
+        "button_cancel": "අවලංගු කරන්න",
+        "viewer_loading": "පූරණය වෙමින්...",
+        "viewer_error": "දෝෂය: %{error}"
+    },
+    "default_zip_title": "නව සංරක්ෂිතය",
+    "default_folder_title": "නව ෆෝල්ඩරය",
+    "file_type_name": "සංරක්ෂිතය",
+    "toast_no_folder_download_permission": "මෙම ෆෝල්ඩරයෙන් ගොනු බාගැනීමට ඔබට අවසර නැත",
+    "toast_no_view_permission": "මෙම ගොනුව බැලීමට ඔබට අවසර නැත",
+    "toast_no_unzip_permission": "මෙම ගොනුව ලිහීමට ඔබට අවසර නැත",
+    "toast_extract_success": "අයිතම සාර්ථකව උපුටා ගන්නා ලදී",
+    "toast_unzip_success": "ගොනුව සාර්ථකව ලිහන ලදී",
+    "toast_cant_create": "මෙහෙයුම අසාර්ථක විය. මෙම ෆෝල්ඩරයේ ගොනු නිර්මාණය කළ නොහැක",
+    "toast_failed_to_create": "zip නිර්මාණය කිරීම අසාර්ථක විය",
+    "toast_zip_saved": "zip සුරකින ලදී",
+    "toast_zip_not_saved": "zip සුරැකීම අසාර්ථක විය"
+}

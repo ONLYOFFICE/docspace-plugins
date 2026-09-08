@@ -1,0 +1,32 @@
+{
+    "main_button": {
+        "create_dialog_title": "Luo kaavio",
+        "create_dialog_start_value": "Uusi kaavio"
+    },
+    "open_from_url": {
+        "button_accept": "Luo",
+        "button_cancel": "Peruuta",
+        "description_text": "Varmista, että julkisen linkin käyttöoikeus on avoinna",
+        "dialog_header": "Tuo kaavio",
+        "input_placeholder_name": "Uusi kaavio",
+        "input_text_name": "Nimi",
+        "input_placeholder_url": "Kaavion URL-osoite",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "Tiedot tallennettu",
+        "button_save": "Tallenna",
+        "text_url": "draw.io-osoite",
+        "text_url_description": "Kaavioiden avaamiseen ja muokkaamiseen käytettävän draw.io-palvelun osoite. Vaihda se, jos draw.io on isännöity omalla palvelimellasi. Jätä https://embed.diagrams.net käyttääksesi julkista palvelua.",
+        "text_language": "Kieli",
+        "text_libraries": "Kirjastot",
+        "text_offline_description": "Kun \"offline-tila\" on käytössä, kaikki etätoiminnot ja -ominaisuudet poistetaan käytöstä suojauksen vuoksi",
+        "text_offline": "Offline-tila"
+    },
+    "context_menu_open_diagram": "Avaa kaavio",
+    "file_type_name": "Kaavio",
+    "toast_file_not_created": "Tiedostoa \"%{title}.drawio\" ei luotu: %{message}",
+    "toast_wrong_file_format": "Virheellinen tiedostomuoto",
+    "toast_no_permission": "Sinulla ei ole oikeutta tarkastella tätä tiedostoa",
+    "toast_cant_read_file": "Tätä tiedostoa ei voi lukea"
+}

@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "Μετατροπή αρχείου σε PDF",
+        "button_convert_file": "Μετατροπή αρχείου",
+        "button_cancel": "Άκυρο",
+        "toast_wrong_api_token": "Λανθασμένο διακριτικό API",
+        "text_converted_file_name": "Όνομα για το μετατρεμμένο αρχείο"
+    },
+    "settings": {
+        "description": "Για να δημιουργήσετε μυστικό κλειδί API, επισκεφθείτε τη διεύθυνση https://www.convertapi.com/ \n\n Μόλις ενεργοποιηθεί το διακριτικό API, η προσθήκη γίνεται διαθέσιμη σε όλους τους χρήστες του τρέχοντος ONLYOFFICE Apps.",
+        "toast_token_is_saved": "Το διακριτικό αποθηκεύτηκε",
+        "button_save": "Αποθήκευση",
+        "text_api_token": "Διακριτικό API"
+    },
+    "context_menu_convert_to_pdf": "Μετατροπή σε PDF",
+    "toast_file_created": "Το αρχείο %{name} δημιουργήθηκε",
+    "toast_file_not_created": "Το αρχείο %{name} δεν δημιουργήθηκε: %{message}",
+    "toast_wrong_api_token": "Λανθασμένο διακριτικό API"
+}

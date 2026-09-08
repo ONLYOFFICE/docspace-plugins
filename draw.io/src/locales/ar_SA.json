@@ -1,0 +1,32 @@
+{
+    "main_button": {
+        "create_dialog_title": "إنشاء مخطط",
+        "create_dialog_start_value": "مخطط جديد"
+    },
+    "open_from_url": {
+        "button_accept": "إنشاء",
+        "button_cancel": "إلغاء",
+        "description_text": "تأكد من أن الوصول عبر الرابط العام مفتوح",
+        "dialog_header": "استيراد مخطط",
+        "input_placeholder_name": "مخطط جديد",
+        "input_text_name": "الاسم",
+        "input_placeholder_url": "عنوان URL للمخطط",
+        "input_text_url": "عنوان URL"
+    },
+    "settings": {
+        "toast_data_saved": "تم حفظ البيانات",
+        "button_save": "حفظ",
+        "text_url": "عنوان draw.io",
+        "text_url_description": "عنوان خدمة draw.io المستخدمة لفتح المخططات وتحريرها. غيّره إذا كان draw.io مستضافًا على خادمك الخاص. اترك https://embed.diagrams.net لاستخدام الخدمة العامة.",
+        "text_language": "اللغة",
+        "text_libraries": "المكتبات",
+        "text_offline_description": "عند تفعيل \"وضع عدم الاتصال\"، يتم تعطيل جميع العمليات والميزات البعيدة للحماية",
+        "text_offline": "وضع عدم الاتصال"
+    },
+    "context_menu_open_diagram": "فتح المخطط",
+    "file_type_name": "مخطط",
+    "toast_file_not_created": "لم يتم إنشاء الملف \"%{title}.drawio\": %{message}",
+    "toast_wrong_file_format": "تنسيق ملف غير صحيح",
+    "toast_no_permission": "ليس لديك إذن لعرض هذا الملف",
+    "toast_cant_read_file": "تعذر قراءة هذا الملف"
+}

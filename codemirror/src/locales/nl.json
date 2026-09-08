@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Opslaan",
+        "button_cancel": "Annuleren",
+        "text_unsaved": "Doorgaan zonder opslaan?\nU hebt wijzigingen in de configuratie aangebracht. Als u doorgaat zonder op te slaan, worden die wijzigingen niet toegepast.",
+        "warning_header": "Waarschuwing",
+        "button_continue": "Doorgaan",
+        "button_reopen": "Opnieuw openen"
+    },
+    "main_button": {
+        "label": "Tekstbestand",
+        "create_dialog_title": "Tekstbestand maken",
+        "create_dialog_start_value": "Tekstbestand",
+        "error_no_file_ext": "Er moet een bestandsextensie worden opgegeven",
+        "error_not_supported": "Bestandsextensie wordt niet ondersteund door de Codemirror-plug-in",
+        "error_not_created": "Bestand \"%{title}.md\" is niet gemaakt: %{message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Gegevens opgeslagen",
+        "button_save": "Opslaan",
+        "header_general": "Algemeen",
+        "header_html": "HTML",
+        "highlight_whitespace": "Witruimte markeren",
+        "highlight_whitespace_description": "Spaties als punten en tabs als pijlen weergeven.",
+        "highlight_trailing_whitespace": "Witruimte aan regeleinde markeren",
+        "highlight_trailing_whitespace_description": "Witruimte aan het einde van een regel markeren.",
+        "auto_close_tags": "Tags automatisch sluiten",
+        "auto_close_tags_description": "Automatisch sluitingstags invoegen wanneer > of / wordt getypt in HTML-achtige bestanden."
+    },
+    "context_menu_edit": "Bestand bewerken met Codemirror",
+    "file_type_name": "Code",
+    "toast_no_permission": "U hebt geen rechten om dit bestand te bekijken",
+    "toast_cant_read_file": "Kan dit bestand niet lezen",
+    "toast_file_saved": "Bestand opgeslagen",
+    "toast_file_not_saved": "Kan bestand niet opslaan"
+}

@@ -1,0 +1,7 @@
+{
+    "dialog_button_save_and_exit": "Kaydet ve çık",
+    "context_menu_edit_image": "Görüntüyü düzenle",
+    "toast_no_permissions": "Bu dosyayı görüntüleme izniniz yok",
+    "toast_file_saved": "Dosya başarıyla kaydedildi",
+    "toast_file_not_saved": "Dosya kaydedilemedi"
+}

@@ -31,7 +31,7 @@ export const setLocale = (locale: PluginLocale): void => {
   acceptButtonProps.label = i18n.t("open_from_url.button_accept");
   cancelButtonProps.label = i18n.t("open_from_url.button_cancel");
   descTextProps.text = i18n.t("open_from_url.description_text");
-  nameInputProps.placeholder = i18n.t("open_from_url.input_placeholder");
+  nameInputProps.placeholder = i18n.t("open_from_url.input_placeholder_name");
   inputTextProps.text = i18n.t("open_from_url.input_text_name");
   urlInputProps.placeholder = i18n.t("open_from_url.input_placeholder_url");
 };

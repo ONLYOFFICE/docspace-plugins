@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Kaydet",
+        "button_cancel": "İptal",
+        "text_unsaved": "Kaydetmeden devam edilsin mi?\nYapılandırmada değişiklikler yaptınız. Kaydetmeden devam ederseniz bu değişiklikler uygulanmaz.",
+        "warning_header": "Uyarı",
+        "button_continue": "Devam et",
+        "button_reopen": "Yeniden aç"
+    },
+    "main_button": {
+        "label": "Metin dosyası",
+        "create_dialog_title": "Metin dosyası oluştur",
+        "create_dialog_start_value": "Metin dosyası",
+        "error_no_file_ext": "Dosya uzantısı belirtilmelidir",
+        "error_not_supported": "Dosya uzantısı Codemirror eklentisi tarafından desteklenmiyor",
+        "error_not_created": "\"%{title}.md\" dosyası oluşturulmadı: %{message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Veriler kaydedildi",
+        "button_save": "Kaydet",
+        "header_general": "Genel",
+        "header_html": "HTML",
+        "highlight_whitespace": "Boşlukları vurgula",
+        "highlight_whitespace_description": "Boşlukları nokta, sekmeleri ok olarak göster.",
+        "highlight_trailing_whitespace": "Satır sonundaki boşlukları vurgula",
+        "highlight_trailing_whitespace_description": "Satır sonundaki boşlukları vurgula.",
+        "auto_close_tags": "Etiketleri otomatik kapat",
+        "auto_close_tags_description": "HTML benzeri dosyalarda > veya / yazıldığında kapanış etiketlerini otomatik ekle."
+    },
+    "context_menu_edit": "Dosyayı Codemirror ile düzenle",
+    "file_type_name": "Kod",
+    "toast_no_permission": "Bu dosyayı görüntüleme izniniz yok",
+    "toast_cant_read_file": "Bu dosya okunamıyor",
+    "toast_file_saved": "Dosya kaydedildi",
+    "toast_file_not_saved": "Dosya kaydedilemedi"
+}

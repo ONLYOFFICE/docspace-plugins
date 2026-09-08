@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "Բացել արխիվը",
+        "group_unzip": "Ապափաթեթավորել",
+        "choose_location": "Ընտրել տեղը",
+        "unzip_here": "Ապափաթեթավորել այստեղ",
+        "group_zip": "Արխիվացնել",
+        "zip_folder": "Արխիվացնել այստեղ",
+        "zip_selected": "Արխիվացնել ընտրված տարրերը",
+        "zip_selected_item": "Արխիվացնել ընտրված տարրը"
+    },
+    "dialog": {
+        "header": "Արխիվի դիտիչ",
+        "button_extract": "Հանել արխիվի պարունակությունը",
+        "selector_header_unzip": "Ապափաթեթավորել այստեղ՝",
+        "selector_header_zip": "Արխիվացնել այստեղ՝",
+        "selector_header_extract": "Հանել այստեղ՝",
+        "selector_button_archive": "Արխիվացնել",
+        "selector_button_unzip": "Ապափաթեթավորել",
+        "selector_button_extract": "Հանել",
+        "selector_checkbox_wrap": "Տեղադրել նոր թղթապանակում",
+        "button_cancel": "Չեղարկել",
+        "viewer_loading": "Բեռնվում է...",
+        "viewer_error": "Սխալ՝ %{error}"
+    },
+    "default_zip_title": "Նոր արխիվ",
+    "default_folder_title": "Նոր թղթապանակ",
+    "file_type_name": "Արխիվ",
+    "toast_no_folder_download_permission": "Դուք չունեք այս թղթապանակից ֆայլեր ներբեռնելու թույլտվություն",
+    "toast_no_view_permission": "Դուք չունեք այս ֆայլը դիտելու թույլտվություն",
+    "toast_no_unzip_permission": "Դուք չունեք այս ֆայլն ապափաթեթավորելու թույլտվություն",
+    "toast_extract_success": "Տարրերը հաջողությամբ հանվեցին",
+    "toast_unzip_success": "Ֆայլը հաջողությամբ ապափաթեթավորվեց",
+    "toast_cant_create": "Գործողությունը ձախողվեց։ Դուք չեք կարող ֆայլեր ստեղծել այս թղթապանակում",
+    "toast_failed_to_create": "Չհաջողվեց ստեղծել zip",
+    "toast_zip_saved": "Zip-ը պահպանվեց",
+    "toast_zip_not_saved": "Չհաջողվեց պահպանել zip-ը"
+}

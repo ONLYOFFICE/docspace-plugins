@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "Уреди URL"
+    },
+    "main_button": {
+        "new_url": "Нови URL"
+    },
+    "dialog": {
+        "header_create": "Направи нови URL",
+        "header_edit": "Уреди URL",
+        "label_url": "URL:",
+        "label_title": "Наслов:",
+        "button_create": "Направи",
+        "button_save": "Сачувај",
+        "button_cancel": "Откажи",
+        "error_invalid_url": "Неважећа URL адреса",
+        "error_url_required": "URL адреса је обавезна",
+        "link_to": "Веза ка",
+        "new_link": "Нова веза",
+        "toast_url_created": "URL је успешно направљен",
+        "toast_url_not_created": "Прављење URL-а није успело",
+        "toast_file_saved": "Датотека је успешно сачувана",
+        "toast_file_not_saved": "Чување датотеке није успело"
+    },
+    "file_type_name": "Веза",
+    "toast_no_permissions": "Немате дозволу да прикажете ову датотеку",
+    "toast_cant_read_file": "Ова датотека не може да се прочита",
+    "toast_wrong_file": "Погрешна или оштећена URL датотека"
+}

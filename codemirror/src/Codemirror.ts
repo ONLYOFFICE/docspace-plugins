@@ -21,7 +21,7 @@ import { codemirrorModalDialogProps, saveButton, cancelButton, footerBox } from 
 import { getExtensions } from "./Extensions";
 import { EditorState } from "@codemirror/state";
 import { EditorView } from "codemirror";
-import { docSpaceTheme } from "./Extensions";
+import { appTheme } from "./Extensions";
 import { getCodemirrorBody } from "./Utils";
 import { i18n } from "./locales";
 
@@ -157,7 +157,7 @@ class Codemirror {
 
     const userRes = (await (await fetch(`${this.apiURL}/people/@self`)).json()).response;
 
-    const theme = docSpaceTheme(userRes.theme);
+    const theme = appTheme(userRes.theme);
 
     const { access, security, title } = file;
 

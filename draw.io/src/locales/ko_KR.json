@@ -1,0 +1,32 @@
+{
+    "main_button": {
+        "create_dialog_title": "다이어그램 만들기",
+        "create_dialog_start_value": "새 다이어그램"
+    },
+    "open_from_url": {
+        "button_accept": "만들기",
+        "button_cancel": "취소",
+        "description_text": "공개 링크 액세스가 열려 있는지 확인하세요",
+        "dialog_header": "다이어그램 가져오기",
+        "input_placeholder_name": "새 다이어그램",
+        "input_text_name": "이름",
+        "input_placeholder_url": "다이어그램 URL",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "데이터가 저장되었습니다",
+        "button_save": "저장",
+        "text_url": "draw.io 주소",
+        "text_url_description": "다이어그램을 열고 편집하는 데 사용되는 draw.io 서비스의 주소입니다. draw.io를 자체 서버에서 호스팅하는 경우 변경하세요. 공개 서비스를 사용하려면 https://embed.diagrams.net 을 그대로 두세요.",
+        "text_language": "언어",
+        "text_libraries": "라이브러리",
+        "text_offline_description": "\"오프라인 모드\"가 활성화되면 보호를 위해 모든 원격 작업과 기능이 비활성화됩니다",
+        "text_offline": "오프라인 모드"
+    },
+    "context_menu_open_diagram": "다이어그램 열기",
+    "file_type_name": "다이어그램",
+    "toast_file_not_created": "\"%{title}.drawio\" 파일이 생성되지 않았습니다: %{message}",
+    "toast_wrong_file_format": "잘못된 파일 형식",
+    "toast_no_permission": "이 파일을 볼 권한이 없습니다",
+    "toast_cant_read_file": "이 파일을 읽을 수 없습니다"
+}

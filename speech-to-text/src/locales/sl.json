@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "Žeton je shranjen",
+        "button_save": "Shrani",
+        "text_description": "Za ustvarjanje žetona API obiščite https://www.assemblyai.com \n\n Ko je žeton API omogočen, je vtičnik na voljo vsem uporabnikom trenutnega ONLYOFFICE Apps.",
+        "text_api_token": "Žeton API"
+    },
+    "toast_api_token_is_missing": "Žeton API manjka",
+    "toast_wrong_api_token": "Napačen žeton API",
+    "toast_speech_not_recognized": "Govor ni bil prepoznan ali pa ga ni",
+    "toast_successfully_converted": "Datoteka je bila uspešno pretvorjena v besedilo",
+    "toast_unsuccessfully_converted": "Pretvorba v besedilo ni uspela: ",
+    "context_menu_convert_to_text": "Pretvori v besedilo"
+}

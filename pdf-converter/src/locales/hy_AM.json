@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "Փոխարկել ֆայլը PDF-ի",
+        "button_convert_file": "Փոխարկել ֆայլը",
+        "button_cancel": "Չեղարկել",
+        "toast_wrong_api_token": "Սխալ API թոքեն",
+        "text_converted_file_name": "Փոխարկված ֆայլի անունը"
+    },
+    "settings": {
+        "description": "API գաղտնի բանալի ստեղծելու համար այցելեք https://www.convertapi.com/ \n\n API թոքենն ակտիվացնելուց հետո պլագինը հասանելի է դառնում ընթացիկ ONLYOFFICE Apps-ի բոլոր օգտատերերին։",
+        "toast_token_is_saved": "Թոքենը պահպանվեց",
+        "button_save": "Պահպանել",
+        "text_api_token": "API թոքեն"
+    },
+    "context_menu_convert_to_pdf": "Փոխարկել PDF-ի",
+    "toast_file_created": "%{name} ֆայլը ստեղծվեց",
+    "toast_file_not_created": "%{name} ֆայլը չստեղծվեց՝ %{message}",
+    "toast_wrong_api_token": "Սխալ API թոքեն"
+}

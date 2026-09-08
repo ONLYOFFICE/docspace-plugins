@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "ບັນທຶກ",
+        "button_cancel": "ຍົກເລີກ",
+        "text_unsaved": "ສືບຕໍ່ໂດຍບໍ່ບັນທຶກບໍ່?\nທ່ານໄດ້ປ່ຽນແປງການຕັ້ງຄ່າແລ້ວ. ຫາກສືບຕໍ່ໂດຍບໍ່ບັນທຶກ, ການປ່ຽນແປງເຫຼົ່ານັ້ນຈະບໍ່ຖືກນຳໃຊ້.",
+        "warning_header": "ຄຳເຕືອນ",
+        "button_continue": "ສືບຕໍ່",
+        "button_reopen": "ເປີດໃໝ່"
+    },
+    "main_button": {
+        "label": "ໄຟລ໌ຂໍ້ຄວາມ",
+        "create_dialog_title": "ສ້າງໄຟລ໌ຂໍ້ຄວາມ",
+        "create_dialog_start_value": "ໄຟລ໌ຂໍ້ຄວາມ",
+        "error_no_file_ext": "ຕ້ອງລະບຸນາມສະກຸນໄຟລ໌",
+        "error_not_supported": "ປລັກອິນ Codemirror ບໍ່ຮອງຮັບນາມສະກຸນໄຟລ໌ນີ້",
+        "error_not_created": "ບໍ່ໄດ້ສ້າງໄຟລ໌ \"%{title}.md\": %{message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "ບັນທຶກຂໍ້ມູນແລ້ວ",
+        "button_save": "ບັນທຶກ",
+        "header_general": "ທົ່ວໄປ",
+        "header_html": "HTML",
+        "highlight_whitespace": "ເນັ້ນຊ່ອງຫວ່າງ",
+        "highlight_whitespace_description": "ສະແດງຊ່ອງຫວ່າງເປັນຈຸດ ແລະ ແທັບເປັນລູກສອນ.",
+        "highlight_trailing_whitespace": "ເນັ້ນຊ່ອງຫວ່າງທ້າຍແຖວ",
+        "highlight_trailing_whitespace_description": "ເນັ້ນຊ່ອງຫວ່າງຢູ່ທ້າຍແຖວ.",
+        "auto_close_tags": "ປິດແທັກອັດຕະໂນມັດ",
+        "auto_close_tags_description": "ແຊກແທັກປິດອັດຕະໂນມັດເມື່ອພິມ > ຫຼື / ໃນໄຟລ໌ຄ້າຍ HTML."
+    },
+    "context_menu_edit": "ແກ້ໄຂໄຟລ໌ດ້ວຍ Codemirror",
+    "file_type_name": "ໂຄ້ດ",
+    "toast_no_permission": "ທ່ານບໍ່ມີສິດເບິ່ງໄຟລ໌ນີ້",
+    "toast_cant_read_file": "ບໍ່ສາມາດອ່ານໄຟລ໌ນີ້ໄດ້",
+    "toast_file_saved": "ບັນທຶກໄຟລ໌ແລ້ວ",
+    "toast_file_not_saved": "ບັນທຶກໄຟລ໌ບໍ່ສຳເລັດ"
+}

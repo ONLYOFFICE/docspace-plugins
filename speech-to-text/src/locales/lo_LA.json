@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "ບັນທຶກໂທເຄນແລ້ວ",
+        "button_save": "ບັນທຶກ",
+        "text_description": "ເພື່ອສ້າງໂທເຄນ API, ກະລຸນາໄປທີ່ https://www.assemblyai.com \n\n ເມື່ອເປີດໃຊ້ໂທເຄນ API ແລ້ວ, ປລັກອິນຈະໃຊ້ໄດ້ສຳລັບຜູ້ໃຊ້ທຸກຄົນຂອງ ONLYOFFICE Apps ປັດຈຸບັນ.",
+        "text_api_token": "ໂທເຄນ API"
+    },
+    "toast_api_token_is_missing": "ບໍ່ມີໂທເຄນ API",
+    "toast_wrong_api_token": "ໂທເຄນ API ບໍ່ຖືກຕ້ອງ",
+    "toast_speech_not_recognized": "ບໍ່ສາມາດຈຳແນກສຽງເວົ້າ ຫຼື ບໍ່ມີສຽງເວົ້າ",
+    "toast_successfully_converted": "ແປງໄຟລ໌ເປັນຂໍ້ຄວາມສຳເລັດແລ້ວ",
+    "toast_unsuccessfully_converted": "ແປງເປັນຂໍ້ຄວາມບໍ່ສຳເລັດ: ",
+    "context_menu_convert_to_text": "ແປງເປັນຂໍ້ຄວາມ"
+}

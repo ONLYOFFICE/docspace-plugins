@@ -25,7 +25,7 @@
     },
     "context_menu_open_diagram": "打开图表",
     "file_type_name": "图表",
-    "toast_file_not_created": "文件 \"${title}.drawio\" 未被创建：${message}",
+    "toast_file_not_created": "文件 \"%{title}.drawio\" 未被创建：%{message}",
     "toast_wrong_file_format": "文件格式错误",
     "toast_no_permission": "您没有权限查看此文件",
     "toast_cant_read_file": "无法读取此文件"

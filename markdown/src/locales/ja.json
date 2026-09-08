@@ -6,7 +6,7 @@
     "main_button": {
         "markdown": "Markdown",
         "dialog_create_markdown": "Markdownを作成",
-        "toast_file_not_created": "ファイル「${title}.md」を作成できませんでした: ${message}"
+        "toast_file_not_created": "ファイル「%{title}.md」を作成できませんでした: %{message}"
     },
     "dialog": {
         "toast_file_saved": "ファイルが保存されました",

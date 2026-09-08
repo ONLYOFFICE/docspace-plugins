@@ -75,7 +75,7 @@ export const colors = {
   dark_active_line: "#5a5a5a44",
 };
 
-export const docSpaceTheme = (theme: string) => {
+export const appTheme = (theme: string) => {
   if (theme === "System") {
     theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "Dark" : "Base";
   }

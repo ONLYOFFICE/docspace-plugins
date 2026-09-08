@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "Редактиране на URL"
+    },
+    "main_button": {
+        "new_url": "Нов URL"
+    },
+    "dialog": {
+        "header_create": "Създаване на нов URL",
+        "header_edit": "Редактиране на URL",
+        "label_url": "URL:",
+        "label_title": "Заглавие:",
+        "button_create": "Създаване",
+        "button_save": "Запис",
+        "button_cancel": "Отказ",
+        "error_invalid_url": "Невалиден URL адрес",
+        "error_url_required": "URL адресът е задължителен",
+        "link_to": "Връзка към",
+        "new_link": "Нова връзка",
+        "toast_url_created": "URL адресът е създаден успешно",
+        "toast_url_not_created": "Създаването на URL адрес е неуспешно",
+        "toast_file_saved": "Файлът е записан успешно",
+        "toast_file_not_saved": "Записването на файла е неуспешно"
+    },
+    "file_type_name": "Връзка",
+    "toast_no_permissions": "Нямате права да преглеждате този файл",
+    "toast_cant_read_file": "Файлът не може да бъде прочетен",
+    "toast_wrong_file": "Грешен или повреден URL файл"
+}

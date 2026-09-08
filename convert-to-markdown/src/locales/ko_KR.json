@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "파일 정보를 가져올 수 없습니다",
+        "failed_to_get_file_details": "파일 세부 정보를 가져오지 못했습니다",
+        "failed_to_download_file": "파일을 다운로드하지 못했습니다: ",
+        "watermark_protected": "이 파일은 워터마크로 보호되어 있습니다. 룸 설정에서 \"문서에 워터마크 추가\"를 끄고 다시 시도하세요.",
+        "empty_file": "다운로드한 파일이 비어 있습니다",
+        "failed_to_initiate_upload": "업로드를 시작하지 못했습니다: ",
+        "upload_failed": "업로드에 실패했습니다",
+        "invalid_upload_session": "잘못된 업로드 세션 응답",
+        "file_not_created": "서버에 파일이 생성되지 않았습니다",
+        "unsupported_format": "지원되지 않는 형식: ",
+        "conversion_failed": "변환에 실패했습니다",
+        "created": "생성됨 "
+    },
+    "context_menu_convert": "Markdown으로 변환"
+}

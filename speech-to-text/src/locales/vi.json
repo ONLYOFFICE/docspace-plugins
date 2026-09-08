@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "Đã lưu token",
+        "button_save": "Lưu",
+        "text_description": "Để tạo token API, hãy truy cập https://www.assemblyai.com \n\n Sau khi token API được bật, tiện ích sẽ khả dụng với tất cả người dùng của ONLYOFFICE Apps hiện tại.",
+        "text_api_token": "Token API"
+    },
+    "toast_api_token_is_missing": "Thiếu token API",
+    "toast_wrong_api_token": "Token API không đúng",
+    "toast_speech_not_recognized": "Không nhận dạng được giọng nói hoặc không có giọng nói",
+    "toast_successfully_converted": "Tệp đã được chuyển đổi thành văn bản thành công",
+    "toast_unsuccessfully_converted": "Chuyển đổi thành văn bản không thành công: ",
+    "context_menu_convert_to_text": "Chuyển đổi thành văn bản"
+}

@@ -1,0 +1,9 @@
+{
+    "context_menu": {
+        "open_in_reader": "Okuyucuda aç"
+    },
+    "file_type_name": "Kitap",
+    "errors": {
+        "unsupported_zip": "Bu ZIP arşivi desteklenen bir kitap içermiyor. ZIP içinde desteklenen biçimler: EPUB veya FB2."
+    }
+}

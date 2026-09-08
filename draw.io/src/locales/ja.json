@@ -25,7 +25,7 @@
     },
     "context_menu_open_diagram": "ダイアグラムを開く",
     "file_type_name": "ダイアグラム",
-    "toast_file_not_created": "ファイル「${title}.drawio」を作成できませんでした: ${message}",
+    "toast_file_not_created": "ファイル「%{title}.drawio」を作成できませんでした: %{message}",
     "toast_wrong_file_format": "ファイル形式が正しくありません",
     "toast_no_permission": "このファイルを表示する権限がありません",
     "toast_cant_read_file": "このファイルを読み取れません"

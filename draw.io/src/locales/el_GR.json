@@ -1,0 +1,32 @@
+{
+    "main_button": {
+        "create_dialog_title": "Δημιουργία διαγράμματος",
+        "create_dialog_start_value": "Νέο διάγραμμα"
+    },
+    "open_from_url": {
+        "button_accept": "Δημιουργία",
+        "button_cancel": "Άκυρο",
+        "description_text": "Βεβαιωθείτε ότι η πρόσβαση μέσω δημόσιου συνδέσμου είναι ανοικτή",
+        "dialog_header": "Εισαγωγή διαγράμματος",
+        "input_placeholder_name": "Νέο διάγραμμα",
+        "input_text_name": "Όνομα",
+        "input_placeholder_url": "URL για το διάγραμμα",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "Τα δεδομένα αποθηκεύτηκαν",
+        "button_save": "Αποθήκευση",
+        "text_url": "Διεύθυνση draw.io",
+        "text_url_description": "Η διεύθυνση της υπηρεσίας draw.io που χρησιμοποιείται για το άνοιγμα και την επεξεργασία διαγραμμάτων. Αλλάξτε την εάν το draw.io φιλοξενείται στον δικό σας διακομιστή. Αφήστε το https://embed.diagrams.net για χρήση της δημόσιας υπηρεσίας.",
+        "text_language": "Γλώσσα",
+        "text_libraries": "Βιβλιοθήκες",
+        "text_offline_description": "Όταν η \"λειτουργία εκτός σύνδεσης\" είναι ενεργή, απενεργοποιούνται όλες οι απομακρυσμένες λειτουργίες για προστασία",
+        "text_offline": "Λειτουργία εκτός σύνδεσης"
+    },
+    "context_menu_open_diagram": "Άνοιγμα διαγράμματος",
+    "file_type_name": "Διάγραμμα",
+    "toast_file_not_created": "Το αρχείο \"%{title}.drawio\" δεν δημιουργήθηκε: %{message}",
+    "toast_wrong_file_format": "Λανθασμένη μορφή αρχείου",
+    "toast_no_permission": "Δεν έχετε δικαίωμα προβολής αυτού του αρχείου",
+    "toast_cant_read_file": "Δεν είναι δυνατή η ανάγνωση αυτού του αρχείου"
+}

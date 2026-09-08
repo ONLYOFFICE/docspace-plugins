@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "Nije moguće dobiti informacije o datoteci",
+        "failed_to_get_file_details": "Dobijanje detalja o datoteci nije uspelo",
+        "failed_to_download_file": "Preuzimanje datoteke nije uspelo: ",
+        "watermark_protected": "Ova datoteka je zaštićena vodenim žigom. Onemogućite postavku sobe \"Dodaj vodene žigove u dokumente\" i pokušajte ponovo.",
+        "empty_file": "Preuzeta datoteka je prazna",
+        "failed_to_initiate_upload": "Pokretanje otpremanja nije uspelo: ",
+        "upload_failed": "Otpremanje nije uspelo",
+        "invalid_upload_session": "Nevažeći odgovor sesije otpremanja",
+        "file_not_created": "Datoteka nije kreirana na serveru",
+        "unsupported_format": "Nepodržan format: ",
+        "conversion_failed": "Pretvaranje nije uspelo",
+        "created": "Kreirano "
+    },
+    "context_menu_convert": "Pretvori u Markdown"
+}

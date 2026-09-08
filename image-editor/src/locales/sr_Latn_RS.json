@@ -1,0 +1,7 @@
+{
+    "dialog_button_save_and_exit": "Sačuvaj i izađi",
+    "context_menu_edit_image": "Uredi sliku",
+    "toast_no_permissions": "Nemate dozvolu da prikažete ovu datoteku",
+    "toast_file_saved": "Datoteka je uspešno sačuvana",
+    "toast_file_not_saved": "Čuvanje datoteke nije uspelo"
+}

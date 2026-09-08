@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "Токен збережено",
+        "button_save": "Зберегти",
+        "text_description": "Щоб згенерувати токен API, відвідайте https://www.assemblyai.com \n\n Після активації токена API плагін стає доступним усім користувачам поточного ONLYOFFICE Apps.",
+        "text_api_token": "Токен API"
+    },
+    "toast_api_token_is_missing": "Відсутній токен API",
+    "toast_wrong_api_token": "Невірний токен API",
+    "toast_speech_not_recognized": "Мовлення не розпізнано або відсутнє",
+    "toast_successfully_converted": "Файл успішно перетворено на текст",
+    "toast_unsuccessfully_converted": "Не вдалося перетворити на текст: ",
+    "context_menu_convert_to_text": "Перетворити на текст"
+}

@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "تحرير عنوان URL"
+    },
+    "main_button": {
+        "new_url": "عنوان URL جديد"
+    },
+    "dialog": {
+        "header_create": "إنشاء عنوان URL جديد",
+        "header_edit": "تحرير عنوان URL",
+        "label_url": "عنوان URL:",
+        "label_title": "العنوان:",
+        "button_create": "إنشاء",
+        "button_save": "حفظ",
+        "button_cancel": "إلغاء",
+        "error_invalid_url": "عنوان URL غير صالح",
+        "error_url_required": "عنوان URL مطلوب",
+        "link_to": "رابط إلى",
+        "new_link": "رابط جديد",
+        "toast_url_created": "تم إنشاء عنوان URL بنجاح",
+        "toast_url_not_created": "فشل إنشاء عنوان URL",
+        "toast_file_saved": "تم حفظ الملف بنجاح",
+        "toast_file_not_saved": "فشل حفظ الملف"
+    },
+    "file_type_name": "رابط",
+    "toast_no_permissions": "ليس لديك إذن لعرض هذا الملف",
+    "toast_cant_read_file": "تعذر قراءة هذا الملف",
+    "toast_wrong_file": "ملف URL خاطئ أو تالف"
+}

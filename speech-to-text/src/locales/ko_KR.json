@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "토큰이 저장되었습니다",
+        "button_save": "저장",
+        "text_description": "API 토큰을 생성하려면 https://www.assemblyai.com 을 방문하세요 \n\n API 토큰이 활성화되면 현재 ONLYOFFICE Apps의 모든 사용자가 플러그인을 사용할 수 있습니다.",
+        "text_api_token": "API 토큰"
+    },
+    "toast_api_token_is_missing": "API 토큰이 없습니다",
+    "toast_wrong_api_token": "잘못된 API 토큰",
+    "toast_speech_not_recognized": "음성이 인식되지 않았거나 존재하지 않습니다",
+    "toast_successfully_converted": "파일이 텍스트로 변환되었습니다",
+    "toast_unsuccessfully_converted": "텍스트 변환에 실패했습니다: ",
+    "context_menu_convert_to_text": "텍스트로 변환"
+}

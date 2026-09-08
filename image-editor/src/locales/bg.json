@@ -1,0 +1,7 @@
+{
+    "dialog_button_save_and_exit": "Запис и изход",
+    "context_menu_edit_image": "Редактиране на изображението",
+    "toast_no_permissions": "Нямате права да преглеждате този файл",
+    "toast_file_saved": "Файлът е записан успешно",
+    "toast_file_not_saved": "Записването на файла е неуспешно"
+}

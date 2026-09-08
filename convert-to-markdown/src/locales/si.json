@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "ගොනු තොරතුරු ලබාගත නොහැක",
+        "failed_to_get_file_details": "ගොනු විස්තර ලබාගැනීම අසාර්ථක විය",
+        "failed_to_download_file": "ගොනුව බාගැනීම අසාර්ථක විය: ",
+        "watermark_protected": "මෙම ගොනුව ජල සලකුණකින් ආරක්ෂා කර ඇත. \"ලේඛනවලට ජල සලකුණු එක් කරන්න\" කාමර සැකසුම අක්‍රිය කර නැවත උත්සාහ කරන්න.",
+        "empty_file": "බාගත් ගොනුව හිස්ය",
+        "failed_to_initiate_upload": "උඩුගත කිරීම ආරම්භ කිරීම අසාර්ථක විය: ",
+        "upload_failed": "උඩුගත කිරීම අසාර්ථක විය",
+        "invalid_upload_session": "වලංගු නොවන උඩුගත සැසි ප්‍රතිචාරයකි",
+        "file_not_created": "සේවාදායකයේ ගොනුව නිර්මාණය නොවීය",
+        "unsupported_format": "සහාය නොදක්වන ආකෘතියකි: ",
+        "conversion_failed": "පරිවර්තනය අසාර්ථක විය",
+        "created": "නිර්මාණය කරන ලදී "
+    },
+    "context_menu_convert": "Markdown බවට පරිවර්තනය කරන්න"
+}

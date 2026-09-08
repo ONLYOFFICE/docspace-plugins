@@ -1,0 +1,7 @@
+{
+    "dialog_button_save_and_exit": "저장 후 종료",
+    "context_menu_edit_image": "이미지 편집",
+    "toast_no_permissions": "이 파일을 볼 권한이 없습니다",
+    "toast_file_saved": "파일이 저장되었습니다",
+    "toast_file_not_saved": "파일 저장에 실패했습니다"
+}
