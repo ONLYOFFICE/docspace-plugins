@@ -15,7 +15,7 @@
 
 ### Changed
 - using @onlyoffice/docspace-plugin-sdk 2.1.0
-- compatible with ONLYOFFICE Apps 3.7
+- compatible with DocSpace 3.7
 
 ## 1.2.0
 ### Changed
@@ -25,7 +25,7 @@
 
 ## 1.1.0
 ### Changed
-- support new ONLYOFFICE Apps roles
+- support new DocSpace roles
 
 ## 1.0.2
 ### Changed
