@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Αποθήκευση",
+        "button_cancel": "Άκυρο",
+        "text_unsaved": "Συνέχεια χωρίς αποθήκευση;\nΈχετε κάνει αλλαγές στη διαμόρφωση. Εάν συνεχίσετε χωρίς αποθήκευση, αυτές οι αλλαγές δεν θα εφαρμοστούν.",
+        "warning_header": "Προειδοποίηση",
+        "button_continue": "Συνέχεια",
+        "button_reopen": "Άνοιγμα ξανά"
+    },
+    "main_button": {
+        "label": "Αρχείο κειμένου",
+        "create_dialog_title": "Δημιουργία αρχείου κειμένου",
+        "create_dialog_start_value": "Αρχείο κειμένου",
+        "error_no_file_ext": "Πρέπει να δοθεί επέκταση αρχείου",
+        "error_not_supported": "Η επέκταση αρχείου δεν υποστηρίζεται από την προσθήκη Codemirror",
+        "error_not_created": "Το αρχείο \"${title}.md\" δεν δημιουργήθηκε: ${message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Τα δεδομένα αποθηκεύτηκαν",
+        "button_save": "Αποθήκευση",
+        "header_general": "Γενικά",
+        "header_html": "HTML",
+        "highlight_whitespace": "Επισήμανση κενών διαστημάτων",
+        "highlight_whitespace_description": "Εμφάνιση των κενών ως κουκκίδες και των στηλοθετών ως βέλη.",
+        "highlight_trailing_whitespace": "Επισήμανση κενών στο τέλος γραμμής",
+        "highlight_trailing_whitespace_description": "Επισήμανση των κενών στο τέλος μιας γραμμής.",
+        "auto_close_tags": "Αυτόματο κλείσιμο ετικετών",
+        "auto_close_tags_description": "Αυτόματη εισαγωγή ετικετών κλεισίματος όταν πληκτρολογείται > ή / σε αρχεία τύπου HTML."
+    },
+    "context_menu_edit": "Επεξεργασία αρχείου με το Codemirror",
+    "file_type_name": "Κώδικας",
+    "toast_no_permission": "Δεν έχετε δικαίωμα προβολής αυτού του αρχείου",
+    "toast_cant_read_file": "Δεν είναι δυνατή η ανάγνωση αυτού του αρχείου",
+    "toast_file_saved": "Το αρχείο αποθηκεύτηκε",
+    "toast_file_not_saved": "Η αποθήκευση του αρχείου απέτυχε"
+}

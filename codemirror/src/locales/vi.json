@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Lưu",
+        "button_cancel": "Hủy",
+        "text_unsaved": "Tiếp tục mà không lưu?\nBạn đã thay đổi cấu hình. Nếu tiếp tục mà không lưu, những thay đổi đó sẽ không được áp dụng.",
+        "warning_header": "Cảnh báo",
+        "button_continue": "Tiếp tục",
+        "button_reopen": "Mở lại"
+    },
+    "main_button": {
+        "label": "Tệp văn bản",
+        "create_dialog_title": "Tạo tệp văn bản",
+        "create_dialog_start_value": "Tệp văn bản",
+        "error_no_file_ext": "Phải cung cấp phần mở rộng của tệp",
+        "error_not_supported": "Tiện ích Codemirror không hỗ trợ phần mở rộng tệp này",
+        "error_not_created": "Chưa tạo được tệp \"${title}.md\": ${message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Đã lưu dữ liệu",
+        "button_save": "Lưu",
+        "header_general": "Chung",
+        "header_html": "HTML",
+        "highlight_whitespace": "Đánh dấu khoảng trắng",
+        "highlight_whitespace_description": "Hiển thị khoảng trắng dưới dạng dấu chấm và tab dưới dạng mũi tên.",
+        "highlight_trailing_whitespace": "Đánh dấu khoảng trắng cuối dòng",
+        "highlight_trailing_whitespace_description": "Đánh dấu khoảng trắng ở cuối dòng.",
+        "auto_close_tags": "Tự động đóng thẻ",
+        "auto_close_tags_description": "Tự động chèn thẻ đóng khi gõ > hoặc / trong các tệp dạng HTML."
+    },
+    "context_menu_edit": "Chỉnh sửa tệp bằng Codemirror",
+    "file_type_name": "Mã",
+    "toast_no_permission": "Bạn không có quyền xem tệp này",
+    "toast_cant_read_file": "Không thể đọc tệp này",
+    "toast_file_saved": "Đã lưu tệp",
+    "toast_file_not_saved": "Lưu tệp không thành công"
+}

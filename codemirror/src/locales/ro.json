@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Salvează",
+        "button_cancel": "Anulează",
+        "text_unsaved": "Continuați fără a salva?\nAți efectuat modificări în configurație. Dacă veți continua fără a salva, aceste modificări nu vor fi aplicate.",
+        "warning_header": "Avertisment",
+        "button_continue": "Continuă",
+        "button_reopen": "Redeschide"
+    },
+    "main_button": {
+        "label": "Fișier text",
+        "create_dialog_title": "Creează fișier text",
+        "create_dialog_start_value": "Fișier text",
+        "error_no_file_ext": "Trebuie specificată extensia fișierului",
+        "error_not_supported": "Extensia fișierului nu este acceptată de pluginul Codemirror",
+        "error_not_created": "Fișierul \"${title}.md\" nu a fost creat: ${message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Datele au fost salvate",
+        "button_save": "Salvează",
+        "header_general": "General",
+        "header_html": "HTML",
+        "highlight_whitespace": "Evidențiază spațiile albe",
+        "highlight_whitespace_description": "Afișează spațiile ca puncte și taburile ca săgeți.",
+        "highlight_trailing_whitespace": "Evidențiază spațiile de la sfârșitul rândului",
+        "highlight_trailing_whitespace_description": "Evidențiază spațiile de la sfârșitul unui rând.",
+        "auto_close_tags": "Închide automat etichetele",
+        "auto_close_tags_description": "Inserează automat etichetele de închidere când se tastează > sau / în fișiere de tip HTML."
+    },
+    "context_menu_edit": "Editează fișierul cu Codemirror",
+    "file_type_name": "Cod",
+    "toast_no_permission": "Nu aveți permisiunea de a vizualiza acest fișier",
+    "toast_cant_read_file": "Acest fișier nu poate fi citit",
+    "toast_file_saved": "Fișier salvat",
+    "toast_file_not_saved": "Salvarea fișierului a eșuat"
+}

@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Zapisz",
+        "button_cancel": "Anuluj",
+        "text_unsaved": "Kontynuować bez zapisywania?\nWprowadzono zmiany w konfiguracji. Jeśli przejdziesz dalej bez zapisywania, te zmiany nie zostaną zastosowane.",
+        "warning_header": "Ostrzeżenie",
+        "button_continue": "Kontynuuj",
+        "button_reopen": "Otwórz ponownie"
+    },
+    "main_button": {
+        "label": "Plik tekstowy",
+        "create_dialog_title": "Utwórz plik tekstowy",
+        "create_dialog_start_value": "Plik tekstowy",
+        "error_no_file_ext": "Należy podać rozszerzenie pliku",
+        "error_not_supported": "Rozszerzenie pliku nie jest obsługiwane przez wtyczkę Codemirror",
+        "error_not_created": "Plik \"${title}.md\" nie został utworzony: ${message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Dane zostały zapisane",
+        "button_save": "Zapisz",
+        "header_general": "Ogólne",
+        "header_html": "HTML",
+        "highlight_whitespace": "Wyróżniaj białe znaki",
+        "highlight_whitespace_description": "Wyświetlaj spacje jako kropki, a tabulatory jako strzałki.",
+        "highlight_trailing_whitespace": "Wyróżniaj białe znaki na końcu wiersza",
+        "highlight_trailing_whitespace_description": "Wyróżniaj białe znaki na końcu wiersza.",
+        "auto_close_tags": "Automatyczne zamykanie znaczników",
+        "auto_close_tags_description": "Automatycznie wstawiaj znaczniki zamykające po wpisaniu > lub / w plikach typu HTML."
+    },
+    "context_menu_edit": "Edytuj plik za pomocą Codemirror",
+    "file_type_name": "Kod",
+    "toast_no_permission": "Nie masz uprawnień do wyświetlenia tego pliku",
+    "toast_cant_read_file": "Nie można odczytać tego pliku",
+    "toast_file_saved": "Plik zapisany",
+    "toast_file_not_saved": "Nie udało się zapisać pliku"
+}

@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "Nu se pot obține informațiile despre fișier",
+        "failed_to_get_file_details": "Obținerea detaliilor fișierului a eșuat",
+        "failed_to_download_file": "Descărcarea fișierului a eșuat: ",
+        "watermark_protected": "Acest fișier este protejat cu filigran. Dezactivați setarea camerei \"Adaugă filigrane la documente\" și încercați din nou.",
+        "empty_file": "Fișierul descărcat este gol",
+        "failed_to_initiate_upload": "Inițierea încărcării a eșuat: ",
+        "upload_failed": "Încărcarea a eșuat",
+        "invalid_upload_session": "Răspuns nevalid al sesiunii de încărcare",
+        "file_not_created": "Fișierul nu a fost creat pe server",
+        "unsupported_format": "Format neacceptat: ",
+        "conversion_failed": "Conversia a eșuat",
+        "created": "Creat "
+    },
+    "context_menu_convert": "Convertește în Markdown"
+}

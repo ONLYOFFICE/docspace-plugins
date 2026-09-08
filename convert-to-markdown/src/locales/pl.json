@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "Nie można pobrać informacji o pliku",
+        "failed_to_get_file_details": "Nie udało się pobrać szczegółów pliku",
+        "failed_to_download_file": "Nie udało się pobrać pliku: ",
+        "watermark_protected": "Ten plik jest chroniony znakiem wodnym. Wyłącz ustawienie pokoju \"Dodaj znaki wodne do dokumentów\" i spróbuj ponownie.",
+        "empty_file": "Pobrany plik jest pusty",
+        "failed_to_initiate_upload": "Nie udało się rozpocząć przesyłania: ",
+        "upload_failed": "Przesyłanie nie powiodło się",
+        "invalid_upload_session": "Nieprawidłowa odpowiedź sesji przesyłania",
+        "file_not_created": "Plik nie został utworzony na serwerze",
+        "unsupported_format": "Nieobsługiwany format: ",
+        "conversion_failed": "Konwersja nie powiodła się",
+        "created": "Utworzono "
+    },
+    "context_menu_convert": "Konwertuj na Markdown"
+}

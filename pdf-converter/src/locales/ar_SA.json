@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "تحويل الملف إلى PDF",
+        "button_convert_file": "تحويل الملف",
+        "button_cancel": "إلغاء",
+        "toast_wrong_api_token": "رمز API غير صحيح",
+        "text_converted_file_name": "اسم الملف المحوَّل"
+    },
+    "settings": {
+        "description": "لإنشاء سر API، تفضل بزيارة https://www.convertapi.com/ \n\n بمجرد تفعيل رمز API، يصبح المكون الإضافي متاحًا لجميع مستخدمي ONLYOFFICE Apps الحالي.",
+        "toast_token_is_saved": "تم حفظ الرمز المميز",
+        "button_save": "حفظ",
+        "text_api_token": "رمز API"
+    },
+    "context_menu_convert_to_pdf": "التحويل إلى PDF",
+    "toast_file_created": "تم إنشاء الملف %{name}",
+    "toast_file_not_created": "لم يتم إنشاء الملف %{name}: %{message}",
+    "toast_wrong_api_token": "رمز API غير صحيح"
+}

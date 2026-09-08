@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "Deschide arhiva",
+        "group_unzip": "Dezarhivează",
+        "choose_location": "Alege o locație",
+        "unzip_here": "Dezarhivează aici",
+        "group_zip": "Arhivează",
+        "zip_folder": "Arhivează aici",
+        "zip_selected": "Arhivează elementele selectate",
+        "zip_selected_item": "Arhivează elementul selectat"
+    },
+    "dialog": {
+        "header": "Vizualizator de arhive",
+        "button_extract": "Extrage arhiva",
+        "selector_header_unzip": "Dezarhivează în",
+        "selector_header_zip": "Arhivează în",
+        "selector_header_extract": "Extrage în",
+        "selector_button_archive": "Arhivează",
+        "selector_button_unzip": "Dezarhivează",
+        "selector_button_extract": "Extrage",
+        "selector_checkbox_wrap": "Pune într-un folder nou",
+        "button_cancel": "Anulează",
+        "viewer_loading": "Se încarcă...",
+        "viewer_error": "Eroare: ${error}"
+    },
+    "default_zip_title": "Arhivă nouă",
+    "default_folder_title": "Folder nou",
+    "file_type_name": "Arhivă",
+    "toast_no_folder_download_permission": "Nu aveți permisiunea de a descărca fișiere din acest folder",
+    "toast_no_view_permission": "Nu aveți permisiunea de a vizualiza acest fișier",
+    "toast_no_unzip_permission": "Nu aveți permisiunea de a dezarhiva acest fișier",
+    "toast_extract_success": "Elementele au fost extrase cu succes",
+    "toast_unzip_success": "Fișierul a fost dezarhivat cu succes",
+    "toast_cant_create": "Operațiunea a eșuat. Nu puteți crea fișiere în acest folder",
+    "toast_failed_to_create": "Crearea arhivei zip a eșuat",
+    "toast_zip_saved": "Arhiva zip a fost salvată",
+    "toast_zip_not_saved": "Salvarea arhivei zip a eșuat"
+}

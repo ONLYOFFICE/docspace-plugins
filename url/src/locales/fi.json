@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "Muokkaa URL-osoitetta"
+    },
+    "main_button": {
+        "new_url": "Uusi URL-osoite"
+    },
+    "dialog": {
+        "header_create": "Luo uusi URL-osoite",
+        "header_edit": "Muokkaa URL-osoitetta",
+        "label_url": "URL:",
+        "label_title": "Otsikko:",
+        "button_create": "Luo",
+        "button_save": "Tallenna",
+        "button_cancel": "Peruuta",
+        "error_invalid_url": "Virheellinen URL-osoite",
+        "error_url_required": "URL-osoite on pakollinen",
+        "link_to": "Linkki kohteeseen",
+        "new_link": "Uusi linkki",
+        "toast_url_created": "URL-osoite luotiin onnistuneesti",
+        "toast_url_not_created": "URL-osoitteen luominen epäonnistui",
+        "toast_file_saved": "Tiedosto tallennettiin onnistuneesti",
+        "toast_file_not_saved": "Tiedoston tallentaminen epäonnistui"
+    },
+    "file_type_name": "Linkki",
+    "toast_no_permissions": "Sinulla ei ole oikeutta tarkastella tätä tiedostoa",
+    "toast_cant_read_file": "Tätä tiedostoa ei voi lukea",
+    "toast_wrong_file": "Virheellinen tai vioittunut URL-tiedosto"
+}

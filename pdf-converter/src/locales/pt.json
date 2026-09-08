@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "Converter ficheiro para PDF",
+        "button_convert_file": "Converter ficheiro",
+        "button_cancel": "Cancelar",
+        "toast_wrong_api_token": "Token de API incorreto",
+        "text_converted_file_name": "Nome do ficheiro convertido"
+    },
+    "settings": {
+        "description": "Para gerar o segredo da API, visite https://www.convertapi.com/ \n\n Depois de ativado o token de API, o plugin fica disponível para todos os utilizadores do ONLYOFFICE Apps atual.",
+        "toast_token_is_saved": "Token guardado",
+        "button_save": "Guardar",
+        "text_api_token": "Token de API"
+    },
+    "context_menu_convert_to_pdf": "Converter para PDF",
+    "toast_file_created": "O ficheiro %{name} foi criado",
+    "toast_file_not_created": "O ficheiro %{name} não foi criado: %{message}",
+    "toast_wrong_api_token": "Token de API incorreto"
+}

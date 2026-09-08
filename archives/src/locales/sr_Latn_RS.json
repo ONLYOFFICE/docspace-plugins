@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "Otvori arhivu",
+        "group_unzip": "Raspakuj",
+        "choose_location": "Izaberi lokaciju",
+        "unzip_here": "Raspakuj ovde",
+        "group_zip": "Arhiviraj",
+        "zip_folder": "Arhiviraj ovde",
+        "zip_selected": "Arhiviraj izabrane stavke",
+        "zip_selected_item": "Arhiviraj izabranu stavku"
+    },
+    "dialog": {
+        "header": "Prikazivač arhiva",
+        "button_extract": "Izvuci arhivu",
+        "selector_header_unzip": "Raspakuj u",
+        "selector_header_zip": "Arhiviraj u",
+        "selector_header_extract": "Izvuci u",
+        "selector_button_archive": "Arhiviraj",
+        "selector_button_unzip": "Raspakuj",
+        "selector_button_extract": "Izvuci",
+        "selector_checkbox_wrap": "Stavi u novu fasciklu",
+        "button_cancel": "Otkaži",
+        "viewer_loading": "Učitavanje...",
+        "viewer_error": "Greška: ${error}"
+    },
+    "default_zip_title": "Nova arhiva",
+    "default_folder_title": "Nova fascikla",
+    "file_type_name": "Arhiva",
+    "toast_no_folder_download_permission": "Nemate dozvolu da preuzimate datoteke iz ove fascikle",
+    "toast_no_view_permission": "Nemate dozvolu da prikažete ovu datoteku",
+    "toast_no_unzip_permission": "Nemate dozvolu da raspakujete ovu datoteku",
+    "toast_extract_success": "Stavke su uspešno izvučene",
+    "toast_unzip_success": "Datoteka je uspešno raspakovana",
+    "toast_cant_create": "Radnja nije uspela. Ne možete praviti datoteke u ovoj fascikli",
+    "toast_failed_to_create": "Pravljenje zip datoteke nije uspelo",
+    "toast_zip_saved": "Zip je sačuvan",
+    "toast_zip_not_saved": "Čuvanje zip datoteke nije uspelo"
+}

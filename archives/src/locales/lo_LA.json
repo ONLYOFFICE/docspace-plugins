@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "ເປີດໄຟລ໌ບີບອັດ",
+        "group_unzip": "ແຕກໄຟລ໌",
+        "choose_location": "ເລືອກທີ່ຕັ້ງ",
+        "unzip_here": "ແຕກໄຟລ໌ບ່ອນນີ້",
+        "group_zip": "ບີບອັດ",
+        "zip_folder": "ບີບອັດບ່ອນນີ້",
+        "zip_selected": "ບີບອັດລາຍການທີ່ເລືອກ",
+        "zip_selected_item": "ບີບອັດລາຍການທີ່ເລືອກ"
+    },
+    "dialog": {
+        "header": "ຕົວເບິ່ງໄຟລ໌ບີບອັດ",
+        "button_extract": "ແຕກໄຟລ໌ບີບອັດ",
+        "selector_header_unzip": "ແຕກໄຟລ໌ໄປທີ່",
+        "selector_header_zip": "ບີບອັດໄປທີ່",
+        "selector_header_extract": "ແຕກໄປທີ່",
+        "selector_button_archive": "ບີບອັດ",
+        "selector_button_unzip": "ແຕກໄຟລ໌",
+        "selector_button_extract": "ແຕກ",
+        "selector_checkbox_wrap": "ວາງໄວ້ໃນໂຟນເດີໃໝ່",
+        "button_cancel": "ຍົກເລີກ",
+        "viewer_loading": "ກຳລັງໂຫຼດ...",
+        "viewer_error": "ຂໍ້ຜິດພາດ: ${error}"
+    },
+    "default_zip_title": "ໄຟລ໌ບີບອັດໃໝ່",
+    "default_folder_title": "ໂຟນເດີໃໝ່",
+    "file_type_name": "ໄຟລ໌ບີບອັດ",
+    "toast_no_folder_download_permission": "ທ່ານບໍ່ມີສິດດາວໂຫຼດໄຟລ໌ຈາກໂຟນເດີນີ້",
+    "toast_no_view_permission": "ທ່ານບໍ່ມີສິດເບິ່ງໄຟລ໌ນີ້",
+    "toast_no_unzip_permission": "ທ່ານບໍ່ມີສິດແຕກໄຟລ໌ນີ້",
+    "toast_extract_success": "ແຕກລາຍການສຳເລັດແລ້ວ",
+    "toast_unzip_success": "ແຕກໄຟລ໌ສຳເລັດແລ້ວ",
+    "toast_cant_create": "ການດຳເນີນການບໍ່ສຳເລັດ. ທ່ານບໍ່ສາມາດສ້າງໄຟລ໌ໃນໂຟນເດີນີ້ໄດ້",
+    "toast_failed_to_create": "ສ້າງໄຟລ໌ zip ບໍ່ສຳເລັດ",
+    "toast_zip_saved": "ບັນທຶກໄຟລ໌ zip ແລ້ວ",
+    "toast_zip_not_saved": "ບັນທຶກໄຟລ໌ zip ບໍ່ສຳເລັດ"
+}

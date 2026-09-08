@@ -1,0 +1,9 @@
+{
+    "context_menu": {
+        "open_in_reader": "Hape në lexues"
+    },
+    "file_type_name": "Libër",
+    "errors": {
+        "unsupported_zip": "Ky arkiv ZIP nuk përmban një libër të mbështetur. Formatet e mbështetura brenda një ZIP: EPUB ose FB2."
+    }
+}

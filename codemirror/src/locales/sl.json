@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Shrani",
+        "button_cancel": "Prekliči",
+        "text_unsaved": "Želite nadaljevati brez shranjevanja?\nV konfiguraciji ste naredili spremembe. Če nadaljujete brez shranjevanja, te spremembe ne bodo uveljavljene.",
+        "warning_header": "Opozorilo",
+        "button_continue": "Nadaljuj",
+        "button_reopen": "Znova odpri"
+    },
+    "main_button": {
+        "label": "Besedilna datoteka",
+        "create_dialog_title": "Ustvari besedilno datoteko",
+        "create_dialog_start_value": "Besedilna datoteka",
+        "error_no_file_ext": "Navesti je treba pripono datoteke",
+        "error_not_supported": "Vtičnik Codemirror ne podpira te pripone datoteke",
+        "error_not_created": "Datoteka \"${title}.md\" ni bila ustvarjena: ${message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Podatki so shranjeni",
+        "button_save": "Shrani",
+        "header_general": "Splošno",
+        "header_html": "HTML",
+        "highlight_whitespace": "Označi presledke",
+        "highlight_whitespace_description": "Presledke prikaži kot pike, tabulatorje pa kot puščice.",
+        "highlight_trailing_whitespace": "Označi presledke na koncu vrstice",
+        "highlight_trailing_whitespace_description": "Označi presledke na koncu vrstice.",
+        "auto_close_tags": "Samodejno zapiranje oznak",
+        "auto_close_tags_description": "Samodejno vstavi zaključne oznake, ko v datotekah vrste HTML vnesete > ali /."
+    },
+    "context_menu_edit": "Uredi datoteko z Codemirror",
+    "file_type_name": "Koda",
+    "toast_no_permission": "Nimate dovoljenja za ogled te datoteke",
+    "toast_cant_read_file": "Te datoteke ni mogoče prebrati",
+    "toast_file_saved": "Datoteka je shranjena",
+    "toast_file_not_saved": "Datoteke ni bilo mogoče shraniti"
+}

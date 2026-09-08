@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "Редагувати URL"
+    },
+    "main_button": {
+        "new_url": "Новий URL"
+    },
+    "dialog": {
+        "header_create": "Створити новий URL",
+        "header_edit": "Редагувати URL",
+        "label_url": "URL:",
+        "label_title": "Назва:",
+        "button_create": "Створити",
+        "button_save": "Зберегти",
+        "button_cancel": "Скасувати",
+        "error_invalid_url": "Невірна URL-адреса",
+        "error_url_required": "URL-адреса обов'язкова",
+        "link_to": "Посилання на",
+        "new_link": "Нове посилання",
+        "toast_url_created": "URL успішно створено",
+        "toast_url_not_created": "Не вдалося створити URL",
+        "toast_file_saved": "Файл успішно збережено",
+        "toast_file_not_saved": "Не вдалося зберегти файл"
+    },
+    "file_type_name": "Посилання",
+    "toast_no_permissions": "У вас немає прав на перегляд цього файлу",
+    "toast_cant_read_file": "Не вдається прочитати файл",
+    "toast_wrong_file": "Невірний або пошкоджений файл URL"
+}

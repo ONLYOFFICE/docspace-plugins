@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "Hap arkivin",
+        "group_unzip": "Shpaketo",
+        "choose_location": "Zgjidh një vendndodhje",
+        "unzip_here": "Shpaketo këtu",
+        "group_zip": "Arkivo",
+        "zip_folder": "Arkivo këtu",
+        "zip_selected": "Arkivo artikujt e zgjedhur",
+        "zip_selected_item": "Arkivo artikullin e zgjedhur"
+    },
+    "dialog": {
+        "header": "Shikuesi i arkivit",
+        "button_extract": "Nxirr arkivin",
+        "selector_header_unzip": "Shpaketo në",
+        "selector_header_zip": "Arkivo në",
+        "selector_header_extract": "Nxirr në",
+        "selector_button_archive": "Arkivo",
+        "selector_button_unzip": "Shpaketo",
+        "selector_button_extract": "Nxirr",
+        "selector_checkbox_wrap": "Vendos në një dosje të re",
+        "button_cancel": "Anulo",
+        "viewer_loading": "Duke u ngarkuar...",
+        "viewer_error": "Gabim: ${error}"
+    },
+    "default_zip_title": "Arkiv i ri",
+    "default_folder_title": "Dosje e re",
+    "file_type_name": "Arkiv",
+    "toast_no_folder_download_permission": "Nuk keni leje për të shkarkuar skedarë nga kjo dosje",
+    "toast_no_view_permission": "Nuk keni leje për ta parë këtë skedar",
+    "toast_no_unzip_permission": "Nuk keni leje për ta shpaketuar këtë skedar",
+    "toast_extract_success": "Elementet u nxorën me sukses",
+    "toast_unzip_success": "Skedari u shpaketua me sukses",
+    "toast_cant_create": "Veprimi dështoi. Nuk mund të krijoni skedarë në këtë dosje",
+    "toast_failed_to_create": "Krijimi i zip dështoi",
+    "toast_zip_saved": "Zip u ruajt",
+    "toast_zip_not_saved": "Ruajtja e zip dështoi"
+}

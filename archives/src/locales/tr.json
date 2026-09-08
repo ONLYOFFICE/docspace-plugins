@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "Arşivi aç",
+        "group_unzip": "Arşivden çıkar",
+        "choose_location": "Bir konum seçin",
+        "unzip_here": "Buraya çıkar",
+        "group_zip": "Arşivle",
+        "zip_folder": "Buraya arşivle",
+        "zip_selected": "Seçili öğeleri arşivle",
+        "zip_selected_item": "Seçili öğeyi arşivle"
+    },
+    "dialog": {
+        "header": "Arşiv görüntüleyici",
+        "button_extract": "Arşivi ayıkla",
+        "selector_header_unzip": "Şuraya çıkar",
+        "selector_header_zip": "Şuraya arşivle",
+        "selector_header_extract": "Şuraya ayıkla",
+        "selector_button_archive": "Arşivle",
+        "selector_button_unzip": "Çıkar",
+        "selector_button_extract": "Ayıkla",
+        "selector_checkbox_wrap": "Yeni bir klasöre koy",
+        "button_cancel": "İptal",
+        "viewer_loading": "Yükleniyor...",
+        "viewer_error": "Hata: ${error}"
+    },
+    "default_zip_title": "Yeni arşiv",
+    "default_folder_title": "Yeni klasör",
+    "file_type_name": "Arşiv",
+    "toast_no_folder_download_permission": "Bu klasörden dosya indirme izniniz yok",
+    "toast_no_view_permission": "Bu dosyayı görüntüleme izniniz yok",
+    "toast_no_unzip_permission": "Bu dosyayı arşivden çıkarma izniniz yok",
+    "toast_extract_success": "Öğeler başarıyla ayıklandı",
+    "toast_unzip_success": "Dosya başarıyla arşivden çıkarıldı",
+    "toast_cant_create": "İşlem başarısız oldu. Bu klasörde dosya oluşturamazsınız",
+    "toast_failed_to_create": "Zip oluşturulamadı",
+    "toast_zip_saved": "Zip kaydedildi",
+    "toast_zip_not_saved": "Zip kaydedilemedi"
+}

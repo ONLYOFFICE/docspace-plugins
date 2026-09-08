@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "Перетворити файл на PDF",
+        "button_convert_file": "Перетворити файл",
+        "button_cancel": "Скасувати",
+        "toast_wrong_api_token": "Невірний токен API",
+        "text_converted_file_name": "Назва перетвореного файлу"
+    },
+    "settings": {
+        "description": "Щоб згенерувати секрет API, відвідайте https://www.convertapi.com/ \n\n Після активації токена API плагін стає доступним усім користувачам поточного ONLYOFFICE Apps.",
+        "toast_token_is_saved": "Токен збережено",
+        "button_save": "Зберегти",
+        "text_api_token": "Токен API"
+    },
+    "context_menu_convert_to_pdf": "Перетворити на PDF",
+    "toast_file_created": "Файл %{name} створено",
+    "toast_file_not_created": "Файл %{name} не створено: %{message}",
+    "toast_wrong_api_token": "Невірний токен API"
+}

@@ -1,0 +1,32 @@
+{
+    "main_button": {
+        "create_dialog_title": "Създаване на диаграма",
+        "create_dialog_start_value": "Нова диаграма"
+    },
+    "open_from_url": {
+        "button_accept": "Създаване",
+        "button_cancel": "Отказ",
+        "description_text": "Уверете се, че достъпът чрез публична връзка е отворен",
+        "dialog_header": "Импортиране на диаграма",
+        "input_placeholder_name": "Нова диаграма",
+        "input_text_name": "Име",
+        "input_placeholder_url": "URL адрес на диаграмата",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "Данните са записани",
+        "button_save": "Запис",
+        "text_url": "Адрес на draw.io",
+        "text_url_description": "Адресът на услугата draw.io, използвана за отваряне и редактиране на диаграми. Променете го, ако draw.io е хостван на ваш собствен сървър. Оставете https://embed.diagrams.net, за да използвате публичната услуга.",
+        "text_language": "Език",
+        "text_libraries": "Библиотеки",
+        "text_offline_description": "Когато \"офлайн режимът\" е активен, всички отдалечени операции и функции се изключват с цел защита",
+        "text_offline": "Офлайн режим"
+    },
+    "context_menu_open_diagram": "Отваряне на диаграмата",
+    "file_type_name": "Диаграма",
+    "toast_file_not_created": "Файлът \"${title}.drawio\" не беше създаден: ${message}",
+    "toast_wrong_file_format": "Грешен файлов формат",
+    "toast_no_permission": "Нямате права да преглеждате този файл",
+    "toast_cant_read_file": "Файлът не може да бъде прочетен"
+}

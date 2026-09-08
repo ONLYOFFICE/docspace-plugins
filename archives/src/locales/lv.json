@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "Atvērt arhīvu",
+        "group_unzip": "Atarhivēt",
+        "choose_location": "Izvēlieties atrašanās vietu",
+        "unzip_here": "Atarhivēt šeit",
+        "group_zip": "Arhivēt",
+        "zip_folder": "Arhivēt šeit",
+        "zip_selected": "Arhivēt atlasītos vienumus",
+        "zip_selected_item": "Arhivēt atlasīto vienumu"
+    },
+    "dialog": {
+        "header": "Arhīva skatītājs",
+        "button_extract": "Izvilkt arhīvu",
+        "selector_header_unzip": "Atarhivēt uz",
+        "selector_header_zip": "Arhivēt uz",
+        "selector_header_extract": "Izvilkt uz",
+        "selector_button_archive": "Arhivēt",
+        "selector_button_unzip": "Atarhivēt",
+        "selector_button_extract": "Izvilkt",
+        "selector_checkbox_wrap": "Ievietot jaunā mapē",
+        "button_cancel": "Atcelt",
+        "viewer_loading": "Notiek ielāde...",
+        "viewer_error": "Kļūda: ${error}"
+    },
+    "default_zip_title": "Jauns arhīvs",
+    "default_folder_title": "Jauna mape",
+    "file_type_name": "Arhīvs",
+    "toast_no_folder_download_permission": "Jums nav atļaujas lejupielādēt failus no šīs mapes",
+    "toast_no_view_permission": "Jums nav atļaujas skatīt šo failu",
+    "toast_no_unzip_permission": "Jums nav atļaujas atarhivēt šo failu",
+    "toast_extract_success": "Vienumi veiksmīgi izvilkti",
+    "toast_unzip_success": "Fails veiksmīgi atarhivēts",
+    "toast_cant_create": "Darbība neizdevās. Šajā mapē nevar izveidot failus",
+    "toast_failed_to_create": "Neizdevās izveidot zip",
+    "toast_zip_saved": "Zip saglabāts",
+    "toast_zip_not_saved": "Neizdevās saglabāt zip"
+}

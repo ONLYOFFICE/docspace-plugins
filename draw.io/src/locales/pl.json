@@ -1,0 +1,32 @@
+{
+    "main_button": {
+        "create_dialog_title": "Utwórz diagram",
+        "create_dialog_start_value": "Nowy diagram"
+    },
+    "open_from_url": {
+        "button_accept": "Utwórz",
+        "button_cancel": "Anuluj",
+        "description_text": "Upewnij się, że dostęp przez link publiczny jest otwarty",
+        "dialog_header": "Importuj diagram",
+        "input_placeholder_name": "Nowy diagram",
+        "input_text_name": "Nazwa",
+        "input_placeholder_url": "Adres URL diagramu",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "Dane zostały zapisane",
+        "button_save": "Zapisz",
+        "text_url": "Adres draw.io",
+        "text_url_description": "Adres usługi draw.io używanej do otwierania i edytowania diagramów. Zmień go, jeśli draw.io jest hostowany na Twoim własnym serwerze. Pozostaw https://embed.diagrams.net, aby korzystać z usługi publicznej.",
+        "text_language": "Język",
+        "text_libraries": "Biblioteki",
+        "text_offline_description": "Gdy \"tryb offline\" jest aktywny, wszystkie operacje i funkcje zdalne są wyłączane w celu ochrony",
+        "text_offline": "Tryb offline"
+    },
+    "context_menu_open_diagram": "Otwórz diagram",
+    "file_type_name": "Diagram",
+    "toast_file_not_created": "Plik \"${title}.drawio\" nie został utworzony: ${message}",
+    "toast_wrong_file_format": "Nieprawidłowy format pliku",
+    "toast_no_permission": "Nie masz uprawnień do wyświetlenia tego pliku",
+    "toast_cant_read_file": "Nie można odczytać tego pliku"
+}

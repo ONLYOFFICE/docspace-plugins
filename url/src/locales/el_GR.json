@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "Επεξεργασία URL"
+    },
+    "main_button": {
+        "new_url": "Νέο URL"
+    },
+    "dialog": {
+        "header_create": "Δημιουργία νέου URL",
+        "header_edit": "Επεξεργασία URL",
+        "label_url": "URL:",
+        "label_title": "Τίτλος:",
+        "button_create": "Δημιουργία",
+        "button_save": "Αποθήκευση",
+        "button_cancel": "Άκυρο",
+        "error_invalid_url": "Μη έγκυρη διεύθυνση URL",
+        "error_url_required": "Η διεύθυνση URL είναι υποχρεωτική",
+        "link_to": "Σύνδεσμος προς",
+        "new_link": "Νέος σύνδεσμος",
+        "toast_url_created": "Το URL δημιουργήθηκε με επιτυχία",
+        "toast_url_not_created": "Απέτυχε η δημιουργία του URL",
+        "toast_file_saved": "Το αρχείο αποθηκεύτηκε με επιτυχία",
+        "toast_file_not_saved": "Η αποθήκευση του αρχείου απέτυχε"
+    },
+    "file_type_name": "Σύνδεσμος",
+    "toast_no_permissions": "Δεν έχετε δικαίωμα προβολής αυτού του αρχείου",
+    "toast_cant_read_file": "Δεν είναι δυνατή η ανάγνωση αυτού του αρχείου",
+    "toast_wrong_file": "Λανθασμένο ή κατεστραμμένο αρχείο URL"
+}

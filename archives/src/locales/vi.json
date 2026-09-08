@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "Mở kho lưu trữ",
+        "group_unzip": "Giải nén",
+        "choose_location": "Chọn vị trí",
+        "unzip_here": "Giải nén tại đây",
+        "group_zip": "Nén lại",
+        "zip_folder": "Nén tại đây",
+        "zip_selected": "Nén các mục đã chọn",
+        "zip_selected_item": "Nén mục đã chọn"
+    },
+    "dialog": {
+        "header": "Trình xem kho lưu trữ",
+        "button_extract": "Giải nén kho lưu trữ",
+        "selector_header_unzip": "Giải nén vào",
+        "selector_header_zip": "Nén vào",
+        "selector_header_extract": "Trích xuất vào",
+        "selector_button_archive": "Nén",
+        "selector_button_unzip": "Giải nén",
+        "selector_button_extract": "Trích xuất",
+        "selector_checkbox_wrap": "Đặt vào thư mục mới",
+        "button_cancel": "Hủy",
+        "viewer_loading": "Đang tải...",
+        "viewer_error": "Lỗi: ${error}"
+    },
+    "default_zip_title": "Kho lưu trữ mới",
+    "default_folder_title": "Thư mục mới",
+    "file_type_name": "Kho lưu trữ",
+    "toast_no_folder_download_permission": "Bạn không có quyền tải tệp xuống từ thư mục này",
+    "toast_no_view_permission": "Bạn không có quyền xem tệp này",
+    "toast_no_unzip_permission": "Bạn không có quyền giải nén tệp này",
+    "toast_extract_success": "Đã trích xuất các mục thành công",
+    "toast_unzip_success": "Đã giải nén tệp thành công",
+    "toast_cant_create": "Thao tác không thành công. Bạn không thể tạo tệp trong thư mục này",
+    "toast_failed_to_create": "Không tạo được tệp zip",
+    "toast_zip_saved": "Đã lưu tệp zip",
+    "toast_zip_not_saved": "Lưu tệp zip không thành công"
+}

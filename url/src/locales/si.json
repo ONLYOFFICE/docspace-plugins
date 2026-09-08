@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "URL සංස්කරණය කරන්න"
+    },
+    "main_button": {
+        "new_url": "නව URL"
+    },
+    "dialog": {
+        "header_create": "නව URL එකක් සාදන්න",
+        "header_edit": "URL සංස්කරණය කරන්න",
+        "label_url": "URL:",
+        "label_title": "මාතෘකාව:",
+        "button_create": "සාදන්න",
+        "button_save": "සුරකින්න",
+        "button_cancel": "අවලංගු කරන්න",
+        "error_invalid_url": "වලංගු නොවන URL ලිපිනයකි",
+        "error_url_required": "URL අවශ්‍ය වේ",
+        "link_to": "සබැඳිය",
+        "new_link": "නව සබැඳිය",
+        "toast_url_created": "URL සාර්ථකව නිර්මාණය කරන ලදී",
+        "toast_url_not_created": "URL නිර්මාණය කිරීම අසාර්ථක විය",
+        "toast_file_saved": "ගොනුව සාර්ථකව සුරකින ලදී",
+        "toast_file_not_saved": "ගොනුව සුරැකීම අසාර්ථක විය"
+    },
+    "file_type_name": "සබැඳිය",
+    "toast_no_permissions": "මෙම ගොනුව බැලීමට ඔබට අවසර නැත",
+    "toast_cant_read_file": "මෙම ගොනුව කියවිය නොහැක",
+    "toast_wrong_file": "වැරදි හෝ දූෂිත URL ගොනුවකි"
+}

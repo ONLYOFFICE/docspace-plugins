@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "Arxivi aç",
+        "group_unzip": "Arxivdən çıxar",
+        "choose_location": "Yer seç",
+        "unzip_here": "Bura çıxar",
+        "group_zip": "Arxivləşdir",
+        "zip_folder": "Bura arxivləşdir",
+        "zip_selected": "Seçilmiş elementləri arxivləşdir",
+        "zip_selected_item": "Seçilmiş elementi arxivləşdir"
+    },
+    "dialog": {
+        "header": "Arxiv baxıcısı",
+        "button_extract": "Arxivi çıxar",
+        "selector_header_unzip": "Bura çıxar",
+        "selector_header_zip": "Bura arxivləşdir",
+        "selector_header_extract": "Bura çıxar",
+        "selector_button_archive": "Arxivləşdir",
+        "selector_button_unzip": "Çıxar",
+        "selector_button_extract": "Çıxar",
+        "selector_checkbox_wrap": "Yeni qovluğa yerləşdir",
+        "button_cancel": "Ləğv et",
+        "viewer_loading": "Yüklənir...",
+        "viewer_error": "Xəta: ${error}"
+    },
+    "default_zip_title": "Yeni arxiv",
+    "default_folder_title": "Yeni qovluq",
+    "file_type_name": "Arxiv",
+    "toast_no_folder_download_permission": "Bu qovluqdan fayl endirmək üçün icazəniz yoxdur",
+    "toast_no_view_permission": "Bu faylı görüntüləmək üçün icazəniz yoxdur",
+    "toast_no_unzip_permission": "Bu faylı arxivdən çıxarmaq üçün icazəniz yoxdur",
+    "toast_extract_success": "Element(lər) uğurla çıxarıldı",
+    "toast_unzip_success": "Fayl uğurla arxivdən çıxarıldı",
+    "toast_cant_create": "Əməliyyat alınmadı. Bu qovluqda fayl yarada bilməzsiniz",
+    "toast_failed_to_create": "Zip yaratmaq alınmadı",
+    "toast_zip_saved": "Zip yadda saxlanıldı",
+    "toast_zip_not_saved": "Zip-i yadda saxlamaq alınmadı"
+}

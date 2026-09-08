@@ -1,0 +1,32 @@
+{
+    "main_button": {
+        "create_dialog_title": "Створити діаграму",
+        "create_dialog_start_value": "Нова діаграма"
+    },
+    "open_from_url": {
+        "button_accept": "Створити",
+        "button_cancel": "Скасувати",
+        "description_text": "Переконайтеся, що доступ за публічним посиланням відкрито",
+        "dialog_header": "Імпорт діаграми",
+        "input_placeholder_name": "Нова діаграма",
+        "input_text_name": "Назва",
+        "input_placeholder_url": "URL діаграми",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "Дані збережено",
+        "button_save": "Зберегти",
+        "text_url": "Адреса draw.io",
+        "text_url_description": "Адреса служби draw.io, яка використовується для відкриття та редагування діаграм. Змініть її, якщо draw.io розміщено на вашому власному сервері. Залиште https://embed.diagrams.net, щоб використовувати публічну службу.",
+        "text_language": "Мова",
+        "text_libraries": "Бібліотеки",
+        "text_offline_description": "Коли активний \"автономний режим\", усі віддалені операції та функції вимикаються з метою захисту",
+        "text_offline": "Автономний режим"
+    },
+    "context_menu_open_diagram": "Відкрити діаграму",
+    "file_type_name": "Діаграма",
+    "toast_file_not_created": "Файл \"${title}.drawio\" не було створено: ${message}",
+    "toast_wrong_file_format": "Невірний формат файлу",
+    "toast_no_permission": "У вас немає прав на перегляд цього файлу",
+    "toast_cant_read_file": "Не вдається прочитати файл"
+}

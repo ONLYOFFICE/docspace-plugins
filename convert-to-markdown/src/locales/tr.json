@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "Dosya bilgileri alınamıyor",
+        "failed_to_get_file_details": "Dosya ayrıntıları alınamadı",
+        "failed_to_download_file": "Dosya indirilemedi: ",
+        "watermark_protected": "Bu dosya filigranla korunuyor. Odanın \"Belgelere filigran ekle\" ayarını kapatıp yeniden deneyin.",
+        "empty_file": "İndirilen dosya boş",
+        "failed_to_initiate_upload": "Yükleme başlatılamadı: ",
+        "upload_failed": "Yükleme başarısız oldu",
+        "invalid_upload_session": "Geçersiz yükleme oturumu yanıtı",
+        "file_not_created": "Dosya sunucuda oluşturulmadı",
+        "unsupported_format": "Desteklenmeyen biçim: ",
+        "conversion_failed": "Dönüştürme başarısız oldu",
+        "created": "Oluşturuldu "
+    },
+    "context_menu_convert": "Markdown biçimine dönüştür"
+}

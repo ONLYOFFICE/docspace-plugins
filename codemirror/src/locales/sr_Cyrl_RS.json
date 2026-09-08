@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Сачувај",
+        "button_cancel": "Откажи",
+        "text_unsaved": "Наставити без чувања?\nНаправили сте измене у конфигурацији. Ако наставите без чувања, те измене неће бити примењене.",
+        "warning_header": "Упозорење",
+        "button_continue": "Настави",
+        "button_reopen": "Поново отвори"
+    },
+    "main_button": {
+        "label": "Текстуална датотека",
+        "create_dialog_title": "Направи текстуалну датотеку",
+        "create_dialog_start_value": "Текстуална датотека",
+        "error_no_file_ext": "Мора се навести екстензија датотеке",
+        "error_not_supported": "Додатак Codemirror не подржава ову екстензију датотеке",
+        "error_not_created": "Датотека \"${title}.md\" није креирана: ${message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Подаци су сачувани",
+        "button_save": "Сачувај",
+        "header_general": "Опште",
+        "header_html": "HTML",
+        "highlight_whitespace": "Истакни размаке",
+        "highlight_whitespace_description": "Приказуј размаке као тачке, а табулаторе као стрелице.",
+        "highlight_trailing_whitespace": "Истакни размаке на крају реда",
+        "highlight_trailing_whitespace_description": "Истакни размаке на крају реда.",
+        "auto_close_tags": "Аутоматски затварај ознаке",
+        "auto_close_tags_description": "Аутоматски убаци затварајуће ознаке када се укуца > или / у датотекама сличним HTML-у."
+    },
+    "context_menu_edit": "Уреди датотеку помоћу Codemirror-а",
+    "file_type_name": "Код",
+    "toast_no_permission": "Немате дозволу да прикажете ову датотеку",
+    "toast_cant_read_file": "Ова датотека не може да се прочита",
+    "toast_file_saved": "Датотека је сачувана",
+    "toast_file_not_saved": "Чување датотеке није успело"
+}

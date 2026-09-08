@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "Pilnvara saglabāta",
+        "button_save": "Saglabāt",
+        "text_description": "Lai ģenerētu API pilnvaru, apmeklējiet https://www.assemblyai.com \n\n Kad API pilnvara ir iespējota, spraudnis kļūst pieejams visiem pašreizējā ONLYOFFICE Apps lietotājiem.",
+        "text_api_token": "API pilnvara"
+    },
+    "toast_api_token_is_missing": "Trūkst API pilnvaras",
+    "toast_wrong_api_token": "Nepareiza API pilnvara",
+    "toast_speech_not_recognized": "Runa netika atpazīta vai tās nav",
+    "toast_successfully_converted": "Fails veiksmīgi pārveidots tekstā",
+    "toast_unsuccessfully_converted": "Pārveidošana tekstā neizdevās: ",
+    "context_menu_convert_to_text": "Pārveidot tekstā"
+}

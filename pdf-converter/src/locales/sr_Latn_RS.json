@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "Pretvori datoteku u PDF",
+        "button_convert_file": "Pretvori datoteku",
+        "button_cancel": "Otkaži",
+        "toast_wrong_api_token": "Pogrešan API token",
+        "text_converted_file_name": "Naziv pretvorene datoteke"
+    },
+    "settings": {
+        "description": "Da biste generisali API tajnu, posetite https://www.convertapi.com/ \n\n Kada se API token omogući, dodatak postaje dostupan svim korisnicima trenutnog ONLYOFFICE Apps.",
+        "toast_token_is_saved": "Token je sačuvan",
+        "button_save": "Sačuvaj",
+        "text_api_token": "API token"
+    },
+    "context_menu_convert_to_pdf": "Pretvori u PDF",
+    "toast_file_created": "Datoteka %{name} je kreirana",
+    "toast_file_not_created": "Datoteka %{name} nije kreirana: %{message}",
+    "toast_wrong_api_token": "Pogrešan API token"
+}

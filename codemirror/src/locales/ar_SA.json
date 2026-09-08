@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "حفظ",
+        "button_cancel": "إلغاء",
+        "text_unsaved": "المتابعة دون حفظ؟\nلقد أجريت تغييرات في الإعدادات. إذا تابعت دون حفظ، فلن يتم تطبيق هذه التغييرات.",
+        "warning_header": "تحذير",
+        "button_continue": "متابعة",
+        "button_reopen": "إعادة الفتح"
+    },
+    "main_button": {
+        "label": "ملف نصي",
+        "create_dialog_title": "إنشاء ملف نصي",
+        "create_dialog_start_value": "ملف نصي",
+        "error_no_file_ext": "يجب تحديد امتداد الملف",
+        "error_not_supported": "امتداد الملف غير مدعوم من المكوّن الإضافي Codemirror",
+        "error_not_created": "لم يتم إنشاء الملف \"${title}.md\": ${message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "تم حفظ البيانات",
+        "button_save": "حفظ",
+        "header_general": "عام",
+        "header_html": "HTML",
+        "highlight_whitespace": "إبراز المسافات",
+        "highlight_whitespace_description": "عرض المسافات كنقاط وعلامات الجدولة كأسهم.",
+        "highlight_trailing_whitespace": "إبراز المسافات في نهاية السطر",
+        "highlight_trailing_whitespace_description": "إبراز المسافات في نهاية السطر.",
+        "auto_close_tags": "إغلاق الوسوم تلقائيًا",
+        "auto_close_tags_description": "إدراج وسوم الإغلاق تلقائيًا عند كتابة > أو / في الملفات المشابهة لـ HTML."
+    },
+    "context_menu_edit": "تحرير الملف باستخدام Codemirror",
+    "file_type_name": "كود",
+    "toast_no_permission": "ليس لديك إذن لعرض هذا الملف",
+    "toast_cant_read_file": "تعذر قراءة هذا الملف",
+    "toast_file_saved": "تم حفظ الملف",
+    "toast_file_not_saved": "فشل حفظ الملف"
+}

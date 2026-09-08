@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "Redakto URL-në"
+    },
+    "main_button": {
+        "new_url": "URL e re"
+    },
+    "dialog": {
+        "header_create": "Krijo një URL të re",
+        "header_edit": "Redakto URL-në",
+        "label_url": "URL:",
+        "label_title": "Titulli:",
+        "button_create": "Krijo",
+        "button_save": "Ruaj",
+        "button_cancel": "Anulo",
+        "error_invalid_url": "Adresë URL e pavlefshme",
+        "error_url_required": "URL-ja është e detyrueshme",
+        "link_to": "Lidhje me",
+        "new_link": "Lidhje e re",
+        "toast_url_created": "URL-ja u krijua me sukses",
+        "toast_url_not_created": "Krijimi i URL-së dështoi",
+        "toast_file_saved": "Skedari u ruajt me sukses",
+        "toast_file_not_saved": "Ruajtja e skedarit dështoi"
+    },
+    "file_type_name": "Lidhje",
+    "toast_no_permissions": "Nuk keni leje për ta parë këtë skedar",
+    "toast_cant_read_file": "Ky skedar nuk mund të lexohet",
+    "toast_wrong_file": "Skedar URL i gabuar ose i dëmtuar"
+}

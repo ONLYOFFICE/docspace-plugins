@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "Odpri arhiv",
+        "group_unzip": "Razpakiraj",
+        "choose_location": "Izberi mesto",
+        "unzip_here": "Razpakiraj sem",
+        "group_zip": "Arhiviraj",
+        "zip_folder": "Arhiviraj sem",
+        "zip_selected": "Arhiviraj izbrane elemente",
+        "zip_selected_item": "Arhiviraj izbrani element"
+    },
+    "dialog": {
+        "header": "Pregledovalnik arhivov",
+        "button_extract": "Izvleci arhiv",
+        "selector_header_unzip": "Razpakiraj v",
+        "selector_header_zip": "Arhiviraj v",
+        "selector_header_extract": "Izvleci v",
+        "selector_button_archive": "Arhiviraj",
+        "selector_button_unzip": "Razpakiraj",
+        "selector_button_extract": "Izvleci",
+        "selector_checkbox_wrap": "Postavi v novo mapo",
+        "button_cancel": "Prekliči",
+        "viewer_loading": "Nalaganje...",
+        "viewer_error": "Napaka: ${error}"
+    },
+    "default_zip_title": "Nov arhiv",
+    "default_folder_title": "Nova mapa",
+    "file_type_name": "Arhiv",
+    "toast_no_folder_download_permission": "Nimate dovoljenja za prenos datotek iz te mape",
+    "toast_no_view_permission": "Nimate dovoljenja za ogled te datoteke",
+    "toast_no_unzip_permission": "Nimate dovoljenja za razpakiranje te datoteke",
+    "toast_extract_success": "Elementi so bili uspešno izvlečeni",
+    "toast_unzip_success": "Datoteka je bila uspešno razpakirana",
+    "toast_cant_create": "Operacija ni uspela. V tej mapi ne morete ustvarjati datotek",
+    "toast_failed_to_create": "Zip datoteke ni bilo mogoče ustvariti",
+    "toast_zip_saved": "Zip je shranjen",
+    "toast_zip_not_saved": "Zip datoteke ni bilo mogoče shraniti"
+}

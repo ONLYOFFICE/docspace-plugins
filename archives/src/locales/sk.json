@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "Otvoriť archív",
+        "group_unzip": "Rozbaliť",
+        "choose_location": "Vybrať umiestnenie",
+        "unzip_here": "Rozbaliť sem",
+        "group_zip": "Archivovať",
+        "zip_folder": "Archivovať sem",
+        "zip_selected": "Archivovať vybrané položky",
+        "zip_selected_item": "Archivovať vybranú položku"
+    },
+    "dialog": {
+        "header": "Prehliadač archívov",
+        "button_extract": "Rozbaliť archív",
+        "selector_header_unzip": "Rozbaliť do",
+        "selector_header_zip": "Archivovať do",
+        "selector_header_extract": "Rozbaliť do",
+        "selector_button_archive": "Archivovať",
+        "selector_button_unzip": "Rozbaliť",
+        "selector_button_extract": "Rozbaliť",
+        "selector_checkbox_wrap": "Umiestniť do nového priečinka",
+        "button_cancel": "Zrušiť",
+        "viewer_loading": "Načítava sa...",
+        "viewer_error": "Chyba: ${error}"
+    },
+    "default_zip_title": "Nový archív",
+    "default_folder_title": "Nový priečinok",
+    "file_type_name": "Archív",
+    "toast_no_folder_download_permission": "Nemáte oprávnenie sťahovať súbory z tohto priečinka",
+    "toast_no_view_permission": "Nemáte oprávnenie zobraziť tento súbor",
+    "toast_no_unzip_permission": "Nemáte oprávnenie rozbaliť tento súbor",
+    "toast_extract_success": "Položky boli úspešne rozbalené",
+    "toast_unzip_success": "Súbor bol úspešne rozbalený",
+    "toast_cant_create": "Operácia zlyhala. V tomto priečinku nemôžete vytvárať súbory",
+    "toast_failed_to_create": "Nepodarilo sa vytvoriť zip",
+    "toast_zip_saved": "Zip bol uložený",
+    "toast_zip_not_saved": "Zip sa nepodarilo uložiť"
+}

@@ -1,0 +1,7 @@
+{
+    "dialog_button_save_and_exit": "Αποθήκευση και έξοδος",
+    "context_menu_edit_image": "Επεξεργασία εικόνας",
+    "toast_no_permissions": "Δεν έχετε δικαίωμα προβολής αυτού του αρχείου",
+    "toast_file_saved": "Το αρχείο αποθηκεύτηκε με επιτυχία",
+    "toast_file_not_saved": "Η αποθήκευση του αρχείου απέτυχε"
+}

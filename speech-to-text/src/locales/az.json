@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "Token yadda saxlanıldı",
+        "button_save": "Yadda saxla",
+        "text_description": "API tokeni yaratmaq üçün https://www.assemblyai.com saytına daxil olun \n\n API tokeni aktivləşdirildikdən sonra plagin cari ONLYOFFICE Apps-ın bütün istifadəçiləri üçün əlçatan olur.",
+        "text_api_token": "API tokeni"
+    },
+    "toast_api_token_is_missing": "API tokeni yoxdur",
+    "toast_wrong_api_token": "Yanlış API tokeni",
+    "toast_speech_not_recognized": "Nitq tanınmadı və ya mövcud deyil",
+    "toast_successfully_converted": "Fayl uğurla mətnə çevrildi",
+    "toast_unsuccessfully_converted": "Mətnə çevirmə alınmadı: ",
+    "context_menu_convert_to_text": "Mətnə çevir"
+}

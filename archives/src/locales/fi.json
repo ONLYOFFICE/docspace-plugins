@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "Avaa arkisto",
+        "group_unzip": "Pura",
+        "choose_location": "Valitse sijainti",
+        "unzip_here": "Pura tähän",
+        "group_zip": "Arkistoi",
+        "zip_folder": "Arkistoi tähän",
+        "zip_selected": "Arkistoi valitut kohteet",
+        "zip_selected_item": "Arkistoi valittu kohde"
+    },
+    "dialog": {
+        "header": "Arkiston katseluohjelma",
+        "button_extract": "Pura arkisto",
+        "selector_header_unzip": "Pura kohteeseen",
+        "selector_header_zip": "Arkistoi kohteeseen",
+        "selector_header_extract": "Pura kohteeseen",
+        "selector_button_archive": "Arkistoi",
+        "selector_button_unzip": "Pura",
+        "selector_button_extract": "Pura",
+        "selector_checkbox_wrap": "Sijoita uuteen kansioon",
+        "button_cancel": "Peruuta",
+        "viewer_loading": "Ladataan...",
+        "viewer_error": "Virhe: ${error}"
+    },
+    "default_zip_title": "Uusi arkisto",
+    "default_folder_title": "Uusi kansio",
+    "file_type_name": "Arkisto",
+    "toast_no_folder_download_permission": "Sinulla ei ole oikeutta ladata tiedostoja tästä kansiosta",
+    "toast_no_view_permission": "Sinulla ei ole oikeutta tarkastella tätä tiedostoa",
+    "toast_no_unzip_permission": "Sinulla ei ole oikeutta purkaa tätä tiedostoa",
+    "toast_extract_success": "Kohteiden purkaminen onnistui",
+    "toast_unzip_success": "Tiedoston purkaminen onnistui",
+    "toast_cant_create": "Toiminto epäonnistui. Et voi luoda tiedostoja tähän kansioon",
+    "toast_failed_to_create": "Zip-tiedoston luominen epäonnistui",
+    "toast_zip_saved": "Zip-tiedosto tallennettu",
+    "toast_zip_not_saved": "Zip-tiedoston tallentaminen epäonnistui"
+}

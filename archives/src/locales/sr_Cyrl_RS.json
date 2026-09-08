@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "Отвори архиву",
+        "group_unzip": "Распакуј",
+        "choose_location": "Изабери локацију",
+        "unzip_here": "Распакуј овде",
+        "group_zip": "Архивирај",
+        "zip_folder": "Архивирај овде",
+        "zip_selected": "Архивирај изабране ставке",
+        "zip_selected_item": "Архивирај изабрану ставку"
+    },
+    "dialog": {
+        "header": "Приказивач архива",
+        "button_extract": "Извуци архиву",
+        "selector_header_unzip": "Распакуј у",
+        "selector_header_zip": "Архивирај у",
+        "selector_header_extract": "Извуци у",
+        "selector_button_archive": "Архивирај",
+        "selector_button_unzip": "Распакуј",
+        "selector_button_extract": "Извуци",
+        "selector_checkbox_wrap": "Стави у нову фасциклу",
+        "button_cancel": "Откажи",
+        "viewer_loading": "Учитавање...",
+        "viewer_error": "Грешка: ${error}"
+    },
+    "default_zip_title": "Нова архива",
+    "default_folder_title": "Нова фасцикла",
+    "file_type_name": "Архива",
+    "toast_no_folder_download_permission": "Немате дозволу да преузимате датотеке из ове фасцикле",
+    "toast_no_view_permission": "Немате дозволу да прикажете ову датотеку",
+    "toast_no_unzip_permission": "Немате дозволу да распакујете ову датотеку",
+    "toast_extract_success": "Ставке су успешно извучене",
+    "toast_unzip_success": "Датотека је успешно распакована",
+    "toast_cant_create": "Радња није успела. Не можете правити датотеке у овој фасцикли",
+    "toast_failed_to_create": "Прављење zip датотеке није успело",
+    "toast_zip_saved": "Zip је сачуван",
+    "toast_zip_not_saved": "Чување zip датотеке није успело"
+}

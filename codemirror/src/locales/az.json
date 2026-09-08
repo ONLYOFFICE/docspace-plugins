@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Yadda saxla",
+        "button_cancel": "Ləğv et",
+        "text_unsaved": "Yadda saxlamadan davam edilsin?\nKonfiqurasiyada dəyişikliklər etmisiniz. Yadda saxlamadan davam etsəniz, bu dəyişikliklər tətbiq olunmayacaq.",
+        "warning_header": "Xəbərdarlıq",
+        "button_continue": "Davam et",
+        "button_reopen": "Yenidən aç"
+    },
+    "main_button": {
+        "label": "Mətn faylı",
+        "create_dialog_title": "Mətn faylı yarat",
+        "create_dialog_start_value": "Mətn faylı",
+        "error_no_file_ext": "Fayl uzantısı göstərilməlidir",
+        "error_not_supported": "Fayl uzantısı Codemirror plagini tərəfindən dəstəklənmir",
+        "error_not_created": "\"${title}.md\" faylı yaradılmadı: ${message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Məlumatlar yadda saxlanıldı",
+        "button_save": "Yadda saxla",
+        "header_general": "Ümumi",
+        "header_html": "HTML",
+        "highlight_whitespace": "Boşluqları vurğula",
+        "highlight_whitespace_description": "Boşluqları nöqtə, tabulyasiyaları isə ox kimi göstər.",
+        "highlight_trailing_whitespace": "Sətir sonundakı boşluqları vurğula",
+        "highlight_trailing_whitespace_description": "Sətrin sonundakı boşluqları vurğula.",
+        "auto_close_tags": "Teqləri avtomatik bağla",
+        "auto_close_tags_description": "HTML tipli fayllarda > və ya / yazıldıqda bağlayıcı teqləri avtomatik əlavə et."
+    },
+    "context_menu_edit": "Faylı Codemirror ilə redaktə et",
+    "file_type_name": "Kod",
+    "toast_no_permission": "Bu faylı görüntüləmək üçün icazəniz yoxdur",
+    "toast_cant_read_file": "Bu faylı oxumaq mümkün deyil",
+    "toast_file_saved": "Fayl yadda saxlanıldı",
+    "toast_file_not_saved": "Faylı yadda saxlamaq alınmadı"
+}

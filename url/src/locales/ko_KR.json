@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "URL 편집"
+    },
+    "main_button": {
+        "new_url": "새 URL"
+    },
+    "dialog": {
+        "header_create": "새 URL 만들기",
+        "header_edit": "URL 편집",
+        "label_url": "URL:",
+        "label_title": "제목:",
+        "button_create": "만들기",
+        "button_save": "저장",
+        "button_cancel": "취소",
+        "error_invalid_url": "잘못된 URL 주소",
+        "error_url_required": "URL은 필수입니다",
+        "link_to": "링크 대상",
+        "new_link": "새 링크",
+        "toast_url_created": "URL이 생성되었습니다",
+        "toast_url_not_created": "URL을 생성하지 못했습니다",
+        "toast_file_saved": "파일이 저장되었습니다",
+        "toast_file_not_saved": "파일 저장에 실패했습니다"
+    },
+    "file_type_name": "링크",
+    "toast_no_permissions": "이 파일을 볼 권한이 없습니다",
+    "toast_cant_read_file": "이 파일을 읽을 수 없습니다",
+    "toast_wrong_file": "잘못되었거나 손상된 URL 파일"
+}

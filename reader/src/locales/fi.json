@@ -1,0 +1,9 @@
+{
+    "context_menu": {
+        "open_in_reader": "Avaa lukuohjelmassa"
+    },
+    "file_type_name": "Kirja",
+    "errors": {
+        "unsupported_zip": "Tämä ZIP-arkisto ei sisällä tuettua kirjaa. ZIP-arkistossa tuetut muodot: EPUB tai FB2."
+    }
+}

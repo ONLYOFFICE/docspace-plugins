@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "URL-i redaktə et"
+    },
+    "main_button": {
+        "new_url": "Yeni URL"
+    },
+    "dialog": {
+        "header_create": "Yeni URL yarat",
+        "header_edit": "URL-i redaktə et",
+        "label_url": "URL:",
+        "label_title": "Başlıq:",
+        "button_create": "Yarat",
+        "button_save": "Yadda saxla",
+        "button_cancel": "Ləğv et",
+        "error_invalid_url": "Yanlış URL ünvanı",
+        "error_url_required": "URL tələb olunur",
+        "link_to": "Keçid",
+        "new_link": "Yeni keçid",
+        "toast_url_created": "URL uğurla yaradıldı",
+        "toast_url_not_created": "URL yaratmaq alınmadı",
+        "toast_file_saved": "Fayl uğurla yadda saxlanıldı",
+        "toast_file_not_saved": "Faylı yadda saxlamaq alınmadı"
+    },
+    "file_type_name": "Keçid",
+    "toast_no_permissions": "Bu faylı görüntüləmək üçün icazəniz yoxdur",
+    "toast_cant_read_file": "Bu faylı oxumaq mümkün deyil",
+    "toast_wrong_file": "Yanlış və ya zədələnmiş URL faylı"
+}

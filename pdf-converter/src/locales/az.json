@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "Faylı PDF-ə çevir",
+        "button_convert_file": "Faylı çevir",
+        "button_cancel": "Ləğv et",
+        "toast_wrong_api_token": "Yanlış API tokeni",
+        "text_converted_file_name": "Çevrilmiş faylın adı"
+    },
+    "settings": {
+        "description": "API gizli açarı yaratmaq üçün https://www.convertapi.com/ saytına daxil olun \n\n API tokeni aktivləşdirildikdən sonra plagin cari ONLYOFFICE Apps-ın bütün istifadəçiləri üçün əlçatan olur.",
+        "toast_token_is_saved": "Token yadda saxlanıldı",
+        "button_save": "Yadda saxla",
+        "text_api_token": "API tokeni"
+    },
+    "context_menu_convert_to_pdf": "PDF-ə çevir",
+    "toast_file_created": "%{name} faylı yaradıldı",
+    "toast_file_not_created": "%{name} faylı yaradılmadı: %{message}",
+    "toast_wrong_api_token": "Yanlış API tokeni"
+}

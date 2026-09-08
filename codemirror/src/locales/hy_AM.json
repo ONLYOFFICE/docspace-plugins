@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Պահպանել",
+        "button_cancel": "Չեղարկել",
+        "text_unsaved": "Շարունակե՞լ առանց պահպանելու։\nԴուք փոփոխություններ եք կատարել կարգավորումներում։ Եթե շարունակեք առանց պահպանելու, այդ փոփոխությունները չեն կիրառվի։",
+        "warning_header": "Զգուշացում",
+        "button_continue": "Շարունակել",
+        "button_reopen": "Բացել նորից"
+    },
+    "main_button": {
+        "label": "Տեքստային ֆայլ",
+        "create_dialog_title": "Ստեղծել տեքստային ֆայլ",
+        "create_dialog_start_value": "Տեքստային ֆայլ",
+        "error_no_file_ext": "Անհրաժեշտ է նշել ֆայլի ընդլայնումը",
+        "error_not_supported": "Ֆայլի ընդլայնումը չի աջակցվում Codemirror պլագինի կողմից",
+        "error_not_created": "\"${title}.md\" ֆայլը չստեղծվեց՝ ${message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Տվյալները պահպանվեցին",
+        "button_save": "Պահպանել",
+        "header_general": "Ընդհանուր",
+        "header_html": "HTML",
+        "highlight_whitespace": "Ընդգծել բացատները",
+        "highlight_whitespace_description": "Ցուցադրել բացատները որպես կետեր, իսկ աղյուսակավորումները՝ որպես սլաքներ։",
+        "highlight_trailing_whitespace": "Ընդգծել տողի վերջի բացատները",
+        "highlight_trailing_whitespace_description": "Ընդգծել տողի վերջում գտնվող բացատները։",
+        "auto_close_tags": "Ավտոմատ փակել պիտակները",
+        "auto_close_tags_description": "HTML-անման ֆայլերում > կամ / մուտքագրելիս ավտոմատ ավելացնել փակող պիտակները։"
+    },
+    "context_menu_edit": "Խմբագրել ֆայլը Codemirror-ով",
+    "file_type_name": "Կոդ",
+    "toast_no_permission": "Դուք չունեք այս ֆայլը դիտելու թույլտվություն",
+    "toast_cant_read_file": "Հնարավոր չէ կարդալ այս ֆայլը",
+    "toast_file_saved": "Ֆայլը պահպանվեց",
+    "toast_file_not_saved": "Չհաջողվեց պահպանել ֆայլը"
+}

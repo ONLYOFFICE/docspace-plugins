@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "ටෝකනය සුරකින ලදී",
+        "button_save": "සුරකින්න",
+        "text_description": "API ටෝකනයක් ජනනය කිරීමට https://www.assemblyai.com වෙත පිවිසෙන්න \n\n API ටෝකනය සක්‍රිය කළ පසු, වත්මන් ONLYOFFICE Apps හි සියලුම පරිශීලකයින්ට ප්ලගිනය ලබා ගත හැකිය.",
+        "text_api_token": "API ටෝකනය"
+    },
+    "toast_api_token_is_missing": "API ටෝකනය නොමැත",
+    "toast_wrong_api_token": "වැරදි API ටෝකනයකි",
+    "toast_speech_not_recognized": "කථනය හඳුනාගත නොහැකි විය හෝ නොමැත",
+    "toast_successfully_converted": "ගොනුව සාර්ථකව පෙළට පරිවර්තනය කරන ලදී",
+    "toast_unsuccessfully_converted": "පෙළට පරිවර්තනය අසාර්ථක විය: ",
+    "context_menu_convert_to_text": "පෙළට පරිවර්තනය කරන්න"
+}

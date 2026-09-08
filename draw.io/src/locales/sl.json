@@ -1,0 +1,32 @@
+{
+    "main_button": {
+        "create_dialog_title": "Ustvari diagram",
+        "create_dialog_start_value": "Nov diagram"
+    },
+    "open_from_url": {
+        "button_accept": "Ustvari",
+        "button_cancel": "Prekliči",
+        "description_text": "Prepričajte se, da je dostop prek javne povezave odprt",
+        "dialog_header": "Uvozi diagram",
+        "input_placeholder_name": "Nov diagram",
+        "input_text_name": "Ime",
+        "input_placeholder_url": "URL diagrama",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "Podatki so shranjeni",
+        "button_save": "Shrani",
+        "text_url": "Naslov draw.io",
+        "text_url_description": "Naslov storitve draw.io, ki se uporablja za odpiranje in urejanje diagramov. Spremenite ga, če je draw.io gostovan na vašem lastnem strežniku. Pustite https://embed.diagrams.net za uporabo javne storitve.",
+        "text_language": "Jezik",
+        "text_libraries": "Knjižnice",
+        "text_offline_description": "Ko je \"način brez povezave\" aktiven, so zaradi zaščite onemogočene vse oddaljene operacije in funkcije",
+        "text_offline": "Način brez povezave"
+    },
+    "context_menu_open_diagram": "Odpri diagram",
+    "file_type_name": "Diagram",
+    "toast_file_not_created": "Datoteka \"${title}.drawio\" ni bila ustvarjena: ${message}",
+    "toast_wrong_file_format": "Napačen zapis datoteke",
+    "toast_no_permission": "Nimate dovoljenja za ogled te datoteke",
+    "toast_cant_read_file": "Te datoteke ni mogoče prebrati"
+}

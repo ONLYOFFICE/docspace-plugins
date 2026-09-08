@@ -1,0 +1,32 @@
+{
+    "main_button": {
+        "create_dialog_title": "Vytvořit diagram",
+        "create_dialog_start_value": "Nový diagram"
+    },
+    "open_from_url": {
+        "button_accept": "Vytvořit",
+        "button_cancel": "Zrušit",
+        "description_text": "Ujistěte se, že je přístup přes veřejný odkaz otevřený",
+        "dialog_header": "Importovat diagram",
+        "input_placeholder_name": "Nový diagram",
+        "input_text_name": "Název",
+        "input_placeholder_url": "URL diagramu",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "Data byla uložena",
+        "button_save": "Uložit",
+        "text_url": "Adresa draw.io",
+        "text_url_description": "Adresa služby draw.io používané k otevírání a úpravě diagramů. Změňte ji, pokud je draw.io hostován na vašem vlastním serveru. Ponechte https://embed.diagrams.net pro použití veřejné služby.",
+        "text_language": "Jazyk",
+        "text_libraries": "Knihovny",
+        "text_offline_description": "Když je aktivní \"režim offline\", jsou z bezpečnostních důvodů vypnuty všechny vzdálené operace a funkce",
+        "text_offline": "Režim offline"
+    },
+    "context_menu_open_diagram": "Otevřít diagram",
+    "file_type_name": "Diagram",
+    "toast_file_not_created": "Soubor \"${title}.drawio\" nebyl vytvořen: ${message}",
+    "toast_wrong_file_format": "Nesprávný formát souboru",
+    "toast_no_permission": "Nemáte oprávnění zobrazit tento soubor",
+    "toast_cant_read_file": "Tento soubor nelze přečíst"
+}

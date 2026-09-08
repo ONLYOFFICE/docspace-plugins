@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "Відкрити архів",
+        "group_unzip": "Розпакувати",
+        "choose_location": "Вибрати розташування",
+        "unzip_here": "Розпакувати сюди",
+        "group_zip": "Заархівувати",
+        "zip_folder": "Заархівувати сюди",
+        "zip_selected": "Заархівувати вибрані елементи",
+        "zip_selected_item": "Заархівувати вибраний елемент"
+    },
+    "dialog": {
+        "header": "Перегляд архіву",
+        "button_extract": "Видобути архів",
+        "selector_header_unzip": "Розпакувати в",
+        "selector_header_zip": "Заархівувати в",
+        "selector_header_extract": "Видобути в",
+        "selector_button_archive": "Заархівувати",
+        "selector_button_unzip": "Розпакувати",
+        "selector_button_extract": "Видобути",
+        "selector_checkbox_wrap": "Помістити в нову папку",
+        "button_cancel": "Скасувати",
+        "viewer_loading": "Завантаження...",
+        "viewer_error": "Помилка: ${error}"
+    },
+    "default_zip_title": "Новий архів",
+    "default_folder_title": "Нова папка",
+    "file_type_name": "Архів",
+    "toast_no_folder_download_permission": "У вас немає прав на завантаження файлів із цієї папки",
+    "toast_no_view_permission": "У вас немає прав на перегляд цього файлу",
+    "toast_no_unzip_permission": "У вас немає прав на розпакування цього файлу",
+    "toast_extract_success": "Елементи успішно видобуто",
+    "toast_unzip_success": "Файл успішно розпаковано",
+    "toast_cant_create": "Операція не вдалася. Ви не можете створювати файли в цій папці",
+    "toast_failed_to_create": "Не вдалося створити zip",
+    "toast_zip_saved": "Zip збережено",
+    "toast_zip_not_saved": "Не вдалося зберегти zip"
+}

@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "Archief openen",
+        "group_unzip": "Uitpakken",
+        "choose_location": "Een locatie kiezen",
+        "unzip_here": "Hier uitpakken",
+        "group_zip": "Archiveren",
+        "zip_folder": "Hier archiveren",
+        "zip_selected": "Geselecteerde items archiveren",
+        "zip_selected_item": "Geselecteerd item archiveren"
+    },
+    "dialog": {
+        "header": "Archiefviewer",
+        "button_extract": "Het archief uitpakken",
+        "selector_header_unzip": "Uitpakken naar",
+        "selector_header_zip": "Archiveren naar",
+        "selector_header_extract": "Uitpakken naar",
+        "selector_button_archive": "Archiveren",
+        "selector_button_unzip": "Uitpakken",
+        "selector_button_extract": "Uitpakken",
+        "selector_checkbox_wrap": "In een nieuwe map plaatsen",
+        "button_cancel": "Annuleren",
+        "viewer_loading": "Laden...",
+        "viewer_error": "Fout: ${error}"
+    },
+    "default_zip_title": "Nieuw archief",
+    "default_folder_title": "Nieuwe map",
+    "file_type_name": "Archief",
+    "toast_no_folder_download_permission": "U hebt geen rechten om bestanden uit deze map te downloaden",
+    "toast_no_view_permission": "U hebt geen rechten om dit bestand te bekijken",
+    "toast_no_unzip_permission": "U hebt geen rechten om dit bestand uit te pakken",
+    "toast_extract_success": "Item(s) uitgepakt",
+    "toast_unzip_success": "Bestand uitgepakt",
+    "toast_cant_create": "De bewerking is mislukt. U kunt geen bestanden in deze map maken",
+    "toast_failed_to_create": "Kan zip niet maken",
+    "toast_zip_saved": "Zip is opgeslagen",
+    "toast_zip_not_saved": "Kan zip niet opslaan"
+}

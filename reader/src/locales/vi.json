@@ -1,0 +1,9 @@
+{
+    "context_menu": {
+        "open_in_reader": "Mở trong trình đọc"
+    },
+    "file_type_name": "Sách",
+    "errors": {
+        "unsupported_zip": "Kho lưu trữ ZIP này không chứa sách được hỗ trợ. Các định dạng được hỗ trợ trong ZIP: EPUB hoặc FB2."
+    }
+}

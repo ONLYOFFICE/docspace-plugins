@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Saglabāt",
+        "button_cancel": "Atcelt",
+        "text_unsaved": "Turpināt bez saglabāšanas?\nJūs esat veicis izmaiņas konfigurācijā. Ja turpināsiet bez saglabāšanas, šīs izmaiņas netiks lietotas.",
+        "warning_header": "Brīdinājums",
+        "button_continue": "Turpināt",
+        "button_reopen": "Atvērt atkārtoti"
+    },
+    "main_button": {
+        "label": "Teksta fails",
+        "create_dialog_title": "Izveidot teksta failu",
+        "create_dialog_start_value": "Teksta fails",
+        "error_no_file_ext": "Jānorāda faila paplašinājums",
+        "error_not_supported": "Codemirror spraudnis neatbalsta šo faila paplašinājumu",
+        "error_not_created": "Fails \"${title}.md\" netika izveidots: ${message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Dati saglabāti",
+        "button_save": "Saglabāt",
+        "header_general": "Vispārīgi",
+        "header_html": "HTML",
+        "highlight_whitespace": "Izcelt atstarpes",
+        "highlight_whitespace_description": "Rādīt atstarpes kā punktus un tabulācijas kā bultiņas.",
+        "highlight_trailing_whitespace": "Izcelt atstarpes rindas beigās",
+        "highlight_trailing_whitespace_description": "Izcelt atstarpes rindas beigās.",
+        "auto_close_tags": "Automātiski aizvērt tagus",
+        "auto_close_tags_description": "Automātiski ievietot aizverošos tagus, kad HTML tipa failos tiek ievadīts > vai /."
+    },
+    "context_menu_edit": "Rediģēt failu ar Codemirror",
+    "file_type_name": "Kods",
+    "toast_no_permission": "Jums nav atļaujas skatīt šo failu",
+    "toast_cant_read_file": "Nevar nolasīt šo failu",
+    "toast_file_saved": "Fails saglabāts",
+    "toast_file_not_saved": "Neizdevās saglabāt failu"
+}

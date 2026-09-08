@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "Kan bestandsinformatie niet ophalen",
+        "failed_to_get_file_details": "Kan bestandsgegevens niet ophalen",
+        "failed_to_download_file": "Kan bestand niet downloaden: ",
+        "watermark_protected": "Dit bestand is beveiligd met een watermerk. Schakel de kamerinstelling \"Watermerken toevoegen aan documenten\" uit en probeer het opnieuw.",
+        "empty_file": "Het gedownloade bestand is leeg",
+        "failed_to_initiate_upload": "Kan upload niet starten: ",
+        "upload_failed": "Uploaden is mislukt",
+        "invalid_upload_session": "Ongeldige reactie van uploadsessie",
+        "file_not_created": "Bestand is niet op de server gemaakt",
+        "unsupported_format": "Niet-ondersteunde indeling: ",
+        "conversion_failed": "Conversie is mislukt",
+        "created": "Gemaakt "
+    },
+    "context_menu_convert": "Converteren naar Markdown"
+}

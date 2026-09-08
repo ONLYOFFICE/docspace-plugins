@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "Podatkov o datoteki ni mogoče pridobiti",
+        "failed_to_get_file_details": "Podrobnosti datoteke ni bilo mogoče pridobiti",
+        "failed_to_download_file": "Datoteke ni bilo mogoče prenesti: ",
+        "watermark_protected": "Ta datoteka je zaščitena z vodnim žigom. Onemogočite nastavitev sobe \"Dodaj vodne žige v dokumente\" in poskusite znova.",
+        "empty_file": "Prenesena datoteka je prazna",
+        "failed_to_initiate_upload": "Nalaganja ni bilo mogoče začeti: ",
+        "upload_failed": "Nalaganje ni uspelo",
+        "invalid_upload_session": "Neveljaven odziv seje nalaganja",
+        "file_not_created": "Datoteka na strežniku ni bila ustvarjena",
+        "unsupported_format": "Nepodprt zapis: ",
+        "conversion_failed": "Pretvorba ni uspela",
+        "created": "Ustvarjeno "
+    },
+    "context_menu_convert": "Pretvori v Markdown"
+}

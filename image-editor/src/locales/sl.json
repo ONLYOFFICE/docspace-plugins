@@ -1,0 +1,7 @@
+{
+    "dialog_button_save_and_exit": "Shrani in zapri",
+    "context_menu_edit_image": "Uredi sliko",
+    "toast_no_permissions": "Nimate dovoljenja za ogled te datoteke",
+    "toast_file_saved": "Datoteka je bila uspešno shranjena",
+    "toast_file_not_saved": "Datoteke ni bilo mogoče shraniti"
+}

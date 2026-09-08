@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "ແກ້ໄຂ URL"
+    },
+    "main_button": {
+        "new_url": "URL ໃໝ່"
+    },
+    "dialog": {
+        "header_create": "ສ້າງ URL ໃໝ່",
+        "header_edit": "ແກ້ໄຂ URL",
+        "label_url": "URL:",
+        "label_title": "ຫົວຂໍ້:",
+        "button_create": "ສ້າງ",
+        "button_save": "ບັນທຶກ",
+        "button_cancel": "ຍົກເລີກ",
+        "error_invalid_url": "ທີ່ຢູ່ URL ບໍ່ຖືກຕ້ອງ",
+        "error_url_required": "ຕ້ອງລະບຸ URL",
+        "link_to": "ລິ້ງໄປຫາ",
+        "new_link": "ລິ້ງໃໝ່",
+        "toast_url_created": "ສ້າງ URL ສຳເລັດແລ້ວ",
+        "toast_url_not_created": "ສ້າງ URL ບໍ່ສຳເລັດ",
+        "toast_file_saved": "ບັນທຶກໄຟລ໌ສຳເລັດແລ້ວ",
+        "toast_file_not_saved": "ບັນທຶກໄຟລ໌ບໍ່ສຳເລັດ"
+    },
+    "file_type_name": "ລິ້ງ",
+    "toast_no_permissions": "ທ່ານບໍ່ມີສິດເບິ່ງໄຟລ໌ນີ້",
+    "toast_cant_read_file": "ບໍ່ສາມາດອ່ານໄຟລ໌ນີ້ໄດ້",
+    "toast_wrong_file": "ໄຟລ໌ URL ບໍ່ຖືກຕ້ອງ ຫຼື ເສຍຫາຍ"
+}

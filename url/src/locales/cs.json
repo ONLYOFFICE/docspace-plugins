@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "Upravit URL"
+    },
+    "main_button": {
+        "new_url": "Nová URL"
+    },
+    "dialog": {
+        "header_create": "Vytvořit novou URL",
+        "header_edit": "Upravit URL",
+        "label_url": "URL:",
+        "label_title": "Název:",
+        "button_create": "Vytvořit",
+        "button_save": "Uložit",
+        "button_cancel": "Zrušit",
+        "error_invalid_url": "Neplatná adresa URL",
+        "error_url_required": "Adresa URL je povinná",
+        "link_to": "Odkaz na",
+        "new_link": "Nový odkaz",
+        "toast_url_created": "URL byla úspěšně vytvořena",
+        "toast_url_not_created": "Nepodařilo se vytvořit URL",
+        "toast_file_saved": "Soubor byl úspěšně uložen",
+        "toast_file_not_saved": "Soubor se nepodařilo uložit"
+    },
+    "file_type_name": "Odkaz",
+    "toast_no_permissions": "Nemáte oprávnění zobrazit tento soubor",
+    "toast_cant_read_file": "Tento soubor nelze přečíst",
+    "toast_wrong_file": "Nesprávný nebo poškozený soubor URL"
+}

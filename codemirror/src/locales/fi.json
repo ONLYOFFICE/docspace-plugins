@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Tallenna",
+        "button_cancel": "Peruuta",
+        "text_unsaved": "Jatketaanko tallentamatta?\nOlet tehnyt muutoksia asetuksiin. Jos jatkat tallentamatta, näitä muutoksia ei oteta käyttöön.",
+        "warning_header": "Varoitus",
+        "button_continue": "Jatka",
+        "button_reopen": "Avaa uudelleen"
+    },
+    "main_button": {
+        "label": "Tekstitiedosto",
+        "create_dialog_title": "Luo tekstitiedosto",
+        "create_dialog_start_value": "Tekstitiedosto",
+        "error_no_file_ext": "Tiedostotunniste on annettava",
+        "error_not_supported": "Codemirror-laajennus ei tue tätä tiedostotunnistetta",
+        "error_not_created": "Tiedostoa \"${title}.md\" ei luotu: ${message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Tiedot tallennettu",
+        "button_save": "Tallenna",
+        "header_general": "Yleiset",
+        "header_html": "HTML",
+        "highlight_whitespace": "Korosta välilyönnit",
+        "highlight_whitespace_description": "Näytä välilyönnit pisteinä ja sarkaimet nuolina.",
+        "highlight_trailing_whitespace": "Korosta rivin lopun välilyönnit",
+        "highlight_trailing_whitespace_description": "Korosta rivin lopussa olevat välilyönnit.",
+        "auto_close_tags": "Sulje tunnisteet automaattisesti",
+        "auto_close_tags_description": "Lisää sulkevat tunnisteet automaattisesti, kun HTML-tyyppisissä tiedostoissa kirjoitetaan > tai /."
+    },
+    "context_menu_edit": "Muokkaa tiedostoa Codemirrorilla",
+    "file_type_name": "Koodi",
+    "toast_no_permission": "Sinulla ei ole oikeutta tarkastella tätä tiedostoa",
+    "toast_cant_read_file": "Tätä tiedostoa ei voi lukea",
+    "toast_file_saved": "Tiedosto tallennettu",
+    "toast_file_not_saved": "Tiedoston tallentaminen epäonnistui"
+}

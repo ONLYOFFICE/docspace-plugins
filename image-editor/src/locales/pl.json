@@ -1,0 +1,7 @@
+{
+    "dialog_button_save_and_exit": "Zapisz i zamknij",
+    "context_menu_edit_image": "Edytuj obraz",
+    "toast_no_permissions": "Nie masz uprawnień do wyświetlenia tego pliku",
+    "toast_file_saved": "Plik został zapisany",
+    "toast_file_not_saved": "Nie udało się zapisać pliku"
+}

@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "ບໍ່ສາມາດເອົາຂໍ້ມູນໄຟລ໌ໄດ້",
+        "failed_to_get_file_details": "ເອົາລາຍລະອຽດໄຟລ໌ບໍ່ສຳເລັດ",
+        "failed_to_download_file": "ດາວໂຫຼດໄຟລ໌ບໍ່ສຳເລັດ: ",
+        "watermark_protected": "ໄຟລ໌ນີ້ຖືກປົກປ້ອງດ້ວຍລາຍນ້ຳ. ກະລຸນາປິດການຕັ້ງຄ່າຫ້ອງ \"ເພີ່ມລາຍນ້ຳໃສ່ເອກະສານ\" ແລ້ວລອງໃໝ່.",
+        "empty_file": "ໄຟລ໌ທີ່ດາວໂຫຼດມາວ່າງເປົ່າ",
+        "failed_to_initiate_upload": "ເລີ່ມການອັບໂຫຼດບໍ່ສຳເລັດ: ",
+        "upload_failed": "ອັບໂຫຼດບໍ່ສຳເລັດ",
+        "invalid_upload_session": "ການຕອບກັບຂອງເຊດຊັນອັບໂຫຼດບໍ່ຖືກຕ້ອງ",
+        "file_not_created": "ບໍ່ໄດ້ສ້າງໄຟລ໌ຢູ່ເຊີບເວີ",
+        "unsupported_format": "ຮູບແບບທີ່ບໍ່ຮອງຮັບ: ",
+        "conversion_failed": "ການແປງບໍ່ສຳເລັດ",
+        "created": "ສ້າງແລ້ວ "
+    },
+    "context_menu_convert": "ແປງເປັນ Markdown"
+}

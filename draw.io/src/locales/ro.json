@@ -1,0 +1,32 @@
+{
+    "main_button": {
+        "create_dialog_title": "Creează diagramă",
+        "create_dialog_start_value": "Diagramă nouă"
+    },
+    "open_from_url": {
+        "button_accept": "Creează",
+        "button_cancel": "Anulează",
+        "description_text": "Asigurați-vă că accesul prin link public este deschis",
+        "dialog_header": "Importă diagramă",
+        "input_placeholder_name": "Diagramă nouă",
+        "input_text_name": "Nume",
+        "input_placeholder_url": "URL pentru diagramă",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "Datele au fost salvate",
+        "button_save": "Salvează",
+        "text_url": "Adresa draw.io",
+        "text_url_description": "Adresa serviciului draw.io utilizat pentru deschiderea și editarea diagramelor. Modificați-o dacă draw.io este găzduit pe propriul dvs. server. Lăsați https://embed.diagrams.net pentru a utiliza serviciul public.",
+        "text_language": "Limbă",
+        "text_libraries": "Biblioteci",
+        "text_offline_description": "Când \"modul offline\" este activ, toate operațiunile și funcțiile la distanță sunt dezactivate pentru protecție",
+        "text_offline": "Mod offline"
+    },
+    "context_menu_open_diagram": "Deschide diagrama",
+    "file_type_name": "Diagramă",
+    "toast_file_not_created": "Fișierul \"${title}.drawio\" nu a fost creat: ${message}",
+    "toast_wrong_file_format": "Format de fișier incorect",
+    "toast_no_permission": "Nu aveți permisiunea de a vizualiza acest fișier",
+    "toast_cant_read_file": "Acest fișier nu poate fi citit"
+}

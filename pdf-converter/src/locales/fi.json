@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "Muunna tiedosto PDF-muotoon",
+        "button_convert_file": "Muunna tiedosto",
+        "button_cancel": "Peruuta",
+        "toast_wrong_api_token": "Virheellinen API-tunnus",
+        "text_converted_file_name": "Muunnetun tiedoston nimi"
+    },
+    "settings": {
+        "description": "Luo API-salaisuus osoitteessa https://www.convertapi.com/ \n\n Kun API-tunnus on otettu käyttöön, laajennus on kaikkien nykyisen ONLYOFFICE Apps -ympäristön käyttäjien käytettävissä.",
+        "toast_token_is_saved": "Tunnus tallennettu",
+        "button_save": "Tallenna",
+        "text_api_token": "API-tunnus"
+    },
+    "context_menu_convert_to_pdf": "Muunna PDF-muotoon",
+    "toast_file_created": "Tiedosto %{name} luotiin",
+    "toast_file_not_created": "Tiedostoa %{name} ei luotu: %{message}",
+    "toast_wrong_api_token": "Virheellinen API-tunnus"
+}

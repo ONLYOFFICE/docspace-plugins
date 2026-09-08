@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "Bestand naar PDF converteren",
+        "button_convert_file": "Bestand converteren",
+        "button_cancel": "Annuleren",
+        "toast_wrong_api_token": "Verkeerd API-token",
+        "text_converted_file_name": "Naam voor geconverteerd bestand"
+    },
+    "settings": {
+        "description": "Ga naar https://www.convertapi.com/ om een API-geheim te genereren \n\n Zodra het API-token is ingeschakeld, is de plug-in beschikbaar voor alle gebruikers van de huidige ONLYOFFICE Apps.",
+        "toast_token_is_saved": "Token opgeslagen",
+        "button_save": "Opslaan",
+        "text_api_token": "API-token"
+    },
+    "context_menu_convert_to_pdf": "Converteren naar PDF",
+    "toast_file_created": "Bestand %{name} is gemaakt",
+    "toast_file_not_created": "Bestand %{name} is niet gemaakt: %{message}",
+    "toast_wrong_api_token": "Verkeerd API-token"
+}

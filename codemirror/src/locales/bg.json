@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Запис",
+        "button_cancel": "Отказ",
+        "text_unsaved": "Продължаване без записване?\nНаправили сте промени в конфигурацията. Ако продължите без записване, тези промени няма да бъдат приложени.",
+        "warning_header": "Предупреждение",
+        "button_continue": "Продължаване",
+        "button_reopen": "Отваряне отново"
+    },
+    "main_button": {
+        "label": "Текстов файл",
+        "create_dialog_title": "Създаване на текстов файл",
+        "create_dialog_start_value": "Текстов файл",
+        "error_no_file_ext": "Трябва да бъде посочено разширение на файла",
+        "error_not_supported": "Разширението на файла не се поддържа от приставката Codemirror",
+        "error_not_created": "Файлът \"${title}.md\" не беше създаден: ${message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Данните са записани",
+        "button_save": "Запис",
+        "header_general": "Общи",
+        "header_html": "HTML",
+        "highlight_whitespace": "Осветяване на интервалите",
+        "highlight_whitespace_description": "Показване на интервалите като точки и на табулациите като стрелки.",
+        "highlight_trailing_whitespace": "Осветяване на интервалите в края на реда",
+        "highlight_trailing_whitespace_description": "Осветяване на интервалите в края на реда.",
+        "auto_close_tags": "Автоматично затваряне на етикетите",
+        "auto_close_tags_description": "Автоматично вмъкване на затварящи етикети при въвеждане на > или / във файлове от тип HTML."
+    },
+    "context_menu_edit": "Редактиране на файла с Codemirror",
+    "file_type_name": "Код",
+    "toast_no_permission": "Нямате права да преглеждате този файл",
+    "toast_cant_read_file": "Файлът не може да бъде прочетен",
+    "toast_file_saved": "Файлът е записан",
+    "toast_file_not_saved": "Записването на файла е неуспешно"
+}

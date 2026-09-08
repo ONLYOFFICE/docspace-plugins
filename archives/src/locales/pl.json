@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "Otwórz archiwum",
+        "group_unzip": "Rozpakuj",
+        "choose_location": "Wybierz lokalizację",
+        "unzip_here": "Rozpakuj tutaj",
+        "group_zip": "Archiwizuj",
+        "zip_folder": "Archiwizuj tutaj",
+        "zip_selected": "Archiwizuj wybrane elementy",
+        "zip_selected_item": "Archiwizuj wybrany element"
+    },
+    "dialog": {
+        "header": "Przeglądarka archiwów",
+        "button_extract": "Wyodrębnij archiwum",
+        "selector_header_unzip": "Rozpakuj do",
+        "selector_header_zip": "Archiwizuj do",
+        "selector_header_extract": "Wyodrębnij do",
+        "selector_button_archive": "Archiwizuj",
+        "selector_button_unzip": "Rozpakuj",
+        "selector_button_extract": "Wyodrębnij",
+        "selector_checkbox_wrap": "Umieść w nowym folderze",
+        "button_cancel": "Anuluj",
+        "viewer_loading": "Ładowanie...",
+        "viewer_error": "Błąd: ${error}"
+    },
+    "default_zip_title": "Nowe archiwum",
+    "default_folder_title": "Nowy folder",
+    "file_type_name": "Archiwum",
+    "toast_no_folder_download_permission": "Nie masz uprawnień do pobierania plików z tego folderu",
+    "toast_no_view_permission": "Nie masz uprawnień do wyświetlenia tego pliku",
+    "toast_no_unzip_permission": "Nie masz uprawnień do rozpakowania tego pliku",
+    "toast_extract_success": "Element(y) zostały wyodrębnione",
+    "toast_unzip_success": "Plik został rozpakowany",
+    "toast_cant_create": "Operacja nie powiodła się. Nie możesz tworzyć plików w tym folderze",
+    "toast_failed_to_create": "Nie udało się utworzyć pliku zip",
+    "toast_zip_saved": "Plik zip został zapisany",
+    "toast_zip_not_saved": "Nie udało się zapisać pliku zip"
+}
