@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Stavi u novu fasciklu",
         "button_cancel": "Otkaži",
         "viewer_loading": "Učitavanje...",
-        "viewer_error": "Greška: ${error}"
+        "viewer_error": "Greška: %{error}"
     },
     "default_zip_title": "Nova arhiva",
     "default_folder_title": "Nova fascikla",

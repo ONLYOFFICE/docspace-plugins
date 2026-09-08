@@ -6,7 +6,7 @@
     "main_button": {
         "markdown": "Markdown",
         "dialog_create_markdown": "Ստեղծել Markdown",
-        "toast_file_not_created": "\"${title}.md\" ֆայլը չստեղծվեց՝ ${message}"
+        "toast_file_not_created": "\"%{title}.md\" ֆայլը չստեղծվեց՝ %{message}"
     },
     "dialog": {
         "toast_file_saved": "Ֆայլը պահպանվեց",

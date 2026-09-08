@@ -25,7 +25,7 @@
     },
     "context_menu_open_diagram": "Otevřít diagram",
     "file_type_name": "Diagram",
-    "toast_file_not_created": "Soubor \"${title}.drawio\" nebyl vytvořen: ${message}",
+    "toast_file_not_created": "Soubor \"%{title}.drawio\" nebyl vytvořen: %{message}",
     "toast_wrong_file_format": "Nesprávný formát souboru",
     "toast_no_permission": "Nemáte oprávnění zobrazit tento soubor",
     "toast_cant_read_file": "Tento soubor nelze přečíst"

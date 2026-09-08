@@ -13,7 +13,7 @@
         "create_dialog_start_value": "Текстовий файл",
         "error_no_file_ext": "Необхідно вказати розширення файлу",
         "error_not_supported": "Розширення файлу не підтримується плагіном Codemirror",
-        "error_not_created": "Файл \"${title}.md\" не було створено: ${message}"
+        "error_not_created": "Файл \"%{title}.md\" не було створено: %{message}"
     },
     "settings": {
         "toast_data_is_saved": "Дані збережено",

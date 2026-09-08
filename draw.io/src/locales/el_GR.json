@@ -25,7 +25,7 @@
     },
     "context_menu_open_diagram": "Άνοιγμα διαγράμματος",
     "file_type_name": "Διάγραμμα",
-    "toast_file_not_created": "Το αρχείο \"${title}.drawio\" δεν δημιουργήθηκε: ${message}",
+    "toast_file_not_created": "Το αρχείο \"%{title}.drawio\" δεν δημιουργήθηκε: %{message}",
     "toast_wrong_file_format": "Λανθασμένη μορφή αρχείου",
     "toast_no_permission": "Δεν έχετε δικαίωμα προβολής αυτού του αρχείου",
     "toast_cant_read_file": "Δεν είναι δυνατή η ανάγνωση αυτού του αρχείου"

@@ -6,7 +6,7 @@
     "main_button": {
         "markdown": "Markdown",
         "dialog_create_markdown": "Markdown 만들기",
-        "toast_file_not_created": "\"${title}.md\" 파일이 생성되지 않았습니다: ${message}"
+        "toast_file_not_created": "\"%{title}.md\" 파일이 생성되지 않았습니다: %{message}"
     },
     "dialog": {
         "toast_file_saved": "파일이 저장되었습니다",

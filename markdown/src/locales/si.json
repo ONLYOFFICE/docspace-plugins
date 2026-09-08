@@ -6,7 +6,7 @@
     "main_button": {
         "markdown": "Markdown",
         "dialog_create_markdown": "Markdown සාදන්න",
-        "toast_file_not_created": "\"${title}.md\" ගොනුව නිර්මාණය නොවීය: ${message}"
+        "toast_file_not_created": "\"%{title}.md\" ගොනුව නිර්මාණය නොවීය: %{message}"
     },
     "dialog": {
         "toast_file_saved": "ගොනුව සුරකින ලදී",

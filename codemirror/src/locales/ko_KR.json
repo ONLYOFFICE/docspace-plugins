@@ -13,7 +13,7 @@
         "create_dialog_start_value": "텍스트 파일",
         "error_no_file_ext": "파일 확장자를 입력해야 합니다",
         "error_not_supported": "Codemirror 플러그인이 지원하지 않는 파일 확장자입니다",
-        "error_not_created": "\"${title}.md\" 파일이 생성되지 않았습니다: ${message}"
+        "error_not_created": "\"%{title}.md\" 파일이 생성되지 않았습니다: %{message}"
     },
     "settings": {
         "toast_data_is_saved": "데이터가 저장되었습니다",

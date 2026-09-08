@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Տեղադրել նոր թղթապանակում",
         "button_cancel": "Չեղարկել",
         "viewer_loading": "Բեռնվում է...",
-        "viewer_error": "Սխալ՝ ${error}"
+        "viewer_error": "Սխալ՝ %{error}"
     },
     "default_zip_title": "Նոր արխիվ",
     "default_folder_title": "Նոր թղթապանակ",

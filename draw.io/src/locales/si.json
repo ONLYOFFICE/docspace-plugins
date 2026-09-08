@@ -25,7 +25,7 @@
     },
     "context_menu_open_diagram": "රූප සටහන විවෘත කරන්න",
     "file_type_name": "රූප සටහන",
-    "toast_file_not_created": "\"${title}.drawio\" ගොනුව නිර්මාණය නොවීය: ${message}",
+    "toast_file_not_created": "\"%{title}.drawio\" ගොනුව නිර්මාණය නොවීය: %{message}",
     "toast_wrong_file_format": "වැරදි ගොනු ආකෘතියකි",
     "toast_no_permission": "මෙම ගොනුව බැලීමට ඔබට අවසර නැත",
     "toast_cant_read_file": "මෙම ගොනුව කියවිය නොහැක"

@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Umieść w nowym folderze",
         "button_cancel": "Anuluj",
         "viewer_loading": "Ładowanie...",
-        "viewer_error": "Błąd: ${error}"
+        "viewer_error": "Błąd: %{error}"
     },
     "default_zip_title": "Nowe archiwum",
     "default_folder_title": "Nowy folder",

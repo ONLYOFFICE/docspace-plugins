@@ -25,7 +25,7 @@
     },
     "context_menu_open_diagram": "Atvērt diagrammu",
     "file_type_name": "Diagramma",
-    "toast_file_not_created": "Fails \"${title}.drawio\" netika izveidots: ${message}",
+    "toast_file_not_created": "Fails \"%{title}.drawio\" netika izveidots: %{message}",
     "toast_wrong_file_format": "Nepareizs faila formāts",
     "toast_no_permission": "Jums nav atļaujas skatīt šo failu",
     "toast_cant_read_file": "Nevar nolasīt šo failu"

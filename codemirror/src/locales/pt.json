@@ -13,7 +13,7 @@
         "create_dialog_start_value": "Ficheiro de texto",
         "error_no_file_ext": "É necessário indicar a extensão do ficheiro",
         "error_not_supported": "Extensão de ficheiro não suportada pelo plugin Codemirror",
-        "error_not_created": "O ficheiro \"${title}.md\" não foi criado: ${message}"
+        "error_not_created": "O ficheiro \"%{title}.md\" não foi criado: %{message}"
     },
     "settings": {
         "toast_data_is_saved": "Dados guardados",

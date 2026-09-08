@@ -13,7 +13,7 @@
         "create_dialog_start_value": "Metin dosyası",
         "error_no_file_ext": "Dosya uzantısı belirtilmelidir",
         "error_not_supported": "Dosya uzantısı Codemirror eklentisi tarafından desteklenmiyor",
-        "error_not_created": "\"${title}.md\" dosyası oluşturulmadı: ${message}"
+        "error_not_created": "\"%{title}.md\" dosyası oluşturulmadı: %{message}"
     },
     "settings": {
         "toast_data_is_saved": "Veriler kaydedildi",

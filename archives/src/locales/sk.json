@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Umiestniť do nového priečinka",
         "button_cancel": "Zrušiť",
         "viewer_loading": "Načítava sa...",
-        "viewer_error": "Chyba: ${error}"
+        "viewer_error": "Chyba: %{error}"
     },
     "default_zip_title": "Nový archív",
     "default_folder_title": "Nový priečinok",

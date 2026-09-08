@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "وضع في مجلد جديد",
         "button_cancel": "إلغاء",
         "viewer_loading": "جارٍ التحميل...",
-        "viewer_error": "خطأ: ${error}"
+        "viewer_error": "خطأ: %{error}"
     },
     "default_zip_title": "أرشيف جديد",
     "default_folder_title": "مجلد جديد",

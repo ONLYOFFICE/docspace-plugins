@@ -13,7 +13,7 @@
         "create_dialog_start_value": "Αρχείο κειμένου",
         "error_no_file_ext": "Πρέπει να δοθεί επέκταση αρχείου",
         "error_not_supported": "Η επέκταση αρχείου δεν υποστηρίζεται από την προσθήκη Codemirror",
-        "error_not_created": "Το αρχείο \"${title}.md\" δεν δημιουργήθηκε: ${message}"
+        "error_not_created": "Το αρχείο \"%{title}.md\" δεν δημιουργήθηκε: %{message}"
     },
     "settings": {
         "toast_data_is_saved": "Τα δεδομένα αποθηκεύτηκαν",

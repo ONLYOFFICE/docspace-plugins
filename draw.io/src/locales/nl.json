@@ -25,7 +25,7 @@
     },
     "context_menu_open_diagram": "Diagram openen",
     "file_type_name": "Diagram",
-    "toast_file_not_created": "Bestand \"${title}.drawio\" is niet gemaakt: ${message}",
+    "toast_file_not_created": "Bestand \"%{title}.drawio\" is niet gemaakt: %{message}",
     "toast_wrong_file_format": "Verkeerde bestandsindeling",
     "toast_no_permission": "U hebt geen rechten om dit bestand te bekijken",
     "toast_cant_read_file": "Kan dit bestand niet lezen"

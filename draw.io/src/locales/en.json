@@ -25,7 +25,7 @@
     },
     "context_menu_open_diagram": "Open diagram",
     "file_type_name": "Diagram",
-    "toast_file_not_created": "File \"${title}.drawio\" was not created: ${message}",
+    "toast_file_not_created": "File \"%{title}.drawio\" was not created: %{message}",
     "toast_wrong_file_format": "Wrong file format",
     "toast_no_permission": "You don't have permission to view this file",
     "toast_cant_read_file": "Can't read this file"

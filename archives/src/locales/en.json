@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Put in a new folder",
         "button_cancel": "Cancel",
         "viewer_loading": "Loading...",
-        "viewer_error": "Error: ${error}"
+        "viewer_error": "Error: %{error}"
     },
     "default_zip_title": "New archive",
     "default_folder_title": "New folder",

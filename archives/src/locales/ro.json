@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Pune într-un folder nou",
         "button_cancel": "Anulează",
         "viewer_loading": "Se încarcă...",
-        "viewer_error": "Eroare: ${error}"
+        "viewer_error": "Eroare: %{error}"
     },
     "default_zip_title": "Arhivă nouă",
     "default_folder_title": "Folder nou",

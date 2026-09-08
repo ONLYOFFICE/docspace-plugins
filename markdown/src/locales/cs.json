@@ -6,7 +6,7 @@
     "main_button": {
         "markdown": "Markdown",
         "dialog_create_markdown": "Vytvořit Markdown",
-        "toast_file_not_created": "Soubor \"${title}.md\" nebyl vytvořen: ${message}"
+        "toast_file_not_created": "Soubor \"%{title}.md\" nebyl vytvořen: %{message}"
     },
     "dialog": {
         "toast_file_saved": "Soubor byl uložen",

@@ -25,7 +25,7 @@
     },
     "context_menu_open_diagram": "Отвори дијаграм",
     "file_type_name": "Дијаграм",
-    "toast_file_not_created": "Датотека \"${title}.drawio\" није креирана: ${message}",
+    "toast_file_not_created": "Датотека \"%{title}.drawio\" није креирана: %{message}",
     "toast_wrong_file_format": "Погрешан формат датотеке",
     "toast_no_permission": "Немате дозволу да прикажете ову датотеку",
     "toast_cant_read_file": "Ова датотека не може да се прочита"

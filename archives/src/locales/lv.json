@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Ievietot jaunā mapē",
         "button_cancel": "Atcelt",
         "viewer_loading": "Notiek ielāde...",
-        "viewer_error": "Kļūda: ${error}"
+        "viewer_error": "Kļūda: %{error}"
     },
     "default_zip_title": "Jauns arhīvs",
     "default_folder_title": "Jauna mape",

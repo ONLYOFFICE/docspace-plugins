@@ -6,7 +6,7 @@
     "main_button": {
         "markdown": "Markdown",
         "dialog_create_markdown": "Luo Markdown",
-        "toast_file_not_created": "Tiedostoa \"${title}.md\" ei luotu: ${message}"
+        "toast_file_not_created": "Tiedostoa \"%{title}.md\" ei luotu: %{message}"
     },
     "dialog": {
         "toast_file_saved": "Tiedosto tallennettu",

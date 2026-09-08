@@ -13,7 +13,7 @@
         "create_dialog_start_value": "ملف نصي",
         "error_no_file_ext": "يجب تحديد امتداد الملف",
         "error_not_supported": "امتداد الملف غير مدعوم من المكوّن الإضافي Codemirror",
-        "error_not_created": "لم يتم إنشاء الملف \"${title}.md\": ${message}"
+        "error_not_created": "لم يتم إنشاء الملف \"%{title}.md\": %{message}"
     },
     "settings": {
         "toast_data_is_saved": "تم حفظ البيانات",

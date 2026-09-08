@@ -25,7 +25,7 @@
     },
     "context_menu_open_diagram": "Mở sơ đồ",
     "file_type_name": "Sơ đồ",
-    "toast_file_not_created": "Chưa tạo được tệp \"${title}.drawio\": ${message}",
+    "toast_file_not_created": "Chưa tạo được tệp \"%{title}.drawio\": %{message}",
     "toast_wrong_file_format": "Định dạng tệp không đúng",
     "toast_no_permission": "Bạn không có quyền xem tệp này",
     "toast_cant_read_file": "Không thể đọc tệp này"

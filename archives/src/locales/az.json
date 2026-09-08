@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Yeni qovluğa yerləşdir",
         "button_cancel": "Ləğv et",
         "viewer_loading": "Yüklənir...",
-        "viewer_error": "Xəta: ${error}"
+        "viewer_error": "Xəta: %{error}"
     },
     "default_zip_title": "Yeni arxiv",
     "default_folder_title": "Yeni qovluq",

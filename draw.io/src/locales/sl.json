@@ -25,7 +25,7 @@
     },
     "context_menu_open_diagram": "Odpri diagram",
     "file_type_name": "Diagram",
-    "toast_file_not_created": "Datoteka \"${title}.drawio\" ni bila ustvarjena: ${message}",
+    "toast_file_not_created": "Datoteka \"%{title}.drawio\" ni bila ustvarjena: %{message}",
     "toast_wrong_file_format": "Napačen zapis datoteke",
     "toast_no_permission": "Nimate dovoljenja za ogled te datoteke",
     "toast_cant_read_file": "Te datoteke ni mogoče prebrati"

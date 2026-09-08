@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Τοποθέτηση σε νέο φάκελο",
         "button_cancel": "Άκυρο",
         "viewer_loading": "Φόρτωση...",
-        "viewer_error": "Σφάλμα: ${error}"
+        "viewer_error": "Σφάλμα: %{error}"
     },
     "default_zip_title": "Νέα αρχειοθήκη",
     "default_folder_title": "Νέος φάκελος",

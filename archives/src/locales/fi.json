@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Sijoita uuteen kansioon",
         "button_cancel": "Peruuta",
         "viewer_loading": "Ladataan...",
-        "viewer_error": "Virhe: ${error}"
+        "viewer_error": "Virhe: %{error}"
     },
     "default_zip_title": "Uusi arkisto",
     "default_folder_title": "Uusi kansio",

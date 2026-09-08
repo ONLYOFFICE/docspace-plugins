@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Yeni bir klasöre koy",
         "button_cancel": "İptal",
         "viewer_loading": "Yükleniyor...",
-        "viewer_error": "Hata: ${error}"
+        "viewer_error": "Hata: %{error}"
     },
     "default_zip_title": "Yeni arşiv",
     "default_folder_title": "Yeni klasör",

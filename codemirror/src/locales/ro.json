@@ -13,7 +13,7 @@
         "create_dialog_start_value": "Fișier text",
         "error_no_file_ext": "Trebuie specificată extensia fișierului",
         "error_not_supported": "Extensia fișierului nu este acceptată de pluginul Codemirror",
-        "error_not_created": "Fișierul \"${title}.md\" nu a fost creat: ${message}"
+        "error_not_created": "Fișierul \"%{title}.md\" nu a fost creat: %{message}"
     },
     "settings": {
         "toast_data_is_saved": "Datele au fost salvate",

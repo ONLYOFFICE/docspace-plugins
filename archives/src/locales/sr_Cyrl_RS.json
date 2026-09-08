@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Стави у нову фасциклу",
         "button_cancel": "Откажи",
         "viewer_loading": "Учитавање...",
-        "viewer_error": "Грешка: ${error}"
+        "viewer_error": "Грешка: %{error}"
     },
     "default_zip_title": "Нова архива",
     "default_folder_title": "Нова фасцикла",

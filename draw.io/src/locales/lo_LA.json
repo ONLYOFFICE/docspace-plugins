@@ -25,7 +25,7 @@
     },
     "context_menu_open_diagram": "ເປີດແຜນວາດ",
     "file_type_name": "ແຜນວາດ",
-    "toast_file_not_created": "ບໍ່ໄດ້ສ້າງໄຟລ໌ \"${title}.drawio\": ${message}",
+    "toast_file_not_created": "ບໍ່ໄດ້ສ້າງໄຟລ໌ \"%{title}.drawio\": %{message}",
     "toast_wrong_file_format": "ຮູບແບບໄຟລ໌ບໍ່ຖືກຕ້ອງ",
     "toast_no_permission": "ທ່ານບໍ່ມີສິດເບິ່ງໄຟລ໌ນີ້",
     "toast_cant_read_file": "ບໍ່ສາມາດອ່ານໄຟລ໌ນີ້ໄດ້"

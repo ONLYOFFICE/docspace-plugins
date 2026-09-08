@@ -6,7 +6,7 @@
     "main_button": {
         "markdown": "Markdown",
         "dialog_create_markdown": "Δημιουργία Markdown",
-        "toast_file_not_created": "Το αρχείο \"${title}.md\" δεν δημιουργήθηκε: ${message}"
+        "toast_file_not_created": "Το αρχείο \"%{title}.md\" δεν δημιουργήθηκε: %{message}"
     },
     "dialog": {
         "toast_file_saved": "Το αρχείο αποθηκεύτηκε",

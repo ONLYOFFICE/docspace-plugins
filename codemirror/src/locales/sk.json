@@ -13,7 +13,7 @@
         "create_dialog_start_value": "Textový súbor",
         "error_no_file_ext": "Je potrebné zadať príponu súboru",
         "error_not_supported": "Prípona súboru nie je podporovaná doplnkom Codemirror",
-        "error_not_created": "Súbor \"${title}.md\" nebol vytvorený: ${message}"
+        "error_not_created": "Súbor \"%{title}.md\" nebol vytvorený: %{message}"
     },
     "settings": {
         "toast_data_is_saved": "Údaje boli uložené",

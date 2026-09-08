@@ -13,7 +13,7 @@
         "create_dialog_start_value": "Mətn faylı",
         "error_no_file_ext": "Fayl uzantısı göstərilməlidir",
         "error_not_supported": "Fayl uzantısı Codemirror plagini tərəfindən dəstəklənmir",
-        "error_not_created": "\"${title}.md\" faylı yaradılmadı: ${message}"
+        "error_not_created": "\"%{title}.md\" faylı yaradılmadı: %{message}"
     },
     "settings": {
         "toast_data_is_saved": "Məlumatlar yadda saxlanıldı",

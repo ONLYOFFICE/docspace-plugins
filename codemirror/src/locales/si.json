@@ -13,7 +13,7 @@
         "create_dialog_start_value": "පෙළ ගොනුව",
         "error_no_file_ext": "ගොනු දිගුව සැපයිය යුතුය",
         "error_not_supported": "Codemirror ප්ලගිනය මෙම ගොනු දිගුවට සහාය නොදක්වයි",
-        "error_not_created": "\"${title}.md\" ගොනුව නිර්මාණය නොවීය: ${message}"
+        "error_not_created": "\"%{title}.md\" ගොනුව නිර්මාණය නොවීය: %{message}"
     },
     "settings": {
         "toast_data_is_saved": "දත්ත සුරකින ලදී",

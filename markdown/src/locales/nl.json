@@ -6,7 +6,7 @@
     "main_button": {
         "markdown": "Markdown",
         "dialog_create_markdown": "Markdown maken",
-        "toast_file_not_created": "Bestand \"${title}.md\" is niet gemaakt: ${message}"
+        "toast_file_not_created": "Bestand \"%{title}.md\" is niet gemaakt: %{message}"
     },
     "dialog": {
         "toast_file_saved": "Bestand opgeslagen",

@@ -6,7 +6,7 @@
     "main_button": {
         "markdown": "Markdown",
         "dialog_create_markdown": "ສ້າງ Markdown",
-        "toast_file_not_created": "ບໍ່ໄດ້ສ້າງໄຟລ໌ \"${title}.md\": ${message}"
+        "toast_file_not_created": "ບໍ່ໄດ້ສ້າງໄຟລ໌ \"%{title}.md\": %{message}"
     },
     "dialog": {
         "toast_file_saved": "ບັນທຶກໄຟລ໌ແລ້ວ",

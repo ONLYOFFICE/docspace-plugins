@@ -13,7 +13,7 @@
         "create_dialog_start_value": "Tekstualna datoteka",
         "error_no_file_ext": "Mora se navesti ekstenzija datoteke",
         "error_not_supported": "Dodatak Codemirror ne podržava ovu ekstenziju datoteke",
-        "error_not_created": "Datoteka \"${title}.md\" nije kreirana: ${message}"
+        "error_not_created": "Datoteka \"%{title}.md\" nije kreirana: %{message}"
     },
     "settings": {
         "toast_data_is_saved": "Podaci su sačuvani",

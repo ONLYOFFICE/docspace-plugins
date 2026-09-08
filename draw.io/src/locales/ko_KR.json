@@ -25,7 +25,7 @@
     },
     "context_menu_open_diagram": "다이어그램 열기",
     "file_type_name": "다이어그램",
-    "toast_file_not_created": "\"${title}.drawio\" 파일이 생성되지 않았습니다: ${message}",
+    "toast_file_not_created": "\"%{title}.drawio\" 파일이 생성되지 않았습니다: %{message}",
     "toast_wrong_file_format": "잘못된 파일 형식",
     "toast_no_permission": "이 파일을 볼 권한이 없습니다",
     "toast_cant_read_file": "이 파일을 읽을 수 없습니다"

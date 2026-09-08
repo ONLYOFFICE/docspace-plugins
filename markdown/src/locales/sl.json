@@ -6,7 +6,7 @@
     "main_button": {
         "markdown": "Markdown",
         "dialog_create_markdown": "Ustvari Markdown",
-        "toast_file_not_created": "Datoteka \"${title}.md\" ni bila ustvarjena: ${message}"
+        "toast_file_not_created": "Datoteka \"%{title}.md\" ni bila ustvarjena: %{message}"
     },
     "dialog": {
         "toast_file_saved": "Datoteka je shranjena",

@@ -25,7 +25,7 @@
     },
     "context_menu_open_diagram": "Diaqramı aç",
     "file_type_name": "Diaqram",
-    "toast_file_not_created": "\"${title}.drawio\" faylı yaradılmadı: ${message}",
+    "toast_file_not_created": "\"%{title}.drawio\" faylı yaradılmadı: %{message}",
     "toast_wrong_file_format": "Yanlış fayl formatı",
     "toast_no_permission": "Bu faylı görüntüləmək üçün icazəniz yoxdur",
     "toast_cant_read_file": "Bu faylı oxumaq mümkün deyil"

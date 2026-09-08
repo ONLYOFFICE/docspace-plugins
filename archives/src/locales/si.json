@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "නව ෆෝල්ඩරයක තබන්න",
         "button_cancel": "අවලංගු කරන්න",
         "viewer_loading": "පූරණය වෙමින්...",
-        "viewer_error": "දෝෂය: ${error}"
+        "viewer_error": "දෝෂය: %{error}"
     },
     "default_zip_title": "නව සංරක්ෂිතය",
     "default_folder_title": "නව ෆෝල්ඩරය",

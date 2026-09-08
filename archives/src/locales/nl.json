@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "In een nieuwe map plaatsen",
         "button_cancel": "Annuleren",
         "viewer_loading": "Laden...",
-        "viewer_error": "Fout: ${error}"
+        "viewer_error": "Fout: %{error}"
     },
     "default_zip_title": "Nieuw archief",
     "default_folder_title": "Nieuwe map",

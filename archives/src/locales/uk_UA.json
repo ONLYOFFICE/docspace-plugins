@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Помістити в нову папку",
         "button_cancel": "Скасувати",
         "viewer_loading": "Завантаження...",
-        "viewer_error": "Помилка: ${error}"
+        "viewer_error": "Помилка: %{error}"
     },
     "default_zip_title": "Новий архів",
     "default_folder_title": "Нова папка",

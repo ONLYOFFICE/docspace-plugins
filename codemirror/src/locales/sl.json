@@ -13,7 +13,7 @@
         "create_dialog_start_value": "Besedilna datoteka",
         "error_no_file_ext": "Navesti je treba pripono datoteke",
         "error_not_supported": "Vtičnik Codemirror ne podpira te pripone datoteke",
-        "error_not_created": "Datoteka \"${title}.md\" ni bila ustvarjena: ${message}"
+        "error_not_created": "Datoteka \"%{title}.md\" ni bila ustvarjena: %{message}"
     },
     "settings": {
         "toast_data_is_saved": "Podatki so shranjeni",

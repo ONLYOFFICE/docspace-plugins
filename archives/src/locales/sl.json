@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Postavi v novo mapo",
         "button_cancel": "Prekliči",
         "viewer_loading": "Nalaganje...",
-        "viewer_error": "Napaka: ${error}"
+        "viewer_error": "Napaka: %{error}"
     },
     "default_zip_title": "Nov arhiv",
     "default_folder_title": "Nova mapa",

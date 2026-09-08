@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "새 폴더에 넣기",
         "button_cancel": "취소",
         "viewer_loading": "로드 중...",
-        "viewer_error": "오류: ${error}"
+        "viewer_error": "오류: %{error}"
     },
     "default_zip_title": "새 아카이브",
     "default_folder_title": "새 폴더",

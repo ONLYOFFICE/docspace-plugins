@@ -25,7 +25,7 @@
     },
     "context_menu_open_diagram": "فتح المخطط",
     "file_type_name": "مخطط",
-    "toast_file_not_created": "لم يتم إنشاء الملف \"${title}.drawio\": ${message}",
+    "toast_file_not_created": "لم يتم إنشاء الملف \"%{title}.drawio\": %{message}",
     "toast_wrong_file_format": "تنسيق ملف غير صحيح",
     "toast_no_permission": "ليس لديك إذن لعرض هذا الملف",
     "toast_cant_read_file": "تعذر قراءة هذا الملف"

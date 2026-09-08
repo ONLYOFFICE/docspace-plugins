@@ -13,7 +13,7 @@
         "create_dialog_start_value": "ໄຟລ໌ຂໍ້ຄວາມ",
         "error_no_file_ext": "ຕ້ອງລະບຸນາມສະກຸນໄຟລ໌",
         "error_not_supported": "ປລັກອິນ Codemirror ບໍ່ຮອງຮັບນາມສະກຸນໄຟລ໌ນີ້",
-        "error_not_created": "ບໍ່ໄດ້ສ້າງໄຟລ໌ \"${title}.md\": ${message}"
+        "error_not_created": "ບໍ່ໄດ້ສ້າງໄຟລ໌ \"%{title}.md\": %{message}"
     },
     "settings": {
         "toast_data_is_saved": "ບັນທຶກຂໍ້ມູນແລ້ວ",

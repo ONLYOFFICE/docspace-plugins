@@ -13,7 +13,7 @@
         "create_dialog_start_value": "Tệp văn bản",
         "error_no_file_ext": "Phải cung cấp phần mở rộng của tệp",
         "error_not_supported": "Tiện ích Codemirror không hỗ trợ phần mở rộng tệp này",
-        "error_not_created": "Chưa tạo được tệp \"${title}.md\": ${message}"
+        "error_not_created": "Chưa tạo được tệp \"%{title}.md\": %{message}"
     },
     "settings": {
         "toast_data_is_saved": "Đã lưu dữ liệu",

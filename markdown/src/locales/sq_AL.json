@@ -6,7 +6,7 @@
     "main_button": {
         "markdown": "Markdown",
         "dialog_create_markdown": "Krijo Markdown",
-        "toast_file_not_created": "Skedari \"${title}.md\" nuk u krijua: ${message}"
+        "toast_file_not_created": "Skedari \"%{title}.md\" nuk u krijua: %{message}"
     },
     "dialog": {
         "toast_file_saved": "Skedari u ruajt",

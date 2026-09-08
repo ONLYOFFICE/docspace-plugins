@@ -25,7 +25,7 @@
     },
     "context_menu_open_diagram": "Avaa kaavio",
     "file_type_name": "Kaavio",
-    "toast_file_not_created": "Tiedostoa \"${title}.drawio\" ei luotu: ${message}",
+    "toast_file_not_created": "Tiedostoa \"%{title}.drawio\" ei luotu: %{message}",
     "toast_wrong_file_format": "Virheellinen tiedostomuoto",
     "toast_no_permission": "Sinulla ei ole oikeutta tarkastella tätä tiedostoa",
     "toast_cant_read_file": "Tätä tiedostoa ei voi lukea"

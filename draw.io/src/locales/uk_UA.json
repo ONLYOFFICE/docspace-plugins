@@ -25,7 +25,7 @@
     },
     "context_menu_open_diagram": "Відкрити діаграму",
     "file_type_name": "Діаграма",
-    "toast_file_not_created": "Файл \"${title}.drawio\" не було створено: ${message}",
+    "toast_file_not_created": "Файл \"%{title}.drawio\" не було створено: %{message}",
     "toast_wrong_file_format": "Невірний формат файлу",
     "toast_no_permission": "У вас немає прав на перегляд цього файлу",
     "toast_cant_read_file": "Не вдається прочитати файл"

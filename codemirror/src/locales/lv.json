@@ -13,7 +13,7 @@
         "create_dialog_start_value": "Teksta fails",
         "error_no_file_ext": "Jānorāda faila paplašinājums",
         "error_not_supported": "Codemirror spraudnis neatbalsta šo faila paplašinājumu",
-        "error_not_created": "Fails \"${title}.md\" netika izveidots: ${message}"
+        "error_not_created": "Fails \"%{title}.md\" netika izveidots: %{message}"
     },
     "settings": {
         "toast_data_is_saved": "Dati saglabāti",

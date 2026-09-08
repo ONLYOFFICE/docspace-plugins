@@ -6,7 +6,7 @@
     "main_button": {
         "markdown": "Markdown",
         "dialog_create_markdown": "Markdown oluştur",
-        "toast_file_not_created": "\"${title}.md\" dosyası oluşturulmadı: ${message}"
+        "toast_file_not_created": "\"%{title}.md\" dosyası oluşturulmadı: %{message}"
     },
     "dialog": {
         "toast_file_saved": "Dosya kaydedildi",

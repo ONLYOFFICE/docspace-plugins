@@ -25,7 +25,7 @@
     },
     "context_menu_open_diagram": "Deschide diagrama",
     "file_type_name": "Diagramă",
-    "toast_file_not_created": "Fișierul \"${title}.drawio\" nu a fost creat: ${message}",
+    "toast_file_not_created": "Fișierul \"%{title}.drawio\" nu a fost creat: %{message}",
     "toast_wrong_file_format": "Format de fișier incorect",
     "toast_no_permission": "Nu aveți permisiunea de a vizualiza acest fișier",
     "toast_cant_read_file": "Acest fișier nu poate fi citit"

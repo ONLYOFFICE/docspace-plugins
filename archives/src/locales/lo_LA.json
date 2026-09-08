@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "ວາງໄວ້ໃນໂຟນເດີໃໝ່",
         "button_cancel": "ຍົກເລີກ",
         "viewer_loading": "ກຳລັງໂຫຼດ...",
-        "viewer_error": "ຂໍ້ຜິດພາດ: ${error}"
+        "viewer_error": "ຂໍ້ຜິດພາດ: %{error}"
     },
     "default_zip_title": "ໄຟລ໌ບີບອັດໃໝ່",
     "default_folder_title": "ໂຟນເດີໃໝ່",

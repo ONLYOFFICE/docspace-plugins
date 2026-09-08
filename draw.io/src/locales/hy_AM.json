@@ -25,7 +25,7 @@
     },
     "context_menu_open_diagram": "Բացել դիագրամը",
     "file_type_name": "Դիագրամ",
-    "toast_file_not_created": "\"${title}.drawio\" ֆայլը չստեղծվեց՝ ${message}",
+    "toast_file_not_created": "\"%{title}.drawio\" ֆայլը չստեղծվեց՝ %{message}",
     "toast_wrong_file_format": "Ֆայլի սխալ ձևաչափ",
     "toast_no_permission": "Դուք չունեք այս ֆայլը դիտելու թույլտվություն",
     "toast_cant_read_file": "Հնարավոր չէ կարդալ այս ֆայլը"

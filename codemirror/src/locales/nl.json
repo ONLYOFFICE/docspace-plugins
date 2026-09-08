@@ -13,7 +13,7 @@
         "create_dialog_start_value": "Tekstbestand",
         "error_no_file_ext": "Er moet een bestandsextensie worden opgegeven",
         "error_not_supported": "Bestandsextensie wordt niet ondersteund door de Codemirror-plug-in",
-        "error_not_created": "Bestand \"${title}.md\" is niet gemaakt: ${message}"
+        "error_not_created": "Bestand \"%{title}.md\" is niet gemaakt: %{message}"
     },
     "settings": {
         "toast_data_is_saved": "Gegevens opgeslagen",

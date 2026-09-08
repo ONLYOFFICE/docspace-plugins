@@ -13,7 +13,7 @@
         "create_dialog_start_value": "Plik tekstowy",
         "error_no_file_ext": "Należy podać rozszerzenie pliku",
         "error_not_supported": "Rozszerzenie pliku nie jest obsługiwane przez wtyczkę Codemirror",
-        "error_not_created": "Plik \"${title}.md\" nie został utworzony: ${message}"
+        "error_not_created": "Plik \"%{title}.md\" nie został utworzony: %{message}"
     },
     "settings": {
         "toast_data_is_saved": "Dane zostały zapisane",

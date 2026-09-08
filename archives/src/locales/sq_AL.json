@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Vendos në një dosje të re",
         "button_cancel": "Anulo",
         "viewer_loading": "Duke u ngarkuar...",
-        "viewer_error": "Gabim: ${error}"
+        "viewer_error": "Gabim: %{error}"
     },
     "default_zip_title": "Arkiv i ri",
     "default_folder_title": "Dosje e re",

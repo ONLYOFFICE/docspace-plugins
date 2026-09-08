@@ -13,7 +13,7 @@
         "create_dialog_start_value": "Տեքստային ֆայլ",
         "error_no_file_ext": "Անհրաժեշտ է նշել ֆայլի ընդլայնումը",
         "error_not_supported": "Ֆայլի ընդլայնումը չի աջակցվում Codemirror պլագինի կողմից",
-        "error_not_created": "\"${title}.md\" ֆայլը չստեղծվեց՝ ${message}"
+        "error_not_created": "\"%{title}.md\" ֆայլը չստեղծվեց՝ %{message}"
     },
     "settings": {
         "toast_data_is_saved": "Տվյալները պահպանվեցին",

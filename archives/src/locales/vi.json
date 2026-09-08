@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Đặt vào thư mục mới",
         "button_cancel": "Hủy",
         "viewer_loading": "Đang tải...",
-        "viewer_error": "Lỗi: ${error}"
+        "viewer_error": "Lỗi: %{error}"
     },
     "default_zip_title": "Kho lưu trữ mới",
     "default_folder_title": "Thư mục mới",

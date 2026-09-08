@@ -13,7 +13,7 @@
         "create_dialog_start_value": "Tekstitiedosto",
         "error_no_file_ext": "Tiedostotunniste on annettava",
         "error_not_supported": "Codemirror-laajennus ei tue tätä tiedostotunnistetta",
-        "error_not_created": "Tiedostoa \"${title}.md\" ei luotu: ${message}"
+        "error_not_created": "Tiedostoa \"%{title}.md\" ei luotu: %{message}"
     },
     "settings": {
         "toast_data_is_saved": "Tiedot tallennettu",

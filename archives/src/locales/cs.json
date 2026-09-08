@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Umístit do nové složky",
         "button_cancel": "Zrušit",
         "viewer_loading": "Načítání...",
-        "viewer_error": "Chyba: ${error}"
+        "viewer_error": "Chyba: %{error}"
     },
     "default_zip_title": "Nový archiv",
     "default_folder_title": "Nová složka",

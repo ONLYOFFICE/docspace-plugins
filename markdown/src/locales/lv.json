@@ -6,7 +6,7 @@
     "main_button": {
         "markdown": "Markdown",
         "dialog_create_markdown": "Izveidot Markdown",
-        "toast_file_not_created": "Fails \"${title}.md\" netika izveidots: ${message}"
+        "toast_file_not_created": "Fails \"%{title}.md\" netika izveidots: %{message}"
     },
     "dialog": {
         "toast_file_saved": "Fails saglabāts",
