@@ -16,13 +16,38 @@
 
 import { colors } from "../properties.json";
 
+const stylesId = "archives-styles";
+const fontId = "archives-font";
+
 export function addStyles(iframe: HTMLIFrameElement, dark: boolean) {
-  iframe.contentWindow!.document.head.innerHTML += `
-    <style>
+  const doc = iframe.contentWindow!.document;
+
+  let styles = doc.getElementById(stylesId) as HTMLStyleElement | null;
+
+  if (!styles) {
+    styles = doc.createElement("style");
+    styles.id = stylesId;
+    doc.head.appendChild(styles);
+  }
+
+  styles.textContent = `
+    html {
+        color-scheme: ${dark ? "dark" : "light"};
+    }
     body {
         margin: 0;
         padding: 0;
         height: 99%;
+        background-color: ${dark ? colors.dark_background : colors.background};
+        color: ${dark ? colors.dark_contrastText : colors.contrastText};
+        font-family: "Open Sans", sans-serif;
+    }
+    .viewer-message {
+        padding: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: "Open Sans", sans-serif;
+        color: ${dark ? colors.dark_text : colors.text};
     }
     #viewer {
         height: 100%;
@@ -321,11 +346,13 @@ export function addStyles(iframe: HTMLIFrameElement, dark: boolean) {
         border: none !important;
         margin-right: 8px;
     }
-    </style>
   `;
 
-  const font = iframe.contentWindow!.document.createElement("link");
-  font.rel = "stylesheet";
-  font.href = "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap";
-  iframe.contentWindow!.document.head.appendChild(font);
+  if (!doc.getElementById(fontId)) {
+    const font = doc.createElement("link");
+    font.id = fontId;
+    font.rel = "stylesheet";
+    font.href = "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap";
+    doc.head.appendChild(font);
+  }
 }

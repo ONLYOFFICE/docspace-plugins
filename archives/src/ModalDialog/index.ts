@@ -36,7 +36,7 @@ export const frameProps: IFrame = {
 };
 
 const iframeBox: IBox = {
-  widthProp: "800px",
+  widthProp: "min(800px, 100vw)",
   heightProp: "60vh",
   children: [
     {
