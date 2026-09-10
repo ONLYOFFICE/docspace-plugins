@@ -1,0 +1,13 @@
+/* Every class here is hashed with the manifest name by vite.config.ts, so nothing
+   below can reach the portal's own markup. Only what inline styles cannot express
+   lives here; sizing and layout are inline on the elements themselves. */
+
+/* The kit defines --accent-main per component as var(--color-scheme-main-accent, #4781d1);
+   the same chain here follows a re-branded accent and still resolves where neither is set. */
+.text a {
+  color: var(--accent-main, var(--color-scheme-main-accent, #4781d1));
+}
+
+.chip:hover {
+  border-color: var(--accent-main, var(--color-scheme-main-accent, #4781d1));
+}
