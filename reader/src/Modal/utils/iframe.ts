@@ -1,17 +1,11 @@
 import { Components } from "@onlyoffice/docspace-plugin-sdk";
 
 export function findIframe(name: string): HTMLIFrameElement | null {
-  return (
-    (window.parent?.document?.getElementsByName(
-      name,
-    )[0] as HTMLIFrameElement) ??
-    (document.getElementsByName(name)[0] as HTMLIFrameElement) ??
-    null
-  );
+  return (document.getElementsByName(name)[0] as HTMLIFrameElement) ?? null;
 }
 
 export function getModalHeight(): string {
-  const width = window.parent?.innerWidth ?? window.innerWidth ?? 1024;
+  const width = window.innerWidth ?? 1024;
   if (width <= 768) {
     return "75vh";
   }

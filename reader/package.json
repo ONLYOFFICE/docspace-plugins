@@ -49,26 +49,25 @@
   "logo": "48x48.png",
   "main": "index.ts",
   "private": true,
+  "runtime": "module",
   "scopes": [
     "ContextMenu",
     "File"
   ],
   "scripts": {
-    "build": "webpack && npx build-docspace-plugin",
+    "build": "vite build && npx build-onlyoffice-plugin",
     "format": "npx prettier --write ."
   },
   "devDependencies": {
     "@types/jszip": "^3.4.1",
-    "copy-webpack-plugin": "^14.0.0",
+    "@vitejs/plugin-react": "^6.0.0",
     "prettier": "2.8.6",
-    "ts-loader": "^9.6.2",
-    "typescript": "^6.0.3",
-    "webpack": "^5.108.3",
-    "webpack-cli": "^7.1.0"
+    "typescript": "^5.6.0",
+    "vite": "^8.0.0"
   },
   "dependencies": {
     "@lingo-reader/fb2-parser": "^0.4.5",
-    "@onlyoffice/docspace-plugin-sdk": "^2.1.0",
+    "@onlyoffice/docspace-plugin-sdk": "file:../onlyoffice-docspace-plugin-sdk-3.0.0.tgz",
     "i18n-js": "^4.5.1",
     "jszip": "^3.10.1"
   }
