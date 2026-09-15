@@ -116,12 +116,4 @@ const plugin = new ConvertFilePlugin();
 
 plugin.addContextMenuItem(convertFileItem());
 
-declare global {
-  interface Window {
-    Plugins: any;
-  }
-}
-
-window.Plugins.MarkdownConverter = plugin || {};
-
 export default plugin;

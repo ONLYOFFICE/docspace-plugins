@@ -22,6 +22,7 @@ import {
 import TurndownService from "turndown";
 import { tables } from "turndown-plugin-gfm";
 import mammoth from "mammoth";
+import * as nodes from "mammoth/lib/xml/nodes";
 import { i18n } from "./locales";
 
 import plugin from ".";
@@ -32,8 +33,6 @@ import plugin from ".";
 // at the source is the only reliable fix for the issue
 const patchMammothNodes = (): void => {
   try {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const nodes = require("mammoth/lib/xml/nodes");
     const collectText = (children: any[]): string =>
       children
         .map((child: any) => {
