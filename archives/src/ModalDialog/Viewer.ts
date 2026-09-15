@@ -30,7 +30,7 @@ const current = {
 };
 
 export function drawInIframe(id: string, callback: Function, ...args: any) {
-  const iframe = window.parent.document.getElementById(id) as HTMLIFrameElement;
+  const iframe = window.document.getElementById(id) as HTMLIFrameElement;
 
   if (!iframe) {
     setTimeout(() => drawInIframe(id, callback, ...args), 200);

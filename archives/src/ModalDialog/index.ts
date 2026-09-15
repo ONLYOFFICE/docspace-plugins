@@ -104,7 +104,7 @@ export const modalDialogProps: IModalDialog = {
   onLoad: async () => {
     return {
       newDialogHeader: i18n.t("dialog.header") || "",
-      newDialogBody: modalDialogProps.dialogBody,
+      newDialogBody: modalDialogProps.dialogBody!,
       newDialogFooter: modalDialogProps.dialogFooter,
     };
   },

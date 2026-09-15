@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 
-import { Actions, SelectorType, TFilesSelector } from "@onlyoffice/docspace-plugin-sdk";
-import { FilterType } from "@onlyoffice/docspace-plugin-sdk/dist/enums/Utility";
+import { Actions, FilterType, SelectorType, TFilesSelector } from "@onlyoffice/docspace-plugin-sdk";
 import { i18n } from "../locales";
 
 export const selectorProps: () => {

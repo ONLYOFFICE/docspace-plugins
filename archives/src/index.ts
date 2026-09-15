@@ -242,7 +242,7 @@ class Archives
     if (this._pmListenerAdded) return;
     this._pmListenerAdded = true;
 
-    window.parent.addEventListener("message", async (event) => {
+    window.addEventListener("message", async (event) => {
       try {
         const data = typeof event.data === "string" ? JSON.parse(event.data) : event.data;
 
@@ -269,14 +269,6 @@ class Archives
 
 const plugin = new Archives();
 
-declare global {
-  interface Window {
-    Plugins: any;
-  }
-}
-
 plugin.registerItems();
-
-window.Plugins.ZipArchives = plugin || {};
 
 export default plugin;
