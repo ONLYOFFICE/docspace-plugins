@@ -137,12 +137,4 @@ const plugin = new ConvertFilePlugin();
 plugin.addContextMenuItem(convertFileItem());
 plugin.setAdminPluginSettings(adminSettings);
 
-declare global {
-  interface Window {
-    Plugins: any;
-  }
-}
-
-window.Plugins.PDFConverter = plugin || {};
-
 export default plugin;
