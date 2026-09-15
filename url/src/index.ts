@@ -218,16 +218,8 @@ class UrlP
 
 const plugin = new UrlP();
 
-declare global {
-  interface Window {
-    Plugins: any;
-  }
-}
-
 plugin.addFileItem(urlFileItem());
 plugin.addContextMenuItem(urlContextMenuItem());
 plugin.addMainButtonItem(urlMainButtonItem());
-
-window.Plugins.Url = plugin || {};
 
 export default plugin;
