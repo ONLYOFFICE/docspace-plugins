@@ -106,7 +106,7 @@ export const imageEditorModalDialogProps: IModalDialog = {
   onLoad: async () => {
     return {
       newDialogHeader: imageEditorModalDialogProps.dialogHeader || "",
-      newDialogBody: imageEditorModalDialogProps.dialogBody,
+      newDialogBody: imageEditorModalDialogProps.dialogBody!,
       newDialogFooter: imageEditorModalDialogProps.dialogFooter,
     };
   },

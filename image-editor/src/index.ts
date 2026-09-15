@@ -214,14 +214,6 @@ class Imageeditor
 
 const plugin = new Imageeditor();
 
-declare global {
-  interface Window {
-    Plugins: any;
-  }
-}
-
 plugin.addContextMenuItem(contextMenuItem());
-
-window.Plugins.ImageEditor = plugin || {};
 
 export default plugin;
