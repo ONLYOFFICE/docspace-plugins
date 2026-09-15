@@ -16,16 +16,18 @@
 
 import {
   Devices,
-  File,
   FilesType,
-  IContextMenuItem,
   FilesSecurity,
+} from "@onlyoffice/docspace-plugin-sdk";
+import type {
+  File as TFile,
+  IContextMenuItem,
 } from "@onlyoffice/docspace-plugin-sdk";
 import drawIo from "../Drawio";
 import { i18n } from "../locales";
 
 const onClick = async (id: number) => {
-  const message = await drawIo.editDiagram({ id } as File);
+  const message = await drawIo.editDiagram({ id } as TFile);
 
   return message;
 };

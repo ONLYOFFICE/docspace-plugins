@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-import {
-  Actions,
-  File,
+import { Actions, ToastType } from "@onlyoffice/docspace-plugin-sdk";
+import type {
+  File as TFile,
   IMessage,
   IToast,
-  ToastType,
 } from "@onlyoffice/docspace-plugin-sdk";
 import plugin from ".";
 import { drawIoModalDialogProps, frameProps } from "./DrawIO/Dialog";
@@ -284,7 +283,7 @@ class DrawIo {
     return message;
   };
 
-  editDiagram = async (propFile: File) => {
+  editDiagram = async (propFile: TFile) => {
     if (!this.apiURL) this.createAPIUrl();
 
     try {

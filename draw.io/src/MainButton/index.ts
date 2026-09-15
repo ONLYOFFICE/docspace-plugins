@@ -91,25 +91,32 @@ const mainButtonItem: () => IMainButtonItem = () => {
           extension: ".drawio",
           onSave: async (e: any, value: string) => {
             if (createLock) return {};
-            else createLock = true;
-            const id = await drawIo.createNewFile(value);
-            if (typeof id === "object") {
-              const m: IMessage = {
-                actions: [Actions.closeModal, Actions.showToast],
-                toastProps: [
-                  {
-                    type: ToastType.error,
-                    title: i18n.t("toast_file_not_created", { title: value, message: id.message }),
-                  },
-                ],
-              };
+            createLock = true;
 
+            try {
+              const id = await drawIo.createNewFile(value);
+
+              if (typeof id === "object") {
+                const m: IMessage = {
+                  actions: [Actions.closeModal, Actions.showToast],
+                  toastProps: [
+                    {
+                      type: ToastType.error,
+                      title: i18n.t("toast_file_not_created", {
+                        title: value,
+                        message: id.message,
+                      }),
+                    },
+                  ],
+                };
+
+                return m;
+              }
+
+              return await drawIo.editDiagram(id);
+            } finally {
               createLock = false;
-              return m;
             }
-
-            createLock = false;
-            return await drawIo.editDiagram(id);
           },
           onCancel: (e: any) => {
             drawIo.setCurrentFolderId(null);

@@ -8,6 +8,9 @@
 ### Fixed
 - editor messages are now checked against the origin of the configured address
 
+### Changed
+- migrated to ONLYOFFICE Apps Plugins SDK 3.0.0: built with Vite and loaded as an ES module, requires ONLYOFFICE Apps 4.0.0 or later
+
 ## 1.3.0
 ### Added
 - add opened file to recent files

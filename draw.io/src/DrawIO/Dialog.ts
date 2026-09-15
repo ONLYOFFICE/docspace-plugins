@@ -58,7 +58,7 @@ export const drawIoModalDialogProps: IModalDialog = {
   onLoad: async () => {
     return {
       newDialogHeader: drawIoModalDialogProps.dialogHeader || "",
-      newDialogBody: drawIoModalDialogProps.dialogBody,
+      newDialogBody: drawIoModalDialogProps.dialogBody!,
     };
   },
   autoMaxHeight: true,
