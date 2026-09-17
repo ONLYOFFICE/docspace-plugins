@@ -105,5 +105,6 @@ export const unsavedModalDialog: IModalDialog = {
             newDialogFooter: unsavedModalDialog.dialogFooter
         };
     },
-    onClose: () => {}
+    onClose: () => {},
+    autoMaxWidth: true
 }
