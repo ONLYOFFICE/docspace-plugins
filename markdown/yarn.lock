@@ -15,10 +15,12 @@
   resolved "https://registry.yarnpkg.com/@inquirer/figures/-/figures-1.0.15.tgz#dbb49ed80df11df74268023b496ac5d9acd22b3a"
   integrity sha512-t2IEY+unGHOzAaVM5Xx6DEWKeXlDDcNPeDyUpsRc6CUhBfU3VQOEl+Vssh7VNp1dR8MdUJBWhuObjXCsVpjN5g==
 
-"@onlyoffice/docspace-plugin-sdk@file:../onlyoffice-docspace-plugin-sdk-3.0.0.tgz":
+"@onlyoffice/docspace-plugin-sdk@^3.0.0":
   version "3.0.0"
-  resolved "file:../onlyoffice-docspace-plugin-sdk-3.0.0.tgz#405ea76ebb7b8abffc577ff1c8c32b8100950f25"
+  resolved "https://registry.yarnpkg.com/@onlyoffice/docspace-plugin-sdk/-/docspace-plugin-sdk-3.0.0.tgz#04f9d00ab433228e21ccd6e87d4ffbee4dafcd85"
+  integrity sha512-Xry7qsgq3A04UslXmNDJoIv23k2Vqn/dniRB+danh4H4XpYNP0bI8gqWLXGooFkuDnOxQ41KuZ/J1nEGw5PCRg==
   dependencies:
+    "@types/react" "^19.0.0"
     inquirer "^9.1.0"
     jszip "^3.10.1"
 
@@ -124,6 +126,13 @@
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/@types/mdurl/-/mdurl-1.0.5.tgz#3e0d2db570e9fb6ccb2dc8fde0be1d79ac810d39"
   integrity sha512-6L6VymKTzYSrEf4Nev4Xa1LCHKrlTlYCBMTlQKFuddo1CvQcE52I0mwfOJayueUC7MJuXOeHTcIU683lzd0cUA==
+
+"@types/react@^19.0.0":
+  version "19.3.0"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-19.3.0.tgz#3b3ce8d8c1627fb5ccd4dadd57ef445c5a153b77"
+  integrity sha512-N0rFCuH9YoxG9/m61l9MfpJKfmLOVU0em7ipIz6TRgSSkvReLB9vL85GB+yr8Bs5leqpvg96JSwF4ZS1s4viQg==
+  dependencies:
+    csstype "^3.2.2"
 
 "@vitejs/plugin-react@^6.0.0":
   version "6.1.1"
@@ -234,6 +243,11 @@ core-util-is@~1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.3.tgz#a6042d3634c2b27e9328f837b965fac83808db85"
   integrity sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==
+
+csstype@^3.2.2:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.2.3.tgz#ec48c0f3e993e50648c86da559e2610995cf989a"
+  integrity sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==
 
 defaults@^1.0.3:
   version "1.0.4"

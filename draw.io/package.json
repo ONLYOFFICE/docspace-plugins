@@ -61,7 +61,7 @@
 		"File"
 	],
 	"scripts": {
-		"build": "vite build && npx build-onlyoffice-plugin",
+		"build": "vite build && npx build-docspace-plugin",
 		"format": "npx prettier --write ."
 	},
 	"devDependencies": {
@@ -74,7 +74,7 @@
 		"braces": "3.0.3"
 	},
 	"dependencies": {
-		"@onlyoffice/docspace-plugin-sdk": "file:../onlyoffice-docspace-plugin-sdk-3.0.0.tgz",
+		"@onlyoffice/docspace-plugin-sdk": "^3.0.0",
 		"i18n-js": "^4.5.1"
 	}
 }
