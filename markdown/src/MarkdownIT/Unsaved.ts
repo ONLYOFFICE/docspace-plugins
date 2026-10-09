@@ -106,4 +106,5 @@ export const unsavedModalDialog: IModalDialog = {
     };
   },
   onClose: () => {},
+  autoMaxWidth: true,
 };
