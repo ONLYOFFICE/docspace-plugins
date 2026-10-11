@@ -1,0 +1,55 @@
+name: Create Tag
+
+on:
+  push:
+    branches: [master]
+    paths-ignore:
+      - '**/README.md'
+      - '**/LICENSE'
+      - '.github/**'
+
+permissions:
+  contents: write
+
+jobs:
+  create-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Create Tags
+        run: |
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+
+          TAGS=()
+          FAILED=0
+          for d in $(ls -d */); do
+            PLUGIN=$(basename ${d})
+            [[ -f ${PLUGIN}/package.json ]] || continue
+
+            VERSION=$(jq -r '.version' ${PLUGIN}/package.json)
+            TAG="${PLUGIN}/${VERSION}"
+
+            if git ls-remote --exit-code --tags origin "refs/tags/${TAG}" > /dev/null; then
+              echo "${TAG} already exists"
+              continue
+            fi
+
+            if ! grep -qx "## ${VERSION}" ${PLUGIN}/CHANGELOG.md; then
+              echo "::error::${PLUGIN}: no '## ${VERSION}' section in CHANGELOG.md"
+              FAILED=1
+              continue
+            fi
+
+            git tag -a "${TAG}" -m "${PLUGIN} ${VERSION}"
+            TAGS+=("${TAG}")
+            echo "created ${TAG}"
+          done
+
+          if [[ ${#TAGS[@]} -gt 0 ]]; then
+            git push origin "${TAGS[@]}"
+          fi
+
+          exit ${FAILED}
