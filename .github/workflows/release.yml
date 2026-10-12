@@ -1,0 +1,75 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - '*/*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Get Info
+        id: info
+        run: |
+          PLUGIN="${GITHUB_REF_NAME%/*}"
+          VERSION="${GITHUB_REF_NAME##*/}"
+
+          if [[ ! -f ${PLUGIN}/package.json ]]; then
+            echo "::error::plugin '${PLUGIN}' not found"
+            exit 1
+          fi
+
+          PACKAGE_VERSION=$(jq -r '.version' ${PLUGIN}/package.json)
+          if [[ "${PACKAGE_VERSION}" != "${VERSION}" ]]; then
+            echo "::error::tag version ${VERSION} does not match ${PLUGIN}/package.json version ${PACKAGE_VERSION}"
+            exit 1
+          fi
+
+          echo "plugin=${PLUGIN}" >> $GITHUB_OUTPUT
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+
+      - name: Generate Changelog
+        env:
+          PLUGIN: ${{ steps.info.outputs.plugin }}
+          VERSION: ${{ steps.info.outputs.version }}
+        run: |
+          awk -v v="${VERSION}" '/^## /{ if (p) exit; p = ($2 == v); next } p' ${PLUGIN}/CHANGELOG.md > RELEASE.md
+          if [[ ! -s RELEASE.md ]]; then
+            echo "::error::${PLUGIN}: no '## ${VERSION}' section in CHANGELOG.md"
+            exit 1
+          fi
+          cat RELEASE.md
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build plugin
+        working-directory: ${{ steps.info.outputs.plugin }}
+        run: |
+          yarn install --frozen-lockfile
+          yarn run build
+
+      - name: Create Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PLUGIN: ${{ steps.info.outputs.plugin }}
+          VERSION: ${{ steps.info.outputs.version }}
+        run: |
+          ASSET="${PLUGIN}-${VERSION}.zip"
+          cp ${PLUGIN}/dist/plugin.zip "${ASSET}"
+
+          if gh release view "${GITHUB_REF_NAME}" > /dev/null 2>&1; then
+            gh release edit "${GITHUB_REF_NAME}" --title "${PLUGIN} ${VERSION}" --notes-file RELEASE.md
+            gh release upload "${GITHUB_REF_NAME}" "${ASSET}" --clobber
+          else
+            gh release create "${GITHUB_REF_NAME}" "${ASSET}" --verify-tag --title "${PLUGIN} ${VERSION}" --notes-file RELEASE.md
+          fi
