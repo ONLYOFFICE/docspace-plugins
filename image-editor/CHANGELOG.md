@@ -6,6 +6,7 @@
 
 ### Changed
 - renamed DocSpace to ONLYOFFICE Apps in user-facing text
+- migrated to ONLYOFFICE Apps Plugins SDK 3.0.0: built with Vite and loaded as an ES module, requires ONLYOFFICE Apps 4.0.0 or later
 
 ## 1.1.0
 ### Added

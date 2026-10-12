@@ -260,8 +260,8 @@ export const editorBox: IBox = {
 }
 
 export const editorBody: IBox = {
-  widthProp: window.parent.innerWidth * properties.modal_width + "px",
-  heightProp: window.parent.innerHeight * properties.modal_height + "px",
+  widthProp: window.innerWidth * properties.modal_width + "px",
+  heightProp: window.innerHeight * properties.modal_height + "px",
   children: [
     {
       component: Components.box,
@@ -281,8 +281,8 @@ export const editorBody: IBox = {
 }
 
 export const viewerBody: IBox = {
-  widthProp: window.parent.innerWidth * properties.modal_width + "px",
-  heightProp: window.parent.innerHeight * properties.modal_height + "px",
+  widthProp: window.innerWidth * properties.modal_width + "px",
+  heightProp: window.innerHeight * properties.modal_height + "px",
   children: [
     {
       component: Components.box,
@@ -306,7 +306,7 @@ export const markdownitModalDialogProps: IModalDialog = {
   onLoad: async () => {
     return {
       newDialogHeader: markdownitModalDialogProps.dialogHeader || "",
-      newDialogBody: markdownitModalDialogProps.dialogBody,
+      newDialogBody: markdownitModalDialogProps.dialogBody!,
     };
   },
   autoMaxHeight: true,

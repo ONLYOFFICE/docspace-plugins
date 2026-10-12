@@ -15,7 +15,12 @@
  */
 
 import plugin from ".";
-import { Actions, IMessage, IToast, ToastType, File } from "@onlyoffice/docspace-plugin-sdk";
+import { Actions, ToastType } from "@onlyoffice/docspace-plugin-sdk";
+import type {
+  File as TFile,
+  IMessage,
+  IToast,
+} from "@onlyoffice/docspace-plugin-sdk";
 import { i18n } from "./locales";
 
 class UrlPlugin {
@@ -148,7 +153,7 @@ class UrlPlugin {
     }
   };
 
-  getFile = async (id: File | any): Promise<string | { info: File; data: string }> => {
+  getFile = async (id: TFile | any): Promise<string | { info: TFile; data: string }> => {
     if (!this.apiURL) this.createAPIUrl();
 
     let file = id;
@@ -173,7 +178,7 @@ class UrlPlugin {
     return { info: file, data: dataText };
   };
 
-  openUrl = async (id: File | any) => {
+  openUrl = async (id: TFile | any) => {
     const file = await this.getFile(id);
 
     if (typeof file === "string") {
