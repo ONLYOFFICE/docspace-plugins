@@ -28,15 +28,17 @@ import {
   BoxGroup,
 } from "@onlyoffice/docspace-plugin-sdk";
 
-import drawIo from "../../Drawio";
+import drawIo, { DEFAULT_DRAWIO_URL, isValidDrawIoUrl } from "../../Drawio";
 
 import { langComboBox } from "./Lang";
 import { offToggleButtonProps } from "./Off";
 import { libToggleButtonProps } from "./Lib";
 import { adminButtonProps } from "./Button";
+import { i18n } from "../../locales";
 
 const onChange = (value: string) => {
   urlInput.value = value;
+  urlInput.hasError = !isValidDrawIoUrl(value);
 
   const message: IMessage = {
     actions: [Actions.updateProps, Actions.updateContext],
@@ -62,10 +64,12 @@ const onChange = (value: string) => {
 
 export const urlInput: IInput = {
   value: drawIo.adminSettings.url,
+  placeholder: DEFAULT_DRAWIO_URL,
   onChange,
   scale: true,
   size: InputSize.base,
   type: InputType.text,
+  hasError: false,
 };
 
 const urlInputComponent: InputGroup = {
@@ -74,16 +78,16 @@ const urlInputComponent: InputGroup = {
 };
 
 const inputBox: IBox = {
-  marginProp: "0 0 24px",
+  marginProp: "0 0 4px",
   widthProp: "100%",
   children: [urlInputComponent],
 };
 
-const urlText: IText = {
-  text: "draw.io",
+export const urlText: IText = {
+  text: i18n.t("settings.text_url"),
   fontWeight: 600,
-  fontSize: "13px",
-  lineHeight: "20px",
+  fontSize: "16px",
+  lineHeight: "22px",
   noSelect: true,
 };
 
@@ -97,6 +101,25 @@ const urlTextBox: IBox = {
   children: [urlTextComponent],
 };
 
+export const urlDescriptionText: IText = {
+  text: i18n.t("settings.text_url_description"),
+  color: "#A3A9AE",
+  fontSize: "12px",
+  fontWeight: 400,
+  lineHeight: "16px",
+  noSelect: true,
+};
+
+const urlDescriptionComponent: TextGroup = {
+  component: Components.text,
+  props: urlDescriptionText,
+};
+
+const urlDescriptionBox: IBox = {
+  marginProp: "0 0 24px",
+  children: [urlDescriptionComponent],
+};
+
 export const urlGroup: BoxGroup = {
   component: Components.box,
   props: {
@@ -105,6 +128,7 @@ export const urlGroup: BoxGroup = {
     children: [
       { component: Components.box, props: urlTextBox },
       { component: Components.box, props: inputBox },
+      { component: Components.box, props: urlDescriptionBox },
     ],
   },
 };

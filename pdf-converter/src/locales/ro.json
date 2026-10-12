@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "Convertește fișierul în PDF",
+        "button_convert_file": "Convertește fișierul",
+        "button_cancel": "Anulează",
+        "toast_wrong_api_token": "Token API incorect",
+        "text_converted_file_name": "Numele fișierului convertit"
+    },
+    "settings": {
+        "description": "Pentru a genera secretul API, vizitați https://www.convertapi.com/ \n\n După activarea tokenului API, pluginul devine disponibil pentru toți utilizatorii ONLYOFFICE Apps curent.",
+        "toast_token_is_saved": "Tokenul a fost salvat",
+        "button_save": "Salvează",
+        "text_api_token": "Token API"
+    },
+    "context_menu_convert_to_pdf": "Convertește în PDF",
+    "toast_file_created": "Fișierul %{name} a fost creat",
+    "toast_file_not_created": "Fișierul %{name} nu a fost creat: %{message}",
+    "toast_wrong_api_token": "Token API incorect"
+}

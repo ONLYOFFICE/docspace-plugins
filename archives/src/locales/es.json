@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Colocar en una nueva carpeta",
         "button_cancel": "Cancelar",
         "viewer_loading": "Cargando...",
-        "viewer_error": "Error: ${error}"
+        "viewer_error": "Error: %{error}"
     },
     "default_zip_title": "Nuevo archivo",
     "default_folder_title": "Nueva carpeta",

@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "Rediģēt URL"
+    },
+    "main_button": {
+        "new_url": "Jauns URL"
+    },
+    "dialog": {
+        "header_create": "Izveidot jaunu URL",
+        "header_edit": "Rediģēt URL",
+        "label_url": "URL:",
+        "label_title": "Nosaukums:",
+        "button_create": "Izveidot",
+        "button_save": "Saglabāt",
+        "button_cancel": "Atcelt",
+        "error_invalid_url": "Nederīga URL adrese",
+        "error_url_required": "URL adrese ir obligāta",
+        "link_to": "Saite uz",
+        "new_link": "Jauna saite",
+        "toast_url_created": "URL veiksmīgi izveidots",
+        "toast_url_not_created": "Neizdevās izveidot URL",
+        "toast_file_saved": "Fails veiksmīgi saglabāts",
+        "toast_file_not_saved": "Neizdevās saglabāt failu"
+    },
+    "file_type_name": "Saite",
+    "toast_no_permissions": "Jums nav atļaujas skatīt šo failu",
+    "toast_cant_read_file": "Nevar nolasīt šo failu",
+    "toast_wrong_file": "Nepareizs vai bojāts URL fails"
+}

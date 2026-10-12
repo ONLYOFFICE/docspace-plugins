@@ -16,6 +16,8 @@
     "settings": {
         "toast_data_saved": "Данные сохранены",
         "button_save": "Сохранить",
+        "text_url": "Адрес draw.io",
+        "text_url_description": "Адрес сервиса draw.io, который используется для открытия и редактирования диаграмм. Измените его, если draw.io размещен на вашем сервере. Оставьте https://embed.diagrams.net, чтобы использовать публичный сервис.",
         "text_language": "Язык",
         "text_libraries": "Библиотеки",
         "text_offline_description": "В \"офлайн-режиме\" все удаленные операции и функции отключаются для обеспечения безопасности",
@@ -23,7 +25,7 @@
     },
     "context_menu_open_diagram": "Открыть диаграмму",
     "file_type_name": "Диаграмма",
-    "toast_file_not_created": "Файл \"${title}.drawio\" не был создан: ${message}",
+    "toast_file_not_created": "Файл \"%{title}.drawio\" не был создан: %{message}",
     "toast_wrong_file_format": "Неверный формат файла",
     "toast_no_permission": "У вас нет прав для просмотра этого файла",
     "toast_cant_read_file": "Не удается прочитать файл"

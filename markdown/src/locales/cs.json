@@ -1,0 +1,34 @@
+{
+    "context_menu_item": {
+        "edit_markdown": "Upravit Markdown",
+        "preview_markdown": "Náhled Markdown"
+    },
+    "main_button": {
+        "markdown": "Markdown",
+        "dialog_create_markdown": "Vytvořit Markdown",
+        "toast_file_not_created": "Soubor \"%{title}.md\" nebyl vytvořen: %{message}"
+    },
+    "dialog": {
+        "toast_file_saved": "Soubor byl uložen",
+        "toast_file_not_saved": "Soubor nebyl uložen",
+        "button_save_and_close": "Uložit a zavřít",
+        "button_save": "Uložit",
+        "text_markdown": "Markdown",
+        "button_markdown_resize": "Změnit velikost",
+        "text_preview": "Náhled",
+        "button_preview_resize": "Změnit velikost"
+    },
+    "unsaved": {
+        "text": "Opravdu chcete tento soubor zavřít bez uložení?",
+        "checkbox": "Tuto zprávu příště nezobrazovat",
+        "button_save_and_close": "Uložit a zavřít",
+        "button_close_without_saving": "Zavřít bez uložení",
+        "header": "Soubor obsahuje neuložené změny"
+    },
+    "toast_wrong_file_format": "Nesprávný formát souboru",
+    "toast_no_permissions": "Nemáte oprávnění zobrazit tento soubor",
+    "toast_cant_read_file": "Tento soubor nelze přečíst",
+    "button_close": "Zavřít",
+    "button_preview": "Náhled",
+    "button_write": "Psát"
+}

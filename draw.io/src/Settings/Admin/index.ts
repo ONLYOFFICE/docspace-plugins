@@ -18,7 +18,7 @@ import { Components, IBox, ISettings } from "@onlyoffice/docspace-plugin-sdk";
 
 import drawIo from "../../Drawio";
 
-import { urlInput } from "./Url";
+import { urlInput, urlGroup, urlText, urlDescriptionText } from "./Url";
 import { langComboBox, langGroup, options, langText } from "./Lang";
 import { offGroup, offToggleButtonProps, offDescriptionBox, offText, textProps } from "./Off";
 import { libGroup, libToggleButtonProps, libText } from "./Lib";
@@ -30,6 +30,7 @@ const parentBox: IBox = {
   flexDirection: "column",
   marginProp: "16 0 0 0",
   children: [
+    urlGroup,
     langGroup,
     offGroup,
     { component: Components.box, props: { ...offDescriptionBox } },
@@ -42,6 +43,7 @@ const adminSettings: ISettings = {
   saveButton: adminButtonComponent,
   onLoad: async () => {
     urlInput.value = drawIo.adminSettings.url;
+    urlInput.hasError = false;
     langComboBox.selectedOption = options.find(
       (o) => o.key === drawIo.adminSettings.lang
     ) || {
@@ -52,6 +54,8 @@ const adminSettings: ISettings = {
     libToggleButtonProps.isChecked = drawIo.adminSettings.lib;
 
     adminButtonProps.label = i18n.t("settings.button_save");
+    urlText.text = i18n.t("settings.text_url");
+    urlDescriptionText.text = i18n.t("settings.text_url_description");
     langText.text = i18n.t("settings.text_language");
     libText.text = i18n.t("settings.text_libraries");
     offText.text = i18n.t("settings.text_offline");

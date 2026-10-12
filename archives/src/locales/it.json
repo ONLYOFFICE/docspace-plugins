@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Inserisci in una nuova cartella",
         "button_cancel": "Annulla",
         "viewer_loading": "Caricamento...",
-        "viewer_error": "Errore: ${error}"
+        "viewer_error": "Errore: %{error}"
     },
     "default_zip_title": "Nuovo archivio",
     "default_folder_title": "Nuova cartella",

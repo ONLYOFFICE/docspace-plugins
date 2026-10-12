@@ -36,7 +36,7 @@ export const frameProps: IFrame = {
 };
 
 const iframeBox: IBox = {
-  widthProp: "800px",
+  widthProp: "min(800px, 100vw)",
   heightProp: "60vh",
   children: [
     {
@@ -104,7 +104,7 @@ export const modalDialogProps: IModalDialog = {
   onLoad: async () => {
     return {
       newDialogHeader: i18n.t("dialog.header") || "",
-      newDialogBody: modalDialogProps.dialogBody,
+      newDialogBody: modalDialogProps.dialogBody!,
       newDialogFooter: modalDialogProps.dialogFooter,
     };
   },

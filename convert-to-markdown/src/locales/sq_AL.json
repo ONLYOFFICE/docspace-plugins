@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "Nuk mund të merren informacionet e skedarit",
+        "failed_to_get_file_details": "Marrja e detajeve të skedarit dështoi",
+        "failed_to_download_file": "Shkarkimi i skedarit dështoi: ",
+        "watermark_protected": "Ky skedar është i mbrojtur me filigran. Çaktivizoni cilësimin e dhomës \"Shto filigrane te dokumentet\" dhe provoni përsëri.",
+        "empty_file": "Skedari i shkarkuar është bosh",
+        "failed_to_initiate_upload": "Nisja e ngarkimit dështoi: ",
+        "upload_failed": "Ngarkimi dështoi",
+        "invalid_upload_session": "Përgjigje e pavlefshme e sesionit të ngarkimit",
+        "file_not_created": "Skedari nuk u krijua në server",
+        "unsupported_format": "Format i pambështetur: ",
+        "conversion_failed": "Konvertimi dështoi",
+        "created": "U krijua "
+    },
+    "context_menu_convert": "Konverto në Markdown"
+}

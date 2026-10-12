@@ -102,7 +102,7 @@ export const codemirrorModalDialogProps: IModalDialog = {
   onLoad: async () => {
     return {
       newDialogHeader: codemirrorModalDialogProps.dialogHeader || "",
-      newDialogBody: codemirrorModalDialogProps.dialogBody,
+      newDialogBody: codemirrorModalDialogProps.dialogBody!,
       newDialogFooter: codemirrorModalDialogProps.dialogFooter,
     };
   },

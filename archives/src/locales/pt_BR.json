@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Colocar em uma nova pasta",
         "button_cancel": "Cancelar",
         "viewer_loading": "Carregando...",
-        "viewer_error": "Erro: ${error}"
+        "viewer_error": "Erro: %{error}"
     },
     "default_zip_title": "Novo arquivo",
     "default_folder_title": "Nova pasta",

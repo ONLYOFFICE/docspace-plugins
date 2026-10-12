@@ -63,9 +63,6 @@ class Archives {
     this.currentFileId = id;
 
     const file = await this.getFile(id);
-    if (!this.user) {
-      this.user = await this.getUser();
-    }
 
     this.currentArchiveFolderId = file.folderId;
 
@@ -75,6 +72,8 @@ class Archives {
         toastProps: [{ type: ToastType.error, title: i18n.t("toast_no_view_permission") } as IToast],
       };
     }
+
+    const dark = await this.isDarkTheme();
 
     fetch(`${this.apiURL}/files/file/${file.id}/recent`, {
       method: "POST",
@@ -97,9 +96,9 @@ class Archives {
     };
 
     drawInIframe(frameProps.id!, (iframe: HTMLIFrameElement) => {
-      loader(iframe);
+      loader(iframe, dark);
       this.getContent(file.viewUrl, () => {
-        drawInIframe(frameProps.id!, viewer, this.root, file.title, this.user.theme === "Dark", path);
+        drawInIframe(frameProps.id!, viewer, this.root, file.title, dark, path);
       });
     });
     return message;
@@ -510,6 +509,18 @@ class Archives {
     return (await (await fetch(`${this.apiURL}/files/${id ? id : "rooms"}`)).json()).response;
   };
 
+  isDarkTheme = async () => {
+    const portal = window.document;
+    const theme = portal.documentElement.getAttribute("data-theme");
+
+    if (theme === "dark" || portal.body.classList.contains("dark")) return true;
+    if (theme === "light" || portal.body.classList.contains("light")) return false;
+
+    this.user = await this.getUser();
+
+    return this.user.theme === "Dark";
+  };
+
   getUser = async () => {
     if (!this.apiURL) this.createAPIUrl();
 
@@ -522,7 +533,7 @@ class Archives {
 
   postMessage = (data: any) => {
     data.source = "archivesplugin";
-    window.parent.postMessage(data, "*");
+    window.postMessage(data, "*");
   };
 }
 
@@ -532,7 +543,7 @@ export interface FileTreeItem {
   content: Uint8Array | FileTreeItem[];
 }
 
-function decodeZipEntryName(bytes: string[] | Uint8Array | Buffer): string {
+function decodeZipEntryName(bytes: string[] | Uint8Array): string {
   const buf = bytes instanceof Uint8Array ? bytes : Uint8Array.from(bytes as any);
   try {
     return new TextDecoder("utf-8", { fatal: true }).decode(buf);

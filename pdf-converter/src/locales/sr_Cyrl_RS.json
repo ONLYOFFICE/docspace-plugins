@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "Претвори датотеку у PDF",
+        "button_convert_file": "Претвори датотеку",
+        "button_cancel": "Откажи",
+        "toast_wrong_api_token": "Погрешан API токен",
+        "text_converted_file_name": "Назив претворене датотеке"
+    },
+    "settings": {
+        "description": "Да бисте генерисали API тајну, посетите https://www.convertapi.com/ \n\n Када се API токен омогући, додатак постаје доступан свим корисницима тренутног ONLYOFFICE Apps.",
+        "toast_token_is_saved": "Токен је сачуван",
+        "button_save": "Сачувај",
+        "text_api_token": "API токен"
+    },
+    "context_menu_convert_to_pdf": "Претвори у PDF",
+    "toast_file_created": "Датотека %{name} је креирана",
+    "toast_file_not_created": "Датотека %{name} није креирана: %{message}",
+    "toast_wrong_api_token": "Погрешан API токен"
+}

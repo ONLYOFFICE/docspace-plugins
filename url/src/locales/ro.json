@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "Editează URL-ul"
+    },
+    "main_button": {
+        "new_url": "URL nou"
+    },
+    "dialog": {
+        "header_create": "Creează un URL nou",
+        "header_edit": "Editează URL-ul",
+        "label_url": "URL:",
+        "label_title": "Titlu:",
+        "button_create": "Creează",
+        "button_save": "Salvează",
+        "button_cancel": "Anulează",
+        "error_invalid_url": "Adresă URL nevalidă",
+        "error_url_required": "Adresa URL este obligatorie",
+        "link_to": "Link către",
+        "new_link": "Link nou",
+        "toast_url_created": "URL-ul a fost creat cu succes",
+        "toast_url_not_created": "Crearea URL-ului a eșuat",
+        "toast_file_saved": "Fișierul a fost salvat cu succes",
+        "toast_file_not_saved": "Salvarea fișierului a eșuat"
+    },
+    "file_type_name": "Link",
+    "toast_no_permissions": "Nu aveți permisiunea de a vizualiza acest fișier",
+    "toast_cant_read_file": "Acest fișier nu poate fi citit",
+    "toast_wrong_file": "Fișier URL incorect sau deteriorat"
+}

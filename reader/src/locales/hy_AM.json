@@ -1,0 +1,9 @@
+{
+    "context_menu": {
+        "open_in_reader": "Բացել ընթերցիչում"
+    },
+    "file_type_name": "Գիրք",
+    "errors": {
+        "unsupported_zip": "Այս ZIP արխիվը չի պարունակում աջակցվող գիրք։ ZIP-ի ներսում աջակցվող ձևաչափերն են՝ EPUB կամ FB2։"
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "아카이브 열기",
+        "group_unzip": "압축 풀기",
+        "choose_location": "위치 선택",
+        "unzip_here": "여기에 압축 풀기",
+        "group_zip": "압축하기",
+        "zip_folder": "여기에 압축",
+        "zip_selected": "선택한 항목 압축",
+        "zip_selected_item": "선택한 항목 압축"
+    },
+    "dialog": {
+        "header": "아카이브 뷰어",
+        "button_extract": "아카이브 추출",
+        "selector_header_unzip": "압축 풀 위치",
+        "selector_header_zip": "압축할 위치",
+        "selector_header_extract": "추출할 위치",
+        "selector_button_archive": "압축",
+        "selector_button_unzip": "압축 풀기",
+        "selector_button_extract": "추출",
+        "selector_checkbox_wrap": "새 폴더에 넣기",
+        "button_cancel": "취소",
+        "viewer_loading": "로드 중...",
+        "viewer_error": "오류: %{error}"
+    },
+    "default_zip_title": "새 아카이브",
+    "default_folder_title": "새 폴더",
+    "file_type_name": "아카이브",
+    "toast_no_folder_download_permission": "이 폴더에서 파일을 다운로드할 권한이 없습니다",
+    "toast_no_view_permission": "이 파일을 볼 권한이 없습니다",
+    "toast_no_unzip_permission": "이 파일의 압축을 풀 권한이 없습니다",
+    "toast_extract_success": "항목을 추출했습니다",
+    "toast_unzip_success": "파일의 압축을 풀었습니다",
+    "toast_cant_create": "작업에 실패했습니다. 이 폴더에는 파일을 만들 수 없습니다",
+    "toast_failed_to_create": "zip 생성에 실패했습니다",
+    "toast_zip_saved": "zip이 저장되었습니다",
+    "toast_zip_not_saved": "zip 저장에 실패했습니다"
+}

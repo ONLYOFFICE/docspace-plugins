@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "Token opgeslagen",
+        "button_save": "Opslaan",
+        "text_description": "Ga naar https://www.assemblyai.com om een API-token te genereren \n\n Zodra het API-token is ingeschakeld, is de plug-in beschikbaar voor alle gebruikers van de huidige ONLYOFFICE Apps.",
+        "text_api_token": "API-token"
+    },
+    "toast_api_token_is_missing": "API-token ontbreekt",
+    "toast_wrong_api_token": "Verkeerd API-token",
+    "toast_speech_not_recognized": "Spraak is niet herkend of ontbreekt",
+    "toast_successfully_converted": "Het bestand is met succes omgezet naar tekst",
+    "toast_unsuccessfully_converted": "Omzetten naar tekst is mislukt: ",
+    "context_menu_convert_to_text": "Omzetten naar tekst"
+}

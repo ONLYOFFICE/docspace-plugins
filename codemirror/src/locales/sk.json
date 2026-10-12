@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Uložiť",
+        "button_cancel": "Zrušiť",
+        "text_unsaved": "Pokračovať bez uloženia?\nVykonali ste zmeny v konfigurácii. Ak budete pokračovať bez uloženia, tieto zmeny sa neuplatnia.",
+        "warning_header": "Upozornenie",
+        "button_continue": "Pokračovať",
+        "button_reopen": "Otvoriť znova"
+    },
+    "main_button": {
+        "label": "Textový súbor",
+        "create_dialog_title": "Vytvoriť textový súbor",
+        "create_dialog_start_value": "Textový súbor",
+        "error_no_file_ext": "Je potrebné zadať príponu súboru",
+        "error_not_supported": "Prípona súboru nie je podporovaná doplnkom Codemirror",
+        "error_not_created": "Súbor \"%{title}.md\" nebol vytvorený: %{message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Údaje boli uložené",
+        "button_save": "Uložiť",
+        "header_general": "Všeobecné",
+        "header_html": "HTML",
+        "highlight_whitespace": "Zvýrazniť medzery",
+        "highlight_whitespace_description": "Zobrazovať medzery ako bodky a tabulátory ako šípky.",
+        "highlight_trailing_whitespace": "Zvýrazniť koncové medzery",
+        "highlight_trailing_whitespace_description": "Zvýrazniť medzery na konci riadka.",
+        "auto_close_tags": "Automaticky zatvárať značky",
+        "auto_close_tags_description": "Automaticky vkladať uzatváracie značky pri zadaní > alebo / v súboroch typu HTML."
+    },
+    "context_menu_edit": "Upraviť súbor pomocou Codemirror",
+    "file_type_name": "Kód",
+    "toast_no_permission": "Nemáte oprávnenie zobraziť tento súbor",
+    "toast_cant_read_file": "Tento súbor sa nedá prečítať",
+    "toast_file_saved": "Súbor bol uložený",
+    "toast_file_not_saved": "Súbor sa nepodarilo uložiť"
+}

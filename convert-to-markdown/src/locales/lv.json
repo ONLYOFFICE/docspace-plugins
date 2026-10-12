@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "Nevar iegūt informāciju par failu",
+        "failed_to_get_file_details": "Neizdevās iegūt faila detaļas",
+        "failed_to_download_file": "Neizdevās lejupielādēt failu: ",
+        "watermark_protected": "Šis fails ir aizsargāts ar ūdenszīmi. Atspējojiet telpas iestatījumu \"Pievienot ūdenszīmes dokumentiem\" un mēģiniet vēlreiz.",
+        "empty_file": "Lejupielādētais fails ir tukšs",
+        "failed_to_initiate_upload": "Neizdevās sākt augšupielādi: ",
+        "upload_failed": "Augšupielāde neizdevās",
+        "invalid_upload_session": "Nederīga augšupielādes sesijas atbilde",
+        "file_not_created": "Fails serverī netika izveidots",
+        "unsupported_format": "Neatbalstīts formāts: ",
+        "conversion_failed": "Pārveidošana neizdevās",
+        "created": "Izveidots "
+    },
+    "context_menu_convert": "Pārveidot par Markdown"
+}

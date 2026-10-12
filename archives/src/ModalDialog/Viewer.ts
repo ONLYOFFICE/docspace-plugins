@@ -30,7 +30,7 @@ const current = {
 };
 
 export function drawInIframe(id: string, callback: Function, ...args: any) {
-  const iframe = window.parent.document.getElementById(id) as HTMLIFrameElement;
+  const iframe = window.document.getElementById(id) as HTMLIFrameElement;
 
   if (!iframe) {
     setTimeout(() => drawInIframe(id, callback, ...args), 200);
@@ -40,14 +40,24 @@ export function drawInIframe(id: string, callback: Function, ...args: any) {
   callback(iframe, ...args);
 }
 
-export function loader(iframe: HTMLIFrameElement) {
-  // TODO: do
-  iframe.contentWindow!.document.body.innerHTML = i18n.t("dialog.viewer_loading");
+export function loader(iframe: HTMLIFrameElement, dark: boolean) {
+  showMessage(iframe, dark, i18n.t("dialog.viewer_loading"));
 }
 
-export function error(iframe: HTMLIFrameElement, error: string) {
-  // TODO: do and use
-  iframe.contentWindow!.document.body.innerHTML = i18n.t("dialog.viewer_error", { error });
+export function error(iframe: HTMLIFrameElement, dark: boolean, error: string) {
+  // TODO: use
+  showMessage(iframe, dark, i18n.t("dialog.viewer_error", { error }));
+}
+
+function showMessage(iframe: HTMLIFrameElement, dark: boolean, text: string) {
+  addStyles(iframe, dark);
+
+  const message = iframe.contentWindow!.document.createElement("div");
+  message.className = "viewer-message";
+  message.innerText = text;
+
+  iframe.contentWindow!.document.body.innerHTML = "";
+  iframe.contentWindow!.document.body.appendChild(message);
 }
 
 export function viewer(

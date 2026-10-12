@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "Dosyayı PDF'ye dönüştür",
+        "button_convert_file": "Dosyayı dönüştür",
+        "button_cancel": "İptal",
+        "toast_wrong_api_token": "Yanlış API belirteci",
+        "text_converted_file_name": "Dönüştürülen dosyanın adı"
+    },
+    "settings": {
+        "description": "API gizli anahtarı oluşturmak için https://www.convertapi.com/ adresini ziyaret edin \n\n API belirteci etkinleştirildiğinde eklenti, geçerli ONLYOFFICE Apps kullanıcılarının tümü tarafından kullanılabilir hale gelir.",
+        "toast_token_is_saved": "Belirteç kaydedildi",
+        "button_save": "Kaydet",
+        "text_api_token": "API belirteci"
+    },
+    "context_menu_convert_to_pdf": "PDF'ye dönüştür",
+    "toast_file_created": "%{name} dosyası oluşturuldu",
+    "toast_file_not_created": "%{name} dosyası oluşturulmadı: %{message}",
+    "toast_wrong_api_token": "Yanlış API belirteci"
+}

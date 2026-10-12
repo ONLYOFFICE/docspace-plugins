@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "Токен је сачуван",
+        "button_save": "Сачувај",
+        "text_description": "Да бисте генерисали API токен, посетите https://www.assemblyai.com \n\n Када се API токен омогући, додатак постаје доступан свим корисницима тренутног ONLYOFFICE Apps.",
+        "text_api_token": "API токен"
+    },
+    "toast_api_token_is_missing": "Недостаје API токен",
+    "toast_wrong_api_token": "Погрешан API токен",
+    "toast_speech_not_recognized": "Говор није препознат или недостаје",
+    "toast_successfully_converted": "Датотека је успешно претворена у текст",
+    "toast_unsuccessfully_converted": "Претварање у текст није успело: ",
+    "context_menu_convert_to_text": "Претвори у текст"
+}

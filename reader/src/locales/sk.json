@@ -1,0 +1,9 @@
+{
+    "context_menu": {
+        "open_in_reader": "Otvoriť v čítačke"
+    },
+    "file_type_name": "Kniha",
+    "errors": {
+        "unsupported_zip": "Tento archív ZIP neobsahuje podporovanú knihu. Podporované formáty v archíve ZIP: EPUB alebo FB2."
+    }
+}

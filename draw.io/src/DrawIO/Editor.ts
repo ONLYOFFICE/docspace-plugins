@@ -41,7 +41,7 @@ function DiagramEditor(
   var self = this;
 
   this.handleMessageEvent = function (evt) {
-    if (evt.origin == url && evt.data.length > 0) {
+    if (evt.origin === drawIo.getEditorOrigin() && evt.data.length > 0) {
       try {
         var msg = JSON.parse(evt.data);
 
@@ -106,7 +106,8 @@ DiagramEditor.prototype.getFrameId = function () {
 DiagramEditor.prototype.getFrameUrl = function () {
   var url = this.url;
 
-  url += "?proto=json&spin=1&embed=1";
+  url += url.indexOf("?") === -1 ? "?" : "&";
+  url += "proto=json&spin=1&embed=1";
 
   if (this.off != null) {
     url += "&offline=";
@@ -142,7 +143,7 @@ DiagramEditor.prototype.handleMessage = async function (msg) {
     case "init":
       return this.initializeEditor();
 
-    case "save":
+    case "save": {
       this.xml = msg.xml;
 
       if (this.format === "xml") {
@@ -187,6 +188,7 @@ DiagramEditor.prototype.handleMessage = async function (msg) {
       }
 
       return message;
+    }
 
     case "autosave":
       if (autoSaveTimer) clearTimeout(autoSaveTimer);
@@ -229,7 +231,7 @@ DiagramEditor.prototype.handleMessage = async function (msg) {
         return message;
       }, 2000);
 
-    case "export":
+    case "export": {
       if (this.format === "xml") return;
 
       this.xml = null;
@@ -257,8 +259,9 @@ DiagramEditor.prototype.handleMessage = async function (msg) {
       };
 
       return message;
+    }
 
-    case "exit":
+    case "exit": {
       const format = this.getFormat();
 
       if (format === "xmlpng") {
@@ -282,6 +285,7 @@ DiagramEditor.prototype.handleMessage = async function (msg) {
 
       drawIo.stopEditDiagram();
       return { actions: [Actions.closeModal] };
+    }
   }
 };
 

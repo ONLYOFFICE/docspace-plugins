@@ -1,0 +1,9 @@
+{
+    "context_menu": {
+        "open_in_reader": "Openen in lezer"
+    },
+    "file_type_name": "Boek",
+    "errors": {
+        "unsupported_zip": "Dit ZIP-archief bevat geen ondersteund boek. Ondersteunde formaten in een ZIP-archief: EPUB of FB2."
+    }
+}

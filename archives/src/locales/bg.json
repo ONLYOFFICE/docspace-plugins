@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "Отваряне на архива",
+        "group_unzip": "Разархивиране",
+        "choose_location": "Избор на местоположение",
+        "unzip_here": "Разархивиране тук",
+        "group_zip": "Архивиране",
+        "zip_folder": "Архивиране тук",
+        "zip_selected": "Архивиране на избраните елементи",
+        "zip_selected_item": "Архивиране на избрания елемент"
+    },
+    "dialog": {
+        "header": "Преглед на архива",
+        "button_extract": "Извличане на архива",
+        "selector_header_unzip": "Разархивиране в",
+        "selector_header_zip": "Архивиране в",
+        "selector_header_extract": "Извличане в",
+        "selector_button_archive": "Архивиране",
+        "selector_button_unzip": "Разархивиране",
+        "selector_button_extract": "Извличане",
+        "selector_checkbox_wrap": "Поставяне в нова папка",
+        "button_cancel": "Отказ",
+        "viewer_loading": "Зареждане...",
+        "viewer_error": "Грешка: %{error}"
+    },
+    "default_zip_title": "Нов архив",
+    "default_folder_title": "Нова папка",
+    "file_type_name": "Архив",
+    "toast_no_folder_download_permission": "Нямате права да изтегляте файлове от тази папка",
+    "toast_no_view_permission": "Нямате права да преглеждате този файл",
+    "toast_no_unzip_permission": "Нямате права да разархивирате този файл",
+    "toast_extract_success": "Елементът (елементите) е извлечен успешно",
+    "toast_unzip_success": "Файлът е разархивиран успешно",
+    "toast_cant_create": "Операцията е неуспешна. Не можете да създавате файлове в тази папка",
+    "toast_failed_to_create": "Създаването на zip е неуспешно",
+    "toast_zip_saved": "Zip файлът е записан",
+    "toast_zip_not_saved": "Записването на zip файла е неуспешно"
+}

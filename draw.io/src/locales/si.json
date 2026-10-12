@@ -1,0 +1,32 @@
+{
+    "main_button": {
+        "create_dialog_title": "රූප සටහන සාදන්න",
+        "create_dialog_start_value": "නව රූප සටහන"
+    },
+    "open_from_url": {
+        "button_accept": "සාදන්න",
+        "button_cancel": "අවලංගු කරන්න",
+        "description_text": "ප්‍රසිද්ධ සබැඳි ප්‍රවේශය විවෘතව ඇති බව සහතික කර ගන්න",
+        "dialog_header": "රූප සටහන ආයාත කරන්න",
+        "input_placeholder_name": "නව රූප සටහන",
+        "input_text_name": "නම",
+        "input_placeholder_url": "රූප සටහන සඳහා URL",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "දත්ත සුරකින ලදී",
+        "button_save": "සුරකින්න",
+        "text_url": "draw.io ලිපිනය",
+        "text_url_description": "රූප සටහන් විවෘත කිරීමට සහ සංස්කරණය කිරීමට භාවිත කරන draw.io සේවාවේ ලිපිනයයි. draw.io ඔබේම සේවාදායකයේ සත්කාරකත්වය දරන්නේ නම් එය වෙනස් කරන්න. ප්‍රසිද්ධ සේවාව භාවිත කිරීමට https://embed.diagrams.net තබන්න.",
+        "text_language": "භාෂාව",
+        "text_libraries": "පුස්තකාල",
+        "text_offline_description": "\"නොබැඳි ප්‍රකාරය\" සක්‍රිය විට, ආරක්ෂාව සඳහා සියලුම දුරස්ථ මෙහෙයුම් සහ විශේෂාංග අක්‍රිය වේ",
+        "text_offline": "නොබැඳි ප්‍රකාරය"
+    },
+    "context_menu_open_diagram": "රූප සටහන විවෘත කරන්න",
+    "file_type_name": "රූප සටහන",
+    "toast_file_not_created": "\"%{title}.drawio\" ගොනුව නිර්මාණය නොවීය: %{message}",
+    "toast_wrong_file_format": "වැරදි ගොනු ආකෘතියකි",
+    "toast_no_permission": "මෙම ගොනුව බැලීමට ඔබට අවසර නැත",
+    "toast_cant_read_file": "මෙම ගොනුව කියවිය නොහැක"
+}

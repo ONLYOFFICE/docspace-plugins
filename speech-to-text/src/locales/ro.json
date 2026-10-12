@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "Tokenul a fost salvat",
+        "button_save": "Salvează",
+        "text_description": "Pentru a genera un token API, vizitați https://www.assemblyai.com \n\n După activarea tokenului API, pluginul devine disponibil pentru toți utilizatorii ONLYOFFICE Apps curent.",
+        "text_api_token": "Token API"
+    },
+    "toast_api_token_is_missing": "Lipsește tokenul API",
+    "toast_wrong_api_token": "Token API incorect",
+    "toast_speech_not_recognized": "Vorbirea nu a fost recunoscută sau lipsește",
+    "toast_successfully_converted": "Fișierul a fost convertit în text cu succes",
+    "toast_unsuccessfully_converted": "Conversia în text nu a reușit: ",
+    "context_menu_convert_to_text": "Convertește în text"
+}

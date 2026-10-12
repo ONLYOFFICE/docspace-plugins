@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "Հնարավոր չէ ստանալ ֆայլի մասին տեղեկությունները",
+        "failed_to_get_file_details": "Չհաջողվեց ստանալ ֆայլի մանրամասները",
+        "failed_to_download_file": "Չհաջողվեց ներբեռնել ֆայլը՝ ",
+        "watermark_protected": "Այս ֆայլը պաշտպանված է ջրանիշով։ Անջատեք սենյակի \"Ավելացնել ջրանիշեր փաստաթղթերին\" կարգավորումը և կրկին փորձեք։",
+        "empty_file": "Ներբեռնված ֆայլը դատարկ է",
+        "failed_to_initiate_upload": "Չհաջողվեց սկսել վերբեռնումը՝ ",
+        "upload_failed": "Վերբեռնումը ձախողվեց",
+        "invalid_upload_session": "Վերբեռնման աշխատաշրջանի սխալ պատասխան",
+        "file_not_created": "Ֆայլը չստեղծվեց սերվերում",
+        "unsupported_format": "Չաջակցվող ձևաչափ՝ ",
+        "conversion_failed": "Փոխարկումը ձախողվեց",
+        "created": "Ստեղծվեց "
+    },
+    "context_menu_convert": "Փոխարկել Markdown-ի"
+}

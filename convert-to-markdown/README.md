@@ -1,6 +1,6 @@
-# Markdown Converter - ONLYOFFICE DocSpace Plugin
+# Markdown Converter - ONLYOFFICE Apps Plugin
 
-Convert DOCX, HTML and TXT files to Markdown format directly in DocSpace with a single click.
+Convert DOCX, HTML and TXT files to Markdown format directly in ONLYOFFICE Apps with a single click.
 
 ## Features
 
@@ -15,7 +15,7 @@ Convert DOCX, HTML and TXT files to Markdown format directly in DocSpace with a 
 
 ## How to Use
 
-1. Navigate to a folder in DocSpace
+1. Navigate to a folder in ONLYOFFICE Apps
 2. Right-click on a DOCX, HTML or TXT file
 3. Select **"Convert to Markdown"** from the context menu
 4. The converted `.md` file will be created in the same folder

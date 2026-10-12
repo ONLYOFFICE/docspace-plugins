@@ -298,7 +298,7 @@ export const urlDialog: (edit?: boolean, url?: string, title?: string) => IModal
     },
     onLoad: async () => {
       return {
-        newDialogBody: dialog.dialogBody,
+        newDialogBody: dialog.dialogBody!,
         newDialogHeader: dialog.dialogHeader,
       };
     },

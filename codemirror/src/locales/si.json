@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "සුරකින්න",
+        "button_cancel": "අවලංගු කරන්න",
+        "text_unsaved": "සුරැකීමකින් තොරව ඉදිරියට යන්නද?\nඔබ වින්‍යාසයේ වෙනස්කම් සිදු කර ඇත. සුරැකීමකින් තොරව ඉදිරියට ගියහොත් එම වෙනස්කම් යොදන්නේ නැත.",
+        "warning_header": "අවවාදයයි",
+        "button_continue": "ඉදිරියට",
+        "button_reopen": "නැවත විවෘත කරන්න"
+    },
+    "main_button": {
+        "label": "පෙළ ගොනුව",
+        "create_dialog_title": "පෙළ ගොනුවක් සාදන්න",
+        "create_dialog_start_value": "පෙළ ගොනුව",
+        "error_no_file_ext": "ගොනු දිගුව සැපයිය යුතුය",
+        "error_not_supported": "Codemirror ප්ලගිනය මෙම ගොනු දිගුවට සහාය නොදක්වයි",
+        "error_not_created": "\"%{title}.md\" ගොනුව නිර්මාණය නොවීය: %{message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "දත්ත සුරකින ලදී",
+        "button_save": "සුරකින්න",
+        "header_general": "සාමාන්‍ය",
+        "header_html": "HTML",
+        "highlight_whitespace": "හිස් අවකාශ උද්දීපනය කරන්න",
+        "highlight_whitespace_description": "හිස් අවකාශ තිත් ලෙසත් ටැබ් ඊතල ලෙසත් පෙන්වන්න.",
+        "highlight_trailing_whitespace": "පේළි අග හිස් අවකාශ උද්දීපනය කරන්න",
+        "highlight_trailing_whitespace_description": "පේළියක අග ඇති හිස් අවකාශ උද්දීපනය කරන්න.",
+        "auto_close_tags": "ටැග ස්වයංක්‍රීයව වසන්න",
+        "auto_close_tags_description": "HTML වැනි ගොනුවල > හෝ / ටයිප් කළ විට වසන ටැග ස්වයංක්‍රීයව ඇතුළත් කරන්න."
+    },
+    "context_menu_edit": "Codemirror සමඟ ගොනුව සංස්කරණය කරන්න",
+    "file_type_name": "කේතය",
+    "toast_no_permission": "මෙම ගොනුව බැලීමට ඔබට අවසර නැත",
+    "toast_cant_read_file": "මෙම ගොනුව කියවිය නොහැක",
+    "toast_file_saved": "ගොනුව සුරකින ලදී",
+    "toast_file_not_saved": "ගොනුව සුරැකීම අසාර්ථක විය"
+}

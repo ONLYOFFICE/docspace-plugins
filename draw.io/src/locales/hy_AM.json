@@ -1,0 +1,32 @@
+{
+    "main_button": {
+        "create_dialog_title": "Ստեղծել դիագրամ",
+        "create_dialog_start_value": "Նոր դիագրամ"
+    },
+    "open_from_url": {
+        "button_accept": "Ստեղծել",
+        "button_cancel": "Չեղարկել",
+        "description_text": "Համոզվեք, որ հանրային հղումով մուտքը բաց է",
+        "dialog_header": "Ներմուծել դիագրամ",
+        "input_placeholder_name": "Նոր դիագրամ",
+        "input_text_name": "Անուն",
+        "input_placeholder_url": "Դիագրամի URL",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "Տվյալները պահպանվեցին",
+        "button_save": "Պահպանել",
+        "text_url": "draw.io հասցե",
+        "text_url_description": "draw.io ծառայության հասցեն, որն օգտագործվում է դիագրամները բացելու և խմբագրելու համար։ Փոխեք այն, եթե draw.io-ն տեղակայված է ձեր սեփական սերվերում։ Հանրային ծառայությունն օգտագործելու համար թողեք https://embed.diagrams.net։",
+        "text_language": "Լեզու",
+        "text_libraries": "Գրադարաններ",
+        "text_offline_description": "Երբ \"անցանց ռեժիմը\" ակտիվ է, պաշտպանության նպատակով անջատվում են բոլոր հեռավոր գործողություններն ու հնարավորությունները",
+        "text_offline": "Անցանց ռեժիմ"
+    },
+    "context_menu_open_diagram": "Բացել դիագրամը",
+    "file_type_name": "Դիագրամ",
+    "toast_file_not_created": "\"%{title}.drawio\" ֆայլը չստեղծվեց՝ %{message}",
+    "toast_wrong_file_format": "Ֆայլի սխալ ձևաչափ",
+    "toast_no_permission": "Դուք չունեք այս ֆայլը դիտելու թույլտվություն",
+    "toast_cant_read_file": "Հնարավոր չէ կարդալ այս ֆայլը"
+}

@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "Pretvori datoteko v PDF",
+        "button_convert_file": "Pretvori datoteko",
+        "button_cancel": "Prekliči",
+        "toast_wrong_api_token": "Napačen žeton API",
+        "text_converted_file_name": "Ime pretvorjene datoteke"
+    },
+    "settings": {
+        "description": "Za ustvarjanje skrivnosti API obiščite https://www.convertapi.com/ \n\n Ko je žeton API omogočen, je vtičnik na voljo vsem uporabnikom trenutnega ONLYOFFICE Apps.",
+        "toast_token_is_saved": "Žeton je shranjen",
+        "button_save": "Shrani",
+        "text_api_token": "Žeton API"
+    },
+    "context_menu_convert_to_pdf": "Pretvori v PDF",
+    "toast_file_created": "Datoteka %{name} je bila ustvarjena",
+    "toast_file_not_created": "Datoteka %{name} ni bila ustvarjena: %{message}",
+    "toast_wrong_api_token": "Napačen žeton API"
+}

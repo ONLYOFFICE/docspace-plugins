@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "Převést soubor do PDF",
+        "button_convert_file": "Převést soubor",
+        "button_cancel": "Zrušit",
+        "toast_wrong_api_token": "Nesprávný token API",
+        "text_converted_file_name": "Název převedeného souboru"
+    },
+    "settings": {
+        "description": "Chcete-li vygenerovat tajný klíč API, navštivte https://www.convertapi.com/ \n\n Po aktivaci tokenu API bude zásuvný modul dostupný všem uživatelům aktuálního ONLYOFFICE Apps.",
+        "toast_token_is_saved": "Token byl uložen",
+        "button_save": "Uložit",
+        "text_api_token": "Token API"
+    },
+    "context_menu_convert_to_pdf": "Převést do PDF",
+    "toast_file_created": "Soubor %{name} byl vytvořen",
+    "toast_file_not_created": "Soubor %{name} nebyl vytvořen: %{message}",
+    "toast_wrong_api_token": "Nesprávný token API"
+}

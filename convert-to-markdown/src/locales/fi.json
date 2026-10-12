@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "Tiedoston tietoja ei saada",
+        "failed_to_get_file_details": "Tiedoston tietojen haku epäonnistui",
+        "failed_to_download_file": "Tiedoston lataaminen epäonnistui: ",
+        "watermark_protected": "Tämä tiedosto on suojattu vesileimalla. Poista huoneen asetus \"Lisää vesileimat asiakirjoihin\" käytöstä ja yritä uudelleen.",
+        "empty_file": "Ladattu tiedosto on tyhjä",
+        "failed_to_initiate_upload": "Lähettämisen aloittaminen epäonnistui: ",
+        "upload_failed": "Lähettäminen epäonnistui",
+        "invalid_upload_session": "Virheellinen lähetysistunnon vastaus",
+        "file_not_created": "Tiedostoa ei luotu palvelimelle",
+        "unsupported_format": "Muotoa ei tueta: ",
+        "conversion_failed": "Muuntaminen epäonnistui",
+        "created": "Luotu "
+    },
+    "context_menu_convert": "Muunna Markdown-muotoon"
+}

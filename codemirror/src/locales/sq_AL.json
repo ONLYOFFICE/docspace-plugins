@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Ruaj",
+        "button_cancel": "Anulo",
+        "text_unsaved": "Të vazhdohet pa ruajtur?\nKeni bërë ndryshime në konfigurim. Nëse vazhdoni pa ruajtur, këto ndryshime nuk do të zbatohen.",
+        "warning_header": "Paralajmërim",
+        "button_continue": "Vazhdo",
+        "button_reopen": "Rihap"
+    },
+    "main_button": {
+        "label": "Skedar teksti",
+        "create_dialog_title": "Krijo skedar teksti",
+        "create_dialog_start_value": "Skedar teksti",
+        "error_no_file_ext": "Duhet dhënë shtesa e skedarit",
+        "error_not_supported": "Shtesa e skedarit nuk mbështetet nga shtojca Codemirror",
+        "error_not_created": "Skedari \"%{title}.md\" nuk u krijua: %{message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Të dhënat u ruajtën",
+        "button_save": "Ruaj",
+        "header_general": "Të përgjithshme",
+        "header_html": "HTML",
+        "highlight_whitespace": "Thekso hapësirat",
+        "highlight_whitespace_description": "Shfaq hapësirat si pika dhe tabulacionet si shigjeta.",
+        "highlight_trailing_whitespace": "Thekso hapësirat në fund të rreshtit",
+        "highlight_trailing_whitespace_description": "Thekso hapësirat në fund të një rreshti.",
+        "auto_close_tags": "Mbyll automatikisht etiketat",
+        "auto_close_tags_description": "Fut automatikisht etiketat mbyllëse kur shkruhet > ose / në skedarë të ngjashëm me HTML."
+    },
+    "context_menu_edit": "Redakto skedarin me Codemirror",
+    "file_type_name": "Kod",
+    "toast_no_permission": "Nuk keni leje për ta parë këtë skedar",
+    "toast_cant_read_file": "Ky skedar nuk mund të lexohet",
+    "toast_file_saved": "Skedari u ruajt",
+    "toast_file_not_saved": "Ruajtja e skedarit dështoi"
+}

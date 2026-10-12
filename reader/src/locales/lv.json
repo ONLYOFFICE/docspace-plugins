@@ -1,0 +1,9 @@
+{
+    "context_menu": {
+        "open_in_reader": "Atvērt lasītājā"
+    },
+    "file_type_name": "Grāmata",
+    "errors": {
+        "unsupported_zip": "Šajā ZIP arhīvā nav atbalstītas grāmatas. ZIP arhīvā atbalstītie formāti: EPUB vai FB2."
+    }
+}

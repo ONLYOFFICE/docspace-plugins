@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "Não é possível obter informações do ficheiro",
+        "failed_to_get_file_details": "Falha ao obter os detalhes do ficheiro",
+        "failed_to_download_file": "Falha ao transferir o ficheiro: ",
+        "watermark_protected": "Este ficheiro está protegido por marca de água. Desative a definição da sala \"Adicionar marcas de água aos documentos\" e tente novamente.",
+        "empty_file": "O ficheiro transferido está vazio",
+        "failed_to_initiate_upload": "Falha ao iniciar o carregamento: ",
+        "upload_failed": "O carregamento falhou",
+        "invalid_upload_session": "Resposta de sessão de carregamento inválida",
+        "file_not_created": "O ficheiro não foi criado no servidor",
+        "unsupported_format": "Formato não suportado: ",
+        "conversion_failed": "A conversão falhou",
+        "created": "Criado "
+    },
+    "context_menu_convert": "Converter para Markdown"
+}

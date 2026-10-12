@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "Το διακριτικό αποθηκεύτηκε",
+        "button_save": "Αποθήκευση",
+        "text_description": "Για να δημιουργήσετε διακριτικό API, επισκεφθείτε τη διεύθυνση https://www.assemblyai.com \n\n Μόλις ενεργοποιηθεί το διακριτικό API, η προσθήκη γίνεται διαθέσιμη σε όλους τους χρήστες του τρέχοντος ONLYOFFICE Apps.",
+        "text_api_token": "Διακριτικό API"
+    },
+    "toast_api_token_is_missing": "Λείπει το διακριτικό API",
+    "toast_wrong_api_token": "Λανθασμένο διακριτικό API",
+    "toast_speech_not_recognized": "Η ομιλία δεν αναγνωρίστηκε ή λείπει",
+    "toast_successfully_converted": "Το αρχείο μετατράπηκε με επιτυχία σε κείμενο",
+    "toast_unsuccessfully_converted": "Η μετατροπή σε κείμενο απέτυχε: ",
+    "context_menu_convert_to_text": "Μετατροπή σε κείμενο"
+}

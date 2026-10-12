@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "保存到新文件夹",
         "button_cancel": "取消",
         "viewer_loading": "加载中...",
-        "viewer_error": "错误：${error}"
+        "viewer_error": "错误：%{error}"
     },
     "default_zip_title": "新压缩包",
     "default_folder_title": "新文件夹",

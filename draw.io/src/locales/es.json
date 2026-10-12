@@ -16,6 +16,8 @@
     "settings": {
         "toast_data_saved": "Los datos se han guardado",
         "button_save": "Guardar",
+        "text_url": "Dirección de draw.io",
+        "text_url_description": "La dirección del servicio draw.io que se usa para abrir y editar diagramas. Cámbiela si draw.io está alojado en su propio servidor. Deje https://embed.diagrams.net para usar el servicio público.",
         "text_language": "Idioma",
         "text_libraries": "Bibliotecas",
         "text_offline_description": "Cuando el \"modo sin conexión\" está activo, deshabilita todas las operaciones y funciones remotas para proteger",
@@ -23,7 +25,7 @@
     },
     "context_menu_open_diagram": "Abrir diagrama",
     "file_type_name": "Diagrama",
-    "toast_file_not_created": "El archivo \"${title}.drawio\" no se ha creado: ${message}",
+    "toast_file_not_created": "El archivo \"%{title}.drawio\" no se ha creado: %{message}",
     "toast_wrong_file_format": "Formato de archivo incorrecto",
     "toast_no_permission": "No tiene permiso para ver este archivo",
     "toast_cant_read_file": "No se puede leer este archivo"

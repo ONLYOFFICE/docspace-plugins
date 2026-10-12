@@ -132,9 +132,9 @@ class Drawio
 
   setAdminPluginSettingsValue = (settings: string | null): void => {
     if (settings) {
-      const { lang, off, lib } = JSON.parse(settings);
+      const { url, lang, off, lib } = JSON.parse(settings);
 
-      drawIo.setAdminSettings(null, lang, off, lib);
+      drawIo.setAdminSettings(url ?? null, lang, off, lib);
     }
   };
 
@@ -183,12 +183,6 @@ class Drawio
 
 const plugin = new Drawio();
 
-declare global {
-  interface Window {
-    Plugins: any;
-  }
-}
-
 plugin.setOnLoadCallback(drawIo.onLoad);
 
 plugin.addMainButtonItem(mainButtonItem());
@@ -196,7 +190,5 @@ plugin.addFileItem(drawIoItem());
 plugin.addContextMenuItem(contextMenuItem());
 
 plugin.setAdminPluginSettings(adminSettings);
-
-window.Plugins.Drawio = plugin || {};
 
 export default plugin;

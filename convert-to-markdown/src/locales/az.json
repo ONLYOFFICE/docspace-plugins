@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "Fayl məlumatını almaq mümkün olmadı",
+        "failed_to_get_file_details": "Fayl təfərrüatlarını almaq alınmadı",
+        "failed_to_download_file": "Faylı endirmək alınmadı: ",
+        "watermark_protected": "Bu fayl su nişanı ilə qorunur. Otağın \"Sənədlərə su nişanı əlavə et\" parametrini söndürüb yenidən cəhd edin.",
+        "empty_file": "Endirilmiş fayl boşdur",
+        "failed_to_initiate_upload": "Yükləməyə başlamaq alınmadı: ",
+        "upload_failed": "Yükləmə alınmadı",
+        "invalid_upload_session": "Yükləmə sessiyasının cavabı yanlışdır",
+        "file_not_created": "Fayl serverdə yaradılmadı",
+        "unsupported_format": "Dəstəklənməyən format: ",
+        "conversion_failed": "Çevirmə alınmadı",
+        "created": "Yaradıldı "
+    },
+    "context_menu_convert": "Markdown-a çevir"
+}

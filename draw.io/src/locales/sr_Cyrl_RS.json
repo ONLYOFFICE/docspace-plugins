@@ -1,0 +1,32 @@
+{
+    "main_button": {
+        "create_dialog_title": "Направи дијаграм",
+        "create_dialog_start_value": "Нови дијаграм"
+    },
+    "open_from_url": {
+        "button_accept": "Направи",
+        "button_cancel": "Откажи",
+        "description_text": "Уверите се да је приступ путем јавне везе отворен",
+        "dialog_header": "Увези дијаграм",
+        "input_placeholder_name": "Нови дијаграм",
+        "input_text_name": "Назив",
+        "input_placeholder_url": "URL дијаграма",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "Подаци су сачувани",
+        "button_save": "Сачувај",
+        "text_url": "draw.io адреса",
+        "text_url_description": "Адреса draw.io услуге која се користи за отварање и уређивање дијаграма. Промените је ако се draw.io налази на вашем сопственом серверу. Оставите https://embed.diagrams.net да бисте користили јавну услугу.",
+        "text_language": "Језик",
+        "text_libraries": "Библиотеке",
+        "text_offline_description": "Када је \"режим ван мреже\" активан, ради заштите се онемогућавају све удаљене операције и функције",
+        "text_offline": "Режим ван мреже"
+    },
+    "context_menu_open_diagram": "Отвори дијаграм",
+    "file_type_name": "Дијаграм",
+    "toast_file_not_created": "Датотека \"%{title}.drawio\" није креирана: %{message}",
+    "toast_wrong_file_format": "Погрешан формат датотеке",
+    "toast_no_permission": "Немате дозволу да прикажете ову датотеку",
+    "toast_cant_read_file": "Ова датотека не може да се прочита"
+}

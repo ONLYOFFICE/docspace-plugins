@@ -1,0 +1,7 @@
+{
+    "dialog_button_save_and_exit": "Зберегти та вийти",
+    "context_menu_edit_image": "Редагувати зображення",
+    "toast_no_permissions": "У вас немає прав на перегляд цього файлу",
+    "toast_file_saved": "Файл успішно збережено",
+    "toast_file_not_saved": "Не вдалося зберегти файл"
+}

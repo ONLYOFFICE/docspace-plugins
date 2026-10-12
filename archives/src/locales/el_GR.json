@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "Άνοιγμα αρχειοθήκης",
+        "group_unzip": "Αποσυμπίεση",
+        "choose_location": "Επιλογή θέσης",
+        "unzip_here": "Αποσυμπίεση εδώ",
+        "group_zip": "Αρχειοθέτηση",
+        "zip_folder": "Αρχειοθέτηση εδώ",
+        "zip_selected": "Αρχειοθέτηση επιλεγμένων στοιχείων",
+        "zip_selected_item": "Αρχειοθέτηση επιλεγμένου στοιχείου"
+    },
+    "dialog": {
+        "header": "Πρόγραμμα προβολής αρχειοθήκης",
+        "button_extract": "Εξαγωγή αρχειοθήκης",
+        "selector_header_unzip": "Αποσυμπίεση σε",
+        "selector_header_zip": "Αρχειοθέτηση σε",
+        "selector_header_extract": "Εξαγωγή σε",
+        "selector_button_archive": "Αρχειοθέτηση",
+        "selector_button_unzip": "Αποσυμπίεση",
+        "selector_button_extract": "Εξαγωγή",
+        "selector_checkbox_wrap": "Τοποθέτηση σε νέο φάκελο",
+        "button_cancel": "Άκυρο",
+        "viewer_loading": "Φόρτωση...",
+        "viewer_error": "Σφάλμα: %{error}"
+    },
+    "default_zip_title": "Νέα αρχειοθήκη",
+    "default_folder_title": "Νέος φάκελος",
+    "file_type_name": "Αρχειοθήκη",
+    "toast_no_folder_download_permission": "Δεν έχετε δικαίωμα λήψης αρχείων από αυτόν τον φάκελο",
+    "toast_no_view_permission": "Δεν έχετε δικαίωμα προβολής αυτού του αρχείου",
+    "toast_no_unzip_permission": "Δεν έχετε δικαίωμα αποσυμπίεσης αυτού του αρχείου",
+    "toast_extract_success": "Το στοιχείο (τα στοιχεία) εξήχθη με επιτυχία",
+    "toast_unzip_success": "Το αρχείο αποσυμπιέστηκε με επιτυχία",
+    "toast_cant_create": "Η λειτουργία απέτυχε. Δεν μπορείτε να δημιουργήσετε αρχεία σε αυτόν τον φάκελο",
+    "toast_failed_to_create": "Απέτυχε η δημιουργία του zip",
+    "toast_zip_saved": "Το zip αποθηκεύτηκε",
+    "toast_zip_not_saved": "Η αποθήκευση του zip απέτυχε"
+}

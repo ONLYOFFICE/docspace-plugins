@@ -1,0 +1,7 @@
+{
+    "dialog_button_save_and_exit": "حفظ وخروج",
+    "context_menu_edit_image": "تحرير الصورة",
+    "toast_no_permissions": "ليس لديك إذن لعرض هذا الملف",
+    "toast_file_saved": "تم حفظ الملف بنجاح",
+    "toast_file_not_saved": "فشل حفظ الملف"
+}

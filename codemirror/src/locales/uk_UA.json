@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Зберегти",
+        "button_cancel": "Скасувати",
+        "text_unsaved": "Продовжити без збереження?\nВи внесли зміни до конфігурації. Якщо продовжите без збереження, ці зміни не буде застосовано.",
+        "warning_header": "Попередження",
+        "button_continue": "Продовжити",
+        "button_reopen": "Відкрити знову"
+    },
+    "main_button": {
+        "label": "Текстовий файл",
+        "create_dialog_title": "Створити текстовий файл",
+        "create_dialog_start_value": "Текстовий файл",
+        "error_no_file_ext": "Необхідно вказати розширення файлу",
+        "error_not_supported": "Розширення файлу не підтримується плагіном Codemirror",
+        "error_not_created": "Файл \"%{title}.md\" не було створено: %{message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Дані збережено",
+        "button_save": "Зберегти",
+        "header_general": "Загальні",
+        "header_html": "HTML",
+        "highlight_whitespace": "Підсвічувати пробіли",
+        "highlight_whitespace_description": "Показувати пробіли крапками, а табуляції — стрілками.",
+        "highlight_trailing_whitespace": "Підсвічувати пробіли в кінці рядка",
+        "highlight_trailing_whitespace_description": "Підсвічувати пробіли в кінці рядка.",
+        "auto_close_tags": "Автоматично закривати теги",
+        "auto_close_tags_description": "Автоматично вставляти закривальні теги під час введення > або / у файлах типу HTML."
+    },
+    "context_menu_edit": "Редагувати файл за допомогою Codemirror",
+    "file_type_name": "Код",
+    "toast_no_permission": "У вас немає прав на перегляд цього файлу",
+    "toast_cant_read_file": "Не вдається прочитати файл",
+    "toast_file_saved": "Файл збережено",
+    "toast_file_not_saved": "Не вдалося зберегти файл"
+}

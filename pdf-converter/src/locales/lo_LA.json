@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "ແປງໄຟລ໌ເປັນ PDF",
+        "button_convert_file": "ແປງໄຟລ໌",
+        "button_cancel": "ຍົກເລີກ",
+        "toast_wrong_api_token": "ໂທເຄນ API ບໍ່ຖືກຕ້ອງ",
+        "text_converted_file_name": "ຊື່ຂອງໄຟລ໌ທີ່ແປງແລ້ວ"
+    },
+    "settings": {
+        "description": "ເພື່ອສ້າງລະຫັດລັບ API, ກະລຸນາໄປທີ່ https://www.convertapi.com/ \n\n ເມື່ອເປີດໃຊ້ໂທເຄນ API ແລ້ວ, ປລັກອິນຈະໃຊ້ໄດ້ສຳລັບຜູ້ໃຊ້ທຸກຄົນຂອງ ONLYOFFICE Apps ປັດຈຸບັນ.",
+        "toast_token_is_saved": "ບັນທຶກໂທເຄນແລ້ວ",
+        "button_save": "ບັນທຶກ",
+        "text_api_token": "ໂທເຄນ API"
+    },
+    "context_menu_convert_to_pdf": "ແປງເປັນ PDF",
+    "toast_file_created": "ສ້າງໄຟລ໌ %{name} ແລ້ວ",
+    "toast_file_not_created": "ບໍ່ໄດ້ສ້າງໄຟລ໌ %{name}: %{message}",
+    "toast_wrong_api_token": "ໂທເຄນ API ບໍ່ຖືກຕ້ອງ"
+}

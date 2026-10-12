@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "Edytuj adres URL"
+    },
+    "main_button": {
+        "new_url": "Nowy adres URL"
+    },
+    "dialog": {
+        "header_create": "Utwórz nowy adres URL",
+        "header_edit": "Edytuj adres URL",
+        "label_url": "URL:",
+        "label_title": "Tytuł:",
+        "button_create": "Utwórz",
+        "button_save": "Zapisz",
+        "button_cancel": "Anuluj",
+        "error_invalid_url": "Nieprawidłowy adres URL",
+        "error_url_required": "Adres URL jest wymagany",
+        "link_to": "Łącze do",
+        "new_link": "Nowe łącze",
+        "toast_url_created": "Adres URL został utworzony",
+        "toast_url_not_created": "Nie udało się utworzyć adresu URL",
+        "toast_file_saved": "Plik został zapisany",
+        "toast_file_not_saved": "Nie udało się zapisać pliku"
+    },
+    "file_type_name": "Łącze",
+    "toast_no_permissions": "Nie masz uprawnień do wyświetlenia tego pliku",
+    "toast_cant_read_file": "Nie można odczytać tego pliku",
+    "toast_wrong_file": "Nieprawidłowy lub uszkodzony plik URL"
+}

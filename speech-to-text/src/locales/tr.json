@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "Belirteç kaydedildi",
+        "button_save": "Kaydet",
+        "text_description": "API belirteci oluşturmak için https://www.assemblyai.com adresini ziyaret edin \n\n API belirteci etkinleştirildiğinde eklenti, geçerli ONLYOFFICE Apps kullanıcılarının tümü tarafından kullanılabilir hale gelir.",
+        "text_api_token": "API belirteci"
+    },
+    "toast_api_token_is_missing": "API belirteci eksik",
+    "toast_wrong_api_token": "Yanlış API belirteci",
+    "toast_speech_not_recognized": "Konuşma tanınmadı veya mevcut değil",
+    "toast_successfully_converted": "Dosya başarıyla metne dönüştürüldü",
+    "toast_unsuccessfully_converted": "Metne dönüştürme başarısız oldu: ",
+    "context_menu_convert_to_text": "Metne dönüştür"
+}

@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "Није могуће добити информације о датотеци",
+        "failed_to_get_file_details": "Добијање детаља о датотеци није успело",
+        "failed_to_download_file": "Преузимање датотеке није успело: ",
+        "watermark_protected": "Ова датотека је заштићена воденим жигом. Онемогућите поставку собе \"Додај водене жигове у документе\" и покушајте поново.",
+        "empty_file": "Преузета датотека је празна",
+        "failed_to_initiate_upload": "Покретање отпремања није успело: ",
+        "upload_failed": "Отпремање није успело",
+        "invalid_upload_session": "Неважећи одговор сесије отпремања",
+        "file_not_created": "Датотека није креирана на серверу",
+        "unsupported_format": "Неподржан формат: ",
+        "conversion_failed": "Претварање није успело",
+        "created": "Креирано "
+    },
+    "context_menu_convert": "Претвори у Markdown"
+}

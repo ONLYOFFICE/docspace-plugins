@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "تعذر الحصول على معلومات الملف",
+        "failed_to_get_file_details": "فشل الحصول على تفاصيل الملف",
+        "failed_to_download_file": "فشل تنزيل الملف: ",
+        "watermark_protected": "هذا الملف محمي بعلامة مائية. عطّل إعداد الغرفة \"إضافة علامات مائية إلى المستندات\" وحاول مرة أخرى.",
+        "empty_file": "الملف الذي تم تنزيله فارغ",
+        "failed_to_initiate_upload": "فشل بدء الرفع: ",
+        "upload_failed": "فشل الرفع",
+        "invalid_upload_session": "استجابة جلسة رفع غير صالحة",
+        "file_not_created": "لم يتم إنشاء الملف على الخادم",
+        "unsupported_format": "تنسيق غير مدعوم: ",
+        "conversion_failed": "فشل التحويل",
+        "created": "تم الإنشاء "
+    },
+    "context_menu_convert": "التحويل إلى Markdown"
+}

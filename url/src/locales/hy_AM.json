@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "Խմբագրել URL-ը"
+    },
+    "main_button": {
+        "new_url": "Նոր URL"
+    },
+    "dialog": {
+        "header_create": "Ստեղծել նոր URL",
+        "header_edit": "Խմբագրել URL-ը",
+        "label_url": "URL՝",
+        "label_title": "Վերնագիր՝",
+        "button_create": "Ստեղծել",
+        "button_save": "Պահպանել",
+        "button_cancel": "Չեղարկել",
+        "error_invalid_url": "Անվավեր URL հասցե",
+        "error_url_required": "URL-ը պարտադիր է",
+        "link_to": "Հղում դեպի",
+        "new_link": "Նոր հղում",
+        "toast_url_created": "URL-ը հաջողությամբ ստեղծվեց",
+        "toast_url_not_created": "Չհաջողվեց ստեղծել URL",
+        "toast_file_saved": "Ֆայլը հաջողությամբ պահպանվեց",
+        "toast_file_not_saved": "Չհաջողվեց պահպանել ֆայլը"
+    },
+    "file_type_name": "Հղում",
+    "toast_no_permissions": "Դուք չունեք այս ֆայլը դիտելու թույլտվություն",
+    "toast_cant_read_file": "Հնարավոր չէ կարդալ այս ֆայլը",
+    "toast_wrong_file": "Սխալ կամ վնասված URL ֆայլ"
+}

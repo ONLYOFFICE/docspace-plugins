@@ -16,6 +16,8 @@
     "settings": {
         "toast_data_saved": "データが保存されました",
         "button_save": "保存",
+        "text_url": "draw.io のアドレス",
+        "text_url_description": "図の作成と編集に使用する draw.io サービスのアドレスです。draw.io を自社サーバーで運用している場合は変更してください。公開サービスを使用する場合は https://embed.diagrams.net のままにします。",
         "text_language": "言語",
         "text_libraries": "ライブラリ",
         "text_offline_description": "「オフラインモード」が有効な場合、保護のためにすべてのリモート操作と機能が無効になります",
@@ -23,7 +25,7 @@
     },
     "context_menu_open_diagram": "ダイアグラムを開く",
     "file_type_name": "ダイアグラム",
-    "toast_file_not_created": "ファイル「${title}.drawio」を作成できませんでした: ${message}",
+    "toast_file_not_created": "ファイル「%{title}.drawio」を作成できませんでした: %{message}",
     "toast_wrong_file_format": "ファイル形式が正しくありません",
     "toast_no_permission": "このファイルを表示する権限がありません",
     "toast_cant_read_file": "このファイルを読み取れません"

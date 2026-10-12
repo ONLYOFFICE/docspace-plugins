@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "Թոքենը պահպանվեց",
+        "button_save": "Պահպանել",
+        "text_description": "API թոքեն ստեղծելու համար այցելեք https://www.assemblyai.com \n\n API թոքենն ակտիվացնելուց հետո պլագինը հասանելի է դառնում ընթացիկ ONLYOFFICE Apps-ի բոլոր օգտատերերին։",
+        "text_api_token": "API թոքեն"
+    },
+    "toast_api_token_is_missing": "API թոքենը բացակայում է",
+    "toast_wrong_api_token": "Սխալ API թոքեն",
+    "toast_speech_not_recognized": "Խոսքը չի ճանաչվել կամ բացակայում է",
+    "toast_successfully_converted": "Ֆայլը հաջողությամբ փոխարկվեց տեքստի",
+    "toast_unsuccessfully_converted": "Տեքստի փոխարկումը ձախողվեց՝ ",
+    "context_menu_convert_to_text": "Փոխարկել տեքստի"
+}

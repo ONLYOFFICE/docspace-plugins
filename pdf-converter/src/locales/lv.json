@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "Pārveidot failu par PDF",
+        "button_convert_file": "Pārveidot failu",
+        "button_cancel": "Atcelt",
+        "toast_wrong_api_token": "Nepareiza API pilnvara",
+        "text_converted_file_name": "Pārveidotā faila nosaukums"
+    },
+    "settings": {
+        "description": "Lai ģenerētu API noslēpumu, apmeklējiet https://www.convertapi.com/ \n\n Kad API pilnvara ir iespējota, spraudnis kļūst pieejams visiem pašreizējā ONLYOFFICE Apps lietotājiem.",
+        "toast_token_is_saved": "Pilnvara saglabāta",
+        "button_save": "Saglabāt",
+        "text_api_token": "API pilnvara"
+    },
+    "context_menu_convert_to_pdf": "Pārveidot par PDF",
+    "toast_file_created": "Fails %{name} tika izveidots",
+    "toast_file_not_created": "Fails %{name} netika izveidots: %{message}",
+    "toast_wrong_api_token": "Nepareiza API pilnvara"
+}

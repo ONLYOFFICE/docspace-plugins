@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "Nie je možné získať informácie o súbore",
+        "failed_to_get_file_details": "Nepodarilo sa získať podrobnosti o súbore",
+        "failed_to_download_file": "Nepodarilo sa stiahnuť súbor: ",
+        "watermark_protected": "Tento súbor je chránený vodoznakom. Vypnite nastavenie miestnosti \"Pridať vodoznaky do dokumentov\" a skúste to znova.",
+        "empty_file": "Stiahnutý súbor je prázdny",
+        "failed_to_initiate_upload": "Nepodarilo sa spustiť nahrávanie: ",
+        "upload_failed": "Nahrávanie zlyhalo",
+        "invalid_upload_session": "Neplatná odpoveď relácie nahrávania",
+        "file_not_created": "Súbor nebol na serveri vytvorený",
+        "unsupported_format": "Nepodporovaný formát: ",
+        "conversion_failed": "Prevod zlyhal",
+        "created": "Vytvorené "
+    },
+    "context_menu_convert": "Previesť na Markdown"
+}

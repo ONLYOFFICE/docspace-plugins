@@ -1,0 +1,7 @@
+{
+    "dialog_button_save_and_exit": "Tallenna ja poistu",
+    "context_menu_edit_image": "Muokkaa kuvaa",
+    "toast_no_permissions": "Sinulla ei ole oikeutta tarkastella tätä tiedostoa",
+    "toast_file_saved": "Tiedosto tallennettiin onnistuneesti",
+    "toast_file_not_saved": "Tiedoston tallentaminen epäonnistui"
+}

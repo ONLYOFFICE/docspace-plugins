@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "Chuyển đổi tệp sang PDF",
+        "button_convert_file": "Chuyển đổi tệp",
+        "button_cancel": "Hủy",
+        "toast_wrong_api_token": "Token API không đúng",
+        "text_converted_file_name": "Tên tệp đã chuyển đổi"
+    },
+    "settings": {
+        "description": "Để tạo khóa bí mật API, hãy truy cập https://www.convertapi.com/ \n\n Sau khi token API được bật, tiện ích sẽ khả dụng với tất cả người dùng của ONLYOFFICE Apps hiện tại.",
+        "toast_token_is_saved": "Đã lưu token",
+        "button_save": "Lưu",
+        "text_api_token": "Token API"
+    },
+    "context_menu_convert_to_pdf": "Chuyển đổi sang PDF",
+    "toast_file_created": "Đã tạo tệp %{name}",
+    "toast_file_not_created": "Chưa tạo được tệp %{name}: %{message}",
+    "toast_wrong_api_token": "Token API không đúng"
+}

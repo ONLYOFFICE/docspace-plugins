@@ -13,7 +13,7 @@
         "create_dialog_start_value": "テキストファイル",
         "error_no_file_ext": "ファイル拡張子を指定する必要があります",
         "error_not_supported": "このファイル拡張子はCodemirrorプラグインでサポートされていません",
-        "error_not_created": "ファイル「${title}.md」を作成できませんでした: ${message}"
+        "error_not_created": "ファイル「%{title}.md」を作成できませんでした: %{message}"
     },
     "settings": {
         "toast_data_is_saved": "データが保存されました",

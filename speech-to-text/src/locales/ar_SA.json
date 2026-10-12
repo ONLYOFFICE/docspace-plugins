@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "تم حفظ الرمز المميز",
+        "button_save": "حفظ",
+        "text_description": "لإنشاء رمز API، تفضل بزيارة https://www.assemblyai.com \n\n بمجرد تفعيل رمز API، يصبح المكون الإضافي متاحًا لجميع مستخدمي ONLYOFFICE Apps الحالي.",
+        "text_api_token": "رمز API"
+    },
+    "toast_api_token_is_missing": "رمز API مفقود",
+    "toast_wrong_api_token": "رمز API غير صحيح",
+    "toast_speech_not_recognized": "لم يتم التعرف على الكلام أو أنه غير موجود",
+    "toast_successfully_converted": "تم تحويل الملف إلى نص بنجاح",
+    "toast_unsuccessfully_converted": "فشل التحويل إلى نص: ",
+    "context_menu_convert_to_text": "تحويل إلى نص"
+}

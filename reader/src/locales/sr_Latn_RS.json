@@ -1,0 +1,9 @@
+{
+    "context_menu": {
+        "open_in_reader": "Otvori u čitaču"
+    },
+    "file_type_name": "Knjiga",
+    "errors": {
+        "unsupported_zip": "Ova ZIP arhiva ne sadrži podržanu knjigu. Podržani formati unutar ZIP arhive: EPUB ili FB2."
+    }
+}

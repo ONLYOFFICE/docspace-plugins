@@ -71,18 +71,10 @@ class BookReader implements IPlugin, IContextMenuPlugin, IFilePlugin {
 
 const plugin = new BookReader();
 
-declare global {
-	interface Window {
-		Plugins: any;
-	}
-}
-
 plugin.addContextMenuItem(contextMenuItem);
 
 for (const item of readerFileItems) {
 	plugin.addFileItem(item);
 }
-
-window.Plugins.BookReader = plugin || {};
 
 export default plugin;

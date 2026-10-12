@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "Konwertuj plik na PDF",
+        "button_convert_file": "Konwertuj plik",
+        "button_cancel": "Anuluj",
+        "toast_wrong_api_token": "Nieprawidłowy token API",
+        "text_converted_file_name": "Nazwa przekonwertowanego pliku"
+    },
+    "settings": {
+        "description": "Aby wygenerować sekret API, odwiedź https://www.convertapi.com/ \n\n Po włączeniu tokena API wtyczka staje się dostępna dla wszystkich użytkowników bieżącego ONLYOFFICE Apps.",
+        "toast_token_is_saved": "Token został zapisany",
+        "button_save": "Zapisz",
+        "text_api_token": "Token API"
+    },
+    "context_menu_convert_to_pdf": "Konwertuj na PDF",
+    "toast_file_created": "Plik %{name} został utworzony",
+    "toast_file_not_created": "Plik %{name} nie został utworzony: %{message}",
+    "toast_wrong_api_token": "Nieprawidłowy token API"
+}

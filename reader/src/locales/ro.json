@@ -1,0 +1,9 @@
+{
+    "context_menu": {
+        "open_in_reader": "Deschide în cititor"
+    },
+    "file_type_name": "Carte",
+    "errors": {
+        "unsupported_zip": "Această arhivă ZIP nu conține o carte acceptată. Formate acceptate în interiorul unei arhive ZIP: EPUB sau FB2."
+    }
+}

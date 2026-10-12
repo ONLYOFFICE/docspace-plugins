@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "Placer dans un nouveau dossier",
         "button_cancel": "Annuler",
         "viewer_loading": "Chargement...",
-        "viewer_error": "Erreur : ${error}"
+        "viewer_error": "Erreur : %{error}"
     },
     "default_zip_title": "Nouvelle archive",
     "default_folder_title": "Nouveau dossier",

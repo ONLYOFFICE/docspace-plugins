@@ -1,0 +1,32 @@
+{
+    "main_button": {
+        "create_dialog_title": "Tạo sơ đồ",
+        "create_dialog_start_value": "Sơ đồ mới"
+    },
+    "open_from_url": {
+        "button_accept": "Tạo",
+        "button_cancel": "Hủy",
+        "description_text": "Hãy đảm bảo quyền truy cập bằng liên kết công khai đang được mở",
+        "dialog_header": "Nhập sơ đồ",
+        "input_placeholder_name": "Sơ đồ mới",
+        "input_text_name": "Tên",
+        "input_placeholder_url": "URL của sơ đồ",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "Đã lưu dữ liệu",
+        "button_save": "Lưu",
+        "text_url": "Địa chỉ draw.io",
+        "text_url_description": "Địa chỉ của dịch vụ draw.io dùng để mở và chỉnh sửa sơ đồ. Hãy thay đổi nếu draw.io được lưu trữ trên máy chủ của riêng bạn. Giữ nguyên https://embed.diagrams.net để dùng dịch vụ công khai.",
+        "text_language": "Ngôn ngữ",
+        "text_libraries": "Thư viện",
+        "text_offline_description": "Khi \"chế độ ngoại tuyến\" được bật, mọi thao tác và tính năng từ xa sẽ bị vô hiệu hóa để bảo vệ",
+        "text_offline": "Chế độ ngoại tuyến"
+    },
+    "context_menu_open_diagram": "Mở sơ đồ",
+    "file_type_name": "Sơ đồ",
+    "toast_file_not_created": "Chưa tạo được tệp \"%{title}.drawio\": %{message}",
+    "toast_wrong_file_format": "Định dạng tệp không đúng",
+    "toast_no_permission": "Bạn không có quyền xem tệp này",
+    "toast_cant_read_file": "Không thể đọc tệp này"
+}

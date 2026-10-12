@@ -1,0 +1,9 @@
+{
+    "context_menu": {
+        "open_in_reader": "فتح في القارئ"
+    },
+    "file_type_name": "كتاب",
+    "errors": {
+        "unsupported_zip": "لا يحتوي أرشيف ZIP هذا على كتاب مدعوم. التنسيقات المدعومة داخل ZIP: EPUB أو FB2."
+    }
+}

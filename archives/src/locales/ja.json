@@ -21,7 +21,7 @@
         "selector_checkbox_wrap": "新しいフォルダーに入れる",
         "button_cancel": "キャンセル",
         "viewer_loading": "読み込み中...",
-        "viewer_error": "エラー: ${error}"
+        "viewer_error": "エラー: %{error}"
     },
     "default_zip_title": "新しいアーカイブ",
     "default_folder_title": "新しいフォルダー",

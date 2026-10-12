@@ -1,6 +1,6 @@
-# ONLYOFFICE DocSpace plugins
+# ONLYOFFICE Apps plugins
 
-This repository comprises plugins which allow extending the functionality of [ONLYOFFICE DocSpace](https://www.onlyoffice.com/docspace.aspx).
+This repository comprises plugins which allow extending the functionality of [ONLYOFFICE Apps](https://www.onlyoffice.com/docspace.aspx).
 
 * [Codemirror](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/codemirror)
 * [ConvertToMarkdown](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/convert-to-markdown)
@@ -10,6 +10,7 @@ This repository comprises plugins which allow extending the functionality of [ON
 * [PDFConverter](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/pdf-converter)
 * [Reader](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/reader)
 * [SpeechToText](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/speech-to-text)
+* [URL](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/url)
 * [ZIP Archives](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/archives)
 
 ## User feedback and support

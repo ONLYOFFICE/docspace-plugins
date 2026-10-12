@@ -13,7 +13,7 @@
         "create_dialog_start_value": "文本文件",
         "error_no_file_ext": "必须提供文件扩展名",
         "error_not_supported": "Codemirror 插件不支持该文件扩展名",
-        "error_not_created": "文件 \"${title}.md\" 未被创建：${message}"
+        "error_not_created": "文件 \"%{title}.md\" 未被创建：%{message}"
     },
     "settings": {
         "toast_data_is_saved": "数据已保存",

@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "Токенът е записан",
+        "button_save": "Запис",
+        "text_description": "За да генерирате API токен, посетете https://www.assemblyai.com \n\n След като API токенът бъде активиран, приставката става достъпна за всички потребители на текущия ONLYOFFICE Apps.",
+        "text_api_token": "API токен"
+    },
+    "toast_api_token_is_missing": "Липсва API токен",
+    "toast_wrong_api_token": "Грешен API токен",
+    "toast_speech_not_recognized": "Речта не е разпозната или липсва",
+    "toast_successfully_converted": "Файлът беше успешно преобразуван в текст",
+    "toast_unsuccessfully_converted": "Преобразуването в текст е неуспешно: ",
+    "context_menu_convert_to_text": "Преобразуване в текст"
+}

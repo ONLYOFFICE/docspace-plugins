@@ -1,0 +1,9 @@
+{
+    "context_menu": {
+        "open_in_reader": "Відкрити в читалці"
+    },
+    "file_type_name": "Книга",
+    "errors": {
+        "unsupported_zip": "Цей ZIP-архів не містить підтримуваної книги. Підтримувані формати всередині ZIP: EPUB або FB2."
+    }
+}

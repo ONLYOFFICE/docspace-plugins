@@ -1,0 +1,38 @@
+{
+    "context_menu": {
+        "open_archive": "فتح الأرشيف",
+        "group_unzip": "فك الضغط",
+        "choose_location": "اختيار موقع",
+        "unzip_here": "فك الضغط هنا",
+        "group_zip": "الأرشفة",
+        "zip_folder": "الأرشفة هنا",
+        "zip_selected": "أرشفة العناصر المحددة",
+        "zip_selected_item": "أرشفة العنصر المحدد"
+    },
+    "dialog": {
+        "header": "عارض الأرشيف",
+        "button_extract": "استخراج الأرشيف",
+        "selector_header_unzip": "فك الضغط إلى",
+        "selector_header_zip": "الأرشفة إلى",
+        "selector_header_extract": "الاستخراج إلى",
+        "selector_button_archive": "أرشفة",
+        "selector_button_unzip": "فك الضغط",
+        "selector_button_extract": "استخراج",
+        "selector_checkbox_wrap": "وضع في مجلد جديد",
+        "button_cancel": "إلغاء",
+        "viewer_loading": "جارٍ التحميل...",
+        "viewer_error": "خطأ: %{error}"
+    },
+    "default_zip_title": "أرشيف جديد",
+    "default_folder_title": "مجلد جديد",
+    "file_type_name": "أرشيف",
+    "toast_no_folder_download_permission": "ليس لديك إذن لتنزيل الملفات من هذا المجلد",
+    "toast_no_view_permission": "ليس لديك إذن لعرض هذا الملف",
+    "toast_no_unzip_permission": "ليس لديك إذن لفك ضغط هذا الملف",
+    "toast_extract_success": "تم استخراج العنصر (العناصر) بنجاح",
+    "toast_unzip_success": "تم فك ضغط الملف بنجاح",
+    "toast_cant_create": "فشلت العملية. لا يمكنك إنشاء ملفات في هذا المجلد",
+    "toast_failed_to_create": "فشل إنشاء ملف zip",
+    "toast_zip_saved": "تم حفظ ملف zip",
+    "toast_zip_not_saved": "فشل حفظ ملف zip"
+}

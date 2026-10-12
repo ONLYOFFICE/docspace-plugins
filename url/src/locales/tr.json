@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "URL'yi düzenle"
+    },
+    "main_button": {
+        "new_url": "Yeni URL"
+    },
+    "dialog": {
+        "header_create": "Yeni URL oluştur",
+        "header_edit": "URL'yi düzenle",
+        "label_url": "URL:",
+        "label_title": "Başlık:",
+        "button_create": "Oluştur",
+        "button_save": "Kaydet",
+        "button_cancel": "İptal",
+        "error_invalid_url": "Geçersiz URL adresi",
+        "error_url_required": "URL zorunludur",
+        "link_to": "Bağlantı hedefi",
+        "new_link": "Yeni bağlantı",
+        "toast_url_created": "URL başarıyla oluşturuldu",
+        "toast_url_not_created": "URL oluşturulamadı",
+        "toast_file_saved": "Dosya başarıyla kaydedildi",
+        "toast_file_not_saved": "Dosya kaydedilemedi"
+    },
+    "file_type_name": "Bağlantı",
+    "toast_no_permissions": "Bu dosyayı görüntüleme izniniz yok",
+    "toast_cant_read_file": "Bu dosya okunamıyor",
+    "toast_wrong_file": "Yanlış veya bozuk URL dosyası"
+}

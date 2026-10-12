@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "Chỉnh sửa URL"
+    },
+    "main_button": {
+        "new_url": "URL mới"
+    },
+    "dialog": {
+        "header_create": "Tạo URL mới",
+        "header_edit": "Chỉnh sửa URL",
+        "label_url": "URL:",
+        "label_title": "Tiêu đề:",
+        "button_create": "Tạo",
+        "button_save": "Lưu",
+        "button_cancel": "Hủy",
+        "error_invalid_url": "Địa chỉ URL không hợp lệ",
+        "error_url_required": "URL là bắt buộc",
+        "link_to": "Liên kết đến",
+        "new_link": "Liên kết mới",
+        "toast_url_created": "Đã tạo URL thành công",
+        "toast_url_not_created": "Không tạo được URL",
+        "toast_file_saved": "Đã lưu tệp thành công",
+        "toast_file_not_saved": "Lưu tệp không thành công"
+    },
+    "file_type_name": "Liên kết",
+    "toast_no_permissions": "Bạn không có quyền xem tệp này",
+    "toast_cant_read_file": "Không thể đọc tệp này",
+    "toast_wrong_file": "Tệp URL sai hoặc bị hỏng"
+}

@@ -1,0 +1,9 @@
+{
+    "context_menu": {
+        "open_in_reader": "리더에서 열기"
+    },
+    "file_type_name": "도서",
+    "errors": {
+        "unsupported_zip": "이 ZIP 아카이브에는 지원되는 도서가 없습니다. ZIP 내에서 지원되는 형식: EPUB 또는 FB2."
+    }
+}

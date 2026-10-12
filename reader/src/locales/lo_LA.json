@@ -1,0 +1,9 @@
+{
+    "context_menu": {
+        "open_in_reader": "ເປີດໃນຕົວອ່ານ"
+    },
+    "file_type_name": "ປຶ້ມ",
+    "errors": {
+        "unsupported_zip": "ໄຟລ໌ ZIP ນີ້ບໍ່ມີປຶ້ມທີ່ຮອງຮັບ. ຮູບແບບທີ່ຮອງຮັບພາຍໃນ ZIP: EPUB ຫຼື FB2."
+    }
+}

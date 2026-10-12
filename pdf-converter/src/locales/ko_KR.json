@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "파일을 PDF로 변환",
+        "button_convert_file": "파일 변환",
+        "button_cancel": "취소",
+        "toast_wrong_api_token": "잘못된 API 토큰",
+        "text_converted_file_name": "변환된 파일의 이름"
+    },
+    "settings": {
+        "description": "API 시크릿을 생성하려면 https://www.convertapi.com/ 을 방문하세요 \n\n API 토큰이 활성화되면 현재 ONLYOFFICE Apps의 모든 사용자가 플러그인을 사용할 수 있습니다.",
+        "toast_token_is_saved": "토큰이 저장되었습니다",
+        "button_save": "저장",
+        "text_api_token": "API 토큰"
+    },
+    "context_menu_convert_to_pdf": "PDF로 변환",
+    "toast_file_created": "%{name} 파일이 생성되었습니다",
+    "toast_file_not_created": "%{name} 파일이 생성되지 않았습니다: %{message}",
+    "toast_wrong_api_token": "잘못된 API 토큰"
+}

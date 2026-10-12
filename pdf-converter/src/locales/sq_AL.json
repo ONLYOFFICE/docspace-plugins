@@ -1,0 +1,19 @@
+{
+    "dialog": {
+        "header_convert_to_pdf": "Konverto skedarin në PDF",
+        "button_convert_file": "Konverto skedarin",
+        "button_cancel": "Anulo",
+        "toast_wrong_api_token": "Token API i gabuar",
+        "text_converted_file_name": "Emri i skedarit të konvertuar"
+    },
+    "settings": {
+        "description": "Për të gjeneruar sekretin API, vizitoni https://www.convertapi.com/ \n\n Pasi të aktivizohet tokeni API, shtojca bëhet e disponueshme për të gjithë përdoruesit e ONLYOFFICE Apps aktual.",
+        "toast_token_is_saved": "Token-i u ruajt",
+        "button_save": "Ruaj",
+        "text_api_token": "Token API"
+    },
+    "context_menu_convert_to_pdf": "Konverto në PDF",
+    "toast_file_created": "Skedari %{name} u krijua",
+    "toast_file_not_created": "Skedari %{name} nuk u krijua: %{message}",
+    "toast_wrong_api_token": "Token API i gabuar"
+}

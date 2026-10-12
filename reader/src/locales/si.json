@@ -1,0 +1,9 @@
+{
+    "context_menu": {
+        "open_in_reader": "කියවනයේ විවෘත කරන්න"
+    },
+    "file_type_name": "පොත",
+    "errors": {
+        "unsupported_zip": "මෙම ZIP සංරක්ෂිතයේ සහාය දක්වන පොතක් අඩංගු නොවේ. ZIP තුළ සහාය දක්වන ආකෘති: EPUB හෝ FB2."
+    }
+}

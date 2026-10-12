@@ -1,0 +1,32 @@
+{
+    "main_button": {
+        "create_dialog_title": "Diaqram yarat",
+        "create_dialog_start_value": "Yeni diaqram"
+    },
+    "open_from_url": {
+        "button_accept": "Yarat",
+        "button_cancel": "Ləğv et",
+        "description_text": "İctimai keçidlə girişin açıq olduğuna əmin olun",
+        "dialog_header": "Diaqramı idxal et",
+        "input_placeholder_name": "Yeni diaqram",
+        "input_text_name": "Ad",
+        "input_placeholder_url": "Diaqram üçün URL",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "Məlumatlar yadda saxlanıldı",
+        "button_save": "Yadda saxla",
+        "text_url": "draw.io ünvanı",
+        "text_url_description": "Diaqramları açmaq və redaktə etmək üçün istifadə olunan draw.io xidmətinin ünvanı. draw.io öz serverinizdə yerləşdirilibsə, onu dəyişin. İctimai xidmətdən istifadə etmək üçün https://embed.diagrams.net saxlayın.",
+        "text_language": "Dil",
+        "text_libraries": "Kitabxanalar",
+        "text_offline_description": "\"Oflayn rejim\" aktiv olduqda, qorunma məqsədilə bütün uzaq əməliyyatlar və funksiyalar söndürülür",
+        "text_offline": "Oflayn rejim"
+    },
+    "context_menu_open_diagram": "Diaqramı aç",
+    "file_type_name": "Diaqram",
+    "toast_file_not_created": "\"%{title}.drawio\" faylı yaradılmadı: %{message}",
+    "toast_wrong_file_format": "Yanlış fayl formatı",
+    "toast_no_permission": "Bu faylı görüntüləmək üçün icazəniz yoxdur",
+    "toast_cant_read_file": "Bu faylı oxumaq mümkün deyil"
+}

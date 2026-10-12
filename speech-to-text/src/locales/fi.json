@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "Tunnus tallennettu",
+        "button_save": "Tallenna",
+        "text_description": "Luo API-tunnus osoitteessa https://www.assemblyai.com \n\n Kun API-tunnus on otettu käyttöön, laajennus on kaikkien nykyisen ONLYOFFICE Apps -ympäristön käyttäjien käytettävissä.",
+        "text_api_token": "API-tunnus"
+    },
+    "toast_api_token_is_missing": "API-tunnus puuttuu",
+    "toast_wrong_api_token": "Virheellinen API-tunnus",
+    "toast_speech_not_recognized": "Puhetta ei tunnistettu tai se puuttuu",
+    "toast_successfully_converted": "Tiedosto muunnettiin tekstiksi onnistuneesti",
+    "toast_unsuccessfully_converted": "Tekstiksi muuntaminen epäonnistui: ",
+    "context_menu_convert_to_text": "Muunna tekstiksi"
+}

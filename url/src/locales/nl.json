@@ -1,0 +1,29 @@
+{
+    "context_menu_item": {
+        "edit_url": "URL bewerken"
+    },
+    "main_button": {
+        "new_url": "Nieuwe URL"
+    },
+    "dialog": {
+        "header_create": "Nieuwe URL maken",
+        "header_edit": "URL bewerken",
+        "label_url": "URL:",
+        "label_title": "Titel:",
+        "button_create": "Maken",
+        "button_save": "Opslaan",
+        "button_cancel": "Annuleren",
+        "error_invalid_url": "Ongeldig URL-adres",
+        "error_url_required": "URL is verplicht",
+        "link_to": "Koppeling naar",
+        "new_link": "Nieuwe koppeling",
+        "toast_url_created": "URL is gemaakt",
+        "toast_url_not_created": "Kan URL niet maken",
+        "toast_file_saved": "Bestand is opgeslagen",
+        "toast_file_not_saved": "Kan bestand niet opslaan"
+    },
+    "file_type_name": "Koppeling",
+    "toast_no_permissions": "U hebt geen rechten om dit bestand te bekijken",
+    "toast_cant_read_file": "Kan dit bestand niet lezen",
+    "toast_wrong_file": "Verkeerd of beschadigd URL-bestand"
+}

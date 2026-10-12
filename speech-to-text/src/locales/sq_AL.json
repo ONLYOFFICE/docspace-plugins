@@ -1,0 +1,14 @@
+{
+    "settings": {
+        "toast_token_is_saved": "Token-i u ruajt",
+        "button_save": "Ruaj",
+        "text_description": "Për të gjeneruar një token API, vizitoni https://www.assemblyai.com \n\n Pasi të aktivizohet tokeni API, shtojca bëhet e disponueshme për të gjithë përdoruesit e ONLYOFFICE Apps aktual.",
+        "text_api_token": "Token API"
+    },
+    "toast_api_token_is_missing": "Mungon tokeni API",
+    "toast_wrong_api_token": "Token API i gabuar",
+    "toast_speech_not_recognized": "Ligjërimi nuk u njoh ose mungon",
+    "toast_successfully_converted": "Skedari u konvertua me sukses në tekst",
+    "toast_unsuccessfully_converted": "Konvertimi në tekst dështoi: ",
+    "context_menu_convert_to_text": "Konverto në tekst"
+}

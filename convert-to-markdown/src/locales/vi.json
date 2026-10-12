@@ -1,0 +1,17 @@
+{
+    "toast": {
+        "unable_to_get_file_info": "Không thể lấy thông tin tệp",
+        "failed_to_get_file_details": "Không lấy được chi tiết tệp",
+        "failed_to_download_file": "Không tải xuống được tệp: ",
+        "watermark_protected": "Tệp này được bảo vệ bằng hình mờ. Hãy tắt cài đặt phòng \"Thêm hình mờ vào tài liệu\" rồi thử lại.",
+        "empty_file": "Tệp đã tải xuống trống",
+        "failed_to_initiate_upload": "Không khởi tạo được quá trình tải lên: ",
+        "upload_failed": "Tải lên không thành công",
+        "invalid_upload_session": "Phản hồi phiên tải lên không hợp lệ",
+        "file_not_created": "Tệp chưa được tạo trên máy chủ",
+        "unsupported_format": "Định dạng không được hỗ trợ: ",
+        "conversion_failed": "Chuyển đổi không thành công",
+        "created": "Đã tạo "
+    },
+    "context_menu_convert": "Chuyển đổi sang Markdown"
+}

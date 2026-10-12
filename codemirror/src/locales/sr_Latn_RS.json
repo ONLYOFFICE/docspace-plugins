@@ -1,0 +1,36 @@
+{
+    "dialog": {
+        "button_save": "Sačuvaj",
+        "button_cancel": "Otkaži",
+        "text_unsaved": "Nastaviti bez čuvanja?\nNapravili ste izmene u konfiguraciji. Ako nastavite bez čuvanja, te izmene neće biti primenjene.",
+        "warning_header": "Upozorenje",
+        "button_continue": "Nastavi",
+        "button_reopen": "Ponovo otvori"
+    },
+    "main_button": {
+        "label": "Tekstualna datoteka",
+        "create_dialog_title": "Napravi tekstualnu datoteku",
+        "create_dialog_start_value": "Tekstualna datoteka",
+        "error_no_file_ext": "Mora se navesti ekstenzija datoteke",
+        "error_not_supported": "Dodatak Codemirror ne podržava ovu ekstenziju datoteke",
+        "error_not_created": "Datoteka \"%{title}.md\" nije kreirana: %{message}"
+    },
+    "settings": {
+        "toast_data_is_saved": "Podaci su sačuvani",
+        "button_save": "Sačuvaj",
+        "header_general": "Opšte",
+        "header_html": "HTML",
+        "highlight_whitespace": "Istakni razmake",
+        "highlight_whitespace_description": "Prikazuj razmake kao tačke, a tabulatore kao strelice.",
+        "highlight_trailing_whitespace": "Istakni razmake na kraju reda",
+        "highlight_trailing_whitespace_description": "Istakni razmake na kraju reda.",
+        "auto_close_tags": "Automatski zatvaraj oznake",
+        "auto_close_tags_description": "Automatski ubaci zatvarajuće oznake kada se ukuca > ili / u datotekama sličnim HTML-u."
+    },
+    "context_menu_edit": "Uredi datoteku pomoću Codemirror-a",
+    "file_type_name": "Kod",
+    "toast_no_permission": "Nemate dozvolu da prikažete ovu datoteku",
+    "toast_cant_read_file": "Ova datoteka ne može da se pročita",
+    "toast_file_saved": "Datoteka je sačuvana",
+    "toast_file_not_saved": "Čuvanje datoteke nije uspelo"
+}

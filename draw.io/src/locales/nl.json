@@ -1,0 +1,32 @@
+{
+    "main_button": {
+        "create_dialog_title": "Diagram maken",
+        "create_dialog_start_value": "Nieuw diagram"
+    },
+    "open_from_url": {
+        "button_accept": "Maken",
+        "button_cancel": "Annuleren",
+        "description_text": "Zorg ervoor dat toegang via een openbare koppeling open is",
+        "dialog_header": "Diagram importeren",
+        "input_placeholder_name": "Nieuw diagram",
+        "input_text_name": "Naam",
+        "input_placeholder_url": "URL voor diagram",
+        "input_text_url": "URL"
+    },
+    "settings": {
+        "toast_data_saved": "Gegevens opgeslagen",
+        "button_save": "Opslaan",
+        "text_url": "draw.io-adres",
+        "text_url_description": "Het adres van de draw.io-service die wordt gebruikt om diagrammen te openen en te bewerken. Wijzig dit als draw.io op uw eigen server wordt gehost. Laat https://embed.diagrams.net staan om de openbare service te gebruiken.",
+        "text_language": "Taal",
+        "text_libraries": "Bibliotheken",
+        "text_offline_description": "Wanneer de \"offlinemodus\" actief is, worden alle externe bewerkingen en functies ter bescherming uitgeschakeld",
+        "text_offline": "Offlinemodus"
+    },
+    "context_menu_open_diagram": "Diagram openen",
+    "file_type_name": "Diagram",
+    "toast_file_not_created": "Bestand \"%{title}.drawio\" is niet gemaakt: %{message}",
+    "toast_wrong_file_format": "Verkeerde bestandsindeling",
+    "toast_no_permission": "U hebt geen rechten om dit bestand te bekijken",
+    "toast_cant_read_file": "Kan dit bestand niet lezen"
+}
