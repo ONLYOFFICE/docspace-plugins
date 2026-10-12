@@ -4,22 +4,74 @@ on:
   push:
     tags:
       - '*/*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to release (e.g. plugin/1.0.0). Empty: all current plugin versions without a release'
+        required: false
 
 permissions:
   contents: write
 
 jobs:
-  release:
+  prepare:
     runs-on: ubuntu-latest
+    outputs:
+      tags: ${{ steps.tags.outputs.tags }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Find Tags
+        id: tags
+        env:
+          GH_TOKEN: ${{ github.token }}
+          INPUT_TAG: ${{ inputs.tag }}
+        run: |
+          TAGS=()
+          if [[ "${GITHUB_EVENT_NAME}" == "push" ]]; then
+            TAGS+=("${GITHUB_REF_NAME}")
+          elif [[ -n "${INPUT_TAG}" ]]; then
+            TAGS+=("${INPUT_TAG}")
+          else
+            for d in $(ls -d */); do
+              PLUGIN=$(basename ${d})
+              [[ -f ${PLUGIN}/package.json ]] || continue
+
+              VERSION=$(jq -r '.version' ${PLUGIN}/package.json)
+              TAG="${PLUGIN}/${VERSION}"
+
+              git ls-remote --exit-code --tags origin "refs/tags/${TAG}" > /dev/null || continue
+              gh release view "${TAG}" > /dev/null 2>&1 && continue
+
+              TAGS+=("${TAG}")
+            done
+          fi
+          echo "tags for release: ${TAGS[@]}"
+          echo "tags=$(jq -c -n '$ARGS.positional' --args "${TAGS[@]}")" >> "$GITHUB_OUTPUT"
+
+  release:
+    name: "Release: ${{ matrix.tag }}"
+    runs-on: ubuntu-latest
+    needs: [prepare]
+    if: needs.prepare.outputs.tags != '[]'
+    strategy:
+      fail-fast: false
+      matrix:
+        tag: ${{ fromJSON(needs.prepare.outputs.tags) }}
+    env:
+      TAG: ${{ matrix.tag }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: refs/tags/${{ matrix.tag }}
+
       - name: Get Info
         id: info
         run: |
-          PLUGIN="${GITHUB_REF_NAME%/*}"
-          VERSION="${GITHUB_REF_NAME##*/}"
+          PLUGIN="${TAG%/*}"
+          VERSION="${TAG##*/}"
 
           if [[ ! -f ${PLUGIN}/package.json ]]; then
             echo "::error::plugin '${PLUGIN}' not found"
@@ -67,9 +119,9 @@ jobs:
           ASSET="${PLUGIN}-${VERSION}.zip"
           cp ${PLUGIN}/dist/plugin.zip "${ASSET}"
 
-          if gh release view "${GITHUB_REF_NAME}" > /dev/null 2>&1; then
-            gh release edit "${GITHUB_REF_NAME}" --title "${PLUGIN} ${VERSION}" --notes-file RELEASE.md
-            gh release upload "${GITHUB_REF_NAME}" "${ASSET}" --clobber
+          if gh release view "${TAG}" > /dev/null 2>&1; then
+            gh release edit "${TAG}" --title "${PLUGIN} ${VERSION}" --notes-file RELEASE.md
+            gh release upload "${TAG}" "${ASSET}" --clobber
           else
-            gh release create "${GITHUB_REF_NAME}" "${ASSET}" --verify-tag --title "${PLUGIN} ${VERSION}" --notes-file RELEASE.md
+            gh release create "${TAG}" "${ASSET}" --verify-tag --title "${PLUGIN} ${VERSION}" --notes-file RELEASE.md
           fi
