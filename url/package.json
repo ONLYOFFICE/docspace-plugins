@@ -68,7 +68,7 @@
     "zh-CN": "该插件允许直接从文件列表创建、编辑和打开带有外部链接的 URL 文件"
   },
   "pluginName": "Url",
-  "license": "",
+  "license": "Apache-2.0",
   "logo": "logo_48x48.svg",
-  "homepage": ""
+  "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/url"
 }
