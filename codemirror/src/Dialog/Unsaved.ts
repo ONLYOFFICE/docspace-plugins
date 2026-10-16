@@ -95,7 +95,7 @@ export const unsavedModalDialog: IModalDialog = {
   onLoad: async () => {
     return {
       newDialogHeader: i18n.t("dialog.warning_header"),
-      newDialogBody: unsavedModalDialog.dialogBody,
+      newDialogBody: unsavedModalDialog.dialogBody!,
       newDialogFooter: unsavedModalDialog.dialogFooter,
     };
   },

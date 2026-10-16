@@ -145,12 +145,4 @@ const plugin = new SpeechToText();
 plugin.addContextMenuItem(contextMenuItem());
 plugin.setAdminPluginSettings(adminSettings);
 
-declare global {
-  interface Window {
-    Plugins: any;
-  }
-}
-
-window.Plugins.SpeechToText = plugin || {};
-
 export default plugin;

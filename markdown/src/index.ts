@@ -218,17 +218,9 @@ class Markdown
 
 const plugin = new Markdown();
 
-declare global {
-  interface Window {
-    Plugins: any;
-  }
-}
-
 plugin.addFileItem(markdownitItem);
 plugin.addContextMenuItem(contextMenuItem());
 plugin.addContextMenuItem(contextMenuViewerItem());
 plugin.addMainButtonItem(mainButtonItem());
-
-window.Plugins.Markdown = plugin || {};
 
 export default plugin;

@@ -36,13 +36,11 @@ import {
 import markdownit from "markdown-it";
 import hljs from "highlight.js";
 import properties from "./properties.json";
-import {
-  Actions,
-  Components,
+import { Actions, Components, ToastType } from "@onlyoffice/docspace-plugin-sdk";
+import type {
+  File as TFile,
   IMessage,
   IToast,
-  ToastType,
-  File,
 } from "@onlyoffice/docspace-plugin-sdk";
 import {
   closeButton,
@@ -154,7 +152,7 @@ class Markdownit {
     }
   };
 
-  editMarkdown = async (id: File | any, view: boolean) => {
+  editMarkdown = async (id: TFile | any, view: boolean) => {
     if (!this.apiURL) this.createAPIUrl();
 
     let file = id;
@@ -261,7 +259,7 @@ class Markdownit {
       insertMD(data);
 
       return {
-        newDialogBody: markdownitModalDialogProps.dialogBody,
+        newDialogBody: markdownitModalDialogProps.dialogBody!,
         newDialogHeader: title,
       };
     };
@@ -600,7 +598,7 @@ class Markdownit {
       if (!this.mobile) insertMD(data);
 
       return {
-        newDialogBody: markdownitModalDialogProps.dialogBody,
+        newDialogBody: markdownitModalDialogProps.dialogBody!,
         newDialogHeader: title,
       };
     };
@@ -614,7 +612,7 @@ class Markdownit {
         "orientationchange",
         async function () {
           resizeTextArea();
-          const iframe = window.parent.document.getElementById(
+          const iframe = window.document.getElementById(
             "md-iframe"
           ) as HTMLIFrameElement;
           if (iframe) insertMD(mdArea.value);
@@ -658,7 +656,7 @@ class Markdownit {
 }
 
 async function insertMD(data: string) {
-  const iframe = window.parent.document.getElementById(
+  const iframe = window.document.getElementById(
     "md-iframe"
   ) as HTMLIFrameElement;
   if (iframe) {
@@ -703,7 +701,7 @@ async function insertMD(data: string) {
 }
 
 function updateMD(data: string) {
-  const iframe = window.parent.document.getElementById(
+  const iframe = window.document.getElementById(
     "md-iframe"
   ) as HTMLIFrameElement;
   if (iframe) {
@@ -744,13 +742,13 @@ function setSizes(editor: boolean, mobile: boolean) {
 }
 // for backward compatibility with old ONLYOFFICE Apps versions
 function resizeTextArea() {
-  const area = window.parent.document.getElementsByName(
+  const area = window.document.getElementsByName(
     "md-plugin-textarea"
   )[0] as HTMLIFrameElement;
-  if (area)
-    // @ts-ignore
-    area.parentElement?.parentElement?.parentElement?.parentElement?.parentElement?.style.maxWidth =
-      "100%";
+  const wrapper =
+    area?.parentElement?.parentElement?.parentElement?.parentElement
+      ?.parentElement;
+  if (wrapper) wrapper.style.maxWidth = "100%";
 }
 
 function isMobile() {

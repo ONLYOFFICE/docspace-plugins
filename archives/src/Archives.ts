@@ -510,7 +510,7 @@ class Archives {
   };
 
   isDarkTheme = async () => {
-    const portal = window.parent.document;
+    const portal = window.document;
     const theme = portal.documentElement.getAttribute("data-theme");
 
     if (theme === "dark" || portal.body.classList.contains("dark")) return true;
@@ -533,7 +533,7 @@ class Archives {
 
   postMessage = (data: any) => {
     data.source = "archivesplugin";
-    window.parent.postMessage(data, "*");
+    window.postMessage(data, "*");
   };
 }
 
@@ -543,7 +543,7 @@ export interface FileTreeItem {
   content: Uint8Array | FileTreeItem[];
 }
 
-function decodeZipEntryName(bytes: string[] | Uint8Array | Buffer): string {
+function decodeZipEntryName(bytes: string[] | Uint8Array): string {
   const buf = bytes instanceof Uint8Array ? bytes : Uint8Array.from(bytes as any);
   try {
     return new TextDecoder("utf-8", { fatal: true }).decode(buf);

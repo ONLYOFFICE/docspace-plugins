@@ -228,19 +228,11 @@ class Codemirror
 
 const plugin = new Codemirror();
 
-declare global {
-  interface Window {
-    Plugins: any;
-  }
-}
-
 plugin.addMainButtonItem(codemirrorMainButtonItem());
 plugin.setAdminPluginSettings(codemirrorSettings);
 plugin.addContextMenuItem(contextMenuItem());
 for (const item of codemirrorItems()) {
   plugin.addFileItem(item);
 }
-
-window.Plugins.Codemirror = plugin || {};
 
 export default plugin;

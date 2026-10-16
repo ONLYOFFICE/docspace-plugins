@@ -1,8 +1,13 @@
 ---
-name: Stage
+name: Publish prod
 
 on: 
-  workflow_dispatch:
+  push:
+    branches: [master]
+    paths-ignore:
+      - '**/README.md'
+      - '**/LICENSE'
+      - '.github/**'
 
 jobs:
   prepare:
@@ -53,9 +58,9 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: eu-central-1
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_COM }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_COM }}
+        aws-region: us-west-2
         
     - name: extract plugins.zip
       run: |
@@ -65,4 +70,4 @@ jobs:
     - name: Upload plugin
       run: |
         cd ../
-        aws s3 sync ./${PLUGIN_NAME} s3://docspace-static.onlyoffice.io/webplugins/${PLUGIN_NAME} --delete
+        aws s3 sync ./${PLUGIN_NAME} s3://docspace-static.onlyoffice.com/webplugins/${PLUGIN_NAME} --delete

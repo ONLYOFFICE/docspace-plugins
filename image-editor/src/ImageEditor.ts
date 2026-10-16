@@ -15,7 +15,12 @@
  */
 
 import plugin from ".";
-import { Actions, IMessage, IToast, ToastType, File } from "@onlyoffice/docspace-plugin-sdk";
+import { Actions, ToastType } from "@onlyoffice/docspace-plugin-sdk";
+import type {
+  File as TFile,
+  IMessage,
+  IToast,
+} from "@onlyoffice/docspace-plugin-sdk";
 import { imageEditorModalDialogProps, saveExitButton, dialogBody } from "./Dialog";
 import { i18n } from "./locales";
 
@@ -81,7 +86,7 @@ class ImageEditorPlugin {
     }
   };
 
-  openFile = async (id: File | any) => {
+  openFile = async (id: TFile | any) => {
     if (!this.apiURL) this.createAPIUrl();
 
     let file = id;
@@ -151,7 +156,7 @@ class ImageEditorPlugin {
   };
 
   setupIframe = (title: string, url: string, dark: boolean) => {
-    const iFrame = window.parent.document.getElementById("image-editor-plugin-iframe") as HTMLIFrameElement;
+    const iFrame = window.document.getElementById("image-editor-plugin-iframe") as HTMLIFrameElement;
     if (!iFrame) {
       setTimeout(() => {
         this.setupIframe(title, url, dark);

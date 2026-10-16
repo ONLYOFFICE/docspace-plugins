@@ -14,22 +14,23 @@
  * limitations under the License.
  */
 
-import { IFileItem, File, Devices } from "@onlyoffice/docspace-plugin-sdk";
+import { Devices } from "@onlyoffice/docspace-plugin-sdk";
+import type { File as TFile, IFileItem } from "@onlyoffice/docspace-plugin-sdk";
 
 import drawIo from "../Drawio";
 import { i18n } from "../locales";
 
-const onClick = async (item: File) => {
-  return await drawIo.editDiagram(item);
+const onClick = async (item: TFile) => {
+	return await drawIo.editDiagram(item);
 };
 
 export const drawIoItem: () => IFileItem = () => {
-  return {
-    extension: ".drawio",
-    fileTypeName: i18n.t("file_type_name"),
-    fileRowIcon: "drawio-32.svg",
-    fileTileIcon: "drawio-32.svg",
-    devices: [Devices.desktop],
-    onClick,
-  };
+	return {
+		extension: ".drawio",
+		fileTypeName: i18n.t("file_type_name"),
+		fileRowIcon: "drawio-32.svg",
+		fileTileIcon: "drawio-32.svg",
+		devices: [Devices.desktop],
+		onClick
+	};
 };

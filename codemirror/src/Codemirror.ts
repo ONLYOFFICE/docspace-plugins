@@ -255,7 +255,7 @@ class Codemirror {
   };
 
   openCodemirror = (data: string, fileExt: string, isEditor: boolean, theme: any[]) => {
-    const iFrame = window.parent.document.getElementById("codemirror-plugin-iframe") as HTMLIFrameElement;
+    const iFrame = window.document.getElementById("codemirror-plugin-iframe") as HTMLIFrameElement;
     if (!iFrame) {
       setTimeout(() => {
         this.openCodemirror(data, fileExt, isEditor, theme);
