@@ -42,7 +42,7 @@ export default defineConfig({
         "react-dom",
         "react/jsx-runtime",
         "@onlyoffice/docspace-plugin-sdk/react",
-        /^@docspace\/ui-kit(\/.*)?$/,
+        /^@onlyoffice\/apps-ui-kit(\/.*)?$/,
       ],
       output: {
         assetFileNames: (assetInfo: { name?: string }) =>

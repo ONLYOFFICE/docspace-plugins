@@ -1,4 +1,4 @@
-import { Button, ButtonSize, Loader, LoaderTypes, Text } from "@docspace/ui-kit";
+import { Button, ButtonSize, Loader, LoaderTypes, Text } from "@onlyoffice/apps-ui-kit";
 import { QRCodeSVG } from "qrcode.react";
 
 import { TShareLinkState } from "./useShareLink";
