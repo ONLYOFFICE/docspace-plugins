@@ -1,0 +1,456 @@
+/* Every class here is hashed with the manifest name by vite.config.ts, so nothing
+   below can reach the portal's own markup. The hv-* classes in the highlighted source
+   are generated markup and are only ever matched under .code. */
+
+/* The portal has two themes and no tokens for a segmented control or for syntax
+   colours, so both palettes live here, picked by data-theme from useTheme(). */
+.root {
+  --hv-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --hv-accent: var(--accent-main, var(--color-scheme-main-accent, #4781d1));
+  --hv-fg: var(--text-color);
+  --hv-muted: #657077;
+  --hv-track: var(--background-service-color);
+  --hv-ring: rgba(16, 24, 40, 0.06);
+  --hv-thumb: #ffffff;
+  --hv-thumb-shadow: 0 1px 2px rgba(16, 24, 40, 0.1), 0 0 0 1px rgba(16, 24, 40, 0.06);
+  --hv-hover: rgba(16, 24, 40, 0.05);
+  --hv-stage: #eef0f2;
+  --hv-dot: #d3d8dd;
+  --hv-gutter: #a3a9ae;
+  --hv-gutter-bg: #f8f9f9;
+
+  --hv-comment: #6e7781;
+  --hv-punct: #6e7781;
+  --hv-tag: #116329;
+  --hv-attr: #0550ae;
+  --hv-string: #0a3069;
+  --hv-keyword: #cf222e;
+  --hv-selector: #6639ba;
+  --hv-property: #0550ae;
+  --hv-number: #0550ae;
+  --hv-entity: #953800;
+}
+
+.root[data-theme="dark"] {
+  --hv-muted: #a3a9ae;
+  --hv-track: rgba(0, 0, 0, 0.22);
+  --hv-ring: rgba(255, 255, 255, 0.05);
+  --hv-thumb: #4a4a4a;
+  --hv-thumb-shadow: 0 1px 2px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  --hv-hover: rgba(255, 255, 255, 0.06);
+  --hv-stage: #282828;
+  --hv-dot: #3d3d3d;
+  --hv-gutter: #858585;
+  --hv-gutter-bg: #2e2e2e;
+
+  --hv-comment: #8b949e;
+  --hv-punct: #8b949e;
+  --hv-tag: #7ee787;
+  --hv-attr: #79c0ff;
+  --hv-string: #a5d6ff;
+  --hv-keyword: #ff7b72;
+  --hv-selector: #d2a8ff;
+  --hv-property: #79c0ff;
+  --hv-number: #79c0ff;
+  --hv-entity: #ffa657;
+}
+
+/* On a desktop the media viewer draws a header band over the top of the content box
+   and, with more than one file in the playlist, 73px paging strips down both sides.
+   Anything under them cannot be clicked, so the surface keeps out of their way. The
+   band is 85px, not the 64px its height says: it is a content-box with 21px of
+   padding-top on top of that height. */
+.root {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 85px 73px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.card {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--background-color);
+  color: var(--text-color);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+  /* The toolbar drops its labels when the card, not the window, gets narrow. */
+  container-type: inline-size;
+}
+
+/* Toolbar: the view on the start side, the width in the middle, actions at the end.
+   The columns stay put when the middle one empties for the source view. */
+
+.toolbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-service-color);
+}
+
+.center {
+  grid-column: 2;
+}
+
+.end {
+  grid-column: 3;
+  justify-self: end;
+  display: flex;
+  gap: 8px;
+}
+
+/* A segmented control whose selected background slides between the options. The
+   options share one width, so the thumb's offset is its index times its own width. */
+
+.segmented {
+  position: relative;
+  justify-self: start; /* sized to its options, not stretched across the toolbar column */
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  padding: 3px;
+  border-radius: 10px;
+  background: var(--hv-track);
+  box-shadow: inset 0 0 0 1px var(--hv-ring);
+}
+
+.thumb {
+  position: absolute;
+  inset-block: 3px;
+  inset-inline-start: 3px;
+  width: calc((100% - 6px) / var(--count));
+  border-radius: 7px;
+  background: var(--hv-thumb);
+  box-shadow: var(--hv-thumb-shadow);
+  transform: translateX(calc(var(--index) * 100%));
+  transition: transform 0.32s var(--hv-ease);
+}
+
+.thumb:dir(rtl) {
+  transform: translateX(calc(var(--index) * -100%));
+}
+
+.segment,
+.action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 0;
+  border: 0;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    color 0.2s,
+    background-color 0.2s;
+}
+
+.segment {
+  position: relative; /* over the thumb */
+  height: 30px;
+  min-width: 36px;
+  padding: 0 12px;
+  border-radius: 7px;
+  background: none;
+  color: var(--hv-muted);
+}
+
+.segment:has(> svg:only-child) {
+  padding: 0 10px;
+}
+
+.segment:hover,
+.segment[aria-pressed="true"] {
+  color: var(--hv-fg);
+}
+
+.action {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 10px;
+  background: var(--hv-track);
+  box-shadow: inset 0 0 0 1px var(--hv-ring);
+  color: var(--hv-fg);
+}
+
+.action:hover {
+  background: var(--hv-hover);
+}
+
+.action[data-state="done"] svg {
+  color: var(--status-icon-color-positive, #35ad17);
+}
+
+.action[data-state="failed"] {
+  color: var(--input-error-color, #f21c0e);
+}
+
+.close {
+  padding: 0 10px;
+}
+
+.closeBar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 12px;
+}
+
+/* The file name between the previous and next arrows, at the bottom of the card. */
+.pager {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-top: 1px solid var(--border-service-color);
+}
+
+.fileName {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--hv-fg);
+}
+
+.segment:focus-visible,
+.action:focus-visible {
+  outline: 2px solid var(--hv-accent);
+  outline-offset: 1px;
+}
+
+.segment svg,
+.action svg {
+  flex: none;
+}
+
+/* Icons alone once the viewer is too narrow for the labels; each button keeps its
+   aria-label. */
+@container (max-width: 640px) {
+  .label {
+    display: none;
+  }
+
+  .segment,
+  .action {
+    padding: 0 10px;
+  }
+}
+
+/* Remote images notice. */
+
+.notice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border-service-color);
+  background: var(--hv-gutter-bg);
+  color: var(--hv-muted);
+  font-size: 12px;
+}
+
+/* Preview: full bleed on a desktop, a device on a dotted canvas otherwise. Width,
+   height, bezel and corners all transition, so the page visibly folds to the width. */
+
+.stage {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--background-color);
+  transition:
+    padding 0.45s var(--hv-ease),
+    background-color 0.45s;
+  animation: hv-fade-in 0.2s ease-out;
+}
+
+.stage[data-framed] {
+  padding: 24px;
+  background:
+    radial-gradient(circle at 1px 1px, var(--hv-dot) 1px, transparent 0) 0 0 / 16px 16px,
+    var(--hv-stage);
+}
+
+.device {
+  --hv-bezel: 0px;
+  flex: none;
+  box-sizing: content-box;
+  width: 100%;
+  height: 100%;
+  max-width: calc(100% - 2 * var(--hv-bezel));
+  max-height: calc(100% - 2 * var(--hv-bezel));
+  border: var(--hv-bezel) solid #161618;
+  border-radius: 0;
+  overflow: hidden;
+  background: #ffffff; /* the page canvas: HTML is authored against white, whatever the theme */
+  transition-property:
+    width, height, max-width, max-height, border-width, border-radius, box-shadow;
+  transition-duration: 0.45s;
+  transition-timing-function: var(--hv-ease);
+}
+
+.stage[data-framed] .device {
+  --hv-bezel: 10px;
+  border-radius: 28px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 24px 48px -16px rgba(0, 0, 0, 0.45);
+}
+
+.stage[data-device="mobile"] .device {
+  border-radius: 44px;
+}
+
+.device iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Source: numbered lines that wrap under their own number. The numbers are counters,
+   so a selection copies the code alone. --hv-num is the number column, --hv-pad the
+   space on each side of the separator. */
+
+.code {
+  --hv-num: 44px;
+  --hv-pad: 14px;
+  flex: 1 1 auto;
+  min-height: 0;
+  margin: 0;
+  padding: 12px 16px 24px 0;
+  overflow: auto;
+  counter-reset: hv-line;
+  background:
+    linear-gradient(
+        to right,
+        var(--hv-gutter-bg) calc(var(--hv-num) + var(--hv-pad)),
+        var(--border-service-color) 0 calc(var(--hv-num) + var(--hv-pad) + 1px),
+        transparent 0
+      )
+      no-repeat,
+    var(--background-color);
+  /* The viewer turns selection off on everything inside it. */
+  -webkit-user-select: text;
+  user-select: text;
+  color: var(--hv-fg);
+  font-size: 12.5px;
+  line-height: 20px;
+  tab-size: 4;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  animation: hv-fade-in 0.2s ease-out;
+}
+
+/* On every element, not inherited: the kit sets *{font-family} page-wide, and a rule
+   aimed at an element beats the value its parent hands down. */
+.code,
+.code * {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+.code :global(.hv-l) {
+  display: block;
+  padding-left: calc(var(--hv-num) + 2 * var(--hv-pad));
+  text-indent: calc(-1 * (var(--hv-num) + 2 * var(--hv-pad)));
+  counter-increment: hv-line;
+}
+
+.code :global(.hv-l)::before {
+  content: counter(hv-line);
+  display: inline-block;
+  width: var(--hv-num);
+  margin-right: calc(2 * var(--hv-pad));
+  text-align: right;
+  text-indent: 0;
+  color: var(--hv-gutter);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@container (max-width: 640px) {
+  .code {
+    --hv-num: 28px;
+    --hv-pad: 8px;
+    padding-right: 12px;
+    font-size: 12px;
+  }
+}
+
+.code :global(.hv-comment) {
+  color: var(--hv-comment);
+  font-style: italic;
+}
+.code :global(.hv-punct) {
+  color: var(--hv-punct);
+}
+.code :global(.hv-tag) {
+  color: var(--hv-tag);
+}
+.code :global(.hv-attr) {
+  color: var(--hv-attr);
+}
+.code :global(.hv-string) {
+  color: var(--hv-string);
+}
+.code :global(.hv-keyword) {
+  color: var(--hv-keyword);
+}
+.code :global(.hv-selector) {
+  color: var(--hv-selector);
+}
+.code :global(.hv-property) {
+  color: var(--hv-property);
+}
+.code :global(.hv-number) {
+  color: var(--hv-number);
+}
+.code :global(.hv-entity) {
+  color: var(--hv-entity);
+}
+
+/* Where the viewer draws no chrome (useChromeless in the component) nothing covers the
+   content, so the card takes the whole screen. */
+.root[data-chromeless] {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)
+    env(safe-area-inset-left);
+}
+
+.root[data-chromeless] .card {
+  max-width: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@keyframes hv-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root * {
+    transition: none;
+    animation: none;
+  }
+}

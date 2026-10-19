@@ -6,6 +6,7 @@ This repository comprises plugins which allow extending the functionality of [ON
 * [ConvertToMarkdown](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/convert-to-markdown)
 * [draw.io](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/draw.io)
 * [Markdown](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/markdown)
+* [HtmlViewer](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/html-viewer)
 * [ImageEditor](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/image-editor)
 * [PDFConverter](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/pdf-converter)
 * [Reader](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/reader)
