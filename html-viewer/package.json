@@ -55,13 +55,13 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@onlyoffice/apps-ui-kit": "^4.0.1",
     "@onlyoffice/docspace-plugin-sdk": "^3.0.0",
     "dompurify": "^3.4.17",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@onlyoffice/apps-ui-kit": "^4.0.1",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^6.0.0",

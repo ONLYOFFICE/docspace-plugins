@@ -28,6 +28,7 @@ import {
   PluginStatus,
 } from "@onlyoffice/docspace-plugin-sdk";
 
+import { canClose } from "./edits";
 import { HtmlPreview } from "./HtmlPreview";
 import { currentLocale, setLocale, t } from "./locales";
 
@@ -55,7 +56,9 @@ class HtmlViewer implements IPlugin, IFilePlugin, IContextMenuPlugin {
           filesExsts: EXTENSIONS,
           filesSecurity: [FilesSecurity.Read],
         },
-        onClose: () => ({ actions: [Actions.closeMediaViewer] }),
+        // Returning nothing keeps the viewer open: an unsaved edit is not lost to a click
+        // on the cross, Escape or Back, and the component says why it stayed.
+        onClose: () => (canClose() ? { actions: [Actions.closeMediaViewer] } : undefined),
       },
     });
 

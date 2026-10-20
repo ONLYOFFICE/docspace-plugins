@@ -41,13 +41,22 @@ export type TStrings = {
   "file.previous": string;
   "file.next": string;
   "images.blocked": string;
-  "images.load": string;
-  "images.hide": string;
   "body.title": string;
   "state.loading": string;
   "state.empty": string;
   "state.loadFailed": string;
   "state.noFile": string;
+  "edit.label": string;
+  "edit.save": string;
+  "edit.saving": string;
+  "edit.saved": string;
+  "edit.saveFailed": string;
+  "edit.discard": string;
+  "edit.unsaved": string;
+  "edit.closeAnyway": string;
+  "edit.conflict": string;
+  "edit.overwrite": string;
+  "edit.discardConfirm": string;
 };
 
 const en: TStrings = {
@@ -66,14 +75,24 @@ const en: TStrings = {
   close: "Close",
   "file.previous": "Previous file",
   "file.next": "Next file",
-  "images.blocked": "Remote images are blocked to protect your privacy.",
-  "images.load": "Load images",
-  "images.hide": "Hide images",
+  "images.blocked":
+    "Images from other websites appear only if the portal's security settings allow those sites.",
   "body.title": "Page preview",
   "state.loading": "Loading file…",
   "state.empty": "This file is empty.",
   "state.loadFailed": "Couldn't load the file.",
   "state.noFile": "No file is selected.",
+  "edit.label": "HTML source",
+  "edit.save": "Save",
+  "edit.saving": "Saving…",
+  "edit.saved": "Saved",
+  "edit.saveFailed": "Couldn't save",
+  "edit.discard": "Discard changes",
+  "edit.unsaved": "You have unsaved changes.",
+  "edit.closeAnyway": "Close without saving",
+  "edit.conflict": "The file has been changed since you started editing it.",
+  "edit.overwrite": "Overwrite",
+  "edit.discardConfirm": "Discard all unsaved changes to this file?",
 };
 
 const ru: TStrings = {
@@ -92,14 +111,24 @@ const ru: TStrings = {
   close: "Закрыть",
   "file.previous": "Предыдущий файл",
   "file.next": "Следующий файл",
-  "images.blocked": "Внешние изображения заблокированы для защиты приватности.",
-  "images.load": "Загрузить изображения",
-  "images.hide": "Скрыть изображения",
+  "images.blocked":
+    "Изображения с других сайтов показываются, только если эти сайты разрешены в настройках безопасности портала.",
   "body.title": "Предпросмотр страницы",
   "state.loading": "Загрузка файла…",
   "state.empty": "Файл пуст.",
   "state.loadFailed": "Не удалось загрузить файл.",
   "state.noFile": "Файл не выбран.",
+  "edit.label": "Исходный код HTML",
+  "edit.save": "Сохранить",
+  "edit.saving": "Сохранение…",
+  "edit.saved": "Сохранено",
+  "edit.saveFailed": "Не удалось сохранить",
+  "edit.discard": "Отменить изменения",
+  "edit.unsaved": "Есть несохранённые изменения.",
+  "edit.closeAnyway": "Закрыть без сохранения",
+  "edit.conflict": "Файл изменили, пока вы его редактировали.",
+  "edit.overwrite": "Перезаписать",
+  "edit.discardConfirm": "Отменить все несохранённые изменения в этом файле?",
 };
 
 const ar: TStrings = {
@@ -118,14 +147,24 @@ const ar: TStrings = {
   close: "إغلاق",
   "file.previous": "الملف السابق",
   "file.next": "الملف التالي",
-  "images.blocked": "تم حظر الصور الخارجية لحماية خصوصيتك.",
-  "images.load": "تحميل الصور",
-  "images.hide": "إخفاء الصور",
+  "images.blocked":
+    "لا تظهر الصور من المواقع الأخرى إلا إذا سمحت إعدادات أمان البوابة بهذه المواقع.",
   "body.title": "معاينة الصفحة",
   "state.loading": "جارٍ تحميل الملف…",
   "state.empty": "هذا الملف فارغ.",
   "state.loadFailed": "تعذر تحميل الملف.",
   "state.noFile": "لم يتم تحديد أي ملف.",
+  "edit.label": "مصدر HTML",
+  "edit.save": "حفظ",
+  "edit.saving": "جارٍ الحفظ…",
+  "edit.saved": "تم الحفظ",
+  "edit.saveFailed": "تعذر الحفظ",
+  "edit.discard": "تجاهل التغييرات",
+  "edit.unsaved": "لديك تغييرات غير محفوظة.",
+  "edit.closeAnyway": "إغلاق دون حفظ",
+  "edit.conflict": "تم تغيير الملف منذ أن بدأت تحريره.",
+  "edit.overwrite": "استبدال",
+  "edit.discardConfirm": "هل تريد تجاهل كل التغييرات غير المحفوظة في هذا الملف؟",
 };
 
 const az: TStrings = {
@@ -144,14 +183,24 @@ const az: TStrings = {
   close: "Bağlayın",
   "file.previous": "Əvvəlki fayl",
   "file.next": "Növbəti fayl",
-  "images.blocked": "Məxfiliyinizi qorumaq üçün xarici şəkillər bloklanıb.",
-  "images.load": "Şəkilləri yükləyin",
-  "images.hide": "Şəkilləri gizlədin",
+  "images.blocked":
+    "Digər saytlardan olan şəkillər yalnız portalın təhlükəsizlik parametrləri həmin saytlara icazə verdikdə göstərilir.",
   "body.title": "Səhifəyə öncədən baxış",
   "state.loading": "Fayl yüklənir…",
   "state.empty": "Bu fayl boşdur.",
   "state.loadFailed": "Faylı yükləmək mümkün olmadı.",
   "state.noFile": "Fayl seçilməyib.",
+  "edit.label": "HTML mənbə kodu",
+  "edit.save": "Yadda saxlayın",
+  "edit.saving": "Yadda saxlanılır…",
+  "edit.saved": "Yadda saxlanıldı",
+  "edit.saveFailed": "Yadda saxlamaq mümkün olmadı",
+  "edit.discard": "Dəyişiklikləri ləğv edin",
+  "edit.unsaved": "Yadda saxlanmayan dəyişiklikləriniz var.",
+  "edit.closeAnyway": "Yadda saxlamadan bağlayın",
+  "edit.conflict": "Siz redaktəyə başladıqdan sonra fayl dəyişdirilib.",
+  "edit.overwrite": "Üzərinə yazın",
+  "edit.discardConfirm": "Bu fayldakı bütün yadda saxlanmayan dəyişikliklər ləğv edilsin?",
 };
 
 const bg: TStrings = {
@@ -170,14 +219,24 @@ const bg: TStrings = {
   close: "Затвори",
   "file.previous": "Предишен файл",
   "file.next": "Следващ файл",
-  "images.blocked": "Външните изображения са блокирани, за да се защити поверителността ви.",
-  "images.load": "Зареди изображенията",
-  "images.hide": "Скрий изображенията",
+  "images.blocked":
+    "Изображенията от други сайтове се показват само ако настройките за сигурност на портала разрешават тези сайтове.",
   "body.title": "Преглед на страницата",
   "state.loading": "Зареждане на файла…",
   "state.empty": "Този файл е празен.",
   "state.loadFailed": "Файлът не можа да бъде зареден.",
   "state.noFile": "Не е избран файл.",
+  "edit.label": "HTML изходен код",
+  "edit.save": "Запази",
+  "edit.saving": "Запазване…",
+  "edit.saved": "Запазено",
+  "edit.saveFailed": "Запазването не бе успешно",
+  "edit.discard": "Отхвърли промените",
+  "edit.unsaved": "Имате незапазени промени.",
+  "edit.closeAnyway": "Затвори без запазване",
+  "edit.conflict": "Файлът е променен, откакто започнахте да го редактирате.",
+  "edit.overwrite": "Презапиши",
+  "edit.discardConfirm": "Да се отхвърлят ли всички незапазени промени в този файл?",
 };
 
 const cs: TStrings = {
@@ -196,14 +255,24 @@ const cs: TStrings = {
   close: "Zavřít",
   "file.previous": "Předchozí soubor",
   "file.next": "Další soubor",
-  "images.blocked": "Externí obrázky jsou blokovány kvůli ochraně vašeho soukromí.",
-  "images.load": "Načíst obrázky",
-  "images.hide": "Skrýt obrázky",
+  "images.blocked":
+    "Obrázky z jiných webů se zobrazí, jen pokud tyto weby povoluje nastavení zabezpečení portálu.",
   "body.title": "Náhled stránky",
   "state.loading": "Načítání souboru…",
   "state.empty": "Tento soubor je prázdný.",
   "state.loadFailed": "Soubor se nepodařilo načíst.",
   "state.noFile": "Není vybrán žádný soubor.",
+  "edit.label": "Zdrojový kód HTML",
+  "edit.save": "Uložit",
+  "edit.saving": "Ukládání…",
+  "edit.saved": "Uloženo",
+  "edit.saveFailed": "Uložení se nezdařilo",
+  "edit.discard": "Zahodit změny",
+  "edit.unsaved": "Máte neuložené změny.",
+  "edit.closeAnyway": "Zavřít bez uložení",
+  "edit.conflict": "Soubor byl změněn od chvíle, kdy jste ho začali upravovat.",
+  "edit.overwrite": "Přepsat",
+  "edit.discardConfirm": "Zahodit všechny neuložené změny v tomto souboru?",
 };
 
 const de: TStrings = {
@@ -222,14 +291,24 @@ const de: TStrings = {
   close: "Schließen",
   "file.previous": "Vorherige Datei",
   "file.next": "Nächste Datei",
-  "images.blocked": "Externe Bilder werden zum Schutz Ihrer Privatsphäre blockiert.",
-  "images.load": "Bilder laden",
-  "images.hide": "Bilder ausblenden",
+  "images.blocked":
+    "Bilder von anderen Websites werden nur angezeigt, wenn die Sicherheitseinstellungen des Portals diese Websites zulassen.",
   "body.title": "Seitenvorschau",
   "state.loading": "Datei wird geladen…",
   "state.empty": "Diese Datei ist leer.",
   "state.loadFailed": "Die Datei konnte nicht geladen werden.",
   "state.noFile": "Keine Datei ausgewählt.",
+  "edit.label": "HTML-Quellcode",
+  "edit.save": "Speichern",
+  "edit.saving": "Wird gespeichert…",
+  "edit.saved": "Gespeichert",
+  "edit.saveFailed": "Speichern fehlgeschlagen",
+  "edit.discard": "Änderungen verwerfen",
+  "edit.unsaved": "Sie haben nicht gespeicherte Änderungen.",
+  "edit.closeAnyway": "Ohne Speichern schließen",
+  "edit.conflict": "Die Datei wurde geändert, seit Sie mit der Bearbeitung begonnen haben.",
+  "edit.overwrite": "Überschreiben",
+  "edit.discardConfirm": "Alle nicht gespeicherten Änderungen an dieser Datei verwerfen?",
 };
 
 const el: TStrings = {
@@ -248,14 +327,24 @@ const el: TStrings = {
   close: "Κλείσιμο",
   "file.previous": "Προηγούμενο αρχείο",
   "file.next": "Επόμενο αρχείο",
-  "images.blocked": "Οι εξωτερικές εικόνες έχουν αποκλειστεί για την προστασία του απορρήτου σας.",
-  "images.load": "Φόρτωση εικόνων",
-  "images.hide": "Απόκρυψη εικόνων",
+  "images.blocked":
+    "Οι εικόνες από άλλους ιστότοπους εμφανίζονται μόνο αν οι ρυθμίσεις ασφαλείας της πύλης επιτρέπουν αυτούς τους ιστότοπους.",
   "body.title": "Προεπισκόπηση σελίδας",
   "state.loading": "Φόρτωση αρχείου…",
   "state.empty": "Αυτό το αρχείο είναι κενό.",
   "state.loadFailed": "Δεν ήταν δυνατή η φόρτωση του αρχείου.",
   "state.noFile": "Δεν έχει επιλεγεί αρχείο.",
+  "edit.label": "Πηγαίος κώδικας HTML",
+  "edit.save": "Αποθήκευση",
+  "edit.saving": "Αποθήκευση…",
+  "edit.saved": "Αποθηκεύτηκε",
+  "edit.saveFailed": "Δεν ήταν δυνατή η αποθήκευση",
+  "edit.discard": "Απόρριψη αλλαγών",
+  "edit.unsaved": "Έχετε μη αποθηκευμένες αλλαγές.",
+  "edit.closeAnyway": "Κλείσιμο χωρίς αποθήκευση",
+  "edit.conflict": "Το αρχείο άλλαξε από τότε που ξεκινήσατε την επεξεργασία του.",
+  "edit.overwrite": "Αντικατάσταση",
+  "edit.discardConfirm": "Απόρριψη όλων των μη αποθηκευμένων αλλαγών σε αυτό το αρχείο;",
 };
 
 const es: TStrings = {
@@ -274,14 +363,24 @@ const es: TStrings = {
   close: "Cerrar",
   "file.previous": "Archivo anterior",
   "file.next": "Archivo siguiente",
-  "images.blocked": "Las imágenes externas están bloqueadas para proteger su privacidad.",
-  "images.load": "Cargar imágenes",
-  "images.hide": "Ocultar imágenes",
+  "images.blocked":
+    "Las imágenes de otros sitios web solo se muestran si la configuración de seguridad del portal permite esos sitios.",
   "body.title": "Vista previa de la página",
   "state.loading": "Cargando archivo…",
   "state.empty": "Este archivo está vacío.",
   "state.loadFailed": "No se ha podido cargar el archivo.",
   "state.noFile": "No hay ningún archivo seleccionado.",
+  "edit.label": "Código fuente HTML",
+  "edit.save": "Guardar",
+  "edit.saving": "Guardando…",
+  "edit.saved": "Guardado",
+  "edit.saveFailed": "No se ha podido guardar",
+  "edit.discard": "Descartar cambios",
+  "edit.unsaved": "Tiene cambios no guardados.",
+  "edit.closeAnyway": "Cerrar sin guardar",
+  "edit.conflict": "El archivo ha cambiado desde que empezó a editarlo.",
+  "edit.overwrite": "Sobrescribir",
+  "edit.discardConfirm": "¿Descartar todos los cambios no guardados de este archivo?",
 };
 
 const fi: TStrings = {
@@ -300,14 +399,24 @@ const fi: TStrings = {
   close: "Sulje",
   "file.previous": "Edellinen tiedosto",
   "file.next": "Seuraava tiedosto",
-  "images.blocked": "Ulkoiset kuvat on estetty yksityisyytesi suojaamiseksi.",
-  "images.load": "Lataa kuvat",
-  "images.hide": "Piilota kuvat",
+  "images.blocked":
+    "Muiden sivustojen kuvat näytetään vain, jos portaalin suojausasetukset sallivat kyseiset sivustot.",
   "body.title": "Sivun esikatselu",
   "state.loading": "Ladataan tiedostoa…",
   "state.empty": "Tämä tiedosto on tyhjä.",
   "state.loadFailed": "Tiedoston lataaminen epäonnistui.",
   "state.noFile": "Tiedostoa ei ole valittu.",
+  "edit.label": "HTML-lähdekoodi",
+  "edit.save": "Tallenna",
+  "edit.saving": "Tallennetaan…",
+  "edit.saved": "Tallennettu",
+  "edit.saveFailed": "Tallentaminen epäonnistui",
+  "edit.discard": "Hylkää muutokset",
+  "edit.unsaved": "Sinulla on tallentamattomia muutoksia.",
+  "edit.closeAnyway": "Sulje tallentamatta",
+  "edit.conflict": "Tiedostoa on muutettu sen jälkeen, kun aloitit sen muokkaamisen.",
+  "edit.overwrite": "Korvaa",
+  "edit.discardConfirm": "Hylätäänkö kaikki tämän tiedoston tallentamattomat muutokset?",
 };
 
 const fr: TStrings = {
@@ -326,14 +435,24 @@ const fr: TStrings = {
   close: "Fermer",
   "file.previous": "Fichier précédent",
   "file.next": "Fichier suivant",
-  "images.blocked": "Les images externes sont bloquées pour protéger votre vie privée.",
-  "images.load": "Charger les images",
-  "images.hide": "Masquer les images",
+  "images.blocked":
+    "Les images d'autres sites web ne s'affichent que si les paramètres de sécurité du portail autorisent ces sites.",
   "body.title": "Aperçu de la page",
   "state.loading": "Chargement du fichier…",
   "state.empty": "Ce fichier est vide.",
   "state.loadFailed": "Impossible de charger le fichier.",
   "state.noFile": "Aucun fichier sélectionné.",
+  "edit.label": "Code source HTML",
+  "edit.save": "Enregistrer",
+  "edit.saving": "Enregistrement…",
+  "edit.saved": "Enregistré",
+  "edit.saveFailed": "Impossible d'enregistrer",
+  "edit.discard": "Annuler les modifications",
+  "edit.unsaved": "Vous avez des modifications non enregistrées.",
+  "edit.closeAnyway": "Fermer sans enregistrer",
+  "edit.conflict": "Le fichier a changé depuis que vous avez commencé à le modifier.",
+  "edit.overwrite": "Écraser",
+  "edit.discardConfirm": "Annuler toutes les modifications non enregistrées de ce fichier ?",
 };
 
 const hy: TStrings = {
@@ -352,14 +471,24 @@ const hy: TStrings = {
   close: "Փակել",
   "file.previous": "Նախորդ ֆայլ",
   "file.next": "Հաջորդ ֆայլ",
-  "images.blocked": "Արտաքին պատկերներն արգելափակված են՝ Ձեր գաղտնիությունը պաշտպանելու համար։",
-  "images.load": "Բեռնել պատկերները",
-  "images.hide": "Թաքցնել պատկերները",
+  "images.blocked":
+    "Այլ կայքերի պատկերները ցուցադրվում են միայն այն դեպքում, եթե պորտալի անվտանգության կարգավորումները թույլատրում են այդ կայքերը։",
   "body.title": "Էջի նախադիտում",
   "state.loading": "Ֆայլը բեռնվում է…",
   "state.empty": "Այս ֆայլը դատարկ է։",
   "state.loadFailed": "Չհաջողվեց բեռնել ֆայլը։",
   "state.noFile": "Ֆայլ ընտրված չէ։",
+  "edit.label": "HTML սկզբնական կոդ",
+  "edit.save": "Պահպանել",
+  "edit.saving": "Պահպանվում է…",
+  "edit.saved": "Պահպանված է",
+  "edit.saveFailed": "Չհաջողվեց պահպանել",
+  "edit.discard": "Չեղարկել փոփոխությունները",
+  "edit.unsaved": "Դուք չպահված փոփոխություններ ունեք։",
+  "edit.closeAnyway": "Փակել առանց պահպանելու",
+  "edit.conflict": "Ֆայլը փոփոխվել է այն պահից, երբ սկսեցիք խմբագրել այն։",
+  "edit.overwrite": "Վերագրել",
+  "edit.discardConfirm": "Չեղարկե՞լ այս ֆայլի բոլոր չպահված փոփոխությունները։",
 };
 
 const it: TStrings = {
@@ -378,14 +507,24 @@ const it: TStrings = {
   close: "Chiudi",
   "file.previous": "File precedente",
   "file.next": "File successivo",
-  "images.blocked": "Le immagini esterne sono bloccate per proteggere la tua privacy.",
-  "images.load": "Carica immagini",
-  "images.hide": "Nascondi immagini",
+  "images.blocked":
+    "Le immagini di altri siti web vengono mostrate solo se le impostazioni di sicurezza del portale consentono quei siti.",
   "body.title": "Anteprima della pagina",
   "state.loading": "Caricamento del file…",
   "state.empty": "Questo file è vuoto.",
   "state.loadFailed": "Impossibile caricare il file.",
   "state.noFile": "Nessun file selezionato.",
+  "edit.label": "Codice sorgente HTML",
+  "edit.save": "Salva",
+  "edit.saving": "Salvataggio…",
+  "edit.saved": "Salvato",
+  "edit.saveFailed": "Impossibile salvare",
+  "edit.discard": "Annulla le modifiche",
+  "edit.unsaved": "Hai delle modifiche non salvate.",
+  "edit.closeAnyway": "Chiudi senza salvare",
+  "edit.conflict": "Il file è cambiato da quando hai iniziato a modificarlo.",
+  "edit.overwrite": "Sovrascrivi",
+  "edit.discardConfirm": "Annullare tutte le modifiche non salvate di questo file?",
 };
 
 const ja: TStrings = {
@@ -404,14 +543,24 @@ const ja: TStrings = {
   close: "閉じる",
   "file.previous": "前のファイル",
   "file.next": "次のファイル",
-  "images.blocked": "プライバシー保護のため、外部の画像はブロックされています。",
-  "images.load": "画像を読み込む",
-  "images.hide": "画像を非表示にする",
+  "images.blocked":
+    "他のWebサイトの画像は、ポータルのセキュリティ設定でそのサイトが許可されている場合にのみ表示されます。",
   "body.title": "ページのプレビュー",
   "state.loading": "ファイルを読み込んでいます…",
   "state.empty": "このファイルは空です。",
   "state.loadFailed": "ファイルを読み込めませんでした。",
   "state.noFile": "ファイルが選択されていません。",
+  "edit.label": "HTMLソース",
+  "edit.save": "保存",
+  "edit.saving": "保存しています…",
+  "edit.saved": "保存しました",
+  "edit.saveFailed": "保存できませんでした",
+  "edit.discard": "変更を破棄",
+  "edit.unsaved": "未保存の変更があります。",
+  "edit.closeAnyway": "保存せずに閉じる",
+  "edit.conflict": "編集を開始した後に、ファイルが変更されました。",
+  "edit.overwrite": "上書き",
+  "edit.discardConfirm": "このファイルの未保存の変更をすべて破棄しますか？",
 };
 
 const ko: TStrings = {
@@ -430,14 +579,24 @@ const ko: TStrings = {
   close: "닫기",
   "file.previous": "이전 파일",
   "file.next": "다음 파일",
-  "images.blocked": "개인 정보 보호를 위해 외부 이미지가 차단되었습니다.",
-  "images.load": "이미지 불러오기",
-  "images.hide": "이미지 숨기기",
+  "images.blocked":
+    "다른 웹사이트의 이미지는 포털 보안 설정에서 해당 사이트를 허용한 경우에만 표시됩니다.",
   "body.title": "페이지 미리 보기",
   "state.loading": "파일을 불러오는 중…",
   "state.empty": "이 파일은 비어 있습니다.",
   "state.loadFailed": "파일을 불러올 수 없습니다.",
   "state.noFile": "선택된 파일이 없습니다.",
+  "edit.label": "HTML 소스",
+  "edit.save": "저장",
+  "edit.saving": "저장 중…",
+  "edit.saved": "저장됨",
+  "edit.saveFailed": "저장할 수 없습니다",
+  "edit.discard": "변경 사항 취소",
+  "edit.unsaved": "저장하지 않은 변경 사항이 있습니다.",
+  "edit.closeAnyway": "저장하지 않고 닫기",
+  "edit.conflict": "편집을 시작한 후 파일이 변경되었습니다.",
+  "edit.overwrite": "덮어쓰기",
+  "edit.discardConfirm": "이 파일의 저장하지 않은 변경 사항을 모두 취소하시겠습니까?",
 };
 
 const lo: TStrings = {
@@ -456,14 +615,24 @@ const lo: TStrings = {
   close: "ປິດ",
   "file.previous": "ໄຟລ໌ກ່ອນໜ້າ",
   "file.next": "ໄຟລ໌ຖັດໄປ",
-  "images.blocked": "ຮູບພາບພາຍນອກຖືກບລັອກໄວ້ເພື່ອປົກປ້ອງຄວາມເປັນສ່ວນຕົວຂອງທ່ານ.",
-  "images.load": "ໂຫຼດຮູບພາບ",
-  "images.hide": "ເຊື່ອງຮູບພາບ",
+  "images.blocked":
+    "ຮູບພາບຈາກເວັບໄຊອື່ນຈະສະແດງກໍຕໍ່ເມື່ອການຕັ້ງຄ່າຄວາມປອດໄພຂອງພອດທັນອະນຸຍາດເວັບໄຊເຫຼົ່ານັ້ນ.",
   "body.title": "ເບິ່ງຕົວຢ່າງໜ້າ",
   "state.loading": "ກຳລັງໂຫຼດໄຟລ໌…",
   "state.empty": "ໄຟລ໌ນີ້ຫວ່າງເປົ່າ.",
   "state.loadFailed": "ບໍ່ສາມາດໂຫຼດໄຟລ໌ໄດ້.",
   "state.noFile": "ບໍ່ໄດ້ເລືອກໄຟລ໌.",
+  "edit.label": "ລະຫັດຕົ້ນສະບັບ HTML",
+  "edit.save": "ບັນທຶກ",
+  "edit.saving": "ກຳລັງບັນທຶກ…",
+  "edit.saved": "ບັນທຶກແລ້ວ",
+  "edit.saveFailed": "ບໍ່ສາມາດບັນທຶກໄດ້",
+  "edit.discard": "ຍົກເລີກການປ່ຽນແປງ",
+  "edit.unsaved": "ທ່ານມີການປ່ຽນແປງທີ່ຍັງບໍ່ໄດ້ບັນທຶກ.",
+  "edit.closeAnyway": "ປິດໂດຍບໍ່ບັນທຶກ",
+  "edit.conflict": "ໄຟລ໌ໄດ້ຖືກປ່ຽນແປງຕັ້ງແຕ່ທ່ານເລີ່ມແກ້ໄຂ.",
+  "edit.overwrite": "ຂຽນທັບ",
+  "edit.discardConfirm": "ຍົກເລີກການປ່ຽນແປງທີ່ຍັງບໍ່ໄດ້ບັນທຶກທັງໝົດໃນໄຟລ໌ນີ້ບໍ?",
 };
 
 const lv: TStrings = {
@@ -482,14 +651,24 @@ const lv: TStrings = {
   close: "Aizvērt",
   "file.previous": "Iepriekšējais fails",
   "file.next": "Nākamais fails",
-  "images.blocked": "Ārējie attēli ir bloķēti, lai aizsargātu jūsu privātumu.",
-  "images.load": "Ielādēt attēlus",
-  "images.hide": "Slēpt attēlus",
+  "images.blocked":
+    "Attēli no citām vietnēm tiek rādīti tikai tad, ja portāla drošības iestatījumi atļauj šīs vietnes.",
   "body.title": "Lapas priekšskatījums",
   "state.loading": "Ielādē failu…",
   "state.empty": "Šis fails ir tukšs.",
   "state.loadFailed": "Neizdevās ielādēt failu.",
   "state.noFile": "Nav atlasīts neviens fails.",
+  "edit.label": "HTML pirmkods",
+  "edit.save": "Saglabāt",
+  "edit.saving": "Saglabā…",
+  "edit.saved": "Saglabāts",
+  "edit.saveFailed": "Neizdevās saglabāt",
+  "edit.discard": "Atmest izmaiņas",
+  "edit.unsaved": "Jums ir nesaglabātas izmaiņas.",
+  "edit.closeAnyway": "Aizvērt bez saglabāšanas",
+  "edit.conflict": "Fails ir mainīts kopš brīža, kad sākāt to rediģēt.",
+  "edit.overwrite": "Pārrakstīt",
+  "edit.discardConfirm": "Vai atmest visas nesaglabātās izmaiņas šajā failā?",
 };
 
 const nl: TStrings = {
@@ -508,14 +687,24 @@ const nl: TStrings = {
   close: "Sluiten",
   "file.previous": "Vorig bestand",
   "file.next": "Volgend bestand",
-  "images.blocked": "Externe afbeeldingen worden geblokkeerd om uw privacy te beschermen.",
-  "images.load": "Afbeeldingen laden",
-  "images.hide": "Afbeeldingen verbergen",
+  "images.blocked":
+    "Afbeeldingen van andere websites worden alleen getoond als de beveiligingsinstellingen van de portal die websites toestaan.",
   "body.title": "Paginavoorbeeld",
   "state.loading": "Bestand wordt geladen…",
   "state.empty": "Dit bestand is leeg.",
   "state.loadFailed": "Het bestand kon niet worden geladen.",
   "state.noFile": "Er is geen bestand geselecteerd.",
+  "edit.label": "HTML-broncode",
+  "edit.save": "Opslaan",
+  "edit.saving": "Opslaan…",
+  "edit.saved": "Opgeslagen",
+  "edit.saveFailed": "Opslaan mislukt",
+  "edit.discard": "Wijzigingen negeren",
+  "edit.unsaved": "U hebt niet-opgeslagen wijzigingen.",
+  "edit.closeAnyway": "Sluiten zonder opslaan",
+  "edit.conflict": "Het bestand is gewijzigd sinds u bent begonnen met bewerken.",
+  "edit.overwrite": "Overschrijven",
+  "edit.discardConfirm": "Alle niet-opgeslagen wijzigingen in dit bestand negeren?",
 };
 
 const pl: TStrings = {
@@ -534,14 +723,24 @@ const pl: TStrings = {
   close: "Zamknij",
   "file.previous": "Poprzedni plik",
   "file.next": "Następny plik",
-  "images.blocked": "Zewnętrzne obrazy są blokowane, aby chronić Twoją prywatność.",
-  "images.load": "Wczytaj obrazy",
-  "images.hide": "Ukryj obrazy",
+  "images.blocked":
+    "Obrazy z innych witryn są wyświetlane tylko wtedy, gdy ustawienia zabezpieczeń portalu zezwalają na te witryny.",
   "body.title": "Podgląd strony",
   "state.loading": "Wczytywanie pliku…",
   "state.empty": "Ten plik jest pusty.",
   "state.loadFailed": "Nie udało się wczytać pliku.",
   "state.noFile": "Nie wybrano pliku.",
+  "edit.label": "Kod źródłowy HTML",
+  "edit.save": "Zapisz",
+  "edit.saving": "Zapisywanie…",
+  "edit.saved": "Zapisano",
+  "edit.saveFailed": "Nie udało się zapisać",
+  "edit.discard": "Odrzuć zmiany",
+  "edit.unsaved": "Masz niezapisane zmiany.",
+  "edit.closeAnyway": "Zamknij bez zapisywania",
+  "edit.conflict": "Plik został zmieniony, odkąd zacząłeś go edytować.",
+  "edit.overwrite": "Zastąp",
+  "edit.discardConfirm": "Odrzucić wszystkie niezapisane zmiany w tym pliku?",
 };
 
 const pt: TStrings = {
@@ -560,14 +759,24 @@ const pt: TStrings = {
   close: "Fechar",
   "file.previous": "Ficheiro anterior",
   "file.next": "Ficheiro seguinte",
-  "images.blocked": "As imagens externas estão bloqueadas para proteger a sua privacidade.",
-  "images.load": "Carregar imagens",
-  "images.hide": "Ocultar imagens",
+  "images.blocked":
+    "As imagens de outros sites só são apresentadas se as definições de segurança do portal permitirem esses sites.",
   "body.title": "Pré-visualização da página",
   "state.loading": "A carregar o ficheiro…",
   "state.empty": "Este ficheiro está vazio.",
   "state.loadFailed": "Não foi possível carregar o ficheiro.",
   "state.noFile": "Nenhum ficheiro selecionado.",
+  "edit.label": "Código-fonte HTML",
+  "edit.save": "Guardar",
+  "edit.saving": "A guardar…",
+  "edit.saved": "Guardado",
+  "edit.saveFailed": "Não foi possível guardar",
+  "edit.discard": "Descartar alterações",
+  "edit.unsaved": "Tem alterações que não foram guardadas.",
+  "edit.closeAnyway": "Fechar sem guardar",
+  "edit.conflict": "O ficheiro foi alterado desde que começou a editá-lo.",
+  "edit.overwrite": "Substituir",
+  "edit.discardConfirm": "Descartar todas as alterações não guardadas neste ficheiro?",
 };
 
 const ptBR: TStrings = {
@@ -586,14 +795,24 @@ const ptBR: TStrings = {
   close: "Fechar",
   "file.previous": "Arquivo anterior",
   "file.next": "Próximo arquivo",
-  "images.blocked": "As imagens externas estão bloqueadas para proteger sua privacidade.",
-  "images.load": "Carregar imagens",
-  "images.hide": "Ocultar imagens",
+  "images.blocked":
+    "Imagens de outros sites só são exibidas se as configurações de segurança do portal permitirem esses sites.",
   "body.title": "Pré-visualização da página",
   "state.loading": "Carregando arquivo…",
   "state.empty": "Este arquivo está vazio.",
   "state.loadFailed": "Não foi possível carregar o arquivo.",
   "state.noFile": "Nenhum arquivo selecionado.",
+  "edit.label": "Código-fonte HTML",
+  "edit.save": "Salvar",
+  "edit.saving": "Salvando…",
+  "edit.saved": "Salvo",
+  "edit.saveFailed": "Não foi possível salvar",
+  "edit.discard": "Descartar alterações",
+  "edit.unsaved": "Você tem alterações não salvas.",
+  "edit.closeAnyway": "Fechar sem salvar",
+  "edit.conflict": "O arquivo foi alterado desde que você começou a editá-lo.",
+  "edit.overwrite": "Substituir",
+  "edit.discardConfirm": "Descartar todas as alterações não salvas deste arquivo?",
 };
 
 const ro: TStrings = {
@@ -612,14 +831,24 @@ const ro: TStrings = {
   close: "Închidere",
   "file.previous": "Fișierul anterior",
   "file.next": "Fișierul următor",
-  "images.blocked": "Imaginile externe sunt blocate pentru a vă proteja confidențialitatea.",
-  "images.load": "Încărcare imagini",
-  "images.hide": "Ascundere imagini",
+  "images.blocked":
+    "Imaginile de pe alte site-uri sunt afișate doar dacă setările de securitate ale portalului permit acele site-uri.",
   "body.title": "Previzualizarea paginii",
   "state.loading": "Se încarcă fișierul…",
   "state.empty": "Acest fișier este gol.",
   "state.loadFailed": "Fișierul nu a putut fi încărcat.",
   "state.noFile": "Niciun fișier selectat.",
+  "edit.label": "Cod sursă HTML",
+  "edit.save": "Salvează",
+  "edit.saving": "Se salvează…",
+  "edit.saved": "Salvat",
+  "edit.saveFailed": "Salvarea nu a reușit",
+  "edit.discard": "Renunțare la modificări",
+  "edit.unsaved": "Aveți modificări nesalvate.",
+  "edit.closeAnyway": "Închidere fără salvare",
+  "edit.conflict": "Fișierul a fost modificat de când ați început să îl editați.",
+  "edit.overwrite": "Suprascriere",
+  "edit.discardConfirm": "Renunțați la toate modificările nesalvate din acest fișier?",
 };
 
 const si: TStrings = {
@@ -638,14 +867,24 @@ const si: TStrings = {
   close: "වසන්න",
   "file.previous": "පෙර ගොනුව",
   "file.next": "ඊළඟ ගොනුව",
-  "images.blocked": "ඔබේ පෞද්ගලිකත්වය ආරක්ෂා කිරීම සඳහා බාහිර රූප අවහිර කර ඇත.",
-  "images.load": "රූප පූරණය කරන්න",
-  "images.hide": "රූප සඟවන්න",
+  "images.blocked":
+    "වෙනත් වෙබ් අඩවිවල රූප පෙන්වන්නේ ද්වාරයේ ආරක්ෂක සැකසීම් එම අඩවිවලට ඉඩ දෙන්නේ නම් පමණි.",
   "body.title": "පිටුවේ පෙරදසුන",
   "state.loading": "ගොනුව පූරණය වෙමින්…",
   "state.empty": "මෙම ගොනුව හිස්ය.",
   "state.loadFailed": "ගොනුව පූරණය කළ නොහැකි විය.",
   "state.noFile": "ගොනුවක් තෝරා නැත.",
+  "edit.label": "HTML මූල කේතය",
+  "edit.save": "සුරකින්න",
+  "edit.saving": "සුරකිමින්…",
+  "edit.saved": "සුරකින ලදී",
+  "edit.saveFailed": "සුරැකීමට නොහැකි විය",
+  "edit.discard": "වෙනස්කම් ඉවතලන්න",
+  "edit.unsaved": "ඔබ සතුව නොසුරැකි වෙනස්කම් ඇත.",
+  "edit.closeAnyway": "නොසුරකා වසන්න",
+  "edit.conflict": "ඔබ සංස්කරණය ආරම්භ කළ පසු ගොනුව වෙනස් කර ඇත.",
+  "edit.overwrite": "උඩින් ලියන්න",
+  "edit.discardConfirm": "මෙම ගොනුවේ නොසුරැකි සියලු වෙනස්කම් ඉවතලන්නද?",
 };
 
 const sk: TStrings = {
@@ -664,14 +903,24 @@ const sk: TStrings = {
   close: "Zatvoriť",
   "file.previous": "Predchádzajúci súbor",
   "file.next": "Ďalší súbor",
-  "images.blocked": "Externé obrázky sú blokované, aby sa chránilo vaše súkromie.",
-  "images.load": "Načítať obrázky",
-  "images.hide": "Skryť obrázky",
+  "images.blocked":
+    "Obrázky z iných webových stránok sa zobrazia, len ak nastavenia zabezpečenia portálu tieto stránky povoľujú.",
   "body.title": "Náhľad stránky",
   "state.loading": "Načítava sa súbor…",
   "state.empty": "Tento súbor je prázdny.",
   "state.loadFailed": "Súbor sa nepodarilo načítať.",
   "state.noFile": "Nie je vybratý žiadny súbor.",
+  "edit.label": "Zdrojový kód HTML",
+  "edit.save": "Uložiť",
+  "edit.saving": "Ukladá sa…",
+  "edit.saved": "Uložené",
+  "edit.saveFailed": "Uloženie zlyhalo",
+  "edit.discard": "Zahodiť zmeny",
+  "edit.unsaved": "Máte neuložené zmeny.",
+  "edit.closeAnyway": "Zatvoriť bez uloženia",
+  "edit.conflict": "Súbor sa zmenil odvtedy, ako ste ho začali upravovať.",
+  "edit.overwrite": "Prepísať",
+  "edit.discardConfirm": "Zahodiť všetky neuložené zmeny v tomto súbore?",
 };
 
 const sl: TStrings = {
@@ -690,14 +939,24 @@ const sl: TStrings = {
   close: "Zapri",
   "file.previous": "Prejšnja datoteka",
   "file.next": "Naslednja datoteka",
-  "images.blocked": "Zunanje slike so blokirane zaradi zaščite vaše zasebnosti.",
-  "images.load": "Naloži slike",
-  "images.hide": "Skrij slike",
+  "images.blocked":
+    "Slike z drugih spletnih mest so prikazane le, če varnostne nastavitve portala ta mesta dovoljujejo.",
   "body.title": "Predogled strani",
   "state.loading": "Nalaganje datoteke…",
   "state.empty": "Ta datoteka je prazna.",
   "state.loadFailed": "Datoteke ni bilo mogoče naložiti.",
   "state.noFile": "Nobena datoteka ni izbrana.",
+  "edit.label": "Izvorna koda HTML",
+  "edit.save": "Shrani",
+  "edit.saving": "Shranjevanje…",
+  "edit.saved": "Shranjeno",
+  "edit.saveFailed": "Shranjevanje ni uspelo",
+  "edit.discard": "Zavrzi spremembe",
+  "edit.unsaved": "Imate neshranjene spremembe.",
+  "edit.closeAnyway": "Zapri brez shranjevanja",
+  "edit.conflict": "Datoteka se je spremenila, odkar ste jo začeli urejati.",
+  "edit.overwrite": "Prepiši",
+  "edit.discardConfirm": "Želite zavreči vse neshranjene spremembe v tej datoteki?",
 };
 
 const sq: TStrings = {
@@ -716,14 +975,24 @@ const sq: TStrings = {
   close: "Mbyllni",
   "file.previous": "Skedari i mëparshëm",
   "file.next": "Skedari tjetër",
-  "images.blocked": "Imazhet e jashtme janë bllokuar për të mbrojtur privatësinë tuaj.",
-  "images.load": "Ngarkoni imazhet",
-  "images.hide": "Fshihni imazhet",
+  "images.blocked":
+    "Imazhet nga sajte të tjerë shfaqen vetëm nëse cilësimet e sigurisë së portalit i lejojnë ato sajte.",
   "body.title": "Parapamja e faqes",
   "state.loading": "Po ngarkohet skedari…",
   "state.empty": "Ky skedar është bosh.",
   "state.loadFailed": "Skedari nuk mund të ngarkohej.",
   "state.noFile": "Nuk është zgjedhur asnjë skedar.",
+  "edit.label": "Kodi burimor HTML",
+  "edit.save": "Ruani",
+  "edit.saving": "Po ruhet…",
+  "edit.saved": "U ruajt",
+  "edit.saveFailed": "Ruajtja dështoi",
+  "edit.discard": "Hidhni poshtë ndryshimet",
+  "edit.unsaved": "Ju keni ndryshime të paruajtura.",
+  "edit.closeAnyway": "Mbyllni pa ruajtur",
+  "edit.conflict": "Skedari është ndryshuar që kur filluat ta redaktoni.",
+  "edit.overwrite": "Mbishkruani",
+  "edit.discardConfirm": "Të hidhen poshtë të gjitha ndryshimet e paruajtura në këtë skedar?",
 };
 
 const srCyrl: TStrings = {
@@ -742,14 +1011,24 @@ const srCyrl: TStrings = {
   close: "Затвори",
   "file.previous": "Претходна датотека",
   "file.next": "Следећа датотека",
-  "images.blocked": "Спољне слике су блокиране ради заштите ваше приватности.",
-  "images.load": "Учитај слике",
-  "images.hide": "Сакриј слике",
+  "images.blocked":
+    "Слике са других сајтова се приказују само ако безбедносна подешавања портала дозвољавају те сајтове.",
   "body.title": "Преглед странице",
   "state.loading": "Учитавање датотеке…",
   "state.empty": "Ова датотека је празна.",
   "state.loadFailed": "Није било могуће учитати датотеку.",
   "state.noFile": "Није изабрана ниједна датотека.",
+  "edit.label": "HTML изворни код",
+  "edit.save": "Сачувај",
+  "edit.saving": "Чување…",
+  "edit.saved": "Сачувано",
+  "edit.saveFailed": "Чување није успело",
+  "edit.discard": "Одбаци промене",
+  "edit.unsaved": "Имате несачуване промене.",
+  "edit.closeAnyway": "Затвори без чувања",
+  "edit.conflict": "Датотека је промењена откако сте почели да је уређујете.",
+  "edit.overwrite": "Препиши",
+  "edit.discardConfirm": "Одбацити све несачуване промене у овој датотеци?",
 };
 
 const srLatn: TStrings = {
@@ -768,14 +1047,24 @@ const srLatn: TStrings = {
   close: "Zatvori",
   "file.previous": "Prethodna datoteka",
   "file.next": "Sledeća datoteka",
-  "images.blocked": "Spoljne slike su blokirane radi zaštite vaše privatnosti.",
-  "images.load": "Učitaj slike",
-  "images.hide": "Sakrij slike",
+  "images.blocked":
+    "Slike sa drugih sajtova se prikazuju samo ako bezbednosna podešavanja portala dozvoljavaju te sajtove.",
   "body.title": "Pregled stranice",
   "state.loading": "Učitavanje datoteke…",
   "state.empty": "Ova datoteka je prazna.",
   "state.loadFailed": "Nije bilo moguće učitati datoteku.",
   "state.noFile": "Nije izabrana nijedna datoteka.",
+  "edit.label": "HTML izvorni kod",
+  "edit.save": "Sačuvaj",
+  "edit.saving": "Čuvanje…",
+  "edit.saved": "Sačuvano",
+  "edit.saveFailed": "Čuvanje nije uspelo",
+  "edit.discard": "Odbaci promene",
+  "edit.unsaved": "Imate nesačuvane promene.",
+  "edit.closeAnyway": "Zatvori bez čuvanja",
+  "edit.conflict": "Datoteka je promenjena otkako ste počeli da je uređujete.",
+  "edit.overwrite": "Prepiši",
+  "edit.discardConfirm": "Odbaciti sve nesačuvane promene u ovoj datoteci?",
 };
 
 const tr: TStrings = {
@@ -794,14 +1083,24 @@ const tr: TStrings = {
   close: "Kapat",
   "file.previous": "Önceki dosya",
   "file.next": "Sonraki dosya",
-  "images.blocked": "Gizliliğinizi korumak için harici görüntüler engellendi.",
-  "images.load": "Görüntüleri yükle",
-  "images.hide": "Görüntüleri gizle",
+  "images.blocked":
+    "Diğer web sitelerindeki görüntüler yalnızca portalın güvenlik ayarları bu sitelere izin veriyorsa gösterilir.",
   "body.title": "Sayfa önizlemesi",
   "state.loading": "Dosya yükleniyor…",
   "state.empty": "Bu dosya boş.",
   "state.loadFailed": "Dosya yüklenemedi.",
   "state.noFile": "Dosya seçilmedi.",
+  "edit.label": "HTML kaynak kodu",
+  "edit.save": "Kaydet",
+  "edit.saving": "Kaydediliyor…",
+  "edit.saved": "Kaydedildi",
+  "edit.saveFailed": "Kaydedilemedi",
+  "edit.discard": "Değişiklikleri at",
+  "edit.unsaved": "Kaydedilmemiş değişiklikleriniz var.",
+  "edit.closeAnyway": "Kaydetmeden kapat",
+  "edit.conflict": "Dosya, düzenlemeye başladığınızdan bu yana değiştirildi.",
+  "edit.overwrite": "Üzerine yaz",
+  "edit.discardConfirm": "Bu dosyadaki kaydedilmemiş tüm değişiklikler atılsın mı?",
 };
 
 const uk: TStrings = {
@@ -820,14 +1119,24 @@ const uk: TStrings = {
   close: "Закрити",
   "file.previous": "Попередній файл",
   "file.next": "Наступний файл",
-  "images.blocked": "Зовнішні зображення заблоковано для захисту вашої приватності.",
-  "images.load": "Завантажити зображення",
-  "images.hide": "Приховати зображення",
+  "images.blocked":
+    "Зображення з інших сайтів показуються, лише якщо ці сайти дозволено в налаштуваннях безпеки порталу.",
   "body.title": "Попередній перегляд сторінки",
   "state.loading": "Завантаження файлу…",
   "state.empty": "Цей файл порожній.",
   "state.loadFailed": "Не вдалося завантажити файл.",
   "state.noFile": "Файл не вибрано.",
+  "edit.label": "Вихідний код HTML",
+  "edit.save": "Зберегти",
+  "edit.saving": "Збереження…",
+  "edit.saved": "Збережено",
+  "edit.saveFailed": "Не вдалося зберегти",
+  "edit.discard": "Скасувати зміни",
+  "edit.unsaved": "У вас є незбережені зміни.",
+  "edit.closeAnyway": "Закрити без збереження",
+  "edit.conflict": "Файл змінили, поки ви його редагували.",
+  "edit.overwrite": "Перезаписати",
+  "edit.discardConfirm": "Скасувати всі незбережені зміни в цьому файлі?",
 };
 
 const vi: TStrings = {
@@ -846,14 +1155,24 @@ const vi: TStrings = {
   close: "Đóng",
   "file.previous": "Tệp trước",
   "file.next": "Tệp tiếp theo",
-  "images.blocked": "Hình ảnh bên ngoài đã bị chặn để bảo vệ quyền riêng tư của bạn.",
-  "images.load": "Tải hình ảnh",
-  "images.hide": "Ẩn hình ảnh",
+  "images.blocked":
+    "Hình ảnh từ các trang web khác chỉ hiển thị nếu cài đặt bảo mật của cổng cho phép các trang đó.",
   "body.title": "Xem trước trang",
   "state.loading": "Đang tải tệp…",
   "state.empty": "Tệp này trống.",
   "state.loadFailed": "Không thể tải tệp.",
   "state.noFile": "Chưa chọn tệp nào.",
+  "edit.label": "Mã nguồn HTML",
+  "edit.save": "Lưu",
+  "edit.saving": "Đang lưu…",
+  "edit.saved": "Đã lưu",
+  "edit.saveFailed": "Không thể lưu",
+  "edit.discard": "Hủy thay đổi",
+  "edit.unsaved": "Bạn có các thay đổi chưa được lưu.",
+  "edit.closeAnyway": "Đóng mà không lưu",
+  "edit.conflict": "Tệp đã bị thay đổi kể từ khi bạn bắt đầu chỉnh sửa.",
+  "edit.overwrite": "Ghi đè",
+  "edit.discardConfirm": "Hủy tất cả các thay đổi chưa lưu trong tệp này?",
 };
 
 const zh: TStrings = {
@@ -872,14 +1191,23 @@ const zh: TStrings = {
   close: "关闭",
   "file.previous": "上一个文件",
   "file.next": "下一个文件",
-  "images.blocked": "为保护您的隐私，已阻止外部图片。",
-  "images.load": "加载图片",
-  "images.hide": "隐藏图片",
+  "images.blocked": "仅当门户的安全设置允许相应网站时，才会显示来自其他网站的图片。",
   "body.title": "页面预览",
   "state.loading": "正在加载文件…",
   "state.empty": "此文件为空。",
   "state.loadFailed": "无法加载文件。",
   "state.noFile": "未选择文件。",
+  "edit.label": "HTML 源代码",
+  "edit.save": "保存",
+  "edit.saving": "正在保存…",
+  "edit.saved": "已保存",
+  "edit.saveFailed": "无法保存",
+  "edit.discard": "放弃更改",
+  "edit.unsaved": "您有未保存的更改。",
+  "edit.closeAnyway": "不保存并关闭",
+  "edit.conflict": "自您开始编辑以来，文件已被更改。",
+  "edit.overwrite": "覆盖",
+  "edit.discardConfirm": "要放弃此文件中所有未保存的更改吗？",
 };
 
 /**

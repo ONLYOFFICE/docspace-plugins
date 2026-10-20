@@ -79,6 +79,28 @@ describe("tokenize", () => {
     const tags = kindsOf("<script>if (a<b) x = '<p>';</script>", "tag");
     expect(tags).toEqual(["script", "script"]);
   });
+
+  it("reads url(...) as one value: the ';' of a data URI does not start a property", () => {
+    const style =
+      "<style>div{background:url(data:image/png;base64,AAAA/BBB+CCC=);color:red}</style>";
+    expect(kindsOf(style, "property")).toEqual(["background", "color"]);
+    expect(kindsOf(style, "string")).toEqual(["url(data:image/png;base64,AAAA/BBB+CCC=)"]);
+  });
+
+  it("stays linear on large embedded data and does not overflow on long strings", () => {
+    const words = "AAAA/".repeat(200_000); // 1 MB of base64-like words after a ';'
+    let started = performance.now();
+    tokenize(`<style>@font-face{src:url(data:font/woff2;base64,${words})}</style>`);
+    tokenize(`<style>a{b:c;${words}}</style>`);
+    expect(performance.now() - started).toBeLessThan(1500);
+
+    started = performance.now();
+    const long = "x".repeat(12_000_000);
+    expect(() => tokenize(`<style>a{content:"${long}"}</style><a title="${long}">`)).not.toThrow();
+    expect(() =>
+      tokenize(`<script>const s = \`${long}\`; const t = "${long}";</script>`),
+    ).not.toThrow();
+  }, 20_000);
 });
 
 describe("highlight", () => {

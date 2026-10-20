@@ -22,15 +22,32 @@ import {
   useState,
   useSyncExternalStore,
   type CSSProperties,
+  type KeyboardEvent,
   type ReactNode,
 } from "react";
-import { useCurrentFile, usePluginActions } from "@onlyoffice/docspace-plugin-sdk/react";
-import { Link, LinkType, Loader, LoaderTypes, Text, useTheme } from "@onlyoffice/apps-ui-kit";
+import {
+  useCurrentFile,
+  usePluginAPI,
+  usePluginActions,
+} from "@onlyoffice/docspace-plugin-sdk/react";
+import { Loader, LoaderTypes, Text, useTheme } from "@onlyoffice/apps-ui-kit";
 
-import { buildHtmlDocument, hasRemoteReferences } from "./html/document";
+import {
+  canClose,
+  change,
+  discard,
+  discardAll,
+  editOf,
+  save,
+  track,
+  unsavedCount,
+  useEdits,
+  whenCloseRefused,
+} from "./edits";
+import { buildHtmlDocument } from "./html/document";
 import { highlight } from "./html/highlight";
 import { t } from "./locales";
-import { useHtmlFile } from "./useHtmlFile";
+import { useHtmlFile, type HtmlFile } from "./useHtmlFile";
 import styles from "./HtmlPreview.module.css";
 
 type View = "preview" | "code";
@@ -46,6 +63,10 @@ const DEVICES: { value: Device; width?: number; height?: number }[] = [
 // What a framed device needs beyond its own width: the canvas padding and the bezel,
 // both sides (.stage[data-framed] and .device in the stylesheet).
 const FRAME = 2 * 24 + 2 * 10;
+
+// Past this size the source is shown and edited as plain text: colouring it again on
+// every key would cost more than a frame, and a textarea alone stays fast at any size.
+const PLAIN_TEXT = 100_000;
 
 const centered: CSSProperties = {
   flex: "1 1 auto",
@@ -64,25 +85,46 @@ const accent = "var(--accent-main, var(--color-scheme-main-accent, #4781d1))";
 // the plugin draws its own.
 const CHROMELESS = "(max-width: 600px), (pointer: coarse)";
 
+const watchChromeless = (onChange: () => void) => {
+  const query = matchMedia(CHROMELESS);
+  query.addEventListener("change", onChange);
+  return () => query.removeEventListener("change", onChange);
+};
+const isChromeless = () => matchMedia(CHROMELESS).matches;
+
 const useChromeless = (): boolean =>
-  useSyncExternalStore(
-    (onChange) => {
-      const query = matchMedia(CHROMELESS);
-      query.addEventListener("change", onChange);
-      return () => query.removeEventListener("change", onChange);
-    },
-    () => matchMedia(CHROMELESS).matches,
-    () => false,
-  );
+  useSyncExternalStore(watchChromeless, isChromeless, () => false);
+
+// Ctrl+S (Cmd+S): the letter where the layout types one, the key's place where it does
+// not - "ы" on a Cyrillic layout - so Dvorak's Ctrl+O is not taken for a save.
+const isSaveKey = (e: KeyboardEvent) =>
+  (e.ctrlKey || e.metaKey) &&
+  !e.altKey &&
+  !e.shiftKey &&
+  (/^[a-z]$/i.test(e.key) ? e.key.toLowerCase() === "s" : e.code === "KeyS");
 
 export function HtmlPreview() {
   const file = useCurrentFile();
-  const state = useHtmlFile(file?.id);
+  const [state, reload] = useHtmlFile(file?.id);
   const { isBase } = useTheme();
+  const { closeMediaViewer } = usePluginActions();
   const chromeless = useChromeless();
   // Held here rather than per page, so the chosen view and width survive paging.
   const [view, setView] = useState<View>("preview");
   const [device, setDevice] = useState<Device>("desktop");
+  const [closeRefused, setCloseRefused] = useState(false);
+  useEdits();
+  const dirty = unsavedCount() > 0;
+
+  useEffect(() => whenCloseRefused(() => setCloseRefused(true)), []);
+  useEffect(() => {
+    if (!dirty) setCloseRefused(false);
+  }, [dirty]);
+
+  const closeWithoutSaving = () => {
+    discardAll();
+    closeMediaViewer();
+  };
 
   let content: ReactNode;
   switch (state.status) {
@@ -113,7 +155,8 @@ export function HtmlPreview() {
       content = (
         <PageView
           key={String(state.fileId)}
-          source={state.source}
+          file={state}
+          reload={reload}
           view={view}
           device={device}
           onView={setView}
@@ -131,6 +174,19 @@ export function HtmlPreview() {
       data-chromeless={chromeless || undefined}
     >
       <div className={styles.card}>
+        {closeRefused && (
+          <div id="html-viewer-unsaved" className={styles.unsaved} role="alert">
+            <span>{t("edit.unsaved")}</span>
+            <button
+              id="html-viewer-close-anyway"
+              type="button"
+              className={styles.action}
+              onClick={closeWithoutSaving}
+            >
+              {t("edit.closeAnyway")}
+            </button>
+          </div>
+        )}
         {content}
         {chromeless && <Pager title={file?.title} />}
       </div>
@@ -195,29 +251,73 @@ function Message({ children }: { children: ReactNode }) {
 }
 
 function PageView({
-  source,
+  file,
+  reload,
   view,
   device,
   onView,
   onDevice,
 }: {
-  source: string;
+  file: HtmlFile;
+  /** Reads the file again: after a conflict, to take what someone else saved. */
+  reload: () => void;
   view: View;
   device: Device;
   onView: (view: View) => void;
   onDevice: (device: Device) => void;
 }) {
-  // Per page, not kept while paging: each file's remote content is a separate choice.
-  const [allowRemote, setAllowRemote] = useState(false);
-  const remote = useMemo(() => hasRemoteReferences(source), [source]);
-  const srcDoc = useMemo(() => {
+  const api = usePluginAPI();
+  useEdits();
+  // A fresh read may be newer than what this viewer last saw; an older one is ignored.
+  useEffect(() => track(file), [file]);
+  const edit = editOf(file);
+  const text = edit.draft ?? edit.saved;
+  const dirty = edit.draft !== undefined;
+
+  // The outcome replaces the Save label for a moment; a toast may sit under the media viewer.
+  const [outcome, setOutcome] = useState<"done" | "failed" | null>(null);
+  useEffect(() => {
+    if (!outcome) return;
+    const timer = setTimeout(() => setOutcome(null), 2500);
+    return () => clearTimeout(timer);
+  }, [outcome]);
+  // Typing again ends it at once: "Saved" over text that is not would mislead.
+  useEffect(() => setOutcome(null), [text]);
+
+  const run = async (overwrite = false) => {
+    const result = await save(api, file, overwrite);
+    if (result === "saved") setOutcome("done");
+    else if (result === "failed") setOutcome("failed");
+  };
+
+  // One click would lose every unsaved line, with nothing to bring them back. After a
+  // conflict the file is read again, so what someone else saved takes the draft's place.
+  const discardDraft = () => {
+    if (!window.confirm(t("edit.discardConfirm"))) return;
+    const conflict = edit.conflict; // discard() clears it on this same object
+    discard(file.fileId);
+    if (conflict) reload();
+  };
+
+  // Ctrl+S anywhere on the page, not only in the code: with a draft it saves, where the
+  // viewer would download the stored file instead. Without one the download stands.
+  const keys = (e: KeyboardEvent) => {
+    if (!dirty || !isSaveKey(e)) return;
+    e.preventDefault();
+    e.stopPropagation();
+    run();
+  };
+
+  // Built only while the preview is on screen: the code view re-renders on every key.
+  const built = useMemo(() => {
+    if (view !== "preview") return undefined;
     try {
-      return buildHtmlDocument(source, { allowRemote });
+      return buildHtmlDocument(text);
     } catch {
       return null; // the source is still worth showing
     }
-  }, [source, allowRemote]);
-  const preview = view === "preview" && srcDoc !== null;
+  }, [view, text]);
+  const preview = view === "preview" && built !== null;
   const chromeless = useChromeless();
 
   // A device is offered only where its frame fits the card. One that does not is hidden
@@ -237,7 +337,7 @@ function PageView({
   const size = devices.find((d) => d.value === device) ?? DEVICES[0];
 
   return (
-    <>
+    <div className={styles.page} onKeyDown={keys}>
       <div id="html-viewer-toolbar" ref={toolbar} className={styles.toolbar}>
         <Segmented
           id="html-viewer-view"
@@ -267,23 +367,52 @@ function PageView({
           </div>
         )}
         <div className={styles.end}>
-          <CopyButton source={source} />
+          {dirty && !edit.saving && (
+            <button
+              id="html-viewer-discard"
+              type="button"
+              className={styles.action}
+              aria-label={t("edit.discard")}
+              title={t("edit.discard")}
+              onClick={discardDraft}
+            >
+              {icons.undo}
+            </button>
+          )}
+          {(dirty || edit.saving || outcome) && (
+            <SaveButton state={edit.saving ? "saving" : outcome} onClick={() => run()} />
+          )}
+          <CopyButton source={text} />
           {chromeless && <CloseButton />}
         </div>
       </div>
 
-      {preview && remote && (
+      {edit.conflict && (
+        <div id="html-viewer-conflict" className={styles.unsaved} role="alert">
+          <span>{t("edit.conflict")}</span>
+          <button
+            id="html-viewer-overwrite"
+            type="button"
+            className={styles.action}
+            onClick={() => run(true)}
+          >
+            {t("edit.overwrite")}
+          </button>
+          <button
+            id="html-viewer-take-theirs"
+            type="button"
+            className={styles.action}
+            onClick={discardDraft}
+          >
+            {t("edit.discard")}
+          </button>
+        </div>
+      )}
+
+      {preview && built?.remote && (
         <div id="html-viewer-remote" className={styles.notice}>
           {icons.shield}
-          {!allowRemote && <span>{t("images.blocked")}</span>}
-          <Link
-            type={LinkType.action}
-            fontSize="12px"
-            color="accent"
-            onClick={() => setAllowRemote((v) => !v)}
-          >
-            {allowRemote ? t("images.hide") : t("images.load")}
-          </Link>
+          <span>{t("images.blocked")}</span>
         </div>
       )}
 
@@ -298,28 +427,126 @@ function PageView({
               id="html-viewer-frame"
               title={t("body.title")}
               sandbox="allow-popups allow-popups-to-escape-sandbox"
-              srcDoc={srcDoc ?? undefined}
+              srcDoc={built?.html}
             />
           </div>
         </div>
       ) : (
-        <CodeView source={source} />
+        <CodeView
+          text={text}
+          onChange={file.canEdit ? (next) => change(file, next) : undefined}
+          onSave={() => run()}
+        />
       )}
-    </>
+    </div>
   );
 }
 
-function CodeView({ source }: { source: string }) {
-  // Highlighted only once the source is asked for; most files are only ever previewed.
-  const html = useMemo(() => highlight(source), [source]);
-  // Every character of the source is escaped by highlight(); only its own spans are markup.
+type SaveState = "saving" | "done" | "failed" | null;
+
+function SaveButton({ state, onClick }: { state: SaveState; onClick: () => void }) {
+  const label = t(
+    state === "saving"
+      ? "edit.saving"
+      : state === "done"
+        ? "edit.saved"
+        : state === "failed"
+          ? "edit.saveFailed"
+          : "edit.save",
+  );
   return (
-    <pre
+    <button
+      id="html-viewer-save"
+      type="button"
+      className={`${styles.action} ${styles.primary}`}
+      data-state={state ?? undefined}
+      aria-label={label}
+      title={state ? undefined : `${label} (Ctrl+S)`}
+      disabled={state === "saving"}
+      onClick={onClick}
+    >
+      {state === "done" ? icons.check : icons.save}
+      <span className={styles.label}>{label}</span>
+    </button>
+  );
+}
+
+/**
+ * The source. Highlighted, and where the user may write the file a transparent textarea
+ * lies over the coloured lines with the same font, padding and wrapping, so the caret and
+ * the selection fall on the text below. Past PLAIN_TEXT, or where colouring fails, it is
+ * plain text: read in a <pre>, edited in the textarea alone.
+ */
+function CodeView({
+  text,
+  onChange,
+  onSave,
+}: {
+  text: string;
+  onChange?: (text: string) => void;
+  onSave: () => void;
+}) {
+  // Highlighted only once the source is asked for; most files are only ever previewed.
+  const html = useMemo(() => {
+    if (text.length > PLAIN_TEXT) return null;
+    try {
+      return highlight(text);
+    } catch {
+      return null; // a source the highlighter cannot take is still worth reading
+    }
+  }, [text]);
+
+  const keys = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+    // Keys typed into the code are the editor's: the viewer would page on the arrows and
+    // start deleting the file on Delete. Escape still closes - over an unsaved edit the
+    // viewer stays open anyway and says why.
+    if (e.key !== "Escape") e.stopPropagation();
+    if (isSaveKey(e)) {
+      e.preventDefault();
+      onSave();
+    } else if (e.key === "Tab" && !e.shiftKey && !e.ctrlKey && !e.altKey && !e.metaKey) {
+      e.preventDefault();
+      // execCommand keeps the native undo history, which setting the value would wipe.
+      document.execCommand("insertText", false, "  ");
+    }
+  };
+
+  // One tree in both modes, the textarea always second: a paste across PLAIN_TEXT only
+  // changes its class, and its focus, caret and undo history stay.
+  return (
+    <div
       id="html-viewer-code"
       className={styles.code}
+      data-plain={html === null ? "" : undefined}
       dir="ltr"
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
+    >
+      <div className={styles.lines}>
+        {html === null ? (
+          !onChange && <pre className={styles.plainText}>{text}</pre>
+        ) : (
+          /* Every character of the source is escaped by highlight(); only its own spans are markup. */
+          <pre
+            className={styles.source}
+            aria-hidden={onChange ? true : undefined}
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        )}
+        {onChange && (
+          <textarea
+            id="html-viewer-editor"
+            className={html === null ? styles.plainInput : styles.input}
+            value={text}
+            onChange={(e) => onChange(e.target.value)}
+            onKeyDown={keys}
+            aria-label={t("edit.label")}
+            spellCheck={false}
+            autoCapitalize="off"
+            autoComplete="off"
+            autoCorrect="off"
+          />
+        )}
+      </div>
+    </div>
   );
 }
 
@@ -416,7 +643,8 @@ function CloseButton() {
       className={`${styles.action} ${styles.close}`}
       aria-label={t("close")}
       title={t("close")}
-      onClick={() => closeMediaViewer()}
+      // closeMediaViewer() skips onClose, so the unsaved check is made here.
+      onClick={() => canClose() && closeMediaViewer()}
     >
       {icons.close}
     </button>
@@ -469,6 +697,18 @@ const icons = {
     <>
       <rect x="5.5" y="5.5" width="8.5" height="8.5" rx="1.5" />
       <path d="M10.5 5.5v-2A1.5 1.5 0 0 0 9 2H3.5A1.5 1.5 0 0 0 2 3.5V9a1.5 1.5 0 0 0 1.5 1.5h2" />
+    </>,
+  ),
+  save: icon(
+    <>
+      <path d="M3 2.5h7.75L13.5 5.25V13a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5Z" />
+      <path d="M5.25 2.5V5.5h4.5v-3M5 13.5V9.5h6v4" />
+    </>,
+  ),
+  undo: icon(
+    <>
+      <path d="M3.5 6.5h6.25a3.25 3.25 0 0 1 0 6.5H7" />
+      <path d="M6 3.5 3 6.5l3 3" />
     </>,
   ),
   check: icon(<path d="m3 8.5 3.25 3.25L13 5" />),

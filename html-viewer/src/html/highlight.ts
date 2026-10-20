@@ -35,17 +35,21 @@ export type TokenKind =
 
 type Token = [kind: TokenKind | "", text: string];
 
+// The repeated parts are written as "run, then (special, run)*" rather than "(a|b)*": an
+// alternation repeated per character keeps a backtracking frame per character, and a
+// multi-megabyte string or data URI overflowed the stack.
 const MARKUP =
-  /<!--[\s\S]*?(?:-->|$)|<![^>]*>?|<\/?[A-Za-z][^\s/>]*(?:[^>"']|"[^"]*"|'[^']*')*>?|&#?\w+;/g;
+  /<!--[\s\S]*?(?:-->|$)|<![^>]*>?|<\/?[A-Za-z][^\s/>]*[^>"']*(?:(?:"[^"]*"|'[^']*')[^>"']*)*>?|&#?\w+;/g;
 
 // Inside a tag matched by MARKUP quotes are always balanced.
 const ATTRIBUTE = /(\s+)|([^\s"'>/=]+)(?:(\s*=\s*)("[^"]*"|'[^']*'|[^\s"'>]+))?|([\s\S])/gy;
 
+// url(...) is one token: the ";" of a data: URI inside it is not the end of a declaration.
 const CSS =
-  /\/\*[\s\S]*?(?:\*\/|$)|"(?:[^"\\\n]|\\.)*"?|'(?:[^'\\\n]|\\.)*'?|@[\w-]+|!\s*important|#[\da-f]{3,8}\b|-?(?:\d+\.?\d*|\.\d+)[a-z%]*|[\w.#-]+|[{};:]/gi;
+  /\/\*[\s\S]*?(?:\*\/|$)|"[^"\\\n]*(?:\\.[^"\\\n]*)*"?|'[^'\\\n]*(?:\\.[^'\\\n]*)*'?|url\(\s*(?:"[^"\\\n]*(?:\\.[^"\\\n]*)*"?|'[^'\\\n]*(?:\\.[^'\\\n]*)*'?|[^)"']*)\s*\)?|@[\w-]+|!\s*important|#[\da-f]{3,8}\b|-?(?:\d+\.?\d*|\.\d+)[a-z%]*|[\w.#-]+|[{};:]/gi;
 
 const JS =
-  /\/\*[\s\S]*?(?:\*\/|$)|\/\/[^\n]*|"(?:[^"\\\n]|\\.)*"?|'(?:[^'\\\n]|\\.)*'?|`(?:[^`\\]|\\[\s\S])*`?|\b\d[\w.]*|\b(?:async|await|break|case|catch|class|const|continue|default|delete|do|else|export|extends|false|finally|for|from|function|if|import|in|instanceof|let|new|null|of|return|switch|this|throw|true|try|typeof|undefined|var|void|while|yield)\b/g;
+  /\/\*[\s\S]*?(?:\*\/|$)|\/\/[^\n]*|"[^"\\\n]*(?:\\.[^"\\\n]*)*"?|'[^'\\\n]*(?:\\.[^'\\\n]*)*'?|`[^`\\]*(?:\\[\s\S][^`\\]*)*`?|\b\d[\w.]*|\b(?:async|await|break|case|catch|class|const|continue|default|delete|do|else|export|extends|false|finally|for|from|function|if|import|in|instanceof|let|new|null|of|return|switch|this|throw|true|try|typeof|undefined|var|void|while|yield)\b/g;
 
 const NEXT_BRACE = /[;{}]/g;
 
@@ -110,6 +114,10 @@ function css(source: string, out: Token[], inline: boolean): void {
   let property = inline; // the next word names a property, not a value
   let selector = false; // inside a selector nested in an at-rule, where ':' is a pseudo-class
   let prelude = false; // between an at-rule and its block
+  // The next ";", "{" or "}" at or after `last`, found once: rescanning for every word
+  // was quadratic in a long value.
+  let braceAt = -1;
+  let brace: string | undefined;
   let last = 0;
   for (const m of source.matchAll(CSS)) {
     if (m.index > last) out.push(["", source.slice(last, m.index)]);
@@ -117,7 +125,7 @@ function css(source: string, out: Token[], inline: boolean): void {
     last = m.index + s.length;
     let kind: TokenKind | "" = "";
     if (s.startsWith("/*")) kind = "comment";
-    else if (s[0] === '"' || s[0] === "'") kind = "string";
+    else if (s[0] === '"' || s[0] === "'" || /^url\(/i.test(s)) kind = "string";
     else if (s[0] === "@") [kind, prelude] = ["keyword", true];
     else if (s[0] === "!") kind = "keyword";
     else if (s === "{") [depth, property, selector, prelude] = [depth + 1, true, false, false];
@@ -128,8 +136,13 @@ function css(source: string, out: Token[], inline: boolean): void {
     else if (depth === 0) kind = "selector";
     else if (property) {
       // A word that opens a block is a selector nested in @media, not a property.
-      NEXT_BRACE.lastIndex = last;
-      selector = NEXT_BRACE.exec(source)?.[0] === "{";
+      if (braceAt < last) {
+        NEXT_BRACE.lastIndex = last;
+        const next = NEXT_BRACE.exec(source);
+        braceAt = next ? next.index : Infinity;
+        brace = next?.[0];
+      }
+      selector = brace === "{";
       kind = selector ? "selector" : "property";
     } else if (NUMBER.test(s)) kind = "number";
     out.push([kind, s]);
