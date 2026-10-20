@@ -71,7 +71,7 @@
     "@vitejs/plugin-react": "^6.0.0",
     "prettier": "2.8.6",
     "typescript": "^5.6.0",
-    "vite": "^8.0.0"
+    "vite": "^8.3.3"
   },
   "dependencies": {
     "@codemirror/lang-cpp": "^6.0.3",
