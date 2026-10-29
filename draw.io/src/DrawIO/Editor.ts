@@ -109,9 +109,9 @@ DiagramEditor.prototype.getFrameUrl = function () {
   url += url.indexOf("?") === -1 ? "?" : "&";
   url += "proto=json&spin=1&embed=1";
 
-  if (this.off != null) {
-    url += "&offline=";
-    url += this.off ? "1" : "0";
+  // offline=0 makes draw.io uninstall its service worker and alert "Cache cleared".
+  if (this.off) {
+    url += "&offline=1";
   }
 
   if (this.lib != null) {

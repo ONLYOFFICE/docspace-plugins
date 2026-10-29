@@ -1,5 +1,9 @@
 # Change Log
 
+## #.#.#
+### Fixed
+- the editor no longer clears the draw.io cache and shows the "Cache cleared" alert on every opening when the offline mode is off
+
 ## 1.4.0
 ### Added
 - setting for the draw.io address, so a self-hosted draw.io instance can be used
