@@ -26,8 +26,8 @@ for (const ext of supportedExtensions) {
   readerFileItems.push({
     extension: "." + ext,
     fileTypeName: "Book",
-    fileRowIcon: "icon-16.png",
-    fileTileIcon: "icon-16.png",
+    fileRowIcon: "48x48.png",
+    fileTileIcon: "48x48.png",
     devices: [Devices.desktop, Devices.mobile, Devices.tablet],
     onClick,
   });

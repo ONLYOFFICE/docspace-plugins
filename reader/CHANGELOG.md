@@ -1,5 +1,11 @@
 # Change Log
 
+## #.#.#
+
+### Fixed
+
+- book file icon size in the file list: the 48x48 icon is used instead of the 16x16 one
+
 ## 1.1.0
 
 ### Added
