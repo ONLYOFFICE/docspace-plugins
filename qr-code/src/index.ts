@@ -27,6 +27,7 @@ import {
   ModalDisplayType,
   PluginLocale,
   PluginStatus,
+  RoomsType,
   Security,
 } from "@onlyoffice/docspace-plugin-sdk";
 
@@ -35,12 +36,11 @@ import { setTarget } from "./target";
 import { QrCodeModal } from "./QrCodeModal";
 import { QrInfoPanelTab } from "./QrInfoPanelTab";
 
-class QrCode
-  implements
-    IPlugin,
-    IContextMenuPlugin,
-    IInfoPanelPlugin
-{
+// The room types with a room-level public link - the same three as ROOM_TYPES_WITH_PUBLIC_LINK
+// in useShareLink. The menu and the tab are not offered for any other room.
+const ROOMS_WITH_PUBLIC_LINK = [RoomsType.FormRoom, RoomsType.CustomRoom, RoomsType.PublicRoom];
+
+class QrCode implements IPlugin, IContextMenuPlugin, IInfoPanelPlugin {
   status: PluginStatus = PluginStatus.active;
 
   contextMenuItems: Map<string, IContextMenuItem> = new Map();
@@ -97,6 +97,7 @@ class QrCode
       icon: "icon-16.svg",
       fileType: [FilesType.room],
       itemSecurity: [Security.CopyLink],
+      roomType: ROOMS_WITH_PUBLIC_LINK,
       onItemClick: (id) => {
         setTarget({ id, kind: "folder", isRoom: true });
         return openQrModal();
@@ -109,6 +110,8 @@ class QrCode
       component: QrInfoPanelTab,
       // The same right as the context menu items: files, folders and rooms all name it "CopyLink".
       itemSecurity: [FilesSecurity.CopyLink],
+      // Checked for a selected room only, not for files and folders.
+      roomType: ROOMS_WITH_PUBLIC_LINK,
     });
   };
 
