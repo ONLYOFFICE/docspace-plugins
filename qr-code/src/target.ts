@@ -9,6 +9,7 @@ export type TTargetKind = "file" | "folder";
 export type TTarget = {
   id: string | number;
   kind: TTargetKind;
+  isRoom?: boolean;
 };
 
 let target: TTarget | null = null;

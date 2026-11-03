@@ -1,21 +1,90 @@
 .root {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 16px;
-  width: 232px;
+  width: 100%;
+  min-width: 0;
 }
 
+.loader {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0;
+}
+
+/* Literal white on purpose: a scanner needs dark modules on a light field in either theme. */
 .code {
+  align-self: center;
   display: flex;
   padding: 16px;
   background: #fff;
+  border: 1px solid var(--border-service-color);
   border-radius: 6px;
+}
+
+.dim {
+  opacity: 0.4;
 }
 
 .actions {
   display: flex;
-  flex-direction: column;
   gap: 8px;
-  width: 100%;
+}
+
+/* The link row, after the Share tab's: avatar, title with copy, validity, then who and rights. */
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.avatar {
+  position: relative;
+  flex: 0 0 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--avatar-icon-background, var(--background-service-color));
+  color: var(--info-panel-avatar-color, var(--text-color));
+}
+
+.lock {
+  position: absolute;
+  inset-inline-end: -3px;
+  bottom: -3px;
+  display: flex;
+  color: var(--accent-main);
+}
+
+.info {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.copy {
+  display: flex;
+}
+
+.titleLine {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.badges {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 12px;
+  color: var(--share-selector-default-color, var(--info-panel-members-subtitle-color));
+}
+
+.badges > span {
+  display: flex;
 }

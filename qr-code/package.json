@@ -1,7 +1,7 @@
 {
   "name": "qr-code",
   "pluginName": "QrCode",
-  "version": "1.0.0+4",
+  "version": "1.0.0+10",
   "description": "Generate a QR code for a room or file's public sharing link",
   "author": "ONLYOFFICE",
   "license": "Apache-2.0",

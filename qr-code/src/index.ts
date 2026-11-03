@@ -62,7 +62,6 @@ class QrCode
         displayType: ModalDisplayType.modal,
         dialogHeader: t("modal.header"),
         dialogBodyComponent: QrCodeModal,
-        autoMaxWidth: true,
         autoMaxHeight: true,
       },
     });
@@ -83,10 +82,23 @@ class QrCode
       key: "qr-code_folder",
       label: t("contextMenu.label"),
       icon: "icon-16.svg",
-      fileType: [FilesType.folder, FilesType.room],
+      fileType: [FilesType.folder],
       itemSecurity: [Security.CopyLink],
       onItemClick: (id) => {
         setTarget({ id, kind: "folder" });
+        return openQrModal();
+      },
+    });
+
+    // A room of its own: its links live on the Contacts tab, not on Share.
+    this.addContextMenuItem({
+      key: "qr-code_room",
+      label: t("contextMenu.label"),
+      icon: "icon-16.svg",
+      fileType: [FilesType.room],
+      itemSecurity: [Security.CopyLink],
+      onItemClick: (id) => {
+        setTarget({ id, kind: "folder", isRoom: true });
         return openQrModal();
       },
     });

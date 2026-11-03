@@ -9,8 +9,8 @@ export function QrInfoPanelTab() {
   const copyLink = useCopyLink();
 
   const kind: TShareTarget["kind"] = file?.isFolder || file?.isRoom ? "folder" : "file";
-  const target: TShareTarget | null = file ? { id: file.id, kind } : null;
-  const state = useShareLink(target);
+  const target: TShareTarget | null = file ? { id: file.id, kind, isRoom: !!file.isRoom } : null;
+  const { state, create } = useShareLink(target);
 
-  return <QrCodeView state={state} onCopy={copyLink} />;
+  return <QrCodeView state={state} isRoom={!!target?.isRoom} onCopy={copyLink} onCreate={create} />;
 }

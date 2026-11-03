@@ -29,6 +29,10 @@ export type TStrings = {
   "contextMenu.label": string;
   "infoPanel.tabName": string;
   "modal.header": string;
+  "hint.header": string;
+  "hint.body": string;
+  "hint.shareTab": string;
+  "hint.membersTab": string;
   "modal.error": string;
   "modal.noLink": string;
   "modal.unsupportedRoom": string;
@@ -36,32 +40,84 @@ export type TStrings = {
   "modal.copied": string;
   "modal.copyFailed": string;
   "modal.close": string;
+  "link.create": string;
+  "link.createFailed": string;
+  "link.anyone": string;
+  "link.internal": string;
+  "link.password": string;
+  "link.noTimeLimit": string;
+  "link.validUntil": string;
+  "link.expired": string;
+  "access.read": string;
+  "access.edit": string;
+  "access.review": string;
+  "access.comment": string;
+  "access.fillForms": string;
+  "access.customFilter": string;
 };
 
 const en: TStrings = {
   "contextMenu.label": "Get QR code",
   "infoPanel.tabName": "QR code",
-  "modal.header": "QR code for the public link",
-  "modal.error": "Couldn't load the public link.",
-  "modal.noLink": "This item has no public link yet. Create one from the sharing settings first.",
+  "modal.header": "QR code for the shared link",
+  "hint.header": "The QR code opens the shared link",
+  "hint.body":
+    "Point a phone camera at the code to open this item. Who can open the link, its access rights, expiration and password are set on the {tab} tab.",
+  "hint.shareTab": "Share",
+  "hint.membersTab": "Contacts",
+  "modal.error": "Couldn't load the shared link.",
+  "modal.noLink": "This item has no shared link yet. Create one to get its QR code.",
   "modal.unsupportedRoom": "This room type has no room-level public link. Only Public, Custom and Form filling rooms do.",
   "modal.copy": "Copy link",
   "modal.copied": "Link copied to clipboard",
   "modal.copyFailed": "Couldn't copy the link",
   "modal.close": "Close",
+  "link.create": "Create link",
+  "link.createFailed": "Couldn't create the link. Try it on the Share tab.",
+  "link.anyone": "Anyone with the link",
+  "link.internal": "Portal users only",
+  "link.password": "Password protected",
+  "link.noTimeLimit": "This link has no time limit",
+  "link.validUntil": "This link is valid until {date}",
+  "link.expired": "The link has expired",
+  "access.read": "Read only",
+  "access.edit": "Editing",
+  "access.review": "Review",
+  "access.comment": "Comment",
+  "access.fillForms": "Filling",
+  "access.customFilter": "Custom filter",
 };
 
 const ru: TStrings = {
   "contextMenu.label": "Получить QR-код",
   "infoPanel.tabName": "QR-код",
-  "modal.header": "QR-код публичной ссылки",
-  "modal.error": "Не удалось загрузить публичную ссылку.",
-  "modal.noLink": "У этого объекта ещё нет публичной ссылки. Сначала создайте её в настройках доступа.",
+  "modal.header": "QR-код ссылки для доступа",
+  "hint.header": "QR-код открывает ссылку для доступа",
+  "hint.body":
+    "Наведите камеру телефона на код, чтобы открыть объект. Кому доступна ссылка, права, срок и пароль настраиваются во вкладке «{tab}».",
+  "hint.shareTab": "Предоставить доступ",
+  "hint.membersTab": "Контакты",
+  "modal.error": "Не удалось загрузить ссылку для доступа.",
+  "modal.noLink": "У этого объекта ещё нет ссылки для доступа. Создайте её, чтобы получить QR-код.",
   "modal.unsupportedRoom": "У этого типа комнаты нет публичной ссылки на уровне комнаты. Она есть только у публичных, пользовательских комнат и комнат для заполнения форм.",
   "modal.copy": "Скопировать ссылку",
   "modal.copied": "Ссылка скопирована в буфер обмена",
   "modal.copyFailed": "Не удалось скопировать ссылку",
   "modal.close": "Закрыть",
+  "link.create": "Создать ссылку",
+  "link.createFailed": "Не удалось создать ссылку. Попробуйте во вкладке «Предоставить доступ».",
+  "link.anyone": "Любой, у кого есть ссылка",
+  "link.internal": "Только для пользователей портала",
+  "link.password": "Защищена паролем",
+  "link.noTimeLimit": "Эта ссылка действительна без ограничений",
+  "link.validUntil": "Эта ссылка действительна до {date}",
+  "link.expired": "Срок действия ссылки истёк",
+  "access.read": "Только чтение",
+  "access.edit": "Редактирование",
+  "access.review": "Рецензирование",
+  "access.comment": "Комментирование",
+  "access.fillForms": "Заполнение",
+  "access.customFilter": "Пользовательский фильтр",
 };
 
 /**

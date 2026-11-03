@@ -7,8 +7,17 @@ import { QrCodeView } from "./QrCodeView";
 
 export function QrCodeModal() {
   const { closeModal } = usePluginActions();
-  const state = useShareLink(getTarget());
+  const target = getTarget();
+  const { state, create } = useShareLink(target);
   const copyLink = useCopyLink();
 
-  return <QrCodeView state={state} onCopy={copyLink} onClose={closeModal} />;
+  return (
+    <QrCodeView
+      state={state}
+      isRoom={!!target?.isRoom}
+      onCopy={copyLink}
+      onCreate={create}
+      onClose={closeModal}
+    />
+  );
 }
