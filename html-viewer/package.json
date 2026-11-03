@@ -6,6 +6,12 @@
   "author": "ONLYOFFICE",
   "license": "Apache-2.0",
   "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/html-viewer",
+  "maintainers": [
+    "Ascensio System SIA <integration@onlyoffice.com> (https://www.onlyoffice.com)"
+  ],
+  "bugs": {
+    "email": "support@onlyoffice.com"
+  },
   "private": true,
   "runtime": "module",
   "logo": "logo.svg",
