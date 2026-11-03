@@ -95,7 +95,7 @@
 
 "@onlyoffice/docspace-plugin-sdk@file:onlyoffice-docspace-plugin-sdk-3.1.0.tgz":
   version "3.1.0"
-  resolved "file:onlyoffice-docspace-plugin-sdk-3.1.0.tgz#a297afbd53cf608a7b17231982aa647f29ed090c"
+  resolved "file:onlyoffice-docspace-plugin-sdk-3.1.0.tgz#21ebbb5f9d6bcb70a5883c92daa4f481338face8"
   dependencies:
     "@types/react" "^19.0.0"
     inquirer "^9.1.0"
