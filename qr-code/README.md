@@ -24,7 +24,9 @@ The tab shows the same QR code for whatever is currently selected, updating as t
 
 Under the code, the link is shown as on the **Share** tab: who can open it, its access rights, how long it is valid and whether it has a password. These are set on the **Share** tab (**Contacts** for a room), which the note above the code opens in one click; the QR code follows them, and stops working when the link is revoked or expires.
 
-If the item has no shared link yet, the dialog or tab offers **Create link**. Only that button creates one — with read-only access, no password and no time limit — opening the dialog or the tab never changes sharing settings. For a room that has no link because its room type does not support one at all (Collaboration and Virtual Data rooms — only Public, Custom and Form filling rooms do), it says so instead of suggesting to create one.
+If the item has no shared link yet, the tab points to the **Share** tab (**Contacts** for a room) to create one there, and the dialog also offers **Create link**. Only that button creates one — with read-only access, no password and no time limit — opening the dialog or the tab never changes sharing settings. If the link cannot be loaded, **Try again** requests it once more.
+
+The menu item and the tab are shown only to users who may copy the item's link, and for rooms only in a Public room, a Custom room or a Form Filling Space: other room types have no room-level public link. These filters need a portal that supports `itemSecurity` and `roomType` on info panel and context menu items; an older portal shows both everywhere and says so for a room without a public link.
 
 ## User feedback and support
 

@@ -16,6 +16,8 @@
 
 import { PluginLocale } from "@onlyoffice/docspace-plugin-sdk";
 
+import ru from "./translations/ru";
+
 /**
  * Plain typed strings rather than an i18n library: the bundle stays small and a
  * missing key is a compile error instead of a blank label at runtime.
@@ -31,10 +33,12 @@ export type TStrings = {
   "modal.header": string;
   "hint.header": string;
   "hint.body": string;
+  "hint.emptyBody": string;
   "hint.shareTab": string;
   "hint.membersTab": string;
-  "modal.error": string;
-  "modal.noLink": string;
+  "error.header": string;
+  "error.body": string;
+  "modal.retry": string;
   "modal.unsupportedRoom": string;
   "modal.copy": string;
   "modal.copied": string;
@@ -63,19 +67,24 @@ const en: TStrings = {
   "hint.header": "The QR code opens the shared link",
   "hint.body":
     "Point a phone camera at the code to open this item. Who can open the link, its access rights, expiration and password are set on the {tab} tab.",
+  "hint.emptyBody":
+    "This item has no shared link yet. Create it on the {tab} tab, where you also choose who can open it, its rights, expiration and password.",
   "hint.shareTab": "Share",
   "hint.membersTab": "Contacts",
-  "modal.error": "Couldn't load the shared link.",
-  "modal.noLink": "This item has no shared link yet. Create one to get its QR code.",
-  "modal.unsupportedRoom": "This room type has no room-level public link. Only Public, Custom and Form filling rooms do.",
+  "error.header": "Couldn't load the link",
+  "error.body":
+    "The server didn't answer or returned an error. This is usually a short connection problem, so Try again requests the link once more. If it keeps failing, the link is also on the {tab} tab.",
+  "modal.retry": "Try again",
+  "modal.unsupportedRoom":
+    "This room type has no room-level public link. Only a Public room, a Custom room and a Form Filling Space have one.",
   "modal.copy": "Copy link",
   "modal.copied": "Link copied to clipboard",
   "modal.copyFailed": "Couldn't copy the link",
   "modal.close": "Close",
   "link.create": "Create link",
-  "link.createFailed": "Couldn't create the link. Try it on the Share tab.",
+  "link.createFailed": "Couldn't create the link. Try again later.",
   "link.anyone": "Anyone with the link",
-  "link.internal": "Portal users only",
+  "link.internal": "Workspace users only",
   "link.password": "Password protected",
   "link.noTimeLimit": "This link has no time limit",
   "link.validUntil": "This link is valid until {date}",
@@ -86,38 +95,6 @@ const en: TStrings = {
   "access.comment": "Comment",
   "access.fillForms": "Filling",
   "access.customFilter": "Custom filter",
-};
-
-const ru: TStrings = {
-  "contextMenu.label": "Получить QR-код",
-  "infoPanel.tabName": "QR-код",
-  "modal.header": "QR-код ссылки для доступа",
-  "hint.header": "QR-код открывает ссылку для доступа",
-  "hint.body":
-    "Наведите камеру телефона на код, чтобы открыть объект. Кому доступна ссылка, права, срок и пароль настраиваются во вкладке «{tab}».",
-  "hint.shareTab": "Предоставить доступ",
-  "hint.membersTab": "Контакты",
-  "modal.error": "Не удалось загрузить ссылку для доступа.",
-  "modal.noLink": "У этого объекта ещё нет ссылки для доступа. Создайте её, чтобы получить QR-код.",
-  "modal.unsupportedRoom": "У этого типа комнаты нет публичной ссылки на уровне комнаты. Она есть только у публичных, пользовательских комнат и комнат для заполнения форм.",
-  "modal.copy": "Скопировать ссылку",
-  "modal.copied": "Ссылка скопирована в буфер обмена",
-  "modal.copyFailed": "Не удалось скопировать ссылку",
-  "modal.close": "Закрыть",
-  "link.create": "Создать ссылку",
-  "link.createFailed": "Не удалось создать ссылку. Попробуйте во вкладке «Предоставить доступ».",
-  "link.anyone": "Любой, у кого есть ссылка",
-  "link.internal": "Только для пользователей портала",
-  "link.password": "Защищена паролем",
-  "link.noTimeLimit": "Эта ссылка действительна без ограничений",
-  "link.validUntil": "Эта ссылка действительна до {date}",
-  "link.expired": "Срок действия ссылки истёк",
-  "access.read": "Только чтение",
-  "access.edit": "Редактирование",
-  "access.review": "Рецензирование",
-  "access.comment": "Комментирование",
-  "access.fillForms": "Заполнение",
-  "access.customFilter": "Пользовательский фильтр",
 };
 
 /**
@@ -144,4 +121,6 @@ export const t = (key: keyof TStrings): string => (translations[locale] ?? en)[k
  * A missing value is left as the placeholder rather than printing "undefined".
  */
 export const tf = (key: keyof TStrings, values: Record<string, string | number>): string =>
-  t(key).replace(/\{(\w+)\}/g, (whole, name: string) => (name in values ? String(values[name]) : whole));
+  t(key).replace(/\{(\w+)\}/g, (whole, name: string) =>
+    name in values ? String(values[name]) : whole,
+  );

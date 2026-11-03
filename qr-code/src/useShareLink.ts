@@ -90,6 +90,8 @@ export function useShareLink(target: TShareTarget | null) {
   const api = usePluginAPI();
   const { showToast } = usePluginActions();
   const [state, setState] = useState<TShareLinkState>({ status: "loading" });
+  // Bumped by retry() to run the read again for the same target.
+  const [attempt, setAttempt] = useState(0);
   // The target the state belongs to, so a create that lands after the selection moved is dropped.
   const current = useRef<string | null>(null);
 
@@ -109,7 +111,14 @@ export function useShareLink(target: TShareTarget | null) {
     // when there is none - and looking at a tab must not share anything.
     (async () => {
       try {
-        const links = await api.get<TShareDto[]>(`${base}/links`, undefined, options);
+        // The portal reports a total for this list, so the client resolves to { total, items };
+        // a bare array is taken as well, in case an endpoint answers without one.
+        const page = await api.get<TShareDto[] | { items: TShareDto[] }>(
+          `${base}/links`,
+          undefined,
+          options,
+        );
+        const links = Array.isArray(page) ? page : page.items;
         const primary = links.find((dto) => linkOf(dto)?.primary);
         const link = primary ? toShareLink(primary) : null;
         if (link) {
@@ -132,7 +141,9 @@ export function useShareLink(target: TShareTarget | null) {
     })();
 
     return () => controller.abort();
-  }, [api, target?.id, target?.kind]);
+  }, [api, target?.id, target?.kind, attempt]);
+
+  const retry = (): void => setAttempt((n) => n + 1);
 
   // Only on the user's request: this read creates the primary link - read access, no password,
   // no expiry - the same link "Create" on the Share tab gives.
@@ -152,5 +163,5 @@ export function useShareLink(target: TShareTarget | null) {
     }
   };
 
-  return { state, create };
+  return { state, create, retry };
 }
