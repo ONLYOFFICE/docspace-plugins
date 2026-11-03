@@ -107,7 +107,8 @@ class QrCode
       key: "qr-code",
       subMenu: { name: t("infoPanel.tabName") },
       component: QrInfoPanelTab,
-
+      // The same right as the context menu items: files, folders and rooms all name it "CopyLink".
+      itemSecurity: [FilesSecurity.CopyLink],
     });
   };
 
