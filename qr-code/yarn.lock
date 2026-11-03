@@ -93,10 +93,9 @@
   dependencies:
     axios "1.13.5"
 
-"@onlyoffice/docspace-plugin-sdk@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@onlyoffice/docspace-plugin-sdk/-/docspace-plugin-sdk-3.0.0.tgz#04f9d00ab433228e21ccd6e87d4ffbee4dafcd85"
-  integrity sha512-Xry7qsgq3A04UslXmNDJoIv23k2Vqn/dniRB+danh4H4XpYNP0bI8gqWLXGooFkuDnOxQ41KuZ/J1nEGw5PCRg==
+"@onlyoffice/docspace-plugin-sdk@file:onlyoffice-docspace-plugin-sdk-3.1.0.tgz":
+  version "3.1.0"
+  resolved "file:onlyoffice-docspace-plugin-sdk-3.1.0.tgz#a297afbd53cf608a7b17231982aa647f29ed090c"
   dependencies:
     "@types/react" "^19.0.0"
     inquirer "^9.1.0"
