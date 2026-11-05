@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Mettre en évidence les espaces en fin de ligne",
         "highlight_trailing_whitespace_description": "Mettre en évidence les espaces en fin de ligne.",
         "auto_close_tags": "Fermer automatiquement les balises",
-        "auto_close_tags_description": "Insérer automatiquement des balises fermantes lorsque > ou / est tapé dans des fichiers de type HTML."
+        "auto_close_tags_description": "Insérer automatiquement des balises fermantes lorsque > ou / est tapé dans des fichiers de type HTML.",
+        "header_file_formats": "Formats de fichiers",
+        "file_formats_description": "Codemirror n'ouvre que les fichiers aux formats cochés. Décochez un format pour le laisser à un autre plugin."
     },
     "context_menu_edit": "Modifier le fichier avec Codemirror",
     "file_type_name": "Code",

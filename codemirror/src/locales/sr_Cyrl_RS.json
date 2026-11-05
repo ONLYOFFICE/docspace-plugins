@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Истакни размаке на крају реда",
         "highlight_trailing_whitespace_description": "Истакни размаке на крају реда.",
         "auto_close_tags": "Аутоматски затварај ознаке",
-        "auto_close_tags_description": "Аутоматски убаци затварајуће ознаке када се укуца > или / у датотекама сличним HTML-у."
+        "auto_close_tags_description": "Аутоматски убаци затварајуће ознаке када се укуца > или / у датотекама сличним HTML-у.",
+        "header_file_formats": "Формати датотека",
+        "file_formats_description": "Codemirror отвара само датотеке у означеним форматима. Уклоните ознаку са формата да бисте га препустили другом додатку."
     },
     "context_menu_edit": "Уреди датотеку помоћу Codemirror-а",
     "file_type_name": "Код",

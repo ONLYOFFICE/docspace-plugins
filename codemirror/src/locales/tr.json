@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Satır sonundaki boşlukları vurgula",
         "highlight_trailing_whitespace_description": "Satır sonundaki boşlukları vurgula.",
         "auto_close_tags": "Etiketleri otomatik kapat",
-        "auto_close_tags_description": "HTML benzeri dosyalarda > veya / yazıldığında kapanış etiketlerini otomatik ekle."
+        "auto_close_tags_description": "HTML benzeri dosyalarda > veya / yazıldığında kapanış etiketlerini otomatik ekle.",
+        "header_file_formats": "Dosya biçimleri",
+        "file_formats_description": "Codemirror yalnızca işaretli biçimlerdeki dosyaları açar. Bir biçimi başka bir eklentiye bırakmak için işaretini kaldırın."
     },
     "context_menu_edit": "Dosyayı Codemirror ile düzenle",
     "file_type_name": "Kod",

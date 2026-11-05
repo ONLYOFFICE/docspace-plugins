@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Zvýraznit koncové mezery",
         "highlight_trailing_whitespace_description": "Zvýraznit mezery na konci řádku.",
         "auto_close_tags": "Automaticky zavírat značky",
-        "auto_close_tags_description": "Automaticky vkládat uzavírací značky při zadání > nebo / v souborech typu HTML."
+        "auto_close_tags_description": "Automaticky vkládat uzavírací značky při zadání > nebo / v souborech typu HTML.",
+        "header_file_formats": "Formáty souborů",
+        "file_formats_description": "Codemirror otevírá pouze soubory v zaškrtnutých formátech. Zrušte zaškrtnutí formátu, chcete-li jej přenechat jinému zásuvnému modulu."
     },
     "context_menu_edit": "Upravit soubor pomocí Codemirror",
     "file_type_name": "Kód",

@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "إبراز المسافات في نهاية السطر",
         "highlight_trailing_whitespace_description": "إبراز المسافات في نهاية السطر.",
         "auto_close_tags": "إغلاق الوسوم تلقائيًا",
-        "auto_close_tags_description": "إدراج وسوم الإغلاق تلقائيًا عند كتابة > أو / في الملفات المشابهة لـ HTML."
+        "auto_close_tags_description": "إدراج وسوم الإغلاق تلقائيًا عند كتابة > أو / في الملفات المشابهة لـ HTML.",
+        "header_file_formats": "تنسيقات الملفات",
+        "file_formats_description": "يفتح Codemirror الملفات ذات التنسيقات المحددة فقط. ألغِ تحديد أي تنسيق لتركه لمكوّن إضافي آخر."
     },
     "context_menu_edit": "تحرير الملف باستخدام Codemirror",
     "file_type_name": "كود",

@@ -16,7 +16,6 @@
 
 import { Devices, FilesType, IContextMenuItem, FilesSecurity } from "@onlyoffice/docspace-plugin-sdk";
 import codemirror from "../Codemirror";
-import { supportedFileExts } from "../properties.json";
 import { i18n } from "../locales";
 
 const onClick = async (id: number) => {
@@ -33,7 +32,7 @@ export const contextMenuItem: () => IContextMenuItem = () => {
     icon: "codemirror.svg",
     fileType: [FilesType.file],
     devices: [Devices.desktop, Devices.mobile, Devices.tablet],
-    fileExt: supportedFileExts.map((ext) => "." + ext),
+    fileExt: codemirror.getEnabledFileExts().map((ext) => "." + ext),
     itemSecurity: [FilesSecurity.Edit],
   };
 };

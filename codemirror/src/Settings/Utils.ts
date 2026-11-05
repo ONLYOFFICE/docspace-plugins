@@ -22,10 +22,12 @@ import {
   Actions,
   Component,
   IComboBox,
+  ICheckbox,
 } from "@onlyoffice/docspace-plugin-sdk";
 import { settingsButtonProps } from "./Button";
+import { fileFormats } from "../properties.json";
 
-export function updatePropsWithButton(props: IToggleButton | IComboBox) {
+export function updatePropsWithButton(props: IToggleButton | IComboBox | ICheckbox) {
   const message: IMessage = {
     actions: [Actions.updateProps, Actions.updateContext],
     newProps: props,
@@ -106,5 +108,78 @@ export function createToggleSetting(title: string, description: string, toggle: 
       },
     ],
   };
+  return setting;
+}
+
+// One row per language: the name in a fixed-width column, its extensions as checkboxes that wrap
+// inside the second column, so long rows like SQL stay aligned.
+export function createFileFormatsSetting(description: string, checkboxes: Map<string, ICheckbox>) {
+  const rows: Component[] = Object.entries(fileFormats).map(([language, exts]) => ({
+    component: Components.box,
+    props: {
+      displayProp: "flex",
+      alignItems: "flex-start",
+      marginProp: "0 0 8px",
+      children: [
+        {
+          component: Components.box,
+          props: {
+            widthProp: "184px",
+            flexProp: "0 0 184px",
+            children: [
+              {
+                component: Components.text,
+                props: { text: language, fontWeight: 600, fontSize: "13px", lineHeight: "20px", noSelect: true },
+              },
+            ],
+          },
+        },
+        {
+          component: Components.box,
+          props: {
+            displayProp: "flex",
+            flexWrap: "wrap",
+            flexProp: "1 1 0",
+            children: exts.map((ext) => ({
+              component: Components.box,
+              props: {
+                marginProp: "0 20px 4px 0",
+                children: [{ component: Components.checkbox, props: checkboxes.get(ext)! }],
+              },
+            })),
+          },
+        },
+      ],
+    },
+  }));
+
+  const setting: IBox = {
+    displayProp: "flex",
+    flexDirection: "column",
+    marginProp: "0 12px 12px",
+    children: [
+      {
+        component: Components.box,
+        props: {
+          marginProp: "0 0 12px",
+          children: [
+            {
+              component: Components.text,
+              props: {
+                text: description,
+                color: "#A3A9AE",
+                fontSize: "12px",
+                fontWeight: 400,
+                lineHeight: "16px",
+                noSelect: true,
+              },
+            },
+          ],
+        },
+      },
+      ...rows,
+    ],
+  };
+
   return setting;
 }

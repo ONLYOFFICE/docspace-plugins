@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Istakni razmake na kraju reda",
         "highlight_trailing_whitespace_description": "Istakni razmake na kraju reda.",
         "auto_close_tags": "Automatski zatvaraj oznake",
-        "auto_close_tags_description": "Automatski ubaci zatvarajuće oznake kada se ukuca > ili / u datotekama sličnim HTML-u."
+        "auto_close_tags_description": "Automatski ubaci zatvarajuće oznake kada se ukuca > ili / u datotekama sličnim HTML-u.",
+        "header_file_formats": "Formati datoteka",
+        "file_formats_description": "Codemirror otvara samo datoteke u označenim formatima. Uklonite oznaku sa formata da biste ga prepustili drugom dodatku."
     },
     "context_menu_edit": "Uredi datoteku pomoću Codemirror-a",
     "file_type_name": "Kod",

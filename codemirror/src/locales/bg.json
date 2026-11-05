@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Осветяване на интервалите в края на реда",
         "highlight_trailing_whitespace_description": "Осветяване на интервалите в края на реда.",
         "auto_close_tags": "Автоматично затваряне на етикетите",
-        "auto_close_tags_description": "Автоматично вмъкване на затварящи етикети при въвеждане на > или / във файлове от тип HTML."
+        "auto_close_tags_description": "Автоматично вмъкване на затварящи етикети при въвеждане на > или / във файлове от тип HTML.",
+        "header_file_formats": "Файлови формати",
+        "file_formats_description": "Codemirror отваря само файлове в отметнатите формати. Премахнете отметката от формат, за да го оставите на друга приставка."
     },
     "context_menu_edit": "Редактиране на файла с Codemirror",
     "file_type_name": "Код",

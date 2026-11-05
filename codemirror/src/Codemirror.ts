@@ -24,6 +24,9 @@ import { EditorView } from "codemirror";
 import { appTheme } from "./Extensions";
 import { getCodemirrorBody } from "./Utils";
 import { i18n } from "./locales";
+import { fileFormats } from "./properties.json";
+
+export const supportedFileExts = ([] as string[]).concat(...Object.values(fileFormats));
 
 // TODO: [DS] html creates with corrupted data + cant open after close
 // TODO: add XML
@@ -40,32 +43,20 @@ class Codemirror {
     highlightWhitespace: false,
     highlightTrailingWhitespace: false,
     autoCloseTags: true,
+    // Stored as the disabled list so formats added in later versions are on by default.
+    disabledFileExts: [] as string[],
   };
 
-  setSettings = (
-    highlightWhitespace: boolean | null,
-    highlightTrailingWhitespace: boolean | null,
-    autoCloseTags: boolean | null
-  ) => {
-    highlightWhitespace !== null && this.setHighlightWhitespace(highlightWhitespace);
-    highlightTrailingWhitespace !== null && this.setHighlightTrailingWhitespace(highlightTrailingWhitespace);
-    autoCloseTags !== null && this.setAutoCloseTags(autoCloseTags);
+  setSettings = (settings: Partial<Codemirror["settings"]>) => {
+    Object.assign(this.settings, settings);
   };
 
   getSettings = () => {
     return JSON.stringify(this.settings);
   };
 
-  setHighlightTrailingWhitespace = (highlightTrailingWhitespace: boolean) => {
-    this.settings.highlightTrailingWhitespace = highlightTrailingWhitespace;
-  };
-
-  setHighlightWhitespace = (highlightWhitespace: boolean) => {
-    this.settings.highlightWhitespace = highlightWhitespace;
-  };
-
-  setAutoCloseTags = (autoCloseTags: boolean) => {
-    this.settings.autoCloseTags = autoCloseTags;
+  getEnabledFileExts = () => {
+    return supportedFileExts.filter((ext) => !this.settings.disabledFileExts.includes(ext));
   };
 
   createAPIUrl = () => {

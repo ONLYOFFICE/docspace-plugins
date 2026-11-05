@@ -23,19 +23,33 @@ import {
   IMessage,
   ToastType,
 } from "@onlyoffice/docspace-plugin-sdk";
+import plugin from "..";
 import codemirror from "../Codemirror";
-import { autoCloseTagsToggle, highlightTrailingWhitespaceToggle, highlightWhitespaceToggle } from "./Core";
+import {
+  autoCloseTagsToggle,
+  fileFormatCheckboxes,
+  highlightTrailingWhitespaceToggle,
+  highlightWhitespaceToggle,
+} from "./Core";
 import { i18n } from "../locales";
 
 const onClick = () => {
-  codemirror.setSettings(
-    highlightWhitespaceToggle?.isChecked,
-    highlightTrailingWhitespaceToggle?.isChecked,
-    autoCloseTagsToggle?.isChecked
-  );
+  codemirror.setSettings({
+    highlightWhitespace: highlightWhitespaceToggle.isChecked,
+    highlightTrailingWhitespace: highlightTrailingWhitespaceToggle.isChecked,
+    autoCloseTags: autoCloseTagsToggle.isChecked,
+    disabledFileExts: [...fileFormatCheckboxes].filter(([, checkbox]) => !checkbox.isChecked).map(([ext]) => ext),
+  });
+  plugin.syncFileFormats();
 
   const message: IMessage = {
-    actions: [Actions.showToast, Actions.updateProps, Actions.saveSettings],
+    actions: [
+      Actions.showToast,
+      Actions.updateProps,
+      Actions.saveSettings,
+      Actions.updateFileItems,
+      Actions.updateContextMenuItems,
+    ],
     toastProps: [{ title: i18n.t("settings.toast_data_is_saved"), type: ToastType.success }],
     newProps: { ...settingsButtonProps, isDisabled: true },
     settings: codemirror.getSettings(),

@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Sətir sonundakı boşluqları vurğula",
         "highlight_trailing_whitespace_description": "Sətrin sonundakı boşluqları vurğula.",
         "auto_close_tags": "Teqləri avtomatik bağla",
-        "auto_close_tags_description": "HTML tipli fayllarda > və ya / yazıldıqda bağlayıcı teqləri avtomatik əlavə et."
+        "auto_close_tags_description": "HTML tipli fayllarda > və ya / yazıldıqda bağlayıcı teqləri avtomatik əlavə et.",
+        "header_file_formats": "Fayl formatları",
+        "file_formats_description": "Codemirror yalnız işarələnmiş formatlarda olan faylları açır. Formatı başqa plaginə buraxmaq üçün işarəni götürün."
     },
     "context_menu_edit": "Faylı Codemirror ilə redaktə et",
     "file_type_name": "Kod",

@@ -18,6 +18,8 @@ import { Components, IBox, ISettings } from "@onlyoffice/docspace-plugin-sdk";
 import {
   autoCloseTagsSetting,
   autoCloseTagsToggle,
+  fileFormatCheckboxes,
+  fileFormatsSetting,
   highlightTrailingWhitespaceSetting,
   highlightTrailingWhitespaceToggle,
   highlightWhitespaceSetting,
@@ -39,6 +41,8 @@ const settingsBox: () => IBox = () => {
       { component: Components.box, props: highlightTrailingWhitespaceSetting() },
       createSettingsHeader(i18n.t("settings.header_html")),
       { component: Components.box, props: autoCloseTagsSetting() },
+      createSettingsHeader(i18n.t("settings.header_file_formats")),
+      { component: Components.box, props: fileFormatsSetting() },
     ],
   };
 };
@@ -50,6 +54,9 @@ const codemirrorSettings: ISettings = {
     highlightWhitespaceToggle.isChecked = codemirror.settings.highlightWhitespace;
     highlightTrailingWhitespaceToggle.isChecked = codemirror.settings.highlightTrailingWhitespace;
     autoCloseTagsToggle.isChecked = codemirror.settings.autoCloseTags;
+    fileFormatCheckboxes.forEach((checkbox, ext) => {
+      checkbox.isChecked = !codemirror.settings.disabledFileExts.includes(ext);
+    });
 
     settingsButtonProps.label = i18n.t("settings.button_save");
 

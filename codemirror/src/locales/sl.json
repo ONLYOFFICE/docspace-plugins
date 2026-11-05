@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Označi presledke na koncu vrstice",
         "highlight_trailing_whitespace_description": "Označi presledke na koncu vrstice.",
         "auto_close_tags": "Samodejno zapiranje oznak",
-        "auto_close_tags_description": "Samodejno vstavi zaključne oznake, ko v datotekah vrste HTML vnesete > ali /."
+        "auto_close_tags_description": "Samodejno vstavi zaključne oznake, ko v datotekah vrste HTML vnesete > ali /.",
+        "header_file_formats": "Zapisi datotek",
+        "file_formats_description": "Codemirror odpira samo datoteke v označenih zapisih. Odznačite zapis, da ga prepustite drugemu vtičniku."
     },
     "context_menu_edit": "Uredi datoteko z Codemirror",
     "file_type_name": "Koda",

@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Korosta rivin lopun välilyönnit",
         "highlight_trailing_whitespace_description": "Korosta rivin lopussa olevat välilyönnit.",
         "auto_close_tags": "Sulje tunnisteet automaattisesti",
-        "auto_close_tags_description": "Lisää sulkevat tunnisteet automaattisesti, kun HTML-tyyppisissä tiedostoissa kirjoitetaan > tai /."
+        "auto_close_tags_description": "Lisää sulkevat tunnisteet automaattisesti, kun HTML-tyyppisissä tiedostoissa kirjoitetaan > tai /.",
+        "header_file_formats": "Tiedostomuodot",
+        "file_formats_description": "Codemirror avaa vain valittujen muotojen tiedostot. Poista muodon valinta, jos haluat jättää sen toiselle laajennukselle."
     },
     "context_menu_edit": "Muokkaa tiedostoa Codemirrorilla",
     "file_type_name": "Koodi",

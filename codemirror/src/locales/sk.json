@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Zvýrazniť koncové medzery",
         "highlight_trailing_whitespace_description": "Zvýrazniť medzery na konci riadka.",
         "auto_close_tags": "Automaticky zatvárať značky",
-        "auto_close_tags_description": "Automaticky vkladať uzatváracie značky pri zadaní > alebo / v súboroch typu HTML."
+        "auto_close_tags_description": "Automaticky vkladať uzatváracie značky pri zadaní > alebo / v súboroch typu HTML.",
+        "header_file_formats": "Formáty súborov",
+        "file_formats_description": "Codemirror otvára iba súbory v označených formátoch. Zrušte označenie formátu, ak ho chcete prenechať inému doplnku."
     },
     "context_menu_edit": "Upraviť súbor pomocou Codemirror",
     "file_type_name": "Kód",

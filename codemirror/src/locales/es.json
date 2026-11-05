@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Resaltar espacios en blanco al final",
         "highlight_trailing_whitespace_description": "Resaltar espacios en blanco al final de una línea.",
         "auto_close_tags": "Cerrar etiquetas automáticamente",
-        "auto_close_tags_description": "Insertar automáticamente etiquetas de cierre cuando se escribe > o / en archivos similares a HTML."
+        "auto_close_tags_description": "Insertar automáticamente etiquetas de cierre cuando se escribe > o / en archivos similares a HTML.",
+        "header_file_formats": "Formatos de archivo",
+        "file_formats_description": "Codemirror solo abre archivos en los formatos marcados. Desmarque un formato para dejarlo a otro plugin."
     },
     "context_menu_edit": "Editar archivo con Codemirror",
     "file_type_name": "Código",

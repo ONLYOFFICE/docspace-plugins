@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Realçar espaços no fim da linha",
         "highlight_trailing_whitespace_description": "Realçar os espaços no fim de uma linha.",
         "auto_close_tags": "Fechar etiquetas automaticamente",
-        "auto_close_tags_description": "Inserir automaticamente etiquetas de fecho ao escrever > ou / em ficheiros do tipo HTML."
+        "auto_close_tags_description": "Inserir automaticamente etiquetas de fecho ao escrever > ou / em ficheiros do tipo HTML.",
+        "header_file_formats": "Formatos de ficheiro",
+        "file_formats_description": "O Codemirror só abre ficheiros nos formatos selecionados. Desmarque um formato para o deixar a outro plugin."
     },
     "context_menu_edit": "Editar ficheiro com o Codemirror",
     "file_type_name": "Código",
