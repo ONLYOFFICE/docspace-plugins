@@ -1,6 +1,6 @@
 ## Overview
 
-Open `.eml` and `.msg` email files right in DocSpace. A click on a message in the file list opens it in the viewer: subject, sender, recipients and date, the message body, and the list of attachments. Any attachment can be saved into the folder the message is in, one at a time or all at once. Everything is parsed in the browser; no external service is called and the message never leaves the portal.
+Open `.eml` and `.msg` email files right in ONLYOFFICE Apps. A click on a message in the file list opens it in the viewer: subject, sender, recipients and date, the message body, and the list of attachments. Any attachment can be saved into the folder the message is in, one at a time or all at once. Everything is parsed in the browser; no external service is called and the message never leaves the portal.
 
 Supported formats:
 
@@ -14,7 +14,7 @@ To start working with the plugin, it is not needed to change the default setting
 ## How to use
 
 - Upload `.eml` or `.msg` files to a room or to My documents.
-- Click a message in the file list. It opens in the DocSpace viewer; the arrow keys or the side strips page through the other messages in the same folder.
+- Click a message in the file list. It opens in the portal's media viewer; the arrow keys or the side strips page through the other messages in the same folder.
 - Attachments are listed under the headers. Click **Save to this folder** next to one of them, or **Save all**, to copy them into the current folder next to the message. Images that are shown inside the body are not listed as attachments.
 - Remote images in HTML messages are blocked by default, because loading them tells the sender the message was opened. Click **Load images** to show them for the current message.
 

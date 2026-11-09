@@ -19,7 +19,7 @@ export default defineConfig({
     },
   },
   css: {
-    // The emitted plugin.css is injected into DocSpace's own document, after its own
+    // The emitted plugin.css is injected into the portal's own document, after its own
     // stylesheets - so a class the build did not hash silently restyles the product or
     // collides with another plugin. Hashing every module class with the manifest name
     // makes that impossible by construction. A plain .css file is not scoped for you and
@@ -35,7 +35,7 @@ export default defineConfig({
       fileName: () => "plugin.js",
     },
     rollupOptions: {
-      // Kept out of the bundle: DocSpace supplies its own copies at load time and
+      // Kept out of the bundle: ONLYOFFICE Apps supplies its own copies at load time and
       // rewrites these specifiers to them. A second React arrives with its own
       // contexts, so every SDK hook throws; a second ui-kit fails more quietly,
       // reading an empty theme context and rendering light and left-to-right
@@ -59,7 +59,7 @@ export default defineConfig({
         // chunk is unreachable however it got there. Libraries that lazy-load their own
         // parts (diagram renderers, per-format parsers) would otherwise leave dozens of
         // chunk files in dist/ that never reach the archive.
-        inlineDynamicImports: true,
+        codeSplitting: false,
         assetFileNames: (assetInfo: { name?: string }) =>
           assetInfo.name?.endsWith(".css") ? "plugin.css" : (assetInfo.name ?? "asset"),
       },
