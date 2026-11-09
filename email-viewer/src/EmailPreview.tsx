@@ -27,7 +27,7 @@ import {
   Loader,
   LoaderTypes,
   Text,
-} from "@docspace/ui-kit";
+} from "@onlyoffice/apps-ui-kit";
 
 import { buildHtmlDocument, hasRemoteReferences } from "./email/body-document";
 import { formatAddressList, formatDate, formatSize } from "./email/format";

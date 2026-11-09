@@ -6,6 +6,12 @@
   "author": "ONLYOFFICE",
   "license": "Apache-2.0",
   "homepage": "https://github.com/ONLYOFFICE/docspace-plugins/tree/master/email-viewer",
+  "maintainers": [
+    "Ascensio System SIA <integration@onlyoffice.com> (https://www.onlyoffice.com)"
+  ],
+  "bugs": {
+    "email": "support@onlyoffice.com"
+  },
   "private": true,
   "runtime": "module",
   "logo": "logo.svg",
@@ -23,9 +29,9 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@docspace/ui-kit": "file:./docspace-ui-kit-0.0.1.tgz",
     "@kenjiuno/msgreader": "^1.28.0",
-    "@onlyoffice/docspace-plugin-sdk": "file:./onlyoffice-docspace-plugin-sdk-3.0.0.tgz",
+    "@onlyoffice/apps-ui-kit": "^4.0.1",
+    "@onlyoffice/docspace-plugin-sdk": "^3.0.0",
     "buffer": "^6.0.3",
     "dompurify": "^3.4.15",
     "postal-mime": "^3.0.0",

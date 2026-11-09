@@ -51,7 +51,7 @@ export default defineConfig({
         "react-dom",
         "react/jsx-runtime",
         "@onlyoffice/docspace-plugin-sdk/react",
-        /^@docspace\/ui-kit(\/.*)?$/,
+        /^@onlyoffice\/apps-ui-kit(\/.*)?$/,
       ],
       output: {
         // One file. The packer zips plugin.js alone and the portal imports it from a blob

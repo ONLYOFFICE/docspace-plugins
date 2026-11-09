@@ -33,10 +33,8 @@ To ask questions and share feedback, use [Issues](https://github.com/ONLYOFFICE/
 ## Build
 
 ```sh
-npm install
-npm run build
+yarn
+yarn build
 ```
 
-The uploadable archive is `dist/plugin.zip`. `npm test` runs the parser and sanitiser tests; `npm run typecheck` runs the compiler.
-
-`@docspace/ui-kit` and `@onlyoffice/docspace-plugin-sdk` 3.x are not published to npm yet, so they are installed from the tarballs next to this file. The bundle keeps both external; the portal supplies its own copies at load time.
+The uploadable archive is `dist/plugin.zip`. `yarn test` runs the parser and sanitiser tests; `yarn typecheck` runs the compiler.
