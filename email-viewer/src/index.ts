@@ -26,7 +26,7 @@ import {
   PluginStatus,
 } from "@onlyoffice/docspace-plugin-sdk";
 
-import { EmailPreview } from "./EmailPreview";
+import { EmailPreview } from "./viewer/EmailPreview";
 import { SUPPORTED_EXTENSIONS } from "./email/types";
 import { i18n, setLocale } from "./locales";
 

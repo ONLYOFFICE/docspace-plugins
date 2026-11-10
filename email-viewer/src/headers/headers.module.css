@@ -1,0 +1,50 @@
+/* Classes are hashed with the manifest name by vite.config.ts, so none can reach the
+   portal's own markup. */
+
+/* From, To, Cc and Date on one tinted block, as mail clients set them apart from the body. */
+.block {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  border-radius: 6px;
+  background: var(--background-service-color);
+}
+
+.rows {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 6px 16px;
+  align-items: baseline;
+}
+
+/* Sender initials; the background is picked per address and set inline. */
+.avatar {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  user-select: none;
+}
+
+/* The viewer's phone chrome - the same condition as in viewer.module.css. */
+@media (max-width: 600px), (pointer: coarse) {
+  .block {
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+}

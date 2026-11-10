@@ -1,0 +1,38 @@
+/* Classes are hashed with the manifest name by vite.config.ts, so none can reach the
+   portal's own markup. */
+
+.list {
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  max-height: 148px;
+  overflow: auto;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border-service-color);
+}
+
+.title {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-inline-end: 4px;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 360px;
+  min-width: 0;
+  padding: 4px 8px;
+  border: 1px solid var(--border-service-color);
+  border-radius: 3px;
+}
+
+/* The kit defines --accent-main per component as var(--color-scheme-main-accent, #4781d1);
+   the same chain here follows a re-branded accent and still resolves where neither is set. */
+.chip:hover {
+  border-color: var(--accent-main, var(--color-scheme-main-accent, #4781d1));
+}

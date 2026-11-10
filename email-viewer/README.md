@@ -37,4 +37,30 @@ yarn
 yarn build
 ```
 
-The uploadable archive is `dist/plugin.zip`. `yarn test` runs the parser and sanitiser tests; `yarn typecheck` runs the compiler.
+The uploadable archive is `dist/plugin.zip`. `yarn test` runs the unit tests; `yarn typecheck` runs the compiler; `yarn format` applies Prettier.
+
+## Code layout
+
+The code is grouped by feature: a folder holds a feature's components, its hooks, its stylesheet and its plain logic, so a change to one feature stays in one folder.
+
+| Folder           | What lives there                                                                                                                                                                                                                             |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `index.ts`       | The plugin class: registers the `.eml` and `.msg` file items and opens the viewer.                                                                                                                                                           |
+| `viewer/`        | The media viewer's content: `EmailPreview` loads the file (`useEmail`) and picks a state, `MessageView` lays out a parsed message.                                                                                                           |
+| `headers/`       | The From / To / Cc / Bcc / Date block and the sender avatar.                                                                                                                                                                                 |
+| `attachments/`   | The attachment list and saving: `pick-folder.ts` (the portal's folder selector), `upload.ts` (the upload session and the bytes), `save-store.ts` (the save in progress, shared by every open message), `useSaveAttachments`, `SaveProgress`. |
+| `remote-images/` | The bar about images from the internet, and `csp-probe.ts`, which finds the sites the portal's Content Security Policy refuses.                                                                                                              |
+| `html-frame/`    | Showing the body on the portal's `/static/html-frame/` page, with `srcdoc` as the fallback.                                                                                                                                                  |
+| `email/`         | Parsing `.eml` and `.msg`, sanitising the HTML body, formatting. No SDK and no hooks: plain functions with their tests (`linkify` returns React nodes).                                                                                      |
+| `ui/`            | What every feature shares: icons and the theme variables (`tokens.ts`).                                                                                                                                                                      |
+| `locales/`       | Translations, one JSON file per portal language, read through i18n-js.                                                                                                                                                                       |
+
+## Conventions
+
+- **Files.** A React component is `PascalCase.tsx`, a hook `useCamelCase.ts`, any other module `kebab-case.ts`, a feature's stylesheet `<folder>.module.css`, a test `<module>.test.ts` beside its module.
+- **Dependencies point inward.** A component may use its own folder's hooks and modules, `email/`, `ui/` and `locales/`. `email/` imports nothing from the plugin and nothing from the SDK, and holds no hooks; feature folders do not reach into each other except through what `viewer/` composes. Logic that can be a plain function is one, in a `kebab-case.ts` module, and gets a test.
+- **Types.** The plugin's own types carry no prefix (`SaveJob`, `FileInfo`); the `T`/`I` prefixes belong to the SDK's types.
+- **Styles.** Layout that never changes stays inline; hover states, the theme (`:global(.dark)`) and anything that follows the viewer's chrome go into the folder's CSS module, whose classes Vite hashes with the plugin name. Colours come from the portal's theme variables through `ui/tokens.ts`; secondary text is `SECONDARY_TEXT`, never `--text-disable-color`.
+- **Strings.** Every visible string goes through `i18n.t()` with its key in all locale files, placeholders written `%{name}`.
+- **Comments** say why: what the portal or the viewer does that the code works around, not what the next line does.
+- **Formatting** is Prettier's (`yarn format`); the copyright header opens every source file.

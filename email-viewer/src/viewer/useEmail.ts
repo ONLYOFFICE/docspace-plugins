@@ -17,10 +17,10 @@
 import { useEffect, useState } from "react";
 import { isPluginApiError, usePluginAPI } from "@onlyoffice/docspace-plugin-sdk/react";
 
-import { parseEmail } from "./email/parse";
-import type { ParsedEmail } from "./email/types";
+import { parseEmail } from "../email/parse";
+import type { ParsedEmail } from "../email/types";
 
-export type TFileInfo = {
+export type FileInfo = {
   id: number | string;
   title: string;
   fileExst?: string;
@@ -30,8 +30,8 @@ export type TFileInfo = {
 
 export type EmailState =
   | { status: "loading" }
-  | { status: "ready"; email: ParsedEmail; file: TFileInfo }
-  | { status: "empty"; file: TFileInfo }
+  | { status: "ready"; email: ParsedEmail; file: FileInfo }
+  | { status: "empty"; file: FileInfo }
   | { status: "error"; kind: "noFile" | "load" | "parse" };
 
 /**
@@ -54,10 +54,10 @@ export function useEmail(fileId: number | string | null | undefined): EmailState
     const { signal } = controller;
 
     (async () => {
-      let file: TFileInfo;
+      let file: FileInfo;
       let bytes: ArrayBuffer;
       try {
-        file = await api.get<TFileInfo>(`/files/file/${fileId}`, undefined, { signal });
+        file = await api.get<FileInfo>(`/files/file/${fileId}`, undefined, { signal });
         // viewUrl may be a pre-signed storage link on another origin: no credentials, deliberately.
         const response = await fetch(file.viewUrl, { signal });
         if (response.status === 404) {

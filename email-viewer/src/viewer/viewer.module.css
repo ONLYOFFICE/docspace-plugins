@@ -1,0 +1,96 @@
+/* Classes are hashed with the manifest name by vite.config.ts, so none can reach the
+   portal's own markup. The root, the card and the header live here rather than inline
+   because they follow the viewer's chrome, and only a media query can. */
+
+/* The viewer's desktop chrome: a 64px header band over the top and, with more than one
+   file in the playlist, 73px paging strips down both sides. Nothing clickable may sit
+   under them, so the surface keeps out of their way. */
+.root {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 64px 73px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.card {
+  width: 100%;
+  max-width: 960px;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--background-color);
+  color: var(--text-color);
+  border-radius: 6px;
+  overflow: hidden;
+  /* The viewer turns selection off for its whole stage; addresses, the subject and the
+     list of blocked sites are meant to be copied. */
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.header {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border-service-color);
+}
+
+.body {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.centered {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+}
+
+/* A plain-text message. */
+.text {
+  margin: 0;
+  padding: 16px;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--text-color);
+}
+
+/* The kit defines --accent-main per component as var(--color-scheme-main-accent, #4781d1);
+   the same chain here follows a re-branded accent and still resolves where neither is set. */
+.text a {
+  color: var(--accent-main, var(--color-scheme-main-accent, #4781d1));
+}
+
+/* The viewer's mobile chrome, which it picks for a phone-wide screen (600px, the kit's
+   mobile breakpoint) and for a touch screen without a mouse: a 53px header and no
+   paging strips. The message then takes the whole width, and every block gets denser.
+   headers.module.css repeats the condition for the header block. */
+@media (max-width: 600px), (pointer: coarse) {
+  .root {
+    padding: var(--mobile-details-height, 53px) 0 0;
+  }
+
+  .card {
+    max-width: none;
+    border-radius: 0;
+  }
+
+  .header {
+    gap: 10px;
+    padding: 12px;
+  }
+}

@@ -16,7 +16,7 @@
 
 import { describe, expect, it } from "vitest";
 
-import { isListedInPolicy } from "./useCspBlockedOrigins";
+import { isListedInPolicy } from "./csp-probe";
 
 // Shaped like the img-src a cloud portal sends once a site is added in Developer Tools.
 const policy =

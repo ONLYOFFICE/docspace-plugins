@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-import { useEffect, useState } from "react";
-
 // A refused image fails at once, before any request; one that is still loading after
 // this long is allowed, so there is no point in waiting for it.
 const PROBE_TIMEOUT_MS = 2000;
@@ -116,23 +114,4 @@ export function findCspBlockedOrigins(urls: string[]): Promise<CspBlock[]> {
       document.removeEventListener("securitypolicyviolation", onViolation);
       return [...refused.values()];
     });
-}
-
-/** Probes once the reader has allowed remote images; until then nothing is requested. */
-export function useCspBlockedOrigins(urls: string[], enabled: boolean): CspBlock[] {
-  const [blocked, setBlocked] = useState<CspBlock[]>([]);
-
-  useEffect(() => {
-    setBlocked([]);
-    if (!enabled) return;
-    let cancelled = false;
-    findCspBlockedOrigins(urls).then((origins) => {
-      if (!cancelled) setBlocked(origins);
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, [urls, enabled]);
-
-  return blocked;
 }

@@ -16,47 +16,7 @@
 
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 
-/**
- * The portal page that shows untrusted HTML under a policy of its own (nginx serves
- * /static/html-frame/ outside the portal's CSP). A portal under a proxy path keeps
- * its static files behind that path too.
- */
-const frameUrl = (): string => {
-  const proxy =
-    (window as { ClientConfig?: { proxy?: { url?: string } } }).ClientConfig?.proxy?.url ?? "";
-  return `${proxy.replace(/\/$/, "")}/static/html-frame/html-frame.html`;
-};
-
-let availability: Promise<boolean> | undefined;
-
-/**
- * Asked once per page load with a HEAD request. The page counts only when it comes with
- * its own policy: an older portal may answer an unknown /static/ path with its whole
- * app, and that must not be loaded into the frame.
- */
-const checkAvailability = (): Promise<boolean> =>
-  (availability ??= fetch(frameUrl(), {
-    method: "HEAD",
-    credentials: "same-origin",
-    cache: "no-store",
-  })
-    .then((r) => r.ok && /frame-ancestors/.test(r.headers.get("content-security-policy") ?? ""))
-    .catch(() => false));
-
-/** null until known; the answer is shared by every frame on the page. */
-export function useHtmlFrameAvailable(): boolean | null {
-  const [available, setAvailable] = useState<boolean | null>(null);
-  useEffect(() => {
-    let alive = true;
-    checkAvailability().then((ok) => {
-      if (alive) setAvailable(ok);
-    });
-    return () => {
-      alive = false;
-    };
-  }, []);
-  return available;
-}
+import { frameUrl } from "./frame-page";
 
 const SANDBOX = "allow-popups allow-popups-to-escape-sandbox";
 

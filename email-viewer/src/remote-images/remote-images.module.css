@@ -1,0 +1,80 @@
+/* Classes are hashed with the manifest name by vite.config.ts, so none can reach the
+   portal's own markup. */
+
+/* The bar over the message body. The warning wears the colours of the portal's own
+   warning toasts; the kit puts the theme class (light or dark) on <body>. */
+.notice {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 8px 16px;
+  border-inline-start: 3px solid transparent;
+  color: var(--text-color);
+}
+
+.warning {
+  background: #f7e6be;
+  border-inline-start-color: #e0b151;
+}
+
+:global(.dark) .warning {
+  background: #3d3523;
+}
+
+.info {
+  background: var(--background-service-color);
+  border-inline-start-color: var(--border-service-color);
+}
+
+.icon {
+  flex: 0 0 auto;
+  display: flex;
+  padding-top: 1px;
+}
+
+.warning .icon {
+  color: #ed7309;
+}
+
+:global(.dark) .warning .icon {
+  color: #e0b151;
+}
+
+.info .icon {
+  color: var(--info-panel-members-subtitle-color);
+}
+
+.body {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.origins {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.origin {
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.07);
+  font-size: 12px;
+  line-height: 18px;
+  overflow-wrap: anywhere;
+}
+
+:global(.dark) .origin {
+  background: rgba(255, 255, 255, 0.1);
+}
