@@ -1,0 +1,42 @@
+{
+  "file": {
+    "typeName": "Sähköpostiviesti"
+  },
+  "header": {
+    "from": "Lähettäjä",
+    "to": "Vastaanottaja",
+    "cc": "Kopio",
+    "bcc": "Piilokopio",
+    "date": "Päivämäärä"
+  },
+  "subject": {
+    "empty": "(ei aihetta)"
+  },
+  "body": {
+    "empty": "Tässä viestissä ei ole tekstiä.",
+    "title": "Viestin sisältö"
+  },
+  "attachments": {
+    "title": "Liitteet (%{count})",
+    "save": "Tallenna tähän kansioon",
+    "saveAll": "Tallenna kaikki"
+  },
+  "images": {
+    "blocked": "Etäkuvat on estetty yksityisyytesi suojaamiseksi.",
+    "load": "Lataa kuvat",
+    "hide": "Piilota kuvat"
+  },
+  "toast": {
+    "saved": "%{name} tallennettiin nykyiseen kansioon",
+    "savedAll": "Nykyiseen kansioon tallennetut liitteet: %{count}",
+    "saveFailed": "Tiedostoa %{name} ei voitu tallentaa",
+    "saveFailedSome": "Tallentamatta jääneet liitteet: %{failed}/%{total}"
+  },
+  "state": {
+    "loading": "Ladataan viestiä…",
+    "empty": "Tämä tiedosto on tyhjä.",
+    "loadFailed": "Tiedostoa ei voitu ladata.",
+    "parseFailed": "Tätä viestiä ei voitu lukea. Tiedosto voi olla vioittunut, tai se ei ole sähköpostiviesti.",
+    "noFile": "Tiedostoa ei ole valittu."
+  }
+}

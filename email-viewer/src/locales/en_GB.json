@@ -1,0 +1,42 @@
+{
+  "file": {
+    "typeName": "Email message"
+  },
+  "header": {
+    "from": "From",
+    "to": "To",
+    "cc": "Cc",
+    "bcc": "Bcc",
+    "date": "Date"
+  },
+  "subject": {
+    "empty": "(no subject)"
+  },
+  "body": {
+    "empty": "This message has no text.",
+    "title": "Message body"
+  },
+  "attachments": {
+    "title": "Attachments (%{count})",
+    "save": "Save to this folder",
+    "saveAll": "Save all"
+  },
+  "images": {
+    "blocked": "Remote images are blocked to protect your privacy.",
+    "load": "Load images",
+    "hide": "Hide images"
+  },
+  "toast": {
+    "saved": "%{name} saved to the current folder",
+    "savedAll": "%{count} attachments saved to the current folder",
+    "saveFailed": "Couldn't save %{name}",
+    "saveFailedSome": "%{failed} of %{total} attachments couldn't be saved"
+  },
+  "state": {
+    "loading": "Loading message…",
+    "empty": "This file is empty.",
+    "loadFailed": "Couldn't load the file.",
+    "parseFailed": "Couldn't read this message. The file may be damaged or not an email.",
+    "noFile": "No file is selected."
+  }
+}

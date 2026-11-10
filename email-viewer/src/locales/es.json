@@ -1,0 +1,42 @@
+{
+  "file": {
+    "typeName": "Mensaje de correo electrónico"
+  },
+  "header": {
+    "from": "De",
+    "to": "Para",
+    "cc": "CC",
+    "bcc": "CCO",
+    "date": "Fecha"
+  },
+  "subject": {
+    "empty": "(sin asunto)"
+  },
+  "body": {
+    "empty": "Este mensaje no tiene texto.",
+    "title": "Cuerpo del mensaje"
+  },
+  "attachments": {
+    "title": "Archivos adjuntos (%{count})",
+    "save": "Guardar en esta carpeta",
+    "saveAll": "Guardar todos"
+  },
+  "images": {
+    "blocked": "Las imágenes remotas están bloqueadas para proteger su privacidad.",
+    "load": "Cargar imágenes",
+    "hide": "Ocultar imágenes"
+  },
+  "toast": {
+    "saved": "%{name} se ha guardado en la carpeta actual",
+    "savedAll": "Archivos adjuntos guardados en la carpeta actual: %{count}",
+    "saveFailed": "No se ha podido guardar %{name}",
+    "saveFailedSome": "Archivos adjuntos no guardados: %{failed} de %{total}"
+  },
+  "state": {
+    "loading": "Cargando mensaje…",
+    "empty": "Este archivo está vacío.",
+    "loadFailed": "No se ha podido cargar el archivo.",
+    "parseFailed": "No se ha podido leer este mensaje. Es posible que el archivo esté dañado o que no sea un correo electrónico.",
+    "noFile": "No se ha seleccionado ningún archivo."
+  }
+}

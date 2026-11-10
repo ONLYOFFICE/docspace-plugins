@@ -1,0 +1,42 @@
+{
+  "file": {
+    "typeName": "电子邮件"
+  },
+  "header": {
+    "from": "发件人",
+    "to": "收件人",
+    "cc": "抄送",
+    "bcc": "密送",
+    "date": "日期"
+  },
+  "subject": {
+    "empty": "（无主题）"
+  },
+  "body": {
+    "empty": "此邮件没有文本内容。",
+    "title": "邮件正文"
+  },
+  "attachments": {
+    "title": "附件（%{count}）",
+    "save": "保存到此文件夹",
+    "saveAll": "全部保存"
+  },
+  "images": {
+    "blocked": "为保护您的隐私，已阻止加载远程图片。",
+    "load": "加载图片",
+    "hide": "隐藏图片"
+  },
+  "toast": {
+    "saved": "已将 %{name} 保存到当前文件夹",
+    "savedAll": "已将 %{count} 个附件保存到当前文件夹",
+    "saveFailed": "无法保存 %{name}",
+    "saveFailedSome": "%{total} 个附件中有 %{failed} 个无法保存"
+  },
+  "state": {
+    "loading": "正在加载邮件…",
+    "empty": "此文件为空。",
+    "loadFailed": "无法加载文件。",
+    "parseFailed": "无法读取此邮件。文件可能已损坏，或不是电子邮件。",
+    "noFile": "未选择文件。"
+  }
+}

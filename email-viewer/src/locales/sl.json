@@ -1,0 +1,42 @@
+{
+  "file": {
+    "typeName": "E-poštno sporočilo"
+  },
+  "header": {
+    "from": "Od",
+    "to": "Za",
+    "cc": "Kp",
+    "bcc": "Skp",
+    "date": "Datum"
+  },
+  "subject": {
+    "empty": "(brez zadeve)"
+  },
+  "body": {
+    "empty": "To sporočilo nima besedila.",
+    "title": "Besedilo sporočila"
+  },
+  "attachments": {
+    "title": "Priloge (%{count})",
+    "save": "Shrani v to mapo",
+    "saveAll": "Shrani vse"
+  },
+  "images": {
+    "blocked": "Oddaljene slike so zaradi zaščite vaše zasebnosti blokirane.",
+    "load": "Naloži slike",
+    "hide": "Skrij slike"
+  },
+  "toast": {
+    "saved": "Datoteka %{name} je shranjena v trenutno mapo",
+    "savedAll": "Priloge, shranjene v trenutno mapo: %{count}",
+    "saveFailed": "Datoteke %{name} ni bilo mogoče shraniti",
+    "saveFailedSome": "Prilog ni bilo mogoče shraniti: %{failed} od %{total}"
+  },
+  "state": {
+    "loading": "Nalaganje sporočila…",
+    "empty": "Ta datoteka je prazna.",
+    "loadFailed": "Datoteke ni bilo mogoče naložiti.",
+    "parseFailed": "Tega sporočila ni bilo mogoče prebrati. Datoteka je morda poškodovana ali ni e-poštno sporočilo.",
+    "noFile": "Nobena datoteka ni izbrana."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "file": {
+    "typeName": "Wiadomość e-mail"
+  },
+  "header": {
+    "from": "Od",
+    "to": "Do",
+    "cc": "DW",
+    "bcc": "UDW",
+    "date": "Data"
+  },
+  "subject": {
+    "empty": "(bez tematu)"
+  },
+  "body": {
+    "empty": "Ta wiadomość nie zawiera tekstu.",
+    "title": "Treść wiadomości"
+  },
+  "attachments": {
+    "title": "Załączniki (%{count})",
+    "save": "Zapisz w tym folderze",
+    "saveAll": "Zapisz wszystkie"
+  },
+  "images": {
+    "blocked": "Obrazy zewnętrzne są zablokowane w celu ochrony Twojej prywatności.",
+    "load": "Wczytaj obrazy",
+    "hide": "Ukryj obrazy"
+  },
+  "toast": {
+    "saved": "Zapisano %{name} w bieżącym folderze",
+    "savedAll": "Zapisano załączniki w bieżącym folderze: %{count}",
+    "saveFailed": "Nie udało się zapisać %{name}",
+    "saveFailedSome": "Nie udało się zapisać załączników: %{failed} z %{total}"
+  },
+  "state": {
+    "loading": "Wczytywanie wiadomości…",
+    "empty": "Ten plik jest pusty.",
+    "loadFailed": "Nie udało się wczytać pliku.",
+    "parseFailed": "Nie udało się odczytać tej wiadomości. Plik może być uszkodzony lub nie jest wiadomością e-mail.",
+    "noFile": "Nie wybrano pliku."
+  }
+}

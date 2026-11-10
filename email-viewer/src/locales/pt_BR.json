@@ -1,0 +1,42 @@
+{
+  "file": {
+    "typeName": "Mensagem de e-mail"
+  },
+  "header": {
+    "from": "De",
+    "to": "Para",
+    "cc": "Cc",
+    "bcc": "Cco",
+    "date": "Data"
+  },
+  "subject": {
+    "empty": "(sem assunto)"
+  },
+  "body": {
+    "empty": "Esta mensagem não tem texto.",
+    "title": "Corpo da mensagem"
+  },
+  "attachments": {
+    "title": "Anexos (%{count})",
+    "save": "Salvar nesta pasta",
+    "saveAll": "Salvar todos"
+  },
+  "images": {
+    "blocked": "As imagens remotas estão bloqueadas para proteger sua privacidade.",
+    "load": "Carregar imagens",
+    "hide": "Ocultar imagens"
+  },
+  "toast": {
+    "saved": "Arquivo %{name} salvo na pasta atual",
+    "savedAll": "Anexos salvos na pasta atual: %{count}",
+    "saveFailed": "Não foi possível salvar %{name}",
+    "saveFailedSome": "Não foi possível salvar anexos: %{failed} de %{total}"
+  },
+  "state": {
+    "loading": "Carregando mensagem…",
+    "empty": "Este arquivo está vazio.",
+    "loadFailed": "Não foi possível carregar o arquivo.",
+    "parseFailed": "Não foi possível ler esta mensagem. O arquivo pode estar danificado ou não ser um e-mail.",
+    "noFile": "Nenhum arquivo selecionado."
+  }
+}

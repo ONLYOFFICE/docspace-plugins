@@ -1,0 +1,42 @@
+{
+  "file": {
+    "typeName": "Mesaj de e-mail"
+  },
+  "header": {
+    "from": "De la",
+    "to": "Către",
+    "cc": "Cc",
+    "bcc": "Bcc",
+    "date": "Dată"
+  },
+  "subject": {
+    "empty": "(fără subiect)"
+  },
+  "body": {
+    "empty": "Acest mesaj nu conține text.",
+    "title": "Corpul mesajului"
+  },
+  "attachments": {
+    "title": "Atașamente (%{count})",
+    "save": "Salvați în acest folder",
+    "saveAll": "Salvați toate"
+  },
+  "images": {
+    "blocked": "Imaginile externe sunt blocate pentru a vă proteja confidențialitatea.",
+    "load": "Încărcați imaginile",
+    "hide": "Ascundeți imaginile"
+  },
+  "toast": {
+    "saved": "Fișierul %{name} a fost salvat în folderul curent",
+    "savedAll": "Atașamente salvate în folderul curent: %{count}",
+    "saveFailed": "Nu s-a putut salva %{name}",
+    "saveFailedSome": "Nu s-au putut salva atașamente: %{failed} din %{total}"
+  },
+  "state": {
+    "loading": "Se încarcă mesajul…",
+    "empty": "Acest fișier este gol.",
+    "loadFailed": "Nu s-a putut încărca fișierul.",
+    "parseFailed": "Nu s-a putut citi acest mesaj. Fișierul poate fi deteriorat sau nu este un e-mail.",
+    "noFile": "Niciun fișier selectat."
+  }
+}

@@ -33,7 +33,7 @@ import { buildHtmlDocument, hasRemoteReferences } from "./email/body-document";
 import { formatAddressList, formatDate, formatSize } from "./email/format";
 import { linkify } from "./email/linkify";
 import type { EmailAttachment, ParsedEmail } from "./email/types";
-import { currentLocale, t, tf } from "./locales";
+import { i18n } from "./locales";
 import { useEmail } from "./useEmail";
 import { useSaveAttachments } from "./useSaveAttachments";
 import styles from "./EmailPreview.module.css";
@@ -119,17 +119,17 @@ export function EmailPreview() {
     case "loading":
       content = (
         <div style={centered}>
-          <Loader type={LoaderTypes.oval} size="40px" color={accent} label={t("state.loading")} />
+          <Loader type={LoaderTypes.oval} size="40px" color={accent} label={i18n.t("state.loading")} />
         </div>
       );
       break;
     case "empty":
-      content = <Message text={t("state.empty")} />;
+      content = <Message text={i18n.t("state.empty")} />;
       break;
     case "error":
       content = (
         <Message
-          text={t(
+          text={i18n.t(
             state.kind === "noFile"
               ? "state.noFile"
               : state.kind === "load"
@@ -202,7 +202,7 @@ function MessageView({ email, folderId }: { email: ParsedEmail; folderId: number
     }
   }, [email, allowRemote]);
 
-  const locale = currentLocale();
+  const locale = i18n.locale;
   const textBody = email.text ?? "";
 
   return (
@@ -215,7 +215,7 @@ function MessageView({ email, folderId }: { email: ParsedEmail; folderId: number
           title={email.subject}
           style={{ margin: "0 0 12px" }}
         >
-          {email.subject || t("subject.empty")}
+          {email.subject || i18n.t("subject.empty")}
         </Heading>
         <div
           style={{
@@ -225,11 +225,11 @@ function MessageView({ email, folderId }: { email: ParsedEmail; folderId: number
             alignItems: "baseline",
           }}
         >
-          <HeaderRow label={t("header.from")} value={formatAddressList(email.from)} />
-          <HeaderRow label={t("header.to")} value={formatAddressList(email.to)} />
-          <HeaderRow label={t("header.cc")} value={formatAddressList(email.cc)} />
-          <HeaderRow label={t("header.bcc")} value={formatAddressList(email.bcc)} />
-          <HeaderRow label={t("header.date")} value={formatDate(email.date, locale)} />
+          <HeaderRow label={i18n.t("header.from")} value={formatAddressList(email.from)} />
+          <HeaderRow label={i18n.t("header.to")} value={formatAddressList(email.to)} />
+          <HeaderRow label={i18n.t("header.cc")} value={formatAddressList(email.cc)} />
+          <HeaderRow label={i18n.t("header.bcc")} value={formatAddressList(email.bcc)} />
+          <HeaderRow label={i18n.t("header.date")} value={formatDate(email.date, locale)} />
         </div>
       </header>
 
@@ -249,7 +249,7 @@ function MessageView({ email, folderId }: { email: ParsedEmail; folderId: number
           }}
         >
           <Text fontSize="12px" fontWeight={600} noSelect style={{ marginRight: 4 }}>
-            {tf("attachments.title", { count: visibleAttachments.length })}
+            {i18n.t("attachments.title", { count: visibleAttachments.length })}
           </Text>
           {visibleAttachments.map((a) => (
             <AttachmentChip
@@ -264,7 +264,7 @@ function MessageView({ email, folderId }: { email: ParsedEmail; folderId: number
             <Button
               id="email-viewer-save-all"
               size={ButtonSize.extraSmall}
-              label={t("attachments.saveAll")}
+              label={i18n.t("attachments.saveAll")}
               isLoading={savingAll}
               onClick={() => saveAll(visibleAttachments)}
             />
@@ -284,14 +284,14 @@ function MessageView({ email, folderId }: { email: ParsedEmail; folderId: number
             flex: "0 0 auto",
           }}
         >
-          <Text fontSize="12px">{t("images.blocked")}</Text>
+          <Text fontSize="12px">{i18n.t("images.blocked")}</Text>
           <Link
             type={LinkType.action}
             fontSize="12px"
             color="accent"
             onClick={() => setAllowRemote((v) => !v)}
           >
-            {allowRemote ? t("images.hide") : t("images.load")}
+            {allowRemote ? i18n.t("images.hide") : i18n.t("images.load")}
           </Link>
         </div>
       )}
@@ -300,7 +300,7 @@ function MessageView({ email, folderId }: { email: ParsedEmail; folderId: number
         {email.html && srcDoc !== null ? (
           <iframe
             style={frameStyle}
-            title={t("body.title")}
+            title={i18n.t("body.title")}
             sandbox="allow-popups allow-popups-to-escape-sandbox"
             srcDoc={srcDoc}
           />
@@ -309,7 +309,7 @@ function MessageView({ email, folderId }: { email: ParsedEmail; folderId: number
             {linkify(textBody)}
           </pre>
         ) : (
-          <Message text={t("body.empty")} />
+          <Message text={i18n.t("body.empty")} />
         )}
       </div>
     </>
@@ -346,7 +346,7 @@ function AttachmentChip({
           noHover={disabled}
           style={{ flex: "0 0 auto" }}
         >
-          {t("attachments.save")}
+          {i18n.t("attachments.save")}
         </Link>
       )}
     </div>

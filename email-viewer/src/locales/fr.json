@@ -1,0 +1,42 @@
+{
+  "file": {
+    "typeName": "Message électronique"
+  },
+  "header": {
+    "from": "De",
+    "to": "À",
+    "cc": "Cc",
+    "bcc": "Cci",
+    "date": "Date"
+  },
+  "subject": {
+    "empty": "(sans objet)"
+  },
+  "body": {
+    "empty": "Ce message ne contient pas de texte.",
+    "title": "Corps du message"
+  },
+  "attachments": {
+    "title": "Pièces jointes (%{count})",
+    "save": "Enregistrer dans ce dossier",
+    "saveAll": "Tout enregistrer"
+  },
+  "images": {
+    "blocked": "Les images distantes sont bloquées pour protéger votre vie privée.",
+    "load": "Charger les images",
+    "hide": "Masquer les images"
+  },
+  "toast": {
+    "saved": "Le fichier %{name} a été enregistré dans le dossier actuel",
+    "savedAll": "Pièces jointes enregistrées dans le dossier actuel : %{count}",
+    "saveFailed": "Impossible d'enregistrer %{name}",
+    "saveFailedSome": "Pièces jointes non enregistrées : %{failed} sur %{total}"
+  },
+  "state": {
+    "loading": "Chargement du message…",
+    "empty": "Ce fichier est vide.",
+    "loadFailed": "Impossible de charger le fichier.",
+    "parseFailed": "Impossible de lire ce message. Le fichier est peut-être endommagé ou n'est pas un e-mail.",
+    "noFile": "Aucun fichier n'est sélectionné."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "file": {
+    "typeName": "E-mailová zpráva"
+  },
+  "header": {
+    "from": "Od",
+    "to": "Komu",
+    "cc": "Kopie",
+    "bcc": "Skrytá kopie",
+    "date": "Datum"
+  },
+  "subject": {
+    "empty": "(bez předmětu)"
+  },
+  "body": {
+    "empty": "Tato zpráva neobsahuje žádný text.",
+    "title": "Text zprávy"
+  },
+  "attachments": {
+    "title": "Přílohy (%{count})",
+    "save": "Uložit do této složky",
+    "saveAll": "Uložit vše"
+  },
+  "images": {
+    "blocked": "Vzdálené obrázky jsou z důvodu ochrany soukromí blokovány.",
+    "load": "Načíst obrázky",
+    "hide": "Skrýt obrázky"
+  },
+  "toast": {
+    "saved": "Soubor %{name} byl uložen do aktuální složky",
+    "savedAll": "Přílohy uložené do aktuální složky: %{count}",
+    "saveFailed": "Soubor %{name} se nepodařilo uložit",
+    "saveFailedSome": "Neuložené přílohy: %{failed} z %{total}"
+  },
+  "state": {
+    "loading": "Načítání zprávy…",
+    "empty": "Tento soubor je prázdný.",
+    "loadFailed": "Soubor se nepodařilo načíst.",
+    "parseFailed": "Tuto zprávu se nepodařilo přečíst. Soubor může být poškozený nebo nejde o e-mail.",
+    "noFile": "Není vybrán žádný soubor."
+  }
+}

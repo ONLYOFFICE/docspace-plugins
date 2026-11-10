@@ -1,0 +1,42 @@
+{
+  "file": {
+    "typeName": "E-pasta ziņojums"
+  },
+  "header": {
+    "from": "No",
+    "to": "Kam",
+    "cc": "Kopija",
+    "bcc": "Diskrētā kopija",
+    "date": "Datums"
+  },
+  "subject": {
+    "empty": "(bez temata)"
+  },
+  "body": {
+    "empty": "Šajā ziņojumā nav teksta.",
+    "title": "Ziņojuma pamatteksts"
+  },
+  "attachments": {
+    "title": "Pielikumi (%{count})",
+    "save": "Saglabāt šajā mapē",
+    "saveAll": "Saglabāt visus"
+  },
+  "images": {
+    "blocked": "Attālie attēli ir bloķēti, lai aizsargātu jūsu privātumu.",
+    "load": "Ielādēt attēlus",
+    "hide": "Paslēpt attēlus"
+  },
+  "toast": {
+    "saved": "Fails %{name} saglabāts pašreizējā mapē",
+    "savedAll": "Pašreizējā mapē saglabātie pielikumi: %{count}",
+    "saveFailed": "Neizdevās saglabāt %{name}",
+    "saveFailedSome": "Neizdevās saglabāt pielikumus: %{failed} no %{total}"
+  },
+  "state": {
+    "loading": "Ielādē ziņojumu…",
+    "empty": "Šis fails ir tukšs.",
+    "loadFailed": "Neizdevās ielādēt failu.",
+    "parseFailed": "Neizdevās nolasīt šo ziņojumu. Fails var būt bojāts vai nav e-pasta ziņojums.",
+    "noFile": "Nav atlasīts neviens fails."
+  }
+}

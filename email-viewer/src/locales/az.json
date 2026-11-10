@@ -1,0 +1,42 @@
+{
+  "file": {
+    "typeName": "E-poçt məktubu"
+  },
+  "header": {
+    "from": "Kimdən",
+    "to": "Kimə",
+    "cc": "Surət",
+    "bcc": "Gizli surət",
+    "date": "Tarix"
+  },
+  "subject": {
+    "empty": "(mövzusuz)"
+  },
+  "body": {
+    "empty": "Bu məktubda mətn yoxdur.",
+    "title": "Məktubun mətni"
+  },
+  "attachments": {
+    "title": "Qoşmalar (%{count})",
+    "save": "Bu qovluqda saxla",
+    "saveAll": "Hamısını saxla"
+  },
+  "images": {
+    "blocked": "Məxfiliyinizi qorumaq üçün xarici şəkillər bloklanıb.",
+    "load": "Şəkilləri yüklə",
+    "hide": "Şəkilləri gizlət"
+  },
+  "toast": {
+    "saved": "%{name} cari qovluqda saxlanıldı",
+    "savedAll": "Cari qovluqda saxlanılan qoşmalar: %{count}",
+    "saveFailed": "%{name} saxlanıla bilmədi",
+    "saveFailedSome": "Saxlanıla bilməyən qoşmalar: %{failed} / %{total}"
+  },
+  "state": {
+    "loading": "Məktub yüklənir…",
+    "empty": "Bu fayl boşdur.",
+    "loadFailed": "Fayl yüklənə bilmədi.",
+    "parseFailed": "Bu məktubu oxumaq mümkün olmadı. Fayl zədələnmiş ola bilər və ya e-poçt məktubu deyil.",
+    "noFile": "Fayl seçilməyib."
+  }
+}

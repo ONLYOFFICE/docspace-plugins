@@ -28,7 +28,7 @@ import {
 
 import { EmailPreview } from "./EmailPreview";
 import { SUPPORTED_EXTENSIONS } from "./email/types";
-import { currentLocale, setLocale, t } from "./locales";
+import { i18n, setLocale } from "./locales";
 
 class EmailViewer implements IPlugin, IFilePlugin {
   status: PluginStatus = PluginStatus.active;
@@ -56,7 +56,7 @@ class EmailViewer implements IPlugin, IFilePlugin {
     for (const extension of SUPPORTED_EXTENSIONS) {
       this.addFileItem({
         extension,
-        fileTypeName: t("file.typeName"),
+        fileTypeName: i18n.t("file.typeName"),
         fileRowIcon: "email-row.svg",
         fileTileIcon: "email-tile.svg",
         onClick: openInViewer,
@@ -78,7 +78,7 @@ class EmailViewer implements IPlugin, IFilePlugin {
     setLocale(language);
   };
 
-  getLanguage = (): PluginLocale => currentLocale();
+  getLanguage = (): PluginLocale => i18n.locale as PluginLocale;
 
   addFileItem = (item: IFileItem): void => {
     this.fileItems.set(item.extension, item);

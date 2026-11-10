@@ -23,7 +23,7 @@ import {
 } from "@onlyoffice/docspace-plugin-sdk/react";
 
 import type { EmailAttachment } from "./email/types";
-import { t, tf } from "./locales";
+import { i18n } from "./locales";
 
 type TUploadSession = {
   data?: { location?: string };
@@ -96,7 +96,7 @@ export function useSaveAttachments(folderId: number | string | null) {
       const ok = await save(attachment);
       showToast({
         type: ok ? ToastType.success : ToastType.error,
-        title: tf(ok ? "toast.saved" : "toast.saveFailed", { name: attachment.name }),
+        title: i18n.t(ok ? "toast.saved" : "toast.saveFailed", { name: attachment.name }),
       });
     },
     [save, showToast],
@@ -116,12 +116,12 @@ export function useSaveAttachments(folderId: number | string | null) {
       if (failed === 0) {
         showToast({
           type: ToastType.success,
-          title: tf("toast.savedAll", { count: attachments.length }),
+          title: i18n.t("toast.savedAll", { count: attachments.length }),
         });
       } else {
         showToast({
           type: ToastType.error,
-          title: tf("toast.saveFailedSome", { failed, total: attachments.length }),
+          title: i18n.t("toast.saveFailedSome", { failed, total: attachments.length }),
         });
       }
     },
@@ -134,6 +134,6 @@ export function useSaveAttachments(folderId: number | string | null) {
     savingAll,
     isSaving: (name: string) => saving.has(name),
     canSave: folderId !== null,
-    saveLabel: t("attachments.save"),
+    saveLabel: i18n.t("attachments.save"),
   };
 }

@@ -1,0 +1,42 @@
+{
+  "file": {
+    "typeName": "Messaggio email"
+  },
+  "header": {
+    "from": "Da",
+    "to": "A",
+    "cc": "Cc",
+    "bcc": "Ccn",
+    "date": "Data"
+  },
+  "subject": {
+    "empty": "(nessun oggetto)"
+  },
+  "body": {
+    "empty": "Questo messaggio non contiene testo.",
+    "title": "Corpo del messaggio"
+  },
+  "attachments": {
+    "title": "Allegati (%{count})",
+    "save": "Salva in questa cartella",
+    "saveAll": "Salva tutti"
+  },
+  "images": {
+    "blocked": "Le immagini remote sono bloccate per proteggere la tua privacy.",
+    "load": "Carica immagini",
+    "hide": "Nascondi immagini"
+  },
+  "toast": {
+    "saved": "File %{name} salvato nella cartella corrente",
+    "savedAll": "Allegati salvati nella cartella corrente: %{count}",
+    "saveFailed": "Impossibile salvare %{name}",
+    "saveFailedSome": "Allegati non salvati: %{failed} su %{total}"
+  },
+  "state": {
+    "loading": "Caricamento del messaggio…",
+    "empty": "Questo file è vuoto.",
+    "loadFailed": "Impossibile caricare il file.",
+    "parseFailed": "Impossibile leggere questo messaggio. Il file potrebbe essere danneggiato o non essere un'email.",
+    "noFile": "Nessun file selezionato."
+  }
+}

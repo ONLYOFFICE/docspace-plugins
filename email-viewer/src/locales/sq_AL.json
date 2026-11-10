@@ -1,0 +1,42 @@
+{
+  "file": {
+    "typeName": "Mesazh email-i"
+  },
+  "header": {
+    "from": "Nga",
+    "to": "Për",
+    "cc": "Cc",
+    "bcc": "Bcc",
+    "date": "Data"
+  },
+  "subject": {
+    "empty": "(pa subjekt)"
+  },
+  "body": {
+    "empty": "Ky mesazh nuk ka tekst.",
+    "title": "Teksti i mesazhit"
+  },
+  "attachments": {
+    "title": "Bashkëngjitjet (%{count})",
+    "save": "Ruaje në këtë dosje",
+    "saveAll": "Ruaji të gjitha"
+  },
+  "images": {
+    "blocked": "Imazhet në distancë janë bllokuar për të mbrojtur privatësinë tuaj.",
+    "load": "Ngarko imazhet",
+    "hide": "Fshih imazhet"
+  },
+  "toast": {
+    "saved": "%{name} u ruajt në dosjen aktuale",
+    "savedAll": "Bashkëngjitje të ruajtura në dosjen aktuale: %{count}",
+    "saveFailed": "%{name} nuk mund të ruhej",
+    "saveFailedSome": "Bashkëngjitje që nuk mund të ruheshin: %{failed} nga %{total}"
+  },
+  "state": {
+    "loading": "Mesazhi po ngarkohet…",
+    "empty": "Ky skedar është bosh.",
+    "loadFailed": "Skedari nuk mund të ngarkohej.",
+    "parseFailed": "Ky mesazh nuk mund të lexohej. Skedari mund të jetë i dëmtuar ose nuk është email.",
+    "noFile": "Nuk është zgjedhur asnjë skedar."
+  }
+}

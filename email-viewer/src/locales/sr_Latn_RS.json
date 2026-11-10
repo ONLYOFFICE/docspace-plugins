@@ -1,0 +1,42 @@
+{
+  "file": {
+    "typeName": "Imejl poruka"
+  },
+  "header": {
+    "from": "Od",
+    "to": "Za",
+    "cc": "Kopija",
+    "bcc": "Skrivena kopija",
+    "date": "Datum"
+  },
+  "subject": {
+    "empty": "(bez naslova)"
+  },
+  "body": {
+    "empty": "Ova poruka nema tekst.",
+    "title": "Tekst poruke"
+  },
+  "attachments": {
+    "title": "Prilozi (%{count})",
+    "save": "Sačuvaj u ovu fasciklu",
+    "saveAll": "Sačuvaj sve"
+  },
+  "images": {
+    "blocked": "Spoljne slike su blokirane radi zaštite vaše privatnosti.",
+    "load": "Učitaj slike",
+    "hide": "Sakrij slike"
+  },
+  "toast": {
+    "saved": "Datoteka %{name} je sačuvana u trenutnu fasciklu",
+    "savedAll": "Prilozi sačuvani u trenutnu fasciklu: %{count}",
+    "saveFailed": "Nije moguće sačuvati datoteku %{name}",
+    "saveFailedSome": "Nije moguće sačuvati priloge: %{failed} od %{total}"
+  },
+  "state": {
+    "loading": "Učitavanje poruke…",
+    "empty": "Ova datoteka je prazna.",
+    "loadFailed": "Nije moguće učitati datoteku.",
+    "parseFailed": "Nije moguće pročitati ovu poruku. Datoteka je možda oštećena ili nije imejl.",
+    "noFile": "Nijedna datoteka nije izabrana."
+  }
+}

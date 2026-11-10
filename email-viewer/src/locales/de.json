@@ -1,0 +1,42 @@
+{
+  "file": {
+    "typeName": "E-Mail-Nachricht"
+  },
+  "header": {
+    "from": "Von",
+    "to": "An",
+    "cc": "Cc",
+    "bcc": "Bcc",
+    "date": "Datum"
+  },
+  "subject": {
+    "empty": "(kein Betreff)"
+  },
+  "body": {
+    "empty": "Diese Nachricht enthält keinen Text.",
+    "title": "Nachrichtentext"
+  },
+  "attachments": {
+    "title": "Anhänge (%{count})",
+    "save": "In diesem Ordner speichern",
+    "saveAll": "Alle speichern"
+  },
+  "images": {
+    "blocked": "Externe Bilder werden zum Schutz Ihrer Privatsphäre blockiert.",
+    "load": "Bilder laden",
+    "hide": "Bilder ausblenden"
+  },
+  "toast": {
+    "saved": "%{name} wurde im aktuellen Ordner gespeichert",
+    "savedAll": "Im aktuellen Ordner gespeicherte Anhänge: %{count}",
+    "saveFailed": "%{name} konnte nicht gespeichert werden",
+    "saveFailedSome": "Nicht gespeicherte Anhänge: %{failed} von %{total}"
+  },
+  "state": {
+    "loading": "Nachricht wird geladen…",
+    "empty": "Diese Datei ist leer.",
+    "loadFailed": "Die Datei konnte nicht geladen werden.",
+    "parseFailed": "Diese Nachricht konnte nicht gelesen werden. Die Datei ist möglicherweise beschädigt oder keine E-Mail.",
+    "noFile": "Keine Datei ausgewählt."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "file": {
+    "typeName": "Thư email"
+  },
+  "header": {
+    "from": "Từ",
+    "to": "Đến",
+    "cc": "Cc",
+    "bcc": "Bcc",
+    "date": "Ngày"
+  },
+  "subject": {
+    "empty": "(không có chủ đề)"
+  },
+  "body": {
+    "empty": "Thư này không có nội dung văn bản.",
+    "title": "Nội dung thư"
+  },
+  "attachments": {
+    "title": "Tệp đính kèm (%{count})",
+    "save": "Lưu vào thư mục này",
+    "saveAll": "Lưu tất cả"
+  },
+  "images": {
+    "blocked": "Hình ảnh từ xa đã bị chặn để bảo vệ quyền riêng tư của bạn.",
+    "load": "Tải hình ảnh",
+    "hide": "Ẩn hình ảnh"
+  },
+  "toast": {
+    "saved": "Đã lưu %{name} vào thư mục hiện tại",
+    "savedAll": "Đã lưu %{count} tệp đính kèm vào thư mục hiện tại",
+    "saveFailed": "Không thể lưu %{name}",
+    "saveFailedSome": "Không thể lưu %{failed}/%{total} tệp đính kèm"
+  },
+  "state": {
+    "loading": "Đang tải thư…",
+    "empty": "Tệp này trống.",
+    "loadFailed": "Không thể tải tệp.",
+    "parseFailed": "Không thể đọc thư này. Tệp có thể bị hỏng hoặc không phải là email.",
+    "noFile": "Chưa chọn tệp nào."
+  }
+}

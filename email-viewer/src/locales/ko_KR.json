@@ -1,0 +1,42 @@
+{
+  "file": {
+    "typeName": "이메일 메시지"
+  },
+  "header": {
+    "from": "보낸 사람",
+    "to": "받는 사람",
+    "cc": "참조",
+    "bcc": "숨은 참조",
+    "date": "날짜"
+  },
+  "subject": {
+    "empty": "(제목 없음)"
+  },
+  "body": {
+    "empty": "이 메시지에는 본문이 없습니다.",
+    "title": "메시지 본문"
+  },
+  "attachments": {
+    "title": "첨부 파일 (%{count})",
+    "save": "이 폴더에 저장",
+    "saveAll": "모두 저장"
+  },
+  "images": {
+    "blocked": "개인 정보 보호를 위해 외부 이미지가 차단되었습니다.",
+    "load": "이미지 불러오기",
+    "hide": "이미지 숨기기"
+  },
+  "toast": {
+    "saved": "%{name} 파일을 현재 폴더에 저장했습니다",
+    "savedAll": "첨부 파일 %{count}개를 현재 폴더에 저장했습니다",
+    "saveFailed": "%{name} 파일을 저장하지 못했습니다",
+    "saveFailedSome": "첨부 파일 %{total}개 중 %{failed}개를 저장하지 못했습니다"
+  },
+  "state": {
+    "loading": "메시지를 불러오는 중…",
+    "empty": "이 파일은 비어 있습니다.",
+    "loadFailed": "파일을 불러오지 못했습니다.",
+    "parseFailed": "이 메시지를 읽을 수 없습니다. 파일이 손상되었거나 이메일이 아닐 수 있습니다.",
+    "noFile": "선택된 파일이 없습니다."
+  }
+}

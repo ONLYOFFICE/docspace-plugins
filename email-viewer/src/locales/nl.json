@@ -1,0 +1,42 @@
+{
+  "file": {
+    "typeName": "E-mailbericht"
+  },
+  "header": {
+    "from": "Van",
+    "to": "Aan",
+    "cc": "CC",
+    "bcc": "BCC",
+    "date": "Datum"
+  },
+  "subject": {
+    "empty": "(geen onderwerp)"
+  },
+  "body": {
+    "empty": "Dit bericht bevat geen tekst.",
+    "title": "Berichttekst"
+  },
+  "attachments": {
+    "title": "Bijlagen (%{count})",
+    "save": "Opslaan in deze map",
+    "saveAll": "Alles opslaan"
+  },
+  "images": {
+    "blocked": "Externe afbeeldingen worden geblokkeerd om uw privacy te beschermen.",
+    "load": "Afbeeldingen laden",
+    "hide": "Afbeeldingen verbergen"
+  },
+  "toast": {
+    "saved": "%{name} is opgeslagen in de huidige map",
+    "savedAll": "Bijlagen opgeslagen in de huidige map: %{count}",
+    "saveFailed": "Kan %{name} niet opslaan",
+    "saveFailedSome": "Bijlagen die niet konden worden opgeslagen: %{failed} van %{total}"
+  },
+  "state": {
+    "loading": "Bericht laden…",
+    "empty": "Dit bestand is leeg.",
+    "loadFailed": "Kan het bestand niet laden.",
+    "parseFailed": "Kan dit bericht niet lezen. Het bestand is mogelijk beschadigd of is geen e-mail.",
+    "noFile": "Er is geen bestand geselecteerd."
+  }
+}
