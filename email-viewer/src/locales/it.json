@@ -18,17 +18,25 @@
   },
   "attachments": {
     "title": "Allegati (%{count})",
-    "save": "Salva in questa cartella",
-    "saveAll": "Salva tutti"
+    "save": "Salva",
+    "saveAll": "Salva tutti",
+    "chooseFolder": "Salva gli allegati in",
+    "saveHere": "Salva qui",
+    "noRights": "Non è possibile aggiungere file a questa cartella. Scegline un'altra.",
+    "progress": "Salvataggio degli allegati",
+    "savedTo": "Salvato in «%{folder}»"
   },
   "images": {
-    "blocked": "Le immagini remote sono bloccate per proteggere la tua privacy.",
+    "blocked": "Le immagini da internet non sono state caricate: potrebbero comunicare al mittente che hai aperto questo messaggio.",
     "load": "Carica immagini",
-    "hide": "Nascondi immagini"
+    "hide": "Nascondi immagini",
+    "shown": "Le immagini da internet sono state caricate.",
+    "cspBlocked": "Le impostazioni di sicurezza del portale bloccano le immagini di questi siti:",
+    "cspAdmin": "Un sito può essere consentito in «Strumenti di sviluppo → SDK Javascript», ma in tal caso potrà eseguire script sul portale e incorporare il portale nelle proprie pagine. Aggiungi solo siti di cui ti fidi completamente.",
+    "cspRedirect": "Il sito %{site} è già consentito, ma le sue immagini provengono da un altro indirizzo. Puoi vederlo nella console del browser (F12).",
+    "cspOpenSettings": "Apri impostazioni"
   },
   "toast": {
-    "saved": "File %{name} salvato nella cartella corrente",
-    "savedAll": "Allegati salvati nella cartella corrente: %{count}",
     "saveFailed": "Impossibile salvare %{name}",
     "saveFailedSome": "Allegati non salvati: %{failed} su %{total}"
   },

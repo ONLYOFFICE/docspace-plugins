@@ -18,17 +18,25 @@
   },
   "attachments": {
     "title": "Anhänge (%{count})",
-    "save": "In diesem Ordner speichern",
-    "saveAll": "Alle speichern"
+    "save": "Speichern",
+    "saveAll": "Alle speichern",
+    "chooseFolder": "Anhänge speichern unter",
+    "saveHere": "Hier speichern",
+    "noRights": "Sie können diesem Ordner keine Dateien hinzufügen. Wählen Sie einen anderen.",
+    "progress": "Speichern der Anhänge",
+    "savedTo": "Gespeichert in „%{folder}“"
   },
   "images": {
-    "blocked": "Externe Bilder werden zum Schutz Ihrer Privatsphäre blockiert.",
+    "blocked": "Bilder aus dem Internet werden nicht geladen: Daran könnte der Absender erkennen, dass Sie diese Nachricht geöffnet haben.",
     "load": "Bilder laden",
-    "hide": "Bilder ausblenden"
+    "hide": "Bilder ausblenden",
+    "shown": "Bilder aus dem Internet sind geladen.",
+    "cspBlocked": "Die Sicherheitseinstellungen des Portals blockieren Bilder von diesen Websites:",
+    "cspAdmin": "Eine Website kann unter „Entwicklungstools → JavaScript-SDK“ zugelassen werden, kann dann aber Skripte im Portal ausführen und das Portal in ihre eigenen Seiten einbetten. Fügen Sie nur Websites hinzu, denen Sie voll vertrauen.",
+    "cspRedirect": "Die Website %{site} ist bereits erlaubt, ihre Bilder kommen aber von einer anderen Adresse. Welche, zeigt die Browserkonsole (F12).",
+    "cspOpenSettings": "Einstellungen öffnen"
   },
   "toast": {
-    "saved": "%{name} wurde im aktuellen Ordner gespeichert",
-    "savedAll": "Im aktuellen Ordner gespeicherte Anhänge: %{count}",
     "saveFailed": "%{name} konnte nicht gespeichert werden",
     "saveFailedSome": "Nicht gespeicherte Anhänge: %{failed} von %{total}"
   },

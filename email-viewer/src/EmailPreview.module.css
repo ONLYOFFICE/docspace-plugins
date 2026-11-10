@@ -1,6 +1,43 @@
 /* Every class here is hashed with the manifest name by vite.config.ts, so nothing
    below can reach the portal's own markup. Only what inline styles cannot express
-   lives here; sizing and layout are inline on the elements themselves. */
+   lives here: hover states, the theme, and what changes with the viewer's chrome. */
+
+/* The viewer's desktop chrome: a 64px header band over the top and, with more than one
+   file in the playlist, 73px paging strips down both sides. Nothing clickable may sit
+   under them, so the surface keeps out of their way. */
+.root {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 64px 73px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.card {
+  width: 100%;
+  max-width: 960px;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--background-color);
+  color: var(--text-color);
+  border-radius: 6px;
+  overflow: hidden;
+  /* The viewer turns selection off for its whole stage; addresses, the subject and the
+     list of blocked sites are meant to be copied. */
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.header {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
 
 /* The kit defines --accent-main per component as var(--color-scheme-main-accent, #4781d1);
    the same chain here follows a re-branded accent and still resolves where neither is set. */
@@ -10,4 +47,116 @@
 
 .chip:hover {
   border-color: var(--accent-main, var(--color-scheme-main-accent, #4781d1));
+}
+
+/* From, To, Cc and Date on one tinted block, as mail clients set them apart from the body. */
+.headerBlock {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  border-radius: 6px;
+  background: var(--background-service-color);
+}
+
+/* Sender initials; the background is picked per address and set inline. */
+.avatar {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  user-select: none;
+}
+
+/* The bar over the message body. The warning wears the colours of the portal's own
+   warning toasts; the kit puts the theme class (light or dark) on <body>. */
+.notice {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 8px 16px;
+  border-inline-start: 3px solid transparent;
+  color: var(--text-color);
+}
+
+.noticeWarning {
+  background: #f7e6be;
+  border-inline-start-color: #e0b151;
+}
+
+:global(.dark) .noticeWarning {
+  background: #3d3523;
+}
+
+.noticeInfo {
+  background: var(--background-service-color);
+  border-inline-start-color: var(--border-service-color);
+}
+
+.noticeIcon {
+  flex: 0 0 auto;
+  display: flex;
+  padding-top: 1px;
+}
+
+.noticeWarning .noticeIcon {
+  color: #ed7309;
+}
+
+:global(.dark) .noticeWarning .noticeIcon {
+  color: #e0b151;
+}
+
+.noticeInfo .noticeIcon {
+  color: var(--info-panel-members-subtitle-color);
+}
+
+.origin {
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.07);
+  font-size: 12px;
+  line-height: 18px;
+  overflow-wrap: anywhere;
+}
+
+:global(.dark) .origin {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* The viewer's mobile chrome, which it picks for a phone-wide screen (600px, the kit's
+   mobile breakpoint) and for a touch screen without a mouse: a 53px header and no
+   paging strips. The message then takes the whole width, and every block gets denser. */
+@media (max-width: 600px), (pointer: coarse) {
+  .root {
+    padding: var(--mobile-details-height, 53px) 0 0;
+  }
+
+  .card {
+    max-width: none;
+    border-radius: 0;
+  }
+
+  .header {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .headerBlock {
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
 }

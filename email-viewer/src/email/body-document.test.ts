@@ -16,7 +16,7 @@
 
 import { describe, expect, it } from "vitest";
 
-import { buildHtmlDocument, hasRemoteReferences } from "./body-document";
+import { buildHtmlDocument, remoteUrls } from "./body-document";
 import type { EmailAttachment } from "./types";
 
 const png: EmailAttachment = {
@@ -67,16 +67,21 @@ describe("buildHtmlDocument", () => {
   });
 });
 
-describe("hasRemoteReferences", () => {
-  it("detects src, background and css url()", () => {
-    expect(hasRemoteReferences('<img src="https://a/b.png">')).toBe(true);
-    expect(hasRemoteReferences('<td background="http://a/b.png">')).toBe(true);
-    expect(hasRemoteReferences("<style>div{background:url(https://a/b.png)}</style>")).toBe(true);
+describe("remoteUrls", () => {
+  it("finds src, background and css url()", () => {
+    expect(remoteUrls('<img src="https://a/b.png">')).toEqual(["https://a/b.png"]);
+    expect(remoteUrls("<td background=http://a/b.png>")).toEqual(["http://a/b.png"]);
+    expect(remoteUrls("<style>div{background:url('https://a/b.png')}</style>")).toEqual([
+      "https://a/b.png",
+    ]);
+  });
+  it("decodes &amp; and stops at the closing quote", () => {
+    expect(remoteUrls("<img src='https://a/p?x=1&amp;y=2' alt=\"\">")).toEqual([
+      "https://a/p?x=1&y=2",
+    ]);
   });
   it("ignores links and inline data", () => {
-    expect(
-      hasRemoteReferences('<a href="https://a">x</a><img src="data:image/png;base64,AA">'),
-    ).toBe(false);
-    expect(hasRemoteReferences('<img src="cid:x">')).toBe(false);
+    expect(remoteUrls('<a href="https://a">x</a><img src="data:image/png;base64,AA">')).toEqual([]);
+    expect(remoteUrls('<img src="cid:x">')).toEqual([]);
   });
 });

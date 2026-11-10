@@ -18,17 +18,25 @@
   },
   "attachments": {
     "title": "Bashkëngjitjet (%{count})",
-    "save": "Ruaje në këtë dosje",
-    "saveAll": "Ruaji të gjitha"
+    "save": "Ruaj",
+    "saveAll": "Ruaji të gjitha",
+    "chooseFolder": "Ku të ruhen bashkëngjitjet",
+    "saveHere": "Ruaj këtu",
+    "noRights": "Nuk mund të shtoni skedarë në këtë dosje. Zgjidhni një tjetër.",
+    "progress": "Ruajtja e bashkëngjitjeve",
+    "savedTo": "U ruajt në “%{folder}”"
   },
   "images": {
-    "blocked": "Imazhet në distancë janë bllokuar për të mbrojtur privatësinë tuaj.",
+    "blocked": "Imazhet nga interneti nuk janë ngarkuar: përmes tyre dërguesi mund të mësojë se e keni hapur mesazhin.",
     "load": "Ngarko imazhet",
-    "hide": "Fshih imazhet"
+    "hide": "Fshih imazhet",
+    "shown": "Imazhet nga interneti janë ngarkuar.",
+    "cspBlocked": "Cilësimet e sigurisë së portalit bllokojnë imazhet nga këto sajte:",
+    "cspAdmin": "Një sajt mund të lejohet te „Mjetet e Zhvilluesit → Javascript SDK“, por atëherë ai do të mund të ekzekutojë skripte në portal dhe ta përfshijë portalin në faqet e veta. Shtoni vetëm sajte të cilave u besoni plotësisht.",
+    "cspRedirect": "Sajti %{site} është tashmë i lejuar, por imazhet e tij vijnë nga një adresë tjetër. Cila është, tregohet në konsolën e shfletuesit (F12).",
+    "cspOpenSettings": "Hap cilësimet"
   },
   "toast": {
-    "saved": "%{name} u ruajt në dosjen aktuale",
-    "savedAll": "Bashkëngjitje të ruajtura në dosjen aktuale: %{count}",
     "saveFailed": "%{name} nuk mund të ruhej",
     "saveFailedSome": "Bashkëngjitje që nuk mund të ruheshin: %{failed} nga %{total}"
   },

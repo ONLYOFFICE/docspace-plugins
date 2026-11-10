@@ -18,17 +18,25 @@
   },
   "attachments": {
     "title": "Anexos (%{count})",
-    "save": "Salvar nesta pasta",
-    "saveAll": "Salvar todos"
+    "save": "Salvar",
+    "saveAll": "Salvar todos",
+    "chooseFolder": "Salvar anexos em",
+    "saveHere": "Salvar aqui",
+    "noRights": "Não é possível adicionar arquivos a esta pasta. Escolha outra.",
+    "progress": "Salvar anexos",
+    "savedTo": "Salvo em “%{folder}”"
   },
   "images": {
-    "blocked": "As imagens remotas estão bloqueadas para proteger sua privacidade.",
+    "blocked": "As imagens da internet não foram carregadas: por meio delas, o remetente pode saber que você abriu esta mensagem.",
     "load": "Carregar imagens",
-    "hide": "Ocultar imagens"
+    "hide": "Ocultar imagens",
+    "shown": "As imagens da internet foram carregadas.",
+    "cspBlocked": "As configurações de segurança do portal bloqueiam imagens destes sites:",
+    "cspAdmin": "Um site pode ser permitido em \"Ferramentas de desenvolvimento → Javascript SDK\", mas então poderá executar scripts no portal e incorporar o portal em suas próprias páginas. Adicione apenas sites em que você confia totalmente.",
+    "cspRedirect": "O site %{site} já está permitido, mas as imagens dele vêm de outro endereço. Você pode ver qual no console do navegador (F12).",
+    "cspOpenSettings": "Abrir configurações"
   },
   "toast": {
-    "saved": "Arquivo %{name} salvo na pasta atual",
-    "savedAll": "Anexos salvos na pasta atual: %{count}",
     "saveFailed": "Não foi possível salvar %{name}",
     "saveFailedSome": "Não foi possível salvar anexos: %{failed} de %{total}"
   },

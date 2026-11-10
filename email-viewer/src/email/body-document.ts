@@ -37,10 +37,12 @@ import { toBase64 } from "./format";
  * portal's theme variables, so these are the only literal colours in the plugin.
  */
 
-/** Does the body reference anything over the network - images, backgrounds, CSS url()s? */
-export const hasRemoteReferences = (html: string): boolean =>
-  /\b(?:src|background|poster)\s*=\s*["']?\s*https?:\/\//i.test(html) ||
-  /url\(\s*["']?\s*https?:\/\//i.test(html);
+const REMOTE_REFERENCE =
+  /(?:\b(?:src|background|poster)\s*=\s*["']?|url\(\s*["']?)\s*(https?:\/\/[^\s"'()<>]+)/gi;
+
+/** What the body loads over the network - images, backgrounds, CSS url()s - in order. */
+export const remoteUrls = (html: string): string[] =>
+  [...html.matchAll(REMOTE_REFERENCE)].map((m) => m[1].replace(/&amp;/g, "&"));
 
 const findByContentId = (
   attachments: EmailAttachment[],
@@ -88,6 +90,15 @@ const BASE_STYLE = `
   img { max-width: 100%; height: auto; }
   blockquote { margin: 0 0 0 8px; padding-left: 8px; border-left: 2px solid #cccccc; }
   pre { white-space: pre-wrap; }
+  /* A phone-wide frame: most mail is laid out in fixed 600px tables, and a max-width
+     alone does not shrink them - a cell keeps its width attribute. So the tables take
+     the frame's width and the cells size to their content. A message with its own media
+     queries keeps them: its class selectors outrank these type selectors. */
+  @media (max-width: 600px) {
+    body { padding: 12px; }
+    table { width: 100% !important; max-width: 100% !important; }
+    td, th { width: auto !important; max-width: 100% !important; }
+  }
 `;
 
 export type BodyDocumentOptions = {

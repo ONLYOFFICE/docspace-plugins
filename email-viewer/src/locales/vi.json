@@ -18,17 +18,25 @@
   },
   "attachments": {
     "title": "Tệp đính kèm (%{count})",
-    "save": "Lưu vào thư mục này",
-    "saveAll": "Lưu tất cả"
+    "save": "Lưu",
+    "saveAll": "Lưu tất cả",
+    "chooseFolder": "Lưu tệp đính kèm vào",
+    "saveHere": "Lưu tại đây",
+    "noRights": "Bạn không thể thêm tệp vào thư mục này. Hãy chọn thư mục khác.",
+    "progress": "Lưu tệp đính kèm",
+    "savedTo": "Đã lưu vào “%{folder}”"
   },
   "images": {
-    "blocked": "Hình ảnh từ xa đã bị chặn để bảo vệ quyền riêng tư của bạn.",
+    "blocked": "Chưa tải hình ảnh từ internet: người gửi có thể dựa vào chúng để biết bạn đã mở thư này.",
     "load": "Tải hình ảnh",
-    "hide": "Ẩn hình ảnh"
+    "hide": "Ẩn hình ảnh",
+    "shown": "Đã tải hình ảnh từ internet.",
+    "cspBlocked": "Cài đặt bảo mật của cổng thông tin đang chặn hình ảnh từ các trang sau:",
+    "cspAdmin": "Có thể cho phép một trang trong “Công cụ nhà phát triển → Javascript SDK”, nhưng khi đó trang này sẽ có thể chạy tập lệnh trên cổng thông tin và nhúng cổng thông tin vào các trang của mình. Chỉ thêm những trang bạn hoàn toàn tin cậy.",
+    "cspRedirect": "Trang %{site} đã được cho phép, nhưng hình ảnh của trang này đến từ một địa chỉ khác. Bảng điều khiển trình duyệt (F12) cho biết đó là địa chỉ nào.",
+    "cspOpenSettings": "Mở cài đặt"
   },
   "toast": {
-    "saved": "Đã lưu %{name} vào thư mục hiện tại",
-    "savedAll": "Đã lưu %{count} tệp đính kèm vào thư mục hiện tại",
     "saveFailed": "Không thể lưu %{name}",
     "saveFailedSome": "Không thể lưu %{failed}/%{total} tệp đính kèm"
   },

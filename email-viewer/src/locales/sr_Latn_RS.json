@@ -18,17 +18,25 @@
   },
   "attachments": {
     "title": "Prilozi (%{count})",
-    "save": "Sačuvaj u ovu fasciklu",
-    "saveAll": "Sačuvaj sve"
+    "save": "Sačuvaj",
+    "saveAll": "Sačuvaj sve",
+    "chooseFolder": "Gde sačuvati priloge",
+    "saveHere": "Sačuvaj ovde",
+    "noRights": "U ovu fasciklu ne možete da dodajete datoteke. Izaberite drugu.",
+    "progress": "Čuvanje priloga",
+    "savedTo": "Sačuvano u fasciklu „%{folder}“"
   },
   "images": {
-    "blocked": "Spoljne slike su blokirane radi zaštite vaše privatnosti.",
+    "blocked": "Slike sa interneta nisu učitane: preko njih pošiljalac može da sazna da ste otvorili poruku.",
     "load": "Učitaj slike",
-    "hide": "Sakrij slike"
+    "hide": "Sakrij slike",
+    "shown": "Slike sa interneta su učitane.",
+    "cspBlocked": "Bezbednosna podešavanja portala blokiraju slike sa ovih sajtova:",
+    "cspAdmin": "Sajt možete dozvoliti u odeljku „Alati programera → Javascript SDK“, ali će tada moći da pokreće skripte na portalu i da ugrađuje portal u svoje stranice. Dodajte samo sajtove kojima potpuno verujete.",
+    "cspRedirect": "Sajt %{site} je već dozvoljen, ali njegove slike stižu sa druge adrese. Sa koje, videćete u konzoli pregledača (F12).",
+    "cspOpenSettings": "Otvori podešavanja"
   },
   "toast": {
-    "saved": "Datoteka %{name} je sačuvana u trenutnu fasciklu",
-    "savedAll": "Prilozi sačuvani u trenutnu fasciklu: %{count}",
     "saveFailed": "Nije moguće sačuvati datoteku %{name}",
     "saveFailedSome": "Nije moguće sačuvati priloge: %{failed} od %{total}"
   },

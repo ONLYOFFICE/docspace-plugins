@@ -18,17 +18,25 @@
   },
   "attachments": {
     "title": "Qoşmalar (%{count})",
-    "save": "Bu qovluqda saxla",
-    "saveAll": "Hamısını saxla"
+    "save": "Saxla",
+    "saveAll": "Hamısını saxla",
+    "chooseFolder": "Qoşmaları harada saxlamaq",
+    "saveHere": "Burada saxla",
+    "noRights": "Bu qovluğa fayl əlavə edə bilməzsiniz. Başqa qovluq seçin.",
+    "progress": "Qoşmaların saxlanması",
+    "savedTo": "“%{folder}” qovluğuna saxlanıldı"
   },
   "images": {
-    "blocked": "Məxfiliyinizi qorumaq üçün xarici şəkillər bloklanıb.",
+    "blocked": "İnternetdən şəkillər yüklənməyib: onlar göndərənə bu məktubu açdığınızı bildirə bilər.",
     "load": "Şəkilləri yüklə",
-    "hide": "Şəkilləri gizlət"
+    "hide": "Şəkilləri gizlət",
+    "shown": "İnternetdən şəkillər yükləndi.",
+    "cspBlocked": "Portalın təhlükəsizlik parametrləri bu saytlardan olan şəkilləri bloklayır:",
+    "cspAdmin": "Saytı «Tərtibatçı Alətləri → Javascript SDK» bölməsində icazə verilənlərə əlavə etmək olar, lakin bundan sonra o, portalda skriptlər işlədə və portalı öz səhifələrinə yerləşdirə biləcək. Yalnız tam etibar etdiyiniz saytları əlavə edin.",
+    "cspRedirect": "%{site} saytına artıq icazə verilib, lakin onun şəkilləri başqa ünvandan gəlir. Hansı ünvandan olduğunu brauzer konsolunda (F12) görmək olar.",
+    "cspOpenSettings": "Parametrləri aç"
   },
   "toast": {
-    "saved": "%{name} cari qovluqda saxlanıldı",
-    "savedAll": "Cari qovluqda saxlanılan qoşmalar: %{count}",
     "saveFailed": "%{name} saxlanıla bilmədi",
     "saveFailedSome": "Saxlanıla bilməyən qoşmalar: %{failed} / %{total}"
   },

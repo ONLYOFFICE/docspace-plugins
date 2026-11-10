@@ -18,17 +18,25 @@
   },
   "attachments": {
     "title": "Attachments (%{count})",
-    "save": "Save to this folder",
-    "saveAll": "Save all"
+    "save": "Save",
+    "saveAll": "Save all",
+    "chooseFolder": "Save attachments to",
+    "saveHere": "Save here",
+    "noRights": "You can't add files to this folder. Choose another one.",
+    "progress": "Saving attachments",
+    "savedTo": "Saved to %{folder}"
   },
   "images": {
-    "blocked": "Remote images are blocked to protect your privacy.",
+    "blocked": "Images from the internet aren't loaded: they can tell the sender that you opened this message.",
     "load": "Load images",
-    "hide": "Hide images"
+    "hide": "Hide images",
+    "shown": "Images from the internet are loaded.",
+    "cspBlocked": "The portal's security settings block images from these sites:",
+    "cspAdmin": "A site can be allowed in Developer Tools → Javascript SDK, but it will then be able to run scripts on the portal and embed the portal in its own pages. Add only sites you fully trust.",
+    "cspRedirect": "%{site} is already allowed, but its images come from another address. The browser console (F12) shows which one.",
+    "cspOpenSettings": "Open settings"
   },
   "toast": {
-    "saved": "%{name} saved to the current folder",
-    "savedAll": "%{count} attachments saved to the current folder",
     "saveFailed": "Couldn't save %{name}",
     "saveFailedSome": "%{failed} of %{total} attachments couldn't be saved"
   },

@@ -18,17 +18,25 @@
   },
   "attachments": {
     "title": "附件（%{count}）",
-    "save": "保存到此文件夹",
-    "saveAll": "全部保存"
+    "save": "保存",
+    "saveAll": "全部保存",
+    "chooseFolder": "将附件保存到",
+    "saveHere": "保存到此处",
+    "noRights": "无法向此文件夹添加文件。请选择其他文件夹。",
+    "progress": "保存附件",
+    "savedTo": "已保存到“%{folder}”"
   },
   "images": {
-    "blocked": "为保护您的隐私，已阻止加载远程图片。",
+    "blocked": "未加载来自互联网的图片：发件人可能借此得知您已打开此邮件。",
     "load": "加载图片",
-    "hide": "隐藏图片"
+    "hide": "隐藏图片",
+    "shown": "已加载来自互联网的图片。",
+    "cspBlocked": "门户的安全设置阻止了来自以下网站的图片：",
+    "cspAdmin": "可以在“开发者工具 → Javascript SDK”中允许某个网站，但之后该网站将能够在门户上运行脚本，并将门户嵌入其自己的页面。请仅添加您完全信任的网站。",
+    "cspRedirect": "%{site} 已被允许，但其图片来自另一个地址。具体地址可在浏览器控制台（F12）中查看。",
+    "cspOpenSettings": "打开设置"
   },
   "toast": {
-    "saved": "已将 %{name} 保存到当前文件夹",
-    "savedAll": "已将 %{count} 个附件保存到当前文件夹",
     "saveFailed": "无法保存 %{name}",
     "saveFailedSome": "%{total} 个附件中有 %{failed} 个无法保存"
   },

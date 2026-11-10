@@ -18,17 +18,25 @@
   },
   "attachments": {
     "title": "Ekler (%{count})",
-    "save": "Bu klasöre kaydet",
-    "saveAll": "Tümünü kaydet"
+    "save": "Kaydet",
+    "saveAll": "Tümünü kaydet",
+    "chooseFolder": "Eklerin kaydedileceği yer",
+    "saveHere": "Buraya kaydet",
+    "noRights": "Bu klasöre dosya ekleyemezsiniz. Başka bir klasör seçin.",
+    "progress": "Eklerin kaydedilmesi",
+    "savedTo": "“%{folder}” klasörüne kaydedildi"
   },
   "images": {
-    "blocked": "Gizliliğinizi korumak için uzak görüntüler engellendi.",
+    "blocked": "İnternetten görüntüler yüklenmedi: bunlar, iletiyi açtığınızı gönderene bildirebilir.",
     "load": "Görüntüleri yükle",
-    "hide": "Görüntüleri gizle"
+    "hide": "Görüntüleri gizle",
+    "shown": "İnternetten görüntüler yüklendi.",
+    "cspBlocked": "Portalın güvenlik ayarları şu sitelerdeki görüntüleri engelliyor:",
+    "cspAdmin": "Bir siteye “Geliştirici Araçları → Javascript SDK'sı” bölümünden izin verilebilir, ancak bu durumda site portalda betik çalıştırabilir ve portalı kendi sayfalarına yerleştirebilir. Yalnızca tamamen güvendiğiniz siteleri ekleyin.",
+    "cspRedirect": "%{site} sitesine zaten izin verilmiş, ancak görüntüleri başka bir adresten geliyor. Hangi adres olduğunu tarayıcı konsolunda (F12) görebilirsiniz.",
+    "cspOpenSettings": "Ayarları aç"
   },
   "toast": {
-    "saved": "%{name} geçerli klasöre kaydedildi",
-    "savedAll": "Geçerli klasöre kaydedilen ek sayısı: %{count}",
     "saveFailed": "%{name} kaydedilemedi",
     "saveFailedSome": "Kaydedilemeyen ek sayısı: %{failed} / %{total}"
   },

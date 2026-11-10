@@ -18,17 +18,25 @@
   },
   "attachments": {
     "title": "Liitteet (%{count})",
-    "save": "Tallenna tähän kansioon",
-    "saveAll": "Tallenna kaikki"
+    "save": "Tallenna",
+    "saveAll": "Tallenna kaikki",
+    "chooseFolder": "Liitteiden tallennuskansio",
+    "saveHere": "Tallenna tähän",
+    "noRights": "Tähän kansioon ei voi lisätä tiedostoja. Valitse toinen kansio.",
+    "progress": "Liitteiden tallennus",
+    "savedTo": "Tallennettu kansioon %{folder}"
   },
   "images": {
-    "blocked": "Etäkuvat on estetty yksityisyytesi suojaamiseksi.",
+    "blocked": "Internetistä haettavia kuvia ei ole ladattu: niiden avulla lähettäjä voi saada tietää, että avasit viestin.",
     "load": "Lataa kuvat",
-    "hide": "Piilota kuvat"
+    "hide": "Piilota kuvat",
+    "shown": "Internetistä haettavat kuvat on ladattu.",
+    "cspBlocked": "Portaalin suojausasetukset estävät kuvat näiltä sivustoilta:",
+    "cspAdmin": "Sivuston voi sallia kohdassa ”Kehittäjän työkalut → Javascript SDK”, mutta sen jälkeen se voi suorittaa komentosarjoja portaalissa ja upottaa portaalin omille sivuilleen. Lisää vain sivustoja, joihin luotat täysin.",
+    "cspRedirect": "Sivusto %{site} on jo sallittu, mutta sen kuvat tulevat toisesta osoitteesta. Selaimen konsoli (F12) näyttää, mistä.",
+    "cspOpenSettings": "Avaa asetukset"
   },
   "toast": {
-    "saved": "%{name} tallennettiin nykyiseen kansioon",
-    "savedAll": "Nykyiseen kansioon tallennetut liitteet: %{count}",
     "saveFailed": "Tiedostoa %{name} ei voitu tallentaa",
     "saveFailedSome": "Tallentamatta jääneet liitteet: %{failed}/%{total}"
   },

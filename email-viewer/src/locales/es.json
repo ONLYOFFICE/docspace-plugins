@@ -18,17 +18,25 @@
   },
   "attachments": {
     "title": "Archivos adjuntos (%{count})",
-    "save": "Guardar en esta carpeta",
-    "saveAll": "Guardar todos"
+    "save": "Guardar",
+    "saveAll": "Guardar todos",
+    "chooseFolder": "Guardar archivos adjuntos en",
+    "saveHere": "Guardar aquí",
+    "noRights": "No puede añadir archivos a esta carpeta. Elija otra.",
+    "progress": "Guardado de archivos adjuntos",
+    "savedTo": "Guardado en «%{folder}»"
   },
   "images": {
-    "blocked": "Las imágenes remotas están bloqueadas para proteger su privacidad.",
+    "blocked": "Las imágenes de internet no se han cargado: podrían indicarle al remitente que ha abierto este mensaje.",
     "load": "Cargar imágenes",
-    "hide": "Ocultar imágenes"
+    "hide": "Ocultar imágenes",
+    "shown": "Las imágenes de internet se han cargado.",
+    "cspBlocked": "La configuración de seguridad del portal bloquea las imágenes de estos sitios:",
+    "cspAdmin": "Un sitio se puede permitir en «Herramientas de desarrollo → SDK de JavaScript», pero entonces podrá ejecutar scripts en el portal e insertar el portal en sus propias páginas. Añada solo sitios en los que confíe plenamente.",
+    "cspRedirect": "El sitio %{site} ya está permitido, pero sus imágenes vienen de otra dirección. La consola del navegador (F12) muestra cuál.",
+    "cspOpenSettings": "Abrir la configuración"
   },
   "toast": {
-    "saved": "%{name} se ha guardado en la carpeta actual",
-    "savedAll": "Archivos adjuntos guardados en la carpeta actual: %{count}",
     "saveFailed": "No se ha podido guardar %{name}",
     "saveFailedSome": "Archivos adjuntos no guardados: %{failed} de %{total}"
   },

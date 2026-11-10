@@ -18,17 +18,25 @@
   },
   "attachments": {
     "title": "Bijlagen (%{count})",
-    "save": "Opslaan in deze map",
-    "saveAll": "Alles opslaan"
+    "save": "Opslaan",
+    "saveAll": "Alles opslaan",
+    "chooseFolder": "Bijlagen opslaan in",
+    "saveHere": "Hier opslaan",
+    "noRights": "U kunt geen bestanden aan deze map toevoegen. Kies een andere map.",
+    "progress": "Bijlagen opslaan",
+    "savedTo": "Opgeslagen in ‘%{folder}’"
   },
   "images": {
-    "blocked": "Externe afbeeldingen worden geblokkeerd om uw privacy te beschermen.",
+    "blocked": "Afbeeldingen van internet zijn niet geladen: daarmee kan de afzender zien dat u dit bericht hebt geopend.",
     "load": "Afbeeldingen laden",
-    "hide": "Afbeeldingen verbergen"
+    "hide": "Afbeeldingen verbergen",
+    "shown": "Afbeeldingen van internet zijn geladen.",
+    "cspBlocked": "De beveiligingsinstellingen van de portal blokkeren afbeeldingen van deze sites:",
+    "cspAdmin": "Een site kan worden toegestaan in 'Developer Tools → Javascript SDK', maar kan dan scripts uitvoeren op de portal en de portal in eigen pagina's insluiten. Voeg alleen sites toe die u volledig vertrouwt.",
+    "cspRedirect": "De site %{site} is al toegestaan, maar de afbeeldingen komen van een ander adres. Welk adres, ziet u in de browserconsole (F12).",
+    "cspOpenSettings": "Instellingen openen"
   },
   "toast": {
-    "saved": "%{name} is opgeslagen in de huidige map",
-    "savedAll": "Bijlagen opgeslagen in de huidige map: %{count}",
     "saveFailed": "Kan %{name} niet opslaan",
     "saveFailedSome": "Bijlagen die niet konden worden opgeslagen: %{failed} van %{total}"
   },

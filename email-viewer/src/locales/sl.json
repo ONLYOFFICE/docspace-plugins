@@ -18,17 +18,25 @@
   },
   "attachments": {
     "title": "Priloge (%{count})",
-    "save": "Shrani v to mapo",
-    "saveAll": "Shrani vse"
+    "save": "Shrani",
+    "saveAll": "Shrani vse",
+    "chooseFolder": "Kam shraniti priloge",
+    "saveHere": "Shrani sem",
+    "noRights": "V to mapo ne morete dodajati datotek. Izberite drugo.",
+    "progress": "Shranjevanje prilog",
+    "savedTo": "Shranjeno v mapo »%{folder}«"
   },
   "images": {
-    "blocked": "Oddaljene slike so zaradi zaščite vaše zasebnosti blokirane.",
+    "blocked": "Slike iz interneta niso naložene: z njimi lahko pošiljatelj izve, da ste sporočilo odprli.",
     "load": "Naloži slike",
-    "hide": "Skrij slike"
+    "hide": "Skrij slike",
+    "shown": "Slike iz interneta so naložene.",
+    "cspBlocked": "Varnostne nastavitve portala blokirajo slike s teh spletnih mest:",
+    "cspAdmin": "Spletno mesto lahko dovolite v razdelku »Razvijalska orodja → Javascript SDK«, vendar bo nato lahko na portalu izvajalo skripte in portal vdelalo v svoje strani. Dodajajte samo spletna mesta, ki jim popolnoma zaupate.",
+    "cspRedirect": "Spletno mesto %{site} je že dovoljeno, vendar njegove slike prihajajo z drugega naslova. S katerega, je vidno v konzoli brskalnika (F12).",
+    "cspOpenSettings": "Odpri nastavitve"
   },
   "toast": {
-    "saved": "Datoteka %{name} je shranjena v trenutno mapo",
-    "savedAll": "Priloge, shranjene v trenutno mapo: %{count}",
     "saveFailed": "Datoteke %{name} ni bilo mogoče shraniti",
     "saveFailedSome": "Prilog ni bilo mogoče shraniti: %{failed} od %{total}"
   },

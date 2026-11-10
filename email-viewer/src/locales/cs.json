@@ -18,17 +18,25 @@
   },
   "attachments": {
     "title": "Přílohy (%{count})",
-    "save": "Uložit do této složky",
-    "saveAll": "Uložit vše"
+    "save": "Uložit",
+    "saveAll": "Uložit vše",
+    "chooseFolder": "Kam uložit přílohy",
+    "saveHere": "Uložit sem",
+    "noRights": "Do této složky nemůžete přidávat soubory. Vyberte jinou.",
+    "progress": "Ukládání příloh",
+    "savedTo": "Uloženo do složky „%{folder}“"
   },
   "images": {
-    "blocked": "Vzdálené obrázky jsou z důvodu ochrany soukromí blokovány.",
+    "blocked": "Obrázky z internetu nejsou načteny: odesílatel by podle nich mohl zjistit, že jste zprávu otevřeli.",
     "load": "Načíst obrázky",
-    "hide": "Skrýt obrázky"
+    "hide": "Skrýt obrázky",
+    "shown": "Obrázky z internetu jsou načteny.",
+    "cspBlocked": "Bezpečnostní nastavení portálu blokuje obrázky z těchto webů:",
+    "cspAdmin": "Web lze povolit v části „Nástroje pro vývojáře → Javascript SDK“, ale pak bude moci spouštět skripty na portálu a vkládat portál do svých stránek. Přidávejte jen weby, kterým plně důvěřujete.",
+    "cspRedirect": "Web %{site} je už povolen, ale jeho obrázky přicházejí z jiné adresy. Kterou, ukáže konzole prohlížeče (F12).",
+    "cspOpenSettings": "Otevřít nastavení"
   },
   "toast": {
-    "saved": "Soubor %{name} byl uložen do aktuální složky",
-    "savedAll": "Přílohy uložené do aktuální složky: %{count}",
     "saveFailed": "Soubor %{name} se nepodařilo uložit",
     "saveFailedSome": "Neuložené přílohy: %{failed} z %{total}"
   },

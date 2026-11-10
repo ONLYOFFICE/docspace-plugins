@@ -18,17 +18,25 @@
   },
   "attachments": {
     "title": "Pièces jointes (%{count})",
-    "save": "Enregistrer dans ce dossier",
-    "saveAll": "Tout enregistrer"
+    "save": "Enregistrer",
+    "saveAll": "Tout enregistrer",
+    "chooseFolder": "Enregistrer les pièces jointes dans",
+    "saveHere": "Enregistrer ici",
+    "noRights": "Vous ne pouvez pas ajouter de fichiers à ce dossier. Choisissez-en un autre.",
+    "progress": "Enregistrement des pièces jointes",
+    "savedTo": "Enregistré dans « %{folder} »"
   },
   "images": {
-    "blocked": "Les images distantes sont bloquées pour protéger votre vie privée.",
+    "blocked": "Les images provenant d'Internet ne sont pas chargées : elles pourraient indiquer à l'expéditeur que vous avez ouvert ce message.",
     "load": "Charger les images",
-    "hide": "Masquer les images"
+    "hide": "Masquer les images",
+    "shown": "Les images provenant d'Internet sont chargées.",
+    "cspBlocked": "Les paramètres de sécurité du portail bloquent les images de ces sites :",
+    "cspAdmin": "Un site peut être autorisé dans « Outils de développement → SDK Javascript », mais il pourra alors exécuter des scripts sur le portail et intégrer le portail dans ses propres pages. N'ajoutez que des sites auxquels vous faites entièrement confiance.",
+    "cspRedirect": "Le site %{site} est déjà autorisé, mais ses images proviennent d'une autre adresse. La console du navigateur (F12) indique laquelle.",
+    "cspOpenSettings": "Ouvrir les paramètres"
   },
   "toast": {
-    "saved": "Le fichier %{name} a été enregistré dans le dossier actuel",
-    "savedAll": "Pièces jointes enregistrées dans le dossier actuel : %{count}",
     "saveFailed": "Impossible d'enregistrer %{name}",
     "saveFailedSome": "Pièces jointes non enregistrées : %{failed} sur %{total}"
   },

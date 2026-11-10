@@ -18,17 +18,25 @@
   },
   "attachments": {
     "title": "Załączniki (%{count})",
-    "save": "Zapisz w tym folderze",
-    "saveAll": "Zapisz wszystkie"
+    "save": "Zapisz",
+    "saveAll": "Zapisz wszystkie",
+    "chooseFolder": "Gdzie zapisać załączniki",
+    "saveHere": "Zapisz tutaj",
+    "noRights": "Nie można dodawać plików do tego folderu. Wybierz inny.",
+    "progress": "Zapisywanie załączników",
+    "savedTo": "Zapisano w folderze „%{folder}”"
   },
   "images": {
-    "blocked": "Obrazy zewnętrzne są zablokowane w celu ochrony Twojej prywatności.",
+    "blocked": "Obrazy z internetu nie zostały wczytane: dzięki nim nadawca może się dowiedzieć, że otworzono tę wiadomość.",
     "load": "Wczytaj obrazy",
-    "hide": "Ukryj obrazy"
+    "hide": "Ukryj obrazy",
+    "shown": "Obrazy z internetu zostały wczytane.",
+    "cspBlocked": "Ustawienia bezpieczeństwa portalu blokują obrazy z tych witryn:",
+    "cspAdmin": "Witrynę można dopuścić w sekcji „Narzędzia programistyczne → SDK Javascript”, ale wtedy będzie mogła uruchamiać skrypty w portalu i osadzać portal na swoich stronach. Dodawaj tylko witryny, którym w pełni ufasz.",
+    "cspRedirect": "Witryna %{site} jest już dozwolona, ale jej obrazy pochodzą z innego adresu. Ten adres można zobaczyć w konsoli przeglądarki (F12).",
+    "cspOpenSettings": "Otwórz ustawienia"
   },
   "toast": {
-    "saved": "Zapisano %{name} w bieżącym folderze",
-    "savedAll": "Zapisano załączniki w bieżącym folderze: %{count}",
     "saveFailed": "Nie udało się zapisać %{name}",
     "saveFailedSome": "Nie udało się zapisać załączników: %{failed} z %{total}"
   },

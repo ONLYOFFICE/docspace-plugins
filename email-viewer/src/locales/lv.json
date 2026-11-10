@@ -18,17 +18,25 @@
   },
   "attachments": {
     "title": "Pielikumi (%{count})",
-    "save": "Saglabāt šajā mapē",
-    "saveAll": "Saglabāt visus"
+    "save": "Saglabāt",
+    "saveAll": "Saglabāt visus",
+    "chooseFolder": "Kur saglabāt pielikumus",
+    "saveHere": "Saglabāt šeit",
+    "noRights": "Šajā mapē nevar pievienot failus. Izvēlieties citu.",
+    "progress": "Pielikumu saglabāšana",
+    "savedTo": "Saglabāts mapē “%{folder}”"
   },
   "images": {
-    "blocked": "Attālie attēli ir bloķēti, lai aizsargātu jūsu privātumu.",
+    "blocked": "Attēli no interneta nav ielādēti: pēc tiem sūtītājs var uzzināt, ka atvērāt šo ziņojumu.",
     "load": "Ielādēt attēlus",
-    "hide": "Paslēpt attēlus"
+    "hide": "Paslēpt attēlus",
+    "shown": "Attēli no interneta ir ielādēti.",
+    "cspBlocked": "Portāla drošības iestatījumi bloķē attēlus no šīm vietnēm:",
+    "cspAdmin": "Vietni var atļaut sadaļā “Izstrādātāja rīki → Javascript SDK”, taču tad tā varēs palaist skriptus portālā un iegult portālu savās lapās. Pievienojiet tikai vietnes, kurām pilnībā uzticaties.",
+    "cspRedirect": "Vietne %{site} jau ir atļauta, taču tās attēli tiek ielādēti no citas adreses. To var redzēt pārlūkprogrammas konsolē (F12).",
+    "cspOpenSettings": "Atvērt iestatījumus"
   },
   "toast": {
-    "saved": "Fails %{name} saglabāts pašreizējā mapē",
-    "savedAll": "Pašreizējā mapē saglabātie pielikumi: %{count}",
     "saveFailed": "Neizdevās saglabāt %{name}",
     "saveFailedSome": "Neizdevās saglabāt pielikumus: %{failed} no %{total}"
   },
