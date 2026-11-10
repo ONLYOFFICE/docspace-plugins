@@ -46,5 +46,10 @@
     "loadFailed": "Súbor sa nepodarilo načítať.",
     "parseFailed": "Túto správu sa nepodarilo prečítať. Súbor môže byť poškodený alebo nejde o e-mail.",
     "noFile": "Nie je vybraný žiadny súbor."
+  },
+  "viewer": {
+    "close": "Zavrieť",
+    "previous": "Predchádzajúca správa",
+    "next": "Ďalšia správa"
   }
 }

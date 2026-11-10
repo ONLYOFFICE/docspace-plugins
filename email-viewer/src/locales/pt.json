@@ -46,5 +46,10 @@
     "loadFailed": "Não foi possível carregar o ficheiro.",
     "parseFailed": "Não foi possível ler esta mensagem. O ficheiro pode estar danificado ou não ser um e-mail.",
     "noFile": "Nenhum ficheiro selecionado."
+  },
+  "viewer": {
+    "close": "Fechar",
+    "previous": "Mensagem anterior",
+    "next": "Mensagem seguinte"
   }
 }

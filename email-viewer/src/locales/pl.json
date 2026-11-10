@@ -46,5 +46,10 @@
     "loadFailed": "Nie udało się wczytać pliku.",
     "parseFailed": "Nie udało się odczytać tej wiadomości. Plik może być uszkodzony lub nie jest wiadomością e-mail.",
     "noFile": "Nie wybrano pliku."
+  },
+  "viewer": {
+    "close": "Zamknij",
+    "previous": "Poprzednia wiadomość",
+    "next": "Następna wiadomość"
   }
 }

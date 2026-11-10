@@ -46,5 +46,10 @@
     "loadFailed": "Tiedostoa ei voitu ladata.",
     "parseFailed": "Tätä viestiä ei voitu lukea. Tiedosto voi olla vioittunut, tai se ei ole sähköpostiviesti.",
     "noFile": "Tiedostoa ei ole valittu."
+  },
+  "viewer": {
+    "close": "Sulje",
+    "previous": "Edellinen viesti",
+    "next": "Seuraava viesti"
   }
 }

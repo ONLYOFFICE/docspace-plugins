@@ -45,3 +45,28 @@ export const PaperclipIcon = () => (
     />
   </svg>
 );
+
+export const BackIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none">
+    <path
+      d="M14 8H2.5M7 3 2 8l5 5"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+/** Points left; the next-message button mirrors it with CSS. */
+export const ChevronIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none">
+    <path
+      d="M10 3 5 8l5 5"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);

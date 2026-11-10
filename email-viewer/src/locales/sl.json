@@ -46,5 +46,10 @@
     "loadFailed": "Datoteke ni bilo mogoče naložiti.",
     "parseFailed": "Tega sporočila ni bilo mogoče prebrati. Datoteka je morda poškodovana ali ni e-poštno sporočilo.",
     "noFile": "Nobena datoteka ni izbrana."
+  },
+  "viewer": {
+    "close": "Zapri",
+    "previous": "Prejšnje sporočilo",
+    "next": "Naslednje sporočilo"
   }
 }

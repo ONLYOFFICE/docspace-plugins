@@ -19,6 +19,7 @@ import { useCurrentFile } from "@onlyoffice/docspace-plugin-sdk/react";
 
 import { i18n } from "../locales";
 import { MessageView } from "./MessageView";
+import { MobileBar } from "./MobileBar";
 import { StateLoading, StateMessage } from "./StateMessage";
 import { useEmail, type EmailState } from "./useEmail";
 import { useStopViewerSwipe } from "./useStopViewerSwipe";
@@ -39,6 +40,7 @@ export function EmailPreview() {
       // The viewer takes the arrows, Esc and Delete on document; keep them for the message.
       onKeyDown={(e) => e.stopPropagation()}
     >
+      <MobileBar title={file?.title ?? ""} />
       <div className={styles.card}>{renderState(state)}</div>
     </div>
   );

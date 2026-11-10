@@ -46,5 +46,10 @@
     "loadFailed": "Kan het bestand niet laden.",
     "parseFailed": "Kan dit bericht niet lezen. Het bestand is mogelijk beschadigd of is geen e-mail.",
     "noFile": "Er is geen bestand geselecteerd."
+  },
+  "viewer": {
+    "close": "Sluiten",
+    "previous": "Vorig bericht",
+    "next": "Volgend bericht"
   }
 }

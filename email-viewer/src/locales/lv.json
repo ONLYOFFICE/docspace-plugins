@@ -46,5 +46,10 @@
     "loadFailed": "Neizdevās ielādēt failu.",
     "parseFailed": "Neizdevās nolasīt šo ziņojumu. Fails var būt bojāts vai nav e-pasta ziņojums.",
     "noFile": "Nav atlasīts neviens fails."
+  },
+  "viewer": {
+    "close": "Aizvērt",
+    "previous": "Iepriekšējais ziņojums",
+    "next": "Nākamais ziņojums"
   }
 }

@@ -46,5 +46,10 @@
     "loadFailed": "Dosya yüklenemedi.",
     "parseFailed": "Bu ileti okunamadı. Dosya bozuk olabilir veya bir e-posta olmayabilir.",
     "noFile": "Hiçbir dosya seçilmedi."
+  },
+  "viewer": {
+    "close": "Kapat",
+    "previous": "Önceki ileti",
+    "next": "Sonraki ileti"
   }
 }

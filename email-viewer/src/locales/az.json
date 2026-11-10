@@ -46,5 +46,10 @@
     "loadFailed": "Fayl yüklənə bilmədi.",
     "parseFailed": "Bu məktubu oxumaq mümkün olmadı. Fayl zədələnmiş ola bilər və ya e-poçt məktubu deyil.",
     "noFile": "Fayl seçilməyib."
+  },
+  "viewer": {
+    "close": "Bağla",
+    "previous": "Əvvəlki məktub",
+    "next": "Növbəti məktub"
   }
 }

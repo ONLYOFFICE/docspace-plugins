@@ -75,16 +75,32 @@
   color: var(--accent-main, var(--color-scheme-main-accent, #4781d1));
 }
 
-/* The viewer's mobile chrome, which it picks for a phone-wide screen (600px, the kit's
-   mobile breakpoint) and for a touch screen without a mouse: a 53px header and no
-   paging strips. The message then takes the whole width, and every block gets denser.
-   headers.module.css repeats the condition for the header block. */
+/* Drawn only in the viewer's mobile mode, below. */
+.mobileBar {
+  display: none;
+}
+
+/* The viewer's mobile mode, which it picks for a phone-wide screen (600px, the kit's
+   mobile breakpoint) and for a touch screen without a mouse: no header and no paging
+   strips around a plugin, so MobileBar takes the header's place and height above the
+   message, and every block gets denser. headers.module.css repeats the condition. */
 @media (max-width: 600px), (pointer: coarse) {
   .root {
-    padding: var(--mobile-details-height, 53px) 0 0;
+    padding: 0;
+    flex-direction: column;
+  }
+
+  .mobileBar {
+    flex: 0 0 var(--mobile-details-height, 53px);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 4px;
+    color: var(--mobile-details-text-color, #fff);
   }
 
   .card {
+    flex: 1 1 auto;
     max-width: none;
     border-radius: 0;
   }
@@ -93,4 +109,47 @@
     gap: 10px;
     padding: 12px;
   }
+}
+
+.barTitle {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* 44px: the smallest target a finger hits reliably. */
+.barButton {
+  flex: 0 0 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.barButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+.barButton:active {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.barButton:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: -2px;
+}
+
+.mirrored svg {
+  transform: scaleX(-1);
 }

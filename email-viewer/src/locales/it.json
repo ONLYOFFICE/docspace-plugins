@@ -46,5 +46,10 @@
     "loadFailed": "Impossibile caricare il file.",
     "parseFailed": "Impossibile leggere questo messaggio. Il file potrebbe essere danneggiato o non essere un'email.",
     "noFile": "Nessun file selezionato."
+  },
+  "viewer": {
+    "close": "Chiudi",
+    "previous": "Messaggio precedente",
+    "next": "Messaggio successivo"
   }
 }

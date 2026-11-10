@@ -1,6 +1,6 @@
 ## Overview
 
-Open `.eml` and `.msg` email files right in ONLYOFFICE Apps. A click on a message in the file list opens it in the viewer: subject, sender, recipients and date, the message body, and the list of attachments. Any attachment can be saved into the folder the message is in, one at a time or all at once. Everything is parsed in the browser; no external service is called and the message never leaves the portal.
+Open `.eml` and `.msg` email files right in ONLYOFFICE Apps. A click on a message in the file list opens it in the viewer: subject, sender, recipients and date, the message body, and the list of attachments. Any attachment can be saved, one at a time or all at once, into a folder you pick. Everything is parsed in the browser; no external service is called and the message never leaves the portal.
 
 Supported formats:
 
@@ -14,17 +14,21 @@ To start working with the plugin, it is not needed to change the default setting
 ## How to use
 
 - Upload `.eml` or `.msg` files to a room or to My documents.
-- Click a message in the file list. It opens in the portal's media viewer; the arrow keys or the side strips page through the other messages in the same folder.
-- Attachments are listed under the headers. Click **Save to this folder** next to one of them, or **Save all**, to copy them into the current folder next to the message. Images that are shown inside the body are not listed as attachments.
-- Remote images in HTML messages are blocked by default, because loading them tells the sender the message was opened. Click **Load images** to show them for the current message.
+- Click a message in the file list. It opens in the portal's media viewer; the arrow keys or the side strips page through the other messages in the same folder. On a phone, the bar above the message has the back button and the arrows instead.
+- Attachments are listed under the headers. Click **Save** next to one of them, or **Save all**, and pick a folder in the portal's folder selector; it opens on the message's folder. The progress is shown under the attachments. Images that are shown inside the body are not listed as attachments.
+- Images from the internet in HTML messages are not loaded at first, because loading them tells the sender the message was opened. Click **Load images** to show them for the current message.
+- Subject, addresses and text can be selected and copied, on touch screens too.
 
-The HTML body is sanitised and rendered in an isolated frame: scripts, forms and embedded objects are removed, and links open in a new tab.
+The HTML body is sanitised and rendered in an isolated frame: scripts, forms and embedded objects are removed, and links open in a new tab. On a portal that serves the `/static/html-frame/` page, the frame is that page, with a policy of its own: images, styles and fonts from any site load, whatever the portal's Content Security Policy allows.
 
 ## Limitations
 
 - Outlook messages whose body is stored only as RTF are shown as plain text. The HTML is not extracted from the RTF wrapper.
 - Encrypted or signed (S/MIME) messages are shown as they are stored: the signature is listed as an attachment and an encrypted body is not decrypted.
 - Calendar invitations are shown as regular messages; the `.ics` part is listed as an attachment.
+- Attachments cannot be saved into form-filling rooms (the Forms section): those rooms take forms only.
+- On a portal without the `/static/html-frame/` page, images from sites its Content Security Policy does not list stay blocked after **Load images**. The viewer names those sites; an administrator also sees where they are allowed and what allowing them costs.
+- On phones and tablets the viewer's swipes (to the next message, down to close) do not work over the message, so that text can be selected; the bar above the message does both. The plugin cannot see the viewer's list of messages, so the bar's arrows stay on screen at its ends and do nothing there.
 
 ## User feedback and support
 

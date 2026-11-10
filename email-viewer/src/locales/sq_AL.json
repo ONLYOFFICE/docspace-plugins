@@ -46,5 +46,10 @@
     "loadFailed": "Skedari nuk mund të ngarkohej.",
     "parseFailed": "Ky mesazh nuk mund të lexohej. Skedari mund të jetë i dëmtuar ose nuk është email.",
     "noFile": "Nuk është zgjedhur asnjë skedar."
+  },
+  "viewer": {
+    "close": "Mbyll",
+    "previous": "Mesazhi i mëparshëm",
+    "next": "Mesazhi tjetër"
   }
 }

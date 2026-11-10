@@ -46,5 +46,10 @@
     "loadFailed": "Không thể tải tệp.",
     "parseFailed": "Không thể đọc thư này. Tệp có thể bị hỏng hoặc không phải là email.",
     "noFile": "Chưa chọn tệp nào."
+  },
+  "viewer": {
+    "close": "Đóng",
+    "previous": "Thư trước",
+    "next": "Thư tiếp theo"
   }
 }

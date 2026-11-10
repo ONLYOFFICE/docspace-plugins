@@ -46,5 +46,10 @@
     "loadFailed": "Die Datei konnte nicht geladen werden.",
     "parseFailed": "Diese Nachricht konnte nicht gelesen werden. Die Datei ist möglicherweise beschädigt oder keine E-Mail.",
     "noFile": "Keine Datei ausgewählt."
+  },
+  "viewer": {
+    "close": "Schließen",
+    "previous": "Vorherige Nachricht",
+    "next": "Nächste Nachricht"
   }
 }

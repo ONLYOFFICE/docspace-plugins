@@ -46,5 +46,10 @@
     "loadFailed": "Couldn't load the file.",
     "parseFailed": "Couldn't read this message. The file may be damaged or not an email.",
     "noFile": "No file is selected."
+  },
+  "viewer": {
+    "close": "Close",
+    "previous": "Previous message",
+    "next": "Next message"
   }
 }

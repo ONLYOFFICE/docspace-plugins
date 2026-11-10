@@ -46,5 +46,10 @@
     "loadFailed": "Nije moguće učitati datoteku.",
     "parseFailed": "Nije moguće pročitati ovu poruku. Datoteka je možda oštećena ili nije imejl.",
     "noFile": "Nijedna datoteka nije izabrana."
+  },
+  "viewer": {
+    "close": "Zatvori",
+    "previous": "Prethodna poruka",
+    "next": "Sledeća poruka"
   }
 }

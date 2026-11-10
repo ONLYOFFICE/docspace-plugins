@@ -46,5 +46,10 @@
     "loadFailed": "Nu s-a putut încărca fișierul.",
     "parseFailed": "Nu s-a putut citi acest mesaj. Fișierul poate fi deteriorat sau nu este un e-mail.",
     "noFile": "Niciun fișier selectat."
+  },
+  "viewer": {
+    "close": "Închide",
+    "previous": "Mesajul anterior",
+    "next": "Mesajul următor"
   }
 }
