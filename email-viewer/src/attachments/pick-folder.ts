@@ -21,7 +21,26 @@ import { i18n } from "../locales";
 
 export type Folder = { id: number | string; title: string };
 
-type FolderInfo = { title?: string; security?: { Create?: boolean } };
+type FolderInfo = {
+  title?: string;
+  roomType?: number;
+  parentRoomType?: number;
+  security?: { Create?: boolean };
+};
+
+/**
+ * Form-filling rooms, the ones the Forms section lists. They take forms, not arbitrary
+ * files, yet report Create: true, so they are refused by their type. They live under
+ * Rooms (rootFolderType 14), not under the Forms root, so the section's own type never
+ * shows on them: a room carries roomType (RoomType.FillingFormsRoom), a folder inside it
+ * parentRoomType (FolderType.FillingFormsRoom). The Forms root itself needs nothing - the
+ * selector marks it as a rooms list, which the gate below already disables.
+ */
+const FORM_ROOM_TYPE = 1;
+const FORM_ROOM_FOLDER_TYPE = 15;
+
+const isFormRoom = (folder: FolderInfo): boolean =>
+  folder.roomType === FORM_ROOM_TYPE || folder.parentRoomType === FORM_ROOM_FOLDER_TYPE;
 
 /**
  * The portal's own folder picker, opened on `startFolderId`; resolves with the folder,
@@ -69,7 +88,7 @@ export function pickFolder(
           let title = folderTitle;
           try {
             const folder = await api.get<FolderInfo>(`/files/folder/${selectedItemId}`);
-            if (folder?.security?.Create !== true) {
+            if (folder?.security?.Create !== true || isFormRoom(folder)) {
               actions.showToast({ type: ToastType.warning, title: i18n.t("attachments.noRights") });
               return;
             }
