@@ -21,8 +21,8 @@ import styles from "./viewer.module.css";
 
 // The viewer pages through the folder on Left and Right pressed anywhere in the document, and
 // a plugin has no other way to ask it to: the playlist is the portal's, not the plugin's.
-// ponytail: relies on the viewer's own key handler, not on the SDK - switch to an SDK
-// paging action once there is one.
+// It relies on the viewer's own key handler, not on the SDK: switch to an SDK paging
+// action once there is one.
 const page = (key: "ArrowLeft" | "ArrowRight") =>
   document.dispatchEvent(new KeyboardEvent("keydown", { key, code: key, bubbles: true }));
 

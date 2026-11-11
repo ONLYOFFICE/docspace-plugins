@@ -130,8 +130,8 @@ export async function save(api: Api, file: HtmlFile, overwrite = false): Promise
   changed();
   try {
     if (!overwrite) {
-      // ponytail: a check, then a write - a save landing between the two is still
-      // overwritten; the update endpoint takes no expected version to close that gap.
+      // A known gap: a check, then a write - a save landing between the two is still
+      // overwritten; the update endpoint takes no expected version to close it.
       const current = await api.get<{ version: number }>(`/files/file/${file.fileId}`);
       if (current.version !== edit.base) {
         edit.conflict = true;
