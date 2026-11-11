@@ -10,5 +10,5 @@
 - On phones and tablets the viewer fills the screen, with a close button and arrows to the previous and next file.
 - The source view, with syntax highlighting, line numbers and copying the HTML to the clipboard.
 - Editing the source in the code view, saved as a new version of the file, with a live preview of unsaved changes. A save stops and asks when someone else has saved the file in the meantime, and the file keeps its line breaks.
-- Images from other websites load only from sites the portal's security settings allow, and the preview says so.
+- Images, styles and fonts from other websites load: the portal shows the preview on its html-frame page, which has a security policy of its own. On a portal without that page they load only from sites the portal's security settings allow, and the preview says so.
 - The interface and the description in all languages ONLYOFFICE Apps supports.

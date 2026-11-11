@@ -26,11 +26,12 @@ import DOMPurify from "dompurify";
  * 2. The iframe is sandboxed by the component (no scripts, no same-origin), so
  *    even a sanitiser miss cannot touch the portal's DOM or cookies.
  * 3. A CSP `<meta>` inside the document turns off everything but images, fonts,
- *    stylesheets and media. Those it leaves to the portal's own policy, which a
- *    srcdoc document inherits and a meta tag can only narrow: by default it admits
- *    only the portal itself and `data:` URIs, and the sites an administrator adds in
- *    Developer tools - JavaScript SDK load too. A narrower list here would refuse
- *    the very sites the administrator chose to trust.
+ *    stylesheets and media. Those it leaves to the policy the document inherits and
+ *    a meta tag can only narrow. On the portal's html-frame page that policy admits
+ *    them from any site. In a plain srcdoc frame it is the portal's own: by default
+ *    only the portal itself and `data:` URIs, plus the sites an administrator adds in
+ *    Developer tools - JavaScript SDK. A narrower list here would refuse the very
+ *    sites the administrator chose to trust.
  *
  * Unlike a message body, a template is shown whole: the attributes of `<html>` and
  * `<body>` survive (a template's background is often `bgcolor` on `<body>`), and the

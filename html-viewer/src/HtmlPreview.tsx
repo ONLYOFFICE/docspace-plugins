@@ -103,6 +103,8 @@ const isSaveKey = (e: KeyboardEvent) =>
   !e.shiftKey &&
   (/^[a-z]$/i.test(e.key) ? e.key.toLowerCase() === "s" : e.code === "KeyS");
 
+const FRAME_ID = "html-viewer-frame";
+
 export function HtmlPreview() {
   const file = useCurrentFile();
   const [state, reload] = useHtmlFile(file?.id);
@@ -267,6 +269,7 @@ function PageView({
   onDevice: (device: Device) => void;
 }) {
   const api = usePluginAPI();
+  const { showHtmlInFrame } = usePluginActions();
   useEdits();
   // A fresh read may be newer than what this viewer last saw; an older one is ignored.
   useEffect(() => track(file), [file]);
@@ -318,6 +321,16 @@ function PageView({
     }
   }, [view, text]);
   const preview = view === "preview" && built !== null;
+
+  // A portal with the html-frame page takes the frame over and shows the page there,
+  // under the page's own policy, so a template's images, styles and fonts load from
+  // any site. A portal without it has no such action: the page goes into srcdoc and
+  // lives under the portal's policy.
+  const onPage = typeof showHtmlInFrame === "function";
+  useEffect(() => {
+    if (onPage && preview && built)
+      showHtmlInFrame({ frameId: FRAME_ID, html: built.html, title: t("body.title") });
+  }, [onPage, showHtmlInFrame, preview, built]);
   const chromeless = useChromeless();
 
   // A device is offered only where its frame fits the card. One that does not is hidden
@@ -409,7 +422,7 @@ function PageView({
         </div>
       )}
 
-      {preview && built?.remote && (
+      {preview && built?.remote && !onPage && (
         <div id="html-viewer-remote" className={styles.notice}>
           {icons.shield}
           <span>{t("images.blocked")}</span>
@@ -424,10 +437,10 @@ function PageView({
         >
           <div className={styles.device} style={{ width: size.width, height: size.height }}>
             <iframe
-              id="html-viewer-frame"
+              id={FRAME_ID}
               title={t("body.title")}
-              sandbox="allow-popups allow-popups-to-escape-sandbox"
-              srcDoc={built?.html}
+              sandbox={onPage ? undefined : "allow-popups allow-popups-to-escape-sandbox"}
+              srcDoc={onPage ? undefined : built?.html}
             />
           </div>
         </div>
