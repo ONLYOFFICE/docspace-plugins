@@ -102,7 +102,7 @@ const withHttps = (root: Element): void => {
     }
     const style = el.getAttribute("style");
     if (style) el.setAttribute("style", style.replace(CSS_PROTOCOL_RELATIVE, "$1https://"));
-    if (el.tagName === "STYLE")
+    if (el.localName === "style")
       el.textContent = (el.textContent ?? "").replace(CSS_PROTOCOL_RELATIVE, "$1https://");
   }
 };
