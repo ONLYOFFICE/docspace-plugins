@@ -107,6 +107,18 @@ describe("parseEmail (.eml)", () => {
     expect(email.attachments).toEqual([]);
   });
 
+  it("opens a message whose body has a malformed cid: reference", async () => {
+    const html = [
+      "From: a@example.com",
+      "Subject: hi",
+      "Content-Type: text/html; charset=utf-8",
+      "",
+      '<p>Hi</p><img src="cid:%zz">',
+    ].join("\r\n");
+    const email = await parseEmail(toBuffer(html));
+    expect(email.html).toContain("cid:%zz");
+  });
+
   it("rejects a compound file that is not a message", async () => {
     const ole = new Uint8Array(1024);
     ole.set([0xd0, 0xcf, 0x11, 0xe0, 0xa1, 0xb1, 0x1a, 0xe1]);

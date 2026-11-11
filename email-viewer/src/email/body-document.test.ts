@@ -57,6 +57,12 @@ describe("buildHtmlDocument", () => {
     expect(doc).toContain('alt="x"');
   });
 
+  it("drops a cid with a malformed escape instead of failing the message", () => {
+    const doc = buildHtmlDocument('<img src="cid:%zz" alt="y">', [png], { allowRemote: false });
+    expect(doc).not.toContain("cid:%zz");
+    expect(doc).toContain('alt="y"');
+  });
+
   it("blocks remote images through CSP unless allowed", () => {
     const html = '<img src="https://t.example/pixel.gif">';
     const blocked = buildHtmlDocument(html, [], { allowRemote: false });

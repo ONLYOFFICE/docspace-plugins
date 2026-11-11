@@ -49,7 +49,3 @@ export type ParsedEmail = {
 };
 
 export const SUPPORTED_EXTENSIONS = [".eml", ".msg"] as const;
-export type SupportedExtension = (typeof SUPPORTED_EXTENSIONS)[number];
-
-export const isSupportedExtension = (ext: string): ext is SupportedExtension =>
-  (SUPPORTED_EXTENSIONS as readonly string[]).includes(ext.toLowerCase());

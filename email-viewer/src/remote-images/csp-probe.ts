@@ -33,8 +33,8 @@ export type CspBlock = {
 
 /**
  * Does the img-src of `policy` (or default-src, when there is no img-src) list `origin`?
- * ponytail: matches what an administrator adds - an exact origin, a bare host or a
- * `*.domain` wildcard - not every CSP source form (paths, ports, `https:`).
+ * Deliberately partial: it matches what an administrator adds - an exact origin, a bare
+ * host or a `*.domain` wildcard - not every CSP source form (paths, ports, `https:`).
  */
 export function isListedInPolicy(policy: string, origin: string): boolean {
   const directives = policy.split(";").map((d) => d.trim().split(/\s+/));

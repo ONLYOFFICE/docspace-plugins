@@ -18,6 +18,7 @@ import PostalMime, { type Address, type Attachment } from "postal-mime";
 
 import type { EmailAddress, EmailAttachment, ParsedEmail } from "./types";
 import { safeFileName } from "./format";
+import { contentIdKey } from "./content-id";
 
 /** postal-mime returns groups (`undisclosed-recipients: ;`) as nested lists; flatten them. */
 const flattenAddresses = (list: Address[] | Address | undefined): EmailAddress[] => {
@@ -52,7 +53,7 @@ const referencedContentIds = (html: string | null): Set<string> => {
   if (!html) return ids;
   const re = /cid:([^"'\s)>]+)/gi;
   let match: RegExpExecArray | null;
-  while ((match = re.exec(html)) !== null) ids.add(decodeURIComponent(match[1]).toLowerCase());
+  while ((match = re.exec(html)) !== null) ids.add(contentIdKey(match[1]));
   return ids;
 };
 

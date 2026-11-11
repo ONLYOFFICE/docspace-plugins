@@ -18,6 +18,7 @@ import DOMPurify from "dompurify";
 
 import type { EmailAttachment } from "./types";
 import { toBase64 } from "./format";
+import { contentIdKey } from "./content-id";
 
 /**
  * Turns the HTML body of a message into a complete document for a sandboxed
@@ -48,7 +49,7 @@ const findByContentId = (
   attachments: EmailAttachment[],
   cid: string,
 ): EmailAttachment | undefined => {
-  const wanted = decodeURIComponent(cid).toLowerCase();
+  const wanted = contentIdKey(cid);
   return attachments.find((a) => a.contentId !== null && a.contentId.toLowerCase() === wanted);
 };
 

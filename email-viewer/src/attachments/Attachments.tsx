@@ -50,9 +50,10 @@ export function Attachments({
               {i18n.t("attachments.title", { count: attachments.length })}
             </Text>
           </span>
-          {attachments.map((a) => (
+          {attachments.map((a, index) => (
             <AttachmentChip
-              key={a.name + a.size}
+              // Two signature images can share a name and a size.
+              key={`${index}-${a.name}-${a.size}`}
               attachment={a}
               disabled={busy}
               onSave={() => void save([a])}
