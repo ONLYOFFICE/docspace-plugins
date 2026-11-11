@@ -70,9 +70,19 @@ const changed = (): void => {
   listeners.forEach((listener) => listener());
 };
 
-/** The file's edit, or one made from what was just read when there is none yet. */
-export const editOf = (file: HtmlFile): Edit =>
-  edits.get(String(file.fileId)) ?? { saved: file.source, version: file.version };
+/**
+ * The file's edit, or one made from what was just read when there is none yet. A read
+ * newer than the edit - a version restored or saved elsewhere since this viewer's own
+ * save - shows at once: track() takes it in only after the first paint, and the preview
+ * would get the older text first and the newer one a moment later.
+ */
+export const editOf = (file: HtmlFile): Edit => {
+  const edit = edits.get(String(file.fileId));
+  if (!edit) return { saved: file.source, version: file.version };
+  return file.version > edit.version
+    ? { ...edit, saved: file.source, version: file.version }
+    : edit;
+};
 
 /** Takes in a fresh read of the file, unless a save of this viewer's is newer than it. */
 export function track(file: HtmlFile): void {
