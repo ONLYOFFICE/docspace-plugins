@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "Pagina HTML",
+    "previous": "File precedente",
+    "next": "File successivo"
+  },
+  "menu": {
+    "preview": "Anteprima HTML"
+  },
+  "view": {
+    "preview": "Anteprima",
+    "code": "Codice",
+    "label": "Visualizzazione"
+  },
+  "device": {
+    "label": "Larghezza dello schermo",
+    "desktop": "Desktop",
+    "tablet": "Tablet",
+    "mobile": "Smartphone"
+  },
+  "copy": {
+    "label": "Copia HTML",
+    "done": "Copiato",
+    "failed": "Impossibile copiare"
+  },
+  "close": "Chiudi",
+  "images": {
+    "blocked": "Le immagini di altri siti web vengono mostrate solo se le impostazioni di sicurezza del portale consentono quei siti."
+  },
+  "body": {
+    "title": "Anteprima della pagina"
+  },
+  "state": {
+    "loading": "Caricamento del file…",
+    "empty": "Questo file è vuoto.",
+    "loadFailed": "Impossibile caricare il file.",
+    "noFile": "Nessun file selezionato."
+  },
+  "edit": {
+    "label": "Codice sorgente HTML",
+    "save": "Salva",
+    "saving": "Salvataggio…",
+    "saved": "Salvato",
+    "saveFailed": "Impossibile salvare",
+    "discard": "Annulla le modifiche",
+    "unsaved": "Hai delle modifiche non salvate.",
+    "closeAnyway": "Chiudi senza salvare",
+    "conflict": "Il file è cambiato da quando hai iniziato a modificarlo.",
+    "overwrite": "Sovrascrivi",
+    "discardConfirm": "Annullare tutte le modifiche non salvate di questo file?",
+    "discardButton": "Annulla",
+    "keep": "Mantieni"
+  }
+}

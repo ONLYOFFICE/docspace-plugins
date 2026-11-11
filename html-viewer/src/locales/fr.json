@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "Page HTML",
+    "previous": "Fichier précédent",
+    "next": "Fichier suivant"
+  },
+  "menu": {
+    "preview": "Aperçu HTML"
+  },
+  "view": {
+    "preview": "Aperçu",
+    "code": "Code",
+    "label": "Affichage"
+  },
+  "device": {
+    "label": "Largeur d'écran",
+    "desktop": "Ordinateur",
+    "tablet": "Tablette",
+    "mobile": "Téléphone"
+  },
+  "copy": {
+    "label": "Copier le HTML",
+    "done": "Copié",
+    "failed": "Impossible de copier"
+  },
+  "close": "Fermer",
+  "images": {
+    "blocked": "Les images d'autres sites web ne s'affichent que si les paramètres de sécurité du portail autorisent ces sites."
+  },
+  "body": {
+    "title": "Aperçu de la page"
+  },
+  "state": {
+    "loading": "Chargement du fichier…",
+    "empty": "Ce fichier est vide.",
+    "loadFailed": "Impossible de charger le fichier.",
+    "noFile": "Aucun fichier sélectionné."
+  },
+  "edit": {
+    "label": "Code source HTML",
+    "save": "Enregistrer",
+    "saving": "Enregistrement…",
+    "saved": "Enregistré",
+    "saveFailed": "Impossible d'enregistrer",
+    "discard": "Annuler les modifications",
+    "unsaved": "Vous avez des modifications non enregistrées.",
+    "closeAnyway": "Fermer sans enregistrer",
+    "conflict": "Le fichier a changé depuis que vous avez commencé à le modifier.",
+    "overwrite": "Écraser",
+    "discardConfirm": "Annuler toutes les modifications non enregistrées de ce fichier ?",
+    "discardButton": "Annuler",
+    "keep": "Conserver"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "Stran HTML",
+    "previous": "Prejšnja datoteka",
+    "next": "Naslednja datoteka"
+  },
+  "menu": {
+    "preview": "Predogled HTML"
+  },
+  "view": {
+    "preview": "Predogled",
+    "code": "Koda",
+    "label": "Pogled"
+  },
+  "device": {
+    "label": "Širina zaslona",
+    "desktop": "Računalnik",
+    "tablet": "Tablica",
+    "mobile": "Telefon"
+  },
+  "copy": {
+    "label": "Kopiraj HTML",
+    "done": "Kopirano",
+    "failed": "Kopiranje ni uspelo"
+  },
+  "close": "Zapri",
+  "images": {
+    "blocked": "Slike z drugih spletnih mest so prikazane le, če varnostne nastavitve portala ta mesta dovoljujejo."
+  },
+  "body": {
+    "title": "Predogled strani"
+  },
+  "state": {
+    "loading": "Nalaganje datoteke…",
+    "empty": "Ta datoteka je prazna.",
+    "loadFailed": "Datoteke ni bilo mogoče naložiti.",
+    "noFile": "Nobena datoteka ni izbrana."
+  },
+  "edit": {
+    "label": "Izvorna koda HTML",
+    "save": "Shrani",
+    "saving": "Shranjevanje…",
+    "saved": "Shranjeno",
+    "saveFailed": "Shranjevanje ni uspelo",
+    "discard": "Zavrzi spremembe",
+    "unsaved": "Imate neshranjene spremembe.",
+    "closeAnyway": "Zapri brez shranjevanja",
+    "conflict": "Datoteka se je spremenila, odkar ste jo začeli urejati.",
+    "overwrite": "Prepiši",
+    "discardConfirm": "Želite zavreči vse neshranjene spremembe v tej datoteki?",
+    "discardButton": "Zavrzi",
+    "keep": "Obdrži"
+  }
+}

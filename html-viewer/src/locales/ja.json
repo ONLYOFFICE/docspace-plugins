@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "HTMLページ",
+    "previous": "前のファイル",
+    "next": "次のファイル"
+  },
+  "menu": {
+    "preview": "HTMLをプレビュー"
+  },
+  "view": {
+    "preview": "プレビュー",
+    "code": "コード",
+    "label": "表示"
+  },
+  "device": {
+    "label": "画面幅",
+    "desktop": "デスクトップ",
+    "tablet": "タブレット",
+    "mobile": "スマートフォン"
+  },
+  "copy": {
+    "label": "HTMLをコピー",
+    "done": "コピーしました",
+    "failed": "コピーできませんでした"
+  },
+  "close": "閉じる",
+  "images": {
+    "blocked": "他のWebサイトの画像は、ポータルのセキュリティ設定でそのサイトが許可されている場合にのみ表示されます。"
+  },
+  "body": {
+    "title": "ページのプレビュー"
+  },
+  "state": {
+    "loading": "ファイルを読み込んでいます…",
+    "empty": "このファイルは空です。",
+    "loadFailed": "ファイルを読み込めませんでした。",
+    "noFile": "ファイルが選択されていません。"
+  },
+  "edit": {
+    "label": "HTMLソース",
+    "save": "保存",
+    "saving": "保存しています…",
+    "saved": "保存しました",
+    "saveFailed": "保存できませんでした",
+    "discard": "変更を破棄",
+    "unsaved": "未保存の変更があります。",
+    "closeAnyway": "保存せずに閉じる",
+    "conflict": "編集を開始した後に、ファイルが変更されました。",
+    "overwrite": "上書き",
+    "discardConfirm": "このファイルの未保存の変更をすべて破棄しますか？",
+    "discardButton": "破棄",
+    "keep": "残す"
+  }
+}

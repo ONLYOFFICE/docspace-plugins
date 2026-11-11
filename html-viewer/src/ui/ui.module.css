@@ -1,0 +1,170 @@
+/* The buttons every feature uses. Classes are hashed with the manifest name by
+   vite.config.ts, so nothing here can reach the portal's own markup. The --hv-* colours
+   are set on the viewer's root (viewer.module.css). Button variants (.primary, .close)
+   stay in this file next to .action, so their order against it does not depend on the
+   order in which the modules are imported. */
+
+/* A segmented control whose selected background slides between the options. The
+   options share one width, so the thumb's offset is its index times its own width. */
+
+.segmented {
+  position: relative;
+  justify-self: start; /* sized to its options, not stretched across the toolbar column */
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  padding: 3px;
+  border-radius: 10px;
+  background: var(--hv-track);
+  box-shadow: inset 0 0 0 1px var(--hv-ring);
+}
+
+.thumb {
+  position: absolute;
+  inset-block: 3px;
+  inset-inline-start: 3px;
+  width: calc((100% - 6px) / var(--count));
+  border-radius: 7px;
+  background: var(--hv-thumb);
+  box-shadow: var(--hv-thumb-shadow);
+  transform: translateX(calc(var(--index) * 100%));
+  transition: transform 0.32s var(--hv-ease);
+}
+
+.segment,
+.action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 0;
+  border: 0;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    color 0.2s,
+    background-color 0.2s;
+}
+
+.segment {
+  position: relative; /* over the thumb */
+  height: 30px;
+  min-width: 36px;
+  padding: 0 12px;
+  border-radius: 7px;
+  background: none;
+  color: var(--hv-muted);
+}
+
+.segment:has(> svg:only-child) {
+  padding: 0 10px;
+}
+
+.segment:hover,
+.segment[aria-pressed="true"] {
+  color: var(--hv-fg);
+}
+
+.action {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 10px;
+  background: var(--hv-track);
+  box-shadow: inset 0 0 0 1px var(--hv-ring);
+  color: var(--hv-fg);
+}
+
+.action:hover {
+  background: var(--hv-hover);
+}
+
+.action[data-state="done"] svg {
+  color: var(--status-icon-color-positive, #35ad17);
+}
+
+.action[data-state="failed"] {
+  color: var(--input-error-color, #f21c0e);
+}
+
+/* Save: the one filled button, so an unsaved edit is hard to miss. */
+.primary {
+  background: var(--hv-accent);
+  box-shadow: none;
+  color: #ffffff;
+}
+
+.primary:hover {
+  background: var(--hv-accent);
+  filter: brightness(1.08);
+}
+
+.primary:disabled {
+  cursor: default;
+  opacity: 0.75;
+}
+
+.primary[data-state="done"] {
+  background: var(--status-icon-color-positive, #35ad17);
+}
+
+.primary[data-state="failed"] {
+  background: var(--input-error-color, #f21c0e);
+  color: #ffffff;
+}
+
+.primary[data-state="done"] svg {
+  color: #ffffff;
+}
+
+.close {
+  padding: 0 10px;
+}
+
+/* A bar across the card that asks for a decision: a close refused over unsaved edits,
+   a save that met someone else's. */
+.alert {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 8px 12px 8px 16px;
+  border-bottom: 1px solid var(--border-service-color);
+  background: color-mix(in srgb, var(--status-warning, #f2a51c) 16%, var(--background-color));
+  color: var(--hv-fg);
+  font-size: 13px;
+}
+
+.alert span {
+  flex: 1 1 auto;
+}
+
+.alert .action {
+  height: 32px;
+}
+
+.segment:focus-visible,
+.action:focus-visible {
+  outline: 2px solid var(--hv-accent);
+  outline-offset: 1px;
+}
+
+.segment svg,
+.action svg {
+  flex: none;
+}
+
+/* Icons alone once the viewer is too narrow for the labels; each button keeps its
+   aria-label. The container is the card (viewer.module.css). */
+@container (max-width: 640px) {
+  .label {
+    display: none;
+  }
+
+  .segment,
+  .action {
+    padding: 0 10px;
+  }
+}

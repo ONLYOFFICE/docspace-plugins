@@ -412,6 +412,11 @@ bidi-js@^1.0.3:
   dependencies:
     require-from-string "^2.0.2"
 
+bignumber.js@*:
+  version "11.1.5"
+  resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-11.1.5.tgz#0f678769f989e6947138d16adaaaa475a9b0bc65"
+  integrity sha512-6WmzCNtUnfKpbozq+hOgWaZMMzORmYBwF1xZScyoIX3QRYWeKTtxxwDOW5tIz7C9BdjkIYHGTcelCLkXg0mndw==
+
 bl@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/bl/-/bl-4.1.0.tgz#451535264182bec2fbbc83a62ab98cf11d9f7b3a"
@@ -803,6 +808,15 @@ html-encoding-sniffer@^6.0.0:
   dependencies:
     "@exodus/bytes" "^1.6.0"
 
+i18n-js@^4.5.1:
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/i18n-js/-/i18n-js-4.5.4.tgz#b26004c5657ee363ef29afea557b1a11938f2227"
+  integrity sha512-ALYO2ZAgayAbXy/MpHmPOd7DdjUh1guowJOO0nwAVLIoGACNBxBSwjzJHEbMoLQs91ytJgykgyAjQg4gTyRRAA==
+  dependencies:
+    bignumber.js "*"
+    lodash "*"
+    make-plural "7.5.0"
+
 iconv-lite@^0.7.0:
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.7.3.tgz#84ee12f963e7de50bc01a13e160a078b3b0f415f"
@@ -1003,7 +1017,7 @@ line-height@^0.3.1:
   dependencies:
     computed-style "~0.1.3"
 
-lodash@4.18.1:
+lodash@*, lodash@4.18.1:
   version "4.18.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.18.1.tgz#ff2b66c1f6326d59513de2407bf881439812771c"
   integrity sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==
@@ -1039,6 +1053,11 @@ magic-string@^1.4.3:
   integrity sha512-z12OxmaPGE0F4xlpGdjuAUckipLpQlTAuAmyGhNoD7ODpYUzvDfvtxUbjM/jwznyP178oju/KDdyi220wNJ0RQ==
   dependencies:
     "@jridgewell/sourcemap-codec" "^1.6.0"
+
+make-plural@7.5.0:
+  version "7.5.0"
+  resolved "https://registry.yarnpkg.com/make-plural/-/make-plural-7.5.0.tgz#ff99598640d82ec7a69bea15d34ecc50152fc0db"
+  integrity sha512-0booA+aVYyVFoR67JBHdfVk0U08HmrBH2FrtmBqBa+NldlqXv/G2Z9VQuQq6Wgp2jDWdybEWGfBkk1cq5264WA==
 
 math-intrinsics@^1.1.0:
   version "1.1.0"

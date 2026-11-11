@@ -28,9 +28,9 @@ import {
   PluginStatus,
 } from "@onlyoffice/docspace-plugin-sdk";
 
-import { canClose } from "./edits";
-import { HtmlPreview } from "./HtmlPreview";
-import { currentLocale, setLocale, t } from "./locales";
+import { canClose } from "./file/edits";
+import { i18n, setLocale } from "./locales";
+import { HtmlPreview } from "./viewer/HtmlPreview";
 
 const EXTENSIONS = [".html", ".htm"];
 
@@ -65,7 +65,7 @@ class HtmlViewer implements IPlugin, IFilePlugin, IContextMenuPlugin {
     for (const extension of EXTENSIONS) {
       this.addFileItem({
         extension,
-        fileTypeName: t("file.typeName"),
+        fileTypeName: i18n.t("file.typeName"),
         fileRowIcon: "html-row.svg",
         fileTileIcon: "html-tile.svg",
         onClick: (file) => openInViewer(file.id),
@@ -76,7 +76,7 @@ class HtmlViewer implements IPlugin, IFilePlugin, IContextMenuPlugin {
     // one loaded last gets the click. This item reaches the viewer whichever that is.
     this.addContextMenuItem({
       key: "html-viewer-preview",
-      label: t("menu.preview"),
+      label: i18n.t("menu.preview"),
       icon: "preview-16.svg",
       fileType: [FilesType.file],
       fileExt: EXTENSIONS,
@@ -98,7 +98,7 @@ class HtmlViewer implements IPlugin, IFilePlugin, IContextMenuPlugin {
     setLocale(language);
   };
 
-  getLanguage = (): PluginLocale => currentLocale();
+  getLanguage = (): PluginLocale => i18n.locale as PluginLocale;
 
   addFileItem = (item: IFileItem): void => {
     this.fileItems.set(item.extension, item);

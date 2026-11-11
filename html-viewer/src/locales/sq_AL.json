@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "Faqe HTML",
+    "previous": "Skedari i mëparshëm",
+    "next": "Skedari tjetër"
+  },
+  "menu": {
+    "preview": "Parapamje e HTML-së"
+  },
+  "view": {
+    "preview": "Parapamje",
+    "code": "Kodi",
+    "label": "Pamja"
+  },
+  "device": {
+    "label": "Gjerësia e ekranit",
+    "desktop": "Kompjuter",
+    "tablet": "Tablet",
+    "mobile": "Telefon"
+  },
+  "copy": {
+    "label": "Kopjoni HTML-në",
+    "done": "U kopjua",
+    "failed": "Kopjimi dështoi"
+  },
+  "close": "Mbyllni",
+  "images": {
+    "blocked": "Imazhet nga sajte të tjerë shfaqen vetëm nëse cilësimet e sigurisë së portalit i lejojnë ato sajte."
+  },
+  "body": {
+    "title": "Parapamja e faqes"
+  },
+  "state": {
+    "loading": "Po ngarkohet skedari…",
+    "empty": "Ky skedar është bosh.",
+    "loadFailed": "Skedari nuk mund të ngarkohej.",
+    "noFile": "Nuk është zgjedhur asnjë skedar."
+  },
+  "edit": {
+    "label": "Kodi burimor HTML",
+    "save": "Ruani",
+    "saving": "Po ruhet…",
+    "saved": "U ruajt",
+    "saveFailed": "Ruajtja dështoi",
+    "discard": "Hidhni poshtë ndryshimet",
+    "unsaved": "Ju keni ndryshime të paruajtura.",
+    "closeAnyway": "Mbyllni pa ruajtur",
+    "conflict": "Skedari është ndryshuar që kur filluat ta redaktoni.",
+    "overwrite": "Mbishkruani",
+    "discardConfirm": "Të hidhen poshtë të gjitha ndryshimet e paruajtura në këtë skedar?",
+    "discardButton": "Hidhni poshtë",
+    "keep": "Mbani"
+  }
+}

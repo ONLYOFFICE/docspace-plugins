@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "Página HTML",
+    "previous": "Arquivo anterior",
+    "next": "Próximo arquivo"
+  },
+  "menu": {
+    "preview": "Pré-visualizar HTML"
+  },
+  "view": {
+    "preview": "Pré-visualização",
+    "code": "Código",
+    "label": "Visualização"
+  },
+  "device": {
+    "label": "Largura da tela",
+    "desktop": "Computador",
+    "tablet": "Tablet",
+    "mobile": "Celular"
+  },
+  "copy": {
+    "label": "Copiar HTML",
+    "done": "Copiado",
+    "failed": "Não foi possível copiar"
+  },
+  "close": "Fechar",
+  "images": {
+    "blocked": "Imagens de outros sites só são exibidas se as configurações de segurança do portal permitirem esses sites."
+  },
+  "body": {
+    "title": "Pré-visualização da página"
+  },
+  "state": {
+    "loading": "Carregando arquivo…",
+    "empty": "Este arquivo está vazio.",
+    "loadFailed": "Não foi possível carregar o arquivo.",
+    "noFile": "Nenhum arquivo selecionado."
+  },
+  "edit": {
+    "label": "Código-fonte HTML",
+    "save": "Salvar",
+    "saving": "Salvando…",
+    "saved": "Salvo",
+    "saveFailed": "Não foi possível salvar",
+    "discard": "Descartar alterações",
+    "unsaved": "Você tem alterações não salvas.",
+    "closeAnyway": "Fechar sem salvar",
+    "conflict": "O arquivo foi alterado desde que você começou a editá-lo.",
+    "overwrite": "Substituir",
+    "discardConfirm": "Descartar todas as alterações não salvas deste arquivo?",
+    "discardButton": "Descartar",
+    "keep": "Manter"
+  }
+}

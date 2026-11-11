@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "HTML-Seite",
+    "previous": "Vorherige Datei",
+    "next": "Nächste Datei"
+  },
+  "menu": {
+    "preview": "HTML-Vorschau"
+  },
+  "view": {
+    "preview": "Vorschau",
+    "code": "Code",
+    "label": "Ansicht"
+  },
+  "device": {
+    "label": "Bildschirmbreite",
+    "desktop": "Desktop",
+    "tablet": "Tablet",
+    "mobile": "Smartphone"
+  },
+  "copy": {
+    "label": "HTML kopieren",
+    "done": "Kopiert",
+    "failed": "Kopieren fehlgeschlagen"
+  },
+  "close": "Schließen",
+  "images": {
+    "blocked": "Bilder von anderen Websites werden nur angezeigt, wenn die Sicherheitseinstellungen des Portals diese Websites zulassen."
+  },
+  "body": {
+    "title": "Seitenvorschau"
+  },
+  "state": {
+    "loading": "Datei wird geladen…",
+    "empty": "Diese Datei ist leer.",
+    "loadFailed": "Die Datei konnte nicht geladen werden.",
+    "noFile": "Keine Datei ausgewählt."
+  },
+  "edit": {
+    "label": "HTML-Quellcode",
+    "save": "Speichern",
+    "saving": "Wird gespeichert…",
+    "saved": "Gespeichert",
+    "saveFailed": "Speichern fehlgeschlagen",
+    "discard": "Änderungen verwerfen",
+    "unsaved": "Sie haben nicht gespeicherte Änderungen.",
+    "closeAnyway": "Ohne Speichern schließen",
+    "conflict": "Die Datei wurde geändert, seit Sie mit der Bearbeitung begonnen haben.",
+    "overwrite": "Überschreiben",
+    "discardConfirm": "Alle nicht gespeicherten Änderungen an dieser Datei verwerfen?",
+    "discardButton": "Verwerfen",
+    "keep": "Behalten"
+  }
+}

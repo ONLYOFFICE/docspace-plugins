@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "HTML-pagina",
+    "previous": "Vorig bestand",
+    "next": "Volgend bestand"
+  },
+  "menu": {
+    "preview": "HTML-voorbeeld"
+  },
+  "view": {
+    "preview": "Voorbeeld",
+    "code": "Code",
+    "label": "Weergave"
+  },
+  "device": {
+    "label": "Schermbreedte",
+    "desktop": "Desktop",
+    "tablet": "Tablet",
+    "mobile": "Telefoon"
+  },
+  "copy": {
+    "label": "HTML kopiëren",
+    "done": "Gekopieerd",
+    "failed": "Kopiëren mislukt"
+  },
+  "close": "Sluiten",
+  "images": {
+    "blocked": "Afbeeldingen van andere websites worden alleen getoond als de beveiligingsinstellingen van de portal die websites toestaan."
+  },
+  "body": {
+    "title": "Paginavoorbeeld"
+  },
+  "state": {
+    "loading": "Bestand wordt geladen…",
+    "empty": "Dit bestand is leeg.",
+    "loadFailed": "Het bestand kon niet worden geladen.",
+    "noFile": "Er is geen bestand geselecteerd."
+  },
+  "edit": {
+    "label": "HTML-broncode",
+    "save": "Opslaan",
+    "saving": "Opslaan…",
+    "saved": "Opgeslagen",
+    "saveFailed": "Opslaan mislukt",
+    "discard": "Wijzigingen negeren",
+    "unsaved": "U hebt niet-opgeslagen wijzigingen.",
+    "closeAnyway": "Sluiten zonder opslaan",
+    "conflict": "Het bestand is gewijzigd sinds u bent begonnen met bewerken.",
+    "overwrite": "Overschrijven",
+    "discardConfirm": "Alle niet-opgeslagen wijzigingen in dit bestand negeren?",
+    "discardButton": "Negeren",
+    "keep": "Behouden"
+  }
+}

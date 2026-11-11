@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "Página HTML",
+    "previous": "Ficheiro anterior",
+    "next": "Ficheiro seguinte"
+  },
+  "menu": {
+    "preview": "Pré-visualizar HTML"
+  },
+  "view": {
+    "preview": "Pré-visualização",
+    "code": "Código",
+    "label": "Vista"
+  },
+  "device": {
+    "label": "Largura do ecrã",
+    "desktop": "Computador",
+    "tablet": "Tablet",
+    "mobile": "Telemóvel"
+  },
+  "copy": {
+    "label": "Copiar HTML",
+    "done": "Copiado",
+    "failed": "Não foi possível copiar"
+  },
+  "close": "Fechar",
+  "images": {
+    "blocked": "As imagens de outros sites só são apresentadas se as definições de segurança do portal permitirem esses sites."
+  },
+  "body": {
+    "title": "Pré-visualização da página"
+  },
+  "state": {
+    "loading": "A carregar o ficheiro…",
+    "empty": "Este ficheiro está vazio.",
+    "loadFailed": "Não foi possível carregar o ficheiro.",
+    "noFile": "Nenhum ficheiro selecionado."
+  },
+  "edit": {
+    "label": "Código-fonte HTML",
+    "save": "Guardar",
+    "saving": "A guardar…",
+    "saved": "Guardado",
+    "saveFailed": "Não foi possível guardar",
+    "discard": "Descartar alterações",
+    "unsaved": "Tem alterações que não foram guardadas.",
+    "closeAnyway": "Fechar sem guardar",
+    "conflict": "O ficheiro foi alterado desde que começou a editá-lo.",
+    "overwrite": "Substituir",
+    "discardConfirm": "Descartar todas as alterações não guardadas neste ficheiro?",
+    "discardButton": "Descartar",
+    "keep": "Manter"
+  }
+}

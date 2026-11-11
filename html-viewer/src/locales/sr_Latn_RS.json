@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "HTML stranica",
+    "previous": "Prethodna datoteka",
+    "next": "Sledeća datoteka"
+  },
+  "menu": {
+    "preview": "Pregled HTML-a"
+  },
+  "view": {
+    "preview": "Pregled",
+    "code": "Kod",
+    "label": "Prikaz"
+  },
+  "device": {
+    "label": "Širina ekrana",
+    "desktop": "Računar",
+    "tablet": "Tablet",
+    "mobile": "Telefon"
+  },
+  "copy": {
+    "label": "Kopiraj HTML",
+    "done": "Kopirano",
+    "failed": "Kopiranje nije uspelo"
+  },
+  "close": "Zatvori",
+  "images": {
+    "blocked": "Slike sa drugih sajtova se prikazuju samo ako bezbednosna podešavanja portala dozvoljavaju te sajtove."
+  },
+  "body": {
+    "title": "Pregled stranice"
+  },
+  "state": {
+    "loading": "Učitavanje datoteke…",
+    "empty": "Ova datoteka je prazna.",
+    "loadFailed": "Nije bilo moguće učitati datoteku.",
+    "noFile": "Nije izabrana nijedna datoteka."
+  },
+  "edit": {
+    "label": "HTML izvorni kod",
+    "save": "Sačuvaj",
+    "saving": "Čuvanje…",
+    "saved": "Sačuvano",
+    "saveFailed": "Čuvanje nije uspelo",
+    "discard": "Odbaci promene",
+    "unsaved": "Imate nesačuvane promene.",
+    "closeAnyway": "Zatvori bez čuvanja",
+    "conflict": "Datoteka je promenjena otkako ste počeli da je uređujete.",
+    "overwrite": "Prepiši",
+    "discardConfirm": "Odbaciti sve nesačuvane promene u ovoj datoteci?",
+    "discardButton": "Odbaci",
+    "keep": "Zadrži"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "Pagină HTML",
+    "previous": "Fișierul anterior",
+    "next": "Fișierul următor"
+  },
+  "menu": {
+    "preview": "Previzualizare HTML"
+  },
+  "view": {
+    "preview": "Previzualizare",
+    "code": "Cod",
+    "label": "Vizualizare"
+  },
+  "device": {
+    "label": "Lățimea ecranului",
+    "desktop": "Computer",
+    "tablet": "Tabletă",
+    "mobile": "Telefon"
+  },
+  "copy": {
+    "label": "Copiere HTML",
+    "done": "Copiat",
+    "failed": "Copierea nu a reușit"
+  },
+  "close": "Închidere",
+  "images": {
+    "blocked": "Imaginile de pe alte site-uri sunt afișate doar dacă setările de securitate ale portalului permit acele site-uri."
+  },
+  "body": {
+    "title": "Previzualizarea paginii"
+  },
+  "state": {
+    "loading": "Se încarcă fișierul…",
+    "empty": "Acest fișier este gol.",
+    "loadFailed": "Fișierul nu a putut fi încărcat.",
+    "noFile": "Niciun fișier selectat."
+  },
+  "edit": {
+    "label": "Cod sursă HTML",
+    "save": "Salvează",
+    "saving": "Se salvează…",
+    "saved": "Salvat",
+    "saveFailed": "Salvarea nu a reușit",
+    "discard": "Renunțare la modificări",
+    "unsaved": "Aveți modificări nesalvate.",
+    "closeAnyway": "Închidere fără salvare",
+    "conflict": "Fișierul a fost modificat de când ați început să îl editați.",
+    "overwrite": "Suprascriere",
+    "discardConfirm": "Renunțați la toate modificările nesalvate din acest fișier?",
+    "discardButton": "Renunțare",
+    "keep": "Păstrare"
+  }
+}

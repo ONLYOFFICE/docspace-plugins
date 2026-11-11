@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "HTML page",
+    "previous": "Previous file",
+    "next": "Next file"
+  },
+  "menu": {
+    "preview": "Preview HTML"
+  },
+  "view": {
+    "preview": "Preview",
+    "code": "Code",
+    "label": "View"
+  },
+  "device": {
+    "label": "Screen width",
+    "desktop": "Desktop",
+    "tablet": "Tablet",
+    "mobile": "Mobile"
+  },
+  "copy": {
+    "label": "Copy HTML",
+    "done": "Copied",
+    "failed": "Couldn't copy"
+  },
+  "close": "Close",
+  "images": {
+    "blocked": "Images from other websites appear only if the portal's security settings allow those sites."
+  },
+  "body": {
+    "title": "Page preview"
+  },
+  "state": {
+    "loading": "Loading file…",
+    "empty": "This file is empty.",
+    "loadFailed": "Couldn't load the file.",
+    "noFile": "No file is selected."
+  },
+  "edit": {
+    "label": "HTML source",
+    "save": "Save",
+    "saving": "Saving…",
+    "saved": "Saved",
+    "saveFailed": "Couldn't save",
+    "discard": "Discard changes",
+    "unsaved": "You have unsaved changes.",
+    "closeAnyway": "Close without saving",
+    "conflict": "The file has been changed since you started editing it.",
+    "overwrite": "Overwrite",
+    "discardConfirm": "Discard all unsaved changes to this file?",
+    "discardButton": "Discard",
+    "keep": "Keep"
+  }
+}

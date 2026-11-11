@@ -1,0 +1,85 @@
+/* The preview of the page. Classes are hashed with the manifest name by vite.config.ts;
+   the --hv-* colours are set on the viewer's root (viewer.module.css). */
+
+/* Remote images notice, on a portal without the html-frame page. */
+
+.notice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border-service-color);
+  background: var(--hv-gutter-bg);
+  color: var(--hv-muted);
+  font-size: 12px;
+}
+
+/* Preview: full bleed on a desktop, a device on a dotted canvas otherwise. Width,
+   height, bezel and corners all transition, so the page visibly folds to the width. */
+
+.stage {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--background-color);
+  transition:
+    padding 0.45s var(--hv-ease),
+    background-color 0.45s;
+  animation: hv-fade-in 0.2s ease-out;
+}
+
+.stage[data-framed] {
+  padding: 24px;
+  background:
+    radial-gradient(circle at 1px 1px, var(--hv-dot) 1px, transparent 0) 0 0 / 16px 16px,
+    var(--hv-stage);
+}
+
+.device {
+  --hv-bezel: 0px;
+  flex: none;
+  box-sizing: content-box;
+  width: 100%;
+  height: 100%;
+  max-width: calc(100% - 2 * var(--hv-bezel));
+  max-height: calc(100% - 2 * var(--hv-bezel));
+  border: var(--hv-bezel) solid #161618;
+  border-radius: 0;
+  overflow: hidden;
+  background: #ffffff; /* the page canvas: HTML is authored against white, whatever the theme */
+  transition-property:
+    width, height, max-width, max-height, border-width, border-radius, box-shadow;
+  transition-duration: 0.45s;
+  transition-timing-function: var(--hv-ease);
+}
+
+.stage[data-framed] .device {
+  --hv-bezel: 10px;
+  border-radius: 28px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 24px 48px -16px rgba(0, 0, 0, 0.45);
+}
+
+.stage[data-device="mobile"] .device {
+  border-radius: 44px;
+}
+
+.device iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Keyframes are hashed per module too, so each module that fades in names its own. */
+@keyframes hv-fade-in {
+  from {
+    opacity: 0;
+  }
+}

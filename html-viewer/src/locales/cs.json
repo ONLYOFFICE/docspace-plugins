@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "Stránka HTML",
+    "previous": "Předchozí soubor",
+    "next": "Další soubor"
+  },
+  "menu": {
+    "preview": "Náhled HTML"
+  },
+  "view": {
+    "preview": "Náhled",
+    "code": "Kód",
+    "label": "Zobrazení"
+  },
+  "device": {
+    "label": "Šířka obrazovky",
+    "desktop": "Počítač",
+    "tablet": "Tablet",
+    "mobile": "Telefon"
+  },
+  "copy": {
+    "label": "Zkopírovat HTML",
+    "done": "Zkopírováno",
+    "failed": "Kopírování se nezdařilo"
+  },
+  "close": "Zavřít",
+  "images": {
+    "blocked": "Obrázky z jiných webů se zobrazí, jen pokud tyto weby povoluje nastavení zabezpečení portálu."
+  },
+  "body": {
+    "title": "Náhled stránky"
+  },
+  "state": {
+    "loading": "Načítání souboru…",
+    "empty": "Tento soubor je prázdný.",
+    "loadFailed": "Soubor se nepodařilo načíst.",
+    "noFile": "Není vybrán žádný soubor."
+  },
+  "edit": {
+    "label": "Zdrojový kód HTML",
+    "save": "Uložit",
+    "saving": "Ukládání…",
+    "saved": "Uloženo",
+    "saveFailed": "Uložení se nezdařilo",
+    "discard": "Zahodit změny",
+    "unsaved": "Máte neuložené změny.",
+    "closeAnyway": "Zavřít bez uložení",
+    "conflict": "Soubor byl změněn od chvíle, kdy jste ho začali upravovat.",
+    "overwrite": "Přepsat",
+    "discardConfirm": "Zahodit všechny neuložené změny v tomto souboru?",
+    "discardButton": "Zahodit",
+    "keep": "Ponechat"
+  }
+}

@@ -17,7 +17,7 @@
 import { useEffect, useRef, useState } from "react";
 import { isPluginApiError, usePluginAPI } from "@onlyoffice/docspace-plugin-sdk/react";
 
-import { decodeHtml } from "./html/document";
+import { decodeHtml } from "../html/document";
 
 export type HtmlFile = {
   fileId: number | string;

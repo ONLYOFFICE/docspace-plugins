@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "HTML lapa",
+    "previous": "Iepriekšējais fails",
+    "next": "Nākamais fails"
+  },
+  "menu": {
+    "preview": "HTML priekšskatījums"
+  },
+  "view": {
+    "preview": "Priekšskatījums",
+    "code": "Kods",
+    "label": "Skats"
+  },
+  "device": {
+    "label": "Ekrāna platums",
+    "desktop": "Dators",
+    "tablet": "Planšetdators",
+    "mobile": "Tālrunis"
+  },
+  "copy": {
+    "label": "Kopēt HTML",
+    "done": "Nokopēts",
+    "failed": "Neizdevās nokopēt"
+  },
+  "close": "Aizvērt",
+  "images": {
+    "blocked": "Attēli no citām vietnēm tiek rādīti tikai tad, ja portāla drošības iestatījumi atļauj šīs vietnes."
+  },
+  "body": {
+    "title": "Lapas priekšskatījums"
+  },
+  "state": {
+    "loading": "Ielādē failu…",
+    "empty": "Šis fails ir tukšs.",
+    "loadFailed": "Neizdevās ielādēt failu.",
+    "noFile": "Nav atlasīts neviens fails."
+  },
+  "edit": {
+    "label": "HTML pirmkods",
+    "save": "Saglabāt",
+    "saving": "Saglabā…",
+    "saved": "Saglabāts",
+    "saveFailed": "Neizdevās saglabāt",
+    "discard": "Atmest izmaiņas",
+    "unsaved": "Jums ir nesaglabātas izmaiņas.",
+    "closeAnyway": "Aizvērt bez saglabāšanas",
+    "conflict": "Fails ir mainīts kopš brīža, kad sākāt to rediģēt.",
+    "overwrite": "Pārrakstīt",
+    "discardConfirm": "Vai atmest visas nesaglabātās izmaiņas šajā failā?",
+    "discardButton": "Atmest",
+    "keep": "Paturēt"
+  }
+}

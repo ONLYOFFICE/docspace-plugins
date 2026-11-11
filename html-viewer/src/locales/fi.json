@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "HTML-sivu",
+    "previous": "Edellinen tiedosto",
+    "next": "Seuraava tiedosto"
+  },
+  "menu": {
+    "preview": "HTML-esikatselu"
+  },
+  "view": {
+    "preview": "Esikatselu",
+    "code": "Koodi",
+    "label": "Näkymä"
+  },
+  "device": {
+    "label": "Näytön leveys",
+    "desktop": "Tietokone",
+    "tablet": "Tabletti",
+    "mobile": "Puhelin"
+  },
+  "copy": {
+    "label": "Kopioi HTML",
+    "done": "Kopioitu",
+    "failed": "Kopiointi epäonnistui"
+  },
+  "close": "Sulje",
+  "images": {
+    "blocked": "Muiden sivustojen kuvat näytetään vain, jos portaalin suojausasetukset sallivat kyseiset sivustot."
+  },
+  "body": {
+    "title": "Sivun esikatselu"
+  },
+  "state": {
+    "loading": "Ladataan tiedostoa…",
+    "empty": "Tämä tiedosto on tyhjä.",
+    "loadFailed": "Tiedoston lataaminen epäonnistui.",
+    "noFile": "Tiedostoa ei ole valittu."
+  },
+  "edit": {
+    "label": "HTML-lähdekoodi",
+    "save": "Tallenna",
+    "saving": "Tallennetaan…",
+    "saved": "Tallennettu",
+    "saveFailed": "Tallentaminen epäonnistui",
+    "discard": "Hylkää muutokset",
+    "unsaved": "Sinulla on tallentamattomia muutoksia.",
+    "closeAnyway": "Sulje tallentamatta",
+    "conflict": "Tiedostoa on muutettu sen jälkeen, kun aloitit sen muokkaamisen.",
+    "overwrite": "Korvaa",
+    "discardConfirm": "Hylätäänkö kaikki tämän tiedoston tallentamattomat muutokset?",
+    "discardButton": "Hylkää",
+    "keep": "Säilytä"
+  }
+}

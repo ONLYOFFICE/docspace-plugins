@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "Stránka HTML",
+    "previous": "Predchádzajúci súbor",
+    "next": "Ďalší súbor"
+  },
+  "menu": {
+    "preview": "Náhľad HTML"
+  },
+  "view": {
+    "preview": "Náhľad",
+    "code": "Kód",
+    "label": "Zobrazenie"
+  },
+  "device": {
+    "label": "Šírka obrazovky",
+    "desktop": "Počítač",
+    "tablet": "Tablet",
+    "mobile": "Telefón"
+  },
+  "copy": {
+    "label": "Kopírovať HTML",
+    "done": "Skopírované",
+    "failed": "Kopírovanie zlyhalo"
+  },
+  "close": "Zatvoriť",
+  "images": {
+    "blocked": "Obrázky z iných webových stránok sa zobrazia, len ak nastavenia zabezpečenia portálu tieto stránky povoľujú."
+  },
+  "body": {
+    "title": "Náhľad stránky"
+  },
+  "state": {
+    "loading": "Načítava sa súbor…",
+    "empty": "Tento súbor je prázdny.",
+    "loadFailed": "Súbor sa nepodarilo načítať.",
+    "noFile": "Nie je vybratý žiadny súbor."
+  },
+  "edit": {
+    "label": "Zdrojový kód HTML",
+    "save": "Uložiť",
+    "saving": "Ukladá sa…",
+    "saved": "Uložené",
+    "saveFailed": "Uloženie zlyhalo",
+    "discard": "Zahodiť zmeny",
+    "unsaved": "Máte neuložené zmeny.",
+    "closeAnyway": "Zatvoriť bez uloženia",
+    "conflict": "Súbor sa zmenil odvtedy, ako ste ho začali upravovať.",
+    "overwrite": "Prepísať",
+    "discardConfirm": "Zahodiť všetky neuložené zmeny v tomto súbore?",
+    "discardButton": "Zahodiť",
+    "keep": "Ponechať"
+  }
+}

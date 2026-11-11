@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "HTML səhifəsi",
+    "previous": "Əvvəlki fayl",
+    "next": "Növbəti fayl"
+  },
+  "menu": {
+    "preview": "HTML-ə öncədən baxış"
+  },
+  "view": {
+    "preview": "Öncədən baxış",
+    "code": "Kod",
+    "label": "Görünüş"
+  },
+  "device": {
+    "label": "Ekran eni",
+    "desktop": "Kompüter",
+    "tablet": "Planşet",
+    "mobile": "Telefon"
+  },
+  "copy": {
+    "label": "HTML-i kopyala",
+    "done": "Kopyalandı",
+    "failed": "Kopyalamaq mümkün olmadı"
+  },
+  "close": "Bağlayın",
+  "images": {
+    "blocked": "Digər saytlardan olan şəkillər yalnız portalın təhlükəsizlik parametrləri həmin saytlara icazə verdikdə göstərilir."
+  },
+  "body": {
+    "title": "Səhifəyə öncədən baxış"
+  },
+  "state": {
+    "loading": "Fayl yüklənir…",
+    "empty": "Bu fayl boşdur.",
+    "loadFailed": "Faylı yükləmək mümkün olmadı.",
+    "noFile": "Fayl seçilməyib."
+  },
+  "edit": {
+    "label": "HTML mənbə kodu",
+    "save": "Yadda saxlayın",
+    "saving": "Yadda saxlanılır…",
+    "saved": "Yadda saxlanıldı",
+    "saveFailed": "Yadda saxlamaq mümkün olmadı",
+    "discard": "Dəyişiklikləri ləğv edin",
+    "unsaved": "Yadda saxlanmayan dəyişiklikləriniz var.",
+    "closeAnyway": "Yadda saxlamadan bağlayın",
+    "conflict": "Siz redaktəyə başladıqdan sonra fayl dəyişdirilib.",
+    "overwrite": "Üzərinə yazın",
+    "discardConfirm": "Bu fayldakı bütün yadda saxlanmayan dəyişikliklər ləğv edilsin?",
+    "discardButton": "Ləğv edin",
+    "keep": "Saxlayın"
+  }
+}

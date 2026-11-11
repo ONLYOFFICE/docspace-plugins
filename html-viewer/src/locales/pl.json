@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "Strona HTML",
+    "previous": "Poprzedni plik",
+    "next": "Następny plik"
+  },
+  "menu": {
+    "preview": "Podgląd HTML"
+  },
+  "view": {
+    "preview": "Podgląd",
+    "code": "Kod",
+    "label": "Widok"
+  },
+  "device": {
+    "label": "Szerokość ekranu",
+    "desktop": "Komputer",
+    "tablet": "Tablet",
+    "mobile": "Telefon"
+  },
+  "copy": {
+    "label": "Skopiuj HTML",
+    "done": "Skopiowano",
+    "failed": "Nie udało się skopiować"
+  },
+  "close": "Zamknij",
+  "images": {
+    "blocked": "Obrazy z innych witryn są wyświetlane tylko wtedy, gdy ustawienia zabezpieczeń portalu zezwalają na te witryny."
+  },
+  "body": {
+    "title": "Podgląd strony"
+  },
+  "state": {
+    "loading": "Wczytywanie pliku…",
+    "empty": "Ten plik jest pusty.",
+    "loadFailed": "Nie udało się wczytać pliku.",
+    "noFile": "Nie wybrano pliku."
+  },
+  "edit": {
+    "label": "Kod źródłowy HTML",
+    "save": "Zapisz",
+    "saving": "Zapisywanie…",
+    "saved": "Zapisano",
+    "saveFailed": "Nie udało się zapisać",
+    "discard": "Odrzuć zmiany",
+    "unsaved": "Masz niezapisane zmiany.",
+    "closeAnyway": "Zamknij bez zapisywania",
+    "conflict": "Plik został zmieniony, odkąd zacząłeś go edytować.",
+    "overwrite": "Zastąp",
+    "discardConfirm": "Odrzucić wszystkie niezapisane zmiany w tym pliku?",
+    "discardButton": "Odrzuć",
+    "keep": "Zachowaj"
+  }
+}

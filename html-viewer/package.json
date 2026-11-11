@@ -63,6 +63,7 @@
   "dependencies": {
     "@onlyoffice/docspace-plugin-sdk": "file:onlyoffice-docspace-plugin-sdk-3.1.0-20261111.tgz",
     "dompurify": "^3.4.17",
+    "i18n-js": "^4.5.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

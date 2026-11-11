@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "Trang HTML",
+    "previous": "Tệp trước",
+    "next": "Tệp tiếp theo"
+  },
+  "menu": {
+    "preview": "Xem trước HTML"
+  },
+  "view": {
+    "preview": "Xem trước",
+    "code": "Mã",
+    "label": "Chế độ xem"
+  },
+  "device": {
+    "label": "Chiều rộng màn hình",
+    "desktop": "Máy tính",
+    "tablet": "Máy tính bảng",
+    "mobile": "Điện thoại"
+  },
+  "copy": {
+    "label": "Sao chép HTML",
+    "done": "Đã sao chép",
+    "failed": "Không thể sao chép"
+  },
+  "close": "Đóng",
+  "images": {
+    "blocked": "Hình ảnh từ các trang web khác chỉ hiển thị nếu cài đặt bảo mật của cổng cho phép các trang đó."
+  },
+  "body": {
+    "title": "Xem trước trang"
+  },
+  "state": {
+    "loading": "Đang tải tệp…",
+    "empty": "Tệp này trống.",
+    "loadFailed": "Không thể tải tệp.",
+    "noFile": "Chưa chọn tệp nào."
+  },
+  "edit": {
+    "label": "Mã nguồn HTML",
+    "save": "Lưu",
+    "saving": "Đang lưu…",
+    "saved": "Đã lưu",
+    "saveFailed": "Không thể lưu",
+    "discard": "Hủy thay đổi",
+    "unsaved": "Bạn có các thay đổi chưa được lưu.",
+    "closeAnyway": "Đóng mà không lưu",
+    "conflict": "Tệp đã bị thay đổi kể từ khi bạn bắt đầu chỉnh sửa.",
+    "overwrite": "Ghi đè",
+    "discardConfirm": "Hủy tất cả các thay đổi chưa lưu trong tệp này?",
+    "discardButton": "Hủy",
+    "keep": "Giữ lại"
+  }
+}

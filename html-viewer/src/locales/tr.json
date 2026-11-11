@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "HTML sayfası",
+    "previous": "Önceki dosya",
+    "next": "Sonraki dosya"
+  },
+  "menu": {
+    "preview": "HTML önizleme"
+  },
+  "view": {
+    "preview": "Önizleme",
+    "code": "Kod",
+    "label": "Görünüm"
+  },
+  "device": {
+    "label": "Ekran genişliği",
+    "desktop": "Masaüstü",
+    "tablet": "Tablet",
+    "mobile": "Telefon"
+  },
+  "copy": {
+    "label": "HTML'yi kopyala",
+    "done": "Kopyalandı",
+    "failed": "Kopyalanamadı"
+  },
+  "close": "Kapat",
+  "images": {
+    "blocked": "Diğer web sitelerindeki görüntüler yalnızca portalın güvenlik ayarları bu sitelere izin veriyorsa gösterilir."
+  },
+  "body": {
+    "title": "Sayfa önizlemesi"
+  },
+  "state": {
+    "loading": "Dosya yükleniyor…",
+    "empty": "Bu dosya boş.",
+    "loadFailed": "Dosya yüklenemedi.",
+    "noFile": "Dosya seçilmedi."
+  },
+  "edit": {
+    "label": "HTML kaynak kodu",
+    "save": "Kaydet",
+    "saving": "Kaydediliyor…",
+    "saved": "Kaydedildi",
+    "saveFailed": "Kaydedilemedi",
+    "discard": "Değişiklikleri at",
+    "unsaved": "Kaydedilmemiş değişiklikleriniz var.",
+    "closeAnyway": "Kaydetmeden kapat",
+    "conflict": "Dosya, düzenlemeye başladığınızdan bu yana değiştirildi.",
+    "overwrite": "Üzerine yaz",
+    "discardConfirm": "Bu dosyadaki kaydedilmemiş tüm değişiklikler atılsın mı?",
+    "discardButton": "At",
+    "keep": "Koru"
+  }
+}

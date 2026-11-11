@@ -1,0 +1,195 @@
+/* The source view. Classes are hashed with the manifest name by vite.config.ts; the
+   --hv-* colours, syntax colours included, are set on the viewer's root
+   (viewer.module.css). The hv-* classes in the highlighted source are generated markup
+   (html/highlight.ts) and are only ever matched under .code. */
+
+/* Numbered lines that wrap under their own number. The numbers are counters, so a
+   selection copies the code alone. --hv-num is the number column, --hv-pad the space on
+   each side of the separator. */
+
+.code {
+  --hv-num: 44px;
+  --hv-pad: 14px;
+  --hv-right: 16px;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  background:
+    linear-gradient(
+        to right,
+        var(--hv-gutter-bg) calc(var(--hv-num) + var(--hv-pad)),
+        var(--border-service-color) 0 calc(var(--hv-num) + var(--hv-pad) + 1px),
+        transparent 0
+      )
+      no-repeat,
+    var(--background-color);
+  color: var(--hv-fg);
+  font-size: 12.5px;
+  line-height: 20px;
+  tab-size: 4;
+  animation: hv-fade-in 0.2s ease-out;
+}
+
+.code:focus-within {
+  box-shadow: inset 0 0 0 1px var(--hv-accent);
+}
+
+/* The lines and the textarea over them share one box, one font and one wrapping, so
+   every character of the textarea lands on its highlighted copy. */
+.lines {
+  position: relative;
+}
+
+.source,
+.input {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  /* The viewer turns selection off on everything inside it. */
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.source {
+  padding: 12px var(--hv-right) 24px 0;
+  counter-reset: hv-line;
+}
+
+.input {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  /* The lines indent their own text past the numbers; the textarea has no numbers. */
+  padding: 12px var(--hv-right) 24px calc(var(--hv-num) + 2 * var(--hv-pad));
+  border: 0;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  background: transparent;
+  font: inherit;
+  letter-spacing: inherit;
+  tab-size: inherit;
+  /* Only the caret and the selection show: the text on screen is the copy below. */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  caret-color: var(--hv-fg);
+}
+
+.input::selection {
+  background: color-mix(in srgb, var(--hv-accent) 30%, transparent);
+}
+
+/* On every element, not inherited: the kit sets *{font-family} page-wide, and a rule
+   aimed at an element beats the value its parent hands down. */
+.code,
+.code * {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+/* The number sits outside the line's flow: in the flow it was a break opportunity, and a
+   line opening with a long unbroken run (a data URI, a URL) wrapped below its own number
+   in the highlight but not in the textarea over it, so the caret fell off the text. */
+.code :global(.hv-l) {
+  position: relative;
+  display: block;
+  min-height: 1lh; /* an empty line has nothing in its flow to give it a height */
+  padding-left: calc(var(--hv-num) + 2 * var(--hv-pad));
+  counter-increment: hv-line;
+}
+
+.code :global(.hv-l)::before {
+  content: counter(hv-line);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--hv-num);
+  text-align: right;
+  color: var(--hv-gutter);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Plain text: past the size the highlighter keeps up with, or a source it cannot take.
+   The textarea scrolls itself here, so it is given the whole box. */
+.code[data-plain] {
+  background: var(--background-color);
+}
+
+.code[data-plain] .lines {
+  height: 100%;
+}
+
+.plainText,
+.plainInput {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 12px var(--hv-right) 24px 16px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: var(--hv-fg);
+  font: inherit;
+  tab-size: inherit;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.plainInput {
+  height: 100%;
+  border: 0;
+  outline: none;
+  resize: none;
+  background: transparent;
+}
+
+/* The container is the card (viewer.module.css). */
+@container (max-width: 640px) {
+  .code {
+    --hv-num: 28px;
+    --hv-pad: 8px;
+    --hv-right: 12px;
+    font-size: 12px;
+  }
+}
+
+.code :global(.hv-comment) {
+  color: var(--hv-comment);
+  font-style: italic;
+}
+.code :global(.hv-punct) {
+  color: var(--hv-punct);
+}
+.code :global(.hv-tag) {
+  color: var(--hv-tag);
+}
+.code :global(.hv-attr) {
+  color: var(--hv-attr);
+}
+.code :global(.hv-string) {
+  color: var(--hv-string);
+}
+.code :global(.hv-keyword) {
+  color: var(--hv-keyword);
+}
+.code :global(.hv-selector) {
+  color: var(--hv-selector);
+}
+.code :global(.hv-property) {
+  color: var(--hv-property);
+}
+.code :global(.hv-number) {
+  color: var(--hv-number);
+}
+.code :global(.hv-entity) {
+  color: var(--hv-entity);
+}
+
+/* Keyframes are hashed per module too, so each module that fades in names its own. */
+@keyframes hv-fade-in {
+  from {
+    opacity: 0;
+  }
+}

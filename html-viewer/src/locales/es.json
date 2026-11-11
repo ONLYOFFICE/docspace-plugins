@@ -1,0 +1,54 @@
+{
+  "file": {
+    "typeName": "Página HTML",
+    "previous": "Archivo anterior",
+    "next": "Archivo siguiente"
+  },
+  "menu": {
+    "preview": "Vista previa de HTML"
+  },
+  "view": {
+    "preview": "Vista previa",
+    "code": "Código",
+    "label": "Vista"
+  },
+  "device": {
+    "label": "Ancho de pantalla",
+    "desktop": "Escritorio",
+    "tablet": "Tableta",
+    "mobile": "Móvil"
+  },
+  "copy": {
+    "label": "Copiar HTML",
+    "done": "Copiado",
+    "failed": "No se ha podido copiar"
+  },
+  "close": "Cerrar",
+  "images": {
+    "blocked": "Las imágenes de otros sitios web solo se muestran si la configuración de seguridad del portal permite esos sitios."
+  },
+  "body": {
+    "title": "Vista previa de la página"
+  },
+  "state": {
+    "loading": "Cargando archivo…",
+    "empty": "Este archivo está vacío.",
+    "loadFailed": "No se ha podido cargar el archivo.",
+    "noFile": "No hay ningún archivo seleccionado."
+  },
+  "edit": {
+    "label": "Código fuente HTML",
+    "save": "Guardar",
+    "saving": "Guardando…",
+    "saved": "Guardado",
+    "saveFailed": "No se ha podido guardar",
+    "discard": "Descartar cambios",
+    "unsaved": "Tiene cambios no guardados.",
+    "closeAnyway": "Cerrar sin guardar",
+    "conflict": "El archivo ha cambiado desde que empezó a editarlo.",
+    "overwrite": "Sobrescribir",
+    "discardConfirm": "¿Descartar todos los cambios no guardados de este archivo?",
+    "discardButton": "Descartar",
+    "keep": "Conservar"
+  }
+}
