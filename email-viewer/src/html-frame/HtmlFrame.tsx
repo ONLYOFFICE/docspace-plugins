@@ -14,54 +14,35 @@
  * limitations under the License.
  */
 
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { useEffect, type CSSProperties } from "react";
+import { usePluginActions } from "@onlyoffice/docspace-plugin-sdk/react";
 
-import { frameUrl } from "./frame-page";
-
+const FRAME_ID = "email-viewer-body-frame";
 const SANDBOX = "allow-popups allow-popups-to-escape-sandbox";
 
 /**
- * Shows sanitised HTML. Where the portal has the frame page, the HTML is handed to it by
- * postMessage and lives under that page's policy, so remote images, styles and fonts
- * load. Elsewhere it falls back to srcdoc, which inherits the portal's own policy.
- * Either way the content runs in a sandbox with no scripts and no access to the portal.
+ * Shows sanitised HTML. On a portal with the html-frame page the portal takes the frame
+ * over and shows the HTML there, under the page's own policy, so remote images, styles
+ * and fonts load. A portal without it has no showHtmlInFrame action, and the HTML goes
+ * into srcdoc, which inherits the portal's policy. Either way the content runs no script
+ * and cannot reach the portal.
  */
 export function HtmlFrame({
   html,
   title,
   style,
-  available,
 }: {
   html: string;
   title: string;
   style?: CSSProperties;
-  available: boolean;
 }) {
-  const ref = useRef<HTMLIFrameElement>(null);
-  const [ready, setReady] = useState(false);
+  const { showHtmlInFrame } = usePluginActions();
+  const onPage = typeof showHtmlInFrame === "function";
 
   useEffect(() => {
-    if (!available) return;
-    const onMessage = (e: MessageEvent) => {
-      if (
-        e.source === ref.current?.contentWindow &&
-        e.origin === window.location.origin &&
-        e.data?.type === "html-frame-ready"
-      )
-        setReady(true);
-    };
-    window.addEventListener("message", onMessage);
-    return () => window.removeEventListener("message", onMessage);
-  }, [available]);
+    if (onPage) showHtmlInFrame({ frameId: FRAME_ID, html, title });
+  }, [onPage, showHtmlInFrame, html, title]);
 
-  useEffect(() => {
-    if (!ready) return;
-    ref.current?.contentWindow?.postMessage(
-      { type: "html-frame-content", html, title },
-      window.location.origin,
-    );
-  }, [ready, html, title]);
-
-  if (!available) return <iframe style={style} title={title} sandbox={SANDBOX} srcDoc={html} />;
-  return <iframe ref={ref} style={style} title={title} src={frameUrl()} />;
+  if (!onPage) return <iframe style={style} title={title} sandbox={SANDBOX} srcDoc={html} />;
+  return <iframe id={FRAME_ID} style={style} title={title} />;
 }

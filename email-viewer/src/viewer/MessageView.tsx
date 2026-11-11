@@ -70,7 +70,7 @@ export function MessageView({
   const frameAvailable = useHtmlFrameAvailable();
   // On the portal's frame page the portal's policy does not reach the message, so there
   // is nothing to probe; the probe is the fallback's way to explain missing images.
-  const blocked = useCspBlockedOrigins(remote, allowRemote && frameAvailable === false);
+  const blocked = useCspBlockedOrigins(remote, allowRemote && !frameAvailable);
 
   const [srcDoc, setSrcDoc] = useState<string | null>(null);
   useEffect(() => {
@@ -115,14 +115,7 @@ export function MessageView({
 
       <div className={styles.body}>
         {email.html && srcDoc !== null ? (
-          frameAvailable !== null && (
-            <HtmlFrame
-              html={srcDoc}
-              title={i18n.t("body.title")}
-              style={frameStyle}
-              available={frameAvailable}
-            />
-          )
+          <HtmlFrame html={srcDoc} title={i18n.t("body.title")} style={frameStyle} />
         ) : textBody.trim() ? (
           <pre className={styles.text}>{linkify(textBody)}</pre>
         ) : (

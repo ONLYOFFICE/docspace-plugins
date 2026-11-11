@@ -14,21 +14,9 @@
  * limitations under the License.
  */
 
-import { useEffect, useState } from "react";
+import { usePluginActions } from "@onlyoffice/docspace-plugin-sdk/react";
 
-import { checkFramePage } from "./frame-page";
-
-/** null until known; the answer is shared by every frame on the page. */
-export function useHtmlFrameAvailable(): boolean | null {
-  const [available, setAvailable] = useState<boolean | null>(null);
-  useEffect(() => {
-    let alive = true;
-    checkFramePage().then((ok) => {
-      if (alive) setAvailable(ok);
-    });
-    return () => {
-      alive = false;
-    };
-  }, []);
-  return available;
+/** Whether the portal shows HTML on its html-frame page: it then has the action for it. */
+export function useHtmlFrameAvailable(): boolean {
+  return typeof usePluginActions().showHtmlInFrame === "function";
 }
