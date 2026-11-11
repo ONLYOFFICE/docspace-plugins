@@ -61,7 +61,6 @@
   },
   "dependencies": {
     "@kenjiuno/msgreader": "^1.28.0",
-    "@onlyoffice/apps-ui-kit": "^4.0.1",
     "@onlyoffice/docspace-plugin-sdk": "file:onlyoffice-docspace-plugin-sdk-3.1.0-20261111.tgz",
     "buffer": "^6.0.3",
     "dompurify": "^3.4.15",
@@ -71,6 +70,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@onlyoffice/apps-ui-kit": "^4.0.1",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^6.0.0",
