@@ -19,7 +19,7 @@ import { icons } from "../ui/icons";
 import ui from "../ui/ui.module.css";
 import styles from "./viewer.module.css";
 
-// The viewer pages through the folder on ← and → pressed anywhere in the document, and
+// The viewer pages through the folder on Left and Right pressed anywhere in the document, and
 // a plugin has no other way to ask it to: the playlist is the portal's, not the plugin's.
 // ponytail: relies on the viewer's own key handler, not on the SDK - switch to an SDK
 // paging action once there is one.

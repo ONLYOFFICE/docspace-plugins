@@ -17,7 +17,8 @@
 import type { KeyboardEvent } from "react";
 
 // Ctrl+S (Cmd+S): the letter where the layout types one, the key's place where it does
-// not - "ы" on a Cyrillic layout - so Dvorak's Ctrl+O is not taken for a save.
+// not - a Cyrillic layout types a Russian letter there - so Dvorak's Ctrl+O is not taken
+// for a save.
 export const isSaveKey = (e: KeyboardEvent) =>
   (e.ctrlKey || e.metaKey) &&
   !e.altKey &&

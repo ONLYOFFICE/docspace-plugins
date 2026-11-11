@@ -139,7 +139,7 @@ describe("buildHtmlDocument().remote", () => {
 
 describe("decodeHtml", () => {
   const ascii = (s: string) => Array.from(s, (c) => c.charCodeAt(0));
-  const privet = [0xcf, 0xf0, 0xe8, 0xe2, 0xe5, 0xf2]; // "Привет" in windows-1251
+  const privet = [0xcf, 0xf0, 0xe8, 0xe2, 0xe5, 0xf2]; // "Privet" in Cyrillic, windows-1251
 
   it("honours a charset declared in a meta tag", () => {
     const short = new Uint8Array([...ascii('<meta charset="windows-1251"><p>'), ...privet]);
@@ -198,7 +198,7 @@ describe("decodeHtml", () => {
   });
 
   it("marks bytes that do not fit the encoding, so the text is never written back", () => {
-    // "Café" in windows-1252 with no meta: 0xE9 is not UTF-8.
+    // "Cafe" with an e-acute in windows-1252 and no meta: 0xE9 is not UTF-8.
     const bytes = new Uint8Array([...ascii("<p>Caf"), 0xe9, ...ascii("</p>")]);
     const decoded = decodeHtml(bytes.buffer);
     expect(decoded.exact).toBe(false);

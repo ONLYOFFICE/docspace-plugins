@@ -90,20 +90,21 @@ const PROTOCOL_RELATIVE = /^(\s*)\/\//;
 // As in REMOTE_CSS, the spaces after a quote are matched only after the quote.
 const CSS_PROTOCOL_RELATIVE = /(url\(\s*(?:["']\s*)?|@import\s+["']\s*)\/\//gi;
 
+const URL_ATTRIBUTES = ["src", "href", "background", "poster"];
+
+// One walk over the tree: it runs on every key while the preview shows a draft.
 const withHttps = (root: Element): void => {
-  for (const name of ["src", "href", "background", "poster"])
-    for (const el of root.querySelectorAll(`[${name}]`)) {
-      const url = el.getAttribute(name) ?? "";
-      if (PROTOCOL_RELATIVE.test(url))
+  for (const el of root.querySelectorAll("[src], [href], [background], [poster], [style], style")) {
+    for (const name of URL_ATTRIBUTES) {
+      const url = el.getAttribute(name);
+      if (url && PROTOCOL_RELATIVE.test(url))
         el.setAttribute(name, url.replace(PROTOCOL_RELATIVE, "$1https://"));
     }
-  for (const el of root.querySelectorAll("[style]"))
-    el.setAttribute(
-      "style",
-      (el.getAttribute("style") ?? "").replace(CSS_PROTOCOL_RELATIVE, "$1https://"),
-    );
-  for (const el of root.querySelectorAll("style"))
-    el.textContent = (el.textContent ?? "").replace(CSS_PROTOCOL_RELATIVE, "$1https://");
+    const style = el.getAttribute("style");
+    if (style) el.setAttribute("style", style.replace(CSS_PROTOCOL_RELATIVE, "$1https://"));
+    if (el.tagName === "STYLE")
+      el.textContent = (el.textContent ?? "").replace(CSS_PROTOCOL_RELATIVE, "$1https://");
+  }
 };
 
 const CSP = [

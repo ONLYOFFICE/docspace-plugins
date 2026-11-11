@@ -36,7 +36,7 @@ export function Segmented<T extends string>({
   onChange: (value: T) => void;
   iconsOnly?: boolean;
 }) {
-  // No arrow-key handling: while the viewer is open ←/→ page between files.
+  // No arrow-key handling: while the viewer is open, Left and Right page between files.
   const index = options.findIndex((o) => o.value === value);
   return (
     <div

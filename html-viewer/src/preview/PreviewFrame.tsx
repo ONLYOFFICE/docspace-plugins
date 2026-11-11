@@ -34,6 +34,8 @@ const FRAME_ID = "html-viewer-frame";
  */
 export function PreviewFrame({ built, size }: { built: PreviewDocument; size: DeviceSize }) {
   const { showHtmlInFrame } = usePluginActions();
+  // A run-time check: the SDK types declare the action, but the runtime of a portal from
+  // before the html-frame page has no such function, and there the preview stays in srcdoc.
   const onPage = typeof showHtmlInFrame === "function";
   const title = i18n.t("body.title");
 
