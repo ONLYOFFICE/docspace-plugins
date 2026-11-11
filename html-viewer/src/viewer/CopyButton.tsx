@@ -19,6 +19,7 @@ import { useEffect, useState } from "react";
 import { i18n } from "../locales";
 import { icons } from "../ui/icons";
 import ui from "../ui/ui.module.css";
+import { copyText } from "./copy-text";
 
 export function CopyButton({ source }: { source: string }) {
   const [result, setResult] = useState<"done" | "failed" | null>(null);
@@ -30,9 +31,9 @@ export function CopyButton({ source }: { source: string }) {
     return () => clearTimeout(timer);
   }, [result]);
 
-  const copy = async () => {
+  const copy = async (button: HTMLElement) => {
     try {
-      await navigator.clipboard.writeText(source);
+      await copyText(source, button.parentElement ?? document.body);
       setResult("done");
     } catch {
       setResult("failed");
@@ -47,7 +48,7 @@ export function CopyButton({ source }: { source: string }) {
       className={ui.action}
       data-state={result ?? undefined}
       aria-label={label}
-      onClick={copy}
+      onClick={(e) => copy(e.currentTarget)}
     >
       {result === "done" ? icons.check : icons.copy}
       <span className={ui.label}>{label}</span>
