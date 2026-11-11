@@ -44,7 +44,7 @@
     "saveFailed": "Uloženie zlyhalo",
     "discard": "Zahodiť zmeny",
     "unsaved": "Máte neuložené zmeny.",
-    "closeAnyway": "Zatvoriť bez uloženia",
+    "closeAnyway": "Zatvoriť bez uloženia?",
     "conflict": "Súbor sa zmenil odvtedy, ako ste ho začali upravovať.",
     "overwrite": "Prepísať",
     "discardConfirm": "Zahodiť všetky neuložené zmeny v tomto súbore?",

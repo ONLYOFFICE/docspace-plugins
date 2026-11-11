@@ -18,7 +18,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState, type KeyboardEve
 import { usePluginAPI, usePluginActions } from "@onlyoffice/docspace-plugin-sdk/react";
 
 import { CodeView } from "../code/CodeView";
-import { confirmDiscard } from "../file/confirm-discard";
+import { confirmDiscard } from "../file/confirm";
 import { change, discard, editOf, save, track, useEdits } from "../file/edits";
 import { SaveButton } from "../file/SaveButton";
 import type { HtmlFile } from "../file/useHtmlFile";

@@ -123,8 +123,7 @@
   padding: 0 10px;
 }
 
-/* A bar across the card that asks for a decision: a close refused over unsaved edits,
-   a save that met someone else's. */
+/* A bar across the card that asks for a decision: a save that met someone else's. */
 .alert {
   display: flex;
   flex-wrap: wrap;

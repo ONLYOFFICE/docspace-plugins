@@ -44,7 +44,7 @@
     "saveFailed": "저장할 수 없습니다",
     "discard": "변경 사항 취소",
     "unsaved": "저장하지 않은 변경 사항이 있습니다.",
-    "closeAnyway": "저장하지 않고 닫기",
+    "closeAnyway": "저장하지 않고 닫으시겠습니까?",
     "conflict": "편집을 시작한 후 파일이 변경되었습니다.",
     "overwrite": "덮어쓰기",
     "discardConfirm": "이 파일의 저장하지 않은 변경 사항을 모두 취소하시겠습니까?",

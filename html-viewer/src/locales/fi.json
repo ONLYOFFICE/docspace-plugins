@@ -44,7 +44,7 @@
     "saveFailed": "Tallentaminen epäonnistui",
     "discard": "Hylkää muutokset",
     "unsaved": "Sinulla on tallentamattomia muutoksia.",
-    "closeAnyway": "Sulje tallentamatta",
+    "closeAnyway": "Suljetaanko tallentamatta?",
     "conflict": "Tiedostoa on muutettu sen jälkeen, kun aloitit sen muokkaamisen.",
     "overwrite": "Korvaa",
     "discardConfirm": "Hylätäänkö kaikki tämän tiedoston tallentamattomat muutokset?",

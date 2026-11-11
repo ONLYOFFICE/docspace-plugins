@@ -44,7 +44,7 @@
     "saveFailed": "Impossibile salvare",
     "discard": "Annulla le modifiche",
     "unsaved": "Hai delle modifiche non salvate.",
-    "closeAnyway": "Chiudi senza salvare",
+    "closeAnyway": "Chiudere senza salvare?",
     "conflict": "Il file è cambiato da quando hai iniziato a modificarlo.",
     "overwrite": "Sovrascrivi",
     "discardConfirm": "Annullare tutte le modifiche non salvate di questo file?",

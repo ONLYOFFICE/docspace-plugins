@@ -44,7 +44,7 @@
     "saveFailed": "Impossible d'enregistrer",
     "discard": "Annuler les modifications",
     "unsaved": "Vous avez des modifications non enregistrées.",
-    "closeAnyway": "Fermer sans enregistrer",
+    "closeAnyway": "Fermer sans enregistrer ?",
     "conflict": "Le fichier a changé depuis que vous avez commencé à le modifier.",
     "overwrite": "Écraser",
     "discardConfirm": "Annuler toutes les modifications non enregistrées de ce fichier ?",

@@ -44,7 +44,7 @@
     "saveFailed": "无法保存",
     "discard": "放弃更改",
     "unsaved": "您有未保存的更改。",
-    "closeAnyway": "不保存并关闭",
+    "closeAnyway": "不保存就关闭吗？",
     "conflict": "自您开始编辑以来，文件已被更改。",
     "overwrite": "覆盖",
     "discardConfirm": "要放弃此文件中所有未保存的更改吗？",

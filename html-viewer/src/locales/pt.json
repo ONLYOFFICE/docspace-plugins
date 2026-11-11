@@ -44,7 +44,7 @@
     "saveFailed": "Não foi possível guardar",
     "discard": "Descartar alterações",
     "unsaved": "Tem alterações que não foram guardadas.",
-    "closeAnyway": "Fechar sem guardar",
+    "closeAnyway": "Fechar sem guardar?",
     "conflict": "O ficheiro foi alterado desde que começou a editá-lo.",
     "overwrite": "Substituir",
     "discardConfirm": "Descartar todas as alterações não guardadas neste ficheiro?",

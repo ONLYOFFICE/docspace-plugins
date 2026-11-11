@@ -44,7 +44,7 @@
     "saveFailed": "保存できませんでした",
     "discard": "変更を破棄",
     "unsaved": "未保存の変更があります。",
-    "closeAnyway": "保存せずに閉じる",
+    "closeAnyway": "保存せずに閉じますか？",
     "conflict": "編集を開始した後に、ファイルが変更されました。",
     "overwrite": "上書き",
     "discardConfirm": "このファイルの未保存の変更をすべて破棄しますか？",

@@ -44,7 +44,7 @@
     "saveFailed": "Uložení se nezdařilo",
     "discard": "Zahodit změny",
     "unsaved": "Máte neuložené změny.",
-    "closeAnyway": "Zavřít bez uložení",
+    "closeAnyway": "Zavřít bez uložení?",
     "conflict": "Soubor byl změněn od chvíle, kdy jste ho začali upravovat.",
     "overwrite": "Přepsat",
     "discardConfirm": "Zahodit všechny neuložené změny v tomto souboru?",

@@ -44,7 +44,7 @@
     "saveFailed": "Nie udało się zapisać",
     "discard": "Odrzuć zmiany",
     "unsaved": "Masz niezapisane zmiany.",
-    "closeAnyway": "Zamknij bez zapisywania",
+    "closeAnyway": "Zamknąć bez zapisywania?",
     "conflict": "Plik został zmieniony, odkąd zacząłeś go edytować.",
     "overwrite": "Zastąp",
     "discardConfirm": "Odrzucić wszystkie niezapisane zmiany w tym pliku?",

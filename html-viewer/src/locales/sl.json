@@ -44,7 +44,7 @@
     "saveFailed": "Shranjevanje ni uspelo",
     "discard": "Zavrzi spremembe",
     "unsaved": "Imate neshranjene spremembe.",
-    "closeAnyway": "Zapri brez shranjevanja",
+    "closeAnyway": "Želite zapreti brez shranjevanja?",
     "conflict": "Datoteka se je spremenila, odkar ste jo začeli urejati.",
     "overwrite": "Prepiši",
     "discardConfirm": "Želite zavreči vse neshranjene spremembe v tej datoteki?",

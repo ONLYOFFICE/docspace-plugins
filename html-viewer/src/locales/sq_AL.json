@@ -44,7 +44,7 @@
     "saveFailed": "Ruajtja dështoi",
     "discard": "Hidhni poshtë ndryshimet",
     "unsaved": "Ju keni ndryshime të paruajtura.",
-    "closeAnyway": "Mbyllni pa ruajtur",
+    "closeAnyway": "Të mbyllet pa u ruajtur?",
     "conflict": "Skedari është ndryshuar që kur filluat ta redaktoni.",
     "overwrite": "Mbishkruani",
     "discardConfirm": "Të hidhen poshtë të gjitha ndryshimet e paruajtura në këtë skedar?",

@@ -44,7 +44,7 @@
     "saveFailed": "Speichern fehlgeschlagen",
     "discard": "Änderungen verwerfen",
     "unsaved": "Sie haben nicht gespeicherte Änderungen.",
-    "closeAnyway": "Ohne Speichern schließen",
+    "closeAnyway": "Ohne Speichern schließen?",
     "conflict": "Die Datei wurde geändert, seit Sie mit der Bearbeitung begonnen haben.",
     "overwrite": "Überschreiben",
     "discardConfirm": "Alle nicht gespeicherten Änderungen an dieser Datei verwerfen?",

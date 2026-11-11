@@ -18,11 +18,11 @@ import { useEffect, useState, type ReactNode } from "react";
 import { useCurrentFile, usePluginActions } from "@onlyoffice/docspace-plugin-sdk/react";
 import { Loader, LoaderTypes, Text, useTheme } from "@onlyoffice/apps-ui-kit";
 
-import { discardAll, unsavedCount, useEdits, whenCloseRefused } from "../file/edits";
+import { confirmClose } from "../file/confirm";
+import { discardAll, whenCloseRefused } from "../file/edits";
 import { useHtmlFile } from "../file/useHtmlFile";
 import { i18n } from "../locales";
 import type { Device } from "../preview/devices";
-import ui from "../ui/ui.module.css";
 import { PageView, type View } from "./PageView";
 import { Pager } from "./Pager";
 import { StateMessage } from "./StateMessage";
@@ -37,24 +37,22 @@ export function HtmlPreview() {
   const file = useCurrentFile();
   const [state, reload] = useHtmlFile(file?.id);
   const { isBase } = useTheme();
-  const { closeMediaViewer } = usePluginActions();
+  const actions = usePluginActions();
   const chromeless = useChromeless();
   // Held here rather than per page, so the chosen view and width survive paging.
   const [view, setView] = useState<View>("preview");
   const [device, setDevice] = useState<Device>("desktop");
-  const [closeRefused, setCloseRefused] = useState(false);
-  useEdits();
-  const dirty = unsavedCount() > 0;
 
-  useEffect(() => whenCloseRefused(() => setCloseRefused(true)), []);
-  useEffect(() => {
-    if (!dirty) setCloseRefused(false);
-  }, [dirty]);
-
-  const closeWithoutSaving = () => {
-    discardAll();
-    closeMediaViewer();
-  };
+  useEffect(
+    () =>
+      whenCloseRefused(() =>
+        confirmClose(actions, () => {
+          discardAll();
+          actions.closeMediaViewer();
+        }),
+      ),
+    [actions],
+  );
 
   let content: ReactNode;
   switch (state.status) {
@@ -109,19 +107,6 @@ export function HtmlPreview() {
       data-chromeless={chromeless || undefined}
     >
       <div className={styles.card}>
-        {closeRefused && (
-          <div id="html-viewer-unsaved" className={ui.alert} role="alert">
-            <span>{i18n.t("edit.unsaved")}</span>
-            <button
-              id="html-viewer-close-anyway"
-              type="button"
-              className={ui.action}
-              onClick={closeWithoutSaving}
-            >
-              {i18n.t("edit.closeAnyway")}
-            </button>
-          </div>
-        )}
         {content}
         {chromeless && <Pager title={file?.title} />}
       </div>

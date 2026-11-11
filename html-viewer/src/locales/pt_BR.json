@@ -44,7 +44,7 @@
     "saveFailed": "Não foi possível salvar",
     "discard": "Descartar alterações",
     "unsaved": "Você tem alterações não salvas.",
-    "closeAnyway": "Fechar sem salvar",
+    "closeAnyway": "Fechar sem salvar?",
     "conflict": "O arquivo foi alterado desde que você começou a editá-lo.",
     "overwrite": "Substituir",
     "discardConfirm": "Descartar todas as alterações não salvas deste arquivo?",

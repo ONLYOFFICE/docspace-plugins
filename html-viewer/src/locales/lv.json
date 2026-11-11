@@ -44,7 +44,7 @@
     "saveFailed": "Neizdevās saglabāt",
     "discard": "Atmest izmaiņas",
     "unsaved": "Jums ir nesaglabātas izmaiņas.",
-    "closeAnyway": "Aizvērt bez saglabāšanas",
+    "closeAnyway": "Vai aizvērt bez saglabāšanas?",
     "conflict": "Fails ir mainīts kopš brīža, kad sākāt to rediģēt.",
     "overwrite": "Pārrakstīt",
     "discardConfirm": "Vai atmest visas nesaglabātās izmaiņas šajā failā?",

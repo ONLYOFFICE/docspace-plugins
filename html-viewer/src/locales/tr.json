@@ -44,7 +44,7 @@
     "saveFailed": "Kaydedilemedi",
     "discard": "Değişiklikleri at",
     "unsaved": "Kaydedilmemiş değişiklikleriniz var.",
-    "closeAnyway": "Kaydetmeden kapat",
+    "closeAnyway": "Kaydedilmeden kapatılsın mı?",
     "conflict": "Dosya, düzenlemeye başladığınızdan bu yana değiştirildi.",
     "overwrite": "Üzerine yaz",
     "discardConfirm": "Bu dosyadaki kaydedilmemiş tüm değişiklikler atılsın mı?",

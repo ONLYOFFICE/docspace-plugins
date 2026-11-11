@@ -44,7 +44,7 @@
     "saveFailed": "Couldn't save",
     "discard": "Discard changes",
     "unsaved": "You have unsaved changes.",
-    "closeAnyway": "Close without saving",
+    "closeAnyway": "Close without saving?",
     "conflict": "The file has been changed since you started editing it.",
     "overwrite": "Overwrite",
     "discardConfirm": "Discard all unsaved changes to this file?",

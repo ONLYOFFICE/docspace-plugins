@@ -44,7 +44,7 @@
     "saveFailed": "Čuvanje nije uspelo",
     "discard": "Odbaci promene",
     "unsaved": "Imate nesačuvane promene.",
-    "closeAnyway": "Zatvori bez čuvanja",
+    "closeAnyway": "Zatvoriti bez čuvanja?",
     "conflict": "Datoteka je promenjena otkako ste počeli da je uređujete.",
     "overwrite": "Prepiši",
     "discardConfirm": "Odbaciti sve nesačuvane promene u ovoj datoteci?",

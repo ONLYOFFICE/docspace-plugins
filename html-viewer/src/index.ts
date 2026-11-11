@@ -57,7 +57,7 @@ class HtmlViewer implements IPlugin, IFilePlugin, IContextMenuPlugin {
           filesSecurity: [FilesSecurity.Read],
         },
         // Returning nothing keeps the viewer open: an unsaved edit is not lost to a click
-        // on the cross, Escape or Back, and the component says why it stayed.
+        // on the cross, Escape or Back, and the component asks whether to drop it.
         onClose: () => (canClose() ? { actions: [Actions.closeMediaViewer] } : undefined),
       },
     });

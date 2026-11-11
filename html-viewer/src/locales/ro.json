@@ -44,7 +44,7 @@
     "saveFailed": "Salvarea nu a reușit",
     "discard": "Renunțare la modificări",
     "unsaved": "Aveți modificări nesalvate.",
-    "closeAnyway": "Închidere fără salvare",
+    "closeAnyway": "Închideți fără salvare?",
     "conflict": "Fișierul a fost modificat de când ați început să îl editați.",
     "overwrite": "Suprascriere",
     "discardConfirm": "Renunțați la toate modificările nesalvate din acest fișier?",

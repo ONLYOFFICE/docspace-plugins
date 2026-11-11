@@ -44,7 +44,7 @@
     "saveFailed": "Không thể lưu",
     "discard": "Hủy thay đổi",
     "unsaved": "Bạn có các thay đổi chưa được lưu.",
-    "closeAnyway": "Đóng mà không lưu",
+    "closeAnyway": "Đóng mà không lưu?",
     "conflict": "Tệp đã bị thay đổi kể từ khi bạn bắt đầu chỉnh sửa.",
     "overwrite": "Ghi đè",
     "discardConfirm": "Hủy tất cả các thay đổi chưa lưu trong tệp này?",
