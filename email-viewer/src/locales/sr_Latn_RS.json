@@ -29,6 +29,10 @@
   "images": {
     "blocked": "Slike sa interneta nisu učitane: preko njih pošiljalac može da sazna da ste otvorili poruku.",
     "load": "Učitaj slike",
+    "loadQuestion": "Učitati slike?",
+    "loadWarning": "Pošiljalac može da sazna da ste otvorili poruku.",
+    "loadButton": "Učitaj",
+    "cancel": "Otkaži",
     "hide": "Sakrij slike",
     "shown": "Slike sa interneta su učitane.",
     "cspBlocked": "Bezbednosna podešavanja portala blokiraju slike sa ovih sajtova:",

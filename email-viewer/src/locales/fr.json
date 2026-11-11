@@ -29,6 +29,10 @@
   "images": {
     "blocked": "Les images provenant d'Internet ne sont pas chargées : elles pourraient indiquer à l'expéditeur que vous avez ouvert ce message.",
     "load": "Charger les images",
+    "loadQuestion": "Charger les images ?",
+    "loadWarning": "L'expéditeur pourrait savoir que vous avez ouvert ce message.",
+    "loadButton": "Charger",
+    "cancel": "Annuler",
     "hide": "Masquer les images",
     "shown": "Les images provenant d'Internet sont chargées.",
     "cspBlocked": "Les paramètres de sécurité du portail bloquent les images de ces sites :",

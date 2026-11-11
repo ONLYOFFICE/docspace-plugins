@@ -29,6 +29,10 @@
   "images": {
     "blocked": "Las imágenes de internet no se han cargado: podrían indicarle al remitente que ha abierto este mensaje.",
     "load": "Cargar imágenes",
+    "loadQuestion": "¿Cargar imágenes?",
+    "loadWarning": "El remitente podría saber que ha abierto este mensaje.",
+    "loadButton": "Cargar",
+    "cancel": "Cancelar",
     "hide": "Ocultar imágenes",
     "shown": "Las imágenes de internet se han cargado.",
     "cspBlocked": "La configuración de seguridad del portal bloquea las imágenes de estos sitios:",

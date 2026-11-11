@@ -29,6 +29,10 @@
   "images": {
     "blocked": "Slike iz interneta niso naložene: z njimi lahko pošiljatelj izve, da ste sporočilo odprli.",
     "load": "Naloži slike",
+    "loadQuestion": "Želite naložiti slike?",
+    "loadWarning": "Pošiljatelj lahko izve, da ste sporočilo odprli.",
+    "loadButton": "Naloži",
+    "cancel": "Prekliči",
     "hide": "Skrij slike",
     "shown": "Slike iz interneta so naložene.",
     "cspBlocked": "Varnostne nastavitve portala blokirajo slike s teh spletnih mest:",

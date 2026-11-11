@@ -29,6 +29,10 @@
   "images": {
     "blocked": "Imaginile de pe internet nu sunt încărcate: prin ele, expeditorul poate afla că ați deschis acest mesaj.",
     "load": "Încărcați imaginile",
+    "loadQuestion": "Încărcați imaginile?",
+    "loadWarning": "Expeditorul poate afla că ați deschis acest mesaj.",
+    "loadButton": "Încărcați",
+    "cancel": "Anulați",
     "hide": "Ascundeți imaginile",
     "shown": "Imaginile de pe internet sunt încărcate.",
     "cspBlocked": "Setările de securitate ale portalului blochează imaginile de pe aceste site-uri:",

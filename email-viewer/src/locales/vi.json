@@ -29,6 +29,10 @@
   "images": {
     "blocked": "Chưa tải hình ảnh từ internet: người gửi có thể dựa vào chúng để biết bạn đã mở thư này.",
     "load": "Tải hình ảnh",
+    "loadQuestion": "Tải hình ảnh?",
+    "loadWarning": "Người gửi có thể biết bạn đã mở thư này.",
+    "loadButton": "Tải",
+    "cancel": "Hủy",
     "hide": "Ẩn hình ảnh",
     "shown": "Đã tải hình ảnh từ internet.",
     "cspBlocked": "Cài đặt bảo mật của cổng thông tin đang chặn hình ảnh từ các trang sau:",

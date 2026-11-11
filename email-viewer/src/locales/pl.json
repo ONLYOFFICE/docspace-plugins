@@ -29,6 +29,10 @@
   "images": {
     "blocked": "Obrazy z internetu nie zostały wczytane: dzięki nim nadawca może się dowiedzieć, że otworzono tę wiadomość.",
     "load": "Wczytaj obrazy",
+    "loadQuestion": "Wczytać obrazy?",
+    "loadWarning": "Nadawca może się dowiedzieć, że otworzono tę wiadomość.",
+    "loadButton": "Wczytaj",
+    "cancel": "Anuluj",
     "hide": "Ukryj obrazy",
     "shown": "Obrazy z internetu zostały wczytane.",
     "cspBlocked": "Ustawienia bezpieczeństwa portalu blokują obrazy z tych witryn:",

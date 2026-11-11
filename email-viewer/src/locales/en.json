@@ -29,6 +29,10 @@
   "images": {
     "blocked": "Images from the internet aren't loaded: they can tell the sender that you opened this message.",
     "load": "Load images",
+    "loadQuestion": "Load images?",
+    "loadWarning": "The sender may learn that you opened this message.",
+    "loadButton": "Load",
+    "cancel": "Cancel",
     "hide": "Hide images",
     "shown": "Images from the internet are loaded.",
     "cspBlocked": "The portal's security settings block images from these sites:",

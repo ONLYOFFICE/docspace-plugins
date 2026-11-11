@@ -29,6 +29,10 @@
   "images": {
     "blocked": "未加载来自互联网的图片：发件人可能借此得知您已打开此邮件。",
     "load": "加载图片",
+    "loadQuestion": "加载图片吗？",
+    "loadWarning": "发件人可能会得知您已打开此邮件。",
+    "loadButton": "加载",
+    "cancel": "取消",
     "hide": "隐藏图片",
     "shown": "已加载来自互联网的图片。",
     "cspBlocked": "门户的安全设置阻止了来自以下网站的图片：",

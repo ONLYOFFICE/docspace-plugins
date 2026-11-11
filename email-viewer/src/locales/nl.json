@@ -29,6 +29,10 @@
   "images": {
     "blocked": "Afbeeldingen van internet zijn niet geladen: daarmee kan de afzender zien dat u dit bericht hebt geopend.",
     "load": "Afbeeldingen laden",
+    "loadQuestion": "Afbeeldingen laden?",
+    "loadWarning": "De afzender kan zien dat u dit bericht hebt geopend.",
+    "loadButton": "Laden",
+    "cancel": "Annuleren",
     "hide": "Afbeeldingen verbergen",
     "shown": "Afbeeldingen van internet zijn geladen.",
     "cspBlocked": "De beveiligingsinstellingen van de portal blokkeren afbeeldingen van deze sites:",

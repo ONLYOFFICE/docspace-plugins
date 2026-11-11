@@ -29,6 +29,10 @@
   "images": {
     "blocked": "Attēli no interneta nav ielādēti: pēc tiem sūtītājs var uzzināt, ka atvērāt šo ziņojumu.",
     "load": "Ielādēt attēlus",
+    "loadQuestion": "Vai ielādēt attēlus?",
+    "loadWarning": "Sūtītājs var uzzināt, ka atvērāt šo ziņojumu.",
+    "loadButton": "Ielādēt",
+    "cancel": "Atcelt",
     "hide": "Paslēpt attēlus",
     "shown": "Attēli no interneta ir ielādēti.",
     "cspBlocked": "Portāla drošības iestatījumi bloķē attēlus no šīm vietnēm:",

@@ -29,6 +29,10 @@
   "images": {
     "blocked": "Internetistä haettavia kuvia ei ole ladattu: niiden avulla lähettäjä voi saada tietää, että avasit viestin.",
     "load": "Lataa kuvat",
+    "loadQuestion": "Ladataanko kuvat?",
+    "loadWarning": "Lähettäjä voi saada tietää, että avasit viestin.",
+    "loadButton": "Lataa",
+    "cancel": "Peruuta",
     "hide": "Piilota kuvat",
     "shown": "Internetistä haettavat kuvat on ladattu.",
     "cspBlocked": "Portaalin suojausasetukset estävät kuvat näiltä sivustoilta:",

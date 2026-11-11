@@ -15,16 +15,18 @@
  */
 
 import { Link, LinkTarget, LinkType, Text } from "@onlyoffice/apps-ui-kit";
+import { usePluginActions } from "@onlyoffice/docspace-plugin-sdk/react";
 
 import { i18n } from "../locales";
 import { ImageIcon, WarningIcon } from "../ui/icons";
+import { confirmLoad } from "./confirm-load";
 import type { CspBlock } from "./csp-probe";
 import styles from "./remote-images.module.css";
 
 /**
  * The bar over a message that loads images from the internet. Amber while something is
  * withheld - by the reader's choice or by the portal's policy; a quiet grey once the
- * images are on screen.
+ * images are on screen. Loading them asks first; hiding them does not.
  */
 export function RemoteImagesNotice({
   allowRemote,
@@ -37,6 +39,8 @@ export function RemoteImagesNotice({
   isAdmin: boolean;
   onToggle: () => void;
 }) {
+  const actions = usePluginActions();
+  const toggle = allowRemote ? onToggle : () => confirmLoad(actions, onToggle);
   const warning = !allowRemote || blocked.length > 0;
   const message = !allowRemote
     ? "images.blocked"
@@ -55,7 +59,7 @@ export function RemoteImagesNotice({
           <Text fontSize="12px" fontWeight={warning ? 600 : 400}>
             {i18n.t(message)}
           </Text>
-          <Link type={LinkType.action} fontSize="12px" color="accent" onClick={onToggle}>
+          <Link type={LinkType.action} fontSize="12px" color="accent" onClick={toggle}>
             {allowRemote ? i18n.t("images.hide") : i18n.t("images.load")}
           </Link>
         </div>

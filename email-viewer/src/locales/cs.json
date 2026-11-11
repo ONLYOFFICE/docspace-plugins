@@ -29,6 +29,10 @@
   "images": {
     "blocked": "Obrázky z internetu nejsou načteny: odesílatel by podle nich mohl zjistit, že jste zprávu otevřeli.",
     "load": "Načíst obrázky",
+    "loadQuestion": "Načíst obrázky?",
+    "loadWarning": "Odesílatel může zjistit, že jste zprávu otevřeli.",
+    "loadButton": "Načíst",
+    "cancel": "Zrušit",
     "hide": "Skrýt obrázky",
     "shown": "Obrázky z internetu jsou načteny.",
     "cspBlocked": "Bezpečnostní nastavení portálu blokuje obrázky z těchto webů:",

@@ -29,6 +29,10 @@
   "images": {
     "blocked": "Bilder aus dem Internet werden nicht geladen: Daran könnte der Absender erkennen, dass Sie diese Nachricht geöffnet haben.",
     "load": "Bilder laden",
+    "loadQuestion": "Bilder laden?",
+    "loadWarning": "Der Absender kann daran erkennen, dass Sie diese Nachricht geöffnet haben.",
+    "loadButton": "Laden",
+    "cancel": "Abbrechen",
     "hide": "Bilder ausblenden",
     "shown": "Bilder aus dem Internet sind geladen.",
     "cspBlocked": "Die Sicherheitseinstellungen des Portals blockieren Bilder von diesen Websites:",

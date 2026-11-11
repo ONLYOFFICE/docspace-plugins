@@ -29,6 +29,10 @@
   "images": {
     "blocked": "İnternetten görüntüler yüklenmedi: bunlar, iletiyi açtığınızı gönderene bildirebilir.",
     "load": "Görüntüleri yükle",
+    "loadQuestion": "Görüntüler yüklensin mi?",
+    "loadWarning": "Gönderen, iletiyi açtığınızı öğrenebilir.",
+    "loadButton": "Yükle",
+    "cancel": "İptal",
     "hide": "Görüntüleri gizle",
     "shown": "İnternetten görüntüler yüklendi.",
     "cspBlocked": "Portalın güvenlik ayarları şu sitelerdeki görüntüleri engelliyor:",

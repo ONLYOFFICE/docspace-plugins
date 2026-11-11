@@ -29,6 +29,10 @@
   "images": {
     "blocked": "İnternetdən şəkillər yüklənməyib: onlar göndərənə bu məktubu açdığınızı bildirə bilər.",
     "load": "Şəkilləri yüklə",
+    "loadQuestion": "Şəkillər yüklənsin?",
+    "loadWarning": "Göndərən bu məktubu açdığınızı bilə bilər.",
+    "loadButton": "Yüklə",
+    "cancel": "Ləğv et",
     "hide": "Şəkilləri gizlət",
     "shown": "İnternetdən şəkillər yükləndi.",
     "cspBlocked": "Portalın təhlükəsizlik parametrləri bu saytlardan olan şəkilləri bloklayır:",

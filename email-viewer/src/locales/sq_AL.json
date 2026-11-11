@@ -29,6 +29,10 @@
   "images": {
     "blocked": "Imazhet nga interneti nuk janë ngarkuar: përmes tyre dërguesi mund të mësojë se e keni hapur mesazhin.",
     "load": "Ngarko imazhet",
+    "loadQuestion": "Të ngarkohen imazhet?",
+    "loadWarning": "Dërguesi mund të mësojë se e keni hapur mesazhin.",
+    "loadButton": "Ngarko",
+    "cancel": "Anulo",
     "hide": "Fshih imazhet",
     "shown": "Imazhet nga interneti janë ngarkuar.",
     "cspBlocked": "Cilësimet e sigurisë së portalit bllokojnë imazhet nga këto sajte:",
