@@ -83,6 +83,20 @@ describe("buildHtmlDocument", () => {
     expect(doc).toContain('<a href="https://a.example">Away</a>');
   });
 
+  it("gives protocol-relative URLs https, which about:srcdoc would resolve to nothing", () => {
+    const doc = build(
+      "<style>@import '//a.example/c.css'; .x { background: url( '//a.example/d.png') }</style>" +
+        '<img src="//a.example/a.png"><a href="//a.example/page">Page</a>' +
+        '<div style="background-image:url(//a.example/b.png)"></div>',
+    );
+    expect(doc).toContain("@import 'https://a.example/c.css'");
+    expect(doc).toContain("url( 'https://a.example/d.png')");
+    expect(doc).toContain('<img src="https://a.example/a.png">');
+    expect(doc).toContain('<a href="https://a.example/page">');
+    expect(doc).toContain("url(https://a.example/b.png)");
+    expect(doc).not.toMatch(/["'(]\/\/a\.example/);
+  });
+
   it("keeps what a browser without scripts draws: stylesheets, inline SVG, body colours", () => {
     const doc = build(
       '<html><head><link rel="stylesheet" href="https://cdn.example/x.css"><link rel="preload" href="https://cdn.example/y.js"></head>' +

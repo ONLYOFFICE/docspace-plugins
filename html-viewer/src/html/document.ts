@@ -84,6 +84,28 @@ const usesOtherSites = (root: Element): boolean => {
   return urls.some((url) => REMOTE_URL.test(url)) || css.some((text) => REMOTE_CSS.test(text));
 };
 
+// "//host/path" means "the scheme of the page around it", and the base here is about:srcdoc,
+// against which it resolves to nothing. https is the scheme a page is served with today.
+const PROTOCOL_RELATIVE = /^(\s*)\/\//;
+// As in REMOTE_CSS, the spaces after a quote are matched only after the quote.
+const CSS_PROTOCOL_RELATIVE = /(url\(\s*(?:["']\s*)?|@import\s+["']\s*)\/\//gi;
+
+const withHttps = (root: Element): void => {
+  for (const name of ["src", "href", "background", "poster"])
+    for (const el of root.querySelectorAll(`[${name}]`)) {
+      const url = el.getAttribute(name) ?? "";
+      if (PROTOCOL_RELATIVE.test(url))
+        el.setAttribute(name, url.replace(PROTOCOL_RELATIVE, "$1https://"));
+    }
+  for (const el of root.querySelectorAll("[style]"))
+    el.setAttribute(
+      "style",
+      (el.getAttribute("style") ?? "").replace(CSS_PROTOCOL_RELATIVE, "$1https://"),
+    );
+  for (const el of root.querySelectorAll("style"))
+    el.textContent = (el.textContent ?? "").replace(CSS_PROTOCOL_RELATIVE, "$1https://");
+};
+
 const CSP = [
   "default-src 'none'",
   "img-src data: https: http:",
@@ -121,6 +143,7 @@ export function buildHtmlDocument(source: string): PreviewDocument {
     if (!/(?:^|\s)stylesheet(?:\s|$)/i.test(link.getAttribute("rel") ?? "")) link.remove();
 
   const remote = usesOtherSites(root);
+  withHttps(root);
 
   // WHOLE_DOCUMENT hands back the <html> element, with <head> and <body> in place.
   // about:srcdoc as the base: a relative URL resolves to nothing rather than to the

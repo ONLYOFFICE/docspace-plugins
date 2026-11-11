@@ -23,7 +23,7 @@ The page is sanitised and rendered in an isolated frame: scripts, forms and embe
 - The source is saved in UTF-8. A page that declared another charset (for example, windows-1251) is saved with a UTF-8 byte order mark, so browsers keep reading it correctly. A file whose bytes do not match its charset (windows-1251 with no `<meta charset>`, say) opens read-only: saving it would lose those characters.
 - Files over 100 KB show their source as plain text, without highlighting or line numbers.
 - An empty file cannot be edited here: it opens as empty.
-- Relative paths (`images/logo.png`) are not resolved. Images embedded as `data:` URLs always show; images on other websites only as described above.
+- Relative paths (`images/logo.png`) are not resolved; protocol-relative ones (`//example.com/logo.png`) load over https. Images embedded as `data:` URLs always show; images on other websites only as described above.
 - The Codemirror plugin opens `.html` and `.htm` files too. With both plugins enabled, a click goes to the one the portal loaded last. **Preview HTML** in the context menu always opens this viewer, and **Edit file with Codemirror** stays available.
 
 ## User feedback and support
