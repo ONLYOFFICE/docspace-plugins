@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "高亮显示末尾空白字符",
         "highlight_trailing_whitespace_description": "高亮显示行末的空白字符。",
         "auto_close_tags": "自动关闭标签",
-        "auto_close_tags_description": "在 HTML 类文件中输入 > 或 / 时自动插入关闭标签。"
+        "auto_close_tags_description": "在 HTML 类文件中输入 > 或 / 时自动插入关闭标签。",
+        "header_file_formats": "文件格式",
+        "file_formats_description": "Codemirror 仅打开已勾选格式的文件。取消勾选某个格式即可将其交给其他插件处理。"
     },
     "context_menu_edit": "使用 Codemirror 编辑文件",
     "file_type_name": "代码",

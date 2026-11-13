@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Highlight trailing whitespaces",
         "highlight_trailing_whitespace_description": "Highlight whitespaces at the end of a line.",
         "auto_close_tags": "Auto close tags",
-        "auto_close_tags_description": "Automatically insert close tags when a > or / is typed in HTML-like files."
+        "auto_close_tags_description": "Automatically insert close tags when a > or / is typed in HTML-like files.",
+        "header_file_formats": "File formats",
+        "file_formats_description": "Codemirror opens files only in the checked formats. Uncheck a format to leave it to another plugin."
     },
     "context_menu_edit": "Edit file with Codemirror",
     "file_type_name": "Code",

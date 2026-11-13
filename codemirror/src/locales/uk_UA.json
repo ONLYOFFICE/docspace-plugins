@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Підсвічувати пробіли в кінці рядка",
         "highlight_trailing_whitespace_description": "Підсвічувати пробіли в кінці рядка.",
         "auto_close_tags": "Автоматично закривати теги",
-        "auto_close_tags_description": "Автоматично вставляти закривальні теги під час введення > або / у файлах типу HTML."
+        "auto_close_tags_description": "Автоматично вставляти закривальні теги під час введення > або / у файлах типу HTML.",
+        "header_file_formats": "Формати файлів",
+        "file_formats_description": "Codemirror відкриває лише файли відмічених форматів. Зніміть позначку, щоб залишити формат іншому плагіну."
     },
     "context_menu_edit": "Редагувати файл за допомогою Codemirror",
     "file_type_name": "Код",

@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Izcelt atstarpes rindas beigās",
         "highlight_trailing_whitespace_description": "Izcelt atstarpes rindas beigās.",
         "auto_close_tags": "Automātiski aizvērt tagus",
-        "auto_close_tags_description": "Automātiski ievietot aizverošos tagus, kad HTML tipa failos tiek ievadīts > vai /."
+        "auto_close_tags_description": "Automātiski ievietot aizverošos tagus, kad HTML tipa failos tiek ievadīts > vai /.",
+        "header_file_formats": "Failu formāti",
+        "file_formats_description": "Codemirror atver tikai atzīmēto formātu failus. Noņemiet atzīmi formātam, lai to atstātu citam spraudnim."
     },
     "context_menu_edit": "Rediģēt failu ar Codemirror",
     "file_type_name": "Kods",

@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "末尾の空白を強調表示",
         "highlight_trailing_whitespace_description": "行末の空白を強調表示します。",
         "auto_close_tags": "タグを自動的に閉じる",
-        "auto_close_tags_description": "HTMLのようなファイルで > または / が入力されたときに、自動的に閉じタグを挿入します。"
+        "auto_close_tags_description": "HTMLのようなファイルで > または / が入力されたときに、自動的に閉じタグを挿入します。",
+        "header_file_formats": "ファイル形式",
+        "file_formats_description": "Codemirrorはチェックした形式のファイルのみを開きます。別のプラグインに任せる形式はチェックを外してください。"
     },
     "context_menu_edit": "Codemirrorでファイルを編集",
     "file_type_name": "コード",

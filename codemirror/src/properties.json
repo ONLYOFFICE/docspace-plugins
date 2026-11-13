@@ -1,21 +1,21 @@
 {
-    "supportedFileExts": [
-        "cpp", "cc", "h", "hpp",
-        "css",
-        "go",
-        "html", "htm",
-        "java", "class",
-        "js", "jsx", "ts", "tsx",
-        "json",
-        "liquid",
-        "php",
-        "py",
-        "rs",
-        "sass", "scss",
-        "sql", "mysql", "pgsql", "postgresql", "sqlite", "db", "mssql", "cql", "plsql", "mariadb",
-        "wast", "wat",
-        "yaml", "yml"
-    ],
+    "fileFormats": {
+        "C / C++": ["cpp", "cc", "h", "hpp"],
+        "CSS": ["css"],
+        "Go": ["go"],
+        "HTML": ["html", "htm"],
+        "Java": ["java", "class"],
+        "JavaScript / TypeScript": ["js", "jsx", "ts", "tsx"],
+        "JSON": ["json"],
+        "Liquid": ["liquid"],
+        "PHP": ["php"],
+        "Python": ["py"],
+        "Rust": ["rs"],
+        "Sass": ["sass", "scss"],
+        "SQL": ["sql", "mysql", "pgsql", "postgresql", "sqlite", "db", "mssql", "cql", "plsql", "mariadb"],
+        "WebAssembly": ["wast", "wat"],
+        "YAML": ["yaml", "yml"]
+    },
     "keymaps": [
         {
             "action": "Move cursor left by syntax",

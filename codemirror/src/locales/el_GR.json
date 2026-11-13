@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Επισήμανση κενών στο τέλος γραμμής",
         "highlight_trailing_whitespace_description": "Επισήμανση των κενών στο τέλος μιας γραμμής.",
         "auto_close_tags": "Αυτόματο κλείσιμο ετικετών",
-        "auto_close_tags_description": "Αυτόματη εισαγωγή ετικετών κλεισίματος όταν πληκτρολογείται > ή / σε αρχεία τύπου HTML."
+        "auto_close_tags_description": "Αυτόματη εισαγωγή ετικετών κλεισίματος όταν πληκτρολογείται > ή / σε αρχεία τύπου HTML.",
+        "header_file_formats": "Μορφές αρχείων",
+        "file_formats_description": "Το Codemirror ανοίγει μόνο αρχεία στις επιλεγμένες μορφές. Αποεπιλέξτε μια μορφή για να την αφήσετε σε άλλο πρόσθετο."
     },
     "context_menu_edit": "Επεξεργασία αρχείου με το Codemirror",
     "file_type_name": "Κώδικας",

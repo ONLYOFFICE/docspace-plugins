@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Witruimte aan regeleinde markeren",
         "highlight_trailing_whitespace_description": "Witruimte aan het einde van een regel markeren.",
         "auto_close_tags": "Tags automatisch sluiten",
-        "auto_close_tags_description": "Automatisch sluitingstags invoegen wanneer > of / wordt getypt in HTML-achtige bestanden."
+        "auto_close_tags_description": "Automatisch sluitingstags invoegen wanneer > of / wordt getypt in HTML-achtige bestanden.",
+        "header_file_formats": "Bestandsindelingen",
+        "file_formats_description": "Codemirror opent alleen bestanden in de aangevinkte indelingen. Vink een indeling uit om deze aan een andere plug-in over te laten."
     },
     "context_menu_edit": "Bestand bewerken met Codemirror",
     "file_type_name": "Code",

@@ -10,6 +10,8 @@ In case you want to adjust the plugin settings, go to *Settings -> Integration -
 
 You can customize the highlighting of spaces and enable the auto-closing of HTML tags to suit your preferences.
 
+In the **File formats** section, uncheck the formats that Codemirror should not open, for example `.html` if another plugin handles HTML files. Codemirror then stops opening them on click, hides its context menu item for them and does not allow creating files with these extensions.
+
 ## How to use
 
 ### Creating a new file

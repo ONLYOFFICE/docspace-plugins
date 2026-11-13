@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "줄 끝 공백 강조",
         "highlight_trailing_whitespace_description": "줄 끝에 있는 공백을 강조합니다.",
         "auto_close_tags": "태그 자동 닫기",
-        "auto_close_tags_description": "HTML 계열 파일에서 > 또는 /를 입력하면 닫는 태그를 자동으로 삽입합니다."
+        "auto_close_tags_description": "HTML 계열 파일에서 > 또는 /를 입력하면 닫는 태그를 자동으로 삽입합니다.",
+        "header_file_formats": "파일 형식",
+        "file_formats_description": "Codemirror는 선택한 형식의 파일만 엽니다. 다른 플러그인에 맡길 형식은 선택을 해제하세요."
     },
     "context_menu_edit": "Codemirror로 파일 편집",
     "file_type_name": "코드",

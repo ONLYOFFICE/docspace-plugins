@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Đánh dấu khoảng trắng cuối dòng",
         "highlight_trailing_whitespace_description": "Đánh dấu khoảng trắng ở cuối dòng.",
         "auto_close_tags": "Tự động đóng thẻ",
-        "auto_close_tags_description": "Tự động chèn thẻ đóng khi gõ > hoặc / trong các tệp dạng HTML."
+        "auto_close_tags_description": "Tự động chèn thẻ đóng khi gõ > hoặc / trong các tệp dạng HTML.",
+        "header_file_formats": "Định dạng tệp",
+        "file_formats_description": "Codemirror chỉ mở các tệp có định dạng được chọn. Bỏ chọn một định dạng để nhường nó cho tiện ích khác."
     },
     "context_menu_edit": "Chỉnh sửa tệp bằng Codemirror",
     "file_type_name": "Mã",

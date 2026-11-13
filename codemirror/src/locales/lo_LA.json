@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "ເນັ້ນຊ່ອງຫວ່າງທ້າຍແຖວ",
         "highlight_trailing_whitespace_description": "ເນັ້ນຊ່ອງຫວ່າງຢູ່ທ້າຍແຖວ.",
         "auto_close_tags": "ປິດແທັກອັດຕະໂນມັດ",
-        "auto_close_tags_description": "ແຊກແທັກປິດອັດຕະໂນມັດເມື່ອພິມ > ຫຼື / ໃນໄຟລ໌ຄ້າຍ HTML."
+        "auto_close_tags_description": "ແຊກແທັກປິດອັດຕະໂນມັດເມື່ອພິມ > ຫຼື / ໃນໄຟລ໌ຄ້າຍ HTML.",
+        "header_file_formats": "ຮູບແບບໄຟລ໌",
+        "file_formats_description": "Codemirror ເປີດສະເພາະໄຟລ໌ໃນຮູບແບບທີ່ໝາຍໄວ້. ຍົກເລີກການໝາຍຮູບແບບເພື່ອປ່ອຍໃຫ້ປລັກອິນອື່ນ."
     },
     "context_menu_edit": "ແກ້ໄຂໄຟລ໌ດ້ວຍ Codemirror",
     "file_type_name": "ໂຄ້ດ",

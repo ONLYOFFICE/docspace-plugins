@@ -15,7 +15,6 @@
  */
 
 import { Actions, ICreateDialog, IMainButtonItem, IMessage } from "@onlyoffice/docspace-plugin-sdk";
-import { supportedFileExts } from "../properties.json";
 import codemirror from "../Codemirror";
 import { i18n } from "../locales/i18n";
 
@@ -38,7 +37,7 @@ export const createDialog: ICreateDialog = {
       throw new Error(i18n.t("main_button.error_no_file_ext"));
     }
 
-    if (!supportedFileExts.includes(value.split(".").pop()!)) {
+    if (!codemirror.getEnabledFileExts().includes(value.split(".").pop()!)) {
       throw new Error(i18n.t("main_button.error_not_supported"));
     }
 

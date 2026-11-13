@@ -78,9 +78,17 @@ class Codemirror
     
     this.updateContextMenuItem(contextMenuItem());
     this.updateMainButtonItem(codemirrorMainButtonItem());
+  };
+
+  // File items are filled only here, once the settings are known: the portal re-reads them right
+  // after setAdminPluginSettingsValue, so a disabled format is never claimed, even briefly at load,
+  // and cannot override another plugin's handler for it.
+  syncFileFormats = () => {
+    this.fileItems.clear();
     for (const item of codemirrorItems()) {
-      this.updateFileItem(item);
+      this.addFileItem(item);
     }
+    this.updateContextMenuItem(contextMenuItem());
   };
 
   getLanguage = () => {
@@ -145,10 +153,10 @@ class Codemirror
 
   setAdminPluginSettingsValue = (settings: string | null): void => {
     if (settings) {
-      const { highlightWhitespace, highlightTrailingWhitespace, autoCloseTags } = JSON.parse(settings);
-
-      codemirror.setSettings(highlightWhitespace, highlightTrailingWhitespace, autoCloseTags);
+      codemirror.setSettings(JSON.parse(settings));
     }
+
+    this.syncFileFormats();
   };
 
   addContextMenuItem = (item: IContextMenuItem): void => {
@@ -231,8 +239,5 @@ const plugin = new Codemirror();
 plugin.addMainButtonItem(codemirrorMainButtonItem());
 plugin.setAdminPluginSettings(codemirrorSettings);
 plugin.addContextMenuItem(contextMenuItem());
-for (const item of codemirrorItems()) {
-  plugin.addFileItem(item);
-}
 
 export default plugin;

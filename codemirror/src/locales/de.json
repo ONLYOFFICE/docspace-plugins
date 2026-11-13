@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Abschließende Leerzeichen hervorheben",
         "highlight_trailing_whitespace_description": "Leerzeichen am Zeilenende hervorheben.",
         "auto_close_tags": "Tags automatisch schließen",
-        "auto_close_tags_description": "Automatisch schließende Tags einfügen, wenn > oder / in HTML-ähnlichen Dateien eingegeben wird."
+        "auto_close_tags_description": "Automatisch schließende Tags einfügen, wenn > oder / in HTML-ähnlichen Dateien eingegeben wird.",
+        "header_file_formats": "Dateiformate",
+        "file_formats_description": "Codemirror öffnet nur Dateien in den ausgewählten Formaten. Deaktivieren Sie ein Format, um es einem anderen Plugin zu überlassen."
     },
     "context_menu_edit": "Datei mit Codemirror bearbeiten",
     "file_type_name": "Code",

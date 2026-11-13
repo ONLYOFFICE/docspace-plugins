@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "පේළි අග හිස් අවකාශ උද්දීපනය කරන්න",
         "highlight_trailing_whitespace_description": "පේළියක අග ඇති හිස් අවකාශ උද්දීපනය කරන්න.",
         "auto_close_tags": "ටැග ස්වයංක්‍රීයව වසන්න",
-        "auto_close_tags_description": "HTML වැනි ගොනුවල > හෝ / ටයිප් කළ විට වසන ටැග ස්වයංක්‍රීයව ඇතුළත් කරන්න."
+        "auto_close_tags_description": "HTML වැනි ගොනුවල > හෝ / ටයිප් කළ විට වසන ටැග ස්වයංක්‍රීයව ඇතුළත් කරන්න.",
+        "header_file_formats": "ගොනු ආකෘති",
+        "file_formats_description": "Codemirror විවෘත කරන්නේ සලකුණු කළ ආකෘතිවල ගොනු පමණි. ආකෘතියක් වෙනත් ප්ලගිනයකට ඉතිරි කිරීමට එහි සලකුණ ඉවත් කරන්න."
     },
     "context_menu_edit": "Codemirror සමඟ ගොනුව සංස්කරණය කරන්න",
     "file_type_name": "කේතය",

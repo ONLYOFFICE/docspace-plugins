@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import { IToggleButton } from "@onlyoffice/docspace-plugin-sdk";
-import codemirror from "../Codemirror";
-import { createToggleSetting, updatePropsWithButton } from "./Utils";
+import { ICheckbox, IToggleButton } from "@onlyoffice/docspace-plugin-sdk";
+import codemirror, { supportedFileExts } from "../Codemirror";
+import { createFileFormatsSetting, createToggleSetting, updatePropsWithButton } from "./Utils";
 import { i18n } from "../locales";
 
 export const highlightWhitespaceToggle: IToggleButton = {
@@ -62,4 +62,24 @@ export const autoCloseTagsSetting = () => createToggleSetting(
   i18n.t("settings.auto_close_tags"),
   i18n.t("settings.auto_close_tags_description"),
   autoCloseTagsToggle
+);
+
+const createFileFormatCheckbox = (ext: string) => {
+  const checkbox: ICheckbox = {
+    label: `.${ext}`,
+    isChecked: true,
+    onChange: () => {
+      checkbox.isChecked = !checkbox.isChecked;
+      return updatePropsWithButton(checkbox);
+    },
+  };
+
+  return checkbox;
+};
+
+export const fileFormatCheckboxes = new Map(supportedFileExts.map((ext) => [ext, createFileFormatCheckbox(ext)]));
+
+export const fileFormatsSetting = () => createFileFormatsSetting(
+  i18n.t("settings.file_formats_description"),
+  fileFormatCheckboxes
 );

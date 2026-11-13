@@ -16,7 +16,6 @@
 
 import { IFileItem, File } from "@onlyoffice/docspace-plugin-sdk";
 import codemirror from "../Codemirror";
-import { supportedFileExts } from "../properties.json";
 import { i18n } from "../locales";
 
 const onClick = async (item: File) => {
@@ -25,7 +24,7 @@ const onClick = async (item: File) => {
 
 const codemirrorItems: () => IFileItem[] = () => {
   const items = [];
-  for (const ext of supportedFileExts) {
+  for (const ext of codemirror.getEnabledFileExts()) {
     items.push({
       extension: "." + ext,
       fileTypeName: i18n.t("file_type_name"),

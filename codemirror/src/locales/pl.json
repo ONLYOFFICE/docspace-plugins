@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Wyróżniaj białe znaki na końcu wiersza",
         "highlight_trailing_whitespace_description": "Wyróżniaj białe znaki na końcu wiersza.",
         "auto_close_tags": "Automatyczne zamykanie znaczników",
-        "auto_close_tags_description": "Automatycznie wstawiaj znaczniki zamykające po wpisaniu > lub / w plikach typu HTML."
+        "auto_close_tags_description": "Automatycznie wstawiaj znaczniki zamykające po wpisaniu > lub / w plikach typu HTML.",
+        "header_file_formats": "Formaty plików",
+        "file_formats_description": "Codemirror otwiera tylko pliki w zaznaczonych formatach. Odznacz format, aby pozostawić go innej wtyczce."
     },
     "context_menu_edit": "Edytuj plik za pomocą Codemirror",
     "file_type_name": "Kod",

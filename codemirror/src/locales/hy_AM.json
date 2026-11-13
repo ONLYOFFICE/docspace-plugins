@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Ընդգծել տողի վերջի բացատները",
         "highlight_trailing_whitespace_description": "Ընդգծել տողի վերջում գտնվող բացատները։",
         "auto_close_tags": "Ավտոմատ փակել պիտակները",
-        "auto_close_tags_description": "HTML-անման ֆայլերում > կամ / մուտքագրելիս ավտոմատ ավելացնել փակող պիտակները։"
+        "auto_close_tags_description": "HTML-անման ֆայլերում > կամ / մուտքագրելիս ավտոմատ ավելացնել փակող պիտակները։",
+        "header_file_formats": "Ֆայլերի ձևաչափեր",
+        "file_formats_description": "Codemirror-ը բացում է միայն նշված ձևաչափերի ֆայլերը։ Հանեք ձևաչափի նշումը՝ այն այլ պլագինին թողնելու համար։"
     },
     "context_menu_edit": "Խմբագրել ֆայլը Codemirror-ով",
     "file_type_name": "Կոդ",

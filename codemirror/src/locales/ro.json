@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Evidențiază spațiile de la sfârșitul rândului",
         "highlight_trailing_whitespace_description": "Evidențiază spațiile de la sfârșitul unui rând.",
         "auto_close_tags": "Închide automat etichetele",
-        "auto_close_tags_description": "Inserează automat etichetele de închidere când se tastează > sau / în fișiere de tip HTML."
+        "auto_close_tags_description": "Inserează automat etichetele de închidere când se tastează > sau / în fișiere de tip HTML.",
+        "header_file_formats": "Formate de fișiere",
+        "file_formats_description": "Codemirror deschide doar fișierele în formatele bifate. Debifați un format pentru a-l lăsa altui plugin."
     },
     "context_menu_edit": "Editează fișierul cu Codemirror",
     "file_type_name": "Cod",

@@ -25,7 +25,9 @@
         "highlight_trailing_whitespace": "Thekso hapësirat në fund të rreshtit",
         "highlight_trailing_whitespace_description": "Thekso hapësirat në fund të një rreshti.",
         "auto_close_tags": "Mbyll automatikisht etiketat",
-        "auto_close_tags_description": "Fut automatikisht etiketat mbyllëse kur shkruhet > ose / në skedarë të ngjashëm me HTML."
+        "auto_close_tags_description": "Fut automatikisht etiketat mbyllëse kur shkruhet > ose / në skedarë të ngjashëm me HTML.",
+        "header_file_formats": "Formatet e skedarëve",
+        "file_formats_description": "Codemirror hap vetëm skedarët në formatet e shënuara. Hiqni shenjën nga një format për t'ia lënë një shtojce tjetër."
     },
     "context_menu_edit": "Redakto skedarin me Codemirror",
     "file_type_name": "Kod",
