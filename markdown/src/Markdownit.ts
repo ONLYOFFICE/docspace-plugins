@@ -687,12 +687,7 @@ async function insertMD(data: string) {
     mdBody.innerHTML = result;
     iframeWindow.document.body.innerHTML = "";
     iframeWindow.document.body.appendChild(mdBody);
-    iframe.style.height =
-      iframe.contentWindow?.document.documentElement.scrollHeight + "px";
-    setTimeout(function () {
-      iframe.style.height =
-        iframe.contentWindow?.document.documentElement.scrollHeight + "px";
-    }, 200);
+    fitPreviewHeight(iframe, mdBody);
   } else {
     setTimeout(function () {
       insertMD(data);
@@ -709,10 +704,20 @@ function updateMD(data: string) {
     if (body) {
       let result = md.render(data);
       body.innerHTML = result;
-      iframe.style.height =
-        iframe.contentWindow?.document.documentElement.scrollHeight + "px";
     }
   }
+}
+
+let previewHeightObserver: ResizeObserver | undefined;
+
+function fitPreviewHeight(iframe: HTMLIFrameElement, mdBody: HTMLElement) {
+  const iframeWindow = iframe.contentWindow as Window & typeof globalThis;
+  previewHeightObserver?.disconnect();
+  previewHeightObserver = new iframeWindow.ResizeObserver(() => {
+    iframe.style.height =
+      iframeWindow.document.documentElement.scrollHeight + "px";
+  });
+  previewHeightObserver.observe(mdBody);
 }
 
 function linkControl(iFrameWindow: Window) {
