@@ -1,0 +1,164 @@
+/* The viewer's frame around a page: the card, the toolbar, the phone's pager. Classes
+   are hashed with the manifest name by vite.config.ts, so nothing here can reach the
+   portal's own markup. */
+
+/* The portal has two themes and no tokens for a segmented control or for syntax
+   colours, so both palettes live here, picked by data-theme from useTheme(), and every
+   feature's stylesheet reads them from this root. */
+.root {
+  --hv-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --hv-accent: var(--accent-main, var(--color-scheme-main-accent, #4781d1));
+  --hv-fg: var(--text-color);
+  --hv-muted: #657077;
+  --hv-track: var(--background-service-color);
+  --hv-ring: rgba(16, 24, 40, 0.06);
+  --hv-thumb: #ffffff;
+  --hv-thumb-shadow: 0 1px 2px rgba(16, 24, 40, 0.1), 0 0 0 1px rgba(16, 24, 40, 0.06);
+  --hv-hover: rgba(16, 24, 40, 0.05);
+  --hv-stage: #eef0f2;
+  --hv-dot: #d3d8dd;
+  --hv-gutter: #a3a9ae;
+  --hv-gutter-bg: #f8f9f9;
+
+  --hv-comment: #6e7781;
+  --hv-punct: #6e7781;
+  --hv-tag: #116329;
+  --hv-attr: #0550ae;
+  --hv-string: #0a3069;
+  --hv-keyword: #cf222e;
+  --hv-selector: #6639ba;
+  --hv-property: #0550ae;
+  --hv-number: #0550ae;
+  --hv-entity: #953800;
+}
+
+.root[data-theme="dark"] {
+  --hv-muted: #a3a9ae;
+  --hv-track: rgba(0, 0, 0, 0.22);
+  --hv-ring: rgba(255, 255, 255, 0.05);
+  --hv-thumb: #4a4a4a;
+  --hv-thumb-shadow: 0 1px 2px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  --hv-hover: rgba(255, 255, 255, 0.06);
+  --hv-stage: #282828;
+  --hv-dot: #3d3d3d;
+  --hv-gutter: #858585;
+  --hv-gutter-bg: #2e2e2e;
+
+  --hv-comment: #8b949e;
+  --hv-punct: #8b949e;
+  --hv-tag: #7ee787;
+  --hv-attr: #79c0ff;
+  --hv-string: #a5d6ff;
+  --hv-keyword: #ff7b72;
+  --hv-selector: #d2a8ff;
+  --hv-property: #79c0ff;
+  --hv-number: #79c0ff;
+  --hv-entity: #ffa657;
+}
+
+/* On a desktop the media viewer draws a header band over the top of the content box
+   and, with more than one file in the playlist, 73px paging strips down both sides.
+   Anything under them cannot be clicked, so the surface keeps out of their way. The
+   band is 85px, not the 64px its height says: it is a content-box with 21px of
+   padding-top on top of that height. */
+.root {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 85px 73px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.card {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--background-color);
+  color: var(--text-color);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+  /* The toolbar drops its labels when the card, not the window, gets narrow: the
+     container queries of ui.module.css and code.module.css measure this box. */
+  container-type: inline-size;
+}
+
+/* A page's parts lay out in the card as if this box were not there; it is only where the
+   page's keys are caught. */
+.page {
+  display: contents;
+}
+
+/* Toolbar: the view on the start side, the width in the middle, actions at the end.
+   The columns stay put when the middle one empties for the source view. */
+
+.toolbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-service-color);
+}
+
+.center {
+  grid-column: 2;
+}
+
+.end {
+  grid-column: 3;
+  justify-self: end;
+  display: flex;
+  gap: 8px;
+}
+
+.closeBar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 12px;
+}
+
+/* The file name between the previous and next arrows, at the bottom of the card. */
+.pager {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-top: 1px solid var(--border-service-color);
+}
+
+.fileName {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--hv-fg);
+}
+
+/* Where the viewer draws no chrome (useChromeless) nothing covers the content, so the
+   card takes the whole screen. */
+.root[data-chromeless] {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)
+    env(safe-area-inset-left);
+}
+
+.root[data-chromeless] .card {
+  max-width: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root * {
+    transition: none;
+    animation: none;
+  }
+}

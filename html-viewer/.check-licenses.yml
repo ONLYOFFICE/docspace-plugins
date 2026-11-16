@@ -1,0 +1,11 @@
+---
+- - :ignore_group
+  - devDependencies
+  - :who: html-viewer
+    :why: >-
+      Build-time only, never shipped. @onlyoffice/apps-ui-kit (AGPL-3.0-only) is external in
+      vite.config.ts - the portal supplies it when it loads the plugin, and plugin.js never
+      contains it - and is installed for its types and the preview harness. Its own
+      dependencies come with it.
+    :versions: []
+    :when: 2026-10-20 00:00:00.000000000 Z
