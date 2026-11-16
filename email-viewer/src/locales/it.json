@@ -1,0 +1,59 @@
+{
+  "file": {
+    "typeName": "Messaggio email"
+  },
+  "header": {
+    "from": "Da",
+    "to": "A",
+    "cc": "Cc",
+    "bcc": "Ccn",
+    "date": "Data"
+  },
+  "subject": {
+    "empty": "(nessun oggetto)"
+  },
+  "body": {
+    "empty": "Questo messaggio non contiene testo.",
+    "title": "Corpo del messaggio"
+  },
+  "attachments": {
+    "title": "Allegati (%{count})",
+    "save": "Salva",
+    "saveAll": "Salva tutti",
+    "chooseFolder": "Salva gli allegati in",
+    "saveHere": "Salva qui",
+    "noRights": "Non è possibile aggiungere file a questa cartella. Scegline un'altra.",
+    "progress": "Salvataggio degli allegati",
+    "savedTo": "Salvato in «%{folder}»"
+  },
+  "images": {
+    "blocked": "Le immagini da internet non sono state caricate: potrebbero comunicare al mittente che hai aperto questo messaggio.",
+    "load": "Carica immagini",
+    "loadQuestion": "Caricare le immagini?",
+    "loadWarning": "Il mittente potrebbe sapere che hai aperto questo messaggio.",
+    "loadButton": "Carica",
+    "cancel": "Annulla",
+    "hide": "Nascondi immagini",
+    "shown": "Le immagini da internet sono state caricate.",
+    "cspBlocked": "Le impostazioni di sicurezza del portale bloccano le immagini di questi siti:",
+    "cspAdmin": "Un sito può essere consentito in «Strumenti di sviluppo → SDK Javascript», ma in tal caso potrà eseguire script sul portale e incorporare il portale nelle proprie pagine. Aggiungi solo siti di cui ti fidi completamente.",
+    "cspRedirect": "Il sito %{site} è già consentito, ma le sue immagini provengono da un altro indirizzo. Puoi vederlo nella console del browser (F12).",
+    "cspOpenSettings": "Apri impostazioni"
+  },
+  "toast": {
+    "saveFailed": "Impossibile salvare %{name}",
+    "saveFailedSome": "Allegati non salvati: %{failed} su %{total}"
+  },
+  "state": {
+    "loading": "Caricamento del messaggio…",
+    "empty": "Questo file è vuoto.",
+    "loadFailed": "Impossibile caricare il file.",
+    "parseFailed": "Impossibile leggere questo messaggio. Il file potrebbe essere danneggiato o non essere un'email.",
+    "noFile": "Nessun file selezionato."
+  },
+  "viewer": {
+    "close": "Chiudi",
+    "previous": "Messaggio precedente",
+    "next": "Messaggio successivo"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "file": {
+    "typeName": "E-posta iletisi"
+  },
+  "header": {
+    "from": "Kimden",
+    "to": "Kime",
+    "cc": "Bilgi",
+    "bcc": "Gizli",
+    "date": "Tarih"
+  },
+  "subject": {
+    "empty": "(konu yok)"
+  },
+  "body": {
+    "empty": "Bu iletide metin yok.",
+    "title": "İleti metni"
+  },
+  "attachments": {
+    "title": "Ekler (%{count})",
+    "save": "Kaydet",
+    "saveAll": "Tümünü kaydet",
+    "chooseFolder": "Eklerin kaydedileceği yer",
+    "saveHere": "Buraya kaydet",
+    "noRights": "Bu klasöre dosya ekleyemezsiniz. Başka bir klasör seçin.",
+    "progress": "Eklerin kaydedilmesi",
+    "savedTo": "“%{folder}” klasörüne kaydedildi"
+  },
+  "images": {
+    "blocked": "İnternetten görüntüler yüklenmedi: bunlar, iletiyi açtığınızı gönderene bildirebilir.",
+    "load": "Görüntüleri yükle",
+    "loadQuestion": "Görüntüler yüklensin mi?",
+    "loadWarning": "Gönderen, iletiyi açtığınızı öğrenebilir.",
+    "loadButton": "Yükle",
+    "cancel": "İptal",
+    "hide": "Görüntüleri gizle",
+    "shown": "İnternetten görüntüler yüklendi.",
+    "cspBlocked": "Portalın güvenlik ayarları şu sitelerdeki görüntüleri engelliyor:",
+    "cspAdmin": "Bir siteye “Geliştirici Araçları → Javascript SDK'sı” bölümünden izin verilebilir, ancak bu durumda site portalda betik çalıştırabilir ve portalı kendi sayfalarına yerleştirebilir. Yalnızca tamamen güvendiğiniz siteleri ekleyin.",
+    "cspRedirect": "%{site} sitesine zaten izin verilmiş, ancak görüntüleri başka bir adresten geliyor. Hangi adres olduğunu tarayıcı konsolunda (F12) görebilirsiniz.",
+    "cspOpenSettings": "Ayarları aç"
+  },
+  "toast": {
+    "saveFailed": "%{name} kaydedilemedi",
+    "saveFailedSome": "Kaydedilemeyen ek sayısı: %{failed} / %{total}"
+  },
+  "state": {
+    "loading": "İleti yükleniyor…",
+    "empty": "Bu dosya boş.",
+    "loadFailed": "Dosya yüklenemedi.",
+    "parseFailed": "Bu ileti okunamadı. Dosya bozuk olabilir veya bir e-posta olmayabilir.",
+    "noFile": "Hiçbir dosya seçilmedi."
+  },
+  "viewer": {
+    "close": "Kapat",
+    "previous": "Önceki ileti",
+    "next": "Sonraki ileti"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "file": {
+    "typeName": "E-poçt məktubu"
+  },
+  "header": {
+    "from": "Kimdən",
+    "to": "Kimə",
+    "cc": "Surət",
+    "bcc": "Gizli surət",
+    "date": "Tarix"
+  },
+  "subject": {
+    "empty": "(mövzusuz)"
+  },
+  "body": {
+    "empty": "Bu məktubda mətn yoxdur.",
+    "title": "Məktubun mətni"
+  },
+  "attachments": {
+    "title": "Qoşmalar (%{count})",
+    "save": "Saxla",
+    "saveAll": "Hamısını saxla",
+    "chooseFolder": "Qoşmaları harada saxlamaq",
+    "saveHere": "Burada saxla",
+    "noRights": "Bu qovluğa fayl əlavə edə bilməzsiniz. Başqa qovluq seçin.",
+    "progress": "Qoşmaların saxlanması",
+    "savedTo": "“%{folder}” qovluğuna saxlanıldı"
+  },
+  "images": {
+    "blocked": "İnternetdən şəkillər yüklənməyib: onlar göndərənə bu məktubu açdığınızı bildirə bilər.",
+    "load": "Şəkilləri yüklə",
+    "loadQuestion": "Şəkillər yüklənsin?",
+    "loadWarning": "Göndərən bu məktubu açdığınızı bilə bilər.",
+    "loadButton": "Yüklə",
+    "cancel": "Ləğv et",
+    "hide": "Şəkilləri gizlət",
+    "shown": "İnternetdən şəkillər yükləndi.",
+    "cspBlocked": "Portalın təhlükəsizlik parametrləri bu saytlardan olan şəkilləri bloklayır:",
+    "cspAdmin": "Saytı «Tərtibatçı Alətləri → Javascript SDK» bölməsində icazə verilənlərə əlavə etmək olar, lakin bundan sonra o, portalda skriptlər işlədə və portalı öz səhifələrinə yerləşdirə biləcək. Yalnız tam etibar etdiyiniz saytları əlavə edin.",
+    "cspRedirect": "%{site} saytına artıq icazə verilib, lakin onun şəkilləri başqa ünvandan gəlir. Hansı ünvandan olduğunu brauzer konsolunda (F12) görmək olar.",
+    "cspOpenSettings": "Parametrləri aç"
+  },
+  "toast": {
+    "saveFailed": "%{name} saxlanıla bilmədi",
+    "saveFailedSome": "Saxlanıla bilməyən qoşmalar: %{failed} / %{total}"
+  },
+  "state": {
+    "loading": "Məktub yüklənir…",
+    "empty": "Bu fayl boşdur.",
+    "loadFailed": "Fayl yüklənə bilmədi.",
+    "parseFailed": "Bu məktubu oxumaq mümkün olmadı. Fayl zədələnmiş ola bilər və ya e-poçt məktubu deyil.",
+    "noFile": "Fayl seçilməyib."
+  },
+  "viewer": {
+    "close": "Bağla",
+    "previous": "Əvvəlki məktub",
+    "next": "Növbəti məktub"
+  }
+}

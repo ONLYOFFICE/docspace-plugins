@@ -1,0 +1,59 @@
+{
+  "file": {
+    "typeName": "E-mailová správa"
+  },
+  "header": {
+    "from": "Od",
+    "to": "Komu",
+    "cc": "Kópia",
+    "bcc": "Skrytá kópia",
+    "date": "Dátum"
+  },
+  "subject": {
+    "empty": "(bez predmetu)"
+  },
+  "body": {
+    "empty": "Táto správa neobsahuje text.",
+    "title": "Telo správy"
+  },
+  "attachments": {
+    "title": "Prílohy (%{count})",
+    "save": "Uložiť",
+    "saveAll": "Uložiť všetko",
+    "chooseFolder": "Kam uložiť prílohy",
+    "saveHere": "Uložiť sem",
+    "noRights": "Do tohto priečinka nemôžete pridávať súbory. Vyberte iný.",
+    "progress": "Ukladanie príloh",
+    "savedTo": "Uložené do priečinka „%{folder}“"
+  },
+  "images": {
+    "blocked": "Obrázky z internetu nie sú načítané: odosielateľ by z nich mohol zistiť, že ste správu otvorili.",
+    "load": "Načítať obrázky",
+    "loadQuestion": "Načítať obrázky?",
+    "loadWarning": "Odosielateľ môže zistiť, že ste správu otvorili.",
+    "loadButton": "Načítať",
+    "cancel": "Zrušiť",
+    "hide": "Skryť obrázky",
+    "shown": "Obrázky z internetu sú načítané.",
+    "cspBlocked": "Nastavenia zabezpečenia portálu blokujú obrázky z týchto stránok:",
+    "cspAdmin": "Stránku je možné povoliť v sekcii „Nástroje pre vývojárov → Javascript SDK“, potom však bude môcť spúšťať skripty na portáli a vkladať portál do svojich stránok. Pridávajte len stránky, ktorým plne dôverujete.",
+    "cspRedirect": "Stránka %{site} je už povolená, ale jej obrázky prichádzajú z inej adresy. Z ktorej, zistíte v konzole prehliadača (F12).",
+    "cspOpenSettings": "Otvoriť nastavenia"
+  },
+  "toast": {
+    "saveFailed": "Súbor %{name} sa nepodarilo uložiť",
+    "saveFailedSome": "Nepodarilo sa uložiť prílohy: %{failed} z %{total}"
+  },
+  "state": {
+    "loading": "Načítava sa správa…",
+    "empty": "Tento súbor je prázdny.",
+    "loadFailed": "Súbor sa nepodarilo načítať.",
+    "parseFailed": "Túto správu sa nepodarilo prečítať. Súbor môže byť poškodený alebo nejde o e-mail.",
+    "noFile": "Nie je vybraný žiadny súbor."
+  },
+  "viewer": {
+    "close": "Zavrieť",
+    "previous": "Predchádzajúca správa",
+    "next": "Ďalšia správa"
+  }
+}

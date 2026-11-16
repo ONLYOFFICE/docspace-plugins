@@ -1,0 +1,59 @@
+{
+  "file": {
+    "typeName": "Mensagem de e-mail"
+  },
+  "header": {
+    "from": "De",
+    "to": "Para",
+    "cc": "Cc",
+    "bcc": "Cco",
+    "date": "Data"
+  },
+  "subject": {
+    "empty": "(sem assunto)"
+  },
+  "body": {
+    "empty": "Esta mensagem não tem texto.",
+    "title": "Corpo da mensagem"
+  },
+  "attachments": {
+    "title": "Anexos (%{count})",
+    "save": "Salvar",
+    "saveAll": "Salvar todos",
+    "chooseFolder": "Salvar anexos em",
+    "saveHere": "Salvar aqui",
+    "noRights": "Não é possível adicionar arquivos a esta pasta. Escolha outra.",
+    "progress": "Salvar anexos",
+    "savedTo": "Salvo em “%{folder}”"
+  },
+  "images": {
+    "blocked": "As imagens da internet não foram carregadas: por meio delas, o remetente pode saber que você abriu esta mensagem.",
+    "load": "Carregar imagens",
+    "loadQuestion": "Carregar imagens?",
+    "loadWarning": "O remetente pode saber que você abriu esta mensagem.",
+    "loadButton": "Carregar",
+    "cancel": "Cancelar",
+    "hide": "Ocultar imagens",
+    "shown": "As imagens da internet foram carregadas.",
+    "cspBlocked": "As configurações de segurança do portal bloqueiam imagens destes sites:",
+    "cspAdmin": "Um site pode ser permitido em \"Ferramentas de desenvolvimento → Javascript SDK\", mas então poderá executar scripts no portal e incorporar o portal em suas próprias páginas. Adicione apenas sites em que você confia totalmente.",
+    "cspRedirect": "O site %{site} já está permitido, mas as imagens dele vêm de outro endereço. Você pode ver qual no console do navegador (F12).",
+    "cspOpenSettings": "Abrir configurações"
+  },
+  "toast": {
+    "saveFailed": "Não foi possível salvar %{name}",
+    "saveFailedSome": "Não foi possível salvar anexos: %{failed} de %{total}"
+  },
+  "state": {
+    "loading": "Carregando mensagem…",
+    "empty": "Este arquivo está vazio.",
+    "loadFailed": "Não foi possível carregar o arquivo.",
+    "parseFailed": "Não foi possível ler esta mensagem. O arquivo pode estar danificado ou não ser um e-mail.",
+    "noFile": "Nenhum arquivo selecionado."
+  },
+  "viewer": {
+    "close": "Fechar",
+    "previous": "Mensagem anterior",
+    "next": "Próxima mensagem"
+  }
+}

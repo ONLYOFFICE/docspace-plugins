@@ -1,0 +1,59 @@
+{
+  "file": {
+    "typeName": "Wiadomość e-mail"
+  },
+  "header": {
+    "from": "Od",
+    "to": "Do",
+    "cc": "DW",
+    "bcc": "UDW",
+    "date": "Data"
+  },
+  "subject": {
+    "empty": "(bez tematu)"
+  },
+  "body": {
+    "empty": "Ta wiadomość nie zawiera tekstu.",
+    "title": "Treść wiadomości"
+  },
+  "attachments": {
+    "title": "Załączniki (%{count})",
+    "save": "Zapisz",
+    "saveAll": "Zapisz wszystkie",
+    "chooseFolder": "Gdzie zapisać załączniki",
+    "saveHere": "Zapisz tutaj",
+    "noRights": "Nie można dodawać plików do tego folderu. Wybierz inny.",
+    "progress": "Zapisywanie załączników",
+    "savedTo": "Zapisano w folderze „%{folder}”"
+  },
+  "images": {
+    "blocked": "Obrazy z internetu nie zostały wczytane: dzięki nim nadawca może się dowiedzieć, że otworzono tę wiadomość.",
+    "load": "Wczytaj obrazy",
+    "loadQuestion": "Wczytać obrazy?",
+    "loadWarning": "Nadawca może się dowiedzieć, że otworzono tę wiadomość.",
+    "loadButton": "Wczytaj",
+    "cancel": "Anuluj",
+    "hide": "Ukryj obrazy",
+    "shown": "Obrazy z internetu zostały wczytane.",
+    "cspBlocked": "Ustawienia bezpieczeństwa portalu blokują obrazy z tych witryn:",
+    "cspAdmin": "Witrynę można dopuścić w sekcji „Narzędzia programistyczne → SDK Javascript”, ale wtedy będzie mogła uruchamiać skrypty w portalu i osadzać portal na swoich stronach. Dodawaj tylko witryny, którym w pełni ufasz.",
+    "cspRedirect": "Witryna %{site} jest już dozwolona, ale jej obrazy pochodzą z innego adresu. Ten adres można zobaczyć w konsoli przeglądarki (F12).",
+    "cspOpenSettings": "Otwórz ustawienia"
+  },
+  "toast": {
+    "saveFailed": "Nie udało się zapisać %{name}",
+    "saveFailedSome": "Nie udało się zapisać załączników: %{failed} z %{total}"
+  },
+  "state": {
+    "loading": "Wczytywanie wiadomości…",
+    "empty": "Ten plik jest pusty.",
+    "loadFailed": "Nie udało się wczytać pliku.",
+    "parseFailed": "Nie udało się odczytać tej wiadomości. Plik może być uszkodzony lub nie jest wiadomością e-mail.",
+    "noFile": "Nie wybrano pliku."
+  },
+  "viewer": {
+    "close": "Zamknij",
+    "previous": "Poprzednia wiadomość",
+    "next": "Następna wiadomość"
+  }
+}

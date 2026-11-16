@@ -1,0 +1,59 @@
+{
+  "file": {
+    "typeName": "E-Mail-Nachricht"
+  },
+  "header": {
+    "from": "Von",
+    "to": "An",
+    "cc": "Cc",
+    "bcc": "Bcc",
+    "date": "Datum"
+  },
+  "subject": {
+    "empty": "(kein Betreff)"
+  },
+  "body": {
+    "empty": "Diese Nachricht enthält keinen Text.",
+    "title": "Nachrichtentext"
+  },
+  "attachments": {
+    "title": "Anhänge (%{count})",
+    "save": "Speichern",
+    "saveAll": "Alle speichern",
+    "chooseFolder": "Anhänge speichern unter",
+    "saveHere": "Hier speichern",
+    "noRights": "Sie können diesem Ordner keine Dateien hinzufügen. Wählen Sie einen anderen.",
+    "progress": "Speichern der Anhänge",
+    "savedTo": "Gespeichert in „%{folder}“"
+  },
+  "images": {
+    "blocked": "Bilder aus dem Internet werden nicht geladen: Daran könnte der Absender erkennen, dass Sie diese Nachricht geöffnet haben.",
+    "load": "Bilder laden",
+    "loadQuestion": "Bilder laden?",
+    "loadWarning": "Der Absender kann daran erkennen, dass Sie diese Nachricht geöffnet haben.",
+    "loadButton": "Laden",
+    "cancel": "Abbrechen",
+    "hide": "Bilder ausblenden",
+    "shown": "Bilder aus dem Internet sind geladen.",
+    "cspBlocked": "Die Sicherheitseinstellungen des Portals blockieren Bilder von diesen Websites:",
+    "cspAdmin": "Eine Website kann unter „Entwicklungstools → JavaScript-SDK“ zugelassen werden, kann dann aber Skripte im Portal ausführen und das Portal in ihre eigenen Seiten einbetten. Fügen Sie nur Websites hinzu, denen Sie voll vertrauen.",
+    "cspRedirect": "Die Website %{site} ist bereits erlaubt, ihre Bilder kommen aber von einer anderen Adresse. Welche, zeigt die Browserkonsole (F12).",
+    "cspOpenSettings": "Einstellungen öffnen"
+  },
+  "toast": {
+    "saveFailed": "%{name} konnte nicht gespeichert werden",
+    "saveFailedSome": "Nicht gespeicherte Anhänge: %{failed} von %{total}"
+  },
+  "state": {
+    "loading": "Nachricht wird geladen…",
+    "empty": "Diese Datei ist leer.",
+    "loadFailed": "Die Datei konnte nicht geladen werden.",
+    "parseFailed": "Diese Nachricht konnte nicht gelesen werden. Die Datei ist möglicherweise beschädigt oder keine E-Mail.",
+    "noFile": "Keine Datei ausgewählt."
+  },
+  "viewer": {
+    "close": "Schließen",
+    "previous": "Vorherige Nachricht",
+    "next": "Nächste Nachricht"
+  }
+}

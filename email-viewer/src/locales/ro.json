@@ -1,0 +1,59 @@
+{
+  "file": {
+    "typeName": "Mesaj de e-mail"
+  },
+  "header": {
+    "from": "De la",
+    "to": "Către",
+    "cc": "Cc",
+    "bcc": "Bcc",
+    "date": "Dată"
+  },
+  "subject": {
+    "empty": "(fără subiect)"
+  },
+  "body": {
+    "empty": "Acest mesaj nu conține text.",
+    "title": "Corpul mesajului"
+  },
+  "attachments": {
+    "title": "Atașamente (%{count})",
+    "save": "Salvați",
+    "saveAll": "Salvați toate",
+    "chooseFolder": "Unde salvați atașamentele",
+    "saveHere": "Salvați aici",
+    "noRights": "Nu puteți adăuga fișiere în acest folder. Alegeți altul.",
+    "progress": "Salvarea atașamentelor",
+    "savedTo": "Salvat în „%{folder}”"
+  },
+  "images": {
+    "blocked": "Imaginile de pe internet nu sunt încărcate: prin ele, expeditorul poate afla că ați deschis acest mesaj.",
+    "load": "Încărcați imaginile",
+    "loadQuestion": "Încărcați imaginile?",
+    "loadWarning": "Expeditorul poate afla că ați deschis acest mesaj.",
+    "loadButton": "Încărcați",
+    "cancel": "Anulați",
+    "hide": "Ascundeți imaginile",
+    "shown": "Imaginile de pe internet sunt încărcate.",
+    "cspBlocked": "Setările de securitate ale portalului blochează imaginile de pe aceste site-uri:",
+    "cspAdmin": "Un site poate fi permis în „Instrumente pentru dezvoltatori → SDK Javascript”, dar atunci va putea rula scripturi pe portal și va putea încorpora portalul în propriile pagini. Adăugați doar site-uri în care aveți încredere deplină.",
+    "cspRedirect": "Site-ul %{site} este deja permis, dar imaginile lui provin de la o altă adresă. O puteți vedea în consola browserului (F12).",
+    "cspOpenSettings": "Deschideți setările"
+  },
+  "toast": {
+    "saveFailed": "Nu s-a putut salva %{name}",
+    "saveFailedSome": "Nu s-au putut salva atașamente: %{failed} din %{total}"
+  },
+  "state": {
+    "loading": "Se încarcă mesajul…",
+    "empty": "Acest fișier este gol.",
+    "loadFailed": "Nu s-a putut încărca fișierul.",
+    "parseFailed": "Nu s-a putut citi acest mesaj. Fișierul poate fi deteriorat sau nu este un e-mail.",
+    "noFile": "Niciun fișier selectat."
+  },
+  "viewer": {
+    "close": "Închide",
+    "previous": "Mesajul anterior",
+    "next": "Mesajul următor"
+  }
+}

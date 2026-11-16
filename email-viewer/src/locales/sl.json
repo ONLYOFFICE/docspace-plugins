@@ -1,0 +1,59 @@
+{
+  "file": {
+    "typeName": "E-poštno sporočilo"
+  },
+  "header": {
+    "from": "Od",
+    "to": "Za",
+    "cc": "Kp",
+    "bcc": "Skp",
+    "date": "Datum"
+  },
+  "subject": {
+    "empty": "(brez zadeve)"
+  },
+  "body": {
+    "empty": "To sporočilo nima besedila.",
+    "title": "Besedilo sporočila"
+  },
+  "attachments": {
+    "title": "Priloge (%{count})",
+    "save": "Shrani",
+    "saveAll": "Shrani vse",
+    "chooseFolder": "Kam shraniti priloge",
+    "saveHere": "Shrani sem",
+    "noRights": "V to mapo ne morete dodajati datotek. Izberite drugo.",
+    "progress": "Shranjevanje prilog",
+    "savedTo": "Shranjeno v mapo »%{folder}«"
+  },
+  "images": {
+    "blocked": "Slike iz interneta niso naložene: z njimi lahko pošiljatelj izve, da ste sporočilo odprli.",
+    "load": "Naloži slike",
+    "loadQuestion": "Želite naložiti slike?",
+    "loadWarning": "Pošiljatelj lahko izve, da ste sporočilo odprli.",
+    "loadButton": "Naloži",
+    "cancel": "Prekliči",
+    "hide": "Skrij slike",
+    "shown": "Slike iz interneta so naložene.",
+    "cspBlocked": "Varnostne nastavitve portala blokirajo slike s teh spletnih mest:",
+    "cspAdmin": "Spletno mesto lahko dovolite v razdelku »Razvijalska orodja → Javascript SDK«, vendar bo nato lahko na portalu izvajalo skripte in portal vdelalo v svoje strani. Dodajajte samo spletna mesta, ki jim popolnoma zaupate.",
+    "cspRedirect": "Spletno mesto %{site} je že dovoljeno, vendar njegove slike prihajajo z drugega naslova. S katerega, je vidno v konzoli brskalnika (F12).",
+    "cspOpenSettings": "Odpri nastavitve"
+  },
+  "toast": {
+    "saveFailed": "Datoteke %{name} ni bilo mogoče shraniti",
+    "saveFailedSome": "Prilog ni bilo mogoče shraniti: %{failed} od %{total}"
+  },
+  "state": {
+    "loading": "Nalaganje sporočila…",
+    "empty": "Ta datoteka je prazna.",
+    "loadFailed": "Datoteke ni bilo mogoče naložiti.",
+    "parseFailed": "Tega sporočila ni bilo mogoče prebrati. Datoteka je morda poškodovana ali ni e-poštno sporočilo.",
+    "noFile": "Nobena datoteka ni izbrana."
+  },
+  "viewer": {
+    "close": "Zapri",
+    "previous": "Prejšnje sporočilo",
+    "next": "Naslednje sporočilo"
+  }
+}

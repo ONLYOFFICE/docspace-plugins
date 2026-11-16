@@ -1,0 +1,59 @@
+{
+  "file": {
+    "typeName": "Imejl poruka"
+  },
+  "header": {
+    "from": "Od",
+    "to": "Za",
+    "cc": "Kopija",
+    "bcc": "Skrivena kopija",
+    "date": "Datum"
+  },
+  "subject": {
+    "empty": "(bez naslova)"
+  },
+  "body": {
+    "empty": "Ova poruka nema tekst.",
+    "title": "Tekst poruke"
+  },
+  "attachments": {
+    "title": "Prilozi (%{count})",
+    "save": "Sačuvaj",
+    "saveAll": "Sačuvaj sve",
+    "chooseFolder": "Gde sačuvati priloge",
+    "saveHere": "Sačuvaj ovde",
+    "noRights": "U ovu fasciklu ne možete da dodajete datoteke. Izaberite drugu.",
+    "progress": "Čuvanje priloga",
+    "savedTo": "Sačuvano u fasciklu „%{folder}“"
+  },
+  "images": {
+    "blocked": "Slike sa interneta nisu učitane: preko njih pošiljalac može da sazna da ste otvorili poruku.",
+    "load": "Učitaj slike",
+    "loadQuestion": "Učitati slike?",
+    "loadWarning": "Pošiljalac može da sazna da ste otvorili poruku.",
+    "loadButton": "Učitaj",
+    "cancel": "Otkaži",
+    "hide": "Sakrij slike",
+    "shown": "Slike sa interneta su učitane.",
+    "cspBlocked": "Bezbednosna podešavanja portala blokiraju slike sa ovih sajtova:",
+    "cspAdmin": "Sajt možete dozvoliti u odeljku „Alati programera → Javascript SDK“, ali će tada moći da pokreće skripte na portalu i da ugrađuje portal u svoje stranice. Dodajte samo sajtove kojima potpuno verujete.",
+    "cspRedirect": "Sajt %{site} je već dozvoljen, ali njegove slike stižu sa druge adrese. Sa koje, videćete u konzoli pregledača (F12).",
+    "cspOpenSettings": "Otvori podešavanja"
+  },
+  "toast": {
+    "saveFailed": "Nije moguće sačuvati datoteku %{name}",
+    "saveFailedSome": "Nije moguće sačuvati priloge: %{failed} od %{total}"
+  },
+  "state": {
+    "loading": "Učitavanje poruke…",
+    "empty": "Ova datoteka je prazna.",
+    "loadFailed": "Nije moguće učitati datoteku.",
+    "parseFailed": "Nije moguće pročitati ovu poruku. Datoteka je možda oštećena ili nije imejl.",
+    "noFile": "Nijedna datoteka nije izabrana."
+  },
+  "viewer": {
+    "close": "Zatvori",
+    "previous": "Prethodna poruka",
+    "next": "Sledeća poruka"
+  }
+}

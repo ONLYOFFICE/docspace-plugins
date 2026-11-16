@@ -1,0 +1,59 @@
+{
+  "file": {
+    "typeName": "Thư email"
+  },
+  "header": {
+    "from": "Từ",
+    "to": "Đến",
+    "cc": "Cc",
+    "bcc": "Bcc",
+    "date": "Ngày"
+  },
+  "subject": {
+    "empty": "(không có chủ đề)"
+  },
+  "body": {
+    "empty": "Thư này không có nội dung văn bản.",
+    "title": "Nội dung thư"
+  },
+  "attachments": {
+    "title": "Tệp đính kèm (%{count})",
+    "save": "Lưu",
+    "saveAll": "Lưu tất cả",
+    "chooseFolder": "Lưu tệp đính kèm vào",
+    "saveHere": "Lưu tại đây",
+    "noRights": "Bạn không thể thêm tệp vào thư mục này. Hãy chọn thư mục khác.",
+    "progress": "Lưu tệp đính kèm",
+    "savedTo": "Đã lưu vào “%{folder}”"
+  },
+  "images": {
+    "blocked": "Chưa tải hình ảnh từ internet: người gửi có thể dựa vào chúng để biết bạn đã mở thư này.",
+    "load": "Tải hình ảnh",
+    "loadQuestion": "Tải hình ảnh?",
+    "loadWarning": "Người gửi có thể biết bạn đã mở thư này.",
+    "loadButton": "Tải",
+    "cancel": "Hủy",
+    "hide": "Ẩn hình ảnh",
+    "shown": "Đã tải hình ảnh từ internet.",
+    "cspBlocked": "Cài đặt bảo mật của cổng thông tin đang chặn hình ảnh từ các trang sau:",
+    "cspAdmin": "Có thể cho phép một trang trong “Công cụ nhà phát triển → Javascript SDK”, nhưng khi đó trang này sẽ có thể chạy tập lệnh trên cổng thông tin và nhúng cổng thông tin vào các trang của mình. Chỉ thêm những trang bạn hoàn toàn tin cậy.",
+    "cspRedirect": "Trang %{site} đã được cho phép, nhưng hình ảnh của trang này đến từ một địa chỉ khác. Bảng điều khiển trình duyệt (F12) cho biết đó là địa chỉ nào.",
+    "cspOpenSettings": "Mở cài đặt"
+  },
+  "toast": {
+    "saveFailed": "Không thể lưu %{name}",
+    "saveFailedSome": "Không thể lưu %{failed}/%{total} tệp đính kèm"
+  },
+  "state": {
+    "loading": "Đang tải thư…",
+    "empty": "Tệp này trống.",
+    "loadFailed": "Không thể tải tệp.",
+    "parseFailed": "Không thể đọc thư này. Tệp có thể bị hỏng hoặc không phải là email.",
+    "noFile": "Chưa chọn tệp nào."
+  },
+  "viewer": {
+    "close": "Đóng",
+    "previous": "Thư trước",
+    "next": "Thư tiếp theo"
+  }
+}

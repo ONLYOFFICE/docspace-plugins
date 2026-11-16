@@ -1,0 +1,59 @@
+{
+  "file": {
+    "typeName": "Sähköpostiviesti"
+  },
+  "header": {
+    "from": "Lähettäjä",
+    "to": "Vastaanottaja",
+    "cc": "Kopio",
+    "bcc": "Piilokopio",
+    "date": "Päivämäärä"
+  },
+  "subject": {
+    "empty": "(ei aihetta)"
+  },
+  "body": {
+    "empty": "Tässä viestissä ei ole tekstiä.",
+    "title": "Viestin sisältö"
+  },
+  "attachments": {
+    "title": "Liitteet (%{count})",
+    "save": "Tallenna",
+    "saveAll": "Tallenna kaikki",
+    "chooseFolder": "Liitteiden tallennuskansio",
+    "saveHere": "Tallenna tähän",
+    "noRights": "Tähän kansioon ei voi lisätä tiedostoja. Valitse toinen kansio.",
+    "progress": "Liitteiden tallennus",
+    "savedTo": "Tallennettu kansioon %{folder}"
+  },
+  "images": {
+    "blocked": "Internetistä haettavia kuvia ei ole ladattu: niiden avulla lähettäjä voi saada tietää, että avasit viestin.",
+    "load": "Lataa kuvat",
+    "loadQuestion": "Ladataanko kuvat?",
+    "loadWarning": "Lähettäjä voi saada tietää, että avasit viestin.",
+    "loadButton": "Lataa",
+    "cancel": "Peruuta",
+    "hide": "Piilota kuvat",
+    "shown": "Internetistä haettavat kuvat on ladattu.",
+    "cspBlocked": "Portaalin suojausasetukset estävät kuvat näiltä sivustoilta:",
+    "cspAdmin": "Sivuston voi sallia kohdassa ”Kehittäjän työkalut → Javascript SDK”, mutta sen jälkeen se voi suorittaa komentosarjoja portaalissa ja upottaa portaalin omille sivuilleen. Lisää vain sivustoja, joihin luotat täysin.",
+    "cspRedirect": "Sivusto %{site} on jo sallittu, mutta sen kuvat tulevat toisesta osoitteesta. Selaimen konsoli (F12) näyttää, mistä.",
+    "cspOpenSettings": "Avaa asetukset"
+  },
+  "toast": {
+    "saveFailed": "Tiedostoa %{name} ei voitu tallentaa",
+    "saveFailedSome": "Tallentamatta jääneet liitteet: %{failed}/%{total}"
+  },
+  "state": {
+    "loading": "Ladataan viestiä…",
+    "empty": "Tämä tiedosto on tyhjä.",
+    "loadFailed": "Tiedostoa ei voitu ladata.",
+    "parseFailed": "Tätä viestiä ei voitu lukea. Tiedosto voi olla vioittunut, tai se ei ole sähköpostiviesti.",
+    "noFile": "Tiedostoa ei ole valittu."
+  },
+  "viewer": {
+    "close": "Sulje",
+    "previous": "Edellinen viesti",
+    "next": "Seuraava viesti"
+  }
+}

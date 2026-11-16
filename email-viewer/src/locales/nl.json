@@ -1,0 +1,59 @@
+{
+  "file": {
+    "typeName": "E-mailbericht"
+  },
+  "header": {
+    "from": "Van",
+    "to": "Aan",
+    "cc": "CC",
+    "bcc": "BCC",
+    "date": "Datum"
+  },
+  "subject": {
+    "empty": "(geen onderwerp)"
+  },
+  "body": {
+    "empty": "Dit bericht bevat geen tekst.",
+    "title": "Berichttekst"
+  },
+  "attachments": {
+    "title": "Bijlagen (%{count})",
+    "save": "Opslaan",
+    "saveAll": "Alles opslaan",
+    "chooseFolder": "Bijlagen opslaan in",
+    "saveHere": "Hier opslaan",
+    "noRights": "U kunt geen bestanden aan deze map toevoegen. Kies een andere map.",
+    "progress": "Bijlagen opslaan",
+    "savedTo": "Opgeslagen in ‘%{folder}’"
+  },
+  "images": {
+    "blocked": "Afbeeldingen van internet zijn niet geladen: daarmee kan de afzender zien dat u dit bericht hebt geopend.",
+    "load": "Afbeeldingen laden",
+    "loadQuestion": "Afbeeldingen laden?",
+    "loadWarning": "De afzender kan zien dat u dit bericht hebt geopend.",
+    "loadButton": "Laden",
+    "cancel": "Annuleren",
+    "hide": "Afbeeldingen verbergen",
+    "shown": "Afbeeldingen van internet zijn geladen.",
+    "cspBlocked": "De beveiligingsinstellingen van de portal blokkeren afbeeldingen van deze sites:",
+    "cspAdmin": "Een site kan worden toegestaan in 'Developer Tools → Javascript SDK', maar kan dan scripts uitvoeren op de portal en de portal in eigen pagina's insluiten. Voeg alleen sites toe die u volledig vertrouwt.",
+    "cspRedirect": "De site %{site} is al toegestaan, maar de afbeeldingen komen van een ander adres. Welk adres, ziet u in de browserconsole (F12).",
+    "cspOpenSettings": "Instellingen openen"
+  },
+  "toast": {
+    "saveFailed": "Kan %{name} niet opslaan",
+    "saveFailedSome": "Bijlagen die niet konden worden opgeslagen: %{failed} van %{total}"
+  },
+  "state": {
+    "loading": "Bericht laden…",
+    "empty": "Dit bestand is leeg.",
+    "loadFailed": "Kan het bestand niet laden.",
+    "parseFailed": "Kan dit bericht niet lezen. Het bestand is mogelijk beschadigd of is geen e-mail.",
+    "noFile": "Er is geen bestand geselecteerd."
+  },
+  "viewer": {
+    "close": "Sluiten",
+    "previous": "Vorig bericht",
+    "next": "Volgend bericht"
+  }
+}

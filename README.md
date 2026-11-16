@@ -5,6 +5,7 @@ This repository comprises plugins which allow extending the functionality of [ON
 * [Codemirror](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/codemirror)
 * [ConvertToMarkdown](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/convert-to-markdown)
 * [draw.io](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/draw.io)
+* [EmailViewer](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/email-viewer)
 * [Markdown](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/markdown)
 * [ImageEditor](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/image-editor)
 * [PDFConverter](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/pdf-converter)
