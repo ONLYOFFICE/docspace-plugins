@@ -10,6 +10,7 @@ This repository comprises plugins which allow extending the functionality of [ON
 * [HtmlViewer](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/html-viewer)
 * [ImageEditor](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/image-editor)
 * [PDFConverter](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/pdf-converter)
+* [QR Code](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/qr-code)
 * [Reader](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/reader)
 * [SpeechToText](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/speech-to-text)
 * [URL](https://github.com/ONLYOFFICE/docspace-plugins/tree/master/url)
